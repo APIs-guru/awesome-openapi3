@@ -8,7 +8,7 @@ A list of awesome projects related to OpenApi 3.0.x
 
 ## Generators
 
-https://github.com/metadevpro/baucis-openapi3 (plugin for [baucis.js](https://github.com/wprl/baucis))
+* https://github.com/metadevpro/baucis-openapi3 (plugin for [baucis.js](https://github.com/wprl/baucis))
 
 ## Models/Validators
 
