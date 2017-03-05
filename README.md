@@ -1,9 +1,13 @@
 # awesome-openapi3
 A list of awesome projects related to OpenApi 3.0.x
 
+## Contributing
+
+Please raise a Pull-Request or issue with any projects we've missed!
+
 ## Converters
 
-* https://github.com/mermade/swagger2openapi (Node.js, WIP)
+* https://github.com/mermade/swagger2openapi (Node.js, simple validation)
 * https://github.com/mission-liao/pyswagger (Python, support coming soon)
 
 ##  Documentation Viewers/Consoles
