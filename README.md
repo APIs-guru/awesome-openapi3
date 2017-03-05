@@ -6,6 +6,14 @@ A list of awesome projects related to OpenApi 3.0.x
 * https://github.com/mermade/swagger2openapi (Node.js, WIP)
 * https://github.com/mission-liao/pyswagger (Python, support coming soon)
 
+##  Documentation Viewers/Consoles
+
+* https://github.com/koumoul-dev/vue-openapi (Vue.js, demo https://koumoul.com/s/geocoder/api-doc)
+
+## Editors
+
+* Coming soon
+
 ## Generators
 
 * https://github.com/metadevpro/baucis-openapi3 (plugin for [baucis.js](https://github.com/wprl/baucis))
