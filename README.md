@@ -22,6 +22,9 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 * https://github.com/metadevpro/baucis-openapi3 (plugin for [baucis.js](https://github.com/wprl/baucis))
 
+## Libraries
+* https://github.com/metadevpro/openapi3-ts
+
 ## Models/Validators
 
 * https://github.com/gskorupa/openapi4j (Java)
