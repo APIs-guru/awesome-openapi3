@@ -7,8 +7,9 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 ## Converters
 
-* https://github.com/mermade/swagger2openapi (Node.js, simple validation)
+* https://github.com/mermade/swagger2openapi (Node.js, includes validation)
 * https://github.com/mission-liao/pyswagger (Python, support coming soon)
+* https://github.com/mermade/openapi-webconverter (Node.js, demo https://openapi-converter.herokuapp.com)
 
 ##  Documentation Viewers/Consoles
 
