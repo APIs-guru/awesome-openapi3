@@ -29,4 +29,4 @@ Please raise a Pull-Request or issue with any projects we've missed!
 ## Models/Validators
 
 * https://github.com/gskorupa/openapi4j (Java)
-* https://github.com/electrotiti/swagger-tools (PHP)
+* https://github.com/electrotiti/swagger-tools (PHP, alpha OpenAPI3 support planned)
