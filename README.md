@@ -1,6 +1,8 @@
 # awesome-openapi3
 A list of awesome projects related to OpenApi 3.0.x
 
+Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtag **#openapi3** on social media?
+
 ## Contributing
 
 Please raise a Pull-Request or issue with any projects we've missed!
