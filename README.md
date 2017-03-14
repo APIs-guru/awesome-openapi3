@@ -15,7 +15,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 ##  Documentation Viewers/Consoles
 
-* https://github.com/koumoul-dev/vue-openapi (Vue.js, demo https://koumoul.com/s/geocoder/api-doc)
+* https://github.com/koumoul-dev/openapi-viewer (Vue.js, uses [vue-openapi component](https://github.com/koumoul-dev/vue-openapi) demo https://koumoul.com/s/geocoder/api-doc)
 * https://github.com/contentjet/openapi-ui (React.js)
 
 ## Editors
