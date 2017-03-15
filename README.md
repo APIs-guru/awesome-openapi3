@@ -1,4 +1,5 @@
 
+
 # awesome-openapi3
 A list of awesome projects related to OpenApi 3.0.x
 
@@ -14,15 +15,18 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 ## Converters
 
-* https://github.com/mermade/swagger2openapi (Node.js, includes validation)
-* https://github.com/mission-liao/pyswagger (Python, support coming soon)
-* https://github.com/mermade/openapi-webconverter (Node.js, demo https://openapi-converter.herokuapp.com)
+Tool|Language|Description|Website
+---|---|---|---|
+[swagger2openapi](https://github.com/mermade/swagger2openapi)|Node.js|A converter and validator|https://openapi-converter.herokuapp.com
+[pyswagger](https://github.com/mission-liao/pyswagger)|Python|support coming soon|
 
 ##  Documentation Viewers/Consoles
 
-* https://github.com/koumoul-dev/openapi-viewer (Vue.js, uses [vue-openapi component](https://github.com/koumoul-dev/vue-openapi) demo https://koumoul.com/s/geocoder/api-doc)
-* https://github.com/contentjet/openapi-ui (React.js)
-* https://github.com/mikeralphson/iodocs (fork of Mashery IO-docs with OpenAPI 2/3 support, demo http://io-docs.herokuapp.com/) 
+Tool|Language|Description|Website
+---|---|---|---|
+[openapi-viewer](https://github.com/koumoul-dev/openapi-viewer)|Vue.js|uses [vue-openapi component](https://github.com/koumoul-dev/vue-openapi)|https://koumoul.com/s/geocoder/api-doc
+[openapi-ui](https://github.com/contentjet/openapi-ui)|React.js|
+[io-docs](https://github.com/mikeralphson/iodocs)|Node.js|fork of Mashery IO-docs with OpenAPI 2/3 support|http://io-docs.herokuapp.com/ 
 
 ## Editors
 
@@ -30,12 +34,19 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 ## Generators
 
-* https://github.com/metadevpro/baucis-openapi3 (plugin for [baucis.js](https://github.com/wprl/baucis))
+Tool|Language|Description|Website
+---|---|---|---|
+[baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
 
 ## Libraries
-* https://github.com/metadevpro/openapi3-ts (typescript)
+
+Tool|Language|Description|Website
+---|---|---|---|
+[openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|
 
 ## Models/Validators
 
-* https://github.com/gskorupa/openapi4j (Java)
-* https://github.com/electrotiti/swagger-tools (PHP, alpha OpenAPI3 support planned)
+Tool|Language|Description|Website
+---|---|---|---|
+[openapi4j](https://github.com/gskorupa/openapi4j)|Java|
+[swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP, alpha, OpenAPI3 support planned|
