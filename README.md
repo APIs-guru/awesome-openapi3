@@ -28,7 +28,9 @@ Tool|Language|Description|Website
 
 ## Editors
 
-* Coming soon
+Tool|Language|Description|Website
+---|---|---|---|
+[openapi-gui](https://github.com/mermade/openapi-gui)|Web|Visual creator/editor for OpenAPI definitions|https://openapi-gui.herokuapp.com/
 
 ## Generators
 
