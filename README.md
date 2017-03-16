@@ -22,7 +22,7 @@ Tool|Language|Description|Website
 
 Tool|Language|Description|Website
 ---|---|---|---|
-[openapi-viewer](https://github.com/koumoul-dev/openapi-viewer)|Vue.js|uses [vue-openapi component](https://github.com/koumoul-dev/vue-openapi)|https://koumoul.com/openapi-viewer/<br/>https://koumoul.com/s/geocoder/api-doc
+[openapi-viewer](https://github.com/koumoul-dev/openapi-viewer)|Vue.js|uses [vue-openapi component](https://github.com/koumoul-dev/vue-openapi)<br/>Docker image `docker run -p 8080:8080 koumoul/openapi-viewer`|https://koumoul.com/openapi-viewer/<br/>https://koumoul.com/s/geocoder/api-doc
 [openapi-ui](https://github.com/contentjet/openapi-ui)|React.js|
 [io-docs](https://github.com/mikeralphson/iodocs)|Node.js|fork of Mashery IO-docs with OpenAPI 2/3 support|http://io-docs.herokuapp.com/ 
 
