@@ -50,3 +50,8 @@ Tool|Language|Description|Website
 ---|---|---|---|
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 [swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP, alpha, OpenAPI3 support planned|
+
+## Transition Guidelines/Documentation
+
+* [swaggerplusplus](https://github.com/mermade/swaggerplusplus)
+* [OpenAPI Visual Documentation](http://apihandyman.io/openapi-visual-documentation-updated-with-3.0.0-rc0/)
