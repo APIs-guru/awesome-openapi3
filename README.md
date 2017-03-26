@@ -37,6 +37,7 @@ Tool|Language|Description|Website
 Tool|Language|Description|Website
 ---|---|---|---|
 [baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
+[Google Gnostic](https://github.com/googleapis/gnostic)|Go|Compile OpenAPI descriptions into equivalent Protocol Buffer representations
 
 ## Libraries
 
