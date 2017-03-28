@@ -44,6 +44,7 @@ Tool|Language|Description|Website
 Tool|Language|Description|Website
 ---|---|---|---|
 [openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|
+[Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|
 
 ## Models/Validators
 
