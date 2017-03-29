@@ -44,7 +44,7 @@ Tool|Language|Description|Website
 Tool|Language|Description|Website
 ---|---|---|---|
 [openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|
-[Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with defintion validation and migration support from V2 |
+[Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 |
 
 ## Models/Validators
 
