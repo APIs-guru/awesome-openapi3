@@ -15,7 +15,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 Tool|Language|Description|Website
 ---|---|---|---|
-[swagger2openapi](https://github.com/mermade/swagger2openapi)|Node.js|A converter and validator|https://openapi-converter.herokuapp.com
+[swagger2openapi](https://github.com/mermade/swagger2openapi)|Node.js|An OpenAPI / Swagger 2.0 to OpenAPI 3.0.x converter and validator|https://openapi-converter.herokuapp.com
 [pyswagger](https://github.com/mission-liao/pyswagger)|Python|support coming soon|
 
 ##  Documentation Viewers/Consoles
@@ -39,19 +39,17 @@ Tool|Language|Description|Website
 [baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
 [Google Gnostic](https://github.com/googleapis/gnostic)|Go|Compile OpenAPI descriptions into equivalent Protocol Buffer representations
 
-## Libraries
+## Parsers/Models/Validators
 
 Tool|Language|Description|Website
 ---|---|---|---|
+| [swagger-parser](https://github.com/swagger-api/swagger-parser/tree/feature/3.0.0-rc0) | Java | Swagger 1.0, 1.1, 1.2, 2.0 to Open API Specification converter |
+| [swagger-models](https://github.com/swagger-api/swagger-core/tree/feature/3.0.0-rc0/modules/swagger-models) | Java | Open API 3.0 Java Pojos |
+| [KaiZen OpenAPI Parser](https://github.com/RepreZen/KaiZen) | Java | High-performance Parser, Validator, and Java Object Model for OpenAPI 3.x |
 [openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|
 [Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 |
-
-## Models/Validators
-
-Tool|Language|Description|Website
----|---|---|---|
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
-[swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP, alpha, OpenAPI3 support planned|
+[swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP|alpha, OpenAPI3 support planned|
 
 ## Transition Guidelines/Documentation
 
