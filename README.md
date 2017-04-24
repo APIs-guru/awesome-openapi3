@@ -30,7 +30,7 @@ Tool|Language|Description|Website
 
 Tool|Language|Description|Website
 ---|---|---|---|
-[openapi-gui](https://github.com/Mermade/openapi-gui/tree/v3)|Vue.js|Visual creator/editor for OpenAPI definitions|https://openapi-gui.herokuapp.com/
+[openapi-gui](https://github.com/Mermade/openapi-gui/tree/buefy)|Vue.js|Visual creator/editor for OpenAPI definitions|https://openapi-gui.herokuapp.com/
 
 ## Generators
 
