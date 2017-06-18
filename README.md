@@ -51,6 +51,7 @@ Tool|Language|Description|Website
 [openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|TS Model & utils for OpenAPI 3.0.x contracts|
 [Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 |
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
+[kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
 [swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP|alpha, OpenAPI3 support planned|
 
 ## Transition Guidelines/Documentation
