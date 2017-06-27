@@ -49,6 +49,7 @@ Tool|Language|Description|Website
 | [swagger-models](https://github.com/swagger-api/swagger-core/tree/feature/3.0.0-rc0/modules/swagger-models) | Java | Open API 3.0 Java Pojos |
 | [KaiZen OpenAPI Parser](https://github.com/RepreZen/KaiZen-OpenApi-Parser) | Java | High-performance Parser, Validator, and Java Object Model for OpenAPI 3.x |
 [openapi3-ts](https://github.com/metadevpro/openapi3-ts)|typescript|TS Model & utils for OpenAPI 3.0.x contracts|
+[oai-ts-core](https://github.com/Apicurio/oai-ts-core)|typescript|Core typescript library to read and manipulate OpenAPI specification definitions|
 [Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 |
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 [kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
