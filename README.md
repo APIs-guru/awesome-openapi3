@@ -55,7 +55,6 @@ Tool|Language|Description|Website
 [Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 | http://openapiconverter.azurewebsites.net/
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 [kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
-[swagger-tools](https://github.com/electrotiti/swagger-tools)|PHP|alpha, OpenAPI3 support planned|
 
 ## Transition Guidelines/Documentation
 
