@@ -60,3 +60,4 @@ Tool|Language|Description|Website
 
 * [swaggerplusplus](https://github.com/mermade/swaggerplusplus)
 * [OpenAPI Visual Documentation](http://apihandyman.io/openapi-visual-documentation-updated-with-3.0.0-rc0/)
+* [Comparing OpenAPI 2.0 and 3.0.x definitions (blog posting)](https://dev.to/mikeralphson/comparing-openapiswagger-20-and-300-rc1)
