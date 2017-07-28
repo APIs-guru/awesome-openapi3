@@ -26,6 +26,7 @@ Tool|Language|Description|Website
 [openapi-ui](https://github.com/contentjet/openapi-ui)|React.js|React based OpenAPI 3.0+ documentation generator 
 [io-docs](https://github.com/mikeralphson/iodocs)|Node.js|fork of Mashery IO-docs with OpenAPI 2/3 support|http://io-docs.herokuapp.com/ 
 [lincoln](https://github.com/temando/open-api-renderer)|React.js|A React renderer for Open API v3|https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
+[widdershins](https://github.com/mermade/widdershins)|Node.js|Generate Slate/Shins markdown from OpenAPI 3.0.x|https://mermade.github.io/shins
 
 ## Editors
 
