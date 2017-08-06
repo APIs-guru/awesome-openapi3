@@ -56,6 +56,7 @@ Tool|Language|Description|Website
 [Tavis.OpenApi](https://github.com/tavis-software/Tavis.OpenApi/)|dotnet|C# based parser with definition validation and migration support from V2 | http://openapiconverter.azurewebsites.net/
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 [kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
+[openapi3-rust](https://github.com/adwhit/openapi3-rust)|Rust|Rust serialization library for OpenAPIv3|
 
 ## Transition Guidelines/Documentation
 
