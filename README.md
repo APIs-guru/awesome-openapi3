@@ -32,7 +32,7 @@ Tool|Language|Description|Website
 
 Tool|Language|Description|Website
 ---|---|---|---|
-[KaiZen OpenAPI Editor](https://github.com/RepreZen/KaiZen-OpenAPI-Editor)|Java|Eclipse Editor for the Swagger-OpenAPI Description Language|https://www.reprezen.com/
+[KaiZen OpenAPI Editor](https://github.com/RepreZen/KaiZen-OpenAPI-Editor)|Java|Eclipse Editor for the Swagger-OpenAPI Description Language|https://github.com/RepreZen/KaiZen-OpenAPI-Editor
 [openapi-gui](https://github.com/Mermade/openapi-gui/tree/buefy)|Vue.js|Visual creator/editor for OpenAPI definitions|https://openapi-gui.herokuapp.com/
 [RepreZen API Studio](https://www.reprezen.com/swagger-tools)|Java|API Design Just Got Real.|https://www.reprezen.com/
 
