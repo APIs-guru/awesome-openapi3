@@ -16,6 +16,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 Tool|Language|Description|Website
 ---|---|---|---|
 [swagger2openapi](https://github.com/mermade/swagger2openapi)|Node.js|An OpenAPI / Swagger 2.0 to OpenAPI 3.0.x converter and validator|https://openapi-converter.herokuapp.com
+[odata-openapi](https://github.com/oasis-tcs/odata-openapi) | XSLT | OData 4.0 to OpenAPI 3.0.0 converter |
 [pyswagger](https://github.com/mission-liao/pyswagger)|Python|support coming soon|
 
 ##  Documentation Viewers/Consoles
