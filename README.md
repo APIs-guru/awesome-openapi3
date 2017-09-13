@@ -38,6 +38,7 @@ Tool|Language|Description|Website
 [KaiZen OpenAPI Editor](https://github.com/RepreZen/KaiZen-OpenAPI-Editor)|Java|Eclipse Editor for the Swagger-OpenAPI Description Language|https://github.com/RepreZen/KaiZen-OpenAPI-Editor
 [openapi-gui](https://github.com/Mermade/openapi-gui/tree/buefy)|Vue.js|Visual creator/editor for OpenAPI definitions|https://openapi-gui.herokuapp.com/
 [RepreZen API Studio](https://www.reprezen.com/swagger-tools)|Java|API Design Just Got Real.|https://www.reprezen.com/
+[Apicurio-Studio](https://github.com/Apicurio/apicurio-studio)|TypeScript|Open Source API Design|http://www.apicur.io/
 
 ## Generators
 
