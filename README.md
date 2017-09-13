@@ -18,6 +18,7 @@ Tool|Language|Description|Website
 [swagger2openapi](https://github.com/mermade/swagger2openapi)|Node.js|An OpenAPI / Swagger 2.0 to OpenAPI 3.0.x converter and validator|https://openapi-converter.herokuapp.com
 [odata-openapi](https://github.com/oasis-tcs/odata-openapi) | XSLT | OData 4.0 to OpenAPI 3.0.0 converter |
 [openapi-filter](https://github.com/Mermade/openapi-filter) | Node.js | Filter internal components from OpenAPI 2.0 / 3.0.x definitions
+[phpsx](https://github.com/apioo/psx) | PHP | PHP REST API Framework | https://phpsx.org/tools/openapi
 [pyswagger](https://github.com/mission-liao/pyswagger)|Python|support coming soon|
 
 ##  Documentation Viewers/Consoles
@@ -59,6 +60,7 @@ Tool|Language|Description|Website
 [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 [kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
 [openapi3-rust](https://github.com/adwhit/openapi3-rust)|Rust|Rust serialization library for OpenAPIv3|
+[psx-api](https://github.com/apioo/psx-api) | PHP | Parse and generate API specification formats | http://phpsx.org
 
 ## Transition Guidelines/Documentation
 
