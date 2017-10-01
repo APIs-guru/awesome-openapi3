@@ -56,6 +56,7 @@ Tool|Language|Description|Website
 [baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
 [Google Gnostic](https://github.com/googleapis/gnostic)|Go|Compile OpenAPI descriptions into equivalent Protocol Buffer representations
 [serverless-openapi-documentation](https://github.com/temando/serverless-openapi-documentation)|Typescript|Serverless 1.0 plugin to generate OpenAPI V3 documentation from serverless configuration|
+[zero-rails_openapi](https://github.com/zhandao/zero-rails_openapi)|Ruby|Provide concise DSL for generating the OpenAPI Specification 3 (OAS3) documentation JSON file for Rails application, then you can use Swagger UI 3.2.0+ to show the documentation. 
 
 ## Parsers/Models/Validators
 
