@@ -1,4 +1,4 @@
-# awesome-openapi3
+# awesome-openapi3 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 A list of awesome projects related to OpenApi 3.0.x
 
 <div align="center">
@@ -10,6 +10,14 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 ## Contributing
 
 Please raise a Pull-Request or issue with any projects we've missed!
+
+## Table of Contents
+* [Converters](#converters)
+* [Documentation Viewers/Consoles](#documentation-viewersconsoles)
+* [Editors](#editors)
+* [Generators](#generators)
+* [Parsers/Models/Validators](#parsersmodelsvalidators)
+* [Transition Guidelines/Documentation](#transition-guidelinesdocumentation)
 
 ## Converters
 
