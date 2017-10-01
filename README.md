@@ -11,7 +11,7 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 
 Please raise a Pull-Request or issue with any projects we've missed!
 
-## Table of Contents
+## Contents
 * [Converters](#converters)
 * [Documentation Viewers/Consoles](#documentation-viewersconsoles)
 * [Editors](#editors)
