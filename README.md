@@ -72,6 +72,7 @@ Tool|Language|Description|Website
 [kin-openapi](https://github.com/jban332/kin-openapi)|Go|A Go library for handling OpenAPI 3.0 specifications|
 [openapi3-rust](https://github.com/adwhit/openapi3-rust)|Rust|Rust serialization library for OpenAPIv3|
 [psx-api](https://github.com/apioo/psx-api) | PHP | Parse and generate API specification formats | http://phpsx.org
+[openapi-spec-validator](https://github.com/p1c2u/openapi-spec-validator) | Python | OpenAPI Spec validator |
 
 ## Transition Guidelines/Documentation
 
