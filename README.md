@@ -27,6 +27,7 @@ Tool|Language|Description|Website
 [odata-openapi](https://github.com/oasis-tcs/odata-openapi) | XSLT | OData 4.0 to OpenAPI 3.0.0 converter |
 [openapi-filter](https://github.com/Mermade/openapi-filter) | Node.js | Filter internal components from OpenAPI 2.0 / 3.0.x definitions
 [phpsx](https://github.com/apioo/psx) | PHP | PHP REST API Framework | https://phpsx.org/tools/openapi
+[OData.OpenAPI](https://github.com/xuzhg/OData.OpenAPI) | dotnet | Convert an Edm (Entity Data Model) to OpenApi 3.0. | 
 [pyswagger](https://github.com/mission-liao/pyswagger)|Python|support coming soon|
 
 ##  Documentation Viewers/Consoles
