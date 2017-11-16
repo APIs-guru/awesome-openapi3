@@ -60,6 +60,7 @@ Tool|Language|Description|Website
 [serverless-openapi-documentation](https://github.com/temando/serverless-openapi-documentation)|Typescript|Serverless 1.0 plugin to generate OpenAPI V3 documentation from serverless configuration|
 [zero-rails_openapi](https://github.com/zhandao/zero-rails_openapi)|Ruby|Provide concise DSL for generating the OpenAPI Specification 3 (OAS3) documentation JSON file for Rails application, then you can use Swagger UI 3.2.0+ to show the documentation.
 [slush-vertx](https://www.npmjs.com/package/slush-vertx) | Java, Kotlin & Groovy | Generate server skeleton for [Vert.x Web API Contract](http://vertx.io/docs/#web) and API Client based on [Vert.x 3 Web Client](http://vertx.io/docs/#web) | [NPM Package](https://www.npmjs.com/package/slush-vertx) [Github Repo](https://github.com/pmlopes/slush-vertx)
+[openapi-codegen](https://github.com/mermade/openapi-codegen)|Node.js|Port of swagger-codegen templates, with OpenAPI 3.0 support|https://mermade.github.io/openapi-codegen
 
 ## Server Implementations
 Tool|Language|Description|Website
