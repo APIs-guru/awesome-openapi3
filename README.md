@@ -67,8 +67,7 @@ Tool|Language|Description|Website
 Tool|Language|Description|Website
 ---|---|---|---|
 [Vert.x Web API Contract](http://vertx.io/docs/#web) | Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala | Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests validation | [Vert.x Web API Contract documentation](http://vertx.io/docs/#web) 
-[light-rest-4j](https://github.com/networknt/light-rest-4j) | Java | Generate project based on OpenAPI 3.0
-project and use the specification during runtime for OAuth 2.0 scope verification and validation | https://doc.networknt.com/tutorial/rest/openapi/petstore/
+[light-rest-4j](https://github.com/networknt/light-rest-4j) | Java | Generate and validate based on OpenAPI 3.0 specification | https://doc.networknt.com/tutorial/rest/openapi/petstore/
 
 ## Parsers/Models/Validators
 
