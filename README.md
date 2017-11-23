@@ -61,11 +61,14 @@ Tool|Language|Description|Website
 [zero-rails_openapi](https://github.com/zhandao/zero-rails_openapi)|Ruby|Provide concise DSL for generating the OpenAPI Specification 3 (OAS3) documentation JSON file for Rails application, then you can use Swagger UI 3.2.0+ to show the documentation.
 [slush-vertx](https://www.npmjs.com/package/slush-vertx) | Java, Kotlin & Groovy | Generate server skeleton for [Vert.x Web API Contract](http://vertx.io/docs/#web) and API Client based on [Vert.x 3 Web Client](http://vertx.io/docs/#web) | [NPM Package](https://www.npmjs.com/package/slush-vertx) [Github Repo](https://github.com/pmlopes/slush-vertx)
 [openapi-codegen](https://github.com/mermade/openapi-codegen)|Node.js|Port of swagger-codegen templates, with OpenAPI 3.0 support|https://mermade.github.io/openapi-codegen
+[light-codegen](https://github.com/networknt/light-codegen) | Java | Generate both Swagger 2.0 and OpenAPI 3.0 projects | https://doc.networknt.com/tutorial/generator/openapi/
 
 ## Server Implementations
 Tool|Language|Description|Website
 ---|---|---|---|
 [Vert.x Web API Contract](http://vertx.io/docs/#web) | Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala | Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests validation | [Vert.x Web API Contract documentation](http://vertx.io/docs/#web) 
+[light-rest-4j](https://github.com/networknt/light-rest-4j) | Java | Generate project based on OpenAPI 3.0
+project and use the specification during runtime for OAuth 2.0 scope verification and validation | https://doc.networknt.com/tutorial/rest/openapi/petstore/
 
 ## Parsers/Models/Validators
 
@@ -82,6 +85,7 @@ Tool|Language|Description|Website
 [openapi3-rust](https://github.com/adwhit/openapi3-rust)|Rust|Rust serialization library for OpenAPIv3|
 [psx-api](https://github.com/apioo/psx-api) | PHP | Parse and generate API specification formats | http://phpsx.org
 [openapi-spec-validator](https://github.com/p1c2u/openapi-spec-validator) | Python | OpenAPI Spec validator | [Docker image](https://hub.docker.com/r/usabillabv/openapi3-validator/)
+[openapi-parser](https://github.com/networknt/openapi-parser) | Java | Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices | https://doc.networknt.com/getting-started/light-rest-4j/
 
 ## Transition Guidelines/Documentation
 
