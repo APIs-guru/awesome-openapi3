@@ -85,6 +85,7 @@ Tool|Language|Description|Website
 [psx-api](https://github.com/apioo/psx-api) | PHP | Parse and generate API specification formats | http://phpsx.org
 [openapi-spec-validator](https://github.com/p1c2u/openapi-spec-validator) | Python | OpenAPI Spec validator | [Docker image](https://hub.docker.com/r/usabillabv/openapi3-validator/)
 [openapi-parser](https://github.com/networknt/openapi-parser) | Java | Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices | https://doc.networknt.com/getting-started/light-rest-4j/
+[openapi3_parser](https://github.com/kevindew/openapi3_parser) | Ruby | A Ruby implementation of parsing and validating the OpenAPI 3 Specification |
 
 ## Transition Guidelines/Documentation
 
