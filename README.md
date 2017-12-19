@@ -88,6 +88,7 @@ Tool|Language|Description|Website
 [openapi-spec-validator](https://github.com/p1c2u/openapi-spec-validator) | Python | OpenAPI Spec validator | [Docker image](https://hub.docker.com/r/usabillabv/openapi3-validator/)
 [openapi-parser](https://github.com/networknt/openapi-parser) | Java | Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices | https://doc.networknt.com/getting-started/light-rest-4j/
 [openapi3_parser](https://github.com/kevindew/openapi3_parser) | Ruby | A Ruby implementation of parsing and validating the OpenAPI 3 Specification |
+[OpenAPI.net](https://github.com/Microsoft/OpenAPI.NET) | C# | The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model. |
 
 ## Transition Guidelines/Documentation
 
