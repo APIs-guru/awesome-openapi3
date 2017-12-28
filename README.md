@@ -18,6 +18,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 * [Generators](#generators)
 * [Server implementations](#server-implementations)
 * [Parsers/Models/Validators](#parsersmodelsvalidators)
+* [Tools](#tools)
 * [Transition Guidelines/Documentation](#transition-guidelinesdocumentation)
 
 ## Converters
@@ -89,6 +90,12 @@ Tool|Language|Description|Website
 [openapi-parser](https://github.com/networknt/openapi-parser) | Java | Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices | https://doc.networknt.com/getting-started/light-rest-4j/
 [openapi3_parser](https://github.com/kevindew/openapi3_parser) | Ruby | A Ruby implementation of parsing and validating the OpenAPI 3 Specification |
 [OpenAPI.net](https://github.com/Microsoft/OpenAPI.NET) | C# | The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model. |
+
+## Tools
+
+Tool|Language|Description|Website
+---|---|---|---|
+| [openapi-diff](https://github.com/quen2404/openapi-diff) | Java | Utility for comparing two OpenAPI specifications. |
 
 ## Transition Guidelines/Documentation
 
