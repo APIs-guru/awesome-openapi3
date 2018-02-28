@@ -11,17 +11,17 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 
 Please raise a Pull-Request or issue with any projects we've missed!
 
-# Contents
+### Contents
 
 {% for category in site.data.categories %}
 * <a href="#{{ category.slug }}">{{ category.name }}</a>
 {% endfor %}
 
-## API access
+#### API access
 
 * [categories.json](/api/categories.json)
 * [tools.json](/api/tools.json)
 
-## Coming soon
+#### Coming soon
 
-For now, please browse the list on GitHub
+For now, please browse the list on [GitHub](https://github.com/APIs-guru/awesome-openapi3)
