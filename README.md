@@ -3,6 +3,7 @@ A list of awesome projects related to OpenApi 3.0.x.
 
 <div align="center">
   <img src="https://github.com/Mermade/awesome-openapi3/blob/master/openapi_awesome1.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/APIs-guru/openapi-directory/master/branding/icon-96x96.png"/>
 </div>
 
 Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
