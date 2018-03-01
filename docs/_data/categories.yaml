@@ -1,3 +1,6 @@
+- name: Code Generators
+  slug: sdk
+
 - name: Converters
   slug: converters
 
@@ -7,14 +10,17 @@
 - name: Editors
   slug: editors
 
-- name: Mock Generators
+- name: Frameworks
+  slug: frameworks
+
+- name: Mock Servers
   slug: mock
 
 - name: Parsers / Validators
   slug: parsers
 
-- name: Code Generators
-  slug: sdk
+- name: Testing
+  slug: testing
 
 - name: Miscellaneous
   slug: miscellaneous

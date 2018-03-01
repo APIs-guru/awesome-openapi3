@@ -26,7 +26,7 @@
 - name: swagger2openapi
   category: converters
   language: Node.js
-  link: https://mermade.org.uk/openapi-converter
+  demo: https://mermade.org.uk/openapi-converter
   github: https://github.com/Mermade/swagger2openapi
   description: Upgrade specs from OpenAPI v2.0 to v3.0, bundling into one mega file or respecting $refs
   v2: true
@@ -59,7 +59,7 @@
 
 - name: openapi-viewer
   category: documentation
-  link: https://koumoul.com/openapi-viewer/
+  demo: https://koumoul.com/openapi-viewer/
   github: https://github.com/koumoul-dev/openapi-viewer
   language: Vue.js
   description: Browse and test a REST API described with the OpenAPI 3.0 Specification
@@ -76,7 +76,7 @@
   category: documentation
   language: JavaScript
   description: Spectacle generates beautiful static HTML5 documentation from OpenAPI/Swagger 2.0 API specifications
-  link: https://sourcey.com/spectacle/
+  demo: https://sourcey.com/spectacle/
   github: https://github.com/sourcey/spectacle
   v2: true
 
@@ -84,39 +84,34 @@
   category: documentation
   language: JavaScript
   github: https://github.com/Rebilly/ReDoc/
-  link: https://rebilly.github.io/ReDoc/
+  demo: https://rebilly.github.io/ReDoc/
   description: OpenAPI/Swagger-generated API Reference Documentation
   v2: true
   v3_progress_link: https://github.com/Rebilly/ReDoc/issues/327
 
 - name: widdershins
   category: documentation
-  link: https://mermade.github.io/shins
+  demo: https://mermade.github.io/shins
   github: https://github.com/mermade/widdershins
   language: Node.js
   description: Generate Slate/Shins markdown from OpenAPI 2.0/3.0.x
   v2: true
   v3: true
 
-- name: Swagger-Codegen
-  category: code-generators
-  link: https://swagger.io/swagger-codegen/
-  github: https://github.com/swagger-api/swagger-codegen
-  language: Java
-  description: Design, Build, and Document APIs in the Cloud with SwaggerHub
-  v2: true
-  v3_progress_link: https://github.com/swagger-api/swagger-codegen/issues/6598
-
 - name: generator-openapi-repo
-  category: code-generators
-  link: https://github.com/Rebilly/generator-openapi-repo
+  category: documentation
   github: https://github.com/Rebilly/generator-openapi-repo
   language: JavaScript
   description: Generate the repository structure for a scalable OpenAPI definition
   v2: true
 
-# [io-docs](https://github.com/mikeralphson/iodocs)|Node.js|fork of Mashery IO-docs with OpenAPI 2/3 support|http://io-docs.herokuapp.com/
-# [lincoln](https://github.com/temando/open-api-renderer)|React.js|A React renderer for Open API v3|https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
+- name: lincoln
+  category: documentation
+  github: https://github.com/temando/open-api-renderer
+  language: React.hs
+  description: A React renderer for Open API v3
+  demo: https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
+  v3: true
 
 # Editors
 
@@ -141,6 +136,7 @@
   category: editors
   language: Node.js
   github: https://github.com/swagger-api/swagger-editor
+  demo: https://editor.swagger.io/
   v2: true
   v3: true
 
@@ -195,6 +191,24 @@
   github: https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server
   description: An OpenAPI 3 mock server plugin for Express Gateway 
   v3: true
+
+# Frameworks
+
+- name: modern
+  category: frameworks
+  language: Ruby
+  github: https://github.com/modern-project/modern-ruby
+  description: An OpenAPI-first web server for Ruby/Rack. 
+  v3: true
+
+- name: go-swagger
+  category: frameworks
+  demo: https://goswagger.io/
+  github: https://github.com/go-swagger/go-swagger
+  language: Go
+  description: Everything all in one. Parser, validator, generates spec from code, or code from spec!
+  v2: true
+  v3_progress_link: https://github.com/go-swagger/go-swagger/issues/1122
 
 # Parsers / Validators
 
@@ -276,7 +290,6 @@
 # [openapi4j](https://github.com/gskorupa/openapi4j)|Java|
 # [openapi-parser](https://github.com/networknt/openapi-parser) | Java | Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices | https://doc.networknt.com/getting-started/light-rest-4j/
 # [openapi3_parser](https://github.com/kevindew/openapi3_parser) | Ruby | A Ruby implementation of parsing and validating the OpenAPI 3 Specification |
-# [OpenAPI.net](https://github.com/Microsoft/OpenAPI.NET) | C# | The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model. |
 # | [swagger-models](https://github.com/swagger-api/swagger-core/tree/feature/3.0.0-rc0/modules/swagger-models) | Java | Open API 3.0 Java Pojos |
 
 # ## Generators
@@ -286,11 +299,8 @@
 # [slush-vertx](https://www.npmjs.com/package/slush-vertx) | Java, Kotlin & Groovy | Generate server skeleton for [Vert.x Web API Contract](http://vertx.io/docs/#web) and API Client based on [Vert.x 3 Web Client](http://vertx.io/docs/#web) | [NPM Package](https://www.npmjs.com/package/slush-vertx) [Github Repo](https://github.com/pmlopes/slush-vertx)
 # [openapi-codegen](https://github.com/mermade/openapi-codegen)|Node.js|Port of swagger-codegen templates, with OpenAPI 3.0 support|https://mermade.github.io/openapi-codegen
 # [light-codegen](https://github.com/networknt/light-codegen) | Java | Generate both Swagger 2.0 and OpenAPI 3.0 projects | https://doc.networknt.com/tutorial/generator/openapi/
-# [swagger-node-codegen](https://github.com/fmvilas/swagger-node-codegen) | Node.js | An OpenAPI 3.x/Swagger 2 code generator for Node.js |
 #
 # ## Server Implementations
-# Tool|Language|Description|Website
-# ---|---|---|---|
 # [Vert.x Web API Contract](http://vertx.io/docs/#web) | Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala | Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests validation | [Vert.x Web API Contract documentation](http://vertx.io/docs/#web)
 # [light-rest-4j](https://github.com/networknt/light-rest-4j) | Java | Generate and validate based on OpenAPI 3.0 specification | https://doc.networknt.com/tutorial/rest/openapi/petstore/
 # | [Fusio](https://github.com/apioo/fusio) | PHP, JavaScript | Build API endpoints based on OpenAPI 3 | http://fusio-project.org/ |
@@ -329,17 +339,22 @@
   description:  Generate a PHP Client API (PSR7 compatible) given a OpenAPI (Swagger) specification.
   v2: true
 
-- name: go-swagger
-  category:
-    - parser
-    - sdk
-    - converters
-  link: https://goswagger.io/
-  github: https://github.com/go-swagger/go-swagger/issues/1122
-  language: Go
-  description: Everything all in one. Parser, validator, generates spec from code, or code from spec!
+# Testing
+
+- name: openapi-auto-test
+  category: testing
+  description: Automatically reads an OpenAPI 3.0 definition and generates a Postman collection to be used with newman for automated API tests. 
+  github: https://github.com/dtzar/openapi-auto-test
+  language: Node.js
+  v3: true
+
+- name: Dredd
+  category: testing
+  description: Language-agnostic HTTP API Testing Framework 
+  github: https://github.com/apiaryio/dredd
+  language: Node.js
+  documentation: http://dredd.rtfd.org/
   v2: true
-  v3_progress_link: https://github.com/go-swagger/go-swagger/issues/1122
 
 # Miscellaneous
 
@@ -358,4 +373,11 @@
   v2: true
   v3: true
 
+- name: OpenAPI Extract
+  category: miscellaneous
+  language: Node.js
+  description: Extract paths, operations etc from OpenAPI definitions
+  github: https://github.com/Mermade/openapi-extract
+  v2: true
+  v3: true
 
