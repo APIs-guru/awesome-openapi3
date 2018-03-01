@@ -25,14 +25,9 @@ Please raise a Pull-Request or issue with any projects we've missed!
 #### Tools
 
 {% for category in site.data.categories %}
-Project | Language | Description | Link
+| Project | Language | Description | Link |
 |---|---|---|---|
-  {% for tool in site.data.tools %}
-    {% if tool.category == category.slug %}
-| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}"> {{ tool.name }} </a> | {{ tool.language }} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">Demo</a>{% endif %} |
-    {% endif %}
-
-  {% endfor %}
+{% for tool in site.data.tools %}{% if tool.category == category.slug && tool.v3 == true %}| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}"> {{ tool.name }} </a> | {{ tool.language }} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">Demo</a>{% endif %} | {% endif %} {% endfor %}
 
   <a href="#">Back to top</a>
 
