@@ -27,9 +27,11 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 ## {{ category.name }}
 
+{% assign tmp = site.data.tools | where:"category",category.slug | where:"v3",true %}
+
 | Project | Language | Description | Link |
 |---|---|---|---|
-{% for tool in site.data.tools %}{% if tool.category == category.slug && tool.v3 == true %}| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}"> {{ tool.name }} </a> | {{ tool.language }} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">Demo</a>{% endif %} | {% endif %}
+{% for tool in tmp %}| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}"> {{ tool.name }} </a> | {{ tool.language }} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">Demo</a>{% endif %} | {% endif %}
 {% endfor %}
 
   <a href="#">Back to top</a>
