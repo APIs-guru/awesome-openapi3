@@ -10,12 +10,12 @@
 - name: Mock Generators
   slug: mock
 
-- name: Miscellaneous
-  slug: miscellaneous
-
 - name: Parsers / Validators
   slug: parsers
 
-- name: SDK Generators
+- name: Code Generators
   slug: sdk
+
+- name: Miscellaneous
+  slug: miscellaneous
 

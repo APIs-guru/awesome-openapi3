@@ -40,14 +40,6 @@
   v2: true
   v3: true
 
-- name: OpenAPI Filter
-  category: converters
-  language: Node.js
-  description: Filter internal components from OpenAPI definitions
-  github: https://github.com/Mermade/openapi-filter
-  v2: true
-  v3: true
-
 - name: OData.OpenAPI
   category: converters
   github: https://github.com/xuzhg/OData.OpenAPI
@@ -157,9 +149,7 @@
   language: Java
   link: https://www.reprezen.com/
   github: https://www.reprezen.com/swagger-tools
-  description: |
-    RepreZen API Studio is an integrated workbench that brings API-first design into focus for your whole team, harmonizes your API designs, and
-    generates APIs that click into client apps.
+  description: RepreZen API Studio is an integrated workbench that brings API-first design into focus for your whole team, harmonizes your API designs, and generates APIs that click into client apps.
   v2: true
   v3: true
 
@@ -168,8 +158,7 @@
   language: TypeScript
   link: http://www.apicur.io/
   github: https://github.com/apicurio/apicurio-studio
-  description: |
-    A standalone API design studio that can be used to create new or edit existing API designs.
+  description: A standalone API design studio that can be used to create new or edit existing API designs.
   v2: true
 
 - name: Rápido
@@ -178,9 +167,20 @@
   link: https://rapidodesigner.com/
   github: https://github.com/apiacademy/rapido-web
   description: An API design tool that facilitates the sketching phase of design.
+  v2: true
+  v3: true
+
+- name: OpenAPI-GUI
+  category: editors
+  language: Node.js
+  link: https://mermade.github.io/openapi-gui
+  github: https://github.com/mermade/openapi-gui
+  description: GUI / visual editor for creating and editing OpenApi / Swagger definitions
+  v2: true
   v3: true
 
 # Mock Generators
+
 - name: Prism
   category: mock
   language: cli
@@ -188,6 +188,13 @@
   github: https://github.com/stoplightio/prism
   description: Turn any OAI file into an API server with mocking, transformations, validations, and more.
   v2: true
+
+- name: express-gateway-plugin-openapi3-mock-server
+  category: mock
+  language: Node.js
+  github: https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server
+  description: An OpenAPI 3 mock server plugin for Express Gateway 
+  v3: true
 
 # Parsers / Validators
 
@@ -289,7 +296,32 @@
 # | [Fusio](https://github.com/apioo/fusio) | PHP, JavaScript | Build API endpoints based on OpenAPI 3 | http://fusio-project.org/ |
 #
 
-# SDK Generators
+# Code Generators (sdk)
+
+- name: swagger-codegen
+  category: sdk
+  language: Java
+  github: https://github.com/swagger-api/swagger-codegen
+  description: A template-driven engine to generate documentation, API clients and server stubs in different languages by parsing your OpenAPI / Swagger definition
+  v2: true
+  v3: true
+
+- name: openapi-codegen
+  category: sdk
+  language: Node.js
+  github: https://github.com/mermade/openapi-codegen
+  description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
+  v2: true
+  v3: true
+
+- name: swagger-node-codegen
+  category: sdk
+  language: Node.js
+  github: https://github.com/fmvilas/swagger-node-codegen
+  description: An OpenAPI 3.x/Swagger 2 code generator for Node.js
+  v2: true
+  v3: true
+
 - name: janephp/open-api
   category: sdk
   language: PHP
@@ -310,10 +342,20 @@
   v3_progress_link: https://github.com/go-swagger/go-swagger/issues/1122
 
 # Miscellaneous
+
 - name: openapi-diff
   category: miscellaneous
   language: Java
   github: https://github.com/quen2404/openapi-diff
   description: Utility for comparing two OpenAPI specifications.
   v3: true
+
+- name: OpenAPI Filter
+  category: miscellaneous
+  language: Node.js
+  description: Filter internal components from OpenAPI definitions
+  github: https://github.com/Mermade/openapi-filter
+  v2: true
+  v3: true
+
 
