@@ -12,7 +12,7 @@ layout: none
       <item>
         <title>{{ tool.name | xml_escape }}</title>
         <description>{{ tool.description | xml_escape }}</description>
-        <pubDate>{{ tool.date || 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <pubDate>{% if tool.date %}{{ tool.date | date: "%a, %d %b %Y %H:%M:%S %z" }}{% else %}{{ 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}{% endif %}</pubDate>
         <link>{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</link>
         <guid isPermaLink="true">{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</guid>
       </item>
