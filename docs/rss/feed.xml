@@ -13,8 +13,8 @@ layout: none
         <title>{{ tool.name | xml_escape }}</title>
         <description>{{ tool.description | xml_escape }}</description>
         <pubDate>{{ tool.date || 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ tool.link || tool.github }}</link>
-        <guid isPermaLink="true">{{ tool.link || tool.github }}</guid>
+        <link>{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</link>
+        <guid isPermaLink="true">{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</guid>
       </item>
     {% endfor %}
   </channel>
