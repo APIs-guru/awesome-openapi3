@@ -1,0 +1,21 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    {% for tool in site.data.tools %}
+      <item>
+        <title>{{ tool.name | xml_escape }}</title>
+        <description>{{ tool.description | xml_escape }}</description>
+        <pubDate>{{ tool.date || 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ tool.link || tool.github }}</link>
+        <guid isPermaLink="true">{{ tool.link || tool.github }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
