@@ -25,3 +25,7 @@ The raw data also contains OpenAPI 2.0-related projects.
 * [categories.json](https://apis.guru/awesome-openapi3/api/categories.json)
 * [tools.json](https://apis.guru/awesome-openapi3/api/tools.json)
 
+## RSS Feed
+
+* [feed.xml](https://apis.guru/awesome-openapi3/rss/feed.xml)
+
