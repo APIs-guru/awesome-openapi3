@@ -354,6 +354,13 @@
   v2: true
   v3: true
 
+- name: OAS3-chow-chow
+  category: parsers
+  github: https://github.com/supertong/oas3-chow-chow
+  language: Node.js
+  description: Request and response validator against OpenAPI Specification 3
+  v3: true
+
 # ## Generators
 # [baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
 # [serverless-openapi-documentation](https://github.com/temando/serverless-openapi-documentation)|Typescript|Serverless 1.0 plugin to generate OpenAPI V3 documentation from serverless configuration|
