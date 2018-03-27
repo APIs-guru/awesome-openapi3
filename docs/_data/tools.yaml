@@ -249,6 +249,14 @@
   link: http://fusio-project.org/
   v3: true
 
+- name: openapi-first
+  category: frameworks
+  github: https://github.com/smartrecruiters/openapi-first
+  language: Node.js
+  description: Start your node REST app with designing API first! 
+  link: https://www.npmjs.com/package/@smartrecruiters/openapi-first
+  v3: true
+
 # Parsers / Validators
 
 - name: swagger-core
