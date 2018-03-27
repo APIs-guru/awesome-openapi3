@@ -25,7 +25,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 {% for category in site.data.categories %}
 
-## {{ category.name }}
+<h2><a id="{{category.slug}}">category.name</a></h2>
 
 {% assign tmp = site.data.tools | where:"category",category.slug | where:"v3",true %}
 
