@@ -108,7 +108,7 @@
 - name: lincoln
   category: documentation
   github: https://github.com/temando/open-api-renderer
-  language: React.hs
+  language: React.js
   description: A React renderer for Open API v3
   demo: https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
   v3: true
@@ -263,6 +263,7 @@
   category: parsers
   github: https://github.com/swagger-api/swagger-core
   description: Examples and server integrations for generating the Swagger API Specification, which enables easy access to your REST API 
+  language: Java
   v2: true
   v3: true
 
