@@ -387,6 +387,14 @@
   v2: true
   v3: true
 
+- name: light-codegen
+  category: sdk
+  language: Java
+  github: https://github.com/networknt/light-codegen
+  description: A fast generic template-driven engine based on rocker to scaffold projects for Rest, GraphQL and Hybrid RPC
+  v2: true
+  v3: true
+
 - name: openapi-codegen
   category: sdk
   language: Node.js
