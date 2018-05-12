@@ -403,6 +403,14 @@
   v2: true
   v3: true
 
+- name: openapi-generator
+  category: sdk
+  language: Java
+  github: https://github.com/OpenAPITools/openapi-generator
+  description: A template-driven engine to generate documentation, API clients and server stubs in different languages by parsing your OpenAPI definition (community-driven fork of swagger-codegen)
+  v2: true
+  v3: true
+
 - name: swagger-node-codegen
   category: sdk
   language: Node.js
