@@ -362,6 +362,13 @@
   description: "C# based parser with definition validation and migration support from V2"
   v2: true
   v3: true
+  
+- name: OpenAPIParser
+  category: parsers
+  github: https://github.com/Dzoukr/OpenAPIParser
+  language: 'F#'
+  description: 'Simple Open API F# Parser'
+  v3: true
 
 - name: OAS3-chow-chow
   category: parsers
