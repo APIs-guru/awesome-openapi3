@@ -453,7 +453,9 @@
 - name: swagger-inspector
   category: testing
   description: Test and document APIs without testing your patience
+  language: SaaS
   link: https://swagger.io/tools/swagger-inspector/
+  demo: https://inspector.swagger.io/
   v2: true
   v3: true
 
