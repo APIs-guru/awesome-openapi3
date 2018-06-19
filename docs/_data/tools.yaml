@@ -449,6 +449,13 @@
   language: Node.js
   documentation: http://dredd.rtfd.org/
   v2: true
+  
+- name: swagger-inspector
+  category: testing
+  description: Test and document APIs without testing your patience
+  link: https://swagger.io/tools/swagger-inspector/
+  v2: true
+  v3: true
 
 # Miscellaneous
 
