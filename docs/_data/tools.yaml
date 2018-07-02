@@ -346,6 +346,16 @@
   language: CLI
   description: Lint to enforce quality rules on your OpenAPI specifications
   v3: true
+  
+- name: openapi-lint-vscode
+  category: parsers
+  github: https://github.com/mermade/openapi-lint-vscode
+  link: 'https://marketplace.visualstudio.com/items?itemName=mermade.openapi-lint'
+  language: Node.js
+  description: Validation and linting extension for Visual Studio Code
+  v2: false
+  v3: true
+  
 
 - name: psx-api
   category: parsers
