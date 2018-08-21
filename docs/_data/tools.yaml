@@ -200,6 +200,13 @@
   description: An OpenAPI 3 mock server plugin for Express Gateway 
   v3: true
 
+- name: API Sprout
+  category: mock
+  language: cli / Docker
+  github: https://github.com/danielgtaylor/apisprout
+  description: Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation
+  v3: true
+
 # Frameworks
 
 - name: swagger-node
