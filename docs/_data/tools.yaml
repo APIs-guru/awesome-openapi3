@@ -443,6 +443,14 @@
   v2: true
   v3: true
 
+- name: openapi3-typescript-codegen
+  category: sdk
+  language: TypeScript
+  github: https://github.com/foxel/openapi3-typescript-codegen
+  description: OpenAPI 3.0 CodeGen for TypeScript
+  v2: false
+  v3: true
+
 - name: swagger-node-codegen
   category: sdk
   language: Node.js
