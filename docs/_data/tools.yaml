@@ -508,4 +508,12 @@
   github: https://github.com/Mermade/openapi-extract
   v2: true
   v3: true
+  
+- name: Yamlinc
+  category: miscellaneous
+  language: Node.js
+  description: Compose multiple Yaml files using $include tag
+  github: https://github.com/javanile/yamlinc
+  v2: true
+  v3: true
 
