@@ -516,4 +516,12 @@
   github: https://github.com/javanile/yamlinc
   v2: true
   v3: true
+  
+- name: oasgraph
+  category: frameworks
+  language: TypeScript
+  description: Turns APIs described by OpenAPI specifications (OAS) into GraphQL interfaces
+  github: https://github.com/strongloop/oasgraph
+  v2: true
+  v3: true
 
