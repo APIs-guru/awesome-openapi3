@@ -457,6 +457,13 @@
   github: https://github.com/janephp/open-api
   description:  Generate a PHP Client API (PSR7 compatible) given a OpenAPI (Swagger) specification.
   v2: true
+  
+- name: oas-generator
+  category: sdk
+  language: Node.js
+  github: https://github.com/isa-group/oas-generator
+  description: NodeJS RESTfull APIs scaffolding based OpenAPI 3.x specs using oas-tools and express.
+  v3: true
 
 # Testing
 
