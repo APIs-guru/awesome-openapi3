@@ -272,6 +272,13 @@
   link: https://www.npmjs.com/package/@smartrecruiters/openapi-first
   v3: true
 
+- name: oas-tools
+  category: frameworks
+  github: https://github.com/isa-group/oas-tools
+  language: Node.js
+  description: NodeJS module to manage RESTfull APIs defined with OpenAPI 3.0 Specs over express servers.
+  v3: true
+
 # Parsers / Validators
 
 - name: swagger-core
