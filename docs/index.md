@@ -43,7 +43,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('a').each(function(e){
+    $('a').each(function(i,e){
         try {
             $(e).data('tippy',$(e).data('json').stars||'No stars!');
         }
