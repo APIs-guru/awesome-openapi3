@@ -18,7 +18,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 Pull requests should be against the `tools.yaml` file in the `docs/_data` directory.
 
-The raw data also contains OpenAPI 2.0-related projects.
+The raw data also contains OpenAPI 2.0 and Swagger 1.x-related projects.
 
 ## API Access
 
