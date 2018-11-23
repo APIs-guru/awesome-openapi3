@@ -48,7 +48,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
             $(this).attr('data-tippy',JSON.parse(decodeURIComponent($(this).attr('data-json'))).stars);
         }
         catch (ex) {
-            console.error(ex.message);
+            console.error(decodeURIComponent($(this).attr('data-json')));
         }
     });
   });
