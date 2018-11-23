@@ -1069,7 +1069,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -3072,7 +3072,7 @@
   license: ''
 - github: 'https://github.com/Mermade/openapi-codegen'
   v3: true
-  category: unclassified
+  category: sdk
   name: openapi-codegen
   description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
   language: JavaScript
@@ -3222,7 +3222,7 @@
   license: MIT
 - github: 'https://github.com/apisyouwonthate/openapi.tools'
   v3: true
-  category: unclassified
+  category: documentation
   name: openapi.tools
   description: >-
     A collection of Editors, Linters, Parsers, Code Generators,  Documentation,
@@ -3330,7 +3330,7 @@
   license: MIT
 - github: 'https://github.com/Mermade/openapi-lint-vscode'
   v3: true
-  category: unclassified
+  category: editors
   name: openapi-lint-vscode
   description: >-
     OpenAPI 2.0/3.0.x intellisense, validator, linter and converter extension
@@ -3439,7 +3439,7 @@
   license: AGPL-3.0
 - github: 'https://github.com/Mermade/openapi3-examples'
   v3: true
-  category: unclassified
+  category: documentation
   name: openapi3-examples
   description: Passing and failing test cases for OpenAPI 3.0.x validators
   language: null
@@ -3638,7 +3638,7 @@
   license: BSD-3-Clause
 - github: 'https://github.com/Mermade/swaggerplusplus'
   v3: true
-  category: unclassified
+  category: documentation
   name: swaggerplusplus
   description: A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x
   language: null
@@ -3675,7 +3675,7 @@
   issues: 0
 - github: 'https://github.com/Mermade/openapi-webconverter'
   v3: true
-  category: unclassified
+  category: converters
   name: openapi-webconverter
   description: Mermade Swagger 2.0 to OpenAPI 3.0.0 converter front-end
   language: JavaScript
