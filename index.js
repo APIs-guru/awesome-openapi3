@@ -38,6 +38,9 @@ for (let entry of entries) {
             entry.issues = obj.open_issues_count||0;
             if (obj.license) {
                 entry.license = obj.license.spdx_id;
+                if (entry.license === 'NOASSERTION') {
+                    entry.license = '';
+                }
             }
         }
     }
