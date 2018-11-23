@@ -44,7 +44,12 @@ Please raise a Pull-Request or issue with any projects we've missed!
 <script type="text/javascript">
   $(document).ready(function(){
     $('a').each(function(){
-        $(this).attr('data-tippy',JSON.parse(decodeURIComponent($(this).attr('data-json'))).stars);
+        try {
+            $(this).attr('data-tippy',JSON.parse(decodeURIComponent($(this).attr('data-json'))).stars);
+        }
+        catch (ex) {
+            console.error(ex.message);
+        }
     });
   });
 </script>
