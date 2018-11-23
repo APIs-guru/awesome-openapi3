@@ -44,12 +44,9 @@ Please raise a Pull-Request or issue with any projects we've missed!
 <script type="text/javascript">
   $(document).ready(function(){
     $('a').each(function(i,e){
-        try {
-            tippy(e,{ content: $(e).data('json') ? JSON.parse(decodeURIComponent($(e).data('json'))).stars+' stars' : 'No stars!' });
-        }
-        catch (ex) {
-            console.log(ex.message);
-            console.log($(e).data('json'));
+        if ($(e).data('json')) {
+            var d = JSON.parse(decodeURIComponent($(e).data('json')));
+            tippy(e,{ content: d.stars+' stars, '+d.watch+' watchers and '+d.forks+' forks. '+d.issues+' issues.' });
         }
     });
   });
