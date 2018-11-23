@@ -45,7 +45,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
   $(document).ready(function(){
     $('a').each(function(i,e){
         try {
-            tippy(e,{ content: $(e).data('json') ? JSON.parse(decodeURIComponent($(e).data('json'))).stars : 'No stars!' });
+            tippy(e,{ content: $(e).data('json') ? JSON.parse(decodeURIComponent($(e).data('json'))).stars+' stars' : 'No stars!' });
         }
         catch (ex) {
             console.log(ex.message);
