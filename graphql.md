@@ -14,7 +14,7 @@ query {
 
 ```graphql
 query { 
-  topic(name:"typescript"){
+  topic(name:"openapi3"){
     relatedTopics {
       name
     }
