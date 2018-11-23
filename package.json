@@ -1,0 +1,26 @@
+{
+  "name": "awesome-openapi3",
+  "version": "1.0.0",
+  "description": "A list of awesome projects related to OpenAPI 3.0.x.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apis-guru/awesome-openapi3.git"
+  },
+  "author": "Mike Ralphson",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/apis-guru/awesome-openapi3/issues"
+  },
+  "homepage": "https://github.com/apis-guru/awesome-openapi3#readme",
+  "devDependencies": {
+    "js-yaml": "^3.12.0",
+    "node-fetch": "^2.3.0"
+  }
+}

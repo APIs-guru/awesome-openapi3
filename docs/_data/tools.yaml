@@ -1,454 +1,3029 @@
-# Converters
-
 - name: Apimatic Transformer
   category: converters
   language: SaaS
-  description: Transform API Descriptions to formats to and from RAML, API Blueprint, OAI v2/v3, WSDL, etc.
-  link: https://apimatic.io/transformer
+  description: >-
+    Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
+    v2/v3, WSDL, etc.
+  link: 'https://apimatic.io/transformer'
   v2: true
   v3: true
-
 - name: API Flow
   category: converters
-  github: https://github.com/luckymarmot/API-Flow
-  description: Convert from and to multiple formats.
+  github: 'https://github.com/luckymarmot/API-Flow'
+  description: >-
+    Universal data structure and converter for API formats (Swagger, RAML, Paw,
+    Postman…)
   language: JavaScript
   v2: true
-  v3_progress_link: https://github.com/JonathanMontane/API-Flow/pull/4
-
+  v3_progress_link: 'https://github.com/JonathanMontane/API-Flow/pull/4'
+  archived: false
+  stars: 162
+  watch: 14
+  forks: 18
+  updated: '2018-11-06T02:05:49Z'
+  issues: 26
+  license: MIT
 - name: Google Gnostic
   category: converters
-  github: https://github.com/googleapis/gnostic
-  language: Go
-  description: Compile OpenAPI descriptions into equivalent Protocol Buffer representations
+  github: 'https://github.com/googleapis/gnostic'
+  language: Swift
+  description: >-
+    A compiler for API described by the OpenAPI Specification with plugins for
+    code generation and other API support tasks.
   v3: true
-
+  archived: false
+  stars: 291
+  watch: 32
+  forks: 36
+  updated: '2018-11-22T20:02:48Z'
+  issues: 11
+  license: Apache-2.0
 - name: swagger2openapi
   category: converters
-  language: Node.js
-  demo: https://mermade.org.uk/openapi-converter
-  github: https://github.com/Mermade/swagger2openapi
-  description: Upgrade specs from OpenAPI v2.0 to v3.0, bundling into one mega file or respecting $refs
+  language: JavaScript
+  demo: 'https://mermade.org.uk/openapi-converter'
+  github: 'https://github.com/Mermade/swagger2openapi'
+  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
   v2: true
   v3: true
-
+  archived: false
+  stars: 257
+  watch: 11
+  forks: 39
+  updated: '2018-11-19T23:37:05Z'
+  issues: 0
+  license: BSD-3-Clause
 - name: OData OpenAPI
   category: converters
   language: XSLT
-  description: OData 4.0 to OpenAPI 3.0.0 converter
-  github: https://github.com/oasis-tcs/odata-openapi
+  description: >-
+    OASIS OData TC: Tools for producing API descriptions for OData services that
+    adhere to the OpenAPI Specification
+  github: 'https://github.com/oasis-tcs/odata-openapi'
   v2: true
   v3: true
-
+  archived: false
+  stars: 32
+  watch: 13
+  forks: 14
+  updated: '2018-11-21T13:49:47Z'
+  issues: 3
+  license: NOASSERTION
 - name: OData.OpenAPI
   category: converters
-  github: https://github.com/xuzhg/OData.OpenAPI
-  language: .NET
-  description: Convert an Edm (Entity Data Model) to OpenApi 3.0
+  github: 'https://github.com/xuzhg/OData.OpenAPI'
+  language: 'C#'
+  description: OData to Open API
   v3: true
-
+  archived: false
+  stars: 5
+  watch: 4
+  forks: 3
+  updated: '2018-10-04T09:40:15Z'
+  issues: 4
 - name: pyswagger
   category: converters
-  github: https://github.com/mission-liao/pyswagger
+  github: 'https://github.com/mission-liao/pyswagger'
   language: Python
-  description: Client & converter in Python, which is type-safe, dynamic, spec-compliant.
+  description: >-
+    An OpenAPI (fka Swagger) client & converter in python, which is type-safe,
+    dynamic, spec-compliant.
   v2: true
-  v3_progress_link: https://github.com/mission-liao/pyswagger/blob/develop/docs/md/news.md
-
-#  Documentation Viewers/Consoles
-
+  v3_progress_link: 'https://github.com/mission-liao/pyswagger/blob/develop/docs/md/news.md'
+  archived: false
+  stars: 206
+  watch: 12
+  forks: 36
+  updated: '2018-11-20T04:04:01Z'
+  issues: 17
+  license: MIT
 - name: openapi-viewer
   category: documentation
-  demo: https://koumoul.com/openapi-viewer/
-  github: https://github.com/koumoul-dev/openapi-viewer
-  language: Vue.js
+  demo: 'https://koumoul.com/openapi-viewer/'
+  github: 'https://github.com/koumoul-dev/openapi-viewer'
+  language: JavaScript
   description: Browse and test a REST API described with the OpenAPI 3.0 Specification
   v3: true
-
+  archived: false
+  stars: 60
+  watch: 7
+  forks: 3
+  updated: '2018-10-31T14:58:55Z'
+  issues: 4
+  license: AGPL-3.0
 - name: openapi-ui
   category: documentation
-  github: https://github.com/contentjet/openapi-ui
-  language: React.js
+  github: 'https://github.com/contentjet/openapi-ui'
+  language: JavaScript
   description: React based OpenAPI 3.0+ documentation generator
   v3: true
-
+  archived: false
+  stars: 17
+  watch: 1
+  forks: 1
+  updated: '2018-10-29T06:37:28Z'
+  issues: 1
 - name: Spectacle
   category: documentation
-  language: JavaScript
-  description: Spectacle generates beautiful static HTML5 documentation from OpenAPI/Swagger 2.0 API specifications
-  demo: https://sourcey.com/spectacle/
-  github: https://github.com/sourcey/spectacle
+  language: HTML
+  description: Beautiful static documentation generator for OpenAPI/Swagger 2.0
+  demo: 'https://sourcey.com/spectacle/'
+  github: 'https://github.com/sourcey/spectacle'
   v2: true
-
+  archived: false
+  stars: 735
+  watch: 17
+  forks: 168
+  updated: '2018-11-22T23:25:04Z'
+  issues: 30
+  license: NOASSERTION
 - name: ReDoc
   category: documentation
-  language: JavaScript
-  github: https://github.com/Rebilly/ReDoc/
-  demo: https://rebilly.github.io/ReDoc/
-  description: OpenAPI/Swagger-generated API Reference Documentation
+  language: TypeScript
+  github: 'https://github.com/Rebilly/ReDoc/'
+  demo: 'https://rebilly.github.io/ReDoc/'
+  description: "\U0001F4D8  OpenAPI/Swagger-generated API Reference Documentation"
   v2: true
-  v3_progress_link: https://github.com/Rebilly/ReDoc/issues/327
-
+  v3_progress_link: 'https://github.com/Rebilly/ReDoc/issues/327'
+  archived: false
+  stars: 3970
+  watch: 130
+  forks: 473
+  updated: '2018-11-23T10:36:33Z'
+  issues: 121
+  license: MIT
 - name: widdershins
   category: documentation
-  demo: https://mermade.github.io/shins
-  github: https://github.com/mermade/widdershins
-  language: Node.js
-  description: Generate Slate/Shins markdown from OpenAPI 2.0/3.0.x
+  demo: 'https://mermade.github.io/shins'
+  github: 'https://github.com/mermade/widdershins'
+  language: JavaScript
+  description: >-
+    OpenAPI / Swagger, AsyncAPI & Semoasa definitions to Slate / Shins
+    compatible markdown
   v2: true
   v3: true
-
+  archived: false
+  stars: 350
+  watch: 12
+  forks: 115
+  updated: '2018-11-23T03:27:48Z'
+  issues: 24
+  license: MIT
 - name: generator-openapi-repo
   category: documentation
-  github: https://github.com/Rebilly/generator-openapi-repo
+  github: 'https://github.com/Rebilly/generator-openapi-repo'
   language: JavaScript
-  description: Generate the repository structure for a scalable OpenAPI definition
+  description: "\U0001F916  Yeoman generator for OpenAPI/Swagger repo to help you share spec for your API"
   v2: true
-
+  archived: false
+  stars: 224
+  watch: 9
+  forks: 29
+  updated: '2018-11-21T05:51:01Z'
+  issues: 18
+  license: MIT
 - name: lincoln
   category: documentation
-  github: https://github.com/temando/open-api-renderer
-  language: React.js
-  description: A React renderer for Open API v3
-  demo: https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
+  github: 'https://github.com/temando/open-api-renderer'
+  language: JavaScript
+  description: "\U0001F3A9 A React renderer for OpenAPI v3."
+  demo: >-
+    https://temando.github.io/open-api-renderer/demo/?url=https://temando.github.io/open-api-renderer/petstore-open-api-v3.0.0-RC2.json
   v3: true
-
-# Editors
-
+  archived: false
+  stars: 97
+  watch: 9
+  forks: 6
+  updated: '2018-11-20T19:24:50Z'
+  issues: 24
+  license: MIT
 - name: KaiZen-OpenAPI-Editor
   category: editors
   language: Java
-  license: EPL
-  github: https://github.com/RepreZen/KaiZen-OpenAPI-Editor
-  description: Full-featured Eclipse editor for OpenAPI 2.0 and 3.0, also available on Eclipse Marketplace.
+  license: EPL-1.0
+  github: 'https://github.com/RepreZen/KaiZen-OpenAPI-Editor'
+  description: Eclipse Editor for the Swagger-OpenAPI Description Language
   v2: true
   v3: true
-
+  archived: false
+  stars: 64
+  watch: 12
+  forks: 7
+  updated: '2018-10-28T19:05:11Z'
+  issues: 118
 - name: Atom/linter-swagger
   category: editors
   language: JavaScript
-  github: https://atom.io/packages/linter-swagger
+  github: 'https://atom.io/packages/linter-swagger'
   license: MIT
-  description: This plugin for Atom Linter will lint Swagger 2.0 specifications, both JSON and YAML using swagger-parser node package.
+  description: >-
+    This plugin for Atom Linter will lint Swagger 2.0 specifications, both JSON
+    and YAML using swagger-parser node package.
   v2: true
-
 - name: Swagger Editor
   category: editors
-  language: Node.js
-  github: https://github.com/swagger-api/swagger-editor
-  demo: https://editor.swagger.io/
+  language: JavaScript
+  github: 'https://github.com/swagger-api/swagger-editor'
+  demo: 'https://editor.swagger.io/'
   v2: true
   v3: true
-
+  description: Swagger Editor
+  archived: false
+  stars: 4316
+  watch: 240
+  forks: 1284
+  updated: '2018-11-23T07:22:15Z'
+  issues: 69
+  license: NOASSERTION
 - name: RepreZen API Studio
   category: editors
   language: Java
-  link: https://www.reprezen.com/
-  github: https://www.reprezen.com/swagger-tools
-  description: RepreZen API Studio is an integrated workbench that brings API-first design into focus for your whole team, harmonizes your API designs, and generates APIs that click into client apps.
+  link: 'https://www.reprezen.com/'
+  github: 'https://www.reprezen.com/swagger-tools'
+  description: >-
+    RepreZen API Studio is an integrated workbench that brings API-first design
+    into focus for your whole team, harmonizes your API designs, and generates
+    APIs that click into client apps.
   v2: true
   v3: true
-
 - name: Apicurio Studio
   category: editors
-  language: TypeScript
-  link: http://www.apicur.io/
-  github: https://github.com/apicurio/apicurio-studio
-  description: A standalone API design studio that can be used to create new or edit existing API designs.
+  language: JavaScript
+  link: 'http://www.apicur.io/'
+  github: 'https://github.com/apicurio/apicurio-studio'
+  description: Open Source API Design
   v2: true
-
+  archived: false
+  stars: 228
+  watch: 29
+  forks: 80
+  updated: '2018-11-21T16:56:27Z'
+  issues: 112
+  license: Apache-2.0
 - name: Rápido
   category: editors
-  language: Node.js
-  link: https://rapidodesigner.com/
-  github: https://github.com/apiacademy/rapido-web
+  language: JavaScript
+  link: 'https://rapidodesigner.com/'
+  github: 'https://github.com/apiacademy/rapido-web'
   description: An API design tool that facilitates the sketching phase of design.
   v2: true
   v3: true
-
+  archived: false
+  stars: 5
+  watch: 6
+  forks: 5
+  updated: '2018-09-14T17:07:38Z'
+  issues: 1
 - name: OpenAPI-GUI
   category: editors
-  language: Node.js
-  link: https://mermade.github.io/openapi-gui
-  github: https://github.com/mermade/openapi-gui
-  description: GUI / visual editor for creating and editing OpenApi / Swagger definitions
+  language: JavaScript
+  link: 'https://mermade.github.io/openapi-gui'
+  github: 'https://github.com/mermade/openapi-gui'
+  description: GUI / visual editor for creating and editing OpenAPI / Swagger definitions
   v2: true
   v3: true
-
-# Mock Generators
-
+  archived: false
+  stars: 343
+  watch: 30
+  forks: 56
+  updated: '2018-11-22T12:31:19Z'
+  issues: 7
+  license: MIT
 - name: Prism
   category: mock
-  language: cli
-  link: http://stoplight.io/platform/prism/
-  github: https://github.com/stoplightio/prism
-  description: Turn any OAI file into an API server with mocking, transformations, validations, and more.
+  language: Shell
+  link: 'http://stoplight.io/platform/prism/'
+  github: 'https://github.com/stoplightio/prism'
+  description: >-
+    Turn any OAS (Swagger 2) file into an API server with mocking,
+    transformations, validations, and more.
   v2: true
-
+  archived: false
+  stars: 144
+  watch: 19
+  forks: 12
+  updated: '2018-11-15T09:42:30Z'
+  issues: 62
+  license: MIT
 - name: express-gateway-plugin-openapi3-mock-server
   category: mock
-  language: Node.js
-  github: https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server
-  description: An OpenAPI 3 mock server plugin for Express Gateway 
+  language: JavaScript
+  github: 'https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server'
+  description: An OpenAPI 3 mock server plugin for Express Gateway
   v3: true
-
-# Frameworks
-
+  archived: false
+  stars: 5
+  watch: 2
+  forks: 1
+  updated: '2018-08-12T17:57:28Z'
+  issues: 1
+  license: NOASSERTION
 - name: swagger-node
   category: frameworks
-  github: https://github.com/swagger-api/swagger-node
-  language: Node.js
+  github: 'https://github.com/swagger-api/swagger-node'
+  language: JavaScript
   description: Swagger module for node.js
   v2: true
-  v3_progress_link: https://github.com/swagger-api/swagger-node/issues/514
-
+  v3_progress_link: 'https://github.com/swagger-api/swagger-node/issues/514'
+  archived: false
+  stars: 3127
+  watch: 168
+  forks: 517
+  updated: '2018-11-22T23:45:12Z'
+  issues: 192
+  license: NOASSERTION
 - name: modern
   category: frameworks
   language: Ruby
-  github: https://github.com/modern-project/modern-ruby
-  description: An OpenAPI-first web server for Ruby/Rack. 
+  github: 'https://github.com/modern-project/modern-ruby'
+  description: An OpenAPI-first web server for Ruby/Rack.
   v3: true
-
+  archived: false
+  stars: 6
+  watch: 1
+  forks: 0
+  updated: '2018-11-07T00:32:22Z'
+  issues: 2
+  license: MIT
 - name: go-swagger
   category: frameworks
-  demo: https://goswagger.io/
-  github: https://github.com/go-swagger/go-swagger
+  demo: 'https://goswagger.io/'
+  github: 'https://github.com/go-swagger/go-swagger'
   language: Go
-  description: Everything all in one. Parser, validator, generates spec from code, or code from spec!
+  description: Swagger 2.0 implementation for go
   v2: true
-  v3_progress_link: https://github.com/go-swagger/go-swagger/issues/1122
-
+  v3_progress_link: 'https://github.com/go-swagger/go-swagger/issues/1122'
+  archived: false
+  stars: 2938
+  watch: 96
+  forks: 514
+  updated: '2018-11-23T11:12:57Z'
+  issues: 305
+  license: Apache-2.0
 - name: swagger-inflector
   category: frameworks
   description: This project uses the Swagger Specification to drive an API implementation
-  github: https://github.com/swagger-api/swagger-inflector
+  github: 'https://github.com/swagger-api/swagger-inflector'
   language: Java
   v2: true
-  v3_progress_link: https://github.com/swagger-api/swagger-inflector/issues?q=is%3Aissue+is%3Aopen+label%3A%22OAS+3.0%22
-
+  v3_progress_link: >-
+    https://github.com/swagger-api/swagger-inflector/issues?q=is%3Aissue+is%3Aopen+label%3A%22OAS+3.0%22
+  archived: false
+  stars: 84
+  watch: 24
+  forks: 51
+  updated: '2018-10-21T14:39:23Z'
+  issues: 35
+  license: NOASSERTION
 - name: Vert.x Web API Contract
   category: frameworks
-  description: Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests validation
-  link: http://vertx.io/docs/#web
-  language: Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala
+  description: >-
+    Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
+    validation
+  link: 'http://vertx.io/docs/#web'
+  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
   v3: true
-
 - name: light-rest-4j
   category: frameworks
-  github: https://github.com/networknt/light-rest-4j
+  github: 'https://github.com/networknt/light-rest-4j'
   language: Java
-  description: Generate and validate based on OpenAPI 3.0 specification
-  demo: https://doc.networknt.com/tutorial/rest/openapi/petstore/
+  description: >-
+    A RESTful framework built on top of light-4j with both Swagger 2.0 and
+    OpenAPI 3.0 supports
+  demo: 'https://doc.networknt.com/tutorial/rest/openapi/petstore/'
   v3: true
-
+  archived: false
+  stars: 54
+  watch: 20
+  forks: 18
+  updated: '2018-11-21T13:19:48Z'
+  issues: 1
+  license: Apache-2.0
 - name: Fusio
   category: frameworks
-  github: https://github.com/apioo/fusio
-  language: PHP / JS
-  description: Build API endpoints based on OpenAPI 3
-  link: http://fusio-project.org/
+  github: 'https://github.com/apioo/fusio'
+  language: PHP
+  description: Open source API management platform
+  link: 'http://fusio-project.org/'
   v3: true
-
+  archived: false
+  stars: 587
+  watch: 42
+  forks: 66
+  updated: '2018-11-22T18:16:30Z'
+  issues: 57
+  license: AGPL-3.0
 - name: openapi-first
   category: frameworks
-  github: https://github.com/smartrecruiters/openapi-first
-  language: Node.js
-  description: Start your node REST app with designing API first! 
-  link: https://www.npmjs.com/package/@smartrecruiters/openapi-first
+  github: 'https://github.com/smartrecruiters/openapi-first'
+  language: JavaScript
+  description: Start your node REST app with designing API first!
+  link: 'https://www.npmjs.com/package/@smartrecruiters/openapi-first'
   v3: true
-
-# Parsers / Validators
-
+  archived: false
+  stars: 10
+  watch: 9
+  forks: 1
+  updated: '2018-10-27T06:44:31Z'
+  issues: 3
+  license: MIT
 - name: swagger-core
   category: parsers
-  github: https://github.com/swagger-api/swagger-core
-  description: Examples and server integrations for generating the Swagger API Specification, which enables easy access to your REST API 
+  github: 'https://github.com/swagger-api/swagger-core'
+  description: >-
+    Examples and server integrations for generating the Swagger API
+    Specification, which enables easy access to your REST API
   language: Java
   v2: true
   v3: true
-
+  archived: false
+  stars: 5379
+  watch: 334
+  forks: 1654
+  updated: '2018-11-22T11:35:19Z'
+  issues: 316
+  license: NOASSERTION
 - name: swagger-parser
   category: parsers
-  github: https://github.com/swagger-api/swagger-parser
+  github: 'https://github.com/swagger-api/swagger-parser'
   language: Java
-  description: Swagger 1.0, 1.1, 1.2, 2.0 to OpenAPI Specification parser
+  description: Swagger Spec to Java POJOs
   v2: true
-
+  archived: false
+  stars: 288
+  watch: 50
+  forks: 260
+  updated: '2018-11-20T09:19:53Z'
+  issues: 104
+  license: NOASSERTION
 - name: BigstickCarpet/swagger-cli
   category: parsers
-  github: https://github.com/BigstickCarpet/swagger-cli
-  language: Node.js / CLI
-  description: A handy cli tool for validating JSON or YAML files schema files that respects $ref
+  github: 'https://github.com/BigstickCarpet/swagger-cli'
+  language: JavaScript
+  description: Swagger 2.0 and OpenAPI 3.0 command-line tool
   v2: true
-
+  archived: false
+  stars: 117
+  watch: 10
+  forks: 20
+  updated: '2018-11-23T09:14:31Z'
+  issues: 5
+  license: MIT
 - name: KaiZen OpenAPI Parser
-  github: https://github.com/RepreZen/KaiZen-OpenApi-Parser
+  github: 'https://github.com/RepreZen/KaiZen-OpenApi-Parser'
   owner: RepreZen
   category: parsers
   language: Java
-  description: High-performance Parser, Validator, and Java Object Model for OpenAPI 3.x
+  description: 'High-performance Parser, Validator, and Java Object Model for OpenAPI 3.x'
   v3: true
-
+  archived: false
+  stars: 58
+  watch: 8
+  forks: 22
+  updated: '2018-10-25T16:39:53Z'
+  issues: 54
 - name: openapi-parser
   category: parsers
-  github: https://github.com/networknt/openapi-parser
+  github: 'https://github.com/networknt/openapi-parser'
   language: Java
-  description: Based on KaiZen generated code but removed Javaparser-core, guava, commons-cli, commons-io, javax.mail and guice for microservices
-  documentation: https://doc.networknt.com/getting-started/light-rest-4j/
+  description: >-
+    A light-weight, fast OpenAPI 3.0 parser and validator with minimum third
+    party dependencies
+  documentation: 'https://doc.networknt.com/getting-started/light-rest-4j/'
   v3: true
-
+  archived: false
+  stars: 4
+  watch: 7
+  forks: 4
+  updated: '2018-11-10T16:06:49Z'
+  issues: 0
+  license: Apache-2.0
 - name: OpenAPI-TS
   category: parsers
-  github: https://github.com/metadevpro/openapi3-ts
+  github: 'https://github.com/metadevpro/openapi3-ts'
   language: TypeScript
-  description: TS Model & utils for OpenAPI 3.0.x contracts
+  description: TS Model & utils for OpenAPI 3.0.x contracts.
   v3: true
-
+  archived: false
+  stars: 64
+  watch: 7
+  forks: 20
+  updated: '2018-11-12T05:32:53Z'
+  issues: 2
+  license: MIT
 - name: oai-ts-core
   category: parsers
-  github: https://github.com/Apicurio/oai-ts-core
-  description: Core typescript library to read and manipulate OpenAPI specification definitions
-  language: Typescript
+  github: 'https://github.com/Apicurio/oai-ts-core'
+  description: >-
+    Core typescript library to read and manipulate OpenAPI specification
+    definitions.
+  language: TypeScript
   v3: true
-
+  archived: false
+  stars: 25
+  watch: 3
+  forks: 8
+  updated: '2018-11-20T12:42:27Z'
+  issues: 9
+  license: Apache-2.0
 - name: openapi3_parser
   category: parsers
-  github: https://github.com/kevindew/openapi3_parser
+  github: 'https://github.com/kevindew/openapi3_parser'
   language: Ruby
-  description: A Ruby implementation of parsing and validating the OpenAPI 3 Specification
+  description: Open API 3 Parser/Validator for Ruby
   v3: true
-
+  archived: false
+  stars: 15
+  watch: 6
+  forks: 2
+  updated: '2018-10-08T12:05:54Z'
+  issues: 1
+  license: MIT
 - name: kin-openapi
   category: parsers
-  github: https://github.com/jban332/kin-openapi
+  github: 'https://github.com/jban332/kin-openapi'
   language: Go
-  description: A Go library for handling OpenAPI 3.0 specifications
+  description: >-
+    OpenAPI 3.0 implementation for Go (parsing, converting, validation, and
+    more)
   v3: true
-
+  archived: false
+  stars: 60
+  watch: 9
+  forks: 21
+  updated: '2018-11-19T09:56:39Z'
+  issues: 9
+  license: MIT
 - name: OpenAPI3-Rust
   category: parsers
-  github: https://github.com/adwhit/openapi3-rust
+  github: 'https://github.com/adwhit/openapi3-rust'
   language: Rust
-  description: Rust serialization library for OpenAPI v3
+  description: Rust serialization library for OpenAPIv3
   v3: true
-
+  archived: false
+  stars: 6
+  watch: 1
+  forks: 1
+  updated: '2018-06-12T19:24:01Z'
+  issues: 0
 - name: speccy
   category: parsers
-  github: https://github.com/wework/speccy
-  language: CLI
-  description: Lint to enforce quality rules on your OpenAPI specifications
+  github: 'https://github.com/wework/speccy'
+  language: JavaScript
+  description: "Well Spectually \U0001F913 Enforce quality rules on your OpenAPI 3.0.x specifications."
   v3: true
-
+  archived: false
+  stars: 190
+  watch: 32
+  forks: 26
+  updated: '2018-11-23T10:29:57Z'
+  issues: 9
+  license: MIT
 - name: psx-api
   category: parsers
-  link: http://phpsx.org
-  github: https://github.com/apioo/psx-api
+  link: 'http://phpsx.org'
+  github: 'https://github.com/apioo/psx-api'
   language: PHP
   description: Parse and generate API specification formats
   v2: true
   v3: true
-
+  archived: false
+  stars: 19
+  watch: 1
+  forks: 4
+  updated: '2018-10-28T09:41:53Z'
+  issues: 0
+  license: Apache-2.0
 - name: openapi-spec-validator
   category: parsers
-  github: https://github.com/p1c2u/openapi-spec-validator
+  github: 'https://github.com/p1c2u/openapi-spec-validator'
   language: Python
-  description: OpenAPI aSpec validator
+  description: OpenAPI Spec validator
   v3: true
-
+  archived: false
+  stars: 44
+  watch: 6
+  forks: 12
+  updated: '2018-11-22T14:06:57Z'
+  issues: 4
+  license: Apache-2.0
 - name: Microsoft/OpenAPI.NET
   category: parsers
-  github: https://github.com/Microsoft/OpenAPI.NET
-  language: .NET
-  description: "C# based parser with definition validation and migration support from V2"
+  github: 'https://github.com/Microsoft/OpenAPI.NET'
+  language: 'C#'
+  description: >-
+    The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in
+    .NET along with common serializers to extract raw OpenAPI JSON and YAML
+    documents from the model.
   v2: true
   v3: true
-
+  archived: false
+  stars: 372
+  watch: 50
+  forks: 33
+  updated: '2018-11-20T18:36:45Z'
+  issues: 22
+  license: MIT
 - name: OAS3-chow-chow
   category: parsers
-  github: https://github.com/supertong/oas3-chow-chow
-  language: Node.js
+  github: 'https://github.com/supertong/oas3-chow-chow'
+  language: TypeScript
   description: Request and response validator against OpenAPI Specification 3
   v3: true
-
-# ## Generators
-# [baucis-openapi3](https://github.com/metadevpro/baucis-openapi3)|Node.js|plugin for [baucis.js](https://github.com/wprl/baucis)|
-# [serverless-openapi-documentation](https://github.com/temando/serverless-openapi-documentation)|Typescript|Serverless 1.0 plugin to generate OpenAPI V3 documentation from serverless configuration|
-# [zero-rails_openapi](https://github.com/zhandao/zero-rails_openapi)|Ruby|Provide concise DSL for generating the OpenAPI Specification 3 (OAS3) documentation JSON file for Rails application, then you can use Swagger UI 3.2.0+ to show the documentation.
-# [slush-vertx](https://www.npmjs.com/package/slush-vertx) | Java, Kotlin & Groovy | Generate server skeleton for [Vert.x Web API Contract](http://vertx.io/docs/#web) and API Client based on [Vert.x 3 Web Client](http://vertx.io/docs/#web) | [NPM Package](https://www.npmjs.com/package/slush-vertx) [Github Repo](https://github.com/pmlopes/slush-vertx)
-# [light-codegen](https://github.com/networknt/light-codegen) | Java | Generate both Swagger 2.0 and OpenAPI 3.0 projects | https://doc.networknt.com/tutorial/generator/openapi/
-
-# Code Generators (sdk)
-
+  archived: false
+  stars: 17
+  watch: 4
+  forks: 9
+  updated: '2018-11-23T02:51:53Z'
+  issues: 3
+  license: NOASSERTION
 - name: swagger-codegen
   category: sdk
-  language: Java
-  github: https://github.com/swagger-api/swagger-codegen
-  description: A template-driven engine to generate documentation, API clients and server stubs in different languages by parsing your OpenAPI / Swagger definition
+  language: HTML
+  github: 'https://github.com/swagger-api/swagger-codegen'
+  description: >-
+    swagger-codegen contains a template-driven engine to generate documentation,
+    API clients and server stubs in different languages by parsing your OpenAPI
+    / Swagger definition.
   v2: true
   v3: true
-
+  archived: false
+  stars: 8119
+  watch: 419
+  forks: 4091
+  updated: '2018-11-23T11:10:46Z'
+  issues: 1943
+  license: NOASSERTION
 - name: openapi-codegen
   category: sdk
-  language: Node.js
-  github: https://github.com/mermade/openapi-codegen
+  language: JavaScript
+  github: 'https://github.com/mermade/openapi-codegen'
   description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
   v2: true
   v3: true
-
+  archived: false
+  stars: 88
+  watch: 8
+  forks: 24
+  updated: '2018-11-21T13:48:12Z'
+  issues: 11
+  license: Apache-2.0
 - name: swagger-node-codegen
   category: sdk
-  language: Node.js
-  github: https://github.com/fmvilas/swagger-node-codegen
+  language: JavaScript
+  github: 'https://github.com/fmvilas/swagger-node-codegen'
   description: An OpenAPI 3.x/Swagger 2 code generator for Node.js
   v2: true
   v3: true
-
+  archived: false
+  stars: 88
+  watch: 6
+  forks: 22
+  updated: '2018-11-22T05:15:27Z'
+  issues: 1
+  license: Apache-2.0
 - name: janephp/open-api
   category: sdk
   language: PHP
-  github: https://github.com/janephp/open-api
-  description:  Generate a PHP Client API (PSR7 compatible) given a OpenAPI (Swagger) specification.
+  github: 'https://github.com/janephp/open-api'
+  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
   v2: true
-
-# Testing
-
+  archived: false
+  stars: 12
+  watch: 2
+  forks: 1
+  updated: '2018-11-21T12:51:35Z'
+  issues: 0
+  license: MIT
 - name: openapi-auto-test
   category: testing
-  description: Automatically reads an OpenAPI 3.0 definition and generates a Postman collection to be used with newman for automated API tests. 
-  github: https://github.com/dtzar/openapi-auto-test
-  language: Node.js
+  description: >-
+    Automatically reads an OpenAPI 3.0 defintion and generates a Postman
+    collection to be used with newman for automated API tests.
+  github: 'https://github.com/dtzar/openapi-auto-test'
+  language: JavaScript
   v3: true
-
+  archived: false
+  stars: 18
+  watch: 1
+  forks: 1
+  updated: '2018-11-05T16:43:16Z'
+  issues: 0
+  license: MIT
 - name: Dredd
   category: testing
-  description: Language-agnostic HTTP API Testing Framework 
-  github: https://github.com/apiaryio/dredd
-  language: Node.js
-  documentation: http://dredd.rtfd.org/
+  description: Language-agnostic HTTP API Testing Tool
+  github: 'https://github.com/apiaryio/dredd'
+  language: JavaScript
+  documentation: 'http://dredd.rtfd.org/'
   v2: true
-
-# Miscellaneous
-
+  archived: false
+  stars: 2650
+  watch: 87
+  forks: 226
+  updated: '2018-11-23T08:10:12Z'
+  issues: 192
+  license: MIT
 - name: openapi-diff
   category: miscellaneous
   language: Java
-  github: https://github.com/quen2404/openapi-diff
+  github: 'https://github.com/quen2404/openapi-diff'
   description: Utility for comparing two OpenAPI specifications.
   v3: true
-
+  archived: false
+  stars: 21
+  watch: 5
+  forks: 10
+  updated: '2018-11-17T11:48:44Z'
+  issues: 11
+  license: Apache-2.0
 - name: OpenAPI Filter
   category: miscellaneous
-  language: Node.js
-  description: Filter internal components from OpenAPI definitions
-  github: https://github.com/Mermade/openapi-filter
+  language: JavaScript
+  description: >-
+    Filter internal paths, operations, parameters, schemas etc from
+    OpenAPI/Swagger/AsyncAPI definitions
+  github: 'https://github.com/Mermade/openapi-filter'
   v2: true
   v3: true
-
+  archived: false
+  stars: 5
+  watch: 3
+  forks: 0
+  updated: '2018-11-09T16:47:45Z'
+  issues: 0
+  license: BSD-3-Clause
 - name: OpenAPI Extract
   category: miscellaneous
-  language: Node.js
-  description: Extract paths, operations etc from OpenAPI definitions
-  github: https://github.com/Mermade/openapi-extract
+  language: JavaScript
+  description: Extract single paths/operations from OpenAPI definitions
+  github: 'https://github.com/Mermade/openapi-extract'
   v2: true
   v3: true
-
+  archived: false
+  stars: 2
+  watch: 1
+  forks: 0
+  updated: '2018-11-09T16:54:04Z'
+  issues: 0
+  license: BSD-3-Clause
+- name: Sashay
+  description: Sashay
+  github: 'https://bitbucket.org/seanerussell/sashay'
+  v1: true
+  language: '?'
+  category: '?'
+- name: swaggydoc
+  description: swaggydoc
+  github: 'http://grails.org/plugin/swaggydoc'
+  v1: true
+  language: '?'
+  category: '?'
+- name: Hapi
+  description: >-
+    A Hapi plugin that automatically creates Swagger documentation AND validates
+    request/response parameters using the JSON Schema spec.
+  github: 'http://hapijs.com/'
+  v1: true
+  language: '?'
+  category: '?'
+- name: Swaggervel
+  description: Swaggervel
+  github: 'https://packagist.org/packages/jlapp/swaggervel'
+  v1: true
+  language: '?'
+  category: '?'
+- name: Scalatra
+  description: Scalatra
+  github: 'http://www.scalatra.org/'
+  v1: true
+  language: '?'
+  category: '?'
+- name: Swagger Guide
+  description: see the Swagger Guide
+  github: 'http://www.scalatra.org/2.2/guides/swagger.html'
+  v1: true
+  language: '?'
+  category: '?'
+- name: playframework
+  description: >-
+    Creates swagger docs from easily readable ascii text placed in the code.
+    Depends on playframework, but may also be used in other frameworks.
+  github: 'http://www.playframework.com/'
+  v1: true
+  language: '?'
+  category: '?'
+- name: Postman
+  description: Creates a Postman collection from live Swagger documentation
+  github: 'http://www.getpostman.com/'
+  v1: true
+  language: '?'
+  category: '?'
+- name: swagger-docs-cfml
+  description: create swagger docs from CFML (Railo) ReST components
+  github: 'https://github.com/webonix/swagger-docs-cfml'
+  v1: true
+  language: ColdFusion
+  category: '?'
+  archived: false
+  stars: 3
+  watch: 2
+  updated: '2014-10-27T08:20:51Z'
+  issues: 0
+  forks: 3
+- name: Swagger Framework
+  description: Swagger Framework for web services
+  github: 'https://github.com/silas/swagger-framework'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: true
+  stars: 54
+  watch: 2
+  updated: '2018-09-02T07:20:38Z'
+  issues: 2
+  forks: 6
+  license: MIT
+- name: swagger_engine
+  description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
+  github: 'https://github.com/batdevis/swagger_engine'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 44
+  watch: 6
+  updated: '2018-08-13T00:16:20Z'
+  issues: 11
+  forks: 47
+  license: MIT
+- name: swagger-angular-client
+  description: AngularJS service for communicating with endpoints described by swagger.
+  github: 'https://github.com/signalfx/swagger-angular-client'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 81
+  watch: 66
+  updated: '2018-11-07T00:47:45Z'
+  issues: 3
+  forks: 17
+  license: NOASSERTION
+- name: swagger-docs
+  description: Generates swagger-ui json files for Rails APIs with a simple DSL.
+  github: 'https://github.com/richhollis/swagger-docs'
+  v1: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 670
+  watch: 13
+  updated: '2018-11-22T08:48:32Z'
+  issues: 35
+  forks: 153
+  license: MIT
+- name: swagger
+  description: Eiffel library for Swagger
+  github: 'https://github.com/EiffelWebFramework/swagger'
+  v1: true
+  language: Eiffel
+  category: '?'
+  archived: false
+  stars: 5
+  watch: 4
+  updated: '2015-11-05T02:15:08Z'
+  issues: 0
+  forks: 0
+- name: swaggerj4
+  description: A simple java library for reading and writing swagger definitions
+  github: 'https://github.com/SmartBear/swagger4j'
+  v1: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 23
+  watch: 37
+  updated: '2018-10-05T06:45:31Z'
+  issues: 8
+  forks: 11
+  license: Apache-2.0
+- name: swaggerapi
+  description: Swagger API for server with REST APIs written in Java
+  github: 'https://github.com/ROAMSYS/swaggerapi'
+  v1: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 12
+  watch: 10
+  updated: '2018-04-25T12:01:46Z'
+  issues: 0
+  forks: 10
+  license: MIT
+- name: swagger-jaxrs-doclet
+  description: swagger-jaxrs-doclet
+  github: 'https://github.com/ryankennedy/swagger-jaxrs-doclet'
+  v1: true
+  language: Java
+  category: '?'
+  archived: true
+  stars: 90
+  watch: 21
+  updated: '2018-04-24T12:01:39Z'
+  issues: 33
+  forks: 150
+  license: Apache-2.0
+- name: swagger-node-client
+  description: Create clients for Swagger API Specifications.
+  github: 'https://github.com/signalfx/swagger-node-client'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 10
+  watch: 61
+  updated: '2018-06-23T06:37:12Z'
+  issues: 2
+  forks: 1
+  license: NOASSERTION
+- name: springfox
+  description: SpringFox integration with Grails 3.x
+  github: 'https://github.com/springfox/springfox-grails-integration'
+  v1: true
+  language: Groovy
+  category: '?'
+  archived: false
+  stars: 10
+  watch: 6
+  updated: '2018-11-09T12:45:40Z'
+  issues: 12
+  forks: 7
+  license: Apache-2.0
+- name: flask-restful-swagger
+  description: A Swagger spec extractor for flask-restful
+  github: 'https://github.com/rantav/flask-restful-swagger'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 518
+  watch: 26
+  updated: '2018-11-22T10:48:26Z'
+  issues: 44
+  forks: 168
+  license: MIT
+- name: go-restful
+  description: package for building REST-style Web Services using Google Go
+  github: 'https://github.com/emicklei/go-restful'
+  v1: true
+  language: Go
+  category: '?'
+  archived: false
+  stars: 2985
+  watch: 155
+  updated: '2018-11-23T06:50:01Z'
+  issues: 11
+  forks: 459
+  license: MIT
+- name: Here is a demo application
+  description: >-
+    Sample application to demonstrate the capabilities of integrating with
+    grails
+  github: 'https://github.com/springfox/springfox-grails-demo'
+  v1: true
+  language: Groovy
+  category: '?'
+  archived: false
+  stars: 5
+  watch: 2
+  updated: '2018-05-31T05:48:37Z'
+  issues: 1
+  forks: 1
+- name: swagger-assert
+  description: enable to assert swagger doc keys and API response
+  github: 'https://github.com/gong023/swagger-assert'
+  v1: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 13
+  watch: 3
+  updated: '2018-05-07T17:43:57Z'
+  issues: 1
+  forks: 1
+- name: swagger-jack
+  description: >-
+    Express middleware to automatically create route and validate inputs from a
+    swagger descriptor (for NodeJS)
+  github: 'https://github.com/worldline/swagger-jack'
+  v1: true
+  language: CoffeeScript
+  category: '?'
+  archived: false
+  stars: 46
+  watch: 12
+  updated: '2018-08-22T09:50:29Z'
+  issues: 11
+  forks: 16
+  license: MIT
+- name: Restler
+  description: >-
+    Simple and effective multi-format Web API Server to host your PHP API as
+    Pragmatic REST and / or RESTful API
+  github: 'https://github.com/Luracast/Restler'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 1261
+  watch: 113
+  updated: '2018-11-15T13:43:41Z'
+  issues: 43
+  forks: 295
+- name: swagger-cli-client
+  description: Generates a command-line interface for any Swagger Specification
+  github: 'https://github.com/signalfx/swagger-cli-client'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 32
+  watch: 62
+  updated: '2018-10-10T11:51:04Z'
+  issues: 2
+  forks: 6
+  license: NOASSERTION
+- name: django-tastypie-swagger
+  description: An adapter to use swagger-ui with django-tastypie.
+  github: 'https://github.com/concentricsky/django-tastypie-swagger'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 136
+  watch: 18
+  updated: '2018-10-27T18:18:52Z'
+  issues: 47
+  forks: 122
+  license: NOASSERTION
+- name: swagger-express
+  description: 'Swagger + Express = {swagger-express}'
+  github: 'https://github.com/fliptoo/swagger-express'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 217
+  watch: 11
+  updated: '2018-11-14T18:47:36Z'
+  issues: 14
+  forks: 88
+  license: MIT
+- name: fubumvc-swagger
+  description: >-
+    FubuMVC convention for creating API documentation for your content
+    negotiation enabled actions 
+  github: 'https://github.com/KevM/fubumvc-swagger'
+  v1: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 12
+  watch: 3
+  updated: '2018-02-09T18:56:54Z'
+  issues: 2
+  forks: 6
+  license: NOASSERTION
+- name: Swagger integration
+  description: >-
+    Thoughtfully architected, obscenely fast, thoroughly enjoyable web services
+    for all
+  github: 'https://github.com/ServiceStack/ServiceStack/wiki/Swagger-API'
+  v1: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 4372
+  watch: 570
+  updated: '2018-11-22T22:55:34Z'
+  issues: 35
+  forks: 1518
+  license: NOASSERTION
+- name: '[Source]'
+  description: Swagger Documentation for Grails Controllers Plugin
+  github: 'https://github.com/rahulsom/swaggydoc'
+  v1: true
+  language: Groovy
+  category: '?'
+  archived: true
+  stars: 29
+  watch: 6
+  updated: '2018-08-28T07:22:00Z'
+  issues: 27
+  forks: 24
+- name: hapi-swagger
+  description: A Swagger interface for HAPI
+  github: 'https://github.com/glennjones/hapi-swagger'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 662
+  watch: 30
+  updated: '2018-11-21T13:56:38Z'
+  issues: 108
+  forks: 289
+  license: MIT
+- name: gform-admin
+  description: generic ui to manage data and services.
+  github: 'https://github.com/stemey/gform-admin'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 34
+  watch: 3
+  updated: '2018-02-09T18:55:49Z'
+  issues: 0
+  forks: 1
+- name: ratify
+  description: >-
+    A Hapi plugin for validating the schema of path, query, request body, and
+    response body params using JSON-schema
+  github: 'https://github.com/mac-/ratify'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 72
+  watch: 3
+  updated: '2018-06-09T09:05:39Z'
+  issues: 11
+  forks: 19
+  license: MIT
+- name: django-rest-swagger
+  description: Swagger Documentation Generator for Django REST Framework
+  github: 'https://github.com/marcgibbons/django-rest-swagger'
+  v1: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 2098
+  watch: 72
+  updated: '2018-11-22T20:32:24Z'
+  issues: 136
+  forks: 535
+  license: BSD-2-Clause
+- name: swagger-client-generator
+  description: Automatically generate an api object from a given swagger 1.2 schema
+  github: 'https://github.com/signalfx/swagger-client-generator'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 35
+  watch: 63
+  updated: '2018-08-21T23:18:03Z'
+  issues: 4
+  forks: 7
+  license: NOASSERTION
+- name: source2swagger
+  description: >-
+    Builds a swagger compliant JSON specification from annotations on the
+    comments of your source code.
+  github: 'https://github.com/solso/source2swagger'
+  v1: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 67
+  watch: 6
+  updated: '2018-02-09T18:56:43Z'
+  issues: 3
+  forks: 23
+  license: MIT
+- name: octohipster
+  description: '[UNMAINTAINED] A hypermedia REST HTTP API library for Clojure'
+  github: 'https://github.com/myfreeweb/octohipster'
+  v1: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 79
+  watch: 9
+  updated: '2017-10-03T10:19:40Z'
+  issues: 0
+  forks: 8
+  license: Unlicense
+- name: spray-swagger
+  description: spray-swagger
+  github: 'https://github.com/gettyimages/spray-swagger'
+  v1: true
+  language: Scala
+  category: '?'
+  archived: false
+  stars: 149
+  watch: 42
+  updated: '2018-07-24T19:22:25Z'
+  issues: 23
+  forks: 103
+  license: Apache-2.0
+- name: swagger-angular-client
+  description: AngularJS service for communicating with endpoints described by swagger.
+  github: 'https://github.com/signalfx/swagger-angular-client'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 81
+  watch: 66
+  updated: '2018-11-07T00:47:45Z'
+  issues: 3
+  forks: 17
+  license: NOASSERTION
+- name: dotswaggen
+  description: >-
+    DotSwagGen is a command line code generator for the swagger specification
+    written in C#
+  github: 'https://github.com/skrusty/dotswaggen'
+  v1: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 13
+  watch: 3
+  updated: '2017-06-18T07:01:32Z'
+  issues: 0
+  forks: 5
+  license: MIT
+- name: Swagger spec generator
+  description: Swagger client generator
+  github: 'https://github.com/yvasiyarov/swagger'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 738
+  watch: 32
+  updated: '2018-11-23T06:19:05Z'
+  issues: 36
+  forks: 134
+  license: BSD-3-Clause
+- name: tornado-swagger
+  description: tornado-swagger
+  github: 'https://github.com/SerenaFeng/tornado-swagger'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 24
+  watch: 1
+  updated: '2018-11-16T14:44:39Z'
+  issues: 4
+  forks: 13
+  license: MIT
+- name: restapidoc
+  description: A RESTful API documentation plugin for the Grails web application framework
+  github: 'https://github.com/siemens/restapidoc'
+  v1: true
+  language: Groovy
+  category: '?'
+  archived: false
+  stars: 28
+  watch: 10
+  updated: '2018-01-30T15:58:50Z'
+  issues: 3
+  forks: 7
+- name: Swagger2Postman
+  description: Create a Postman collection from live Swagger documentation
+  github: 'https://github.com/josephpconley/swagger2postman'
+  v1: true
+  language: Scala
+  category: '?'
+  archived: false
+  stars: 70
+  watch: 4
+  updated: '2018-08-30T14:52:00Z'
+  issues: 3
+  forks: 10
+- name: Swagger Validation
+  description: >-
+    A library that validates inputs (based on the swagger-spec packages) against
+    any specifications
+  github: 'https://github.com/wonderlic/swagger-validation'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 8
+  watch: 1
+  updated: '2018-02-17T23:53:18Z'
+  issues: 2
+  forks: 4
+  license: MIT
+- name: swagger-validate
+  description: Detailed validation of objects against a given swagger model
+  github: 'https://github.com/signalfx/swagger-validate'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 20
+  watch: 62
+  updated: '2018-03-12T06:42:23Z'
+  issues: 4
+  forks: 11
+  license: NOASSERTION
+- name: FubuMVC
+  description: A front-controller style MVC framework for .NET
+  github: 'https://github.com/DarthFubuMVC/fubumvc'
+  v1: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 428
+  watch: 31
+  updated: '2018-10-27T15:45:49Z'
+  issues: 89
+  forks: 166
+  license: NOASSERTION
+- name: swagger-validator
+  description: Jax-Rs validator for swagger
+  github: 'https://github.com/kenshoo/swagger-validator'
+  v1: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 10
+  watch: 165
+  updated: '2017-07-03T05:55:08Z'
+  issues: 2
+  forks: 1
+- name: NelmioApiDocBundle
+  description: Generates documentation for your REST API from annotations
+  github: 'https://github.com/nelmio/NelmioApiDocBundle'
+  v1: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 1569
+  watch: 73
+  updated: '2018-11-22T16:05:18Z'
+  issues: 55
+  forks: 650
+  license: MIT
+- name: beego
+  description: >-
+    beego is an open-source, high-performance web framework for the Go
+    programming language.
+  github: 'https://github.com/astaxie/beego'
+  v1: true
+  language: Go
+  category: '?'
+  archived: false
+  stars: 17873
+  watch: 1201
+  updated: '2018-11-23T11:40:38Z'
+  issues: 531
+  forks: 3734
+  license: NOASSERTION
+- name: swagger-ajax-client
+  description: Create XHR clients for Swagger API Specifications
+  github: 'https://github.com/signalfx/swagger-ajax-client'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 15
+  watch: 62
+  updated: '2018-04-18T17:21:06Z'
+  issues: 0
+  forks: 1
+  license: NOASSERTION
+- name: Swagger-ui
+  description: >-
+    Swagger UI is a collection of HTML, Javascript, and CSS assets that
+    dynamically generate beautiful documentation from a Swagger-compliant API.
+  github: 'https://github.com/swagger-api/swagger-ui'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 13352
+  watch: 643
+  updated: '2018-11-23T11:05:31Z'
+  issues: 291
+  forks: 6097
+  license: NOASSERTION
+- name: swagger4spring-web
+  description: Swagger support for Spring MVC
+  github: 'https://github.com/wkennedy/swagger4spring-web'
+  v1: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 91
+  watch: 19
+  updated: '2018-10-28T05:21:40Z'
+  issues: 38
+  forks: 48
+- name: ServiceStack
+  description: >-
+    Thoughtfully architected, obscenely fast, thoroughly enjoyable web services
+    for all
+  github: 'https://github.com/ServiceStack/ServiceStack'
+  v1: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 4372
+  watch: 570
+  updated: '2018-11-22T22:55:34Z'
+  issues: 35
+  forks: 1518
+  license: NOASSERTION
+- name: Api-doc
+  description: '[UNMAINTAINED] Four libraries for the play framework'
+  github: 'https://github.com/sun-opsys/api-doc'
+  v1: true
+  language: Scala
+  category: '?'
+  archived: false
+  stars: 37
+  watch: 27
+  updated: '2018-07-23T05:56:27Z'
+  issues: 9
+  forks: 6
+- name: swagger-sdk
+  description: swagger-sdk
+  github: 'https://www.forgebox.io/view/swagger-sdk'
+  v2: true
+  language: '?'
+  category: '?'
+- name: cbSwagger
+  description: cbSwagger
+  github: 'https://www.forgebox.io/view/cbswagger'
+  v2: true
+  language: '?'
+  category: '?'
+- name: oat++
+  description: >-
+    Swagger-UI integration for oat++ applications. Utilizes OpenAPI 3.0.0
+    Specification.
+  github: 'https://oatpp.io/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Phoenix
+  description: >-
+    PhoenixSwagger is the library that provides Swagger integration to the
+    Phoenix web framework. It generates Swagger specification for Phoenix
+    controllers and validates the requests.
+  github: 'http://www.phoenixframework.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: swagger-template
+  description: swagger-template
+  github: 'https://gitlab.com/tijsg/swagger-template'
+  v2: true
+  language: '?'
+  category: '?'
+- name: gRPC
+  description: >-
+    generate a REST gateway and swagger definition from a gRPC protobuf
+    definition
+  github: 'http://grpc.io/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: swagger2
+  description: swagger2
+  github: 'http://hackage.haskell.org/package/swagger2'
+  v2: true
+  language: '?'
+  category: '?'
+- name: servant-swagger
+  description: servant-swagger
+  github: 'http://hackage.haskell.org/package/servant-swagger'
+  v2: true
+  language: '?'
+  category: '?'
+- name: elide
+  description: elide
+  github: 'http://elide.io/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: JSON-API
+  description: >-
+    A framework for building JSON-API web services with generated Swagger
+    documentation.
+  github: 'http://jsonapi.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: jooby-swagger
+  description: jooby-swagger
+  github: 'http://jooby.org/doc/swagger'
+  v2: true
+  language: '?'
+  category: '?'
+- name: jooby apps
+  description: Export jooby apps to Swagger Spec 2.0.
+  github: 'http://jooby.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: restlet-framework
+  description: restlet-framework
+  github: >-
+    http://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/swagger
+  v2: true
+  language: '?'
+  category: '?'
+- name: springfox
+  description: springfox
+  github: 'https://springfox.github.io/springfox'
+  v2: true
+  language: '?'
+  category: '?'
+- name: swagger-maven-plugin
+  description: swagger-maven-plugin
+  github: 'http://kongchen.github.io/swagger-maven-plugin/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: swagger-request-validator
+  description: swagger-request-validator
+  github: 'https://bitbucket.org/atlassian/swagger-request-validator'
+  v2: true
+  language: '?'
+  category: '?'
+- name: lua-Spore
+  description: lua-Spore
+  github: 'https://fperrad.github.io/lua-Spore/swagger/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: NSwag
+  description: NSwag
+  github: 'http://nswag.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: SwaggerProvider
+  description: SwaggerProvider
+  github: 'http://fsprojects.github.io/SwaggerProvider/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: NSwag
+  description: NSwag
+  github: 'http://nswag.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: a127
+  description: a127
+  github: 'http://a127.io/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: '@PayPalDev'
+  description: Yeoman generator for krakenjs/swaggerize tools from @PayPalDev.
+  github: 'https://twitter.com/PayPalDev'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Sails.js
+  description: >-
+    A Sails.js plugin that generates a Swagger (v2.0) document from your
+    application Models, Controllers, and Routes. Also see swagger.balderdash.io
+    for a Sails-themed Swagger UI.
+  github: 'http://sailsjs.org/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Serverless
+  description: |-
+    A Serverless plugin that
+    generates serverless configuration, api gateway events, and basic
+    handler stub functions from a Swagger specification.
+  github: 'http://serverless.com/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: '@PayPalDev'
+  description: Design-driven RESTful apis with swagger and express from @PayPalDev.
+  github: 'https://twitter.com/PayPalDev'
+  v2: true
+  language: '?'
+  category: '?'
+- name: '@PayPalDev'
+  description: Design-driven RESTful apis with swagger and hapi from @PayPalDev.
+  github: 'https://twitter.com/PayPalDev'
+  v2: true
+  language: '?'
+  category: '?'
+- name: MojoliciousPluginOpenAPI
+  description: MojoliciousPluginOpenAPI
+  github: 'https://metacpan.org/pod/Mojolicious::Plugin::OpenAPI'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Mojolicious
+  description: Generates Mojolicious routes and input/output validation rules.
+  github: 'http://mojolicio.us/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: 'OpenAPI::Client'
+  description: 'OpenAPI::Client'
+  github: 'https://metacpan.org/pod/OpenAPI::Client'
+  v2: true
+  language: '?'
+  category: '?'
+- name: cakephp-swagger
+  description: cakephp-swagger
+  github: 'https://packagist.org/packages/alt3/cakephp-swagger'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Swagger-PHP
+  description: Swagger-PHP
+  github: 'https://packagist.org/packages/zircote/swagger-php'
+  v2: true
+  language: '?'
+  category: '?'
+- name: php-swaggerize-fastroute-library
+  description: php-swaggerize-fastroute-library
+  github: >-
+    https://packagist.org/packages/iadvize/php-swaggerize-fastroute-library#0.2.0
+  v2: true
+  language: '?'
+  category: '?'
+- name: playframework
+  description: Client and Server depends on playframework.
+  github: 'http://www.playframework.com/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: Fintrospect
+  description: Fintrospect
+  github: 'http://www.fintrospect.io/'
+  v2: true
+  language: '?'
+  category: '?'
+- name: SwaggerWcf
+  description: Swagger for WCF
+  github: 'https://github.com/abelsilva/swaggerwcf'
+  v2: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 80
+  watch: 16
+  updated: '2018-11-02T08:34:58Z'
+  issues: 28
+  forks: 58
+  license: Apache-2.0
+- name: fleek-parser
+  description: A centralized parser for versioned parsing of swagger docs in fleek modules
+  github: 'https://github.com/fleekjs/fleek-parser'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: true
+  stars: 6
+  watch: 4
+  updated: '2018-04-14T00:30:44Z'
+  issues: 1
+  forks: 9
+  license: MIT
+- name: flex
+  description: Swagger schema validator
+  github: 'https://github.com/pipermerriam/flex'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 118
+  watch: 13
+  updated: '2018-11-20T17:47:25Z'
+  issues: 39
+  forks: 64
+  license: MIT
+- name: Nancy.Swagger
+  description: Nancy plugin for generated API documentation in Swagger format.
+  github: 'https://github.com/yahehe/Nancy.Swagger'
+  v2: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 115
+  watch: 20
+  updated: '2018-10-16T02:34:50Z'
+  issues: 19
+  forks: 65
+  license: MIT
+- name: openapi-mock
+  description: Start a mock server from an OpenAPI/Swagger spec file
+  github: 'https://github.com/penx/openapi-mock'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 16
+  watch: 1
+  updated: '2018-11-21T10:33:02Z'
+  issues: 7
+  forks: 1
+- name: '@apigee'
+  description: |-
+    a127 is toolkit for modeling & building rich, enterprise-class
+    APIs in Node.js on your laptop. The focal point of a127 is the Swagger
+    2.0 specification for defining and describing an API model. From the
+    Swagger model you can generate clients, servers and interactive
+    documentation for your API. From @apigee
+  github: 'https://github.com/apigee'
+  v2: true
+  language: '?'
+  category: '?'
+- name: PhoenixSwagger
+  description: Swagger integration to Phoenix framework
+  github: 'https://github.com/xerions/phoenix_swagger'
+  v2: true
+  language: Elixir
+  category: '?'
+  archived: false
+  stars: 369
+  watch: 21
+  updated: '2018-11-20T20:41:47Z'
+  issues: 20
+  forks: 94
+  license: MPL-2.0
+- name: fury-adapter-swagger
+  description: Swagger 2.0 parser adapter for Fury.js
+  github: 'https://github.com/apiaryio/fury-adapter-swagger/'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 11
+  watch: 24
+  updated: '2018-11-16T20:07:03Z'
+  issues: 20
+  forks: 14
+  license: MIT
+- name: fleek-response
+  description: >-
+    fleek-response is utility module for the fleek framework handling user
+    responses
+  github: 'https://github.com/fleekjs/fleek-response'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: true
+  stars: 2
+  watch: 4
+  updated: '2018-04-14T00:30:04Z'
+  issues: 2
+  forks: 5
+- name: SwagDoc
+  description: Create a public documentation REST API using Swagger 2.0 for Delphi.
+  github: 'https://github.com/marcelojaloto/SwagDoc'
+  v2: true
+  language: Pascal
+  category: '?'
+  archived: false
+  stars: 32
+  watch: 18
+  updated: '2018-11-09T13:48:29Z'
+  issues: 1
+  forks: 7
+  license: Apache-2.0
+- name: Connect
+  description: Connect is a middleware layer for Node.js
+  github: 'https://github.com/senchalabs/connect'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 8165
+  watch: 324
+  updated: '2018-11-22T16:18:40Z'
+  issues: 2
+  forks: 1071
+  license: MIT
+- name: bravado
+  description: Bravado is a python client library for Swagger 2.0 services
+  github: 'https://github.com/Yelp/bravado'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 366
+  watch: 34
+  updated: '2018-11-19T21:57:15Z'
+  issues: 65
+  forks: 92
+  license: NOASSERTION
+- name: test2doc.js
+  description: "\U0001F4D1 Generate API documents from your tests."
+  github: 'https://github.com/stackia/test2doc.js'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 50
+  watch: 4
+  updated: '2018-09-25T02:31:00Z'
+  issues: 5
+  forks: 11
+  license: MIT
+- name: assertj-swagger
+  description: >-
+    A Swagger assertj test library which compares a contract-first Swagger
+    YAML/JSON file with a code-first Swagger JSON
+  github: 'https://github.com/RobWin/assertj-swagger'
+  v2: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 128
+  watch: 9
+  updated: '2018-11-03T20:34:46Z'
+  issues: 7
+  forks: 33
+  license: Apache-2.0
+- name: got-swag
+  description: >-
+    :monkey_face: A tool to test Swagger-powered APIs automatically through
+    monkey testing and custom test suites
+  github: 'https://github.com/mobilcom-debitel/got-swag'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 33
+  watch: 9
+  updated: '2018-11-20T12:52:19Z'
+  issues: 14
+  forks: 9
+  license: NOASSERTION
+- name: ring-swagger
+  description: Swagger Spec for Clojure Web Apps
+  github: 'https://github.com/metosin/ring-swagger'
+  v2: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 326
+  watch: 24
+  updated: '2018-11-08T12:50:25Z'
+  issues: 7
+  forks: 66
+- name: byjg/swagger-test
+  description: >-
+    A set of tools for test your REST calls based on the swagger documentation
+    using PHPUnit
+  github: 'https://github.com/byjg/php-swagger-test'
+  v2: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 29
+  watch: 3
+  updated: '2018-11-16T07:28:48Z'
+  issues: 5
+  forks: 8
+  license: MIT
+- name: MiniApivore
+  description: MiniTest based version of Apivore gem.
+  github: 'https://github.com/alekseyl/mini-apivore'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 6
+  watch: 1
+  updated: '2018-08-13T09:33:14Z'
+  issues: 0
+  forks: 1
+  license: MIT
+- name: swagger-jsdoc
+  description: Generates swagger doc based on JSDoc.
+  github: 'https://github.com/Surnet/swagger-jsdoc'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 445
+  watch: 11
+  updated: '2018-11-23T10:31:25Z'
+  issues: 9
+  forks: 83
+  license: MIT
+- name: Swashbuckle
+  description: Seamlessly adds a swagger to WebApi projects!
+  github: 'https://github.com/domaindrivendev/Swashbuckle'
+  v2: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 2406
+  watch: 189
+  updated: '2018-11-21T04:58:37Z'
+  issues: 247
+  forks: 618
+  license: BSD-3-Clause
+- name: gossi/swagger
+  description: A php library to manipulate swagger specifications
+  github: 'https://github.com/gossi/swagger'
+  v2: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 17
+  watch: 1
+  updated: '2018-09-16T14:20:27Z'
+  issues: 0
+  forks: 17
+  license: MIT
+- name: SwaggerAssertions
+  description: Assert your API requests and responses match with your swagger definition
+  github: 'https://github.com/Maks3w/SwaggerAssertions'
+  v2: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 125
+  watch: 9
+  updated: '2018-11-16T08:13:10Z'
+  issues: 5
+  forks: 28
+  license: NOASSERTION
+- name: compojure-api
+  description: Sweet web apis with Compojure & Swagger
+  github: 'https://github.com/metosin/compojure-api'
+  v2: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 870
+  watch: 41
+  updated: '2018-11-21T15:53:13Z'
+  issues: 24
+  forks: 121
+- name: AutoRest
+  description: >-
+    OpenAPI (f.k.a Swagger) Specification code generator. Supports C#, Go, Java,
+    Node.js, TypeScript, Python, Ruby and PHP.
+  github: 'https://github.com/Azure/AutoRest'
+  v2: true
+  language: TypeScript
+  category: '?'
+  archived: false
+  stars: 2058
+  watch: 968
+  updated: '2018-11-23T06:08:10Z'
+  issues: 220
+  forks: 417
+  license: MIT
+- name: Examples
+  description: Mock data generator for swagger api
+  github: 'https://github.com/subeeshcbabu/swagmock/blob/master/docs/EXAMPLES.md'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 113
+  watch: 3
+  updated: '2018-11-21T10:32:42Z'
+  issues: 22
+  forks: 27
+  license: MIT
+- name: Friboo
+  description: >-
+    Utility library for writing microservices in Clojure, with support for
+    Swagger and OAuth
+  github: 'https://github.com/zalando/friboo'
+  v2: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 114
+  watch: 20
+  updated: '2018-11-04T12:55:05Z'
+  issues: 25
+  forks: 14
+  license: Apache-2.0
+- name: generator-swaggerize
+  description: >-
+    Yeoman generator for design-driven apis with swagger 2.0 and
+    krakenjs/swaggerize tools.
+  github: 'https://github.com/krakenjs/generator-swaggerize'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 62
+  watch: 8
+  updated: '2018-11-09T22:14:41Z'
+  issues: 10
+  forks: 34
+  license: NOASSERTION
+- name: cowboy
+  description: 'Small, fast, modern HTTP server for Erlang/OTP.'
+  github: 'https://github.com/ninenines/cowboy'
+  v2: true
+  language: Erlang
+  category: '?'
+  archived: false
+  stars: 5267
+  watch: 340
+  updated: '2018-11-22T16:18:40Z'
+  issues: 67
+  forks: 950
+  license: ISC
+- name: blueoak-server
+  description: 'express.js-based, swagger-matic, server runtime'
+  github: 'https://github.com/BlueOakJS/blueoak-server'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 146
+  watch: 41
+  updated: '2018-11-20T09:40:16Z'
+  issues: 16
+  forks: 23
+  license: MIT
+- name: swagger-aggregator
+  description: Aggregate several swagger APIs in one
+  github: 'https://github.com/Trax-air/swagger-aggregator'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 17
+  watch: 6
+  updated: '2018-10-19T14:42:03Z'
+  issues: 0
+  forks: 4
+  license: MIT
+- name: serverless_swagger
+  description: Configure serverless functions from swagger definition
+  github: 'https://github.com/Reckon-Limited/serverless_swagger'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 25
+  watch: 11
+  updated: '2018-11-02T15:54:24Z'
+  issues: 3
+  forks: 5
+  license: MIT
+- name: oas-nodegen
+  description: >-
+    A library for generating completely customizable code from the Open API
+    Specification (FKA Swagger) RESTful API documentation using the scripting
+    power of Node.js.
+  github: 'https://github.com/capitalone/oas-nodegen'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 24
+  watch: 7
+  updated: '2018-10-14T20:43:12Z'
+  issues: 0
+  forks: 6
+  license: Apache-2.0
+- name: calcinai/strut
+  description: 'An OpenAPI/Swagger manipulation library '
+  github: 'https://github.com/calcinai/strut'
+  v2: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 8
+  watch: 1
+  updated: '2018-09-18T17:00:59Z'
+  issues: 1
+  forks: 2
+  license: MIT
+- name: falsy
+  description: >-
+    FAL.S.Y python api framework(the framework for using falcon, swagger, yaml
+    together)
+  github: 'https://github.com/pingf/falsy'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 86
+  watch: 12
+  updated: '2018-11-13T16:16:18Z'
+  issues: 3
+  forks: 19
+  license: MIT
+- name: flask-swagger
+  description: A swagger 2.0 spec extractor for flask
+  github: 'https://github.com/gangverk/flask-swagger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 295
+  watch: 24
+  updated: '2018-11-20T19:00:14Z'
+  issues: 14
+  forks: 64
+  license: MIT
+- name: swagger-spec-validator
+  description: swagger-spec-validator
+  github: 'https://github.com/Yelp/swagger_spec_validator'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 67
+  watch: 27
+  updated: '2018-10-25T21:52:39Z'
+  issues: 19
+  forks: 48
+  license: NOASSERTION
+- name: binder-swagger-java
+  description: A framework to bring form-binder-java to swagger
+  github: 'https://github.com/tminglei/binder-swagger-java'
+  v2: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 55
+  watch: 10
+  updated: '2018-09-15T15:41:38Z'
+  issues: 1
+  forks: 11
+  license: BSD-2-Clause
+- name: swagger-codegen-gradle-plugin
+  description: A Gradle plugin to support the swagger code generation project
+  github: 'https://github.com/thebignet/swagger-codegen-gradle-plugin'
+  v2: true
+  language: Groovy
+  category: '?'
+  archived: false
+  stars: 40
+  watch: 4
+  updated: '2018-09-06T08:06:49Z'
+  issues: 2
+  forks: 33
+  license: MIT
+- name: pyramid-swagger
+  description: >-
+    Convenient tools for using Swagger to define and validate your interfaces in
+    a Pyramid webapp.
+  github: 'https://github.com/striglia/pyramid_swagger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 63
+  watch: 14
+  updated: '2018-09-23T05:35:19Z'
+  issues: 22
+  forks: 45
+  license: BSD-3-Clause
+- name: swagger-mongodb
+  description: lightweight swagger-ui crud-api backed by mongodb
+  github: 'https://github.com/kaizhu256/node-swagger-mongodb'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 13
+  watch: 1
+  updated: '2018-09-24T11:45:20Z'
+  issues: 0
+  forks: 1
+- name: swaggerize-express
+  description: Design-driven apis with swagger 2.0 and express.
+  github: 'https://github.com/krakenjs/swaggerize-express'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 334
+  watch: 28
+  updated: '2018-11-19T06:02:41Z'
+  issues: 31
+  forks: 70
+  license: NOASSERTION
+- name: Raisin
+  description: "Raisin - a REST API micro framework for Perl \U0001F42B \U0001F42A"
+  github: 'https://github.com/khrt/Raisin'
+  v2: true
+  language: Perl
+  category: '?'
+  archived: false
+  stars: 43
+  watch: 9
+  updated: '2018-11-20T07:28:40Z'
+  issues: 5
+  forks: 20
+  license: NOASSERTION
+- name: pokemock
+  description: A mock server generated from a Swagger file
+  github: 'https://github.com/mobilcom-debitel/pokemock'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 34
+  watch: 3
+  updated: '2018-11-16T17:26:14Z'
+  issues: 6
+  forks: 8
+  license: NOASSERTION
+- name: fleek-validator
+  description: Validation for the fleek framework
+  github: 'https://github.com/fleekjs/fleek-validator'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: true
+  stars: 8
+  watch: 13
+  updated: '2018-04-14T00:29:01Z'
+  issues: 1
+  forks: 12
+  license: MIT
+- name: oatpp-swagger
+  description: OpenApi 3.0.0 docs + Swagger UI for oatpp services
+  github: 'https://github.com/oatpp/oatpp-swagger'
+  v2: true
+  language: C++
+  category: '?'
+  archived: false
+  stars: 2
+  watch: 1
+  updated: '2018-10-31T22:57:15Z'
+  issues: 0
+  forks: 0
+  license: Apache-2.0
+- name: koa-joi-swagger
+  description: >-
+    An opinionated koa validation & swagger library, letting you write one Joi
+    schema for both validation & generating swagger ui.
+  github: 'https://github.com/zaaack/koa-joi-swagger'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 58
+  watch: 4
+  updated: '2018-11-02T10:45:50Z'
+  issues: 1
+  forks: 9
+  license: MIT
+- name: grape-swagger
+  description: Add OAPI/swagger v2.0 compliant documentation to your grape API
+  github: 'https://github.com/ruby-grape/grape-swagger'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 902
+  watch: 36
+  updated: '2018-11-20T05:28:18Z'
+  issues: 88
+  forks: 420
+  license: MIT
+- name: swagger-tools
+  description: A Node.js and browser module that provides tooling around Swagger.
+  github: 'https://github.com/apigee-127/swagger-tools'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 571
+  watch: 53
+  updated: '2018-11-15T13:08:53Z'
+  issues: 118
+  forks: 276
+  license: MIT
+- name: fnhouse-swagger
+  description: Swagger integration for fnhouse
+  github: 'https://github.com/metosin/fnhouse-swagger'
+  v2: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 22
+  watch: 11
+  updated: '2016-10-07T15:03:01Z'
+  issues: 1
+  forks: 4
+- name: SwagGen
+  description: Swagger/OpenAPISpec 2.0 Swift code generator
+  github: 'https://github.com/yonaskolb/SwagGen'
+  v2: true
+  language: Swift
+  category: '?'
+  archived: false
+  stars: 151
+  watch: 10
+  updated: '2018-11-20T19:09:28Z'
+  issues: 11
+  forks: 32
+  license: MIT
+- name: 'Jester - Jolie rEST routER '
+  description: Jester - the Jolie rEST routER
+  github: 'https://github.com/jolie/jester'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 2
+  watch: 1
+  updated: '2018-04-08T16:56:01Z'
+  issues: 0
+  forks: 1
+  license: MIT
+- name: bravado-core
+  description: bravado-core
+  github: 'https://github.com/Yelp/bravado-core'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 83
+  watch: 29
+  updated: '2018-11-20T14:35:47Z'
+  issues: 43
+  forks: 80
+  license: NOASSERTION
+- name: sbt-swagger-codegen
+  description: sbt Plugin for Scala code generation for Swagger specs
+  github: 'https://github.com/unicredit/sbt-swagger-codegen'
+  v2: true
+  language: Scala
+  category: '?'
+  archived: false
+  stars: 83
+  watch: 21
+  updated: '2018-11-14T14:15:35Z'
+  issues: 12
+  forks: 26
+  license: Apache-2.0
+- name: spec-synthase
+  description: >-
+    Spec-synthase is a tool to help deal with big swagger files, by building the
+    swagger specification files from little spec files.
+  github: 'https://github.com/MicroarrayTecnologia/spec-synthase'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 3
+  watch: 2
+  updated: '2018-10-26T22:13:20Z'
+  issues: 8
+  forks: 4
+  license: MPL-2.0
+- name: fleek-router
+  description: a router for the fleek framework
+  github: 'https://github.com/fleekjs/fleek-router'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: true
+  stars: 16
+  watch: 10
+  updated: '2018-10-31T14:18:51Z'
+  issues: 7
+  forks: 11
+  license: MIT
+- name: swagger-stub
+  description: Generate a stub from a swagger file
+  github: 'https://github.com/Trax-air/swagger-stub'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 16
+  watch: 5
+  updated: '2018-09-20T14:14:58Z'
+  issues: 0
+  forks: 3
+  license: MIT
+- name: oas_parser
+  description: An open source Open API Spec 3 Definition Parser
+  github: 'https://github.com/Nexmo/oas_parser'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 9
+  watch: 9
+  updated: '2018-11-20T10:43:48Z'
+  issues: 2
+  forks: 6
+  license: MIT
+- name: Jane OpenAPI
+  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
+  github: 'https://github.com/janephp/open-api'
+  v2: true
+  language: PHP
+  category: '?'
+  archived: false
+  stars: 12
+  watch: 2
+  updated: '2018-11-21T12:51:35Z'
+  issues: 0
+  forks: 1
+  license: MIT
+- name: bottle-swagger
+  description: A Bottle plugin for Swagger REST APIs
+  github: 'https://github.com/ampedandwired/bottle-swagger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 22
+  watch: 2
+  updated: '2018-11-19T09:21:24Z'
+  issues: 1
+  forks: 11
+  license: MIT
+- name: SwaggerGen
+  description: >-
+    PHP library to generate Swagger/OpenAPI REST API documentation files from
+    comments in PHP source code.
+  github: 'https://github.com/vanderlee/PHPSwaggerGen'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 28
+  watch: 3
+  updated: '2018-10-31T09:44:58Z'
+  issues: 2
+  forks: 11
+  license: MIT
+- name: swagger-codegen-maven-plugin
+  description: A Maven plugin to support the swagger code generation project
+  github: 'https://github.com/garethjevans/swagger-codegen-maven-plugin'
+  v2: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 24
+  watch: 7
+  updated: '2018-06-06T12:24:59Z'
+  issues: 4
+  forks: 65
+- name: flask-restplus
+  description: >-
+    Fully featured framework for fast, easy and documented API development with
+    Flask
+  github: 'https://github.com/noirbizarre/flask-restplus'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 1238
+  watch: 98
+  updated: '2018-11-23T07:28:06Z'
+  issues: 252
+  forks: 269
+  license: NOASSERTION
+- name: swagger-parser
+  description: Give useful informations about your swagger files
+  github: 'https://github.com/Trax-air/swagger-parser'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 30
+  watch: 6
+  updated: '2018-11-21T21:33:08Z'
+  issues: 13
+  forks: 39
+  license: MIT
+- name: pecan-swagger
+  description: some helpers to create swagger output from a pecan app
+  github: 'https://github.com/elmiko/pecan-swagger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 6
+  watch: 2
+  updated: '2018-07-09T08:12:41Z'
+  issues: 0
+  forks: 3
+  license: NOASSERTION
+- name: dropwizard-swagger
+  description: >-
+    a Dropwizard bundle that serves Swagger UI static content and loads Swagger
+    endpoints.
+  github: 'https://github.com/smoketurner/dropwizard-swagger'
+  v2: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 140
+  watch: 18
+  updated: '2018-10-29T10:36:18Z'
+  issues: 19
+  forks: 48
+  license: Apache-2.0
+- name: swagger-tester
+  description: Automatically test your swagger API
+  github: 'https://github.com/Trax-air/swagger-tester'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 65
+  watch: 11
+  updated: '2018-10-16T15:11:37Z'
+  issues: 7
+  forks: 23
+  license: MIT
+- name: hippie-swagger
+  description: API testing tool with automatic swagger assertions
+  github: 'https://github.com/cachecontrol/hippie-swagger'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 118
+  watch: 13
+  updated: '2018-11-12T12:49:19Z'
+  issues: 2
+  forks: 20
+  license: ISC
+- name: swagger-py-codegen
+  description: 'a Python web framework generator supports Flask, Tornado, Falcon, Sanic'
+  github: 'https://github.com/guokr/swagger-py-codegen'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 298
+  watch: 27
+  updated: '2018-11-22T21:21:14Z'
+  issues: 9
+  forks: 87
+- name: rswag
+  description: Seamlessly adds a Swagger to Rails-based API's
+  github: 'https://github.com/domaindrivendev/rswag'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 357
+  watch: 13
+  updated: '2018-11-22T09:39:58Z'
+  issues: 33
+  forks: 83
+- name: rspec-rails-swagger
+  description: >-
+    Generate Swagger 2.0 docs for Rails apps using RSpec request specs. Test
+    results can be captured as response examples.
+  github: 'https://github.com/drewish/rspec-rails-swagger'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 33
+  watch: 2
+  updated: '2018-11-22T16:33:51Z'
+  issues: 9
+  forks: 10
+  license: MIT
+- name: Connexion
+  description: >-
+    Swagger/OpenAPI First framework for Python on top of Flask with automatic
+    endpoint validation & OAuth2 support
+  github: 'https://github.com/zalando/connexion'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 1782
+  watch: 78
+  updated: '2018-11-23T10:57:53Z'
+  issues: 136
+  forks: 314
+  license: NOASSERTION
+- name: Flasgger
+  description: Easy OpenAPI specs and Swagger UI for your Flask API
+  github: 'https://github.com/rochacbruno/flasgger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 1213
+  watch: 37
+  updated: '2018-11-22T08:04:25Z'
+  issues: 65
+  forks: 181
+  license: MIT
+- name: swagmock
+  description: Mock data generator for swagger api
+  github: 'https://github.com/subeeshcbabu/swagmock'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 113
+  watch: 3
+  updated: '2018-11-21T10:32:42Z'
+  issues: 22
+  forks: 27
+  license: MIT
+- name: swagger-blocks
+  description: Define and serve live-updating Swagger JSON for Ruby apps.
+  github: 'https://github.com/fotinakis/swagger-blocks'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 476
+  watch: 19
+  updated: '2018-11-22T08:55:28Z'
+  issues: 22
+  forks: 63
+  license: MIT
+- name: Apivore
+  description: >-
+    Tests your rails API against its Swagger description of end-points, models,
+    and query parameters.
+  github: 'https://github.com/westfieldlabs/apivore'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 167
+  watch: 7
+  updated: '2018-11-12T22:57:02Z'
+  issues: 24
+  forks: 52
+  license: Apache-2.0
+- name: swagger_engine
+  description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
+  github: 'https://github.com/batdevis/swagger_engine'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 44
+  watch: 6
+  updated: '2018-08-13T00:16:20Z'
+  issues: 11
+  forks: 47
+  license: MIT
+- name: swagger-stats
+  description: API Telemetry and APM
+  github: 'https://github.com/slanatech/swagger-stats'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 179
+  watch: 11
+  updated: '2018-11-22T17:41:35Z'
+  issues: 27
+  forks: 29
+  license: MIT
+- name: svelte
+  description: Dynamic Ruby API Client from Swagger JSON Spec
+  github: 'https://github.com/notonthehighstreet/svelte'
+  v2: true
+  language: Ruby
+  category: '?'
+  archived: false
+  stars: 25
+  watch: 54
+  updated: '2018-10-24T15:08:29Z'
+  issues: 5
+  forks: 7
+  license: MIT
+- name: Swagger-ui
+  description: >-
+    Swagger UI is a collection of HTML, Javascript, and CSS assets that
+    dynamically generate beautiful documentation from a Swagger-compliant API.
+  github: 'https://github.com/swagger-api/swagger-ui'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 13352
+  watch: 643
+  updated: '2018-11-23T11:05:31Z'
+  issues: 291
+  forks: 6097
+  license: NOASSERTION
+- name: Swashbuckle.AspNetCore
+  description: Swagger tools for documenting API's built on ASP.NET Core
+  github: 'https://github.com/domaindrivendev/Swashbuckle.AspNetCore'
+  v2: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 1893
+  watch: 168
+  updated: '2018-11-22T13:07:51Z'
+  issues: 99
+  forks: 457
+  license: MIT
+- name: hapi-swaggered
+  description: >-
+    Yet another hapi plugin providing swagger compliant API specifications based
+    on routes and joi schemas to be used with swagger-ui.
+  github: 'https://github.com/z0mt3c/hapi-swaggered'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 76
+  watch: 5
+  updated: '2018-09-30T05:35:04Z'
+  issues: 31
+  forks: 34
+  license: MIT
+- name: prance
+  description: Resolving Swagger/OpenAPI 2.0 and 3.0 Parser
+  github: 'https://github.com/jfinkhaeuser/prance'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 35
+  watch: 4
+  updated: '2018-11-02T10:30:12Z'
+  issues: 3
+  forks: 7
+  license: NOASSERTION
+- name: QSwag
+  description: Fast & Light Swagger generator for .NET Core
+  github: 'https://github.com/swimlane/qswag'
+  v2: true
+  language: 'C#'
+  category: '?'
+  archived: false
+  stars: 23
+  watch: 17
+  updated: '2018-10-18T10:40:58Z'
+  issues: 0
+  forks: 6
+- name: pedestal-swagger
+  description: Swagger integration for Pedestal and Tripod
+  github: 'https://github.com/frankiesardo/pedestal-swagger'
+  v2: true
+  language: Clojure
+  category: '?'
+  archived: false
+  stars: 49
+  watch: 1
+  updated: '2018-07-08T01:45:18Z'
+  issues: 4
+  forks: 17
+  license: EPL-1.0
+- name: grpc-gateway
+  description: gRPC to JSON proxy generator following the gRPC HTTP spec
+  github: 'https://github.com/gengo/grpc-gateway'
+  v2: true
+  language: Go
+  category: '?'
+  archived: false
+  stars: 4813
+  watch: 230
+  updated: '2018-11-23T08:45:46Z'
+  issues: 129
+  forks: 624
+  license: BSD-3-Clause
+- name: Swagger Express Middleware
+  description: Swagger middlware and mocks for Express.js and Node
+  github: >-
+    https://github.com/BigstickCarpet/swagger-express-middleware/#swagger-express-middleware
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 321
+  watch: 23
+  updated: '2018-11-22T06:42:38Z'
+  issues: 93
+  forks: 131
+  license: MIT
+- name: swagger2markup-gradle-plugin
+  description: A Swagger2Markup Gradle Plugin.
+  github: 'https://github.com/RobWin/swagger2markup-gradle-plugin'
+  v2: true
+  language: Groovy
+  category: '?'
+  archived: false
+  stars: 49
+  watch: 6
+  updated: '2018-11-15T06:43:13Z'
+  issues: 4
+  forks: 10
+  license: Apache-2.0
+- name: goa
+  description: Design-based APIs and microservices in Go
+  github: 'https://github.com/raphael/goa'
+  v2: true
+  language: Go
+  category: '?'
+  archived: false
+  stars: 3136
+  watch: 161
+  updated: '2018-11-23T04:54:33Z'
+  issues: 43
+  forks: 334
+  license: MIT
+- name: Swagger Parser
+  description: Swagger 2.0 and OpenAPI 3.0 parser and validator for Node and browsers
+  github: 'https://github.com/BigstickCarpet/swagger-parser#swagger-parser'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 394
+  watch: 20
+  updated: '2018-11-23T03:02:06Z'
+  issues: 24
+  forks: 64
+  license: MIT
+- name: express-openapi
+  description: A Monorepo of various packages to power OpenAPI in node
+  github: 'https://github.com/kogosoftwarellc/express-openapi'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 170
+  watch: 11
+  updated: '2018-11-22T12:28:52Z'
+  issues: 15
+  forks: 50
+  license: MIT
+- name: cowboy-swagger
+  description: Swagger integration for Cowboy (built on trails)
+  github: 'https://github.com/inaka/cowboy-swagger'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 78
+  watch: 45
+  updated: '2018-10-01T21:25:02Z'
+  issues: 7
+  forks: 29
+  license: Apache-2.0
+- name: swaggerize
+  description: OpenApi 2.0 aka Swagger plugin for D programming language.
+  github: 'https://github.com/gedaiu/swaggarize'
+  v2: true
+  language: D
+  category: '?'
+  archived: false
+  stars: 3
+  watch: 5
+  updated: '2018-04-03T09:11:03Z'
+  issues: 0
+  forks: 3
+  license: MIT
+- name: Swagger Parser
+  description: Swagger 2.0 and OpenAPI 3.0 parser and validator for Node and browsers
+  github: 'https://github.com/BigstickCarpet/swagger-parser#swagger-parser'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 394
+  watch: 20
+  updated: '2018-11-23T03:02:06Z'
+  issues: 24
+  forks: 64
+  license: MIT
+- name: sails-swagger
+  description: Swagger integration for sails.js
+  github: 'https://github.com/tjwebb/sails-swagger'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 101
+  watch: 7
+  updated: '2018-11-22T16:56:03Z'
+  issues: 22
+  forks: 51
+- name: swagger1st
+  description: >-
+    A Clojure Ring handler that parses, validates and routes requests based on
+    your Swagger definitions
+  github: 'https://github.com/sarnowski/swagger1st'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 43
+  watch: 15
+  updated: '2018-11-21T21:34:17Z'
+  issues: 17
+  forks: 13
+  license: ISC
+- name: api-spec-converter
+  description: >-
+    Convert API descriptions between popular formats such as OpenAPI(fka
+    Swagger), RAML, API Blueprint, WADL, etc.
+  github: 'https://github.com/lucybot/api-spec-converter'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 369
+  watch: 16
+  updated: '2018-11-20T21:27:15Z'
+  issues: 20
+  forks: 50
+  license: MIT
+- name: play-swagger
+  description: Provides Swagger support for the Play-Framework
+  github: 'https://github.com/zalando/play-swagger'
+  v2: true
+  language: Scala
+  category: '?'
+  archived: false
+  stars: 98
+  watch: 18
+  updated: '2018-04-21T14:20:11Z'
+  issues: 23
+  forks: 13
+  license: MIT
+- name: go-swagger
+  description: Swagger 2.0 implementation for go
+  github: 'https://github.com/casualjim/go-swagger'
+  v2: true
+  language: Go
+  category: '?'
+  archived: false
+  stars: 2938
+  watch: 96
+  updated: '2018-11-23T11:12:57Z'
+  issues: 305
+  forks: 514
+  license: Apache-2.0
+- name: swaggerize-hapi
+  description: Build design-driven apis with OpenAPI (formerly swagger) 2.0 and hapi.
+  github: 'https://github.com/krakenjs/swaggerize-hapi'
+  v2: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 153
+  watch: 17
+  updated: '2018-11-11T14:42:53Z'
+  issues: 3
+  forks: 57
+  license: NOASSERTION
+- name: pyswagger
+  description: >-
+    An OpenAPI (fka Swagger) client & converter in python, which is type-safe,
+    dynamic, spec-compliant.
+  github: 'https://github.com/AntXlab/pyswagger'
+  v2: true
+  language: Python
+  category: '?'
+  archived: false
+  stars: 206
+  watch: 12
+  updated: '2018-11-20T04:04:01Z'
+  issues: 17
+  forks: 36
+  license: MIT
+- name: swagger2markup
+  description: >-
+    A Swagger to AsciiDoc or Markdown converter to simplify the generation of an
+    up-to-date RESTful API documentation by combining documentation that’s been
+    hand-written with auto-generated API documentation.
+  github: 'https://github.com/RobWin/swagger2markup'
+  v2: true
+  language: Java
+  category: '?'
+  archived: false
+  stars: 1442
+  watch: 72
+  updated: '2018-11-22T14:10:21Z'
+  issues: 49
+  forks: 230
+  license: Apache-2.0
