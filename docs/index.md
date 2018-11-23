@@ -44,6 +44,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 <script type="text/javascript">
   $(document).ready(function(){
     $('a').each(function(){
-        $(this).attr('data-tippy'),JSON.parse($(this).attr('data-json')).stars });
+        $(this).attr('data-tippy',JSON.parse($(this).attr('data-json')).stars);
+    });
   });
 </script>
