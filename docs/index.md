@@ -38,3 +38,12 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 {% endfor %}
 
+<script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('a').each(function(){
+        $(this).attr('data-tippy'),JSON.parse($(this).attr('data-json')).stars });
+  });
+</script>
