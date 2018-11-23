@@ -45,10 +45,10 @@ Please raise a Pull-Request or issue with any projects we've missed!
   $(document).ready(function(){
     $('a').each(function(){
         try {
-            $(this).attr('data-tippy',JSON.parse(decodeURIComponent($(this).attr('data-json'))).stars);
+            $(this).data('tippy',$(this).data('json').stars);
         }
         catch (ex) {
-            console.error(decodeURIComponent($(this).attr('data-json')));
+            console.error(decodeURIComponent($(this).data('json')));
         }
     });
   });
