@@ -68,7 +68,7 @@
   forks: 14
   updated: '2018-11-21T13:49:47Z'
   issues: 3
-  license: NOASSERTION
+  license: ''
 - name: OData.OpenAPI
   category: converters
   github: 'https://github.com/xuzhg/OData.OpenAPI'
@@ -136,7 +136,7 @@
   forks: 168
   updated: '2018-11-22T23:25:04Z'
   issues: 30
-  license: NOASSERTION
+  license: ''
 - name: ReDoc
   category: documentation
   language: TypeScript
@@ -146,10 +146,10 @@
   v2: true
   v3_progress_link: 'https://github.com/Rebilly/ReDoc/issues/327'
   archived: false
-  stars: 3970
+  stars: 3972
   watch: 130
   forks: 473
-  updated: '2018-11-23T10:36:33Z'
+  updated: '2018-11-23T16:29:50Z'
   issues: 121
   license: MIT
 - name: widdershins
@@ -229,12 +229,12 @@
   v3: true
   description: Swagger Editor
   archived: false
-  stars: 4316
+  stars: 4317
   watch: 240
   forks: 1284
-  updated: '2018-11-23T07:22:15Z'
+  updated: '2018-11-23T13:45:00Z'
   issues: 69
-  license: NOASSERTION
+  license: ''
 - name: RepreZen API Studio
   category: editors
   language: Java
@@ -283,10 +283,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 343
+  stars: 344
   watch: 30
   forks: 56
-  updated: '2018-11-22T12:31:19Z'
+  updated: '2018-11-23T14:52:57Z'
   issues: 7
   license: MIT
 - name: prism
@@ -317,7 +317,7 @@
   forks: 1
   updated: '2018-08-12T17:57:28Z'
   issues: 1
-  license: NOASSERTION
+  license: ''
 - name: swagger-node
   category: frameworks
   github: 'https://github.com/swagger-api/swagger-node'
@@ -331,7 +331,7 @@
   forks: 517
   updated: '2018-11-22T23:45:12Z'
   issues: 192
-  license: NOASSERTION
+  license: ''
 - name: modern-ruby
   category: frameworks
   language: Ruby
@@ -354,10 +354,10 @@
   v2: true
   v3_progress_link: 'https://github.com/go-swagger/go-swagger/issues/1122'
   archived: false
-  stars: 2938
+  stars: 2939
   watch: 96
   forks: 514
-  updated: '2018-11-23T11:12:57Z'
+  updated: '2018-11-23T15:41:41Z'
   issues: 305
   license: Apache-2.0
 - name: swagger-inflector
@@ -371,10 +371,10 @@
   archived: false
   stars: 84
   watch: 24
-  forks: 51
+  forks: 52
   updated: '2018-10-21T14:39:23Z'
   issues: 35
-  license: NOASSERTION
+  license: ''
 - name: Vert.x Web API Contract
   category: frameworks
   description: >-
@@ -395,7 +395,7 @@
   archived: false
   stars: 54
   watch: 20
-  forks: 18
+  forks: 19
   updated: '2018-11-21T13:19:48Z'
   issues: 1
   license: Apache-2.0
@@ -411,7 +411,7 @@
   watch: 42
   forks: 66
   updated: '2018-11-22T18:16:30Z'
-  issues: 57
+  issues: 58
   license: AGPL-3.0
 - name: openapi-first
   category: frameworks
@@ -442,7 +442,7 @@
   forks: 1654
   updated: '2018-11-23T12:33:16Z'
   issues: 316
-  license: NOASSERTION
+  license: ''
 - name: swagger-parser
   category: parsers
   github: 'https://github.com/swagger-api/swagger-parser'
@@ -452,10 +452,10 @@
   archived: false
   stars: 288
   watch: 50
-  forks: 260
+  forks: 261
   updated: '2018-11-20T09:19:53Z'
   issues: 104
-  license: NOASSERTION
+  license: ''
 - name: swagger-cli
   category: parsers
   github: 'https://github.com/BigstickCarpet/swagger-cli'
@@ -636,7 +636,7 @@
   forks: 9
   updated: '2018-11-23T02:51:53Z'
   issues: 3
-  license: NOASSERTION
+  license: ''
 - name: swagger-codegen
   category: sdk
   language: HTML
@@ -653,7 +653,7 @@
   forks: 4091
   updated: '2018-11-23T12:15:38Z'
   issues: 1943
-  license: NOASSERTION
+  license: ''
 - name: swagger-node-codegen
   category: sdk
   language: JavaScript
@@ -704,11 +704,11 @@
   documentation: 'http://dredd.rtfd.org/'
   v2: true
   archived: false
-  stars: 2651
+  stars: 2652
   watch: 87
   forks: 226
-  updated: '2018-11-23T12:22:47Z'
-  issues: 192
+  updated: '2018-11-23T13:30:56Z'
+  issues: 191
   license: MIT
 - name: openapi-diff
   category: miscellaneous
@@ -855,7 +855,7 @@
   updated: '2018-11-07T00:47:45Z'
   issues: 3
   forks: 17
-  license: NOASSERTION
+  license: ''
 - name: swagger-docs
   description: Generates swagger-ui json files for Rails APIs with a simple DSL.
   github: 'https://github.com/richhollis/swagger-docs'
@@ -932,7 +932,7 @@
   updated: '2018-06-23T06:37:12Z'
   issues: 2
   forks: 1
-  license: NOASSERTION
+  license: ''
 - name: springfox-grails-integration
   description: SpringFox integration with Grails 3.x
   github: 'https://github.com/springfox/springfox-grails-integration'
@@ -966,11 +966,11 @@
   language: Go
   category: '?'
   archived: false
-  stars: 2985
+  stars: 2986
   watch: 155
-  updated: '2018-11-23T06:50:01Z'
+  updated: '2018-11-23T12:53:44Z'
   issues: 11
-  forks: 459
+  forks: 458
   license: MIT
 - name: springfox-grails-demo
   description: >-
@@ -1039,7 +1039,7 @@
   updated: '2018-10-10T11:51:04Z'
   issues: 2
   forks: 6
-  license: NOASSERTION
+  license: ''
 - name: django-tastypie-swagger
   description: An adapter to use swagger-ui with django-tastypie.
   github: 'https://github.com/concentricsky/django-tastypie-swagger'
@@ -1052,7 +1052,7 @@
   updated: '2018-10-27T18:18:52Z'
   issues: 47
   forks: 122
-  license: NOASSERTION
+  license: ''
 - name: swagger-express
   description: 'Swagger + Express = {swagger-express}'
   github: 'https://github.com/fliptoo/swagger-express'
@@ -1069,7 +1069,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions
+    negotiation enabled actions 
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -1080,7 +1080,7 @@
   updated: '2018-02-09T18:56:54Z'
   issues: 2
   forks: 6
-  license: NOASSERTION
+  license: ''
 - name: ServiceStack
   description: >-
     Thoughtfully architected, obscenely fast, thoroughly enjoyable web services
@@ -1095,7 +1095,7 @@
   updated: '2018-11-22T22:55:34Z'
   issues: 35
   forks: 1518
-  license: NOASSERTION
+  license: ''
 - name: swaggydoc
   description: Swagger Documentation for Grails Controllers Plugin
   github: 'https://github.com/rahulsom/swaggydoc'
@@ -1173,7 +1173,7 @@
   updated: '2018-08-21T23:18:03Z'
   issues: 4
   forks: 7
-  license: NOASSERTION
+  license: ''
 - name: source2swagger
   description: >-
     Builds a swagger compliant JSON specification from annotations on the
@@ -1227,7 +1227,7 @@
   updated: '2018-11-07T00:47:45Z'
   issues: 3
   forks: 17
-  license: NOASSERTION
+  license: ''
 - name: dotswaggen
   description: >-
     DotSwagGen is a command line code generator for the swagger specification
@@ -1320,7 +1320,7 @@
   updated: '2018-03-12T06:42:23Z'
   issues: 4
   forks: 11
-  license: NOASSERTION
+  license: ''
 - name: fubumvc
   description: A front-controller style MVC framework for .NET
   github: 'https://github.com/DarthFubuMVC/fubumvc'
@@ -1333,7 +1333,7 @@
   updated: '2018-10-27T15:45:49Z'
   issues: 89
   forks: 166
-  license: NOASSERTION
+  license: ''
 - name: swagger-validator
   description: Jax-Rs validator for swagger
   github: 'https://github.com/kenshoo/swagger-validator'
@@ -1369,11 +1369,11 @@
   category: '?'
   archived: false
   stars: 17873
-  watch: 1201
-  updated: '2018-11-23T11:40:38Z'
+  watch: 1200
+  updated: '2018-11-23T15:37:00Z'
   issues: 531
   forks: 3734
-  license: NOASSERTION
+  license: ''
 - name: swagger-ajax-client
   description: Create XHR clients for Swagger API Specifications
   github: 'https://github.com/signalfx/swagger-ajax-client'
@@ -1386,7 +1386,7 @@
   updated: '2018-04-18T17:21:06Z'
   issues: 0
   forks: 1
-  license: NOASSERTION
+  license: ''
 - name: swagger-ui
   description: >-
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
@@ -1396,12 +1396,12 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 13352
+  stars: 13354
   watch: 643
-  updated: '2018-11-23T11:05:31Z'
-  issues: 291
-  forks: 6097
-  license: NOASSERTION
+  updated: '2018-11-23T15:28:57Z'
+  issues: 292
+  forks: 6096
+  license: ''
 - name: swagger4spring-web
   description: Swagger support for Spring MVC
   github: 'https://github.com/wkennedy/swagger4spring-web'
@@ -1428,7 +1428,7 @@
   updated: '2018-11-22T22:55:34Z'
   issues: 35
   forks: 1518
-  license: NOASSERTION
+  license: ''
 - name: Doppelauge
   description: '[UNMAINTAINED] Four libraries for the play framework'
   github: 'https://github.com/sun-opsys/api-doc'
@@ -1815,7 +1815,7 @@
   updated: '2018-11-19T21:57:15Z'
   issues: 65
   forks: 92
-  license: NOASSERTION
+  license: ''
 - name: test2doc.js
   description: "\U0001F4D1 Generate API documents from your tests."
   github: 'https://github.com/stackia/test2doc.js'
@@ -1858,7 +1858,7 @@
   updated: '2018-11-20T12:52:19Z'
   issues: 14
   forks: 9
-  license: NOASSERTION
+  license: ''
 - name: ring-swagger
   description: Swagger Spec for Clojure Web Apps
   github: 'https://github.com/metosin/ring-swagger'
@@ -1919,9 +1919,9 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 2406
+  stars: 2407
   watch: 189
-  updated: '2018-11-21T04:58:37Z'
+  updated: '2018-11-23T13:13:59Z'
   issues: 247
   forks: 619
   license: BSD-3-Clause
@@ -1950,7 +1950,7 @@
   updated: '2018-11-16T08:13:10Z'
   issues: 5
   forks: 28
-  license: NOASSERTION
+  license: ''
 - name: compojure-api
   description: Sweet web apis with Compojure & Swagger
   github: 'https://github.com/metosin/compojure-api'
@@ -2020,7 +2020,7 @@
   updated: '2018-11-09T22:14:41Z'
   issues: 10
   forks: 34
-  license: NOASSERTION
+  license: ''
 - name: cowboy
   description: 'Small, fast, modern HTTP server for Erlang/OTP.'
   github: 'https://github.com/ninenines/cowboy'
@@ -2125,7 +2125,7 @@
   category: '?'
   archived: false
   stars: 295
-  watch: 24
+  watch: 25
   updated: '2018-11-20T19:00:14Z'
   issues: 14
   forks: 64
@@ -2142,7 +2142,7 @@
   updated: '2018-10-25T21:52:39Z'
   issues: 19
   forks: 48
-  license: NOASSERTION
+  license: ''
 - name: binder-swagger-java
   description: A framework to bring form-binder-java to swagger
   github: 'https://github.com/tminglei/binder-swagger-java'
@@ -2208,7 +2208,7 @@
   updated: '2018-11-19T06:02:41Z'
   issues: 31
   forks: 70
-  license: NOASSERTION
+  license: ''
 - name: Raisin
   description: "Raisin - a REST API micro framework for Perl \U0001F42B \U0001F42A"
   github: 'https://github.com/khrt/Raisin'
@@ -2221,7 +2221,7 @@
   updated: '2018-11-20T07:28:40Z'
   issues: 5
   forks: 20
-  license: NOASSERTION
+  license: ''
 - name: pokemock
   description: A mock server generated from a Swagger file
   github: 'https://github.com/mobilcom-debitel/pokemock'
@@ -2234,7 +2234,7 @@
   updated: '2018-11-16T17:26:14Z'
   issues: 6
   forks: 8
-  license: NOASSERTION
+  license: ''
 - name: fleek-validator
   description: Validation for the fleek framework
   github: 'https://github.com/fleekjs/fleek-validator'
@@ -2296,9 +2296,9 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 571
+  stars: 572
   watch: 53
-  updated: '2018-11-15T13:08:53Z'
+  updated: '2018-11-23T14:18:40Z'
   issues: 118
   forks: 276
   license: MIT
@@ -2352,7 +2352,7 @@
   updated: '2018-11-20T14:35:47Z'
   issues: 43
   forks: 80
-  license: NOASSERTION
+  license: ''
 - name: sbt-swagger-codegen
   description: sbt Plugin for Scala code generation for Swagger specs
   github: 'https://github.com/unicredit/sbt-swagger-codegen'
@@ -2482,12 +2482,12 @@
   language: Python
   category: '?'
   archived: false
-  stars: 1238
+  stars: 1239
   watch: 98
-  updated: '2018-11-23T07:28:06Z'
+  updated: '2018-11-23T13:47:58Z'
   issues: 252
   forks: 269
-  license: NOASSERTION
+  license: ''
 - name: swagger-parser
   description: Give useful informations about your swagger files
   github: 'https://github.com/Trax-air/swagger-parser'
@@ -2513,7 +2513,7 @@
   updated: '2018-07-09T08:12:41Z'
   issues: 0
   forks: 3
-  license: NOASSERTION
+  license: ''
 - name: dropwizard-swagger
   description: >-
     a Dropwizard bundle that serves Swagger UI static content and loads Swagger
@@ -2578,7 +2578,7 @@
   watch: 13
   updated: '2018-11-22T09:39:58Z'
   issues: 33
-  forks: 83
+  forks: 84
 - name: rspec-rails-swagger
   description: >-
     Generate Swagger 2.0 docs for Rails apps using RSpec request specs. Test
@@ -2603,12 +2603,12 @@
   language: Python
   category: '?'
   archived: false
-  stars: 1783
-  watch: 78
-  updated: '2018-11-23T11:56:11Z'
-  issues: 136
+  stars: 1784
+  watch: 79
+  updated: '2018-11-23T16:16:07Z'
+  issues: 137
   forks: 314
-  license: NOASSERTION
+  license: ''
 - name: flasgger
   description: Easy OpenAPI specs and Swagger UI for your Flask API
   github: 'https://github.com/rochacbruno/flasgger'
@@ -2711,12 +2711,12 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 13352
+  stars: 13354
   watch: 643
-  updated: '2018-11-23T11:05:31Z'
-  issues: 291
-  forks: 6097
-  license: NOASSERTION
+  updated: '2018-11-23T15:28:57Z'
+  issues: 292
+  forks: 6096
+  license: ''
 - name: Swashbuckle.AspNetCore
   description: Swagger tools for documenting API's built on ASP.NET Core
   github: 'https://github.com/domaindrivendev/Swashbuckle.AspNetCore'
@@ -2724,9 +2724,9 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 1893
+  stars: 1896
   watch: 168
-  updated: '2018-11-22T13:07:51Z'
+  updated: '2018-11-23T16:47:35Z'
   issues: 99
   forks: 457
   license: MIT
@@ -2757,7 +2757,7 @@
   updated: '2018-11-02T10:30:12Z'
   issues: 3
   forks: 7
-  license: NOASSERTION
+  license: ''
 - name: qswag
   description: Fast & Light Swagger generator for .NET Core
   github: 'https://github.com/swimlane/qswag'
@@ -2832,8 +2832,8 @@
   archived: false
   stars: 3136
   watch: 161
-  updated: '2018-11-23T04:54:33Z'
-  issues: 43
+  updated: '2018-11-23T16:37:42Z'
+  issues: 41
   forks: 334
   license: MIT
 - name: swagger-parser
@@ -2847,7 +2847,7 @@
   watch: 20
   updated: '2018-11-23T03:02:06Z'
   issues: 24
-  forks: 64
+  forks: 65
   license: MIT
 - name: open-api
   description: A Monorepo of various packages to power OpenAPI in node
@@ -2899,7 +2899,7 @@
   watch: 20
   updated: '2018-11-23T03:02:06Z'
   issues: 24
-  forks: 64
+  forks: 65
   license: MIT
 - name: sails-swagger
   description: Swagger integration for sails.js
@@ -2937,9 +2937,9 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 369
+  stars: 370
   watch: 16
-  updated: '2018-11-20T21:27:15Z'
+  updated: '2018-11-23T16:04:00Z'
   issues: 20
   forks: 50
   license: MIT
@@ -2963,9 +2963,9 @@
   language: Go
   category: '?'
   archived: false
-  stars: 2938
+  stars: 2939
   watch: 96
-  updated: '2018-11-23T11:12:57Z'
+  updated: '2018-11-23T15:41:41Z'
   issues: 305
   forks: 514
   license: Apache-2.0
@@ -2981,7 +2981,7 @@
   updated: '2018-11-11T14:42:53Z'
   issues: 3
   forks: 57
-  license: NOASSERTION
+  license: ''
 - name: pyswagger
   description: >-
     An OpenAPI (fka Swagger) client & converter in python, which is type-safe,
@@ -3023,11 +3023,11 @@
     given an OpenAPI Spec (v2, v3)
   language: HTML
   archived: false
-  stars: 1147
+  stars: 1148
   watch: 73
   forks: 336
-  updated: '2018-11-23T10:38:53Z'
-  issues: 459
+  updated: '2018-11-23T15:03:19Z'
+  issues: 456
   license: Apache-2.0
 - github: 'https://github.com/marshmallow-code/apispec'
   v3: true
@@ -3054,9 +3054,9 @@
   stars: 260
   watch: 36
   forks: 20
-  updated: '2018-11-23T12:13:59Z'
-  issues: 0
-  license: NOASSERTION
+  updated: '2018-11-23T16:53:25Z'
+  issues: 1
+  license: ''
 - github: 'https://github.com/Orange-OpenSource/angular-swagger-ui'
   v3: true
   category: unclassified
@@ -3069,7 +3069,7 @@
   forks: 70
   updated: '2018-10-11T18:27:43Z'
   issues: 7
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/Mermade/openapi-codegen'
   v3: true
   category: unclassified
@@ -3077,10 +3077,10 @@
   description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
   language: JavaScript
   archived: false
-  stars: 88
+  stars: 89
   watch: 8
   forks: 24
-  updated: '2018-11-21T13:48:12Z'
+  updated: '2018-11-23T13:27:29Z'
   issues: 11
   license: Apache-2.0
 - github: 'https://github.com/thomaxxl/safrs'
@@ -3120,7 +3120,7 @@
   archived: false
   stars: 54
   watch: 8
-  forks: 8
+  forks: 7
   updated: '2018-11-22T15:47:04Z'
   issues: 3
   license: MIT
@@ -3273,7 +3273,7 @@
   forks: 1
   updated: '2018-11-19T04:32:06Z'
   issues: 0
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/fmvilas/openapi3-generator'
   v3: true
   category: unclassified
@@ -3301,7 +3301,7 @@
   forks: 9
   updated: '2018-11-23T02:51:53Z'
   issues: 3
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/mrTimofey/vue-admin'
   v3: true
   category: unclassified
@@ -3434,7 +3434,7 @@
   stars: 8
   watch: 2
   forks: 0
-  updated: '2018-11-21T17:16:04Z'
+  updated: '2018-11-23T15:18:23Z'
   issues: 32
   license: AGPL-3.0
 - github: 'https://github.com/Mermade/openapi3-examples'
@@ -3696,8 +3696,8 @@
   stars: 3
   watch: 4
   forks: 1
-  updated: '2018-11-22T18:14:01Z'
-  issues: 1
+  updated: '2018-11-23T15:26:44Z'
+  issues: 2
 - github: 'https://github.com/denismakogon/fn-openapi-v3'
   v3: true
   category: unclassified
@@ -3723,7 +3723,7 @@
   forks: 0
   updated: '2018-11-15T10:03:16Z'
   issues: 1
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/foxel/openapi3-typescript-codegen'
   v3: true
   category: unclassified
@@ -3857,7 +3857,7 @@
   forks: 0
   updated: '2018-11-16T20:54:17Z'
   issues: 2
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/koumoul-dev/soas'
   v3: true
   category: unclassified
@@ -3879,7 +3879,7 @@
   language: Python
   archived: false
   stars: 1
-  watch: 18
+  watch: 17
   forks: 0
   updated: '2018-10-03T11:27:40Z'
   issues: 1
@@ -4039,7 +4039,7 @@
   forks: 0
   updated: '2018-10-24T00:11:48Z'
   issues: 0
-  license: NOASSERTION
+  license: ''
 - github: 'https://github.com/unjello/openapi-parser'
   v3: true
   category: unclassified
