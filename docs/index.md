@@ -45,7 +45,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
   $(document).ready(function(){
     $('a').each(function(i,e){
         try {
-            $(e).data('tippy',$(e).data('json').stars||'No stars!');
+            $(e).data('tippy',$(e).data('json') ? $(e).data('json').stars : 'No stars!');
         }
         catch (ex) {
             console.log(ex.message);
