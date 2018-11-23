@@ -31,7 +31,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 | Project | Language | License | Description | Link |
 |---|---|---|---|
-{% for tool in tmp %}| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}" data-json="{{ tool | jsonify | url_encode }}"> {{ tool.name }} </a> | {{ tool.language }} | {{ tool.license }} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">{% if tool.demoText %}{{ tool.demoText }}{% else %}Demo{% endif %}</a>{% endif %} |
+{% for tool in tmp %}| <a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}" data-json="{{ tool | jsonify | url_encode }}"> {{ tool.name }} </a> | {{ tool.language }} | {% if tool.license %}<a href="https://spdx.org/licenses/{{tool.license}}.html">{{ tool.license }}</a>{% endif %} | {{ tool.description }} | {% if tool.demo %} <a href="{{ tool.demo }}">{% if tool.demoText %}{{ tool.demoText }}{% else %}Demo{% endif %}</a>{% endif %} |
 {% endfor %}
 
   <a href="#">Back to top</a>
