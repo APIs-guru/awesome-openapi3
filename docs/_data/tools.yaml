@@ -654,20 +654,6 @@
   updated: '2018-11-23T12:15:38Z'
   issues: 1943
   license: NOASSERTION
-- name: openapi-codegen
-  category: sdk
-  language: JavaScript
-  github: 'https://github.com/mermade/openapi-codegen'
-  description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
-  v2: true
-  v3: true
-  archived: false
-  stars: 88
-  watch: 8
-  forks: 24
-  updated: '2018-11-21T13:48:12Z'
-  issues: 11
-  license: Apache-2.0
 - name: swagger-node-codegen
   category: sdk
   language: JavaScript
@@ -1083,7 +1069,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -3058,34 +3044,6 @@
   updated: '2018-11-22T09:01:07Z'
   issues: 18
   license: MIT
-- github: 'https://github.com/Mermade/widdershins'
-  v3: true
-  category: unclassified
-  name: widdershins
-  description: >-
-    OpenAPI / Swagger, AsyncAPI & Semoasa definitions to Slate / Shins
-    compatible markdown
-  language: JavaScript
-  archived: false
-  stars: 350
-  watch: 12
-  forks: 115
-  updated: '2018-11-23T03:27:48Z'
-  issues: 24
-  license: MIT
-- github: 'https://github.com/Mermade/openapi-gui'
-  v3: true
-  category: unclassified
-  name: openapi-gui
-  description: GUI / visual editor for creating and editing OpenAPI / Swagger definitions
-  language: JavaScript
-  archived: false
-  stars: 343
-  watch: 30
-  forks: 56
-  updated: '2018-11-22T12:31:19Z'
-  issues: 7
-  license: MIT
 - github: 'https://github.com/APIs-guru/awesome-openapi3'
   v3: true
   category: unclassified
@@ -3101,7 +3059,7 @@
   license: NOASSERTION
 - github: 'https://github.com/Mermade/oas-kit'
   v3: true
-  category: unclassified
+  category: converters
   name: oas-kit
   description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
   language: JavaScript
