@@ -44,11 +44,12 @@ Please raise a Pull-Request or issue with any projects we've missed!
 <script type="text/javascript">
   $(document).ready(function(){
     $('a').each(function(){
+        var e = $(this);
         try {
-            $(this).data('tippy',$(this).data('json').stars);
+            e.data('tippy',e.data('json').stars);
         }
         catch (ex) {
-            console.error(decodeURIComponent($(this).data('json')));
+            console.error(decodeURIComponent(e.data('json')));
         }
     });
   });
