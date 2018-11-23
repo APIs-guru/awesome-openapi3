@@ -48,7 +48,7 @@ Please raise a Pull-Request or issue with any projects we've missed!
             $(e).data('tippy',$(e).data('json').stars||'No stars!');
         }
         catch (ex) {
-            console.error(decodeURIComponent($(e).data('json')));
+            console.log($(e).data('json'));
         }
     });
   });
