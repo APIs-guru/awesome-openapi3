@@ -31,11 +31,15 @@ title: APIs.guru awesome-openapi3
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 
 <script type="text/javascript">
+  function plural(value,word){
+    if (!value) value = 0;
+    return value+' '+word+(value === 1 ? '' : 's');
+  }
   $(document).ready(function(){
     $('a').each(function(i,e){
         if ($(e).data('json')) {
             var d = JSON.parse(decodeURIComponent($(e).data('json')));
-            tippy(e,{ content: d.stars+' stars, '+d.watch+' watchers and '+d.forks+' forks. '+d.issues+' issues.' });
+            tippy(e,{ content: plural(d.stars,'star'+', '+plural(d.watch,'watcher')+' and '+plural(d.forks,'fork')+'. '+plural(d.issues,'issue')+'.' });
         }
     });
   });
