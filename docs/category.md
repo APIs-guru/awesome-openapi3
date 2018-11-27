@@ -39,7 +39,7 @@ title: APIs.guru awesome-openapi3
     $('a').each(function(i,e){
         if ($(e).data('json')) {
             var d = JSON.parse(decodeURIComponent($(e).data('json')));
-            tippy(e,{ content: plural(d.stars,'star'+', '+plural(d.watch,'watcher')+' and '+plural(d.forks,'fork')+'. '+plural(d.issues,'issue')+'.' });
+            tippy(e,{ content: plural(d.stars,'star')+', '+plural(d.watch,'watcher')+' and '+plural(d.forks,'fork')+'. '+plural(d.issues,'issue')+'.' });
         }
     });
   });
