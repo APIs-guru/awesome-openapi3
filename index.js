@@ -36,6 +36,14 @@ for (let entry of entries) {
             entry.forks = obj.forks||0;
             entry.updated = obj.updated_at;
             entry.issues = obj.open_issues_count||0;
+            if (obj.organization) {
+                entry.owner = obj.organization.login;
+                entry.logo  = obj.organization.avatar_url;
+            }
+            else {
+                entry.owner = obj.owner.login;
+                entry.logo  = obj.owner.avatar_url;
+            }
             if (obj.license) {
                 entry.license = obj.license.spdx_id;
                 if (entry.license === 'NOASSERTION') {
