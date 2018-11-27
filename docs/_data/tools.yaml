@@ -541,7 +541,7 @@
   license: MIT
 - name: kin-openapi
   category: parsers
-  github: 'https://github.com/jban332/kin-openapi'
+  github: 'https://github.com/getkin/kin-openapi'
   language: Go
   description: >-
     OpenAPI 3.0 implementation for Go (parsing, converting, validation, and
@@ -624,19 +624,6 @@
   updated: '2018-11-20T18:36:45Z'
   issues: 22
   license: MIT
-- name: oas3-chow-chow
-  category: parsers
-  github: 'https://github.com/supertong/oas3-chow-chow'
-  language: TypeScript
-  description: Request and response validator against OpenAPI Specification 3
-  v3: true
-  archived: false
-  stars: 17
-  watch: 4
-  forks: 9
-  updated: '2018-11-23T02:51:53Z'
-  issues: 3
-  license: ''
 - name: swagger-codegen
   category: sdk
   language: HTML
@@ -3015,7 +3002,7 @@
   license: Apache-2.0
 - github: 'https://github.com/OpenAPITools/openapi-generator'
   v3: true
-  category: unclassified
+  category: sdk
   name: openapi-generator
   description: >-
     OpenAPI Generator allows generation of API client libraries (SDK
@@ -3095,21 +3082,6 @@
   forks: 15
   updated: '2018-11-23T10:08:05Z'
   issues: 0
-  license: MIT
-- github: 'https://github.com/getkin/kin-openapi'
-  v3: true
-  category: unclassified
-  name: kin-openapi
-  description: >-
-    OpenAPI 3.0 implementation for Go (parsing, converting, validation, and
-    more)
-  language: Go
-  archived: false
-  stars: 60
-  watch: 9
-  forks: 21
-  updated: '2018-11-19T09:56:39Z'
-  issues: 9
   license: MIT
 - github: 'https://github.com/cebe/php-openapi'
   v3: true
@@ -3291,7 +3263,7 @@
   license: Apache-2.0
 - github: 'https://github.com/atlassian/oas3-chow-chow'
   v3: true
-  category: unclassified
+  category: parsers
   name: oas3-chow-chow
   description: Request and response validator against OpenAPI Specification 3
   language: TypeScript
