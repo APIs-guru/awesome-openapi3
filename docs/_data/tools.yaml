@@ -4640,3 +4640,10 @@
   logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
   demo: 'https://github.com/MikeRalphson/openapi-diff'
   demoText: Mirror
+- link: 'https://bitbucket.org/atlassian/swagger-request-validator/src/master/'
+  v3: true
+  category: validators
+  name: swagger-request-validator
+  description: 'A Java library for validating request/responses against a OpenAPI / Swagger specification. Includes support for Swagger v2 and OpenAPI v3 specifications and adapters for common mock and testing libraries.'
+  language: Java
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
