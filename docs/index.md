@@ -16,6 +16,8 @@ Please raise a Pull-Request or issue with any projects we've missed!
 * [categories.json](/api/categories.json)
 * [tools.json](/api/tools.json)
 
+<a href="https://apis.guru/awesome-openapi3/rss/feed.xml"><img border="0" alt="Subscribe to What's New" src="https://i.imgur.com/fZIDSoj.png" width="100" height="100">
+
 ## Tools
 
 * List of all tools [by category](./category.html)
