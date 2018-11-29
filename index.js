@@ -28,7 +28,7 @@ for (let entry of entries) {
         const obj = JSON.parse(json);
         if (obj.id) {
             entry.name = obj.name||entry.name;
-            entry.description = obj.description||entry.description;
+            entry.description = obj.description||entry.description||'';
             entry.language = obj.language;
             entry.archived = !!obj.archived;
             entry.stars = obj.stargazers_count||0;

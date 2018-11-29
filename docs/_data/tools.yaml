@@ -1193,7 +1193,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -3430,7 +3430,7 @@
   logo: 'https://avatars2.githubusercontent.com/u/10334301?v=4'
 - github: 'https://github.com/APIs-guru/awesome-openapi3'
   v3: true
-  category: unclassified
+  category: documentation
   name: awesome-openapi3
   description: "\U0001F60E A list of awesome projects related to OpenAPI 3.0.x, curated by the community"
   language: JavaScript
@@ -4501,7 +4501,7 @@
   v3: true
   category: unclassified
   name: pyramid-oas3
-  description: !<tag:yaml.org,2002:js/undefined> ''
+  description: ''
   language: Python
   archived: false
   stars: 1
@@ -4657,4 +4657,4 @@
   language: TypeScript
   license: Apache-2.0
   logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-  
+
