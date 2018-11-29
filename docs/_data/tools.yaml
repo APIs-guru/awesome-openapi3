@@ -3446,7 +3446,7 @@
   logo: 'https://avatars0.githubusercontent.com/u/10975548?v=4'
 - github: 'https://github.com/Orange-OpenSource/angular-swagger-ui'
   v3: true
-  category: frameworks
+  category: documentation
   name: angular-swagger-ui
   description: An angularJS implementation of Swagger UI
   language: JavaScript
@@ -3459,7 +3459,6 @@
   license: ''
   owner: Orange-OpenSource
   logo: 'https://avatars0.githubusercontent.com/u/1506386?v=4'
-  unsure: true
 - github: 'https://github.com/Mermade/openapi-codegen'
   v3: true
   category: sdk
@@ -3610,7 +3609,7 @@
   unsure: true
 - github: 'https://github.com/epiphone/class-validator-jsonschema'
   v3: true
-  category: editors
+  category: converters
   name: class-validator-jsonschema
   description: Convert class-validator-decorated classes into JSON schema
   language: TypeScript
@@ -3623,7 +3622,6 @@
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
-  unsure: true
 - github: 'https://github.com/apisyouwonthate/openapi.tools'
   v3: true
   category: documentation
@@ -3724,7 +3722,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/168166?v=4'
 - github: 'https://github.com/mrTimofey/vue-admin'
   v3: true
-  category: sdk
+  category: documentation
   name: vue-admin
   description: Vue.js based administrative interface
   language: Vue
@@ -3737,7 +3735,6 @@
   license: MIT
   owner: mrTimofey
   logo: 'https://avatars3.githubusercontent.com/u/7373909?v=4'
-  unsure: true
 - github: 'https://github.com/Microsoft/OpenAPI.NET.OData'
   v3: true
   category: parsers
@@ -3902,7 +3899,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/Rots/n26-api'
   v3: true
-  category: converters
+  category: instance
   name: n26-api
   description: Unofficial N26 Bank API documentation
   language: null
@@ -3915,7 +3912,6 @@
   license: MIT
   owner: Rots
   logo: 'https://avatars2.githubusercontent.com/u/362397?v=4'
-  unsure: true
 - github: 'https://github.com/isa-group/oas-tools'
   v3: true
   category: parsers
@@ -4434,9 +4430,9 @@
   unsure: true
 - github: 'https://github.com/brreg/openAPI'
   v3: true
-  category: converters
+  category: instance
   name: openAPI
-  description: Reposository holding the API specifications of Brønnøysundregistrene
+  description: Repository holding the API specifications of Brønnøysundregistrene
   language: null
   archived: false
   stars: 1
@@ -4446,7 +4442,6 @@
   issues: 0
   owner: brreg
   logo: 'https://avatars2.githubusercontent.com/u/37073025?v=4'
-  unsure: true
 - github: 'https://github.com/funa1g/multi-file-oas-example'
   v3: true
   category: parsers
@@ -4562,7 +4557,7 @@
   unsure: true
 - github: 'https://github.com/kazuki/pyramid-oas3'
   v3: true
-  category: unclassified
+  category: parsers
   name: pyramid-oas3
   description: ''
   language: Python
@@ -4622,7 +4617,6 @@
   license: ''
   owner: data-studio
   logo: 'https://avatars2.githubusercontent.com/u/28729308?v=4'
-  unsure: true
 - github: 'https://github.com/unjello/openapi-parser'
   v3: true
   category: parsers
@@ -4674,7 +4668,7 @@
   unsure: true
 - github: 'https://github.com/pglass/py-openapi-schema-to-json-schema'
   v3: true
-  category: sdk
+  category: converters
   name: py-openapi-schema-to-json-schema
   description: 'Python port of https://github.com/mikunn/openapi-schema-to-json-schema'
   language: Python
@@ -4686,7 +4680,6 @@
   issues: 0
   owner: pglass
   logo: 'https://avatars3.githubusercontent.com/u/1077740?v=4'
-  unsure: true
 - github: 'https://github.com/riddhi89/simple-flask-project'
   v3: true
   category: parsers
