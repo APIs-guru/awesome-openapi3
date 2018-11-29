@@ -3413,7 +3413,7 @@
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
 - github: 'https://github.com/marshmallow-code/apispec'
   v3: true
-  category: unclassified
+  category: parsers
   name: apispec
   description: >-
     A pluggable API specification generator. Currently supports the OpenAPI
@@ -3428,6 +3428,7 @@
   license: MIT
   owner: marshmallow-code
   logo: 'https://avatars2.githubusercontent.com/u/10334301?v=4'
+  unsure: true
 - github: 'https://github.com/APIs-guru/awesome-openapi3'
   v3: true
   category: documentation
@@ -3445,7 +3446,7 @@
   logo: 'https://avatars0.githubusercontent.com/u/10975548?v=4'
 - github: 'https://github.com/Orange-OpenSource/angular-swagger-ui'
   v3: true
-  category: unclassified
+  category: frameworks
   name: angular-swagger-ui
   description: An angularJS implementation of Swagger UI
   language: JavaScript
@@ -3458,6 +3459,7 @@
   license: ''
   owner: Orange-OpenSource
   logo: 'https://avatars0.githubusercontent.com/u/1506386?v=4'
+  unsure: true
 - github: 'https://github.com/Mermade/openapi-codegen'
   v3: true
   category: sdk
@@ -3475,7 +3477,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/thomaxxl/safrs'
   v3: true
-  category: unclassified
+  category: parsers
   name: safrs
   description: SqlAlchemy Flask-Restful Swagger Json-API OpenAPI
   language: Python
@@ -3488,9 +3490,10 @@
   license: MIT
   owner: thomaxxl
   logo: 'https://avatars1.githubusercontent.com/u/4190750?v=4'
+  unsure: true
 - github: 'https://github.com/cebe/php-openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: php-openapi
   description: READ OpenAPI yaml files and make the content accessable in PHP objects.
   language: PHP
@@ -3503,9 +3506,10 @@
   license: MIT
   owner: cebe
   logo: 'https://avatars0.githubusercontent.com/u/189796?v=4'
+  unsure: true
 - github: 'https://github.com/AresS31/swurg'
   v3: true
-  category: unclassified
+  category: parsers
   name: swurg
   description: >-
     Parse OpenAPI documents into Burp Suite for automating OpenAPI-based APIs
@@ -3521,9 +3525,10 @@
   license: Apache-2.0
   owner: AresS31
   logo: 'https://avatars3.githubusercontent.com/u/11601622?v=4'
+  unsure: true
 - github: 'https://github.com/danielgtaylor/apisprout'
   v3: true
-  category: unclassified
+  category: parsers
   name: apisprout
   description: >-
     Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with
@@ -3537,9 +3542,10 @@
   issues: 7
   owner: danielgtaylor
   logo: 'https://avatars2.githubusercontent.com/u/106826?v=4'
+  unsure: true
 - github: 'https://github.com/tobilg/api2html'
   v3: true
-  category: unclassified
+  category: parsers
   name: api2html
   description: >-
     A CLI tool to transform Swagger/OpenAPI/AsyncAPI docs to beautiful HTML
@@ -3554,9 +3560,10 @@
   license: MIT
   owner: tobilg
   logo: 'https://avatars3.githubusercontent.com/u/1841985?v=4'
+  unsure: true
 - github: 'https://github.com/epiphone/routing-controllers-openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: routing-controllers-openapi
   description: Runtime OpenAPI v3 schema generation for routing-controllers.
   language: TypeScript
@@ -3569,9 +3576,10 @@
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
+  unsure: true
 - github: 'https://github.com/koumoul-dev/vue-openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: vue-openapi
   description: OpenAPI viewer component for VueJS
   language: Vue
@@ -3584,9 +3592,10 @@
   license: MIT
   owner: koumoul-dev
   logo: 'https://avatars0.githubusercontent.com/u/16051219?v=4'
+  unsure: true
 - github: 'https://github.com/sanjayvacharya/sleeplessinslc'
   v3: true
-  category: unclassified
+  category: parsers
   name: sleeplessinslc
   description: 'Demo code from '
   language: Java
@@ -3598,9 +3607,10 @@
   issues: 0
   owner: sanjayvacharya
   logo: 'https://avatars0.githubusercontent.com/u/605398?v=4'
+  unsure: true
 - github: 'https://github.com/epiphone/class-validator-jsonschema'
   v3: true
-  category: unclassified
+  category: editors
   name: class-validator-jsonschema
   description: Convert class-validator-decorated classes into JSON schema
   language: TypeScript
@@ -3613,6 +3623,7 @@
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
+  unsure: true
 - github: 'https://github.com/apisyouwonthate/openapi.tools'
   v3: true
   category: documentation
@@ -3632,7 +3643,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/35378327?v=4'
 - github: 'https://github.com/fsprojects/OpenAPITypeProvider'
   v3: true
-  category: unclassified
+  category: parsers
   name: OpenAPITypeProvider
   description: 'F# type provider for Open API specification'
   language: 'F#'
@@ -3644,9 +3655,10 @@
   issues: 0
   owner: fsprojects
   logo: 'https://avatars2.githubusercontent.com/u/6001315?v=4'
+  unsure: true
 - github: 'https://github.com/outofcoffee/vertx-oas'
   v3: true
-  category: unclassified
+  category: parsers
   name: vertx-oas
   description: Generates a Swagger/OpenAPI specification from a Vert.x Web Router.
   language: Kotlin
@@ -3658,9 +3670,10 @@
   issues: 7
   owner: outofcoffee
   logo: 'https://avatars3.githubusercontent.com/u/1248633?v=4'
+  unsure: true
 - github: 'https://github.com/cdimascio/openapi-spring-webflux-validator'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-spring-webflux-validator
   description: >-
     A friendly kotlin library to validate API endpoints using an OpenApi 3.0 and
@@ -3675,9 +3688,10 @@
   license: ''
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
+  unsure: true
 - github: 'https://github.com/fmvilas/openapi3-generator'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi3-generator
   description: >-
     Use your API OpenAPI 3 definition to generate code, documentation, and
@@ -3692,6 +3706,7 @@
   license: Apache-2.0
   owner: fmvilas
   logo: 'https://avatars3.githubusercontent.com/u/242119?v=4'
+  unsure: true
 - github: 'https://github.com/atlassian/oas3-chow-chow'
   v3: true
   category: parsers
@@ -3709,7 +3724,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/168166?v=4'
 - github: 'https://github.com/mrTimofey/vue-admin'
   v3: true
-  category: unclassified
+  category: sdk
   name: vue-admin
   description: Vue.js based administrative interface
   language: Vue
@@ -3722,9 +3737,10 @@
   license: MIT
   owner: mrTimofey
   logo: 'https://avatars3.githubusercontent.com/u/7373909?v=4'
+  unsure: true
 - github: 'https://github.com/Microsoft/OpenAPI.NET.OData'
   v3: true
-  category: unclassified
+  category: parsers
   name: OpenAPI.NET.OData
   description: Generates OpenAPI document from OData CSDL
   language: 'C#'
@@ -3737,6 +3753,7 @@
   license: MIT
   owner: Microsoft
   logo: 'https://avatars2.githubusercontent.com/u/6154722?v=4'
+  unsure: true
 - github: 'https://github.com/Mermade/openapi-lint-vscode'
   v3: true
   category: editors
@@ -3756,7 +3773,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/tavis-software/Tavis.OpenApi'
   v3: true
-  category: unclassified
+  category: parsers
   name: Tavis.OpenApi
   description: Parser for OpenAPI Specification
   language: JavaScript
@@ -3769,9 +3786,10 @@
   license: Apache-2.0
   owner: tavis-software
   logo: 'https://avatars3.githubusercontent.com/u/1613247?v=4'
+  unsure: true
 - github: 'https://github.com/rafaelcaricio/sticker'
   v3: true
-  category: unclassified
+  category: parsers
   name: sticker
   description: >-
     Sticker is a powerful yet boilerplate-free alternative to writing your web
@@ -3786,9 +3804,10 @@
   license: Apache-2.0
   owner: rafaelcaricio
   logo: 'https://avatars3.githubusercontent.com/u/107613?v=4'
+  unsure: true
 - github: 'https://github.com/cdimascio/kotlin-spring-mvc-template'
   v3: true
-  category: unclassified
+  category: parsers
   name: kotlin-spring-mvc-template
   description: >-
     12-factor compliant Spring MVC Kotlin template. Features automatic
@@ -3802,9 +3821,10 @@
   issues: 0
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
+  unsure: true
 - github: 'https://github.com/wzshiming/gen'
   v3: true
-  category: unclassified
+  category: parsers
   name: gen
   description: Generated source code tool for micro services
   language: Go
@@ -3817,9 +3837,10 @@
   license: MIT
   owner: wzshiming
   logo: 'https://avatars2.githubusercontent.com/u/6565744?v=4'
+  unsure: true
 - github: 'https://github.com/technocreatives/openapi-eller'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-eller
   description: Generate OpenAPI v3 clients and servers from the command line
   language: TypeScript
@@ -3832,9 +3853,10 @@
   license: ISC
   owner: technocreatives
   logo: 'https://avatars2.githubusercontent.com/u/4668783?v=4'
+  unsure: true
 - github: 'https://github.com/go-courier/oas'
   v3: true
-  category: unclassified
+  category: parsers
   name: oas
   description: OpenAPI Spec builder in go
   language: Go
@@ -3847,9 +3869,10 @@
   license: MIT
   owner: go-courier
   logo: 'https://avatars2.githubusercontent.com/u/37426719?v=4'
+  unsure: true
 - github: 'https://github.com/koumoul-dev/data-fair'
   v3: true
-  category: unclassified
+  category: editors
   name: data-fair
   description: 'Make your data Findable, Accessible, Interoperable, Reusable'
   language: JavaScript
@@ -3862,6 +3885,7 @@
   license: AGPL-3.0
   owner: koumoul-dev
   logo: 'https://avatars0.githubusercontent.com/u/16051219?v=4'
+  unsure: true
 - github: 'https://github.com/Mermade/openapi3-examples'
   v3: true
   category: documentation
@@ -3878,7 +3902,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/Rots/n26-api'
   v3: true
-  category: unclassified
+  category: converters
   name: n26-api
   description: Unofficial N26 Bank API documentation
   language: null
@@ -3891,9 +3915,10 @@
   license: MIT
   owner: Rots
   logo: 'https://avatars2.githubusercontent.com/u/362397?v=4'
+  unsure: true
 - github: 'https://github.com/isa-group/oas-tools'
   v3: true
-  category: unclassified
+  category: parsers
   name: oas-tools
   description: >-
     NodeJS module to manage RESTfull APIs defined with OpenAPI 3.0 Specs over
@@ -3908,9 +3933,10 @@
   license: Apache-2.0
   owner: isa-group
   logo: 'https://avatars0.githubusercontent.com/u/2708867?v=4'
+  unsure: true
 - github: 'https://github.com/ckaratzas/vertx-openapi-spec-generator'
   v3: true
-  category: unclassified
+  category: parsers
   name: vertx-openapi-spec-generator
   description: Runtime Generation of OpenApi 3 specification from vertx routes.
   language: Java
@@ -3923,9 +3949,10 @@
   license: MIT
   owner: ckaratzas
   logo: 'https://avatars0.githubusercontent.com/u/35725079?v=4'
+  unsure: true
 - github: 'https://github.com/OpenAPITools/openapi-petstore'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-petstore
   description: The pet store sample
   language: Java
@@ -3938,9 +3965,10 @@
   license: Apache-2.0
   owner: OpenAPITools
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
+  unsure: true
 - github: 'https://github.com/technocreatives/openapi-mock-eller'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-mock-eller
   description: From OpenAPI v3 spec to running mock server in one command
   language: JavaScript
@@ -3953,9 +3981,10 @@
   license: ISC
   owner: technocreatives
   logo: 'https://avatars2.githubusercontent.com/u/4668783?v=4'
+  unsure: true
 - github: 'https://github.com/serafin-labs/serafin'
   v3: true
-  category: unclassified
+  category: parsers
   name: serafin
   description: An API framework in Typescript/Node.js with OpenApi 3 & GraphQL
   language: TypeScript
@@ -3968,9 +3997,10 @@
   license: MIT
   owner: serafin-labs
   logo: 'https://avatars2.githubusercontent.com/u/33131861?v=4'
+  unsure: true
 - github: 'https://github.com/yayoc/swagger-to-mock'
   v3: true
-  category: unclassified
+  category: parsers
   name: swagger-to-mock
   description: Mock data generator CLI for Swagger3 (OpenAPI 3)
   language: TypeScript
@@ -3982,9 +4012,10 @@
   issues: 1
   owner: yayoc
   logo: 'https://avatars3.githubusercontent.com/u/6383334?v=4'
+  unsure: true
 - github: 'https://github.com/rinold/Steamer'
   v3: true
-  category: unclassified
+  category: documentation
   name: Steamer
   description: Vapor simple CRUD-server generator
   language: Swift
@@ -3997,9 +4028,10 @@
   license: MIT
   owner: rinold
   logo: 'https://avatars1.githubusercontent.com/u/2253795?v=4'
+  unsure: true
 - github: 'https://github.com/wzshiming/openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi
   description: OpenAPI 3 Specification for golang
   language: Go
@@ -4012,9 +4044,10 @@
   license: MIT
   owner: wzshiming
   logo: 'https://avatars2.githubusercontent.com/u/6565744?v=4'
+  unsure: true
 - github: 'https://github.com/isa-group/oas-generator'
   v3: true
-  category: unclassified
+  category: parsers
   name: oas-generator
   description: >-
     NodeJS RESTfull APIs scaffolding based OpenAPI 3.x specs using oas-tools and
@@ -4029,9 +4062,10 @@
   license: Apache-2.0
   owner: isa-group
   logo: 'https://avatars0.githubusercontent.com/u/2708867?v=4'
+  unsure: true
 - github: 'https://github.com/erasys/openapi-php'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-php
   description: "\U0001F4DASwagger / Open API 3.0 builder and validation library for PHP that helps you write valid specs."
   language: PHP
@@ -4044,9 +4078,10 @@
   license: MIT
   owner: erasys
   logo: 'https://avatars2.githubusercontent.com/u/1845621?v=4'
+  unsure: true
 - github: 'https://github.com/SkeLLLa/fastify-oas'
   v3: true
-  category: unclassified
+  category: parsers
   name: fastify-oas
   description: >-
     Fastify OpenAPI plugin (This is *mirror*). PRs accepted in both repos.
@@ -4061,9 +4096,10 @@
   license: MIT
   owner: SkeLLLa
   logo: 'https://avatars1.githubusercontent.com/u/2273103?v=4'
+  unsure: true
 - github: 'https://github.com/SabzCity/go-library'
   v3: true
-  category: unclassified
+  category: parsers
   name: go-library
   description: SabzCity Platform Opensource Library in Golang
   language: Go
@@ -4076,9 +4112,10 @@
   license: Apache-2.0
   owner: SabzCity
   logo: 'https://avatars0.githubusercontent.com/u/16743416?v=4'
+  unsure: true
 - github: 'https://github.com/lendingblock/aio-openapi'
   v3: true
-  category: unclassified
+  category: converters
   name: aio-openapi
   description: Open API utilities
   language: Python
@@ -4091,6 +4128,7 @@
   license: BSD-3-Clause
   owner: lendingblock
   logo: 'https://avatars3.githubusercontent.com/u/33968506?v=4'
+  unsure: true
 - github: 'https://github.com/Mermade/swaggerplusplus'
   v3: true
   category: documentation
@@ -4108,7 +4146,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/niteoweb/pyramid_openapi3'
   v3: true
-  category: unclassified
+  category: parsers
   name: pyramid_openapi3
   description: Pyramid integration with openapi-core and openapi-spec-validator
   language: Python
@@ -4120,9 +4158,10 @@
   issues: 2
   owner: niteoweb
   logo: 'https://avatars0.githubusercontent.com/u/1309418?v=4'
+  unsure: true
 - github: 'https://github.com/OverSpeedIO/koa2-oas3'
   v3: true
-  category: unclassified
+  category: parsers
   name: koa2-oas3
   description: Koa2 OpenAPI 3 request validation middleware.
   language: JavaScript
@@ -4134,6 +4173,7 @@
   issues: 1
   owner: OverSpeedIO
   logo: 'https://avatars2.githubusercontent.com/u/34144854?v=4'
+  unsure: true
 - github: 'https://github.com/Mermade/openapi-webconverter'
   v3: true
   category: converters
@@ -4151,7 +4191,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
 - github: 'https://github.com/zweidenker/OpenAPI'
   v3: true
-  category: unclassified
+  category: parsers
   name: OpenAPI
   description: A pharo implementation of OpenAPI 3.0.1
   language: Smalltalk
@@ -4163,9 +4203,10 @@
   issues: 3
   owner: zweidenker
   logo: 'https://avatars3.githubusercontent.com/u/20300491?v=4'
+  unsure: true
 - github: 'https://github.com/denismakogon/fn-openapi-v3'
   v3: true
-  category: unclassified
+  category: parsers
   name: fn-openapi-v3
   description: Fn-powered serverless application OpenAPI v3.0.0 generator tool
   language: Go
@@ -4178,9 +4219,10 @@
   license: Apache-2.0
   owner: denismakogon
   logo: 'https://avatars1.githubusercontent.com/u/3034091?v=4'
+  unsure: true
 - github: 'https://github.com/nasa9084/go-openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: go-openapi
   description: OpenAPI Specification (OAS) 3.0 implementation for Go
   language: Go
@@ -4193,9 +4235,10 @@
   license: ''
   owner: nasa9084
   logo: 'https://avatars2.githubusercontent.com/u/11725486?v=4'
+  unsure: true
 - github: 'https://github.com/foxel/openapi3-typescript-codegen'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi3-typescript-codegen
   description: typescript codegen for OpenAPI 3
   language: TypeScript
@@ -4207,9 +4250,10 @@
   issues: 1
   owner: foxel
   logo: 'https://avatars2.githubusercontent.com/u/1551926?v=4'
+  unsure: true
 - github: 'https://github.com/muskratjs/muskrat'
   v3: true
-  category: unclassified
+  category: parsers
   name: muskrat
   description: ':rat: Generate project metadata'
   language: TypeScript
@@ -4222,9 +4266,10 @@
   license: MIT
   owner: muskratjs
   logo: 'https://avatars1.githubusercontent.com/u/41447837?v=4'
+  unsure: true
 - github: 'https://github.com/kinecosystem/ecosystem-api'
   v3: true
-  category: unclassified
+  category: parsers
   name: ecosystem-api
   description: Apis for client server communication
   language: Java
@@ -4236,9 +4281,10 @@
   issues: 0
   owner: kinecosystem
   logo: 'https://avatars2.githubusercontent.com/u/28860603?v=4'
+  unsure: true
 - github: 'https://github.com/microprofile-extensions/openapi-ext'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-ext
   description: Some extensions for MicroProfile OpenAPI
   language: Java
@@ -4251,9 +4297,10 @@
   license: Apache-2.0
   owner: microprofile-extensions
   logo: 'https://avatars0.githubusercontent.com/u/43223776?v=4'
+  unsure: true
 - github: 'https://github.com/philosowaffle/vs-openapi-designer'
   v3: true
-  category: unclassified
+  category: parsers
   name: vs-openapi-designer
   description: OpenApi Designer Extension for VS Code
   language: JavaScript
@@ -4266,9 +4313,10 @@
   license: GPL-3.0
   owner: philosowaffle
   logo: 'https://avatars2.githubusercontent.com/u/7275041?v=4'
+  unsure: true
 - github: 'https://github.com/ckaratzas/tus-server-implementation'
   v3: true
-  category: unclassified
+  category: parsers
   name: tus-server-implementation
   description: >-
     A java implementation of https://tus.io/protocols/resumable-upload.html
@@ -4283,9 +4331,10 @@
   license: MIT
   owner: ckaratzas
   logo: 'https://avatars0.githubusercontent.com/u/35725079?v=4'
+  unsure: true
 - github: 'https://github.com/Dzoukr/OpenAPIParser'
   v3: true
-  category: unclassified
+  category: converters
   name: OpenAPIParser
   description: 'Simple Open API F# Parser'
   language: 'F#'
@@ -4298,9 +4347,10 @@
   license: MIT
   owner: Dzoukr
   logo: 'https://avatars3.githubusercontent.com/u/851307?v=4'
+  unsure: true
 - github: 'https://github.com/confuser/exegesis-koa'
   v3: true
-  category: unclassified
+  category: parsers
   name: exegesis-koa
   description: 'Koa middleware to handle OpenAPI 3.x. '
   language: JavaScript
@@ -4313,9 +4363,10 @@
   license: MIT
   owner: confuser
   logo: 'https://avatars1.githubusercontent.com/u/1658997?v=4'
+  unsure: true
 - github: 'https://github.com/unifysell/unifysell-sdk-php'
   v3: true
-  category: unclassified
+  category: parsers
   name: unifysell-sdk-php
   description: >-
     SDK with OAuth2 for the unifysell API which allows you to painless integrate
@@ -4330,9 +4381,10 @@
   license: MIT
   owner: unifysell
   logo: 'https://avatars2.githubusercontent.com/u/24697137?v=4'
+  unsure: true
 - github: 'https://github.com/kumuluz/kumuluzee-openapi'
   v3: true
-  category: unclassified
+  category: parsers
   name: kumuluzee-openapi
   description: >-
     KumuluzEE OpenAPI extension provides powerful tools to incorporate and
@@ -4347,9 +4399,10 @@
   license: ''
   owner: kumuluz
   logo: 'https://avatars3.githubusercontent.com/u/6859905?v=4'
+  unsure: true
 - github: 'https://github.com/koumoul-dev/soas'
   v3: true
-  category: unclassified
+  category: parsers
   name: soas
   description: Semantic Open API Specification library
   language: JavaScript
@@ -4362,9 +4415,10 @@
   license: MIT
   owner: koumoul-dev
   logo: 'https://avatars0.githubusercontent.com/u/16051219?v=4'
+  unsure: true
 - github: 'https://github.com/entrepreneur-interet-general/open_api_schemas_to_markdown'
   v3: true
-  category: unclassified
+  category: parsers
   name: open_api_schemas_to_markdown
   description: Generate Markdown documentation from OpenAPI 3 Components Schemas
   language: Python
@@ -4377,9 +4431,10 @@
   license: MIT
   owner: entrepreneur-interet-general
   logo: 'https://avatars2.githubusercontent.com/u/25084749?v=4'
+  unsure: true
 - github: 'https://github.com/brreg/openAPI'
   v3: true
-  category: unclassified
+  category: converters
   name: openAPI
   description: Reposository holding the API specifications of Brønnøysundregistrene
   language: null
@@ -4391,9 +4446,10 @@
   issues: 0
   owner: brreg
   logo: 'https://avatars2.githubusercontent.com/u/37073025?v=4'
+  unsure: true
 - github: 'https://github.com/funa1g/multi-file-oas-example'
   v3: true
-  category: unclassified
+  category: parsers
   name: multi-file-oas-example
   description: An example of multi file OpenAPI Specification 3.0
   language: HTML
@@ -4406,9 +4462,10 @@
   license: MIT
   owner: funa1g
   logo: 'https://avatars0.githubusercontent.com/u/9946679?v=4'
+  unsure: true
 - github: 'https://github.com/koshevy/oapi3codegen'
   v3: true
-  category: unclassified
+  category: parsers
   name: oapi3codegen
   description: 'Code generation OpenAPI 3 —> TypeScript (interfaces, enums, types)'
   language: TypeScript
@@ -4420,9 +4477,10 @@
   issues: 3
   owner: koshevy
   logo: 'https://avatars2.githubusercontent.com/u/1203974?v=4'
+  unsure: true
 - github: 'https://github.com/acme-software/typeswagger'
   v3: true
-  category: unclassified
+  category: parsers
   name: typeswagger
   description: A Swagger / OpenApi Specification DSL for Scala
   language: Scala
@@ -4435,9 +4493,10 @@
   license: MIT
   owner: acme-software
   logo: 'https://avatars0.githubusercontent.com/u/19473705?v=4'
+  unsure: true
 - github: 'https://github.com/unjello/openapi-mockk'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-mockk
   description: Generates data based on OpenAPI 3.0 specification
   language: JavaScript
@@ -4450,9 +4509,10 @@
   license: Unlicense
   owner: unjello
   logo: 'https://avatars0.githubusercontent.com/u/155669?v=4'
+  unsure: true
 - github: 'https://github.com/Bankdata/gradle-swagger-plugin'
   v3: true
-  category: unclassified
+  category: parsers
   name: gradle-swagger-plugin
   description: Gradle plugin for generating OpenAPI specification using Swagger
   language: Groovy
@@ -4465,9 +4525,10 @@
   license: MIT
   owner: Bankdata
   logo: 'https://avatars3.githubusercontent.com/u/29634372?v=4'
+  unsure: true
 - github: 'https://github.com/chrisdostert/listener-from-oas3-js'
   v3: true
-  category: unclassified
+  category: parsers
   name: listener-from-oas3-js
   description: >-
     Javascript library which generates a native http server listener from a v3
@@ -4482,9 +4543,10 @@
   license: MIT
   owner: chrisdostert
   logo: 'https://avatars2.githubusercontent.com/u/2335774?v=4'
+  unsure: true
 - github: 'https://github.com/smartrecruiters/openapi-schemas-validator'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-schemas-validator
   description: Schema validators for api documentation in OpenAPI Specification 3.x format.
   language: JavaScript
@@ -4497,6 +4559,7 @@
   license: MIT
   owner: smartrecruiters
   logo: 'https://avatars3.githubusercontent.com/u/1618540?v=4'
+  unsure: true
 - github: 'https://github.com/kazuki/pyramid-oas3'
   v3: true
   category: unclassified
@@ -4514,7 +4577,7 @@
   logo: 'https://avatars2.githubusercontent.com/u/163226?v=4'
 - github: 'https://github.com/vivek-26/koa-openapi3-router'
   v3: true
-  category: unclassified
+  category: parsers
   name: koa-openapi3-router
   description: 'Koa (v2) Router, based on OpenAPI 3 Doc.'
   language: JavaScript
@@ -4527,9 +4590,10 @@
   license: MIT
   owner: vivek-26
   logo: 'https://avatars2.githubusercontent.com/u/16881423?v=4'
+  unsure: true
 - github: 'https://github.com/tandfgroup/schema-oas'
   v3: true
-  category: unclassified
+  category: parsers
   name: schema-oas
   description: OpenAPI Specifications for Schema.org
   language: Shell
@@ -4542,9 +4606,10 @@
   license: Apache-2.0
   owner: tandfgroup
   logo: 'https://avatars3.githubusercontent.com/u/25971760?v=4'
+  unsure: true
 - github: 'https://github.com/data-studio/data-studio'
   v3: true
-  category: unclassified
+  category: documentation
   name: data-studio
   description: DataStudio by Eviratec (datastudio.xyz) as a WordPress Theme
   language: PHP
@@ -4557,9 +4622,10 @@
   license: ''
   owner: data-studio
   logo: 'https://avatars2.githubusercontent.com/u/28729308?v=4'
+  unsure: true
 - github: 'https://github.com/unjello/openapi-parser'
   v3: true
-  category: unclassified
+  category: parsers
   name: openapi-parser
   description: Parser and validator for OpenAPI 3.0
   language: JavaScript
@@ -4572,9 +4638,10 @@
   license: Unlicense
   owner: unjello
   logo: 'https://avatars0.githubusercontent.com/u/155669?v=4'
+  unsure: true
 - github: 'https://github.com/joar/py-openapilib'
   v3: true
-  category: unclassified
+  category: parsers
   name: py-openapilib
   description: Python 3.6 OpenAPI 3 Object Model - built with attrs
   language: Python
@@ -4587,9 +4654,10 @@
   license: BSD-2-Clause
   owner: joar
   logo: 'https://avatars2.githubusercontent.com/u/20814?v=4'
+  unsure: true
 - github: 'https://github.com/SensibleWood/swaggerui-webpack-boilerplate'
   v3: true
-  category: unclassified
+  category: parsers
   name: swaggerui-webpack-boilerplate
   description: >-
     Boilerplate for spinning up local Swagger UI server, orchestrated through
@@ -4603,9 +4671,10 @@
   issues: 0
   owner: SensibleWood
   logo: 'https://avatars2.githubusercontent.com/u/2420069?v=4'
+  unsure: true
 - github: 'https://github.com/pglass/py-openapi-schema-to-json-schema'
   v3: true
-  category: unclassified
+  category: sdk
   name: py-openapi-schema-to-json-schema
   description: 'Python port of https://github.com/mikunn/openapi-schema-to-json-schema'
   language: Python
@@ -4617,9 +4686,10 @@
   issues: 0
   owner: pglass
   logo: 'https://avatars3.githubusercontent.com/u/1077740?v=4'
+  unsure: true
 - github: 'https://github.com/riddhi89/simple-flask-project'
   v3: true
-  category: unclassified
+  category: parsers
   name: simple-flask-project
   description: Generate OpenAPI spec from Flask routes
   language: Python
@@ -4631,11 +4701,12 @@
   issues: 0
   owner: riddhi89
   logo: 'https://avatars3.githubusercontent.com/u/4574087?v=4'
+  unsure: true
 - link: 'https://bitbucket.org/atlassian/openapi-diff/src/master/'
   v3: true
   category: miscellaneous
   name: openapi-diff
-  description: 'A CLI tool to identify differences between Swagger/OpenAPI specs.'
+  description: A CLI tool to identify differences between Swagger/OpenAPI specs.
   language: JavaScript
   license: Apache-2.0
   logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
@@ -4645,7 +4716,10 @@
   v3: true
   category: parsers
   name: swagger-request-validator
-  description: 'A Java library for validating request/responses against a OpenAPI / Swagger specification. Includes support for Swagger v2 and OpenAPI v3 specifications and adapters for common mock and testing libraries.'
+  description: >-
+    A Java library for validating request/responses against a OpenAPI / Swagger
+    specification. Includes support for Swagger v2 and OpenAPI v3 specifications
+    and adapters for common mock and testing libraries.
   language: Java
   license: Apache-2.0
   logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
@@ -4653,8 +4727,7 @@
   name: swagger-mock-validator
   v3: true
   category: mock
-  description: 'A CLI tool to validate mocks against swagger/OpenApi specs.'
+  description: A CLI tool to validate mocks against swagger/OpenApi specs.
   language: TypeScript
   license: Apache-2.0
   logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-
