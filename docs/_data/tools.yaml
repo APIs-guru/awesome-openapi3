@@ -276,13 +276,15 @@
     APIs that click into client apps.
   v2: true
   v3: true
-- name: apicurio-studio
+- name: Apicurio Studio
   category: editors
-  language: JavaScript
+  language: Java,TypeScript
   link: 'http://www.apicur.io/'
   github: 'https://github.com/apicurio/apicurio-studio'
-  description: Open Source API Design
+  demo: 'https://studio.apicur.io/'
+  description: Design beautiful, functional APIs with zero coding, using OpenAPI.
   v2: true
+  v3: true
   archived: false
   stars: 229
   watch: 29
