@@ -7,6 +7,9 @@ const fetch = require('node-fetch');
 const str = fs.readFileSync('./docs/_data/tools.yaml','utf8');
 const entries = yaml.load(str);
 
+const rms = fs.readFileSync('./docs/_data/readme.yaml','utf8');
+const readmes = yaml.load(rms);
+
 const username = process.env.github_user;
 const password = process.env.github_pwd;
 const digest = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
@@ -20,7 +23,7 @@ for (let entry of entries) {
         let components = url.split('/');
         const user = components[1];
         const repo = components[2];
-        const apicall = 'https://api.github.com/repos/'+user+'/'+repo;
+        let apicall = 'https://api.github.com/repos/'+user+'/'+repo;
         console.log(apicall);
         const res = await fetch(apicall,options);
         const json = await res.text();
@@ -51,6 +54,19 @@ for (let entry of entries) {
                 }
             }
         }
+        apicall = 'https://api.github.com/repos/'+user+'/'+repo+'/readme';
+        options.headers.accept = 'application/vnd.github.VERSION.raw';
+        console.log(apicall);
+        try {
+            const rmres = await fetch(apicall,options);
+            const readme = await rmres.text();
+            if (readme) {
+                readmes[user+'/'+repo] = readme;
+            }
+        }
+        catch (ex) {
+            console.warn(ex.message);
+        }
     }
 }
 
@@ -60,5 +76,6 @@ main();
 
 process.on('exit',function(){
     fs.writeFileSync('./docs/_data/tools.yaml',yaml.dump(entries),'utf8');
+    fs.writeFileSync('./docs/_data/readme.yaml',yaml.dump(readmes),'utf8');
 });
 
