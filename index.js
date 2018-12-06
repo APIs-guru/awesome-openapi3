@@ -67,6 +67,10 @@ for (let entry of entries) {
         catch (ex) {
             console.warn(ex.message);
         }
+
+        // switch language?
+        // https://api.npms.io/v2/package/{name}
+
     }
 }
 
