@@ -3,7 +3,7 @@ layout: default
 theme: jekyll-theme-cayman
 show_downloads: false
 title: APIs.guru awesome-openapi3
-permalink: /awesome-openapi3/index.html
+permalink: /
 ---
 
 <link rel="icon" type="image/png" sizes="32x32" href="https://apis.guru/assets/images/favicons/icon-32x32.png">
