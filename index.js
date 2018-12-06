@@ -69,8 +69,21 @@ for (let entry of entries) {
         }
 
         // switch language?
-        // https://api.npms.io/v2/package/{name}
-
+        if (entry.language && entry.language.toLowerCase() === 'javascript') {
+            apicall = 'https://api.npms.io/v2/package/'+encodeURIComponent(entry.name);
+            console.log(apicall);
+            try {
+                const npmres = await fetch(apicall,options);
+                const npmstxt = await npmres.text();
+                const npmsio = JSON.parse(npmstxt);
+                if (npmsio && npmsio.collected && npmsio.collected.npm && npmsio.collected.npm.downloads) {
+                    entry.downloads = npmsio.collected.npm.downloads[npmsio.collected.npm.downloads.length-1].count;
+                }
+            }
+            catch (ex) {
+                console.warn(ex.message);
+            }
+        }
     }
 }
 
