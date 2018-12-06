@@ -6,6 +6,9 @@ title: APIs.guru awesome-openapi3
 permalink: /awesome-openapi3/index.html
 ---
 
+<link rel="icon" type="image/png" sizes="32x32" href="https://apis.guru/assets/images/favicons/icon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://apis.guru/assets/images/favicons/icon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://apis.guru/assets/images/favicons/icon-16x16.png">
 <link rel="shortcut icon" type="image/png" href="https://apis.guru/favicon.ico">
 
 Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
