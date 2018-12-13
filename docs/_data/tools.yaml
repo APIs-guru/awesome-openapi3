@@ -4794,73 +4794,9 @@
   owner: Rebilly
   logo: 'https://avatars1.githubusercontent.com/u/6365848?v=4'
   license: MIT
-- github: 'https://github.com/Mermade/openapi-gui'
-  v3: true
-  category: unclassified
-  name: openapi-gui
-  description: GUI / visual editor for creating and editing OpenAPI / Swagger definitions
-  language: JavaScript
-  archived: false
-  stars: 365
-  watch: 30
-  forks: 60
-  updated: '2018-12-11T11:41:53Z'
-  issues: 5
-  owner: Mermade
-  logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  license: MIT
-  downloads: 734
-- github: 'https://github.com/Mermade/widdershins'
-  v3: true
-  category: unclassified
-  name: widdershins
-  description: >-
-    OpenAPI / Swagger, AsyncAPI & Semoasa definitions to Slate / Shins
-    compatible markdown
-  language: JavaScript
-  archived: false
-  stars: 360
-  watch: 12
-  forks: 122
-  updated: '2018-12-12T08:59:55Z'
-  issues: 25
-  owner: Mermade
-  logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  license: MIT
-  downloads: 57842
-- github: 'https://github.com/Mermade/oas-kit'
-  v3: true
-  category: unclassified
-  name: oas-kit
-  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
-  language: JavaScript
-  archived: false
-  stars: 262
-  watch: 11
-  forks: 42
-  updated: '2018-12-10T06:58:10Z'
-  issues: 3
-  owner: Mermade
-  logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  license: BSD-3-Clause
-- github: 'https://github.com/OpenAPITools/openapi-generator-cli'
-  v3: true
-  category: unclassified
-  name: openapi-generator-cli
-  description: 'A node package wrapper for https://github.com/OpenAPITools/openapi-generator'
-  language: JavaScript
-  archived: false
-  stars: 12
-  watch: 7
-  forks: 1
-  updated: '2018-12-02T19:09:46Z'
-  issues: 0
-  owner: OpenAPITools
-  logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
-  license: Apache-2.0
 - github: 'https://github.com/stoplightio/spectral'
   v3: true
-  category: unclassified
+  category: parsers
   name: spectral
   description: >-
     A flexible JSON object linter with out of the box support for OpenAPI
@@ -4875,32 +4811,3 @@
   owner: stoplightio
   logo: 'https://avatars1.githubusercontent.com/u/10767217?v=4'
   license: Apache-2.0
-- github: 'https://github.com/m3-moretv/smogger'
-  v3: true
-  category: unclassified
-  name: smogger
-  description: Simple mock server for Swagger (Open API v3) specification
-  language: JavaScript
-  archived: false
-  stars: 6
-  watch: 2
-  forks: 0
-  updated: '2018-12-12T08:35:42Z'
-  issues: 0
-  owner: m3-moretv
-  logo: 'https://avatars1.githubusercontent.com/u/45791851?v=4'
-- github: 'https://github.com/anupsaund/vertx-auto-swagger'
-  v3: true
-  category: unclassified
-  name: vertx-auto-swagger
-  description: Java Micro Service API Generation
-  language: Java
-  archived: false
-  stars: 1
-  watch: 2
-  forks: 0
-  updated: '2018-12-04T14:32:17Z'
-  issues: 0
-  owner: anupsaund
-  logo: 'https://avatars2.githubusercontent.com/u/6728822?v=4'
-  license: MIT

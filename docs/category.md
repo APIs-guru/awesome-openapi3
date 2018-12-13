@@ -14,9 +14,10 @@ title: APIs.guru awesome-openapi3
 
 {% for category in site.data.categories %}
 
-<h2><a id="{{category.slug}}">{{category.name}}</a></h2>
-
 {% assign tmp = site.data.tools | where:"category",category.slug | where:"v3",true | sort: 'name' %}
+{% if tmp.size %}
+
+<h2><a id="{{category.slug}}">{{category.name}}</a></h2>
 
 | Project | Language | License | Description | Link |
 |---|---|---|---|
@@ -25,6 +26,7 @@ title: APIs.guru awesome-openapi3
 
   <a href="#">Back to top</a>
 
+{% endif %}
 {% endfor %}
 
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>

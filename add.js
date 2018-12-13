@@ -14,7 +14,7 @@ let found = 0;
 for (let edge of res.data.search.edges) {
     let url = edge.node.url;
     let entry = entries.find(function(e,i,a){
-        return e.github === url;
+        return e.github.toLowerCase() === url.toLowerCase();
     });
     if (entry) {
         found++;
