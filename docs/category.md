@@ -15,7 +15,7 @@ title: APIs.guru awesome-openapi3
 {% for category in site.data.categories %}
 
 {% assign tmp = site.data.tools | where:"category",category.slug | where:"v3",true | sort: 'name' %}
-{% if tmp.size %}
+{% if tmp.size >= 1 %}
 
 <h2><a id="{{category.slug}}">{{category.name}}</a></h2>
 
