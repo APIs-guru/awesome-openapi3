@@ -13,7 +13,7 @@ layout: none
         <title>{{ tool.name | xml_escape }}</title>
         <description>{{ tool.description | xml_escape }}</description>
         <category>{% if tool.v3 %}OAS3{% else %}OAS2{% endif %}/{{ tool.category }}</category>
-        <pubDate>{% if tool.date %}{{ tool.date | date: "%a, %d %b %Y %H:%M:%S %z" }}{% else %}{{ 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}{% endif %}</pubDate>
+        <pubDate>{% if tool.updated %}{{ tool.updated | date: "%a, %d %b %Y %H:%M:%S %z" }}{% else %}{{ 'now' | date: "%a, %d %b %Y %H:%M:%S %z" }}{% endif %}</pubDate>
         <link>{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</link>
         <guid isPermaLink="true">{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</guid>
       </item>

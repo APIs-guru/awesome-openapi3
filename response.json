@@ -4,6 +4,11 @@
       "edges": [
         {
           "node": {
+            "url": "https://github.com/Rebilly/ReDoc"
+          }
+        },
+        {
+          "node": {
             "url": "https://github.com/OpenAPITools/openapi-generator"
           }
         },
@@ -14,12 +19,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/Mermade/widdershins"
+            "url": "https://github.com/Mermade/openapi-gui"
           }
         },
         {
           "node": {
-            "url": "https://github.com/Mermade/openapi-gui"
+            "url": "https://github.com/Mermade/widdershins"
           }
         },
         {
@@ -59,22 +64,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/RepreZen/KaiZen-OpenAPI-Editor"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/koumoul-dev/openapi-viewer"
-          }
-        },
-        {
-          "node": {
             "url": "https://github.com/getkin/kin-openapi"
           }
         },
         {
           "node": {
-            "url": "https://github.com/RepreZen/KaiZen-OpenApi-Parser"
+            "url": "https://github.com/RepreZen/KaiZen-OpenAPI-Editor"
           }
         },
         {
@@ -84,12 +79,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/networknt/light-rest-4j"
+            "url": "https://github.com/koumoul-dev/openapi-viewer"
           }
         },
         {
           "node": {
-            "url": "https://github.com/AresS31/swurg"
+            "url": "https://github.com/RepreZen/KaiZen-OpenApi-Parser"
           }
         },
         {
@@ -99,12 +94,22 @@
         },
         {
           "node": {
-            "url": "https://github.com/tobilg/api2html"
+            "url": "https://github.com/networknt/light-rest-4j"
           }
         },
         {
           "node": {
             "url": "https://github.com/epiphone/routing-controllers-openapi"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/AresS31/swurg"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/tobilg/api2html"
           }
         },
         {
@@ -119,12 +124,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/jfinkhaeuser/prance"
+            "url": "https://github.com/epiphone/class-validator-jsonschema"
           }
         },
         {
           "node": {
-            "url": "https://github.com/epiphone/class-validator-jsonschema"
+            "url": "https://github.com/jfinkhaeuser/prance"
           }
         },
         {
@@ -139,11 +144,6 @@
         },
         {
           "node": {
-            "url": "https://github.com/outofcoffee/vertx-oas"
-          }
-        },
-        {
-          "node": {
             "url": "https://github.com/cdimascio/openapi-spring-webflux-validator"
           }
         },
@@ -154,12 +154,17 @@
         },
         {
           "node": {
-            "url": "https://github.com/contentjet/openapi-ui"
+            "url": "https://github.com/outofcoffee/vertx-oas"
           }
         },
         {
           "node": {
             "url": "https://github.com/fmvilas/openapi3-generator"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/contentjet/openapi-ui"
           }
         },
         {
@@ -174,12 +179,17 @@
         },
         {
           "node": {
+            "url": "https://github.com/Mermade/openapi-lint-vscode"
+          }
+        },
+        {
+          "node": {
             "url": "https://github.com/Microsoft/OpenAPI.NET.OData"
           }
         },
         {
           "node": {
-            "url": "https://github.com/Mermade/openapi-lint-vscode"
+            "url": "https://github.com/cdimascio/kotlin-spring-mvc-template"
           }
         },
         {
@@ -194,22 +204,27 @@
         },
         {
           "node": {
-            "url": "https://github.com/cdimascio/kotlin-spring-mvc-template"
-          }
-        },
-        {
-          "node": {
             "url": "https://github.com/wzshiming/gen"
           }
         },
         {
           "node": {
-            "url": "https://github.com/technocreatives/openapi-eller"
+            "url": "https://github.com/OpenAPITools/openapi-generator-cli"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/stoplightio/spectral"
           }
         },
         {
           "node": {
             "url": "https://github.com/smartrecruiters/openapi-first"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/technocreatives/openapi-eller"
           }
         },
         {
@@ -244,7 +259,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/OpenAPITools/openapi-petstore"
+            "url": "https://github.com/serafin-labs/serafin"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/yayoc/swagger-to-mock"
           }
         },
         {
@@ -254,12 +274,22 @@
         },
         {
           "node": {
-            "url": "https://github.com/serafin-labs/serafin"
+            "url": "https://github.com/m3-moretv/smogger"
           }
         },
         {
           "node": {
-            "url": "https://github.com/yayoc/swagger-to-mock"
+            "url": "https://github.com/OpenAPITools/openapi-petstore"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/nasa9084/go-openapi"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/wzshiming/openapi"
           }
         },
         {
@@ -274,12 +304,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/rinold/Steamer"
+            "url": "https://github.com/erasys/openapi-php"
           }
         },
         {
           "node": {
-            "url": "https://github.com/wzshiming/openapi"
+            "url": "https://github.com/rinold/Steamer"
           }
         },
         {
@@ -289,12 +319,17 @@
         },
         {
           "node": {
-            "url": "https://github.com/isa-group/oas-generator"
+            "url": "https://github.com/SabzCity/go-library"
           }
         },
         {
           "node": {
-            "url": "https://github.com/erasys/openapi-php"
+            "url": "https://github.com/zweidenker/OpenAPI"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/niteoweb/pyramid_openapi3"
           }
         },
         {
@@ -304,7 +339,7 @@
         },
         {
           "node": {
-            "url": "https://github.com/SabzCity/go-library"
+            "url": "https://github.com/isa-group/oas-generator"
           }
         },
         {
@@ -319,7 +354,7 @@
         },
         {
           "node": {
-            "url": "https://github.com/niteoweb/pyramid_openapi3"
+            "url": "https://github.com/Mermade/openapi-webconverter"
           }
         },
         {
@@ -329,27 +364,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/Mermade/openapi-webconverter"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/zweidenker/OpenAPI"
+            "url": "https://github.com/foxel/openapi3-typescript-codegen"
           }
         },
         {
           "node": {
             "url": "https://github.com/denismakogon/fn-openapi-v3"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/nasa9084/go-openapi"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/foxel/openapi3-typescript-codegen"
           }
         },
         {
@@ -360,6 +380,16 @@
         {
           "node": {
             "url": "https://github.com/kinecosystem/ecosystem-api"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/Mermade/openapi-extract"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/Dzoukr/OpenAPIParser"
           }
         },
         {
@@ -375,16 +405,6 @@
         {
           "node": {
             "url": "https://github.com/ckaratzas/tus-server-implementation"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/Dzoukr/OpenAPIParser"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/Mermade/openapi-extract"
           }
         },
         {
@@ -409,6 +429,36 @@
         },
         {
           "node": {
+            "url": "https://github.com/koshevy/oapi3codegen"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/kazuki/pyramid-oas3"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/funa1g/multi-file-oas-example"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/anupsaund/vertx-auto-swagger"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/chrisdostert/listener-from-oas3-js"
+          }
+        },
+        {
+          "node": {
+            "url": "https://github.com/smartrecruiters/openapi-schemas-validator"
+          }
+        },
+        {
+          "node": {
             "url": "https://github.com/koumoul-dev/soas"
           }
         },
@@ -424,12 +474,7 @@
         },
         {
           "node": {
-            "url": "https://github.com/funa1g/multi-file-oas-example"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/koshevy/oapi3codegen"
+            "url": "https://github.com/pglass/py-openapi-schema-to-json-schema"
           }
         },
         {
@@ -449,57 +494,12 @@
         },
         {
           "node": {
-            "url": "https://github.com/chrisdostert/listener-from-oas3-js"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/smartrecruiters/openapi-schemas-validator"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/kazuki/pyramid-oas3"
-          }
-        },
-        {
-          "node": {
             "url": "https://github.com/vivek-26/koa-openapi3-router"
           }
         },
         {
           "node": {
             "url": "https://github.com/tandfgroup/schema-oas"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/data-studio/data-studio"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/unjello/openapi-parser"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/joar/py-openapilib"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/SensibleWood/swaggerui-webpack-boilerplate"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/pglass/py-openapi-schema-to-json-schema"
-          }
-        },
-        {
-          "node": {
-            "url": "https://github.com/riddhi89/simple-flask-project"
           }
         }
       ]

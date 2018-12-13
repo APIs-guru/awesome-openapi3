@@ -2266,6 +2266,8 @@ mermade/widdershins: >
 
   * [LeApp daemon API](https://leapp-to.github.io/shins/index.html)
 
+  * [Shutterstock API](https://api-reference.shutterstock.com/)
+
 
   ## Widdershins and Shins
 
@@ -2278,17 +2280,20 @@ mermade/widdershins: >
 
   * [shinner](https://github.com/jantoniucci/shinner)
 Rebilly/generator-openapi-repo: >
-  # generator-openapi-repo [![NPM version][npm-image]][npm-url] [![Dependency
+  # create-openapi-repo
+
+
+  [![NPM version][npm-image]][npm-url] [![Dependency
   Status][daviddm-image]][daviddm-url]
 
-  > Yeoman generator for OpenAPI(fka Swagger) repo to help you share spec for
-  your API
+
+  > Generator for OpenAPI repository
 
 
   <center>
 
 
-  ![logo](./logo.png)
+  <img src="./logo.png" widht="500px"/>
 
 
   </center>
@@ -2306,11 +2311,11 @@ Rebilly/generator-openapi-repo: >
   ## Features
 
   This generator helps to create a GitHub repo with the following features:
-   - Possibility to split a big Swagger spec into smaller files and bundle it for deployment
+   - Possibility to split a big OpenAPI spec into smaller files and bundle it for deployment
    - Continuous integration/deployment on Travis
    - Code samples as separate files
-   - Swagger spec is validated after each commit
-   - Swagger spec + ReDoc deployed to Github Pages (you can use a custom domain)
+   - OpenAPI spec is validated after each commit
+   - OpenAPI spec + ReDoc deployed to Github Pages (you can use a custom domain)
    - Live editing in your editor or `swagger-editor` :heart_eyes:
    ![live editing](./live-edit.gif)
 
@@ -2329,17 +2334,25 @@ Rebilly/generator-openapi-repo: >
   We assume you already have [node.js](https://nodejs.org/) installed.
 
 
-  - First, install [Yeoman](http://yeoman.io) and `generator-openapi-repo`:
+  - Install `create-openapi-repo` globally:
 
   ```bash
 
-  npm install -g yo
-
-  npm install -g generator-openapi-repo
+  npm install -g create-openapi-repo
 
   ```
 
-  - Then [create GitHub
+  or use
+  [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):
+
+
+  ```bash
+
+  npx create-openapi-repo <spec-root>
+
+  ```
+
+  - [Create GitHub
   repo](https://help.github.com/articles/create-a-repo/#create-a-new-repository-on-github)
   where your OpenAPI spec will live.
 
@@ -2348,23 +2361,13 @@ Rebilly/generator-openapi-repo: >
 
   ```bash
 
-  yo openapi-repo
+  create-openapi-repo .
 
   ```
 
   -  Commit and push your changes to the GitHub and follow instruction from
   `README.md` of your newly created repo.
 
-  **Note**: don't forget to commit the `.yo-rc.json` file, it contains all
-  answers gave to yeoman, and they are reused during the update procedure.
-
-
-  ## Updating an existing project
-    - First make sure you have committed everything or have a backup
-    - Run `yo openapi-repo` over the project again
-    - `yo` will ask you for each file if you want to overwrite
-    - For those files you haven't edited, just say yes
-    - For the other ones, type `d` for diff and see what's changed
 
   [npm-image]: https://badge.fury.io/js/generator-openapi-repo.svg
 
@@ -3071,20 +3074,48 @@ mermade/openapi-gui: >+
   specification support](docs/openapi3-support.md).
 
 stoplightio/prism: >
-  # Prism API Server
+  # Prism API Server by
+  [Stoplight](http://stoplight.io/?utm_source=github&utm_medium=prism)
 
 
-  Current Prism Versions 2.0.16
+  ### Current Prism Version: 2.0.16
 
 
-  The perfect OAS (Swagger 2) companion. Turn any OAS file into an API server
-  with dynamic mocking, transformations, validations, and more.
+  The perfect OpenAPI Specification (formerly known as Swagger) companion. Turn
+  any OpenAPI Specification document into an API server with dynamic mocking,
+  transformations, validations, and more.
 
 
-  [Homepage](http://stoplight.io/platform/prism?utm_source=github&utm_medium=prism)
+  ```shell
+
+  Usage:
+    prism [command]
+
+  Available Commands:
+    conduct     Run scenarios to orchestrate and test web APIs
+    help        Help about any command
+    login       Login to Stoplight
+    logout      Logout of Stoplight
+    mock        Create a mock server given an OASv2 specification
+    serve       Start a prism server instance
+    update      Update prism to latest or specific version
+    validate    Run a contract server, validating upstream responses match a OASv2 specification
+    version     Print prism version
+
+  Flags:
+    -h, --help           help for prism
+    -t, --token string   Stoplight token for user account
+
+  Use "prism [command] --help" for more information about a command.
+
+  ```
 
 
-  [Documentation](https://help.stoplight.io/prism/getting-started?utm_source=github&utm_medium=prism)
+  Supports OpenAPI Specification 2. OpenAPI Specification 3 coming soon. 
+
+
+  [More
+  documentation](https://docs.stoplight.io/mocking/introduction?utm_source=github&utm_medium=prism)
 
 
   ## Installation
@@ -3119,16 +3150,6 @@ stoplightio/prism: >
   ```
 
   prism update
-
-  ```
-
-
-  or
-
-
-  ```
-
-  prism up
 
   ```
 Szasza/express-gateway-plugin-openapi3-mock-server: >
@@ -8238,6 +8259,9 @@ apiaryio/dredd: >
   [![devDependency
   Status](https://david-dm.org/apiaryio/dredd/dev-status.svg)](https://david-dm.org/apiaryio/dredd?type=dev)
 
+  [![Greenkeeper
+  badge](https://badges.greenkeeper.io/apiaryio/dredd.svg)](https://greenkeeper.io/)
+
   [![Documentation
   Status](https://readthedocs.org/projects/dredd/badge/?version=latest)](https://dredd.org/en/latest/)
 
@@ -8275,7 +8299,7 @@ apiaryio/dredd: >
 
   - [API Blueprint][]
 
-  - [OpenAPI 2][]
+  - [OpenAPI 2][] (formerly known as Swagger)
 
 
   ### Supported Hooks Languages
@@ -40620,8 +40644,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0 parser and validator for Node and
-  browsers","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2018-12-01T02:05:16Z","pushed_at":"2018-10-31T13:19:37Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":30811,"stargazers_count":397,"watchers_count":397,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":64,"mirror_url":null,"archived":false,"open_issues_count":24,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":64,"open_issues":24,"watchers":397,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":64,"subscribers_count":20}
+  browsers","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2018-12-11T10:26:36Z","pushed_at":"2018-12-04T21:50:47Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":30811,"stargazers_count":402,"watchers_count":402,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":65,"mirror_url":null,"archived":false,"open_issues_count":24,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":65,"open_issues":24,"watchers":402,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":65,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -45328,7 +45352,7 @@ OpenAPITools/openapi-generator: >
 
 
   [Master](https://github.com/OpenAPITools/openapi-generator/tree/master)
-  (`3.3.4`): [![Build
+  (`4.0.0`): [![Build
   Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/master.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
 
   [![Integration
@@ -45340,19 +45364,6 @@ OpenAPITools/openapi-generator: >
   [![Windows
   Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=master&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
 
-
-  [`4.0.x`](https://github.com/OpenAPITools/openapi-generator/tree/4.0.x)
-  branch: [![Build
-  Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/4.0.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
-
-  [![Integration
-  Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/4.0.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
-
-  [![Run
-  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=4.0.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
-
-  [![Windows
-  Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=4.0.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
 
   </div>
 
@@ -45453,7 +45464,7 @@ OpenAPITools/openapi-generator: >
 
   **Configuration files**          | [**Apache2**](https://httpd.apache.org/)
 
-  **Others**                       | **JMeter**, **MySQL Schema**
+  **Others**                       | **GraphQL**, **JMeter**, **MySQL Schema**
 
 
   ## Table of contents
@@ -45498,7 +45509,7 @@ OpenAPITools/openapi-generator: >
 
   ---------------------------- | ------------ | -----
 
-  4.0.0 (upcoming major release)
+  4.0.0 (upcoming release)
   [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.0.0-SNAPSHOT/)|
   20.12.2018 | Major release with breaking changes (with or without fallback)
 
@@ -46131,7 +46142,6 @@ OpenAPITools/openapi-generator: >
                   [--import-mappings <import mappings>...]
                   [--instantiation-types <instantiation types>...]
                   [--invoker-package <invoker package>]
-                  [(-l <language> | --lang <language>)]
                   [--language-specific-primitives <language specific primitives>...]
                   [--library <library>] [--log-to-stderr]
                   [--model-name-prefix <model name prefix>]
@@ -46256,6 +46266,8 @@ OpenAPITools/openapi-generator: >
 
   - [Angular.Schule](https://angular.schule/)
 
+  - [ASKUL](https://www.askul.co.jp)
+
   - [b<>com](https://b-com.com/en)
 
   - [Bithost GmbH](https://www.bithost.ch)
@@ -46268,6 +46280,8 @@ OpenAPITools/openapi-generator: >
 
   - [Klarna](https://www.klarna.com/)
 
+  - [Metaswitch](https://www.metaswitch.com/)
+
   - [Myworkout](https://myworkout.com)
 
   - [Raiffeisen Schweiz Genossenschaft](https://www.raiffeisen.ch)
@@ -46276,6 +46290,8 @@ OpenAPITools/openapi-generator: >
   Studio](https://www.reprezen.com/swagger-openapi-code-generation-api-first-microservices-enterprise-development)
 
   - [REST United](https://restunited.com)
+
+  - [Stingray](http://www.stingray.com)
 
   - [Suva](https://www.suva.ch/)
 
@@ -46439,6 +46455,7 @@ OpenAPITools/openapi-generator: >
      * Erlang Server: @galaxie
      * Go Server: @guohuang
      * Go (Gin) Server: @kemokemo
+     * GraphQL Express Server: @renepardon
      * Haskell Servant: @algas
      * Java MSF4J: @sanjeewa-malalgoda
      * Java Spring Boot: @diyfr
@@ -46466,6 +46483,7 @@ OpenAPITools/openapi-generator: >
    * Configuration
      * Apache2: @stkrwork
    * Schema
+     * GraphQL: @wing328
      * MySQL: @ybelenko
 
   #### How to join the core team
@@ -46551,6 +46569,8 @@ OpenAPITools/openapi-generator: >
   | Go        | @antihax (2017/11) @bvwells (2017/12) @grokify (2018/07)
   @kemokemo (2018/09 |
 
+  | GraphQL   | @renepardon (2018/12) |
+
   | Groovy    |  |
 
   | Haskell   |  |
@@ -46571,7 +46591,8 @@ OpenAPITools/openapi-generator: >
   | Perl      | @wing328 (2017/07) |
 
   | PHP       | @jebentier (2017/07) @dkarlovi (2017/07) @mandrean (2017/08)
-  @jfastnacht (2017/09) @ackintosh (2017/09) @ybelenko (2018/07) |
+  @jfastnacht (2017/09) @ackintosh (2017/09) @ybelenko (2018/07) @renepardon
+  (2018/12) |
 
   | PowerShell | |
 
@@ -47951,6 +47972,21 @@ cebe/php-openapi: >
 
 
   - PHP 7.1 or higher
+
+
+  ## Used by
+
+
+  This library provides a low level API for reading OpenAPI files. It is used by
+  higher level tools to
+
+  do awesome work:
+
+
+  - https://github.com/cebe/yii2-openapi
+
+  - ... ([add
+  yours](https://github.com/cebe/php-openapi/edit/master/README.md#L24))
 
 
   ## Usage
@@ -50052,7 +50088,7 @@ outofcoffee/vertx-oas: >
 
 
   Pete Cornish (outofcoffee@gmail.com)
-cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.0.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.0.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.swagger.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n"
+cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.0.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.0.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.swagger.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n"
 fmvilas/openapi3-generator: >
   <h1 align="center">OpenAPI 3 Generator</h1>
 
@@ -56267,3 +56303,1361 @@ pglass/py-openapi-schema-to-json-schema: >
   about the issue (and his [reverse
   implementation](https://github.com/wework/json-schema-to-openapi-schema))
 riddhi89/simple-flask-project: "# simple-flask-project\n\nSetup: create a python virtual environment and install the requirements:\n\n\tvirtualenv --python=python3.6 .venv\n\tsource .venv/bin/activate\n\tpip install -r requirements.txt\n\n\nGenerate OpenAPI spec from Flask routes:\n\n\tpython generate_openapi_spec.py\n\n    \nView the OpenAPI spec using Swagger-UI:\n\n    docker run --rm -p 9000:8080 --name swagger-ui -e SWAGGER_JSON=/api_docs/openapi.json -v $(PWD)/api_docs:/api_docs swaggerapi/swagger-ui\n"
+Mermade/openapi-gui: >+
+  OpenAPI-GUI
+
+  ===========
+
+
+  OpenAPI-GUI is a GUI for creating and editing OpenAPI version 3.0.x JSON/YAML
+  definitions. In its current form it is most useful as a tool for starting off
+  and editing simple OpenAPI definitions. Imported OpenAPI 2.0 definitions are
+  automatically converted to v3.0.
+
+
+  ![Screenshot](https://github.com/Mermade/openapi-gui/blob/master/img/screenshot.png?raw=true)
+
+
+  For the previous Swagger / OpenAPI 2.0-only version see
+  [here](https://mikeralphson.github.io/openapi-gui). This version is currently
+  **unmaintained** apart from security fixes.
+
+
+  This project was initially a fork of [Daryl Kuhn's
+  IODoctor](https://github.com/darrylkuhn/iodoctor/tree/angular-port), which in
+  turn was inspired by [IODoctor by Brandon
+  West](https://github.com/brandonmwest/iodoctor) which was written in Ruby. The
+  complete history of the project is maintained on GitHub.
+
+
+  Description
+
+  -----------
+
+  ### How It Works
+
+
+  Select an existing OpenAPI 2.0 or 3.0.x definition to upload, or create a new
+  definition and start adding Paths, Operations, and Parameters. When an
+  existing definition is used, it is parsed and forms for editing each Path,
+  Operation and Parameter will be created.
+
+
+  You can load an existing definition by appending a `?url=` query parameter to
+  the initial start page.
+
+
+  Click an item from the menu on the left to begin editing. View the JSON/YAML
+  output at any time by selecting one of the "Export" tabs. When finished,
+  download the output to save it locally or copy it your clipboard. OpenAPI-GUI
+  only stores one definition at a time, and this is in your browser's
+  local-storage. Make sure you save your JSON/YAML output locally.
+
+
+  Before performing a destructive action, OpenAPI-GUI saves the current state of
+  the definition. At all other times you must remember to select Save manually.
+
+
+  ### Technology
+
+
+  OpenAPI-GUI runs entirely client-side using a number of Javascript frameworks
+  including [Vue.JS](https://vuejs.org/), [jQuery](https://jquery.com/) and
+  [Bulma](http://bulma.io/) for CSS.
+
+
+  To get the app up and running just browse to [the live version on GitHub
+  pages](https://mermade.github.io/openapi-gui), deploy a clone to GitHub pages,
+  deploy to Heroku using the button below, or clone the repo and point a browser
+  at `index.html` or host it yourself - couldn't be simpler. More [technical
+  information here](docs/technical.md).
+
+
+  You only need to `npm install` the Node.js modules if you wish to use the
+  `openapi-gui` embedded web server (i.e. not if you are running your own
+  web-server), otherwise they are only there for PaaS deployments.
+
+
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+  #### CLI options
+
+
+  ```
+
+  -d, --definition    serve the given OAS definition
+
+  -l, --launch        start a web-browser pointing to the GUI
+
+  -p, --port          specify the port to run on, defaults to $PORT or 3000
+
+  -w, --write         enable writing back to the source definition
+
+  ```
+
+
+  #### Running with Docker
+
+
+  If you don't have a local Node development environment, or if you would prefer
+  to run OpenAPI-GUI in a Docker container, you can do in with a few simple
+  steps:
+
+
+  1. Clone the repository.
+
+  2. Run `docker build -t mermade/openapi-gui .` to build the Docker image
+  (`mermade/openapi-gui`)
+
+  3. Run `docker run --name openapi-gui -p 8080:3000 -d mermade/openapi-gui` to
+  run the server on port 8080.
+
+  4. Navigate to `http://localhost:8080` in your favorite browser.
+
+  5. When you're done, shut down the server by running `docker stop openapi-gui
+  && docker rm openapi-gui`
+
+
+  Or you can pull the pre-built Docker image:
+
+
+  * `docker pull mermade/openapi-gui`
+
+
+  ### Limitations
+
+
+  * OpenAPI-GUI will de-reference shared parameters.
+
+  * The definition must be self-contained with no external `$ref`s. **This is
+  likely to be resolved (ho-ho) soon**.
+
+  * Editing a response / example / body schema will dereference it.
+
+  * OpenAPI-GUI will not always preserve vendor-extensions, e.g. if a parameter
+  is deleted and recreated.
+
+  * OpenAPI-GUI will not preserve comments from definitions imported in YAML
+  format.
+
+
+  TODO
+
+  ----
+
+
+  * See the [TODO list](/docs/TODO.md) and the current status of [OpenAPI 3.0
+  specification support](docs/openapi3-support.md).
+
+Mermade/widdershins: >
+  # widdershins
+
+  OpenAPI / Swagger / AsyncAPI / Semoasa definition to
+  [Slate](https://github.com/lord/slate) /
+
+  [Shins](https://github.com/mermade/shins) compatible markdown
+
+
+  ![Build](https://img.shields.io/travis/Mermade/widdershins/master.svg)
+  [![Tested on
+  APIs.guru](https://api.apis.guru/badges/tested_on.svg)](https://APIs.guru)
+  [![Tested on Mermade
+  OpenAPIs](https://img.shields.io/badge/Additional%20Specs-419-brightgreen.svg)](https://github.com/mermade/OpenAPI_specifications)
+
+  [![Known
+  Vulnerabilities](https://snyk.io/test/npm/widdershins/badge.svg)](https://snyk.io/test/npm/widdershins)
+
+
+  <img src="http://mermade.github.io/widdershins/logo.png" width="247px"
+  height="250px" />
+
+
+  ### Widdershins *adverb*:
+
+  * In a direction contrary to the sun's course;
+
+  * anticlockwise;
+
+  * helping you produce static documentation from your OpenAPI 3.0 / Swagger 2.0
+  / AsyncAPI 1.x / Semoasa 0.1.0 definition
+
+
+  ![Widdershins
+  screenshot](https://mermade.github.io/widdershins/screenshot.png)
+
+
+  ### News
+
+
+  * As of v3.0.0 Widdershins no longer expands the definition of OpenAPI body
+  parameters / requestBodies by default, unless they have an inline schema. You
+  can restore the old behaviour by using the `--expandBody` option.
+
+  * You may limit the depth of schema examples using the `--maxDepth` option.
+  The default is 10.
+
+  * To omit schemas entirely, please copy and customise the `main.dot` template.
+
+  * As of v3.1.0 Widdershins includes a generated `Authorization` header in
+  OpenAPI code samples. If you wish to omit this, see
+  [here](/templates/openapi3/README.md).
+
+  * If you are using Node.js 6 or lower, please specify the `--harmony` flag.
+
+
+  ### To install
+
+
+  * Clone the git repository, or
+
+  * `npm install [-g] widdershins`
+
+
+  ### Examples
+
+
+  Command-line use looks like this:
+
+  ```
+
+  node widdershins [options] {input-file|url} [[-o] output markdown]
+
+  ```
+
+
+  For example:
+
+  ```
+
+  node widdershins --search false --language_tabs 'ruby:Ruby' 'python:Python'
+  --summary defs/petstore3.json -o petstore3.md
+
+  ```
+
+
+  ### Options
+
+
+  | CLI parameter name | JavaScript parameter name | Type | Default value |
+  Description |
+
+  | --- | --- | --- | --- | --- |
+
+  | --customApiKeyValue | options.customApiKeyValue | string | ApiKey | Set a
+  custom API key value |
+
+  | --expandBody | options.expandBody | boolean | false | Expand the requestBody
+  parameter to show all properties in the request body |
+
+  | --headings | options.headings | integer | 2 | The number of headings to show
+  in the table of contents. Currently supported only by Shins, not by Slate,
+  which lacks this feature. |
+
+  | --omitBody | options.omitBody | boolean | false | Omit the top-level fake
+  body parameter object |
+
+  | --resolve | options.resolve | boolean | false | Resolve external $refs,
+  using the `source` parameter or the input file as the base location |
+
+  | --shallowSchemas | options.shallowSchemas | boolean | false | Don't expand
+  schemas past $refs |
+
+  | N/A | options.source | string | | The absolute location or URL of the source
+  file to use as the base to resolve relative references ($refs) from; required
+  if options.resolve is set to true. For CLI commands, Widdershins uses the
+  input file as the base for the $refs. |
+
+  | --summary | options.tocSummary | boolean | false | Use the operation summary
+  as the TOC entry instead of the ID |
+
+  | --verbose | options.verbose | boolean | false | Increase verbosity |
+
+  | -h, --help | options.help | boolean | false | Show help |
+
+  | --version | options.version | boolean | false | Show version number |
+
+  | -c, --code | options.codeSamples | boolean | false | Turn generic code
+  samples off |
+
+  | --httpsnippet | options.httpsnippet | boolean | false | Use httpsnippet to
+  generate code samples |
+
+  | -d, --discovery | options.discovery | boolean | false | Include schema.org
+  WebAPI discovery data |
+
+  | -e, --environment | options.environment | string | None | Load
+  config/override options from file |
+
+  | -i, --includes | options.includes | string | None | List of files to
+  include, comma separated |
+
+  | -l, --lang | options.lang | boolean | false | Automatically generate list of
+  languages for code samples |
+
+  | --language_tabs | options.language_tabs | string | (Differs for each input
+  type) | List of language tabs for code samples using language[:label[:client]]
+  format |
+
+  | -m, --maxDepth | options.maxDepth | integer | 10 | Maximum depth for schema
+  examples |
+
+  | -o, --outfile | options.outfile | string | (If left blank, output to stdout)
+  | File to write output markdown to |
+
+  | -r, --raw | options.raw | boolean | false | Output raw schemas not example
+  values |
+
+  | -s, --search | options.search | boolean | true | Whether to enable search or
+  not |
+
+  | -t, --theme | options.theme | string | darkula | Syntax-highlighter theme to
+  use |
+
+  | -u, --user_templates | options.user_templates | string | None | Directory to
+  load override templates from |
+
+  | -x, --experimental | options.experimental | boolean |  | For backwards
+  compatibility only, ignored |
+
+  | -y, --yaml | options.yaml | boolean | false | Display JSON schemas in YAML
+  format |
+
+  |  | options.templateCallback | function | None | A function that is called
+  before and after each template (JavaScript code only) |
+
+
+  In Node.JS code, create an options object and pass it to the Widdershins
+  `convert` function, as in this example:
+
+
+  ```javascript
+
+  const converter = require('widdershins');
+
+  let options = {}; // defaults shown
+
+  options.codeSamples = true;
+
+  options.httpsnippet = false;
+
+  //options.language_tabs = [];
+
+  //options.language_clients = [];
+
+  //options.loadedFrom = sourceUrl; // only needed if input document is relative
+
+  //options.user_templates = './user_templates';
+
+  options.templateCallback = function(templateName,stage,data) { return data };
+
+  options.theme = 'darkula';
+
+  options.search = true;
+
+  options.sample = true; // set false by --raw
+
+  options.discovery = false;
+
+  options.includes = [];
+
+  options.shallowSchemas = false;
+
+  options.tocSummary = false;
+
+  options.headings = 2;
+
+  options.yaml = false;
+
+  //options.resolve = false;
+
+  //options.source = sourceUrl; // if resolve is true, must be set to full path
+  or URL of the input document
+
+  converter.convert(apiObj,options,function(err,str){
+    // str contains the converted markdown
+  });
+
+  ```
+
+
+  To only include a subset of the pre-defined language-tabs, or to rename their
+  display-names, you can override the `options.language_tabs`:
+
+
+  ```javascript
+
+  options.language_tabs = [{ 'go': 'Go' }, { 'http': 'HTTP' }, { 'javascript':
+  'JavaScript' }, { 'javascript--nodejs': 'Node.JS' }, { 'python': 'Python' }, {
+  'ruby': 'Ruby' }];
+
+  ```
+
+
+  The `--environment` option specifies a JSON or YAML-formatted `options`
+  object, for example:
+
+
+  ```json
+
+  {
+    "language_tabs": [{ "go": "Go" }, { "http": "HTTP" }, { "javascript": "JavaScript" }, { "javascript--nodejs": "Node.JS" }, { "python": "Python" }, { "ruby": "Ruby" }],
+    "verbose": true,
+    "tagGroups": [
+      {
+        "title": "Companies",
+        "tags": ["companies"]
+      },
+      {
+        "title": "Billing",
+        "tags": ["invoice-create", "invoice-close", "invoice-delete"]
+      }
+    ]
+  }
+
+  ```
+
+
+  You can also use the environment file to group OAS/Swagger tagged paths
+  together to create a more elegant table of contents, and overall page
+  structure.
+
+
+  If you need to support a version of Slate \<v1.5.0 (or a renderer which also
+  doesn't support display-names for language-tabs, such as `node-slate`,
+  `slate-node` or `whiteboard`), you can use the `--environment` option with the
+  included `whiteboard_env.json` file to simply achieve this.
+
+
+  If you are using the `httpsnippet` option to generate code samples, you can
+  specify the client library used to perform the requests for each language by
+  overriding the `options.language_clients`:
+
+
+  ```javascript
+
+  options.language_clients = [{ 'shell': 'curl' }, { 'node': 'request' }, {
+  'java': 'unirest' }];
+
+  ```
+
+
+  To see the list of languages and clients supported by httpsnippet, [click
+  here](https://github.com/Kong/httpsnippet/tree/master/src/targets).
+
+
+  The `loadedFrom` option is only needed where the OpenAPI / Swagger definition
+  does not specify a host, and (as per the OpenAPI
+  [specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#fixed-fields))
+  the API endpoint is deemed to be based on the source URL
+
+  the definition was loaded from.
+
+
+  Note that the list of included files is simply passed into the header of the
+  markdown file, they are actually included by Slate or the alternative you use.
+
+
+  To see the list of highlight-js syntax highlighting themes, [click
+  here](https://highlightjs.org/static/demo/).
+
+
+  Schema.org WebAPI discovery data is included if the `discovery` option above
+  is set `true`. See the W3C [WebAPI Discovery Community
+  Group](https://www.w3.org/community/web-api-discovery/) for more information.
+
+
+  ## Language tabs
+
+
+  Widdershins supports the `x-code-samples`
+  [vendor-extension](https://github.com/Rebilly/ReDoc/blob/master/docs/redoc-vendor-extensions.md#operation-object-vendor-extensions)
+  to completely customise your documentation. Alternatively, you can edit the
+  default code-samples in the `templates` sub-directory, or override them using
+  the `user_templates` option to specify a directory containing your templates.
+
+
+  Widdershins supports the use of multiple language tabs with the same language
+  (i.e. plain Javascript and Node.Js). To use this support you must be using
+  Slate (or one of its ports compatible with) version 1.5.0 or higher.
+  [Shins](https://github.com/mermade/shins) versions track Slate version
+  numbers.
+
+
+  ## Template parameters
+
+
+  Templates are compiled with [doT.js](https://github.com/olado/doT#readme).
+
+
+  Templates have access to a `data` object with a range of properties based on
+  the document context.
+
+
+  If you specify an `options.templateCallback` function, it will be called
+  before and after each template, with three parameters, the template name, the
+  stage, (`'pre'` or `'post'`) and the current `data` object. You can mutate the
+  `data` object in any way you see fit, as long as you `return` it. Content in
+  the `data.append` property will be appended to the current output stream.
+
+
+  * [Swagger 2.0 / OpenAPI 3.0.x template
+  parameters](/templates/openapi3/README.md)
+
+  * [AsyncAPI 1.x template parameters](/templates/asyncapi1/README.md)
+
+  * [Semoasa 0.1.0 template parameters](/templates/semoasa/README.md)
+
+
+  ## User templates
+
+
+  To override a `.dot` template, you need to copy over the child `.def` partials
+  as well.
+
+
+  To override a `.def` partial, you need to copy over the parent `.dot` template
+  as well. For OpenAPI 3 this will be `main.dot`
+
+  except for `parameters`, `responses` and `callbacks`, which are children of
+  the `operation.dot` template.
+
+
+  This means it is usually easiest to copy all `.dot` and `.def` files to your
+  user templates directory. A visual `diff` tool
+
+  which can run across two directories (such as [Meld](http://meldmerge.org/) or
+  [WinMerge](http://winmerge.org)) may be useful
+
+  in bringing in changes from Widdershins updates.
+
+
+  ## Tests
+
+
+  To run a test-suite:
+
+
+  ```
+
+  node testRunner {path-to-APIs}
+
+  ```
+
+
+  The test harness currently expects `.yaml` or `.json` files and has been
+  tested against
+
+
+  * [APIs.guru](https://github.com/APIs-guru/OpenAPI-directory)
+
+  * [Mermade OpenAPI definitions
+  collection](https://github.com/mermade/OpenAPI-definitions)
+
+
+  ### Comparison between this and other OpenAPI / Swagger to Slate tools
+
+
+  [Blog
+  posting](https://dev.to/mikeralphson/comparison-of-various-openapiswagger-to-slate-conversion-tools)
+  by the author of Widdershins.
+
+
+  ### Acknowledgements
+
+
+  * [@latgeek](https://github.com/LatGeek) for the logo.
+
+  * [@vfernandestoptal](https://github.com/vfernandestoptal) for the httpsnippet
+  support.
+
+
+  ### Widdershins in the wild
+
+
+  Please feel free to add a link to your API documentation here.
+
+
+  * [GOV.UK Content API
+  v1.0.0](https://content-api.publishing.service.gov.uk/reference.html)
+
+  * [GOV UK Digital Marketplace API
+  v1.0.0](https://alphagov.github.io/digitalmarketplace-api-docs/#digital-marketplace-api-v1-0-0)
+
+  * [Capital One API](https://www.capitalone.co.uk/developer/api/)
+
+  * [Cognite Data API](http://doc.cognitedata.com/)
+
+  * [SpeckleWorks API](https://speckleworks.github.io/SpeckleSpecs)
+
+  * [Bank by API](https://tbicr.github.io/bank-api/bank-api.html)
+
+  * [Open EO
+  API](https://open-eo.github.io/openeo-api-poc/apireference/index.html)
+
+  * [Split Payments API](http://docs.split.cash/)
+
+  * [LeApp daemon API](https://leapp-to.github.io/shins/index.html)
+
+  * [Shutterstock API](https://api-reference.shutterstock.com/)
+
+
+  ## Widdershins and Shins
+
+
+  If you need a wrapper around both Widdershins and Shins, why not consider the
+  following third-party projects:
+
+
+  * [api2html](https://github.com/tobilg/api2html)
+
+  * [shinner](https://github.com/jantoniucci/shinner)
+Mermade/oas-kit: >
+  # OAS-Kit
+
+
+  This is the mono-repo for the following related projects
+
+
+  * [swagger2openapi](packages/swagger2openapi/README.md)
+
+  * [oas-validator](packages/oas-validator/README.md)
+
+  * [oas-linter](packages/oas-linter/README.md)
+
+  * [oas-resolver](packages/oas-resolver/README.md)
+
+  * [oas-schema-walker](packages/oas-schema-walker/README.md)
+
+  * [oas-kit-common](packages/oas-kit-common/README.md)
+
+  * [reftools](packages/reftools/README.md)
+
+
+  ## Documentation
+
+
+  * [Main site](https://mermade.github.io/oas-kit)
+
+
+  ## Online converter/validator
+
+
+  * [OpenAPI-webconverter](https://mermade.org.uk/openapi-converter)
+
+
+  ## Supported Node.js versions
+
+
+  Any LTS version.
+
+
+  ## Development
+
+
+  * clone the repository
+
+  * `npm i` in the top level directory
+
+  * `lerna bootstrap` or `npx lerna bootstrap`
+
+
+  Please try and keep commits related to a single package or piece of
+  functionality. PR in the usual way.
+
+
+  ## Supporting development
+
+
+  * [APIs.guru open-collective](https://opencollective.com/openapi-directory)
+
+  * [Linode VPS referral
+  link](https://www.linode.com/?r=5734be467cc501b23267cf66d451bc339042ddfa)
+OpenAPITools/openapi-generator-cli: >
+  # @openapitools/openapi-generator-cli
+
+
+  [![Join the chat at
+  https://gitter.im/OpenAPITools/openapi-generator](https://badges.gitter.im/OpenAPITools/openapi-generator.svg)](https://gitter.im/OpenAPITools/openapi-generator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+  [![Renovate
+  enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
+
+  [![Build
+  Status](https://travis-ci.org/openapitools/openapi-generator-cli.svg?branch=master)](https://travis-ci.org/OpenAPITools/openapi-generator-cli)
+
+  [![HitCount](http://hits.dwyl.io/openapitools/openapi-generator-cli.svg)](http://hits.dwyl.com/openapitools/openapi-generator-cli)
+
+
+  OpenAPI Generator allows generation of API client libraries (SDK generation),
+  server stubs, documentation and 
+
+  configuration automatically given an OpenAPI Spec (both 2.0 and 3.0 are
+  supported). Please see
+
+  [OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator)
+
+
+  ---
+
+
+  This project checks the [maven
+  repository](https://mvnrepository.com/artifact/org.openapitools/openapi-generator-cli) 
+
+  once a day for a new version and will publish this new version automatically
+  as an npm package.
+
+
+  **Thanks [openapitools.org](https://openapitools.org) for this awesome CLI!**
+
+
+  ## Installation
+
+
+  There are several ways to install the package.
+
+
+  #### Global Mode
+
+
+  In global mode (ie, with -g or --global appended to the command), it installs
+  the package as a global package. This 
+
+  means that you'll get the `openapi-generator` command available on your
+  command line interface (CLI) as well.
+
+
+  ```sh
+
+  # install the latest version of "openapi-generator-cli"
+
+  npm install @openapitools/openapi-generator-cli -g
+
+
+  # install a specific version of "openapi-generator-cli"
+
+  npm install @openapitools/openapi-generator-cli@cli-3.0.0 -g
+
+  ```
+
+
+  After the installation has finished you can type for example:
+
+
+  ```sh
+
+  # this shall print the correct version number
+
+  openapi-generator version
+
+  ```
+
+
+  #### Package Mode
+
+
+  It is recommended to install the package as development dependency, because
+  normally you only need this dependency
+
+  during the development process. To do that you can type the following:
+
+
+  ```sh
+
+  # install the latest version of "openapi-generator-cli"
+
+  npm install @openapitools/openapi-generator-cli -D
+
+
+  # install a specific version of "openapi-generator-cli"
+
+  npm install @openapitools/openapi-generator-cli@cli-3.0.0 -D
+
+  ```
+
+
+  After the installation has finished you can add a script like this:
+
+
+  ```json
+
+  {
+    "name": "my-cool-package",
+    "version": "0.0.0",
+    "scripts": {
+      "my-awesome-script-name": "openapi-generator generate -i docs/openapi.yaml -g typescript-angular -o generated-sources/openapi --additional-properties=\"ngVersion=6.1.7\"",
+    }
+  }
+
+  ```
+
+
+  ## Further Documentation
+
+
+  Please refer to the [official openapi-generator
+  docs](https://github.com/OpenAPITools/openapi-generator#3---usage) for
+
+  more information about the possible arguments and a detailed usage manual of
+  the command line interface.
+
+
+  ## You like the package?
+
+
+  Please leave a star.
+stoplightio/spectral: >
+  # Spectral
+
+
+  [![Test
+  Coverage](https://api.codeclimate.com/v1/badges/1aa53502913a428f40ac/test_coverage)](https://codeclimate.com/github/stoplightio/spectral/test_coverage)
+
+  [![Maintainability](https://api.codeclimate.com/v1/badges/1aa53502913a428f40ac/maintainability)](https://codeclimate.com/github/stoplightio/spectral/maintainability)
+
+
+  ## Features
+
+
+  - Create custom rules to lint _any JSON object_.
+
+  - Use JSON paths to apply rules / functions to specific parts of your JSON
+  objects.
+
+  - Built-in set of functions to help build custom rules. Functions include
+  pattern checks, parameter checks, alphabetical ordering, a specified number of
+  characters, provided keys are present in an object, etc.
+
+  - Create custom functions for advanced use cases.
+
+  - Optional ready to use rules and functions to validate and lint OpenAPI
+  Specification (OAS) 2 _and_ 3 documents.
+
+  - Validate JSON with [Ajv](https://github.com/epoberezkin/ajv).
+
+
+  ## Installation
+
+
+  ```shell
+
+  npm install @stoplight/spectral
+
+  ```
+
+
+  Supports Node v8.3+ and modern browsers.
+
+
+  ## Usage
+
+
+  There are two key concepts in Spectral: **Rules** and **Functions**.
+
+
+  - **Rules** filter your object down to a set of target values, and specify the
+  function that should evaluate those values.
+
+  - **Functions** accept a value and return issue(s) if the value is incorrect.
+
+
+  Think of a set of **rules** and **functions** as a flexible and customizable
+  style guide for your JSON objects.
+
+
+  ### Creating a custom rule:
+
+
+  Spectral has a built-in set of functions which you can reference in your
+  rules. This example uses the `RuleFunction.PATTERN` to create a rule that
+  checks that all property values are in snake case.
+
+
+  ```javascript
+
+  const { RuleFunction, Spectral } = require("@stoplight/spectral");
+
+
+  const spectral = new Spectral();
+
+
+  spectral.addRules({
+    snake_case: {
+      summary: "Checks for snake case pattern",
+
+      // evaluate every property
+      given: "$..*",
+
+      then: {
+        function: RuleFunction.PATTERN,
+        functionOptions: {
+          match: "^[a-z]+[a-z0-9_]*[a-z0-9]+$"
+        }
+      }
+    }
+  });
+
+
+  const results = spectral.run({
+    name: "helloWorld"
+  });
+
+
+  console.log(JSON.stringify(results, null, 4));
+
+
+  // => outputs a single result since `helloWorld` is not snake_case
+
+  // {
+
+  //   "results": [
+
+  //     {
+
+  //       "name": "snake_case",
+
+  //       "message": "must match the pattern '^[a-z]+[a-z0-9_]*[a-z0-9]+$'",
+
+  //       "severity": 50,
+
+  //       "severityLabel": "error",
+
+  //       "path": [
+
+  //         "name"
+
+  //       ]
+
+  //     }
+
+  //   ]
+
+  // }
+
+  ```
+
+
+  ### Creating a custom function:
+
+
+  Sometimes the built-in functions don't cover your use case. This example
+  creates a custom function, `customNotThatFunction`, and then uses it within a
+  rule, `openapi_not_swagger`. The custom function checks that you are not using
+  a specific string (e.g., "Swagger") and suggests what to use instead (e.g.,
+  "OpenAPI").
+
+
+  ```javascript
+
+  const { Spectral } = require("@stoplight/spectral");
+
+
+  // custom function
+
+  const customNotThatFunction = (targetValue, options) => {
+    const { match, suggestion } = options;
+
+    if (targetValue && targetValue.match(new RegExp(match))) {
+      // return the single error
+      return [
+        {
+          message: `Use ${suggestion} instead of ${match}!`
+        }
+      ];
+    }
+  };
+
+
+  const spectral = new Spectral();
+
+
+  spectral.addFunctions({
+    notThat: customNotThatFunction
+  });
+
+
+  spectral.addRules({
+    openapi_not_swagger: {
+      summary: "Checks for use of Swagger, and suggests OpenAPI.",
+
+      // check every property
+      given: "$..*",
+
+      then: {
+        // reference the function we added!
+        function: "notThat",
+
+        // pass it the options it needs
+        functionOptions: {
+          match: "Swagger",
+          suggestion: "OpenAPI"
+        }
+      }
+    }
+  });
+
+
+  const results = spectral.run({
+    description: "Swagger is pretty cool!"
+  });
+
+
+  console.log(JSON.stringify(results, null, 4));
+
+
+  // => outputs a single result since we are using the term `Swagger` in our
+  object
+
+  // {
+
+  //   "results": [
+
+  //     {
+
+  //       "name": "openapi_not_swagger",
+
+  //       "message": "Use OpenAPI instead of Swagger!",
+
+  //       "severity": 50,
+
+  //       "severityLabel": "error",
+
+  //       "path": [
+
+  //         "description"
+
+  //       ]
+
+  //     }
+
+  //   ]
+
+  // }
+
+  ```
+
+
+  ### Linting an OAS 2 document:
+
+
+  Spectral also includes a number of ready made rules and functions for OpenAPI
+  Specification (OAS) 2 and 3 documents. This example uses the OAS 2 rules to
+  lint a document.
+
+
+  You can also add to these rules to create a customized linting style guide for
+  your OAS documents.
+
+
+  ```javascript
+
+  const { Spectral } = require("@stoplight/spectral");
+
+  const {
+    oas2Functions,
+    oas2Rules
+  } = require("@stoplight/spectral/rulesets/oas2");
+
+
+  // an OASv2 document
+
+  var myOAS = {
+    // ... properties in your document
+    responses: {
+      "200": {
+        description: "",
+        schema: {
+          $ref: "#/definitions/error-response"
+        }
+      }
+    }
+    // ... properties in your document
+  };
+
+
+  // create a new instance of spectral with all of the baked in rulesets
+
+  const spectral = new Spectral();
+
+
+  spectral.addFunctions(oas2Functions());
+
+  spectral.addRules(oas2Rules());
+
+
+  spectral.addRules({
+    // .. extend with your own custom rules
+  });
+
+
+  // run!
+
+  const results = spectral.run(myOAS);
+
+
+  console.log(JSON.stringify(results, null, 4));
+
+  ```
+
+
+  Note: The existing OAS rules are opinionated. There might be some rules that
+  you prefer to change. We encourage you to create your rules to fit your use
+  case. We welcome additions to the existing rulesets as well!
+
+
+  ### Example Implementations
+
+
+  - [Spectral Bot](https://github.com/tbarn/spectral-bot), a GitHub pull request
+  bot that lints your repo's OAS document that uses the
+  [Probot](https://probot.github.io) framework, built by [Taylor
+  Barnett](https://github.com/tbarn)
+
+
+  ## FAQs
+
+
+  **How is this different than [Ajv](https://github.com/epoberezkin/ajv)?**
+
+
+  Ajv is a JSON Schema validator, not a linter. Spectral does expose a `schema`
+  function that you can use in your rules to validate all or part of the target
+  object with JSON Schema (Ajv is used under the hood). However, Spectral also
+  provides a number of other functions and utilities that you can use to build
+  up a linting ruleset to validates things that JSON Schema is not well suited
+  for.
+
+
+  **I want to lint my OpenAPI Specification documents but don't want to
+  implement Spectral right now.**
+
+
+  No problem! A hosted version of Spectral comes **free** with the Stoplight
+  platform. Sign up for a free account
+  [here](https://stoplight.io/?utm_source=github&utm_campaign=spectral).
+
+
+  **What is the difference between Spectral and
+  [Speccy](https://github.com/wework/speccy)?**
+
+
+  With Spectral, lint rules can be applied to _any_ JSON object, not just OAS 3
+  documents. The rule structure is different between the two. Spectral uses
+  [JSONPath](http://goessner.net/articles/JsonPath/) `path` parameters instead
+  of the `object` parameters (which are OAS-specific). Rules are also more
+  clearly defined (thanks to TypeScript typings) and now require specifying a
+  `type` parameter. Some rule types have been enhanced to be a little more
+  flexible along with being able to create your own rules based on the built-in
+  and custom functions.
+
+
+  ## Contributing
+
+
+  If you are interested in contributing to Spectral itself, check out our
+  [contributing docs](CONTRIBUTING.md) [Coming soon!] to get started.
+
+
+  Also, most of the interesting projects are built _with_ Spectral. Please
+  consider using Spectral in a project or contribute to an [existing
+  one](#example-implementations).
+
+
+  If you are using Spectral in your project and want to be listed in the
+  examples section, we encourage you to open an
+  [issue](https://github.com/stoplightio/spectral/issues).
+
+
+  ## Helpful Links
+
+
+  - [JSONPath Online Evaluator](http://jsonpath.com/), a helpful tool to
+  determine what `path` you want
+
+  - [stoplightio/json](https://github.com/stoplightio/json), a library of useful
+  functions for when working with JSON
+
+  - [stoplightio/yaml](https://github.com/stoplightio/yaml), a library of useful
+  functions for when working with YAML, including parsing YAML into JSON with a
+  source map that includes JSONPath pointers for every property in the result
+
+
+  ## Thanks :)
+
+
+  - [Phil Sturgeon](https://github.com/philsturgeon) for collaboration and
+  creating Speccy
+
+
+  ## Support
+
+
+  If you have a bug or feature request, please open an issue
+  [here](https://github.com/stoplightio/spectral/issues).
+
+
+  If you need help using Spectral or have a support question, please use the
+  [Stoplight Community forum](https://community.stoplight.io). We've created an
+  open source category for these questions. It's also a great place to share
+  your implementations.
+
+
+  If you want to discuss something in private, you can reach out to Stoplight
+  support at [support@stoplight.io](mailto:support@stoplight.io).
+m3-moretv/smogger: >
+  Простой mock сервер для OpenAPI v3
+
+  # Установка и запуск
+
+  - `npm i -g @m3-moretv/smogger`
+
+  - `npx @m3-moretv/smogger -s ./spec.yaml`
+
+
+  # Требования к спецификации OpenAPI
+
+  - Mock сервер умеет работать только со спецификацией 3й версии.
+
+  - При описании параметров http запросов нельзя использовать `allOf`, `anyOf`,
+  `oneOf` (временно)
+
+  - Для генерации данных используется
+  [Faker.js](https://github.com/marak/Faker.js/). Для уточнения формата данных
+  необходимо описывать их в поле `format`:
+
+  ```
+
+  type: string
+
+  format: name.firstName
+
+  ```
+
+
+  # Comments
+
+  Сейчас генерятся только ответы application/json с кодом 200
+
+
+  ### TODO
+
+  - Добавить возможность указать домен и путь до api в спеке
+
+  - Добавить заголовок, который регулирует код ответа сервера (X-Mogger-Code:
+  200 | 403 | 500 e.t.c)
+
+  - Логи в проект
+
+
+  _Supported by MoreTV with ❤️_
+anupsaund/vertx-auto-swagger: >+
+  # vertx-auto-swagger
+
+
+  > TL;DR - How to get java Vert.x to automatically generate a Open API v3 spec
+  (A.k.a. Swagger) and serve it to Swagger UI, served through Vert.x.
+
+
+  ### Motivation
+
+  I needed a way to generate a swagger spec from Java code, instead of having to
+  hand craft a swagger JSON file.
+
+
+  I also wanted to serve out the spec from Vert.x into Swagger UI so that it
+  could be used by all.
+
+
+  There is a more detailed write up available on my blog post: 
+
+  http://anupsaund.com/how-to-generate-openapi-3-0-swagger-spec-from-vertx-java-and-serve-it-via-swagger-ui
+
+
+  ### What does it do?
+
+
+  1.  Read Java Annotations and map them into a openAPI spec.
+
+  2.  Serve the openAPI spec out on an end point.
+
+  3.  Serve a distributable version of SwaggerUI which presents the swagger spec
+  from point 2.
+
+
+
+  ### Screenshot of Swagger UI
+
+  ![SwaggerUI](UI.PNG "SwaggerUI")
+
+
+  ### What does a typical Java annotation look like?
+
+
+  ```java
+
+  @Operation(summary = "Find products by ID", method = "GET", operationId =
+  "product/:productId",
+      tags = {
+        "Product"
+      },
+      parameters = {
+        @Parameter(in = ParameterIn.PATH, name = "productId",
+          required = true, description = "The unique ID belonging to the product", schema = @Schema(type = "string"))
+      },
+      responses = {
+        @ApiResponse(responseCode = "200", description = "OK",
+          content = @Content(
+            mediaType = "application/json",
+            encoding = @Encoding(contentType = "application/json"),
+            schema = @Schema(name = "product", example =
+              "{" +
+                "'_id':'abc'," +
+                "'title':'Red Truck'," +
+                "'image_url':'https://images.pexels.com/photos/1112597/pexels-photo-1112597.jpeg'," +
+                "'from_date':'2018-08-30'," +
+                "'to_date':'2019-08-30'," +
+                "'price':'125.00'," +
+                "'enabled':true" +
+                "}",
+              implementation = Product.class)
+          )
+        ),
+        @ApiResponse(responseCode = "404", description = "Not found."),
+        @ApiResponse(responseCode = "500", description = "Internal Server Error.")
+      }
+    )
+  ```
+
+
+  ## How to get it running
+
+
+  > Dependancies: Maven, JAVA and a JAVA IDE is helpful.
+
+
+  1. Clone the repository and use Maven to install dependancies.
+
+  1. In Intellij set up a config to run a Java Application with the following
+  settings.
+
+
+  ``` 
+    Main Class: io.vertx.core.Launcher
+    VM Options: <up to you, or leave blank>
+    Program Arguments: run io.vertx.VertxAutoSwagger.MainVerticle
+  ```
+
+
+  3. After tha application has launched, go to
+  http://localhost:8080/doc/index.html
+
+
+  #### Special Credit
+
+  Goes to Christos Karatzas for creating the generator class which has been used
+  and enhanced for this respository:
+   
+  His original repository is available at:
+  https://github.com/ckaratzas/vertx-openapi-spec-generator
+
