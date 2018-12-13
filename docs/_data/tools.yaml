@@ -1195,7 +1195,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -3454,7 +3454,7 @@
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
 - github: 'https://github.com/marshmallow-code/apispec'
   v3: true
-  category: frameworks
+  category: parsers
   name: apispec
   description: >-
     A pluggable API specification generator. Currently supports the OpenAPI
@@ -3469,7 +3469,6 @@
   license: MIT
   owner: marshmallow-code
   logo: 'https://avatars2.githubusercontent.com/u/10334301?v=4'
-  unsure: true
 - github: 'https://github.com/APIs-guru/awesome-openapi3'
   v3: true
   category: documentation
@@ -3532,7 +3531,6 @@
   license: MIT
   owner: thomaxxl
   logo: 'https://avatars1.githubusercontent.com/u/4190750?v=4'
-  unsure: true
 - github: 'https://github.com/cebe/php-openapi'
   v3: true
   category: parsers
@@ -3548,7 +3546,6 @@
   license: MIT
   owner: cebe
   logo: 'https://avatars0.githubusercontent.com/u/189796?v=4'
-  unsure: true
 - github: 'https://github.com/AresS31/swurg'
   v3: true
   category: parsers
@@ -3567,10 +3564,9 @@
   license: Apache-2.0
   owner: AresS31
   logo: 'https://avatars3.githubusercontent.com/u/11601622?v=4'
-  unsure: true
 - github: 'https://github.com/danielgtaylor/apisprout'
   v3: true
-  category: parsers
+  category: mock
   name: apisprout
   description: >-
     Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with
@@ -3584,7 +3580,6 @@
   issues: 7
   owner: danielgtaylor
   logo: 'https://avatars2.githubusercontent.com/u/106826?v=4'
-  unsure: true
 - github: 'https://github.com/tobilg/api2html'
   v3: true
   category: documentation
@@ -3602,11 +3597,10 @@
   license: MIT
   owner: tobilg
   logo: 'https://avatars3.githubusercontent.com/u/1841985?v=4'
-  unsure: true
   downloads: 2638
 - github: 'https://github.com/epiphone/routing-controllers-openapi'
   v3: true
-  category: converters
+  category: parsers
   name: routing-controllers-openapi
   description: Runtime OpenAPI v3 schema generation for routing-controllers.
   language: TypeScript
@@ -3619,7 +3613,6 @@
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
-  unsure: true
 - github: 'https://github.com/koumoul-dev/vue-openapi'
   v3: true
   category: documentation
@@ -3635,7 +3628,6 @@
   license: MIT
   owner: koumoul-dev
   logo: 'https://avatars0.githubusercontent.com/u/16051219?v=4'
-  unsure: true
 - github: 'https://github.com/sanjayvacharya/sleeplessinslc'
   v3: true
   category: documentation
@@ -3650,7 +3642,6 @@
   issues: 0
   owner: sanjayvacharya
   logo: 'https://avatars0.githubusercontent.com/u/605398?v=4'
-  unsure: true
 - github: 'https://github.com/epiphone/class-validator-jsonschema'
   v3: true
   category: converters
@@ -3685,7 +3676,7 @@
   logo: 'https://avatars3.githubusercontent.com/u/35378327?v=4'
 - github: 'https://github.com/fsprojects/OpenAPITypeProvider'
   v3: true
-  category: frameworks
+  category: parsers
   name: OpenAPITypeProvider
   description: 'F# type provider for Open API specification'
   language: 'F#'
@@ -3697,7 +3688,6 @@
   issues: 0
   owner: fsprojects
   logo: 'https://avatars2.githubusercontent.com/u/6001315?v=4'
-  unsure: true
 - github: 'https://github.com/outofcoffee/vertx-oas'
   v3: true
   category: parsers
@@ -3712,10 +3702,9 @@
   issues: 7
   owner: outofcoffee
   logo: 'https://avatars3.githubusercontent.com/u/1248633?v=4'
-  unsure: true
 - github: 'https://github.com/cdimascio/openapi-spring-webflux-validator'
   v3: true
-  category: frameworks
+  category: parsers
   name: openapi-spring-webflux-validator
   description: >-
     A friendly kotlin library to validate API endpoints using an OpenApi 3.0 and
@@ -3730,7 +3719,6 @@
   license: ''
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
-  unsure: true
 - github: 'https://github.com/fmvilas/openapi3-generator'
   v3: true
   category: sdk
@@ -3748,7 +3736,6 @@
   license: Apache-2.0
   owner: fmvilas
   logo: 'https://avatars3.githubusercontent.com/u/242119?v=4'
-  unsure: true
   downloads: 909
 - github: 'https://github.com/atlassian/oas3-chow-chow'
   v3: true
@@ -3795,7 +3782,6 @@
   license: MIT
   owner: Microsoft
   logo: 'https://avatars2.githubusercontent.com/u/6154722?v=4'
-  unsure: true
 - github: 'https://github.com/Mermade/openapi-lint-vscode'
   v3: true
   category: editors
@@ -3828,7 +3814,6 @@
   license: Apache-2.0
   owner: tavis-software
   logo: 'https://avatars3.githubusercontent.com/u/1613247?v=4'
-  unsure: true
 - github: 'https://github.com/rafaelcaricio/sticker'
   v3: true
   category: frameworks
@@ -3846,7 +3831,6 @@
   license: Apache-2.0
   owner: rafaelcaricio
   logo: 'https://avatars3.githubusercontent.com/u/107613?v=4'
-  unsure: true
 - github: 'https://github.com/cdimascio/kotlin-spring-mvc-template'
   v3: true
   category: frameworks
@@ -3863,7 +3847,6 @@
   issues: 0
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
-  unsure: true
 - github: 'https://github.com/wzshiming/gen'
   v3: true
   category: sdk
@@ -3879,10 +3862,9 @@
   license: MIT
   owner: wzshiming
   logo: 'https://avatars2.githubusercontent.com/u/6565744?v=4'
-  unsure: true
 - github: 'https://github.com/technocreatives/openapi-eller'
   v3: true
-  category: parsers
+  category: sdk
   name: openapi-eller
   description: Generate OpenAPI v3 clients and servers from the command line
   language: TypeScript
@@ -3895,10 +3877,9 @@
   license: ISC
   owner: technocreatives
   logo: 'https://avatars2.githubusercontent.com/u/4668783?v=4'
-  unsure: true
 - github: 'https://github.com/go-courier/oas'
   v3: true
-  category: frameworks
+  category: parsers
   name: oas
   description: OpenAPI Spec builder in go
   language: Go
@@ -3911,7 +3892,6 @@
   license: MIT
   owner: go-courier
   logo: 'https://avatars2.githubusercontent.com/u/37426719?v=4'
-  unsure: true
 - github: 'https://github.com/koumoul-dev/data-fair'
   v3: true
   category: frameworks
@@ -3927,7 +3907,6 @@
   license: AGPL-3.0
   owner: koumoul-dev
   logo: 'https://avatars0.githubusercontent.com/u/16051219?v=4'
-  unsure: true
 - github: 'https://github.com/Mermade/openapi3-examples'
   v3: true
   category: documentation
@@ -3974,11 +3953,10 @@
   license: Apache-2.0
   owner: isa-group
   logo: 'https://avatars0.githubusercontent.com/u/2708867?v=4'
-  unsure: true
   downloads: 626
 - github: 'https://github.com/ckaratzas/vertx-openapi-spec-generator'
   v3: true
-  category: frameworks
+  category: parsers
   name: vertx-openapi-spec-generator
   description: Runtime Generation of OpenApi 3 specification from vertx routes.
   language: Java
@@ -3991,7 +3969,6 @@
   license: MIT
   owner: ckaratzas
   logo: 'https://avatars0.githubusercontent.com/u/35725079?v=4'
-  unsure: true
 - github: 'https://github.com/OpenAPITools/openapi-petstore'
   v3: true
   category: sdk
@@ -4007,7 +3984,6 @@
   license: Apache-2.0
   owner: OpenAPITools
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
-  unsure: true
 - github: 'https://github.com/technocreatives/openapi-mock-eller'
   v3: true
   category: documentation
