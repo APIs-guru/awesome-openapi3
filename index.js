@@ -3,6 +3,7 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const fetch = require('node-fetch');
+const humanUnit = require('human-unit').default;
 
 const str = fs.readFileSync('./docs/_data/tools.yaml','utf8');
 let entries = yaml.load(str);
@@ -14,6 +15,11 @@ const username = process.env.github_user;
 const password = process.env.github_pwd;
 const digest = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 const options = { headers: { authorization: digest } };
+
+const mag = {
+    factor: [1000,1000,1000],
+    units: ['','K','M','B']
+};
 
 async function main() {
 
@@ -91,6 +97,8 @@ for (let entry of entries) {
                 console.warn(ex.message);
             }
         }
+        const hu = humanUnit(entry.downloads||0,'',mag);
+        if (entry.downloads) entry.downloadStr = (Math.round(hu.value*100)/100)+hu.unit;
     }
 }
 
