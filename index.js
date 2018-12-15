@@ -5,7 +5,7 @@ const yaml = require('js-yaml');
 const fetch = require('node-fetch');
 
 const str = fs.readFileSync('./docs/_data/tools.yaml','utf8');
-const entries = yaml.load(str);
+let entries = yaml.load(str);
 
 const rms = fs.readFileSync('./docs/_data/readme.yaml','utf8');
 const readmes = yaml.load(rms);
@@ -16,6 +16,12 @@ const digest = 'Basic ' + Buffer.from(username + ':' + password).toString('base6
 const options = { headers: { authorization: digest } };
 
 async function main() {
+
+entries = entries.sort(function(a,b){
+    if (a.github < b.github) return -1;
+    if (a.github > b.github) return +1;
+    return 0;
+});
 
 for (let entry of entries) {
 	if (entry.github && entry.github.indexOf('github.com')>=0) {
@@ -70,7 +76,7 @@ for (let entry of entries) {
 
         // switch based on language
         const langLower = entry.language ? entry.language.toLowerCase() : '';
-        if ((langLower === 'javascript') || (langLower = 'typescript')) {
+        if ((langLower === 'javascript') || (langLower === 'typescript')) {
             apicall = 'https://api.npms.io/v2/package/'+encodeURIComponent(entry.name);
             console.log(apicall);
             try {
