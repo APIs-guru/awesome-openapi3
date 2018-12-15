@@ -203,7 +203,7 @@
   stars: 267
   watch: 36
   forks: 22
-  updated: '2018-12-15T04:12:29Z'
+  updated: '2018-12-15T04:22:14Z'
   issues: 1
   license: ''
   owner: APIs-guru
@@ -454,6 +454,7 @@
   forks: 295
   owner: Luracast
   logo: 'https://avatars0.githubusercontent.com/u/236217?v=4'
+  downloads: 1315516
 - name: SwaggerAssertions
   description: Assert your API requests and responses match with your swagger definition
   github: 'https://github.com/Maks3w/SwaggerAssertions'
@@ -761,6 +762,7 @@
   owner: Rebilly
   logo: 'https://avatars1.githubusercontent.com/u/6365848?v=4'
   license: MIT
+  downloads: 252884
 - name: generator-openapi-repo
   category: documentation
   github: 'https://github.com/Rebilly/generator-openapi-repo'
@@ -2748,6 +2750,7 @@
   license: MIT
   owner: luckymarmot
   logo: 'https://avatars3.githubusercontent.com/u/3215332?v=4'
+  downloads: 1739
 - name: api-spec-converter
   description: >-
     Convert API descriptions between popular formats such as OpenAPI(fka
@@ -4079,7 +4082,7 @@
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
     dynamically generate beautiful documentation from a Swagger-compliant API.
   github: 'https://github.com/swagger-api/swagger-ui'
-  v2: true
+  v1: true
   language: JavaScript
   category: '?'
   archived: false
@@ -4097,7 +4100,7 @@
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
     dynamically generate beautiful documentation from a Swagger-compliant API.
   github: 'https://github.com/swagger-api/swagger-ui'
-  v1: true
+  v2: true
   language: JavaScript
   category: '?'
   archived: false
