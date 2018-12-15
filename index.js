@@ -77,7 +77,7 @@ for (let entry of entries) {
         // switch based on language
         const langLower = entry.language ? entry.language.toLowerCase() : '';
         if ((langLower === 'javascript') || (langLower === 'typescript')) {
-            apicall = 'https://api.npms.io/v2/package/'+encodeURIComponent(entry.name);
+            apicall = 'https://api.npms.io/v2/package/'+encodeURIComponent(entry.name.toLowerCase());
             console.log(apicall);
             try {
                 const npmres = await fetch(apicall,options);
