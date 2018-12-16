@@ -5,6 +5,8 @@ const yaml = require('js-yaml');
 const fetch = require('node-fetch');
 const humanUnit = require('human-unit').default;
 
+const stats = require('./stats.js');
+
 const str = fs.readFileSync('./docs/_data/tools.yaml','utf8');
 let entries = yaml.load(str);
 
@@ -80,23 +82,7 @@ for (let entry of entries) {
             console.warn(ex.message);
         }
 
-        // switch based on language
-        const langLower = entry.language ? entry.language.toLowerCase() : '';
-        if ((langLower === 'javascript') || (langLower === 'typescript')) {
-            apicall = 'https://api.npms.io/v2/package/'+encodeURIComponent(entry.name.toLowerCase());
-            console.log(apicall);
-            try {
-                const npmres = await fetch(apicall,options);
-                const npmstxt = await npmres.text();
-                const npmsio = JSON.parse(npmstxt);
-                if (npmsio && npmsio.collected && npmsio.collected.npm && npmsio.collected.npm.downloads) {
-                    entry.downloads = npmsio.collected.npm.downloads[npmsio.collected.npm.downloads.length-1].count;
-                }
-            }
-            catch (ex) {
-                console.warn(ex.message);
-            }
-        }
+        entry.downloads = await stats.getDownloadStats(entry.name, entry.language, options);
         const hu = humanUnit(entry.downloads||0,'',mag);
         if (entry.downloads) entry.downloadStr = (Math.round(hu.value*100)/100)+hu.unit;
     }
