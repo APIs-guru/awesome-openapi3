@@ -43486,7 +43486,7 @@ OpenAPITools/openapi-generator: >
 
 
   :warning: If the OpenAPI spec, templates or any input (e.g. options,
-  envirionment variables) is obtained from an untrusted source or environment,
+  environment variables) is obtained from an untrusted source or environment,
   please make sure you've reviewed these inputs before using OpenAPI Generator
   to generate the API client, server stub or documentation to avoid potential
   security issues (e.g. [code
