@@ -1,8 +1,9 @@
 ---
 layout: default
 theme: jekyll-theme-cayman
-show_downloads: false
 title: APIs.guru awesome-openapi3
+site:
+  show_downloads: false
 ---
 
 ### Contents

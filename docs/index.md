@@ -17,6 +17,11 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 
 Please raise a Pull-Request or issue with any projects we've missed!
 
+## Tools
+
+* List of all tools [by category](./category.html)
+* [Top 100](./top100.html) list of tools
+
 ## API access
 
 * [categories.json](/api/categories.json)
@@ -24,7 +29,3 @@ Please raise a Pull-Request or issue with any projects we've missed!
 
 <a href="https://apis.guru/awesome-openapi3/rss/feed.xml"><img border="0" alt="Subscribe to What's New" src="https://i.imgur.com/fZIDSoj.png" width="64" height="64">
 
-## Tools
-
-* List of all tools [by category](./category.html)
-* [Top 100](./top100.html) list of tools
