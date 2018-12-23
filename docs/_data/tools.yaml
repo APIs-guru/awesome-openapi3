@@ -5081,3 +5081,12 @@
     APIs that click into client apps.
   v2: true
   v3: true
+- github: 'https://github.com/mrin9/OpenAPI-Viewer'
+  v2: true
+  v3: true
+  category: documentation
+  name: MrinDoc
+  description: "OpenAPI spec viewer and console"
+  language: Vue.Js
+  owner: Mrinmoy
+  license: MIT
