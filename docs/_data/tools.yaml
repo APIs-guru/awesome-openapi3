@@ -438,7 +438,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -5080,4 +5080,13 @@
     into focus for your whole team, harmonizes your API designs, and generates
     APIs that click into client apps.
   v2: true
+  v3: true
+- name: FastAPI
+  category: frameworks
+  language: Python
+  link: 'https://fastapi.tiangolo.com'
+  github: 'https://github.com/tiangolo/fastapi'
+  description: >-
+    FastAPI is a modern, fast (high-performance), web framework for building APIs
+    with Python 3.6+. Powered by Starlette and Pydantic. Based on Python type hints.
   v3: true
