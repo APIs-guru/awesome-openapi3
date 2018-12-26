@@ -5090,3 +5090,12 @@
     FastAPI is a modern, fast (high-performance), web framework for building APIs
     with Python 3.6+. Powered by Starlette and Pydantic. Based on Python type hints.
   v3: true
+- github: 'https://github.com/mrin9/OpenAPI-Viewer'
+  v2: true
+  v3: true
+  category: documentation
+  name: MrinDoc
+  description: "OpenAPI spec viewer and console"
+  language: Vue.Js
+  owner: Mrinmoy
+  license: MIT
