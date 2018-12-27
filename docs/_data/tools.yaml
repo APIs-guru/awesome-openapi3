@@ -1,9 +1,55 @@
+- name: Apimatic Transformer
+  category: converters
+  language: SaaS
+  description: >-
+    Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
+    v2/v3, WSDL, etc.
+  link: 'https://apimatic.io/transformer'
+  v2: true
+  v3: true
 - name: a127
   description: a127
   github: 'http://a127.io/'
   v2: true
   language: '?'
   category: '?'
+- link: 'https://bitbucket.org/atlassian/swagger-mock-validator/src/master/'
+  name: swagger-mock-validator
+  v3: true
+  category: mock
+  description: A CLI tool to validate mocks against swagger/OpenApi specs.
+  language: TypeScript
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
+- link: 'https://bitbucket.org/atlassian/openapi-diff/src/master/'
+  v3: true
+  category: miscellaneous
+  name: openapi-diff
+  description: A CLI tool to identify differences between Swagger/OpenAPI specs.
+  language: JavaScript
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
+  demo: 'https://github.com/MikeRalphson/openapi-diff'
+  demoText: Mirror
+- name: Vert.x Web API Contract
+  category: frameworks
+  description: >-
+    Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
+    validation
+  link: 'http://vertx.io/docs/#web'
+  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
+  v3: true
+- link: 'https://bitbucket.org/atlassian/swagger-request-validator/src/master/'
+  v3: true
+  category: parsers
+  name: swagger-request-validator
+  description: >-
+    A Java library for validating request/responses against a OpenAPI / Swagger
+    specification. Includes support for Swagger v2 and OpenAPI v3 specifications
+    and adapters for common mock and testing libraries.
+  language: Java
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
 - name: elide
   description: elide
   github: 'http://elide.io/'
@@ -1037,8 +1083,8 @@
   owner: SkeLLLa
   logo: 'https://avatars1.githubusercontent.com/u/2273103?v=4'
   unsure: true
-  downloads: 1346
-  downloadStr: 1.35K
+  downloads: 3953
+  downloadStr: 3.95K
 - name: swagger4j
   description: A simple java library for reading and writing swagger definitions
   github: 'https://github.com/SmartBear/swagger4j'
@@ -1315,8 +1361,8 @@
   license: MIT
   owner: apiaryio
   logo: 'https://avatars1.githubusercontent.com/u/765943?v=4'
-  downloads: 304074
-  downloadStr: 304.07K
+  downloads: 305505
+  downloadStr: 305.51K
 - name: fury-adapter-swagger
   description: Swagger 2.0 parser adapter for Fury.js
   github: 'https://github.com/apiaryio/fury-adapter-swagger/'
@@ -1473,7 +1519,7 @@
 - name: swagger_engine
   description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
   github: 'https://github.com/batdevis/swagger_engine'
-  v1: true
+  v2: true
   language: JavaScript
   category: '?'
   archived: false
@@ -1489,7 +1535,7 @@
 - name: swagger_engine
   description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
   github: 'https://github.com/batdevis/swagger_engine'
-  v2: true
+  v1: true
   language: JavaScript
   category: '?'
   archived: false
@@ -2306,8 +2352,8 @@
   license: MIT
   owner: glennjones
   logo: 'https://avatars1.githubusercontent.com/u/175288?v=4'
-  downloads: 957753
-  downloadStr: 957.75K
+  downloads: 979579
+  downloadStr: 979.58K
 - github: 'https://github.com/go-courier/oas'
   v3: true
   category: parsers
@@ -2462,22 +2508,6 @@
   downloads: 626
   downloadStr: '626'
 - name: open-api
-  category: sdk
-  language: PHP
-  github: 'https://github.com/janephp/open-api'
-  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
-  v2: true
-  archived: false
-  stars: 14
-  watch: 2
-  forks: 1
-  updated: '2018-12-12T09:12:56Z'
-  issues: 0
-  license: MIT
-  owner: janephp
-  logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
-  downloads: 0
-- name: open-api
   description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
   github: 'https://github.com/janephp/open-api'
   v2: true
@@ -2493,52 +2523,22 @@
   owner: janephp
   logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
   downloads: 0
-- name: Apimatic Transformer
-  category: converters
-  language: SaaS
-  description: >-
-    Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
-    v2/v3, WSDL, etc.
-  link: 'https://apimatic.io/transformer'
+- name: open-api
+  category: sdk
+  language: PHP
+  github: 'https://github.com/janephp/open-api'
+  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
   v2: true
-  v3: true
-- link: 'https://bitbucket.org/atlassian/swagger-request-validator/src/master/'
-  v3: true
-  category: parsers
-  name: swagger-request-validator
-  description: >-
-    A Java library for validating request/responses against a OpenAPI / Swagger
-    specification. Includes support for Swagger v2 and OpenAPI v3 specifications
-    and adapters for common mock and testing libraries.
-  language: Java
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-- name: Vert.x Web API Contract
-  category: frameworks
-  description: >-
-    Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
-    validation
-  link: 'http://vertx.io/docs/#web'
-  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
-  v3: true
-- link: 'https://bitbucket.org/atlassian/openapi-diff/src/master/'
-  v3: true
-  category: miscellaneous
-  name: openapi-diff
-  description: A CLI tool to identify differences between Swagger/OpenAPI specs.
-  language: JavaScript
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-  demo: 'https://github.com/MikeRalphson/openapi-diff'
-  demoText: Mirror
-- link: 'https://bitbucket.org/atlassian/swagger-mock-validator/src/master/'
-  name: swagger-mock-validator
-  v3: true
-  category: mock
-  description: A CLI tool to validate mocks against swagger/OpenApi specs.
-  language: TypeScript
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
+  archived: false
+  stars: 14
+  watch: 2
+  forks: 1
+  updated: '2018-12-12T09:12:56Z'
+  issues: 0
+  license: MIT
+  owner: janephp
+  logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
+  downloads: 0
 - name: prance
   description: Resolving Swagger/OpenAPI 2.0 and 3.0 Parser
   github: 'https://github.com/jfinkhaeuser/prance'
@@ -2730,8 +2730,8 @@
   owner: koshevy
   logo: 'https://avatars2.githubusercontent.com/u/1203974?v=4'
   unsure: true
-  downloads: 3115
-  downloadStr: 3.12K
+  downloads: 3492
+  downloadStr: 3.49K
 - github: 'https://github.com/koumoul-dev/data-fair'
   v3: true
   category: frameworks
@@ -3034,8 +3034,8 @@
   license: MIT
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  downloads: 57842
-  downloadStr: 57.84K
+  downloads: 69487
+  downloadStr: 69.49K
 - name: openapi3-ts
   category: parsers
   github: 'https://github.com/metadevpro/openapi3-ts'
@@ -3201,6 +3201,16 @@
   license: MIT
   owner: mrTimofey
   logo: 'https://avatars3.githubusercontent.com/u/7373909?v=4'
+  downloads: 0
+- github: 'https://github.com/mrin9/OpenAPI-Viewer'
+  v2: true
+  v3: true
+  category: documentation
+  name: MrinDoc
+  description: OpenAPI spec viewer and console
+  language: Vue.Js
+  owner: Mrinmoy
+  license: MIT
   downloads: 0
 - github: 'https://github.com/muskratjs/muskrat'
   v3: true
@@ -4264,8 +4274,8 @@
   license: ''
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
-  downloads: 509596
-  downloadStr: 509.6K
+  downloads: 515006
+  downloadStr: 515.01K
 - name: swagger-inflector
   category: frameworks
   description: This project uses the Swagger Specification to drive an API implementation
@@ -4322,25 +4332,6 @@
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
     dynamically generate beautiful documentation from a Swagger-compliant API.
   github: 'https://github.com/swagger-api/swagger-ui'
-  v1: true
-  language: JavaScript
-  category: '?'
-  archived: false
-  stars: 13573
-  watch: 641
-  updated: '2018-12-16T01:32:42Z'
-  issues: 298
-  forks: 6137
-  license: ''
-  owner: swagger-api
-  logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
-  downloads: 2546787
-  downloadStr: 2.55M
-- name: swagger-ui
-  description: >-
-    Swagger UI is a collection of HTML, Javascript, and CSS assets that
-    dynamically generate beautiful documentation from a Swagger-compliant API.
-  github: 'https://github.com/swagger-api/swagger-ui'
   v2: true
   language: JavaScript
   category: '?'
@@ -4353,8 +4344,27 @@
   license: ''
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
-  downloads: 2546787
-  downloadStr: 2.55M
+  downloads: 2578146
+  downloadStr: 2.58M
+- name: swagger-ui
+  description: >-
+    Swagger UI is a collection of HTML, Javascript, and CSS assets that
+    dynamically generate beautiful documentation from a Swagger-compliant API.
+  github: 'https://github.com/swagger-api/swagger-ui'
+  v1: true
+  language: JavaScript
+  category: '?'
+  archived: false
+  stars: 13573
+  watch: 641
+  updated: '2018-12-16T01:32:42Z'
+  issues: 298
+  forks: 6137
+  license: ''
+  owner: swagger-api
+  logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
+  downloads: 2578146
+  downloadStr: 2.58M
 - name: qswag
   description: Fast & Light Swagger generator for .NET Core
   github: 'https://github.com/swimlane/qswag'
@@ -4486,6 +4496,17 @@
   license: MIT
   owner: thomaxxl
   logo: 'https://avatars1.githubusercontent.com/u/4190750?v=4'
+  downloads: 0
+- name: FastAPI
+  category: frameworks
+  language: Python
+  link: 'https://fastapi.tiangolo.com'
+  github: 'https://github.com/tiangolo/fastapi'
+  description: >-
+    FastAPI is a modern, fast (high-performance), web framework for building
+    APIs with Python 3.6+. Powered by Starlette and Pydantic. Based on Python
+    type hints.
+  v3: true
   downloads: 0
 - name: sails-swagger
   description: Swagger integration for sails.js
@@ -4693,8 +4714,8 @@
   license: MIT
   owner: wework
   logo: 'https://avatars2.githubusercontent.com/u/4072897?v=4'
-  downloads: 59964
-  downloadStr: 59.96K
+  downloads: 62998
+  downloadStr: 63K
 - name: swagger4spring-web
   description: Swagger support for Spring MVC
   github: 'https://github.com/wkennedy/swagger4spring-web'
@@ -5081,21 +5102,3 @@
     APIs that click into client apps.
   v2: true
   v3: true
-- name: FastAPI
-  category: frameworks
-  language: Python
-  link: 'https://fastapi.tiangolo.com'
-  github: 'https://github.com/tiangolo/fastapi'
-  description: >-
-    FastAPI is a modern, fast (high-performance), web framework for building APIs
-    with Python 3.6+. Powered by Starlette and Pydantic. Based on Python type hints.
-  v3: true
-- github: 'https://github.com/mrin9/OpenAPI-Viewer'
-  v2: true
-  v3: true
-  category: documentation
-  name: MrinDoc
-  description: "OpenAPI spec viewer and console"
-  language: Vue.Js
-  owner: Mrinmoy
-  license: MIT
