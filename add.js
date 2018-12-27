@@ -14,13 +14,14 @@ let found = 0;
 for (let edge of res.data.search.edges) {
     let url = edge.node.url;
     let entry = entries.find(function(e,i,a){
-        return e.github.toLowerCase() === url.toLowerCase();
+        return e.github && e.github.toLowerCase() === url.toLowerCase();
     });
     if (entry) {
         found++;
     }
     else {
         entries.push({ github: url, v3: true, category: 'unclassified' });
+        console.log('New',url);
     }
 }
 
