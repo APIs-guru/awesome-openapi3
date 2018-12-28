@@ -13,3 +13,4 @@ deploy:
   verbose: true
   on:
     branch: master
+    condition: $TRAVIS_EVENT_TYPE = cron
