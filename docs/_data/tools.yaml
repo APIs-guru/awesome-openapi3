@@ -203,7 +203,7 @@
   stars: 273
   watch: 36
   forks: 25
-  updated: '2018-12-28T01:23:15Z'
+  updated: '2018-12-28T01:24:03Z'
   issues: 1
   license: ''
   owner: APIs-guru
@@ -487,21 +487,23 @@
   owner: Maks3w
   logo: 'https://avatars1.githubusercontent.com/u/1301698?v=4'
   downloads: 0
-- github: 'https://github.com/Mermade/oas-kit'
-  v3: true
-  category: unclassified
-  name: oas-kit
-  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
+- name: oas-kit
+  category: converters
   language: JavaScript
+  demo: 'https://mermade.org.uk/openapi-converter'
+  github: 'https://github.com/Mermade/oas-kit'
+  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
+  v2: true
+  v3: true
   archived: false
   stars: 266
   watch: 13
   forks: 44
   updated: '2018-12-21T13:17:54Z'
   issues: 3
+  license: BSD-3-Clause
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  license: BSD-3-Clause
   downloads: 0
 - github: 'https://github.com/Mermade/openapi-codegen'
   v3: true
@@ -604,24 +606,6 @@
   forks: 0
   updated: '2018-12-02T14:58:38Z'
   issues: 0
-  owner: Mermade
-  logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  downloads: 0
-- name: oas-kit
-  category: converters
-  language: JavaScript
-  demo: 'https://mermade.org.uk/openapi-converter'
-  github: 'https://github.com/Mermade/swagger2openapi'
-  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
-  v2: true
-  v3: true
-  archived: false
-  stars: 266
-  watch: 13
-  forks: 44
-  updated: '2018-12-21T13:17:54Z'
-  issues: 3
-  license: BSD-3-Clause
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
   downloads: 0
@@ -1347,52 +1331,6 @@
   logo: 'https://avatars2.githubusercontent.com/u/6728822?v=4'
   license: MIT
   downloads: 0
-- link: 'https://bitbucket.org/atlassian/swagger-mock-validator/src/master/'
-  name: swagger-mock-validator
-  v3: true
-  category: mock
-  description: A CLI tool to validate mocks against swagger/OpenApi specs.
-  language: TypeScript
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-- link: 'https://bitbucket.org/atlassian/openapi-diff/src/master/'
-  v3: true
-  category: miscellaneous
-  name: openapi-diff
-  description: A CLI tool to identify differences between Swagger/OpenAPI specs.
-  language: JavaScript
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-  demo: 'https://github.com/MikeRalphson/openapi-diff'
-  demoText: Mirror
-- name: Vert.x Web API Contract
-  category: frameworks
-  description: >-
-    Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
-    validation
-  link: 'http://vertx.io/docs/#web'
-  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
-  v3: true
-- link: 'https://bitbucket.org/atlassian/swagger-request-validator/src/master/'
-  v3: true
-  category: parsers
-  name: swagger-request-validator
-  description: >-
-    A Java library for validating request/responses against a OpenAPI / Swagger
-    specification. Includes support for Swagger v2 and OpenAPI v3 specifications
-    and adapters for common mock and testing libraries.
-  language: Java
-  license: Apache-2.0
-  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
-- name: Apimatic Transformer
-  category: converters
-  language: SaaS
-  description: >-
-    Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
-    v2/v3, WSDL, etc.
-  link: 'https://apimatic.io/transformer'
-  v2: true
-  v3: true
 - name: rapido-web
   category: editors
   language: JavaScript
@@ -1584,7 +1522,7 @@
 - name: swagger_engine
   description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
   github: 'https://github.com/batdevis/swagger_engine'
-  v1: true
+  v2: true
   language: JavaScript
   category: '?'
   archived: false
@@ -1600,7 +1538,7 @@
 - name: swagger_engine
   description: '[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine'
   github: 'https://github.com/batdevis/swagger_engine'
-  v2: true
+  v1: true
   language: JavaScript
   category: '?'
   archived: false
@@ -2605,22 +2543,6 @@
   downloads: 626
   downloadStr: '626'
 - name: open-api
-  category: sdk
-  language: PHP
-  github: 'https://github.com/janephp/open-api'
-  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
-  v2: true
-  archived: false
-  stars: 14
-  watch: 2
-  forks: 1
-  updated: '2018-12-12T09:12:56Z'
-  issues: 0
-  license: MIT
-  owner: janephp
-  logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
-  downloads: 0
-- name: open-api
   description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
   github: 'https://github.com/janephp/open-api'
   v2: true
@@ -2636,6 +2558,68 @@
   owner: janephp
   logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
   downloads: 0
+- name: Apimatic Transformer
+  category: converters
+  language: SaaS
+  description: >-
+    Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
+    v2/v3, WSDL, etc.
+  link: 'https://apimatic.io/transformer'
+  v2: true
+  v3: true
+- link: 'https://bitbucket.org/atlassian/openapi-diff/src/master/'
+  v3: true
+  category: miscellaneous
+  name: openapi-diff
+  description: A CLI tool to identify differences between Swagger/OpenAPI specs.
+  language: JavaScript
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
+  demo: 'https://github.com/MikeRalphson/openapi-diff'
+  demoText: Mirror
+- name: Vert.x Web API Contract
+  category: frameworks
+  description: >-
+    Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
+    validation
+  link: 'http://vertx.io/docs/#web'
+  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
+  v3: true
+- link: 'https://bitbucket.org/atlassian/swagger-request-validator/src/master/'
+  v3: true
+  category: parsers
+  name: swagger-request-validator
+  description: >-
+    A Java library for validating request/responses against a OpenAPI / Swagger
+    specification. Includes support for Swagger v2 and OpenAPI v3 specifications
+    and adapters for common mock and testing libraries.
+  language: Java
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
+- name: open-api
+  category: sdk
+  language: PHP
+  github: 'https://github.com/janephp/open-api'
+  description: '[READ-ONLY] Subtree split of Jane OpenAPI library'
+  v2: true
+  archived: false
+  stars: 14
+  watch: 2
+  forks: 1
+  updated: '2018-12-12T09:12:56Z'
+  issues: 0
+  license: MIT
+  owner: janephp
+  logo: 'https://avatars0.githubusercontent.com/u/21155132?v=4'
+  downloads: 0
+- link: 'https://bitbucket.org/atlassian/swagger-mock-validator/src/master/'
+  name: swagger-mock-validator
+  v3: true
+  category: mock
+  description: A CLI tool to validate mocks against swagger/OpenApi specs.
+  language: TypeScript
+  license: Apache-2.0
+  logo: 'https://avatars1.githubusercontent.com/u/168166?s=200&v=4'
 - name: prance
   description: Resolving Swagger/OpenAPI 2.0 and 3.0 Parser
   github: 'https://github.com/jfinkhaeuser/prance'
@@ -4484,7 +4468,7 @@
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
     dynamically generate beautiful documentation from a Swagger-compliant API.
   github: 'https://github.com/swagger-api/swagger-ui'
-  v1: true
+  v2: true
   language: JavaScript
   category: '?'
   archived: false
@@ -4503,7 +4487,7 @@
     Swagger UI is a collection of HTML, Javascript, and CSS assets that
     dynamically generate beautiful documentation from a Swagger-compliant API.
   github: 'https://github.com/swagger-api/swagger-ui'
-  v2: true
+  v1: true
   language: JavaScript
   category: '?'
   archived: false
@@ -5222,7 +5206,7 @@
   language: '?'
   category: '?'
 - name: '@PayPalDev'
-  description: Design-driven RESTful apis with swagger and hapi from @PayPalDev.
+  description: Yeoman generator for krakenjs/swaggerize tools from @PayPalDev.
   github: 'https://twitter.com/PayPalDev'
   v2: true
   language: '?'
@@ -5234,7 +5218,7 @@
   language: '?'
   category: '?'
 - name: '@PayPalDev'
-  description: Yeoman generator for krakenjs/swaggerize tools from @PayPalDev.
+  description: Design-driven RESTful apis with swagger and hapi from @PayPalDev.
   github: 'https://twitter.com/PayPalDev'
   v2: true
   language: '?'
