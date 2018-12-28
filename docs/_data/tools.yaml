@@ -494,7 +494,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -651,7 +651,7 @@
   category: converters
   language: JavaScript
   demo: 'https://mermade.org.uk/openapi-converter'
-  github: 'https://github.com/Mermade/swagger2openapi'
+  github: 'https://github.com/Mermade/oas-kit'
   description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
   v2: true
   v3: true
@@ -5117,22 +5117,6 @@
     APIs that click into client apps.
   v2: true
   v3: true
-- github: 'https://github.com/Mermade/oas-kit'
-  v3: true
-  category: unclassified
-  name: oas-kit
-  description: Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint
-  language: JavaScript
-  archived: false
-  stars: 266
-  watch: 13
-  forks: 44
-  updated: '2018-12-21T13:17:54Z'
-  issues: 3
-  owner: Mermade
-  logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  license: BSD-3-Clause
-  downloads: 0
 - github: 'https://github.com/ReDoc-ly/create-openapi-repo'
   v3: true
   category: unclassified
