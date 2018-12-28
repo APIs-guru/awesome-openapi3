@@ -13,9 +13,15 @@ permalink: /
 
 Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
 
+## Last updated
+
+{{ site.time }}
+
 ## Contributing
 
-Please raise a Pull-Request or issue with any projects we've missed!
+Please tag your projects with the GitHub topic `openapi3`.
+
+Please raise a Pull-Request or issue for any visual or functional changes, or projects not hosted on GitHub.
 
 ## Tools
 
