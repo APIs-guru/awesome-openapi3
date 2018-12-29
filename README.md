@@ -14,16 +14,16 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 
 ## Contributing
 
-Please raise a Pull-Request or issue with any projects we've missed!
+The best way to get your project added to the list is to tag it with the github topic `openapi3`. 
 
-Pull requests should be against the `tools.yaml` file in the `docs/_data` directory.
-
-The raw data also contains OpenAPI 2.0 and Swagger 1.x-related projects.
+Pull requests should only be for visual / functional changes, or projects/products not hosted on GitHub.
 
 ## API Access
 
 * [categories.json](https://apis.guru/awesome-openapi3/api/categories.json)
 * [tools.json](https://apis.guru/awesome-openapi3/api/tools.json)
+
+The raw data contains OpenAPI 2.0 and Swagger 1.x-related projects.
 
 ## RSS Feed
 
