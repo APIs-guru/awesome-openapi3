@@ -4,6 +4,8 @@ node_js:
 script:
   - node add.js
   - node index.js
+  - rvm use 2.1
+  - bundle exec jekyll build
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN
