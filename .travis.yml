@@ -6,6 +6,7 @@ script:
   - node index.js
   - rvm install 2.1
   - rvm use 2.1
+  - gem install bundler
   - bundle install
   - bundle exec jekyll build
 deploy:
