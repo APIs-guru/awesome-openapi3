@@ -27,6 +27,7 @@ Please raise a Pull-Request or issue for any visual or functional changes, or pr
 
 * List of all tools [by category](./category.html)
 * [Top 100](./top100.html) list of tools
+* Top 100 [by language](./language.html)
 
 ## API access
 
