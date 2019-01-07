@@ -4,7 +4,9 @@ node_js:
 script:
   - node add.js
   - node index.js
+  - rvm install 2.1
   - rvm use 2.1
+  - bundle install
   - bundle exec jekyll build
 deploy:
   provider: pages
