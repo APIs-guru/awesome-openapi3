@@ -4,8 +4,8 @@ node_js:
 script:
   - node add.js
   - node index.js
-  - rvm install 2.1
-  - rvm use 2.1
+  - rvm install 2.3
+  - rvm use 2.3
   - gem install bundler
   - bundle install
   - bundle exec jekyll build
