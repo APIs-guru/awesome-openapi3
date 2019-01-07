@@ -8,7 +8,7 @@ site:
 
 ## Tools
 
-{% assign tmp = site.data.tools | where:"v3",true | sort 'language' %}
+{% assign tmp = site.data.tools | where:"v3",true | sort: 'stars' | reverse %}
 
 {% assign items_grouped = tmp | group_by: 'language' %}
 {% for group in items_grouped %}
