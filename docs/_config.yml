@@ -2,3 +2,5 @@ theme: jekyll-theme-cayman
 show_downloads: true
 site:
   url: https://apis.guru
+sass:
+  sass_dir: ./_sass
