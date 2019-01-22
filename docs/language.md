@@ -16,8 +16,7 @@ site:
 | Project | Stars | Category | Description |
 |---|---|---|---|
 {% for tool in group.items %}
-| <a href="{{ tool.github }}" data-json="{{ tool | jsonify | url_encode }}"> {% if tool.archived %}~~{% endif %}{{ tool.name }}{% if tool.archived %}~~{% endif %} </a> | {{ tool.stars }} | {{tool.category}} | {{ tool.description }} |
-{% endfor %}
+| <a href="{{ tool.github }}" data-json="{{ tool | jsonify | url_encode }}"> {% if tool.archived %}~~{% endif %}{{ tool.name }}{% if tool.archived %}~~{% endif %} </a> | {{ tool.stars }} | {{tool.category}} | {{ tool.description }} |{% endfor %}
 {% endfor %}
 
 <script src="https://unpkg.com/tippy.js@3/dist/tippy.all.min.js"></script>
