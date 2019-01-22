@@ -15,7 +15,7 @@ site:
 ### {{group.name}}
 | Project | Stars | Category | Description |
 |---|---|---|---|
-{% for tool in group.items %}{% if tool.stars >= 1 %}| <a href="{{ tool.github }}" data-json="{{ tool | jsonify | url_encode }}"> {% if tool.archived %}~~{% endif %}{{ tool.name }}{% if tool.archived %}~~{% endif %} </a> | {{ tool.stars }} | {{tool.category}} | {{ tool.description }} |{% endif %}
+{% for tool in group.items %}| <a href="{{ tool.github }}" data-json="{{ tool | jsonify | url_encode }}"> {% if tool.archived %}~~{% endif %}{{ tool.name }}{% if tool.archived %}~~{% endif %} </a> | {{ tool.stars }} | {{tool.category}} | {{ tool.description }} |
 {% endfor %}
 {% endfor %}
 
