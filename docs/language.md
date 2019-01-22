@@ -12,6 +12,9 @@ site:
 {% assign items_grouped = tmp | group_by: 'language' %}
 
 {% for group in items_grouped %}
+* [{{group.name}}(#{{group.name | slugify }}){% endfor %}
+
+{% for group in items_grouped %}
 ### {{group.name}}
 
 | Project | Stars | Category | Description |
