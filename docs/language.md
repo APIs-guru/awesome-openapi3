@@ -10,8 +10,9 @@ site:
 
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'stars' | reverse %}
 {% assign items_grouped = tmp | group_by: 'language' %}
+{% assign items_sorted = items_grouped | sort: 'name' %}
 
-{% for group in items_grouped %}
+{% for group in items_sorted %}
 * [{{group.name}}](#{{group.name | slugify }}){% endfor %}
 
 {% for group in items_grouped %}
