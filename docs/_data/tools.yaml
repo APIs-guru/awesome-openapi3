@@ -454,7 +454,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -2566,7 +2566,7 @@
     Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests
     validation
   link: 'http://vertx.io/docs/#web'
-  language: 'Java, Kotlin, JavaScript, Groovy, Ruby, Ceylon & Scala'
+  language: Various
   v3: true
 - github: 'https://github.com/isa-group/oas-generator'
   v3: true
