@@ -46,7 +46,7 @@ for (let entry of entries) {
         if (obj.id) {
             entry.name = obj.name||entry.name;
             entry.description = obj.description||entry.description||'';
-            entry.language = obj.language;
+            entry.language = obj.language||'Unknown';
             entry.archived = !!obj.archived;
             entry.stars = obj.stargazers_count||0;
             entry.watch = obj.subscribers_count||0;
