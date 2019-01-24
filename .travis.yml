@@ -9,7 +9,7 @@ script:
   - gem install bundler
   - bundle install
   - bundle exec jekyll doctor
-  - bundle exec jekyll build
+  - bundle exec jekyll build --source docs --destination docs/_site
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN
