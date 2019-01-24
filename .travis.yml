@@ -4,10 +4,11 @@ node_js:
 script:
   - node add.js
   - node index.js
-  - rvm install 2.3
-  - rvm use 2.3
+  - rvm install 2.6
+  - rvm use 2.6
   - gem install bundler
   - bundle install
+  - bundle exec jekyll doctor
   - bundle exec jekyll build
 deploy:
   provider: pages
