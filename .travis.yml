@@ -8,7 +8,9 @@ script:
   - rvm use 2.3
   - gem install bundler
   - bundle install
-#  - bundle exec jekyll doctor
+  - cd docs
+  - bundle exec jekyll doctor
+  - cd ..
   - bundle exec jekyll build --source docs --destination docs/_site
 deploy:
   provider: pages
