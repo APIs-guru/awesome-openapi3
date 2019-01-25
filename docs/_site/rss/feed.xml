@@ -1,0 +1,3121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>openapi-diff</title>
+        <description>A CLI tool to identify differences between Swagger/OpenAPI specs.</description>
+        <category>OAS3/miscellaneous</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://bitbucket.org/atlassian/openapi-diff/src/master/</link>
+        <guid isPermaLink="true">https://bitbucket.org/atlassian/openapi-diff/src/master/</guid>
+      </item>
+    
+      <item>
+        <title>a127</title>
+        <description>a127</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://a127.io/</link>
+        <guid isPermaLink="true">http://a127.io/</guid>
+      </item>
+    
+      <item>
+        <title>swagger-mock-validator</title>
+        <description>A CLI tool to validate mocks against swagger/OpenApi specs.</description>
+        <category>OAS3/mock</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://bitbucket.org/atlassian/swagger-mock-validator/src/master/</link>
+        <guid isPermaLink="true">https://bitbucket.org/atlassian/swagger-mock-validator/src/master/</guid>
+      </item>
+    
+      <item>
+        <title>Vert.x Web API Contract</title>
+        <description>Create an API endpoint with Vert.x 3 and OpenAPI 3 with automatic requests validation</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://vertx.io/docs/#web</link>
+        <guid isPermaLink="true">http://vertx.io/docs/#web</guid>
+      </item>
+    
+      <item>
+        <title>swagger-request-validator</title>
+        <description>A Java library for validating request/responses against a OpenAPI / Swagger specification. Includes support for Swagger v2 and OpenAPI v3 specifications and adapters for common mock and testing libraries.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://bitbucket.org/atlassian/swagger-request-validator/src/master/</link>
+        <guid isPermaLink="true">https://bitbucket.org/atlassian/swagger-request-validator/src/master/</guid>
+      </item>
+    
+      <item>
+        <title>Apimatic Transformer</title>
+        <description>Transform API Descriptions to formats to and from RAML, API Blueprint, OAI v2/v3, WSDL, etc.</description>
+        <category>OAS3/converters</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://apimatic.io/transformer</link>
+        <guid isPermaLink="true">https://apimatic.io/transformer</guid>
+      </item>
+    
+      <item>
+        <title>elide</title>
+        <description>elide</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://elide.io/</link>
+        <guid isPermaLink="true">http://elide.io/</guid>
+      </item>
+    
+      <item>
+        <title>SwaggerProvider</title>
+        <description>SwaggerProvider</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://fsprojects.github.io/SwaggerProvider/</link>
+        <guid isPermaLink="true">http://fsprojects.github.io/SwaggerProvider/</guid>
+      </item>
+    
+      <item>
+        <title>swaggydoc</title>
+        <description>swaggydoc</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://grails.org/plugin/swaggydoc</link>
+        <guid isPermaLink="true">http://grails.org/plugin/swaggydoc</guid>
+      </item>
+    
+      <item>
+        <title>gRPC</title>
+        <description>generate a REST gateway and swagger definition from a gRPC protobuf definition</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://grpc.io/</link>
+        <guid isPermaLink="true">http://grpc.io/</guid>
+      </item>
+    
+      <item>
+        <title>servant-swagger</title>
+        <description>servant-swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://hackage.haskell.org/package/servant-swagger</link>
+        <guid isPermaLink="true">http://hackage.haskell.org/package/servant-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger2</title>
+        <description>swagger2</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://hackage.haskell.org/package/swagger2</link>
+        <guid isPermaLink="true">http://hackage.haskell.org/package/swagger2</guid>
+      </item>
+    
+      <item>
+        <title>Hapi</title>
+        <description>A Hapi plugin that automatically creates Swagger documentation AND validates request/response parameters using the JSON Schema spec.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://hapijs.com/</link>
+        <guid isPermaLink="true">http://hapijs.com/</guid>
+      </item>
+    
+      <item>
+        <title>jooby apps</title>
+        <description>Export jooby apps to Swagger Spec 2.0.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://jooby.org/</link>
+        <guid isPermaLink="true">http://jooby.org/</guid>
+      </item>
+    
+      <item>
+        <title>jooby-swagger</title>
+        <description>jooby-swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://jooby.org/doc/swagger</link>
+        <guid isPermaLink="true">http://jooby.org/doc/swagger</guid>
+      </item>
+    
+      <item>
+        <title>JSON-API</title>
+        <description>A framework for building JSON-API web services with generated Swagger documentation.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://jsonapi.org/</link>
+        <guid isPermaLink="true">http://jsonapi.org/</guid>
+      </item>
+    
+      <item>
+        <title>swagger-maven-plugin</title>
+        <description>swagger-maven-plugin</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://kongchen.github.io/swagger-maven-plugin/</link>
+        <guid isPermaLink="true">http://kongchen.github.io/swagger-maven-plugin/</guid>
+      </item>
+    
+      <item>
+        <title>Mojolicious</title>
+        <description>Generates Mojolicious routes and input/output validation rules.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://mojolicio.us/</link>
+        <guid isPermaLink="true">http://mojolicio.us/</guid>
+      </item>
+    
+      <item>
+        <title>NSwag</title>
+        <description>NSwag</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://nswag.org/</link>
+        <guid isPermaLink="true">http://nswag.org/</guid>
+      </item>
+    
+      <item>
+        <title>NSwag</title>
+        <description>NSwag</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://nswag.org/</link>
+        <guid isPermaLink="true">http://nswag.org/</guid>
+      </item>
+    
+      <item>
+        <title>restlet-framework</title>
+        <description>restlet-framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/swagger</link>
+        <guid isPermaLink="true">http://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/swagger</guid>
+      </item>
+    
+      <item>
+        <title>Sails.js</title>
+        <description>A Sails.js plugin that generates a Swagger (v2.0) document from your application Models, Controllers, and Routes. Also see swagger.balderdash.io for a Sails-themed Swagger UI.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://sailsjs.org/</link>
+        <guid isPermaLink="true">http://sailsjs.org/</guid>
+      </item>
+    
+      <item>
+        <title>Serverless</title>
+        <description>A Serverless plugin that
+generates serverless configuration, api gateway events, and basic
+handler stub functions from a Swagger specification.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://serverless.com/</link>
+        <guid isPermaLink="true">http://serverless.com/</guid>
+      </item>
+    
+      <item>
+        <title>Fintrospect</title>
+        <description>Fintrospect</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.fintrospect.io/</link>
+        <guid isPermaLink="true">http://www.fintrospect.io/</guid>
+      </item>
+    
+      <item>
+        <title>Postman</title>
+        <description>Creates a Postman collection from live Swagger documentation</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.getpostman.com/</link>
+        <guid isPermaLink="true">http://www.getpostman.com/</guid>
+      </item>
+    
+      <item>
+        <title>Phoenix</title>
+        <description>PhoenixSwagger is the library that provides Swagger integration to the Phoenix web framework. It generates Swagger specification for Phoenix controllers and validates the requests.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.phoenixframework.org/</link>
+        <guid isPermaLink="true">http://www.phoenixframework.org/</guid>
+      </item>
+    
+      <item>
+        <title>playframework</title>
+        <description>Client and Server depends on playframework.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.playframework.com/</link>
+        <guid isPermaLink="true">http://www.playframework.com/</guid>
+      </item>
+    
+      <item>
+        <title>playframework</title>
+        <description>Creates swagger docs from easily readable ascii text placed in the code. Depends on playframework, but may also be used in other frameworks.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.playframework.com/</link>
+        <guid isPermaLink="true">http://www.playframework.com/</guid>
+      </item>
+    
+      <item>
+        <title>Scalatra</title>
+        <description>Scalatra</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.scalatra.org/</link>
+        <guid isPermaLink="true">http://www.scalatra.org/</guid>
+      </item>
+    
+      <item>
+        <title>Swagger Guide</title>
+        <description>see the Swagger Guide</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>http://www.scalatra.org/2.2/guides/swagger.html</link>
+        <guid isPermaLink="true">http://www.scalatra.org/2.2/guides/swagger.html</guid>
+      </item>
+    
+      <item>
+        <title>Atom/linter-swagger</title>
+        <description>This plugin for Atom Linter will lint Swagger 2.0 specifications, both JSON and YAML using swagger-parser node package.</description>
+        <category>OAS2/editors</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://atom.io/packages/linter-swagger</link>
+        <guid isPermaLink="true">https://atom.io/packages/linter-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-request-validator</title>
+        <description>swagger-request-validator</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://bitbucket.org/atlassian/swagger-request-validator</link>
+        <guid isPermaLink="true">https://bitbucket.org/atlassian/swagger-request-validator</guid>
+      </item>
+    
+      <item>
+        <title>Sashay</title>
+        <description>Sashay</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://bitbucket.org/seanerussell/sashay</link>
+        <guid isPermaLink="true">https://bitbucket.org/seanerussell/sashay</guid>
+      </item>
+    
+      <item>
+        <title>lua-Spore</title>
+        <description>lua-Spore</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://fperrad.github.io/lua-Spore/swagger/</link>
+        <guid isPermaLink="true">https://fperrad.github.io/lua-Spore/swagger/</guid>
+      </item>
+    
+      <item>
+        <title>awesome-openapi3</title>
+        <description>😎 A list of awesome projects related to OpenAPI 3.0.x, curated by the community</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 24 Jan 2019 19:20:39 +0000</pubDate>
+        <link>https://github.com/APIs-guru/awesome-openapi3</link>
+        <guid isPermaLink="true">https://github.com/APIs-guru/awesome-openapi3</guid>
+      </item>
+    
+      <item>
+        <title>openapi-directory</title>
+        <description>🌐 Wikipedia for Web APIs. Directory of REST API definitions in OpenAPI 2.0/3.0 format</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 20:23:29 +0000</pubDate>
+        <link>https://github.com/APIs-guru/openapi-directory</link>
+        <guid isPermaLink="true">https://github.com/APIs-guru/openapi-directory</guid>
+      </item>
+    
+      <item>
+        <title>pyswagger</title>
+        <description>An OpenAPI (fka Swagger) client &amp; converter in python, which is type-safe, dynamic, spec-compliant.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 09:27:42 +0000</pubDate>
+        <link>https://github.com/AntXlab/pyswagger</link>
+        <guid isPermaLink="true">https://github.com/AntXlab/pyswagger</guid>
+      </item>
+    
+      <item>
+        <title>oai-ts-core</title>
+        <description>Core typescript library to read and manipulate OpenAPI specification definitions.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 23 Jan 2019 12:53:25 +0000</pubDate>
+        <link>https://github.com/Apicurio/oai-ts-core</link>
+        <guid isPermaLink="true">https://github.com/Apicurio/oai-ts-core</guid>
+      </item>
+    
+      <item>
+        <title>swurg</title>
+        <description>Parse OpenAPI documents into Burp Suite for automating OpenAPI-based APIs security assessments (approved by PortSwigger for inclusion in their official BApp Store).</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 18 Dec 2018 05:54:56 +0000</pubDate>
+        <link>https://github.com/AresS31/swurg</link>
+        <guid isPermaLink="true">https://github.com/AresS31/swurg</guid>
+      </item>
+    
+      <item>
+        <title>autorest</title>
+        <description>OpenAPI (f.k.a Swagger) Specification code generator. Supports C#, Go, Java, Node.js, TypeScript, Python, Ruby and PHP.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 20:54:30 +0000</pubDate>
+        <link>https://github.com/Azure/AutoRest</link>
+        <guid isPermaLink="true">https://github.com/Azure/AutoRest</guid>
+      </item>
+    
+      <item>
+        <title>gradle-swagger-plugin</title>
+        <description>Gradle plugin for generating OpenAPI specification using Swagger</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Thu, 10 Jan 2019 11:32:35 +0000</pubDate>
+        <link>https://github.com/Bankdata/gradle-swagger-plugin</link>
+        <guid isPermaLink="true">https://github.com/Bankdata/gradle-swagger-plugin</guid>
+      </item>
+    
+      <item>
+        <title>swagger-cli</title>
+        <description>Swagger 2.0 and OpenAPI 3.0 command-line tool</description>
+        <category>OAS2/parsers</category>
+        <pubDate>Mon, 21 Jan 2019 20:45:50 +0000</pubDate>
+        <link>https://github.com/BigstickCarpet/swagger-cli</link>
+        <guid isPermaLink="true">https://github.com/BigstickCarpet/swagger-cli</guid>
+      </item>
+    
+      <item>
+        <title>swagger-express-middleware</title>
+        <description>Swagger middlware and mocks for Express.js and Node</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 00:37:14 +0000</pubDate>
+        <link>https://github.com/BigstickCarpet/swagger-express-middleware/#swagger-express-middleware</link>
+        <guid isPermaLink="true">https://github.com/BigstickCarpet/swagger-express-middleware/#swagger-express-middleware</guid>
+      </item>
+    
+      <item>
+        <title>swagger-parser</title>
+        <description>Swagger 2.0 and OpenAPI 3.0 parser and validator for Node and browsers</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 21 Jan 2019 21:37:14 +0000</pubDate>
+        <link>https://github.com/BigstickCarpet/swagger-parser#swagger-parser</link>
+        <guid isPermaLink="true">https://github.com/BigstickCarpet/swagger-parser#swagger-parser</guid>
+      </item>
+    
+      <item>
+        <title>swagger-parser</title>
+        <description>Swagger 2.0 and OpenAPI 3.0 parser and validator for Node and browsers</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 21 Jan 2019 21:37:14 +0000</pubDate>
+        <link>https://github.com/BigstickCarpet/swagger-parser#swagger-parser</link>
+        <guid isPermaLink="true">https://github.com/BigstickCarpet/swagger-parser#swagger-parser</guid>
+      </item>
+    
+      <item>
+        <title>blueoak-server</title>
+        <description>express.js-based, swagger-matic, server runtime</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 01 Dec 2018 03:12:59 +0000</pubDate>
+        <link>https://github.com/BlueOakJS/blueoak-server</link>
+        <guid isPermaLink="true">https://github.com/BlueOakJS/blueoak-server</guid>
+      </item>
+    
+      <item>
+        <title>fubumvc</title>
+        <description>A front-controller style MVC framework for .NET</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 14 Jan 2019 19:47:05 +0000</pubDate>
+        <link>https://github.com/DarthFubuMVC/fubumvc</link>
+        <guid isPermaLink="true">https://github.com/DarthFubuMVC/fubumvc</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPIParser</title>
+        <description>Simple Open API F# Parser</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 16 Oct 2018 12:57:15 +0000</pubDate>
+        <link>https://github.com/Dzoukr/OpenAPIParser</link>
+        <guid isPermaLink="true">https://github.com/Dzoukr/OpenAPIParser</guid>
+      </item>
+    
+      <item>
+        <title>swagger</title>
+        <description>Eiffel library for Swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 05 Nov 2015 02:15:08 +0000</pubDate>
+        <link>https://github.com/EiffelWebFramework/swagger</link>
+        <guid isPermaLink="true">https://github.com/EiffelWebFramework/swagger</guid>
+      </item>
+    
+      <item>
+        <title>fubumvc-swagger</title>
+        <description>FubuMVC convention for creating API documentation for your content negotiation enabled actions </description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 09 Feb 2018 18:56:54 +0000</pubDate>
+        <link>https://github.com/KevM/fubumvc-swagger</link>
+        <guid isPermaLink="true">https://github.com/KevM/fubumvc-swagger</guid>
+      </item>
+    
+      <item>
+        <title>Restler</title>
+        <description>Simple and effective multi-format Web API Server to host your PHP API as Pragmatic REST and / or RESTful API</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 11:29:06 +0000</pubDate>
+        <link>https://github.com/Luracast/Restler</link>
+        <guid isPermaLink="true">https://github.com/Luracast/Restler</guid>
+      </item>
+    
+      <item>
+        <title>SwaggerAssertions</title>
+        <description>Assert your API requests and responses match with your swagger definition</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 10 Jan 2019 14:06:42 +0000</pubDate>
+        <link>https://github.com/Maks3w/SwaggerAssertions</link>
+        <guid isPermaLink="true">https://github.com/Maks3w/SwaggerAssertions</guid>
+      </item>
+    
+      <item>
+        <title>oas-kit</title>
+        <description>Convert Swagger 2.0 definitions to OpenAPI 3.0 and resolve/validate/lint</description>
+        <category>OAS3/converters</category>
+        <pubDate>Tue, 22 Jan 2019 08:50:47 +0000</pubDate>
+        <link>https://github.com/Mermade/oas-kit</link>
+        <guid isPermaLink="true">https://github.com/Mermade/oas-kit</guid>
+      </item>
+    
+      <item>
+        <title>openapi-codegen</title>
+        <description>OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Thu, 24 Jan 2019 10:56:08 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi-codegen</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi-codegen</guid>
+      </item>
+    
+      <item>
+        <title>openapi-extract</title>
+        <description>Extract single paths/operations from OpenAPI definitions</description>
+        <category>OAS3/miscellaneous</category>
+        <pubDate>Sat, 05 Jan 2019 21:00:12 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi-extract</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi-extract</guid>
+      </item>
+    
+      <item>
+        <title>openapi-filter</title>
+        <description>Filter internal paths, operations, parameters, schemas etc from OpenAPI/Swagger/AsyncAPI definitions</description>
+        <category>OAS3/miscellaneous</category>
+        <pubDate>Fri, 09 Nov 2018 16:47:45 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi-filter</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi-filter</guid>
+      </item>
+    
+      <item>
+        <title>openapi-lint-vscode</title>
+        <description>OpenAPI 2.0/3.0.x intellisense, validator, linter, converter and resolver extension for Visual Studio Code</description>
+        <category>OAS3/editors</category>
+        <pubDate>Thu, 24 Jan 2019 06:22:07 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi-lint-vscode</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi-lint-vscode</guid>
+      </item>
+    
+      <item>
+        <title>openapi-webconverter</title>
+        <description>Mermade Swagger 2.0 to OpenAPI 3.0.0 converter front-end</description>
+        <category>OAS3/converters</category>
+        <pubDate>Fri, 18 Jan 2019 03:01:02 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi-webconverter</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi-webconverter</guid>
+      </item>
+    
+      <item>
+        <title>openapi3-examples</title>
+        <description>Passing and failing test cases for OpenAPI 3.0.x validators</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Sun, 02 Dec 2018 14:58:38 +0000</pubDate>
+        <link>https://github.com/Mermade/openapi3-examples</link>
+        <guid isPermaLink="true">https://github.com/Mermade/openapi3-examples</guid>
+      </item>
+    
+      <item>
+        <title>swaggerplusplus</title>
+        <description>A proposal for transitioning between Swagger 2.0 and OpenAPI 3.0.x</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 28 Jun 2018 13:05:46 +0000</pubDate>
+        <link>https://github.com/Mermade/swaggerplusplus</link>
+        <guid isPermaLink="true">https://github.com/Mermade/swaggerplusplus</guid>
+      </item>
+    
+      <item>
+        <title>spec-synthase</title>
+        <description>Spec-synthase is a tool to help deal with big swagger files, by building the swagger specification files from little spec files.</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 15 Jan 2019 10:55:13 +0000</pubDate>
+        <link>https://github.com/MicroarrayTecnologia/spec-synthase</link>
+        <guid isPermaLink="true">https://github.com/MicroarrayTecnologia/spec-synthase</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPI.NET</title>
+        <description>The OpenAPI.NET SDK contains a useful object model for OpenAPI documents in .NET along with common serializers to extract raw OpenAPI JSON and YAML documents from the model.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 01:47:09 +0000</pubDate>
+        <link>https://github.com/Microsoft/OpenAPI.NET</link>
+        <guid isPermaLink="true">https://github.com/Microsoft/OpenAPI.NET</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPI.NET.OData</title>
+        <description>Generates OpenAPI document from OData CSDL</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 08 Jan 2019 15:27:42 +0000</pubDate>
+        <link>https://github.com/Microsoft/OpenAPI.NET.OData</link>
+        <guid isPermaLink="true">https://github.com/Microsoft/OpenAPI.NET.OData</guid>
+      </item>
+    
+      <item>
+        <title>oas_parser</title>
+        <description>An open source Open API Spec 3 Definition Parser</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 22:07:48 +0000</pubDate>
+        <link>https://github.com/Nexmo/oas_parser</link>
+        <guid isPermaLink="true">https://github.com/Nexmo/oas_parser</guid>
+      </item>
+    
+      <item>
+        <title>openapi-generator</title>
+        <description>OpenAPI Generator allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec (v2, v3)</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Thu, 24 Jan 2019 20:55:40 +0000</pubDate>
+        <link>https://github.com/OpenAPITools/openapi-generator</link>
+        <guid isPermaLink="true">https://github.com/OpenAPITools/openapi-generator</guid>
+      </item>
+    
+      <item>
+        <title>openapi-generator-cli</title>
+        <description>A node package wrapper for https://github.com/OpenAPITools/openapi-generator</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Wed, 23 Jan 2019 20:39:55 +0000</pubDate>
+        <link>https://github.com/OpenAPITools/openapi-generator-cli</link>
+        <guid isPermaLink="true">https://github.com/OpenAPITools/openapi-generator-cli</guid>
+      </item>
+    
+      <item>
+        <title>openapi-petstore</title>
+        <description>The pet store sample</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Thu, 27 Dec 2018 08:48:40 +0000</pubDate>
+        <link>https://github.com/OpenAPITools/openapi-petstore</link>
+        <guid isPermaLink="true">https://github.com/OpenAPITools/openapi-petstore</guid>
+      </item>
+    
+      <item>
+        <title>angular-swagger-ui</title>
+        <description>An angularJS implementation of Swagger UI</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 10 Jan 2019 14:42:56 +0000</pubDate>
+        <link>https://github.com/Orange-OpenSource/angular-swagger-ui</link>
+        <guid isPermaLink="true">https://github.com/Orange-OpenSource/angular-swagger-ui</guid>
+      </item>
+    
+      <item>
+        <title>koa2-oas3</title>
+        <description>Koa2 OpenAPI 3 request validation middleware.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 03 Jan 2019 14:38:29 +0000</pubDate>
+        <link>https://github.com/OverSpeedIO/koa2-oas3</link>
+        <guid isPermaLink="true">https://github.com/OverSpeedIO/koa2-oas3</guid>
+      </item>
+    
+      <item>
+        <title>swaggerapi</title>
+        <description>Swagger API for server with REST APIs written in Java</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 25 Apr 2018 12:01:46 +0000</pubDate>
+        <link>https://github.com/ROAMSYS/swaggerapi</link>
+        <guid isPermaLink="true">https://github.com/ROAMSYS/swaggerapi</guid>
+      </item>
+    
+      <item>
+        <title>create-openapi-repo</title>
+        <description>🤖 Generator for OpenAPI repo to help you manage the spec lifecycle</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 18:23:25 +0000</pubDate>
+        <link>https://github.com/ReDoc-ly/create-openapi-repo</link>
+        <guid isPermaLink="true">https://github.com/ReDoc-ly/create-openapi-repo</guid>
+      </item>
+    
+      <item>
+        <title>ReDoc</title>
+        <description>📘  OpenAPI/Swagger-generated API Reference Documentation</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 24 Jan 2019 22:16:30 +0000</pubDate>
+        <link>https://github.com/Rebilly/ReDoc</link>
+        <guid isPermaLink="true">https://github.com/Rebilly/ReDoc</guid>
+      </item>
+    
+      <item>
+        <title>create-openapi-repo</title>
+        <description>🤖 Generator for OpenAPI repo to help you manage the spec lifecycle</description>
+        <category>OAS2/documentation</category>
+        <pubDate>Thu, 24 Jan 2019 18:23:25 +0000</pubDate>
+        <link>https://github.com/Rebilly/generator-openapi-repo</link>
+        <guid isPermaLink="true">https://github.com/Rebilly/generator-openapi-repo</guid>
+      </item>
+    
+      <item>
+        <title>serverless_swagger</title>
+        <description>Configure serverless functions from swagger definition</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 31 Dec 2018 19:12:15 +0000</pubDate>
+        <link>https://github.com/Reckon-Limited/serverless_swagger</link>
+        <guid isPermaLink="true">https://github.com/Reckon-Limited/serverless_swagger</guid>
+      </item>
+    
+      <item>
+        <title>KaiZen-OpenAPI-Editor</title>
+        <description>Eclipse Editor for the Swagger-OpenAPI Description Language</description>
+        <category>OAS3/editors</category>
+        <pubDate>Thu, 24 Jan 2019 19:19:01 +0000</pubDate>
+        <link>https://github.com/RepreZen/KaiZen-OpenAPI-Editor</link>
+        <guid isPermaLink="true">https://github.com/RepreZen/KaiZen-OpenAPI-Editor</guid>
+      </item>
+    
+      <item>
+        <title>KaiZen-OpenApi-Parser</title>
+        <description>High-performance Parser, Validator, and Java Object Model for OpenAPI 3.x</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 17 Jan 2019 11:59:21 +0000</pubDate>
+        <link>https://github.com/RepreZen/KaiZen-OpenApi-Parser</link>
+        <guid isPermaLink="true">https://github.com/RepreZen/KaiZen-OpenApi-Parser</guid>
+      </item>
+    
+      <item>
+        <title>assertj-swagger</title>
+        <description>A Swagger assertj test library which compares a contract-first Swagger YAML/JSON file with a code-first Swagger JSON</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 21 Jan 2019 06:54:47 +0000</pubDate>
+        <link>https://github.com/RobWin/assertj-swagger</link>
+        <guid isPermaLink="true">https://github.com/RobWin/assertj-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger2markup</title>
+        <description>A Swagger to AsciiDoc or Markdown converter to simplify the generation of an up-to-date RESTful API documentation by combining documentation that’s been hand-written with auto-generated API documentation.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 00:24:19 +0000</pubDate>
+        <link>https://github.com/RobWin/swagger2markup</link>
+        <guid isPermaLink="true">https://github.com/RobWin/swagger2markup</guid>
+      </item>
+    
+      <item>
+        <title>swagger2markup-gradle-plugin</title>
+        <description>A Swagger2Markup Gradle Plugin.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 18 Jan 2019 16:09:07 +0000</pubDate>
+        <link>https://github.com/RobWin/swagger2markup-gradle-plugin</link>
+        <guid isPermaLink="true">https://github.com/RobWin/swagger2markup-gradle-plugin</guid>
+      </item>
+    
+      <item>
+        <title>n26-api</title>
+        <description>Unofficial N26 Bank API documentation</description>
+        <category>OAS3/instance</category>
+        <pubDate>Mon, 14 Jan 2019 23:47:38 +0000</pubDate>
+        <link>https://github.com/Rots/n26-api</link>
+        <guid isPermaLink="true">https://github.com/Rots/n26-api</guid>
+      </item>
+    
+      <item>
+        <title>go-library</title>
+        <description>SabzCity Platform Opensource Library in Golang</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Mon, 15 Oct 2018 12:24:16 +0000</pubDate>
+        <link>https://github.com/SabzCity/go-library</link>
+        <guid isPermaLink="true">https://github.com/SabzCity/go-library</guid>
+      </item>
+    
+      <item>
+        <title>swaggerui-webpack-boilerplate</title>
+        <description>Boilerplate for spinning up local Swagger UI server, orchestrated through Webpack</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Tue, 16 Oct 2018 11:52:17 +0000</pubDate>
+        <link>https://github.com/SensibleWood/swaggerui-webpack-boilerplate</link>
+        <guid isPermaLink="true">https://github.com/SensibleWood/swaggerui-webpack-boilerplate</guid>
+      </item>
+    
+      <item>
+        <title>tornado-swagger</title>
+        <description>tornado-swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 14:12:13 +0000</pubDate>
+        <link>https://github.com/SerenaFeng/tornado-swagger</link>
+        <guid isPermaLink="true">https://github.com/SerenaFeng/tornado-swagger</guid>
+      </item>
+    
+      <item>
+        <title>ServiceStack</title>
+        <description>Thoughtfully architected, obscenely fast, thoroughly enjoyable web services for all</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 08:24:54 +0000</pubDate>
+        <link>https://github.com/ServiceStack/ServiceStack</link>
+        <guid isPermaLink="true">https://github.com/ServiceStack/ServiceStack</guid>
+      </item>
+    
+      <item>
+        <title>ServiceStack</title>
+        <description>Thoughtfully architected, obscenely fast, thoroughly enjoyable web services for all</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 08:24:54 +0000</pubDate>
+        <link>https://github.com/ServiceStack/ServiceStack/wiki/Swagger-API</link>
+        <guid isPermaLink="true">https://github.com/ServiceStack/ServiceStack/wiki/Swagger-API</guid>
+      </item>
+    
+      <item>
+        <title>fastify-oas</title>
+        <description>Fastify OpenAPI plugin (This is *mirror*). PRs accepted in both repos. Issues tracked main. Main repo =&gt;</description>
+        <category>OAS3/</category>
+        <pubDate>Wed, 23 Jan 2019 08:58:23 +0000</pubDate>
+        <link>https://github.com/SkeLLLa/fastify-oas</link>
+        <guid isPermaLink="true">https://github.com/SkeLLLa/fastify-oas</guid>
+      </item>
+    
+      <item>
+        <title>swagger4j</title>
+        <description>A simple java library for reading and writing swagger definitions</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 15 Jan 2019 19:28:21 +0000</pubDate>
+        <link>https://github.com/SmartBear/swagger4j</link>
+        <guid isPermaLink="true">https://github.com/SmartBear/swagger4j</guid>
+      </item>
+    
+      <item>
+        <title>swagger-jsdoc</title>
+        <description>Generates swagger doc based on JSDoc.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 15:44:57 +0000</pubDate>
+        <link>https://github.com/Surnet/swagger-jsdoc</link>
+        <guid isPermaLink="true">https://github.com/Surnet/swagger-jsdoc</guid>
+      </item>
+    
+      <item>
+        <title>express-gateway-plugin-openapi3-mock-server</title>
+        <description>An OpenAPI 3 mock server plugin for Express Gateway</description>
+        <category>OAS3/mock</category>
+        <pubDate>Sun, 12 Aug 2018 17:57:28 +0000</pubDate>
+        <link>https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server</link>
+        <guid isPermaLink="true">https://github.com/Szasza/express-gateway-plugin-openapi3-mock-server</guid>
+      </item>
+    
+      <item>
+        <title>swagger-aggregator</title>
+        <description>Aggregate several swagger APIs in one</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 24 Dec 2018 19:13:39 +0000</pubDate>
+        <link>https://github.com/Trax-air/swagger-aggregator</link>
+        <guid isPermaLink="true">https://github.com/Trax-air/swagger-aggregator</guid>
+      </item>
+    
+      <item>
+        <title>swagger-parser</title>
+        <description>Give useful informations about your swagger files</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 22:01:19 +0000</pubDate>
+        <link>https://github.com/Trax-air/swagger-parser</link>
+        <guid isPermaLink="true">https://github.com/Trax-air/swagger-parser</guid>
+      </item>
+    
+      <item>
+        <title>swagger-stub</title>
+        <description>Generate a stub from a swagger file</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 20 Sep 2018 14:14:58 +0000</pubDate>
+        <link>https://github.com/Trax-air/swagger-stub</link>
+        <guid isPermaLink="true">https://github.com/Trax-air/swagger-stub</guid>
+      </item>
+    
+      <item>
+        <title>swagger-tester</title>
+        <description>Automatically test your swagger API</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 28 Dec 2018 16:38:22 +0000</pubDate>
+        <link>https://github.com/Trax-air/swagger-tester</link>
+        <guid isPermaLink="true">https://github.com/Trax-air/swagger-tester</guid>
+      </item>
+    
+      <item>
+        <title>bravado</title>
+        <description>Bravado is a python client library for Swagger 2.0 services</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 14:58:20 +0000</pubDate>
+        <link>https://github.com/Yelp/bravado</link>
+        <guid isPermaLink="true">https://github.com/Yelp/bravado</guid>
+      </item>
+    
+      <item>
+        <title>bravado-core</title>
+        <description>bravado-core</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 16 Jan 2019 10:56:03 +0000</pubDate>
+        <link>https://github.com/Yelp/bravado-core</link>
+        <guid isPermaLink="true">https://github.com/Yelp/bravado-core</guid>
+      </item>
+    
+      <item>
+        <title>swagger_spec_validator</title>
+        <description>swagger-spec-validator</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 17 Jan 2019 12:57:17 +0000</pubDate>
+        <link>https://github.com/Yelp/swagger_spec_validator</link>
+        <guid isPermaLink="true">https://github.com/Yelp/swagger_spec_validator</guid>
+      </item>
+    
+      <item>
+        <title>swaggerwcf</title>
+        <description>Swagger for WCF</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 16 Jan 2019 05:10:17 +0000</pubDate>
+        <link>https://github.com/abelsilva/swaggerwcf</link>
+        <guid isPermaLink="true">https://github.com/abelsilva/swaggerwcf</guid>
+      </item>
+    
+      <item>
+        <title>typeswagger</title>
+        <description>A Swagger / OpenApi Specification DSL for Scala</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 25 Jun 2018 11:54:52 +0000</pubDate>
+        <link>https://github.com/acme-software/typeswagger</link>
+        <guid isPermaLink="true">https://github.com/acme-software/typeswagger</guid>
+      </item>
+    
+      <item>
+        <title>openapi3-rust</title>
+        <description>Rust serialization library for OpenAPIv3</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sun, 20 Jan 2019 15:47:00 +0000</pubDate>
+        <link>https://github.com/adwhit/openapi3-rust</link>
+        <guid isPermaLink="true">https://github.com/adwhit/openapi3-rust</guid>
+      </item>
+    
+      <item>
+        <title>mini-apivore</title>
+        <description>MiniTest based version of Apivore gem.</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 13 Aug 2018 09:33:14 +0000</pubDate>
+        <link>https://github.com/alekseyl/mini-apivore</link>
+        <guid isPermaLink="true">https://github.com/alekseyl/mini-apivore</guid>
+      </item>
+    
+      <item>
+        <title>bottle-swagger</title>
+        <description>A Bottle plugin for Swagger REST APIs</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 05 Dec 2018 16:49:10 +0000</pubDate>
+        <link>https://github.com/ampedandwired/bottle-swagger</link>
+        <guid isPermaLink="true">https://github.com/ampedandwired/bottle-swagger</guid>
+      </item>
+    
+      <item>
+        <title>vertx-auto-swagger</title>
+        <description>Java Micro Service API Generation</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Tue, 04 Dec 2018 14:32:17 +0000</pubDate>
+        <link>https://github.com/anupsaund/vertx-auto-swagger</link>
+        <guid isPermaLink="true">https://github.com/anupsaund/vertx-auto-swagger</guid>
+      </item>
+    
+      <item>
+        <title>rapido-web</title>
+        <description>An API design tool that facilitates the sketching phase of design.</description>
+        <category>OAS3/editors</category>
+        <pubDate>Fri, 14 Sep 2018 17:07:38 +0000</pubDate>
+        <link>https://rapidodesigner.com/</link>
+        <guid isPermaLink="true">https://rapidodesigner.com/</guid>
+      </item>
+    
+      <item>
+        <title>dredd</title>
+        <description>Language-agnostic HTTP API Testing Tool</description>
+        <category>OAS3/testing</category>
+        <pubDate>Thu, 24 Jan 2019 15:13:35 +0000</pubDate>
+        <link>https://github.com/apiaryio/dredd</link>
+        <guid isPermaLink="true">https://github.com/apiaryio/dredd</guid>
+      </item>
+    
+      <item>
+        <title>dredd-transactions</title>
+        <description>Compiles a list of HTTP transactions (request-response pairs) from an API description document</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Fri, 18 Jan 2019 16:15:55 +0000</pubDate>
+        <link>https://github.com/apiaryio/dredd-transactions</link>
+        <guid isPermaLink="true">https://github.com/apiaryio/dredd-transactions</guid>
+      </item>
+    
+      <item>
+        <title>fury-adapter-swagger</title>
+        <description>Swagger 2.0 parser adapter for Fury.js</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 11 Jan 2019 07:33:03 +0000</pubDate>
+        <link>https://github.com/apiaryio/fury-adapter-swagger/</link>
+        <guid isPermaLink="true">https://github.com/apiaryio/fury-adapter-swagger/</guid>
+      </item>
+    
+      <item>
+        <title>apicurio-studio</title>
+        <description>Open Source API Design</description>
+        <category>OAS3/editors</category>
+        <pubDate>Thu, 24 Jan 2019 17:58:54 +0000</pubDate>
+        <link>http://www.apicur.io/</link>
+        <guid isPermaLink="true">http://www.apicur.io/</guid>
+      </item>
+    
+      <item>
+        <title>@apigee</title>
+        <description>a127 is toolkit for modeling &amp; building rich, enterprise-class
+APIs in Node.js on your laptop. The focal point of a127 is the Swagger
+2.0 specification for defining and describing an API model. From the
+Swagger model you can generate clients, servers and interactive
+documentation for your API. From @apigee</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://github.com/apigee</link>
+        <guid isPermaLink="true">https://github.com/apigee</guid>
+      </item>
+    
+      <item>
+        <title>swagger-tools</title>
+        <description>A Node.js and browser module that provides tooling around Swagger.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 08:49:44 +0000</pubDate>
+        <link>https://github.com/apigee-127/swagger-tools</link>
+        <guid isPermaLink="true">https://github.com/apigee-127/swagger-tools</guid>
+      </item>
+    
+      <item>
+        <title>fusio</title>
+        <description>Open source API management platform</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Wed, 23 Jan 2019 03:02:04 +0000</pubDate>
+        <link>http://fusio-project.org/</link>
+        <guid isPermaLink="true">http://fusio-project.org/</guid>
+      </item>
+    
+      <item>
+        <title>psx-api</title>
+        <description>Parse and generate API specification formats</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sun, 20 Jan 2019 17:21:27 +0000</pubDate>
+        <link>http://phpsx.org</link>
+        <guid isPermaLink="true">http://phpsx.org</guid>
+      </item>
+    
+      <item>
+        <title>openapi.tools</title>
+        <description>A collection of Editors, Linters, Parsers, Code Generators,  Documentation, Testing</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Fri, 18 Jan 2019 17:37:11 +0000</pubDate>
+        <link>https://github.com/apisyouwonthate/openapi.tools</link>
+        <guid isPermaLink="true">https://github.com/apisyouwonthate/openapi.tools</guid>
+      </item>
+    
+      <item>
+        <title>beego</title>
+        <description>beego is an open-source, high-performance web framework for the Go programming language.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 10:46:26 +0000</pubDate>
+        <link>https://github.com/astaxie/beego</link>
+        <guid isPermaLink="true">https://github.com/astaxie/beego</guid>
+      </item>
+    
+      <item>
+        <title>oas3-chow-chow</title>
+        <description>Request and response validator against OpenAPI Specification 3</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sat, 01 Dec 2018 22:08:56 +0000</pubDate>
+        <link>https://github.com/atlassian/oas3-chow-chow</link>
+        <guid isPermaLink="true">https://github.com/atlassian/oas3-chow-chow</guid>
+      </item>
+    
+      <item>
+        <title>swagger_engine</title>
+        <description>[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 13 Aug 2018 00:16:20 +0000</pubDate>
+        <link>https://github.com/batdevis/swagger_engine</link>
+        <guid isPermaLink="true">https://github.com/batdevis/swagger_engine</guid>
+      </item>
+    
+      <item>
+        <title>swagger_engine</title>
+        <description>[LOOKING FOR MAINTAINER] swagger-ui as mountable rails engine</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 13 Aug 2018 00:16:20 +0000</pubDate>
+        <link>https://github.com/batdevis/swagger_engine</link>
+        <guid isPermaLink="true">https://github.com/batdevis/swagger_engine</guid>
+      </item>
+    
+      <item>
+        <title>openAPI</title>
+        <description>Reposository holding the API specifications of Brønnøysundregistrene</description>
+        <category>OAS3/instance</category>
+        <pubDate>Fri, 18 Jan 2019 08:57:14 +0000</pubDate>
+        <link>https://github.com/brreg/openAPI</link>
+        <guid isPermaLink="true">https://github.com/brreg/openAPI</guid>
+      </item>
+    
+      <item>
+        <title>php-swagger-test</title>
+        <description>A set of tools for test your REST calls based on the swagger documentation using PHPUnit</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 11:38:30 +0000</pubDate>
+        <link>https://github.com/byjg/php-swagger-test</link>
+        <guid isPermaLink="true">https://github.com/byjg/php-swagger-test</guid>
+      </item>
+    
+      <item>
+        <title>hippie-swagger</title>
+        <description>API testing tool with automatic swagger assertions</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 19:06:20 +0000</pubDate>
+        <link>https://github.com/cachecontrol/hippie-swagger</link>
+        <guid isPermaLink="true">https://github.com/cachecontrol/hippie-swagger</guid>
+      </item>
+    
+      <item>
+        <title>strut</title>
+        <description>An OpenAPI/Swagger manipulation library </description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 14 Jan 2019 04:16:44 +0000</pubDate>
+        <link>https://github.com/calcinai/strut</link>
+        <guid isPermaLink="true">https://github.com/calcinai/strut</guid>
+      </item>
+    
+      <item>
+        <title>oas-nodegen</title>
+        <description>A library for generating completely customizable code from the Open API Specification (FKA Swagger) RESTful API documentation using the scripting power of Node.js.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 14 Oct 2018 20:43:12 +0000</pubDate>
+        <link>https://github.com/capitalone/oas-nodegen</link>
+        <guid isPermaLink="true">https://github.com/capitalone/oas-nodegen</guid>
+      </item>
+    
+      <item>
+        <title>go-swagger</title>
+        <description>Swagger 2.0 implementation for go</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 00:09:39 +0000</pubDate>
+        <link>https://github.com/casualjim/go-swagger</link>
+        <guid isPermaLink="true">https://github.com/casualjim/go-swagger</guid>
+      </item>
+    
+      <item>
+        <title>kotlin-spring-mvc-template</title>
+        <description>12-factor compliant Spring MVC Kotlin template. Features automatic request/response validation and interactive API doc</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Wed, 05 Dec 2018 02:04:44 +0000</pubDate>
+        <link>https://github.com/cdimascio/kotlin-spring-mvc-template</link>
+        <guid isPermaLink="true">https://github.com/cdimascio/kotlin-spring-mvc-template</guid>
+      </item>
+    
+      <item>
+        <title>openapi-spring-webflux-validator</title>
+        <description>A friendly kotlin library to validate API endpoints using an OpenApi 3.0 and Swagger 2.0 specification</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 01 Jan 2019 13:12:36 +0000</pubDate>
+        <link>https://github.com/cdimascio/openapi-spring-webflux-validator</link>
+        <guid isPermaLink="true">https://github.com/cdimascio/openapi-spring-webflux-validator</guid>
+      </item>
+    
+      <item>
+        <title>php-openapi</title>
+        <description>READ OpenAPI yaml files and make the content accessable in PHP objects.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sat, 12 Jan 2019 09:25:47 +0000</pubDate>
+        <link>https://github.com/cebe/php-openapi</link>
+        <guid isPermaLink="true">https://github.com/cebe/php-openapi</guid>
+      </item>
+    
+      <item>
+        <title>listener-from-oas3-js</title>
+        <description>Javascript library which generates a native http server listener from a v3 open api spec</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 15 Oct 2018 17:17:18 +0000</pubDate>
+        <link>https://github.com/chrisdostert/listener-from-oas3-js</link>
+        <guid isPermaLink="true">https://github.com/chrisdostert/listener-from-oas3-js</guid>
+      </item>
+    
+      <item>
+        <title>tus-server-implementation</title>
+        <description>A java implementation of https://tus.io/protocols/resumable-upload.html protocol with vertx-web.</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Fri, 06 Jul 2018 10:19:58 +0000</pubDate>
+        <link>https://github.com/ckaratzas/tus-server-implementation</link>
+        <guid isPermaLink="true">https://github.com/ckaratzas/tus-server-implementation</guid>
+      </item>
+    
+      <item>
+        <title>vertx-openapi-spec-generator</title>
+        <description>Runtime Generation of OpenApi 3 specification from vertx routes.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 05 Dec 2018 06:21:15 +0000</pubDate>
+        <link>https://github.com/ckaratzas/vertx-openapi-spec-generator</link>
+        <guid isPermaLink="true">https://github.com/ckaratzas/vertx-openapi-spec-generator</guid>
+      </item>
+    
+      <item>
+        <title>django-tastypie-swagger</title>
+        <description>An adapter to use swagger-ui with django-tastypie.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 27 Oct 2018 18:18:52 +0000</pubDate>
+        <link>https://github.com/concentricsky/django-tastypie-swagger</link>
+        <guid isPermaLink="true">https://github.com/concentricsky/django-tastypie-swagger</guid>
+      </item>
+    
+      <item>
+        <title>exegesis-koa</title>
+        <description>Koa middleware to handle OpenAPI 3.x. </description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 25 Jun 2018 17:34:19 +0000</pubDate>
+        <link>https://github.com/confuser/exegesis-koa</link>
+        <guid isPermaLink="true">https://github.com/confuser/exegesis-koa</guid>
+      </item>
+    
+      <item>
+        <title>openapi-ui</title>
+        <description>React based OpenAPI 3.0+ documentation generator</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Sat, 05 Jan 2019 14:54:10 +0000</pubDate>
+        <link>https://github.com/contentjet/openapi-ui</link>
+        <guid isPermaLink="true">https://github.com/contentjet/openapi-ui</guid>
+      </item>
+    
+      <item>
+        <title>apisprout</title>
+        <description>Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation</description>
+        <category>OAS3/mock</category>
+        <pubDate>Thu, 24 Jan 2019 23:14:23 +0000</pubDate>
+        <link>https://github.com/danielgtaylor/apisprout</link>
+        <guid isPermaLink="true">https://github.com/danielgtaylor/apisprout</guid>
+      </item>
+    
+      <item>
+        <title>data-studio</title>
+        <description>DataStudio by Eviratec (datastudio.xyz) as a WordPress Theme</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Wed, 19 Dec 2018 02:10:03 +0000</pubDate>
+        <link>https://github.com/data-studio/data-studio</link>
+        <guid isPermaLink="true">https://github.com/data-studio/data-studio</guid>
+      </item>
+    
+      <item>
+        <title>fn-openapi-v3</title>
+        <description>Fn-powered serverless application OpenAPI v3.0.0 generator tool</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 18 Sep 2018 21:40:07 +0000</pubDate>
+        <link>https://github.com/denismakogon/fn-openapi-v3</link>
+        <guid isPermaLink="true">https://github.com/denismakogon/fn-openapi-v3</guid>
+      </item>
+    
+      <item>
+        <title>openapi-preprocessor</title>
+        <description>An authoring tool for OpenAPI specifications</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 17 Jan 2019 19:46:35 +0000</pubDate>
+        <link>https://github.com/dolmen-go/openapi-preprocessor</link>
+        <guid isPermaLink="true">https://github.com/dolmen-go/openapi-preprocessor</guid>
+      </item>
+    
+      <item>
+        <title>Swashbuckle</title>
+        <description>Seamlessly adds a swagger to WebApi projects!</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 21 Jan 2019 09:38:05 +0000</pubDate>
+        <link>https://github.com/domaindrivendev/Swashbuckle</link>
+        <guid isPermaLink="true">https://github.com/domaindrivendev/Swashbuckle</guid>
+      </item>
+    
+      <item>
+        <title>Swashbuckle.AspNetCore</title>
+        <description>Swagger tools for documenting API's built on ASP.NET Core</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 12:14:32 +0000</pubDate>
+        <link>https://github.com/domaindrivendev/Swashbuckle.AspNetCore</link>
+        <guid isPermaLink="true">https://github.com/domaindrivendev/Swashbuckle.AspNetCore</guid>
+      </item>
+    
+      <item>
+        <title>rswag</title>
+        <description>Seamlessly adds a Swagger to Rails-based API's</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 23:31:52 +0000</pubDate>
+        <link>https://github.com/domaindrivendev/rswag</link>
+        <guid isPermaLink="true">https://github.com/domaindrivendev/rswag</guid>
+      </item>
+    
+      <item>
+        <title>rspec-rails-swagger</title>
+        <description>Generate Swagger 2.0 docs for Rails apps using RSpec request specs. Test results can be captured as response examples.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 15 Dec 2018 06:55:56 +0000</pubDate>
+        <link>https://github.com/drewish/rspec-rails-swagger</link>
+        <guid isPermaLink="true">https://github.com/drewish/rspec-rails-swagger</guid>
+      </item>
+    
+      <item>
+        <title>openapi-auto-test</title>
+        <description>Automatically reads an OpenAPI 3.0 defintion and generates a Postman collection to be used with newman for automated API tests.</description>
+        <category>OAS3/testing</category>
+        <pubDate>Mon, 05 Nov 2018 16:43:16 +0000</pubDate>
+        <link>https://github.com/dtzar/openapi-auto-test</link>
+        <guid isPermaLink="true">https://github.com/dtzar/openapi-auto-test</guid>
+      </item>
+    
+      <item>
+        <title>pecan-swagger</title>
+        <description>some helpers to create swagger output from a pecan app</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 09 Jul 2018 08:12:41 +0000</pubDate>
+        <link>https://github.com/elmiko/pecan-swagger</link>
+        <guid isPermaLink="true">https://github.com/elmiko/pecan-swagger</guid>
+      </item>
+    
+      <item>
+        <title>go-restful</title>
+        <description>package for building REST-style Web Services using Google Go</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 00:46:26 +0000</pubDate>
+        <link>https://github.com/emicklei/go-restful</link>
+        <guid isPermaLink="true">https://github.com/emicklei/go-restful</guid>
+      </item>
+    
+      <item>
+        <title>open_api_schemas_to_markdown</title>
+        <description>Generate Markdown documentation from OpenAPI 3 Components Schemas</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Wed, 03 Oct 2018 11:27:40 +0000</pubDate>
+        <link>https://github.com/entrepreneur-interet-general/open_api_schemas_to_markdown</link>
+        <guid isPermaLink="true">https://github.com/entrepreneur-interet-general/open_api_schemas_to_markdown</guid>
+      </item>
+    
+      <item>
+        <title>class-validator-jsonschema</title>
+        <description>Convert class-validator-decorated classes into JSON schema</description>
+        <category>OAS3/converters</category>
+        <pubDate>Fri, 18 Jan 2019 18:33:21 +0000</pubDate>
+        <link>https://github.com/epiphone/class-validator-jsonschema</link>
+        <guid isPermaLink="true">https://github.com/epiphone/class-validator-jsonschema</guid>
+      </item>
+    
+      <item>
+        <title>routing-controllers-openapi</title>
+        <description>Runtime OpenAPI v3 schema generation for routing-controllers.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 22:21:03 +0000</pubDate>
+        <link>https://github.com/epiphone/routing-controllers-openapi</link>
+        <guid isPermaLink="true">https://github.com/epiphone/routing-controllers-openapi</guid>
+      </item>
+    
+      <item>
+        <title>openapi-php</title>
+        <description>📚Swagger / Open API 3.0 builder and validation library for PHP that helps you write valid specs.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sun, 30 Dec 2018 07:52:59 +0000</pubDate>
+        <link>https://github.com/erasys/openapi-php</link>
+        <guid isPermaLink="true">https://github.com/erasys/openapi-php</guid>
+      </item>
+    
+      <item>
+        <title>fleek-parser</title>
+        <description>A centralized parser for versioned parsing of swagger docs in fleek modules</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 14 Apr 2018 00:30:44 +0000</pubDate>
+        <link>https://github.com/fleekjs/fleek-parser</link>
+        <guid isPermaLink="true">https://github.com/fleekjs/fleek-parser</guid>
+      </item>
+    
+      <item>
+        <title>fleek-response</title>
+        <description>fleek-response is utility module for the fleek framework handling user responses</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 14 Apr 2018 00:30:04 +0000</pubDate>
+        <link>https://github.com/fleekjs/fleek-response</link>
+        <guid isPermaLink="true">https://github.com/fleekjs/fleek-response</guid>
+      </item>
+    
+      <item>
+        <title>fleek-router</title>
+        <description>a router for the fleek framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 31 Oct 2018 14:18:51 +0000</pubDate>
+        <link>https://github.com/fleekjs/fleek-router</link>
+        <guid isPermaLink="true">https://github.com/fleekjs/fleek-router</guid>
+      </item>
+    
+      <item>
+        <title>fleek-validator</title>
+        <description>Validation for the fleek framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 14 Apr 2018 00:29:01 +0000</pubDate>
+        <link>https://github.com/fleekjs/fleek-validator</link>
+        <guid isPermaLink="true">https://github.com/fleekjs/fleek-validator</guid>
+      </item>
+    
+      <item>
+        <title>swagger-express</title>
+        <description>Swagger + Express = {swagger-express}</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 08 Jan 2019 02:54:59 +0000</pubDate>
+        <link>https://github.com/fliptoo/swagger-express</link>
+        <guid isPermaLink="true">https://github.com/fliptoo/swagger-express</guid>
+      </item>
+    
+      <item>
+        <title>openapi3-generator</title>
+        <description>Use your API OpenAPI 3 definition to generate code, documentation, and literally anything you need.</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Wed, 02 Jan 2019 23:56:24 +0000</pubDate>
+        <link>https://github.com/fmvilas/openapi3-generator</link>
+        <guid isPermaLink="true">https://github.com/fmvilas/openapi3-generator</guid>
+      </item>
+    
+      <item>
+        <title>swagger-node-codegen</title>
+        <description>An OpenAPI 3.x/Swagger 2 code generator for Node.js</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Mon, 21 Jan 2019 04:34:26 +0000</pubDate>
+        <link>https://github.com/fmvilas/swagger-node-codegen</link>
+        <guid isPermaLink="true">https://github.com/fmvilas/swagger-node-codegen</guid>
+      </item>
+    
+      <item>
+        <title>swagger-blocks</title>
+        <description>Define and serve live-updating Swagger JSON for Ruby apps.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 23:33:57 +0000</pubDate>
+        <link>https://github.com/fotinakis/swagger-blocks</link>
+        <guid isPermaLink="true">https://github.com/fotinakis/swagger-blocks</guid>
+      </item>
+    
+      <item>
+        <title>openapi3-typescript-codegen</title>
+        <description>typescript codegen for OpenAPI 3</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Fri, 23 Nov 2018 04:47:11 +0000</pubDate>
+        <link>https://github.com/foxel/openapi3-typescript-codegen</link>
+        <guid isPermaLink="true">https://github.com/foxel/openapi3-typescript-codegen</guid>
+      </item>
+    
+      <item>
+        <title>route-swagger</title>
+        <description>Swagger integration for Pedestal and Tripod</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 14 Jan 2019 01:25:15 +0000</pubDate>
+        <link>https://github.com/frankiesardo/pedestal-swagger</link>
+        <guid isPermaLink="true">https://github.com/frankiesardo/pedestal-swagger</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPITypeProvider</title>
+        <description>F# type provider for Open API specification</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 15 Jan 2019 12:35:06 +0000</pubDate>
+        <link>https://github.com/fsprojects/OpenAPITypeProvider</link>
+        <guid isPermaLink="true">https://github.com/fsprojects/OpenAPITypeProvider</guid>
+      </item>
+    
+      <item>
+        <title>multi-file-oas-example</title>
+        <description>An example of multi file OpenAPI Specification 3.0</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 26 Jul 2018 00:33:19 +0000</pubDate>
+        <link>https://github.com/funa1g/multi-file-oas-example</link>
+        <guid isPermaLink="true">https://github.com/funa1g/multi-file-oas-example</guid>
+      </item>
+    
+      <item>
+        <title>flask-swagger</title>
+        <description>A swagger 2.0 spec extractor for flask</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 14 Jan 2019 04:08:43 +0000</pubDate>
+        <link>https://github.com/gangverk/flask-swagger</link>
+        <guid isPermaLink="true">https://github.com/gangverk/flask-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-codegen-maven-plugin</title>
+        <description>A Maven plugin to support the swagger code generation project</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 14 Dec 2018 21:33:19 +0000</pubDate>
+        <link>https://github.com/garethjevans/swagger-codegen-maven-plugin</link>
+        <guid isPermaLink="true">https://github.com/garethjevans/swagger-codegen-maven-plugin</guid>
+      </item>
+    
+      <item>
+        <title>swaggerize</title>
+        <description>OpenApi 2.0 aka Swagger plugin for D programming language.</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 03 Apr 2018 09:11:03 +0000</pubDate>
+        <link>https://github.com/gedaiu/swaggarize</link>
+        <guid isPermaLink="true">https://github.com/gedaiu/swaggarize</guid>
+      </item>
+    
+      <item>
+        <title>grpc-gateway</title>
+        <description>gRPC to JSON proxy generator following the gRPC HTTP spec</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 18:48:41 +0000</pubDate>
+        <link>https://github.com/gengo/grpc-gateway</link>
+        <guid isPermaLink="true">https://github.com/gengo/grpc-gateway</guid>
+      </item>
+    
+      <item>
+        <title>kin-openapi</title>
+        <description>OpenAPI 3.0 implementation for Go (parsing, converting, validation, and more)</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 06:16:43 +0000</pubDate>
+        <link>https://github.com/getkin/kin-openapi</link>
+        <guid isPermaLink="true">https://github.com/getkin/kin-openapi</guid>
+      </item>
+    
+      <item>
+        <title>spray-swagger</title>
+        <description>spray-swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 24 Jul 2018 19:22:25 +0000</pubDate>
+        <link>https://github.com/gettyimages/spray-swagger</link>
+        <guid isPermaLink="true">https://github.com/gettyimages/spray-swagger</guid>
+      </item>
+    
+      <item>
+        <title>hapi-swagger</title>
+        <description>A Swagger interface for HAPI</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 23:48:47 +0000</pubDate>
+        <link>https://github.com/glennjones/hapi-swagger</link>
+        <guid isPermaLink="true">https://github.com/glennjones/hapi-swagger</guid>
+      </item>
+    
+      <item>
+        <title>oas</title>
+        <description>OpenAPI Spec builder in go</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 02:49:45 +0000</pubDate>
+        <link>https://github.com/go-courier/oas</link>
+        <guid isPermaLink="true">https://github.com/go-courier/oas</guid>
+      </item>
+    
+      <item>
+        <title>go-swagger</title>
+        <description>Swagger 2.0 implementation for go</description>
+        <category>OAS2/frameworks</category>
+        <pubDate>Fri, 25 Jan 2019 00:09:39 +0000</pubDate>
+        <link>https://github.com/go-swagger/go-swagger</link>
+        <guid isPermaLink="true">https://github.com/go-swagger/go-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-assert</title>
+        <description>enable to assert swagger doc keys and API response</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 07 May 2018 17:43:57 +0000</pubDate>
+        <link>https://github.com/gong023/swagger-assert</link>
+        <guid isPermaLink="true">https://github.com/gong023/swagger-assert</guid>
+      </item>
+    
+      <item>
+        <title>gnostic</title>
+        <description>A compiler for APIs described by the OpenAPI Specification with plugins for code generation and other API support tasks.</description>
+        <category>OAS3/converters</category>
+        <pubDate>Mon, 21 Jan 2019 00:30:31 +0000</pubDate>
+        <link>https://github.com/googleapis/gnostic</link>
+        <guid isPermaLink="true">https://github.com/googleapis/gnostic</guid>
+      </item>
+    
+      <item>
+        <title>swagger</title>
+        <description>A php library to manipulate swagger specifications</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 16 Sep 2018 14:20:27 +0000</pubDate>
+        <link>https://github.com/gossi/swagger</link>
+        <guid isPermaLink="true">https://github.com/gossi/swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-py-codegen</title>
+        <description>a Python web framework generator supports Flask, Tornado, Falcon, Sanic</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 03:50:09 +0000</pubDate>
+        <link>https://github.com/guokr/swagger-py-codegen</link>
+        <guid isPermaLink="true">https://github.com/guokr/swagger-py-codegen</guid>
+      </item>
+    
+      <item>
+        <title>aiohttp-swagger3</title>
+        <description>Package for validating aiohttp requests using swagger specification 3.0</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Tue, 22 Jan 2019 18:34:54 +0000</pubDate>
+        <link>https://github.com/hh-h/aiohttp-swagger3</link>
+        <guid isPermaLink="true">https://github.com/hh-h/aiohttp-swagger3</guid>
+      </item>
+    
+      <item>
+        <title>cowboy_swagger</title>
+        <description>Swagger integration for Cowboy (built on trails)</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 14 Dec 2018 11:31:35 +0000</pubDate>
+        <link>https://github.com/inaka/cowboy-swagger</link>
+        <guid isPermaLink="true">https://github.com/inaka/cowboy-swagger</guid>
+      </item>
+    
+      <item>
+        <title>oas-generator</title>
+        <description>NodeJS RESTfull APIs scaffolding based OpenAPI 3.x specs using oas-tools and express.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 12:58:39 +0000</pubDate>
+        <link>https://github.com/isa-group/oas-generator</link>
+        <guid isPermaLink="true">https://github.com/isa-group/oas-generator</guid>
+      </item>
+    
+      <item>
+        <title>oas-tools</title>
+        <description>NodeJS module to manage RESTful APIs defined with OpenAPI 3.0 Specs over express servers.</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Wed, 23 Jan 2019 08:54:48 +0000</pubDate>
+        <link>https://github.com/isa-group/oas-tools</link>
+        <guid isPermaLink="true">https://github.com/isa-group/oas-tools</guid>
+      </item>
+    
+      <item>
+        <title>open-api</title>
+        <description>[READ-ONLY] Subtree split of Jane OpenAPI library</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 12 Dec 2018 09:12:56 +0000</pubDate>
+        <link>https://github.com/janephp/open-api</link>
+        <guid isPermaLink="true">https://github.com/janephp/open-api</guid>
+      </item>
+    
+      <item>
+        <title>open-api</title>
+        <description>[READ-ONLY] Subtree split of Jane OpenAPI library</description>
+        <category>OAS2/sdk</category>
+        <pubDate>Wed, 12 Dec 2018 09:12:56 +0000</pubDate>
+        <link>https://github.com/janephp/open-api</link>
+        <guid isPermaLink="true">https://github.com/janephp/open-api</guid>
+      </item>
+    
+      <item>
+        <title>prance</title>
+        <description>Resolving Swagger/OpenAPI 2.0 and 3.0 Parser</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 17 Dec 2018 19:11:48 +0000</pubDate>
+        <link>https://github.com/jfinkhaeuser/prance</link>
+        <guid isPermaLink="true">https://github.com/jfinkhaeuser/prance</guid>
+      </item>
+    
+      <item>
+        <title>py-openapilib</title>
+        <description>Python 3.6 OpenAPI 3 Object Model - built with attrs</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 26 Mar 2018 15:02:46 +0000</pubDate>
+        <link>https://github.com/joar/py-openapilib</link>
+        <guid isPermaLink="true">https://github.com/joar/py-openapilib</guid>
+      </item>
+    
+      <item>
+        <title>jester</title>
+        <description>Jester - the Jolie rEST routER</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 08 Apr 2018 16:56:01 +0000</pubDate>
+        <link>https://github.com/jolie/jester</link>
+        <guid isPermaLink="true">https://github.com/jolie/jester</guid>
+      </item>
+    
+      <item>
+        <title>swagger2postman</title>
+        <description>Create a Postman collection from live Swagger documentation</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 09 Dec 2018 19:30:06 +0000</pubDate>
+        <link>https://github.com/josephpconley/swagger2postman</link>
+        <guid isPermaLink="true">https://github.com/josephpconley/swagger2postman</guid>
+      </item>
+    
+      <item>
+        <title>node-swagger-mongodb</title>
+        <description>lightweight swagger-ui crud-api backed by mongodb</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 24 Sep 2018 11:45:20 +0000</pubDate>
+        <link>https://github.com/kaizhu256/node-swagger-mongodb</link>
+        <guid isPermaLink="true">https://github.com/kaizhu256/node-swagger-mongodb</guid>
+      </item>
+    
+      <item>
+        <title>pyramid-oas3</title>
+        <description></description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 23 Jan 2019 15:17:25 +0000</pubDate>
+        <link>https://github.com/kazuki/pyramid-oas3</link>
+        <guid isPermaLink="true">https://github.com/kazuki/pyramid-oas3</guid>
+      </item>
+    
+      <item>
+        <title>swagger-validator</title>
+        <description>Jax-Rs validator for swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 03 Jul 2017 05:55:08 +0000</pubDate>
+        <link>https://github.com/kenshoo/swagger-validator</link>
+        <guid isPermaLink="true">https://github.com/kenshoo/swagger-validator</guid>
+      </item>
+    
+      <item>
+        <title>openapi3_parser</title>
+        <description>Open API 3 Parser/Validator for Ruby</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 17 Jan 2019 05:46:58 +0000</pubDate>
+        <link>https://github.com/kevindew/openapi3_parser</link>
+        <guid isPermaLink="true">https://github.com/kevindew/openapi3_parser</guid>
+      </item>
+    
+      <item>
+        <title>Raisin</title>
+        <description>Raisin - a REST API micro framework for Perl 🐫 🐪</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 20 Dec 2018 14:47:57 +0000</pubDate>
+        <link>https://github.com/khrt/Raisin</link>
+        <guid isPermaLink="true">https://github.com/khrt/Raisin</guid>
+      </item>
+    
+      <item>
+        <title>ecosystem-api</title>
+        <description>Apis for client server communication</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Wed, 16 Jan 2019 10:37:57 +0000</pubDate>
+        <link>https://github.com/kinecosystem/ecosystem-api</link>
+        <guid isPermaLink="true">https://github.com/kinecosystem/ecosystem-api</guid>
+      </item>
+    
+      <item>
+        <title>open-api</title>
+        <description>A Monorepo of various packages to power OpenAPI in node</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 15:51:27 +0000</pubDate>
+        <link>https://github.com/kogosoftwarellc/express-openapi</link>
+        <guid isPermaLink="true">https://github.com/kogosoftwarellc/express-openapi</guid>
+      </item>
+    
+      <item>
+        <title>oapi3codegen</title>
+        <description>Code generation OpenAPI 3 —&gt; TypeScript (interfaces, enums, types)</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Tue, 20 Nov 2018 10:21:45 +0000</pubDate>
+        <link>https://github.com/koshevy/oapi3codegen</link>
+        <guid isPermaLink="true">https://github.com/koshevy/oapi3codegen</guid>
+      </item>
+    
+      <item>
+        <title>data-fair</title>
+        <description>Make your data Findable, Accessible, Interoperable, Reusable</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 24 Jan 2019 10:42:58 +0000</pubDate>
+        <link>https://github.com/koumoul-dev/data-fair</link>
+        <guid isPermaLink="true">https://github.com/koumoul-dev/data-fair</guid>
+      </item>
+    
+      <item>
+        <title>openapi-viewer</title>
+        <description>Browse and test a REST API described with the OpenAPI 3.0 Specification</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 17 Jan 2019 09:59:55 +0000</pubDate>
+        <link>https://github.com/koumoul-dev/openapi-viewer</link>
+        <guid isPermaLink="true">https://github.com/koumoul-dev/openapi-viewer</guid>
+      </item>
+    
+      <item>
+        <title>soas</title>
+        <description>Semantic Open API Specification library</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 04 Dec 2017 16:44:02 +0000</pubDate>
+        <link>https://github.com/koumoul-dev/soas</link>
+        <guid isPermaLink="true">https://github.com/koumoul-dev/soas</guid>
+      </item>
+    
+      <item>
+        <title>vue-openapi</title>
+        <description>OpenAPI viewer component for VueJS</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Tue, 08 Jan 2019 14:17:09 +0000</pubDate>
+        <link>https://github.com/koumoul-dev/vue-openapi</link>
+        <guid isPermaLink="true">https://github.com/koumoul-dev/vue-openapi</guid>
+      </item>
+    
+      <item>
+        <title>generator-swaggerize</title>
+        <description>Yeoman generator for design-driven apis with swagger 2.0 and krakenjs/swaggerize tools.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 30 Dec 2018 10:45:46 +0000</pubDate>
+        <link>https://github.com/krakenjs/generator-swaggerize</link>
+        <guid isPermaLink="true">https://github.com/krakenjs/generator-swaggerize</guid>
+      </item>
+    
+      <item>
+        <title>swaggerize-express</title>
+        <description>Design-driven apis with swagger 2.0 and express.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 10:06:57 +0000</pubDate>
+        <link>https://github.com/krakenjs/swaggerize-express</link>
+        <guid isPermaLink="true">https://github.com/krakenjs/swaggerize-express</guid>
+      </item>
+    
+      <item>
+        <title>hapi-openapi</title>
+        <description>Build design-driven apis with OpenAPI (formerly swagger) 2.0 and hapi.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 30 Dec 2018 10:53:12 +0000</pubDate>
+        <link>https://github.com/krakenjs/swaggerize-hapi</link>
+        <guid isPermaLink="true">https://github.com/krakenjs/swaggerize-hapi</guid>
+      </item>
+    
+      <item>
+        <title>kumuluzee-openapi</title>
+        <description>KumuluzEE OpenAPI extension provides powerful tools to incorporate and visualize the OpenAPI 3 specification to your microservice.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 16 Nov 2018 20:54:17 +0000</pubDate>
+        <link>https://github.com/kumuluz/kumuluzee-openapi</link>
+        <guid isPermaLink="true">https://github.com/kumuluz/kumuluzee-openapi</guid>
+      </item>
+    
+      <item>
+        <title>aio-openapi</title>
+        <description>Open API utilities</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 24 Jan 2019 17:41:11 +0000</pubDate>
+        <link>https://github.com/lendingblock/aio-openapi</link>
+        <guid isPermaLink="true">https://github.com/lendingblock/aio-openapi</guid>
+      </item>
+    
+      <item>
+        <title>API-Flow</title>
+        <description>Universal data structure and converter for API formats (Swagger, RAML, Paw, Postman…)</description>
+        <category>OAS2/converters</category>
+        <pubDate>Thu, 24 Jan 2019 09:10:35 +0000</pubDate>
+        <link>https://github.com/luckymarmot/API-Flow</link>
+        <guid isPermaLink="true">https://github.com/luckymarmot/API-Flow</guid>
+      </item>
+    
+      <item>
+        <title>api-spec-converter</title>
+        <description>Convert API descriptions between popular formats such as OpenAPI(fka Swagger), RAML, API Blueprint, WADL, etc.</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 16:09:56 +0000</pubDate>
+        <link>https://github.com/lucybot/api-spec-converter</link>
+        <guid isPermaLink="true">https://github.com/lucybot/api-spec-converter</guid>
+      </item>
+    
+      <item>
+        <title>smogger</title>
+        <description>Simple mock server for Swagger (Open API v3) specification</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Tue, 22 Jan 2019 18:49:22 +0000</pubDate>
+        <link>https://github.com/m3-moretv/smogger</link>
+        <guid isPermaLink="true">https://github.com/m3-moretv/smogger</guid>
+      </item>
+    
+      <item>
+        <title>ratify</title>
+        <description>A Hapi plugin for validating the schema of path, query, request body, and response body params using JSON-schema</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 09 Jun 2018 09:05:39 +0000</pubDate>
+        <link>https://github.com/mac-/ratify</link>
+        <guid isPermaLink="true">https://github.com/mac-/ratify</guid>
+      </item>
+    
+      <item>
+        <title>SwagDoc</title>
+        <description>Create a public documentation REST API using Swagger 2.0 for Delphi.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 16 Jan 2019 13:50:46 +0000</pubDate>
+        <link>https://github.com/marcelojaloto/SwagDoc</link>
+        <guid isPermaLink="true">https://github.com/marcelojaloto/SwagDoc</guid>
+      </item>
+    
+      <item>
+        <title>django-rest-swagger</title>
+        <description>Swagger Documentation Generator for Django REST Framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 06:11:37 +0000</pubDate>
+        <link>https://github.com/marcgibbons/django-rest-swagger</link>
+        <guid isPermaLink="true">https://github.com/marcgibbons/django-rest-swagger</guid>
+      </item>
+    
+      <item>
+        <title>apispec</title>
+        <description>A pluggable API specification generator. Currently supports the OpenAPI Specification (f.k.a. the Swagger specification)..</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 09:31:59 +0000</pubDate>
+        <link>https://github.com/marshmallow-code/apispec</link>
+        <guid isPermaLink="true">https://github.com/marshmallow-code/apispec</guid>
+      </item>
+    
+      <item>
+        <title>disapi</title>
+        <description>An API around Walt Disney World Resort.</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Wed, 09 Jan 2019 01:22:59 +0000</pubDate>
+        <link>https://github.com/matthewtrask/disapi</link>
+        <guid isPermaLink="true">https://github.com/matthewtrask/disapi</guid>
+      </item>
+    
+      <item>
+        <title>openapi-gui</title>
+        <description>GUI / visual editor for creating and editing OpenAPI / Swagger definitions</description>
+        <category>OAS3/editors</category>
+        <pubDate>Thu, 24 Jan 2019 07:43:47 +0000</pubDate>
+        <link>https://mermade.github.io/openapi-gui</link>
+        <guid isPermaLink="true">https://mermade.github.io/openapi-gui</guid>
+      </item>
+    
+      <item>
+        <title>widdershins</title>
+        <description>OpenAPI / Swagger, AsyncAPI &amp; Semoasa definitions to Slate / Shins compatible markdown</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 24 Jan 2019 00:10:23 +0000</pubDate>
+        <link>https://github.com/mermade/widdershins</link>
+        <guid isPermaLink="true">https://github.com/mermade/widdershins</guid>
+      </item>
+    
+      <item>
+        <title>openapi3-ts</title>
+        <description>TS Model &amp; utils for OpenAPI 3.0.x contracts.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 18:28:38 +0000</pubDate>
+        <link>https://github.com/metadevpro/openapi3-ts</link>
+        <guid isPermaLink="true">https://github.com/metadevpro/openapi3-ts</guid>
+      </item>
+    
+      <item>
+        <title>compojure-api</title>
+        <description>Sweet web apis with Compojure &amp; Swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 04:24:48 +0000</pubDate>
+        <link>https://github.com/metosin/compojure-api</link>
+        <guid isPermaLink="true">https://github.com/metosin/compojure-api</guid>
+      </item>
+    
+      <item>
+        <title>fnhouse-swagger</title>
+        <description>Swagger integration for fnhouse</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 07 Oct 2016 15:03:01 +0000</pubDate>
+        <link>https://github.com/metosin/fnhouse-swagger</link>
+        <guid isPermaLink="true">https://github.com/metosin/fnhouse-swagger</guid>
+      </item>
+    
+      <item>
+        <title>ring-swagger</title>
+        <description>Swagger Spec for Clojure Web Apps</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 13:21:41 +0000</pubDate>
+        <link>https://github.com/metosin/ring-swagger</link>
+        <guid isPermaLink="true">https://github.com/metosin/ring-swagger</guid>
+      </item>
+    
+      <item>
+        <title>openapi-ext</title>
+        <description>Some extensions for MicroProfile OpenAPI</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 30 Nov 2018 07:40:15 +0000</pubDate>
+        <link>https://github.com/microprofile-extensions/openapi-ext</link>
+        <guid isPermaLink="true">https://github.com/microprofile-extensions/openapi-ext</guid>
+      </item>
+    
+      <item>
+        <title>pyswagger</title>
+        <description>An OpenAPI (fka Swagger) client &amp; converter in python, which is type-safe, dynamic, spec-compliant.</description>
+        <category>OAS2/converters</category>
+        <pubDate>Thu, 24 Jan 2019 09:27:42 +0000</pubDate>
+        <link>https://github.com/mission-liao/pyswagger</link>
+        <guid isPermaLink="true">https://github.com/mission-liao/pyswagger</guid>
+      </item>
+    
+      <item>
+        <title>got-swag</title>
+        <description>:monkey_face: A tool to test Swagger-powered APIs automatically through monkey testing and custom test suites</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 07 Dec 2018 13:53:52 +0000</pubDate>
+        <link>https://github.com/mobilcom-debitel/got-swag</link>
+        <guid isPermaLink="true">https://github.com/mobilcom-debitel/got-swag</guid>
+      </item>
+    
+      <item>
+        <title>pokemock</title>
+        <description>A mock server generated from a Swagger file</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 02 Dec 2018 07:27:21 +0000</pubDate>
+        <link>https://github.com/mobilcom-debitel/pokemock</link>
+        <guid isPermaLink="true">https://github.com/mobilcom-debitel/pokemock</guid>
+      </item>
+    
+      <item>
+        <title>modern-ruby</title>
+        <description>An OpenAPI-first web server for Ruby/Rack.</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 06 Dec 2018 23:56:22 +0000</pubDate>
+        <link>https://github.com/modern-project/modern-ruby</link>
+        <guid isPermaLink="true">https://github.com/modern-project/modern-ruby</guid>
+      </item>
+    
+      <item>
+        <title>vue-admin</title>
+        <description>Vue.js based administrative interface</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Wed, 02 Jan 2019 00:01:35 +0000</pubDate>
+        <link>https://github.com/mrTimofey/vue-admin</link>
+        <guid isPermaLink="true">https://github.com/mrTimofey/vue-admin</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPI-Viewer</title>
+        <description>OpenApi viewer Implemented using Vue</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Thu, 17 Jan 2019 18:44:06 +0000</pubDate>
+        <link>https://github.com/mrin9/OpenAPI-Viewer</link>
+        <guid isPermaLink="true">https://github.com/mrin9/OpenAPI-Viewer</guid>
+      </item>
+    
+      <item>
+        <title>RapiDoc</title>
+        <description>RapiDoc - Custom-Element for OpenAPI Spec</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 20:25:17 +0000</pubDate>
+        <link>https://github.com/mrin9/RapiDoc</link>
+        <guid isPermaLink="true">https://github.com/mrin9/RapiDoc</guid>
+      </item>
+    
+      <item>
+        <title>muskrat</title>
+        <description>:rat: Generate project metadata</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 15 Oct 2018 05:34:20 +0000</pubDate>
+        <link>https://github.com/muskratjs/muskrat</link>
+        <guid isPermaLink="true">https://github.com/muskratjs/muskrat</guid>
+      </item>
+    
+      <item>
+        <title>octohipster</title>
+        <description>[UNMAINTAINED] A hypermedia REST HTTP API library for Clojure</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 03 Oct 2017 10:19:40 +0000</pubDate>
+        <link>https://github.com/myfreeweb/octohipster</link>
+        <guid isPermaLink="true">https://github.com/myfreeweb/octohipster</guid>
+      </item>
+    
+      <item>
+        <title>go-openapi</title>
+        <description>OpenAPI Specification (OAS) 3.0 implementation for Go</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 21 Jan 2019 04:23:31 +0000</pubDate>
+        <link>https://github.com/nasa9084/go-openapi</link>
+        <guid isPermaLink="true">https://github.com/nasa9084/go-openapi</guid>
+      </item>
+    
+      <item>
+        <title>NelmioApiDocBundle</title>
+        <description>Generates documentation for your REST API from annotations</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 03:23:56 +0000</pubDate>
+        <link>https://github.com/nelmio/NelmioApiDocBundle</link>
+        <guid isPermaLink="true">https://github.com/nelmio/NelmioApiDocBundle</guid>
+      </item>
+    
+      <item>
+        <title>light-rest-4j</title>
+        <description>A RESTful framework built on top of light-4j with both Swagger 2.0 and OpenAPI 3.0 supports</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Wed, 16 Jan 2019 01:43:26 +0000</pubDate>
+        <link>https://github.com/networknt/light-rest-4j</link>
+        <guid isPermaLink="true">https://github.com/networknt/light-rest-4j</guid>
+      </item>
+    
+      <item>
+        <title>openapi-parser</title>
+        <description>A light-weight, fast OpenAPI 3.0 parser and validator with minimum third party dependencies</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Sun, 13 Jan 2019 17:35:12 +0000</pubDate>
+        <link>https://github.com/networknt/openapi-parser</link>
+        <guid isPermaLink="true">https://github.com/networknt/openapi-parser</guid>
+      </item>
+    
+      <item>
+        <title>cowboy</title>
+        <description>Small, fast, modern HTTP server for Erlang/OTP.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 17:26:41 +0000</pubDate>
+        <link>https://github.com/ninenines/cowboy</link>
+        <guid isPermaLink="true">https://github.com/ninenines/cowboy</guid>
+      </item>
+    
+      <item>
+        <title>pyramid_openapi3</title>
+        <description>Pyramid integration with openapi-core and openapi-spec-validator</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 18 Jan 2019 14:54:29 +0000</pubDate>
+        <link>https://github.com/niteoweb/pyramid_openapi3</link>
+        <guid isPermaLink="true">https://github.com/niteoweb/pyramid_openapi3</guid>
+      </item>
+    
+      <item>
+        <title>flask-restplus</title>
+        <description>Fully featured framework for fast, easy and documented API development with Flask</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 10:00:38 +0000</pubDate>
+        <link>https://github.com/noirbizarre/flask-restplus</link>
+        <guid isPermaLink="true">https://github.com/noirbizarre/flask-restplus</guid>
+      </item>
+    
+      <item>
+        <title>svelte</title>
+        <description>Dynamic Ruby API Client from Swagger JSON Spec</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 18 Jan 2019 13:08:44 +0000</pubDate>
+        <link>https://github.com/notonthehighstreet/svelte</link>
+        <guid isPermaLink="true">https://github.com/notonthehighstreet/svelte</guid>
+      </item>
+    
+      <item>
+        <title>odata-openapi</title>
+        <description>OASIS OData TC: Tools for producing API descriptions for OData services that adhere to the OpenAPI Specification</description>
+        <category>OAS3/converters</category>
+        <pubDate>Fri, 18 Jan 2019 12:24:22 +0000</pubDate>
+        <link>https://github.com/oasis-tcs/odata-openapi</link>
+        <guid isPermaLink="true">https://github.com/oasis-tcs/odata-openapi</guid>
+      </item>
+    
+      <item>
+        <title>oatpp-swagger</title>
+        <description>OpenApi 3.0.0 docs + Swagger UI for oatpp services</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 31 Oct 2018 22:57:15 +0000</pubDate>
+        <link>https://github.com/oatpp/oatpp-swagger</link>
+        <guid isPermaLink="true">https://github.com/oatpp/oatpp-swagger</guid>
+      </item>
+    
+      <item>
+        <title>vertx-oas</title>
+        <description>Generates a Swagger/OpenAPI specification from a Vert.x Web Router.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 19 Oct 2018 06:31:27 +0000</pubDate>
+        <link>https://github.com/outofcoffee/vertx-oas</link>
+        <guid isPermaLink="true">https://github.com/outofcoffee/vertx-oas</guid>
+      </item>
+    
+      <item>
+        <title>openapi-spec-validator</title>
+        <description>OpenAPI Spec validator</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 11 Jan 2019 15:13:39 +0000</pubDate>
+        <link>https://github.com/p1c2u/openapi-spec-validator</link>
+        <guid isPermaLink="true">https://github.com/p1c2u/openapi-spec-validator</guid>
+      </item>
+    
+      <item>
+        <title>openapi-mock</title>
+        <description>Start a mock server from an OpenAPI/Swagger spec file</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 10 Jan 2019 13:34:58 +0000</pubDate>
+        <link>https://github.com/penx/openapi-mock</link>
+        <guid isPermaLink="true">https://github.com/penx/openapi-mock</guid>
+      </item>
+    
+      <item>
+        <title>py-openapi-schema-to-json-schema</title>
+        <description>Python port of https://github.com/mikunn/openapi-schema-to-json-schema</description>
+        <category>OAS3/converters</category>
+        <pubDate>Tue, 22 Jan 2019 17:15:05 +0000</pubDate>
+        <link>https://github.com/pglass/py-openapi-schema-to-json-schema</link>
+        <guid isPermaLink="true">https://github.com/pglass/py-openapi-schema-to-json-schema</guid>
+      </item>
+    
+      <item>
+        <title>vs-openapi-designer</title>
+        <description>OpenApi Designer Extension for VS Code</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 21 Jan 2019 09:17:39 +0000</pubDate>
+        <link>https://github.com/philosowaffle/vs-openapi-designer</link>
+        <guid isPermaLink="true">https://github.com/philosowaffle/vs-openapi-designer</guid>
+      </item>
+    
+      <item>
+        <title>falsy</title>
+        <description>FAL.S.Y python api framework(the framework for using falcon, swagger, yaml together)</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 11 Dec 2018 09:09:55 +0000</pubDate>
+        <link>https://github.com/pingf/falsy</link>
+        <guid isPermaLink="true">https://github.com/pingf/falsy</guid>
+      </item>
+    
+      <item>
+        <title>flex</title>
+        <description>Swagger schema validator</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 19 Dec 2018 19:58:57 +0000</pubDate>
+        <link>https://github.com/pipermerriam/flex</link>
+        <guid isPermaLink="true">https://github.com/pipermerriam/flex</guid>
+      </item>
+    
+      <item>
+        <title>openapi-to-postman</title>
+        <description>Plugin for converting OpenAPI 3.0 specs to the Postman Collection (v2) format</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 23:24:32 +0000</pubDate>
+        <link>https://github.com/postmanlabs/openapi-to-postman</link>
+        <guid isPermaLink="true">https://github.com/postmanlabs/openapi-to-postman</guid>
+      </item>
+    
+      <item>
+        <title>openapi-diff</title>
+        <description>Utility for comparing two OpenAPI specifications.</description>
+        <category>OAS3/miscellaneous</category>
+        <pubDate>Sun, 20 Jan 2019 12:43:36 +0000</pubDate>
+        <link>https://github.com/quen2404/openapi-diff</link>
+        <guid isPermaLink="true">https://github.com/quen2404/openapi-diff</guid>
+      </item>
+    
+      <item>
+        <title>sticker</title>
+        <description>Sticker is a powerful yet boilerplate-free alternative to writing your web API.</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 27 Sep 2018 09:08:12 +0000</pubDate>
+        <link>https://github.com/rafaelcaricio/sticker</link>
+        <guid isPermaLink="true">https://github.com/rafaelcaricio/sticker</guid>
+      </item>
+    
+      <item>
+        <title>swaggydoc</title>
+        <description>Swagger Documentation for Grails Controllers Plugin</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 28 Aug 2018 07:22:00 +0000</pubDate>
+        <link>https://github.com/rahulsom/swaggydoc</link>
+        <guid isPermaLink="true">https://github.com/rahulsom/swaggydoc</guid>
+      </item>
+    
+      <item>
+        <title>flask-restful-swagger</title>
+        <description>A Swagger spec extractor for flask-restful</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 05:50:39 +0000</pubDate>
+        <link>https://github.com/rantav/flask-restful-swagger</link>
+        <guid isPermaLink="true">https://github.com/rantav/flask-restful-swagger</guid>
+      </item>
+    
+      <item>
+        <title>goa</title>
+        <description>Design-based APIs and microservices in Go</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 21:09:48 +0000</pubDate>
+        <link>https://github.com/raphael/goa</link>
+        <guid isPermaLink="true">https://github.com/raphael/goa</guid>
+      </item>
+    
+      <item>
+        <title>swagger-docs</title>
+        <description>Generates swagger-ui json files for Rails APIs with a simple DSL.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 08:44:23 +0000</pubDate>
+        <link>https://github.com/richhollis/swagger-docs</link>
+        <guid isPermaLink="true">https://github.com/richhollis/swagger-docs</guid>
+      </item>
+    
+      <item>
+        <title>simple-flask-project</title>
+        <description>Generate OpenAPI spec from Flask routes</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 06 Aug 2018 01:50:06 +0000</pubDate>
+        <link>https://github.com/riddhi89/simple-flask-project</link>
+        <guid isPermaLink="true">https://github.com/riddhi89/simple-flask-project</guid>
+      </item>
+    
+      <item>
+        <title>Steamer</title>
+        <description>Vapor simple CRUD-server generator</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 03 Oct 2018 00:09:34 +0000</pubDate>
+        <link>https://github.com/rinold/Steamer</link>
+        <guid isPermaLink="true">https://github.com/rinold/Steamer</guid>
+      </item>
+    
+      <item>
+        <title>flasgger</title>
+        <description>Easy OpenAPI specs and Swagger UI for your Flask API</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 07:39:29 +0000</pubDate>
+        <link>https://github.com/rochacbruno/flasgger</link>
+        <guid isPermaLink="true">https://github.com/rochacbruno/flasgger</guid>
+      </item>
+    
+      <item>
+        <title>grape-swagger</title>
+        <description>Add OAPI/swagger v2.0 compliant documentation to your grape API</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 16 Jan 2019 12:14:28 +0000</pubDate>
+        <link>https://github.com/ruby-grape/grape-swagger</link>
+        <guid isPermaLink="true">https://github.com/ruby-grape/grape-swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-jaxrs-doclet</title>
+        <description>swagger-jaxrs-doclet</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 02 Jan 2019 07:51:56 +0000</pubDate>
+        <link>https://github.com/ryankennedy/swagger-jaxrs-doclet</link>
+        <guid isPermaLink="true">https://github.com/ryankennedy/swagger-jaxrs-doclet</guid>
+      </item>
+    
+      <item>
+        <title>sleeplessinslc</title>
+        <description>Demo code from </description>
+        <category>OAS3/documentation</category>
+        <pubDate>Wed, 23 Jan 2019 05:17:14 +0000</pubDate>
+        <link>https://github.com/sanjayvacharya/sleeplessinslc</link>
+        <guid isPermaLink="true">https://github.com/sanjayvacharya/sleeplessinslc</guid>
+      </item>
+    
+      <item>
+        <title>swagger1st</title>
+        <description>A Clojure Ring handler that parses, validates and routes requests based on your Swagger definitions</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 22:01:19 +0000</pubDate>
+        <link>https://github.com/sarnowski/swagger1st</link>
+        <guid isPermaLink="true">https://github.com/sarnowski/swagger1st</guid>
+      </item>
+    
+      <item>
+        <title>connect</title>
+        <description>Connect is a middleware layer for Node.js</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 18:50:17 +0000</pubDate>
+        <link>https://github.com/senchalabs/connect</link>
+        <guid isPermaLink="true">https://github.com/senchalabs/connect</guid>
+      </item>
+    
+      <item>
+        <title>serafin</title>
+        <description>An API framework in Typescript/Node.js with OpenApi 3 &amp; GraphQL</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Mon, 26 Nov 2018 08:47:55 +0000</pubDate>
+        <link>https://github.com/serafin-labs/serafin</link>
+        <guid isPermaLink="true">https://github.com/serafin-labs/serafin</guid>
+      </item>
+    
+      <item>
+        <title>restapidoc</title>
+        <description>A RESTful API documentation plugin for the Grails web application framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 30 Jan 2018 15:58:50 +0000</pubDate>
+        <link>https://github.com/siemens/restapidoc</link>
+        <guid isPermaLink="true">https://github.com/siemens/restapidoc</guid>
+      </item>
+    
+      <item>
+        <title>swagger-ajax-client</title>
+        <description>Create XHR clients for Swagger API Specifications</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 04 Jan 2019 18:51:09 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-ajax-client</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-ajax-client</guid>
+      </item>
+    
+      <item>
+        <title>swagger-angular-client</title>
+        <description>AngularJS service for communicating with endpoints described by swagger.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 04 Jan 2019 18:49:30 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-angular-client</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-angular-client</guid>
+      </item>
+    
+      <item>
+        <title>swagger-angular-client</title>
+        <description>AngularJS service for communicating with endpoints described by swagger.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 04 Jan 2019 18:49:30 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-angular-client</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-angular-client</guid>
+      </item>
+    
+      <item>
+        <title>swagger-cli-client</title>
+        <description>Generates a command-line interface for any Swagger Specification</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 04 Jan 2019 18:51:23 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-cli-client</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-cli-client</guid>
+      </item>
+    
+      <item>
+        <title>swagger-client-generator</title>
+        <description>Automatically generate an api object from a given swagger 1.2 schema</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 04 Jan 2019 18:49:59 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-client-generator</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-client-generator</guid>
+      </item>
+    
+      <item>
+        <title>swagger-node-client</title>
+        <description>Create clients for Swagger API Specifications.</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 07 Jan 2019 18:07:10 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-node-client</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-node-client</guid>
+      </item>
+    
+      <item>
+        <title>swagger-validate</title>
+        <description>Detailed validation of objects against a given swagger model</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 12 Mar 2018 06:42:23 +0000</pubDate>
+        <link>https://github.com/signalfx/swagger-validate</link>
+        <guid isPermaLink="true">https://github.com/signalfx/swagger-validate</guid>
+      </item>
+    
+      <item>
+        <title>swagger-framework</title>
+        <description>Swagger Framework for web services</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 02 Sep 2018 07:20:38 +0000</pubDate>
+        <link>https://github.com/silas/swagger-framework</link>
+        <guid isPermaLink="true">https://github.com/silas/swagger-framework</guid>
+      </item>
+    
+      <item>
+        <title>dotswaggen</title>
+        <description>DotSwagGen is a command line code generator for the swagger specification written in C#</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 18 Jun 2017 07:01:32 +0000</pubDate>
+        <link>https://github.com/skrusty/dotswaggen</link>
+        <guid isPermaLink="true">https://github.com/skrusty/dotswaggen</guid>
+      </item>
+    
+      <item>
+        <title>swagger-stats</title>
+        <description>API Telemetry and APM</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 21:51:23 +0000</pubDate>
+        <link>https://github.com/slanatech/swagger-stats</link>
+        <guid isPermaLink="true">https://github.com/slanatech/swagger-stats</guid>
+      </item>
+    
+      <item>
+        <title>openapi-first</title>
+        <description>Start your node REST app with designing API first!</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Sat, 12 Jan 2019 14:48:14 +0000</pubDate>
+        <link>https://www.npmjs.com/package/@smartrecruiters/openapi-first</link>
+        <guid isPermaLink="true">https://www.npmjs.com/package/@smartrecruiters/openapi-first</guid>
+      </item>
+    
+      <item>
+        <title>openapi-schemas-validator</title>
+        <description>Schema validators for api documentation in OpenAPI Specification 3.x format.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 21 Sep 2018 21:20:50 +0000</pubDate>
+        <link>https://github.com/smartrecruiters/openapi-schemas-validator</link>
+        <guid isPermaLink="true">https://github.com/smartrecruiters/openapi-schemas-validator</guid>
+      </item>
+    
+      <item>
+        <title>dropwizard-swagger</title>
+        <description>a Dropwizard bundle that serves Swagger UI static content and loads Swagger endpoints.</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 21 Jan 2019 16:49:59 +0000</pubDate>
+        <link>https://github.com/smoketurner/dropwizard-swagger</link>
+        <guid isPermaLink="true">https://github.com/smoketurner/dropwizard-swagger</guid>
+      </item>
+    
+      <item>
+        <title>source2swagger</title>
+        <description>Builds a swagger compliant JSON specification from annotations on the comments of your source code.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 09 Feb 2018 18:56:43 +0000</pubDate>
+        <link>https://github.com/solso/source2swagger</link>
+        <guid isPermaLink="true">https://github.com/solso/source2swagger</guid>
+      </item>
+    
+      <item>
+        <title>spectacle</title>
+        <description>Beautiful static documentation generator for OpenAPI/Swagger 2.0</description>
+        <category>OAS2/documentation</category>
+        <pubDate>Thu, 24 Jan 2019 19:35:46 +0000</pubDate>
+        <link>https://github.com/sourcey/spectacle</link>
+        <guid isPermaLink="true">https://github.com/sourcey/spectacle</guid>
+      </item>
+    
+      <item>
+        <title>springfox-grails-demo</title>
+        <description>Sample application to demonstrate the capabilities of integrating with grails</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 31 May 2018 05:48:37 +0000</pubDate>
+        <link>https://github.com/springfox/springfox-grails-demo</link>
+        <guid isPermaLink="true">https://github.com/springfox/springfox-grails-demo</guid>
+      </item>
+    
+      <item>
+        <title>springfox-grails-integration</title>
+        <description>SpringFox integration with Grails 3.x</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 09 Nov 2018 12:45:40 +0000</pubDate>
+        <link>https://github.com/springfox/springfox-grails-integration</link>
+        <guid isPermaLink="true">https://github.com/springfox/springfox-grails-integration</guid>
+      </item>
+    
+      <item>
+        <title>test2doc.js</title>
+        <description>📑 Generate API documents from your tests.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 10 Jan 2019 01:06:47 +0000</pubDate>
+        <link>https://github.com/stackia/test2doc.js</link>
+        <guid isPermaLink="true">https://github.com/stackia/test2doc.js</guid>
+      </item>
+    
+      <item>
+        <title>gform-admin</title>
+        <description>generic ui to manage data and services.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 09 Feb 2018 18:55:49 +0000</pubDate>
+        <link>https://github.com/stemey/gform-admin</link>
+        <guid isPermaLink="true">https://github.com/stemey/gform-admin</guid>
+      </item>
+    
+      <item>
+        <title>prism</title>
+        <description>Turn any OAS (Swagger 2) file into an API server with mocking, transformations, validations, and more.</description>
+        <category>OAS2/mock</category>
+        <pubDate>Thu, 24 Jan 2019 19:32:11 +0000</pubDate>
+        <link>http://stoplight.io/platform/prism/</link>
+        <guid isPermaLink="true">http://stoplight.io/platform/prism/</guid>
+      </item>
+    
+      <item>
+        <title>spectral</title>
+        <description>A flexible JSON object linter with out of the box support for OpenAPI Specification 2 and 3</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 21:52:03 +0000</pubDate>
+        <link>https://github.com/stoplightio/spectral</link>
+        <guid isPermaLink="true">https://github.com/stoplightio/spectral</guid>
+      </item>
+    
+      <item>
+        <title>pyramid_swagger</title>
+        <description>Convenient tools for using Swagger to define and validate your interfaces in a Pyramid webapp.</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 18 Dec 2018 03:46:08 +0000</pubDate>
+        <link>https://github.com/striglia/pyramid_swagger</link>
+        <guid isPermaLink="true">https://github.com/striglia/pyramid_swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagmock</title>
+        <description>Mock data generator for swagger api</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 30 Dec 2018 11:14:52 +0000</pubDate>
+        <link>https://github.com/subeeshcbabu/swagmock</link>
+        <guid isPermaLink="true">https://github.com/subeeshcbabu/swagmock</guid>
+      </item>
+    
+      <item>
+        <title>swagmock</title>
+        <description>Mock data generator for swagger api</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 30 Dec 2018 11:14:52 +0000</pubDate>
+        <link>https://github.com/subeeshcbabu/swagmock/blob/master/docs/EXAMPLES.md</link>
+        <guid isPermaLink="true">https://github.com/subeeshcbabu/swagmock/blob/master/docs/EXAMPLES.md</guid>
+      </item>
+    
+      <item>
+        <title>Doppelauge</title>
+        <description>[UNMAINTAINED] Four libraries for the play framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 23:31:38 +0000</pubDate>
+        <link>https://github.com/sun-opsys/api-doc</link>
+        <guid isPermaLink="true">https://github.com/sun-opsys/api-doc</guid>
+      </item>
+    
+      <item>
+        <title>swagger-codegen</title>
+        <description>swagger-codegen contains a template-driven engine to generate documentation, API clients and server stubs in different languages by parsing your OpenAPI / Swagger definition.</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Thu, 24 Jan 2019 20:46:09 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-codegen</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-codegen</guid>
+      </item>
+    
+      <item>
+        <title>swagger-core</title>
+        <description>Examples and server integrations for generating the Swagger API Specification, which enables easy access to your REST API</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 12:30:41 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-core</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-core</guid>
+      </item>
+    
+      <item>
+        <title>swagger-editor</title>
+        <description>Swagger Editor</description>
+        <category>OAS3/editors</category>
+        <pubDate>Thu, 24 Jan 2019 18:27:08 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-editor</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-editor</guid>
+      </item>
+    
+      <item>
+        <title>swagger-inflector</title>
+        <description>This project uses the Swagger Specification to drive an API implementation</description>
+        <category>OAS2/frameworks</category>
+        <pubDate>Tue, 22 Jan 2019 18:15:50 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-inflector</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-inflector</guid>
+      </item>
+    
+      <item>
+        <title>swagger-js</title>
+        <description>Javascript library to connect to swagger-enabled APIs via browser or nodejs</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 17:42:49 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-js</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-js</guid>
+      </item>
+    
+      <item>
+        <title>swagger-node</title>
+        <description>Swagger module for node.js</description>
+        <category>OAS2/frameworks</category>
+        <pubDate>Thu, 24 Jan 2019 22:46:01 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-node</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-node</guid>
+      </item>
+    
+      <item>
+        <title>swagger-parser</title>
+        <description>Swagger Spec to Java POJOs</description>
+        <category>OAS2/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 18:26:55 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-parser</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-parser</guid>
+      </item>
+    
+      <item>
+        <title>swagger-ui</title>
+        <description>Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 21:43:45 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-ui</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-ui</guid>
+      </item>
+    
+      <item>
+        <title>swagger-ui</title>
+        <description>Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 21:43:45 +0000</pubDate>
+        <link>https://github.com/swagger-api/swagger-ui</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/swagger-ui</guid>
+      </item>
+    
+      <item>
+        <title>validator-badge</title>
+        <description>Validate your Swagger JSON/YAML today!</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 00:48:24 +0000</pubDate>
+        <link>https://github.com/swagger-api/validator-badge</link>
+        <guid isPermaLink="true">https://github.com/swagger-api/validator-badge</guid>
+      </item>
+    
+      <item>
+        <title>qswag</title>
+        <description>Fast &amp; Light Swagger generator for .NET Core</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 11 Jan 2019 06:41:53 +0000</pubDate>
+        <link>https://github.com/swimlane/qswag</link>
+        <guid isPermaLink="true">https://github.com/swimlane/qswag</guid>
+      </item>
+    
+      <item>
+        <title>schema-oas</title>
+        <description>OpenAPI Specifications for Schema.org</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 23 Jan 2019 02:07:21 +0000</pubDate>
+        <link>https://github.com/tandfgroup/schema-oas</link>
+        <guid isPermaLink="true">https://github.com/tandfgroup/schema-oas</guid>
+      </item>
+    
+      <item>
+        <title>Tavis.OpenApi</title>
+        <description>Parser for OpenAPI Specification</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Wed, 28 Feb 2018 15:32:13 +0000</pubDate>
+        <link>https://github.com/tavis-software/Tavis.OpenApi</link>
+        <guid isPermaLink="true">https://github.com/tavis-software/Tavis.OpenApi</guid>
+      </item>
+    
+      <item>
+        <title>openapi-eller</title>
+        <description>Generate OpenAPI v3 clients and servers from the command line</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Mon, 12 Nov 2018 12:49:43 +0000</pubDate>
+        <link>https://github.com/technocreatives/openapi-eller</link>
+        <guid isPermaLink="true">https://github.com/technocreatives/openapi-eller</guid>
+      </item>
+    
+      <item>
+        <title>openapi-mock-eller</title>
+        <description>From OpenAPI v3 spec to running mock server in one command</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Tue, 24 Jul 2018 21:32:36 +0000</pubDate>
+        <link>https://github.com/technocreatives/openapi-mock-eller</link>
+        <guid isPermaLink="true">https://github.com/technocreatives/openapi-mock-eller</guid>
+      </item>
+    
+      <item>
+        <title>open-api-renderer</title>
+        <description>🎩 A React renderer for OpenAPI v3.</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Tue, 15 Jan 2019 21:30:35 +0000</pubDate>
+        <link>https://github.com/temando/open-api-renderer</link>
+        <guid isPermaLink="true">https://github.com/temando/open-api-renderer</guid>
+      </item>
+    
+      <item>
+        <title>swagger-codegen-gradle-plugin</title>
+        <description>A Gradle plugin to support the swagger code generation project</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 06 Sep 2018 08:06:49 +0000</pubDate>
+        <link>https://github.com/thebignet/swagger-codegen-gradle-plugin</link>
+        <guid isPermaLink="true">https://github.com/thebignet/swagger-codegen-gradle-plugin</guid>
+      </item>
+    
+      <item>
+        <title>safrs</title>
+        <description>SqlAlchemy Flask-Restful Swagger Json-API OpenAPI</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 24 Jan 2019 15:15:15 +0000</pubDate>
+        <link>https://github.com/thomaxxl/safrs</link>
+        <guid isPermaLink="true">https://github.com/thomaxxl/safrs</guid>
+      </item>
+    
+      <item>
+        <title>fastapi</title>
+        <description>FastAPI framework, high performance, easy to learn, fast to code, ready for production</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 24 Jan 2019 21:32:33 +0000</pubDate>
+        <link>https://fastapi.tiangolo.com</link>
+        <guid isPermaLink="true">https://fastapi.tiangolo.com</guid>
+      </item>
+    
+      <item>
+        <title>uvicorn-gunicorn-fastapi-docker</title>
+        <description>Docker image with Uvicorn managed by Gunicorn for high-performance FastAPI web applications in Python 3.7 and 3.6 with performance auto-tuning. Optionally with Alpine Linux.</description>
+        <category>OAS3/unclassified</category>
+        <pubDate>Thu, 24 Jan 2019 14:55:20 +0000</pubDate>
+        <link>https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker</link>
+        <guid isPermaLink="true">https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker</guid>
+      </item>
+    
+      <item>
+        <title>sails-swagger</title>
+        <description>Swagger integration for sails.js</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 20 Dec 2018 13:26:48 +0000</pubDate>
+        <link>https://github.com/tjwebb/sails-swagger</link>
+        <guid isPermaLink="true">https://github.com/tjwebb/sails-swagger</guid>
+      </item>
+    
+      <item>
+        <title>binder-swagger-java</title>
+        <description>A framework to bring form-binder-java to swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 15 Sep 2018 15:41:38 +0000</pubDate>
+        <link>https://github.com/tminglei/binder-swagger-java</link>
+        <guid isPermaLink="true">https://github.com/tminglei/binder-swagger-java</guid>
+      </item>
+    
+      <item>
+        <title>api2html</title>
+        <description>A CLI tool to transform Swagger/OpenAPI/AsyncAPI docs to beautiful HTML pages via Shins/Widdershins.</description>
+        <category>OAS3/documentation</category>
+        <pubDate>Wed, 19 Dec 2018 08:21:44 +0000</pubDate>
+        <link>https://github.com/tobilg/api2html</link>
+        <guid isPermaLink="true">https://github.com/tobilg/api2html</guid>
+      </item>
+    
+      <item>
+        <title>sbt-swagger-codegen</title>
+        <description>sbt Plugin for Scala code generation for Swagger specs</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 26 Dec 2018 03:26:03 +0000</pubDate>
+        <link>https://github.com/unicredit/sbt-swagger-codegen</link>
+        <guid isPermaLink="true">https://github.com/unicredit/sbt-swagger-codegen</guid>
+      </item>
+    
+      <item>
+        <title>unifysell-sdk-php</title>
+        <description>SDK with OAuth2 for the unifysell API which allows you to painless integrate many eCommerce channels :clock3:</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Thu, 01 Nov 2018 08:18:50 +0000</pubDate>
+        <link>https://github.com/unifysell/unifysell-sdk-php</link>
+        <guid isPermaLink="true">https://github.com/unifysell/unifysell-sdk-php</guid>
+      </item>
+    
+      <item>
+        <title>openapi-mockk</title>
+        <description>Generates data based on OpenAPI 3.0 specification</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 28 May 2018 23:46:05 +0000</pubDate>
+        <link>https://github.com/unjello/openapi-mockk</link>
+        <guid isPermaLink="true">https://github.com/unjello/openapi-mockk</guid>
+      </item>
+    
+      <item>
+        <title>openapi-parser</title>
+        <description>Parser and validator for OpenAPI 3.0</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Fri, 01 Jun 2018 03:34:06 +0000</pubDate>
+        <link>https://github.com/unjello/openapi-parser</link>
+        <guid isPermaLink="true">https://github.com/unjello/openapi-parser</guid>
+      </item>
+    
+      <item>
+        <title>PHPSwaggerGen</title>
+        <description>PHP library to generate Swagger/OpenAPI REST API documentation files from comments in PHP source code.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 19 Jan 2019 08:20:24 +0000</pubDate>
+        <link>https://github.com/vanderlee/PHPSwaggerGen</link>
+        <guid isPermaLink="true">https://github.com/vanderlee/PHPSwaggerGen</guid>
+      </item>
+    
+      <item>
+        <title>koa-openapi3-router</title>
+        <description>Koa (v2) Router, based on OpenAPI 3 Doc.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 09 Apr 2018 12:18:40 +0000</pubDate>
+        <link>https://github.com/vivek-26/koa-openapi3-router</link>
+        <guid isPermaLink="true">https://github.com/vivek-26/koa-openapi3-router</guid>
+      </item>
+    
+      <item>
+        <title>swagger-docs-cfml</title>
+        <description>create swagger docs from CFML (Railo) ReST components</description>
+        <category>OAS2/?</category>
+        <pubDate>Mon, 27 Oct 2014 08:20:51 +0000</pubDate>
+        <link>https://github.com/webonix/swagger-docs-cfml</link>
+        <guid isPermaLink="true">https://github.com/webonix/swagger-docs-cfml</guid>
+      </item>
+    
+      <item>
+        <title>apivore</title>
+        <description>Tests your rails API against its Swagger description of end-points, models, and query parameters.</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 19 Jan 2019 07:32:52 +0000</pubDate>
+        <link>https://github.com/westfieldlabs/apivore</link>
+        <guid isPermaLink="true">https://github.com/westfieldlabs/apivore</guid>
+      </item>
+    
+      <item>
+        <title>speccy</title>
+        <description>Well Spectually 🤓 Enforce quality rules on your OpenAPI 3.0.x specifications.</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Thu, 24 Jan 2019 02:53:29 +0000</pubDate>
+        <link>https://github.com/wework/speccy</link>
+        <guid isPermaLink="true">https://github.com/wework/speccy</guid>
+      </item>
+    
+      <item>
+        <title>swagger4spring-web</title>
+        <description>Swagger support for Spring MVC</description>
+        <category>OAS2/?</category>
+        <pubDate>Sun, 28 Oct 2018 05:21:40 +0000</pubDate>
+        <link>https://github.com/wkennedy/swagger4spring-web</link>
+        <guid isPermaLink="true">https://github.com/wkennedy/swagger4spring-web</guid>
+      </item>
+    
+      <item>
+        <title>swagger-validation</title>
+        <description>A library that validates inputs (based on the swagger-spec packages) against any specifications</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 17 Feb 2018 23:53:18 +0000</pubDate>
+        <link>https://github.com/wonderlic/swagger-validation</link>
+        <guid isPermaLink="true">https://github.com/wonderlic/swagger-validation</guid>
+      </item>
+    
+      <item>
+        <title>swagger-jack</title>
+        <description>Express middleware to automatically create route and validate inputs from a swagger descriptor (for NodeJS)</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 22 Aug 2018 09:50:29 +0000</pubDate>
+        <link>https://github.com/worldline/swagger-jack</link>
+        <guid isPermaLink="true">https://github.com/worldline/swagger-jack</guid>
+      </item>
+    
+      <item>
+        <title>gen</title>
+        <description>Generate interface source code for micro services</description>
+        <category>OAS3/sdk</category>
+        <pubDate>Mon, 21 Jan 2019 09:26:18 +0000</pubDate>
+        <link>https://github.com/wzshiming/gen</link>
+        <guid isPermaLink="true">https://github.com/wzshiming/gen</guid>
+      </item>
+    
+      <item>
+        <title>openapi</title>
+        <description>OpenAPI 3 Specification for golang</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Tue, 15 Jan 2019 09:05:30 +0000</pubDate>
+        <link>https://github.com/wzshiming/openapi</link>
+        <guid isPermaLink="true">https://github.com/wzshiming/openapi</guid>
+      </item>
+    
+      <item>
+        <title>phoenix_swagger</title>
+        <description>Swagger integration to Phoenix framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 16:22:52 +0000</pubDate>
+        <link>https://github.com/xerions/phoenix_swagger</link>
+        <guid isPermaLink="true">https://github.com/xerions/phoenix_swagger</guid>
+      </item>
+    
+      <item>
+        <title>OData.OpenAPI</title>
+        <description>OData to Open API</description>
+        <category>OAS3/converters</category>
+        <pubDate>Thu, 04 Oct 2018 09:40:15 +0000</pubDate>
+        <link>https://github.com/xuzhg/OData.OpenAPI</link>
+        <guid isPermaLink="true">https://github.com/xuzhg/OData.OpenAPI</guid>
+      </item>
+    
+      <item>
+        <title>Nancy.Swagger</title>
+        <description>Nancy plugin for generated API documentation in Swagger format.</description>
+        <category>OAS2/?</category>
+        <pubDate>Tue, 22 Jan 2019 11:22:09 +0000</pubDate>
+        <link>https://github.com/yahehe/Nancy.Swagger</link>
+        <guid isPermaLink="true">https://github.com/yahehe/Nancy.Swagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-to-mock</title>
+        <description>Mock data generator CLI for Swagger3 (OpenAPI 3)</description>
+        <category>OAS3/frameworks</category>
+        <pubDate>Tue, 27 Nov 2018 19:01:07 +0000</pubDate>
+        <link>https://github.com/yayoc/swagger-to-mock</link>
+        <guid isPermaLink="true">https://github.com/yayoc/swagger-to-mock</guid>
+      </item>
+    
+      <item>
+        <title>SwagGen</title>
+        <description>Swagger/OpenAPISpec 2.0 Swift code generator</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 09:01:44 +0000</pubDate>
+        <link>https://github.com/yonaskolb/SwagGen</link>
+        <guid isPermaLink="true">https://github.com/yonaskolb/SwagGen</guid>
+      </item>
+    
+      <item>
+        <title>swagger</title>
+        <description>Swagger client generator</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 18 Jan 2019 12:03:43 +0000</pubDate>
+        <link>https://github.com/yvasiyarov/swagger</link>
+        <guid isPermaLink="true">https://github.com/yvasiyarov/swagger</guid>
+      </item>
+    
+      <item>
+        <title>hapi-swaggered</title>
+        <description>Yet another hapi plugin providing swagger compliant API specifications based on routes and joi schemas to be used with swagger-ui.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 23 Jan 2019 14:13:25 +0000</pubDate>
+        <link>https://github.com/z0mt3c/hapi-swaggered</link>
+        <guid isPermaLink="true">https://github.com/z0mt3c/hapi-swaggered</guid>
+      </item>
+    
+      <item>
+        <title>koa-joi-swagger</title>
+        <description>An opinionated koa validation &amp; swagger library, letting you write one Joi schema for both validation &amp; generating swagger ui.</description>
+        <category>OAS2/?</category>
+        <pubDate>Wed, 12 Dec 2018 07:11:25 +0000</pubDate>
+        <link>https://github.com/zaaack/koa-joi-swagger</link>
+        <guid isPermaLink="true">https://github.com/zaaack/koa-joi-swagger</guid>
+      </item>
+    
+      <item>
+        <title>connexion</title>
+        <description>Swagger/OpenAPI First framework for Python on top of Flask with automatic endpoint validation &amp; OAuth2 support</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 24 Jan 2019 21:48:52 +0000</pubDate>
+        <link>https://github.com/zalando/connexion</link>
+        <guid isPermaLink="true">https://github.com/zalando/connexion</guid>
+      </item>
+    
+      <item>
+        <title>friboo</title>
+        <description>Utility library for writing microservices in Clojure, with support for Swagger and OAuth</description>
+        <category>OAS2/?</category>
+        <pubDate>Thu, 13 Dec 2018 14:19:31 +0000</pubDate>
+        <link>https://github.com/zalando/friboo</link>
+        <guid isPermaLink="true">https://github.com/zalando/friboo</guid>
+      </item>
+    
+      <item>
+        <title>play-swagger</title>
+        <description>Provides Swagger support for the Play-Framework</description>
+        <category>OAS2/?</category>
+        <pubDate>Sat, 21 Apr 2018 14:20:11 +0000</pubDate>
+        <link>https://github.com/zalando/play-swagger</link>
+        <guid isPermaLink="true">https://github.com/zalando/play-swagger</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPI</title>
+        <description>A pharo implementation of OpenAPI 3.0.1</description>
+        <category>OAS3/parsers</category>
+        <pubDate>Mon, 26 Nov 2018 20:15:53 +0000</pubDate>
+        <link>https://github.com/zweidenker/OpenAPI</link>
+        <guid isPermaLink="true">https://github.com/zweidenker/OpenAPI</guid>
+      </item>
+    
+      <item>
+        <title>swagger-template</title>
+        <description>swagger-template</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://gitlab.com/tijsg/swagger-template</link>
+        <guid isPermaLink="true">https://gitlab.com/tijsg/swagger-template</guid>
+      </item>
+    
+      <item>
+        <title>MojoliciousPluginOpenAPI</title>
+        <description>MojoliciousPluginOpenAPI</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://metacpan.org/pod/Mojolicious::Plugin::OpenAPI</link>
+        <guid isPermaLink="true">https://metacpan.org/pod/Mojolicious::Plugin::OpenAPI</guid>
+      </item>
+    
+      <item>
+        <title>OpenAPI::Client</title>
+        <description>OpenAPI::Client</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://metacpan.org/pod/OpenAPI::Client</link>
+        <guid isPermaLink="true">https://metacpan.org/pod/OpenAPI::Client</guid>
+      </item>
+    
+      <item>
+        <title>oat++</title>
+        <description>Swagger-UI integration for oat++ applications. Utilizes OpenAPI 3.0.0 Specification.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://oatpp.io/</link>
+        <guid isPermaLink="true">https://oatpp.io/</guid>
+      </item>
+    
+      <item>
+        <title>cakephp-swagger</title>
+        <description>cakephp-swagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://packagist.org/packages/alt3/cakephp-swagger</link>
+        <guid isPermaLink="true">https://packagist.org/packages/alt3/cakephp-swagger</guid>
+      </item>
+    
+      <item>
+        <title>php-swaggerize-fastroute-library</title>
+        <description>php-swaggerize-fastroute-library</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://packagist.org/packages/iadvize/php-swaggerize-fastroute-library#0.2.0</link>
+        <guid isPermaLink="true">https://packagist.org/packages/iadvize/php-swaggerize-fastroute-library#0.2.0</guid>
+      </item>
+    
+      <item>
+        <title>Swaggervel</title>
+        <description>Swaggervel</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://packagist.org/packages/jlapp/swaggervel</link>
+        <guid isPermaLink="true">https://packagist.org/packages/jlapp/swaggervel</guid>
+      </item>
+    
+      <item>
+        <title>Swagger-PHP</title>
+        <description>Swagger-PHP</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://packagist.org/packages/zircote/swagger-php</link>
+        <guid isPermaLink="true">https://packagist.org/packages/zircote/swagger-php</guid>
+      </item>
+    
+      <item>
+        <title>springfox</title>
+        <description>springfox</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://springfox.github.io/springfox</link>
+        <guid isPermaLink="true">https://springfox.github.io/springfox</guid>
+      </item>
+    
+      <item>
+        <title>@PayPalDev</title>
+        <description>Design-driven RESTful apis with swagger and hapi from @PayPalDev.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://twitter.com/PayPalDev</link>
+        <guid isPermaLink="true">https://twitter.com/PayPalDev</guid>
+      </item>
+    
+      <item>
+        <title>@PayPalDev</title>
+        <description>Yeoman generator for krakenjs/swaggerize tools from @PayPalDev.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://twitter.com/PayPalDev</link>
+        <guid isPermaLink="true">https://twitter.com/PayPalDev</guid>
+      </item>
+    
+      <item>
+        <title>@PayPalDev</title>
+        <description>Design-driven RESTful apis with swagger and express from @PayPalDev.</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://twitter.com/PayPalDev</link>
+        <guid isPermaLink="true">https://twitter.com/PayPalDev</guid>
+      </item>
+    
+      <item>
+        <title>cbSwagger</title>
+        <description>cbSwagger</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://www.forgebox.io/view/cbswagger</link>
+        <guid isPermaLink="true">https://www.forgebox.io/view/cbswagger</guid>
+      </item>
+    
+      <item>
+        <title>swagger-sdk</title>
+        <description>swagger-sdk</description>
+        <category>OAS2/?</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://www.forgebox.io/view/swagger-sdk</link>
+        <guid isPermaLink="true">https://www.forgebox.io/view/swagger-sdk</guid>
+      </item>
+    
+      <item>
+        <title>RepreZen API Studio</title>
+        <description>RepreZen API Studio is an integrated workbench that brings API-first design into focus for your whole team, harmonizes your API designs, and generates APIs that click into client apps.</description>
+        <category>OAS3/editors</category>
+        <pubDate>Fri, 25 Jan 2019 01:22:25 +0000</pubDate>
+        <link>https://www.reprezen.com/</link>
+        <guid isPermaLink="true">https://www.reprezen.com/</guid>
+      </item>
+    
+  </channel>
+</rss>
