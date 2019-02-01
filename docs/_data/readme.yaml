@@ -2750,7 +2750,8 @@ RepreZen/KaiZen-OpenAPI-Editor: >+
   are available as separate plugins.<br/>
 
   [RepreZen API Studio](http://reprezen.com/swagger-tools) includes the mock
-  service, live Swagger-UI & other features that are not part of KaiZen Editor._
+  service, live Swagger-UI, code generation, and other features that are not
+  part of KaiZen Editor._
 
 swagger-api/swagger-editor: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png\" height=\"80\">\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-editor)\n[![Build Status](https://travis-ci.org/swagger-api/swagger-editor.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-editor)\n[![Code Climate](https://codeclimate.com/github/swagger-api/swagger-editor/badges/gpa.svg)](https://codeclimate.com/github/swagger-api/swagger-editor)\n[![Dependency Status](https://david-dm.org/swagger-api/swagger-editor/status.svg)](https://david-dm.org/swagger-api/swagger-editor)\n[![devDependency Status](https://david-dm.org/swagger-api/swagger-editor/dev-status.svg)](https://david-dm.org/swagger-api/swagger-editor-#info=devDependencies)\n\n**\U0001F570️ Looking for the older version of Swagger Editor?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\nSwagger Editor lets you edit [Swagger API specifications](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) in YAML inside your browser and to preview documentations in real time.\nValid Swagger JSON descriptions can then be generated and used with the full Swagger tooling (code generation, documentation, etc).\n\nAs a brand new version, written from the ground up, there are some known issues and unimplemented features. Check out the [Known Issues](#known-issues) section for more details.\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-editor](https://www.npmjs.com/package/swagger-editor) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-editor-dist](https://www.npmjs.com/package/swagger-editor-dist) is a dependency-free module that includes everything you need to serve Swagger Editor in a server-side project, or a web project that can't resolve npm module dependencies.\n\nIf you're building a single-page application, using `swagger-editor` is strongly recommended, since `swagger-editor-dist` is significantly larger.\n\nFor the older version of swagger-editor, refer to the [*2.x branch*](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\n## Running locally\n\n##### Prerequisites\n- Node 6.x\n- NPM 3.x\n\nIf you have Node.js and npm installed, you can run `npm start` to spin up a static server.\n\nOtherwise, you can open `index.html` directly from your filesystem in your browser.\n\nIf you'd like to make code changes to Swagger Editor, you can start up a Webpack hot-reloading dev server via `npm run dev`. \n\n##### Browser support\n\nSwagger Editor works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Everything listed in [Swagger UI's Known Issues](https://github.com/swagger-api/swagger-ui/blob/master/README.md#known-issues).\n- The integration with the codegen is still missing.\n- Importing specs from a URL is not implemented.\n\n## Docker\n\n### Running the image from DockerHub\nThere is a docker image published in [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-editor/).\n\nTo use this, run the following:\n\n```\ndocker pull swaggerapi/swagger-editor\ndocker run -d -p 80:8080 swaggerapi/swagger-editor\n```\n\nThis will run Swagger Editor (in detached mode) on port 80 on your machine, so you can open it by navigating to `http://localhost` in your browser.\n\n### Building and running an image locally\n\nTo build and run a docker image with the code checked out on your machine, run the following from the root directory of the project:\n\n```\n# Install npm packages (if needed)\nnpm install\n\n# Build the app\nnpm run build\n\n# Build an image\ndocker build -t swagger-editor .\n\n# Run the container\ndocker run -d -p 80:8080 swagger-editor\n\n```\n\nYou can then view the app by navigating to `http://localhost` in your browser.\n\n## Documentation\n\n* [Importing your OpenAPI document](docs/import.md)\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2018 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n"
 apicurio/apicurio-studio: >
@@ -16768,7 +16769,7 @@ signalfx/swagger-ajax-client: >
   npm run dist
 
   ```
-swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttp://nightwatchjs.org/gettingstarted#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
+swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttp://nightwatchjs.org/gettingstarted#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n- There are compatibility [issues](https://github.com/swagger-api/swagger-ui/labels/epic%3A%20usage%20in%20react%4016) with React 16.x.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
 wkennedy/swagger4spring-web: >
   swagger4spring-web
 
@@ -28888,7 +28889,8 @@ fleekjs/fleek-validator: >
   src="http://hart.com/wp-content/themes/hart/img/hart_logo.svg">](http://hart.com/)
   by the [Hart](http://hart.com/) team._
 oatpp/oatpp-swagger: >
-  # oatpp-swagger
+  # oatpp-swagger [![oatpp build
+  status](https://dev.azure.com/lganzzzo/lganzzzo/_apis/build/status/oatpp.oatpp-swagger)](https://dev.azure.com/lganzzzo/lganzzzo/_build?definitionId=2)
 
   Swagger UI for oatpp services
 
@@ -28903,7 +28905,7 @@ oatpp/oatpp-swagger: >
 
 
   For full example project see: [Example CRUD-API project with Swagger
-  UI](https://github.com/oatpp/oatpp-examples/tree/master/crud)
+  UI](https://github.com/oatpp/example-crud)
 
 
   ## Brief
@@ -38046,7 +38048,7 @@ BigstickCarpet/swagger-express-middleware: >
 
   --------------------------
 
-  Install using [NPM](https://docs.npmjs.com/getting-started/what-is-npm).
+  Install using [npm](https://docs.npmjs.com/about-npm/).
 
 
   ```bash
@@ -38256,6 +38258,9 @@ raphael/goa: >
   [![Slack](https://img.shields.io/badge/slack-gophers-orange.svg?style=flat)](https://gophers.slack.com/messages/goa/)
 
 
+  *goa v1.4.1 released! [Release Notes](https://goa.design/blog/008-v_1_4_1/)*
+
+
   ## V2
 
 
@@ -38413,7 +38418,7 @@ raphael/goa: >
   stable branch.
 
 
-  Current Release: `v1.4.0`
+  Current Release: `v1.4.1`
 
   Stable Branch: `v1`
 
@@ -38866,9 +38871,9 @@ raphael/goa: >
   over.
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
-  2.0 and OpenAPI 3.0 parser and validator for Node and
-  browsers","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-01-21T21:37:14Z","pushed_at":"2019-01-16T18:59:40Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29268,"stargazers_count":418,"watchers_count":418,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":71,"mirror_url":null,"archived":false,"open_issues_count":28,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":71,"open_issues":28,"watchers":418,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":71,"subscribers_count":19}
+  2.0 and OpenAPI 3.0
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-01-31T09:57:39Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":420,"watchers_count":420,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":29,"watchers":420,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -45246,6 +45251,7 @@ marshmallow-code/apispec: >
 
   .. image:: https://opencollective.com/marshmallow/donate/button.png
       :target: https://opencollective.com/marshmallow
+      :width: 200
       :alt: Donate to our collective
 
   Professional Support
@@ -46244,32 +46250,17 @@ thomaxxl/safrs: >
 
 
   This code was developed for a specific use-case and may not be flexible enough
-  for everyone's needs. 
+  for everyone's needs. A lot of the functionality is available but not
+  documented for the sake of brevity.
 
+  Performance is reasonable for regular databases, but once you start exposing
+  really big tables you may run into problems, for example: the `count()` for
+  mysql innodb is slow on large(1M rows) tables, a workaround can be implemented
+  by querying the `sys` tables or using werkzeug caching. 
 
-  - Relationships with composite keys might not work well
-
-  - Includes are disabled by default for performance reasons and recursive
-  relations don't work well.
-
-  - I am not a big fan of the multiple inheritance/Mixin needed to declare
-  SAFRSBase instances but I couldn't subclass sqla's db.Model and I think
-  inheritance is more clear than class decorators.
-
-  - I tried to keep this readme short for the sake of brevity. More details can
-  be found in the README's of the subdirectories. Feel free to drop
-  [me](mailto:thomas.pollet@+no+spam+@gmail.com) an email if something isn't
-  clear!
-
-  - By default, SAFRSBase objects are commited to the database in `__init__`, as
-  specified by the SAFRSBase.db_commit boolean. When using SAFRSBase in
-  combination with other frameworks (eg. flask-admin), care should be taken of
-  how and when objects are added to the session and commited. An example of
-  flask-admin integration can be found in the [examples
-  directory](examples/demo_flask_admin.py). 
-
-  - SAFRS needs more unit tests. I implement tests in the jsonapi-admin frontend
-  but this is a bit experimental atm.
+  Feel free to open an issue or drop
+  [me](mailto:thomas.pollet+no+spam+@gmail.com) an email if you run into
+  problems or something isn't clear!
 
 
   <a class="mk-toclify" id="references"></a>
@@ -46708,8 +46699,10 @@ danielgtaylor/apisprout: >
 
 
   - OpenAPI 3.x support
+    - Uses operation `examples` or generates examples from `schema`
+  - Load from a URL or local file (auto reload with `--watch`)
 
-  - Load from a URL or local file
+  - CORS headers enabled by default
 
   - Accept header content negotiation
     - Example: `Accept: application/*`
@@ -51536,14 +51529,46 @@ lendingblock/aio-openapi: >
   [![Python
   versions](https://img.shields.io/pypi/pyversions/aio-openapi.svg)](https://pypi.org/project/aio-openapi)
 
-
   [![CircleCI](https://circleci.com/gh/lendingblock/aio-openapi.svg?style=svg)](https://circleci.com/gh/lendingblock/aio-openapi)
-
 
   [![codecov](https://codecov.io/gh/lendingblock/aio-openapi/branch/master/graph/badge.svg)](https://codecov.io/gh/lendingblock/aio-openapi)
 
 
-  Asynchronous web middleware for Rest APIs with PostgreSql Database.
+  This library is an asynchronous web middleware for [aiohttp][] for serving
+  Rest APIs with [OpenAPI][] v 3
+
+  specification and with optional [PostgreSql][] database.
+
+
+  <!-- START doctoc generated TOC please keep comment here to allow auto update
+  -->
+
+  <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  **Table of Contents**
+
+
+  - [Installation](#installation)
+
+  - [Development](#development)
+
+  - [Features](#features)
+
+  - [Web App](#web-app)
+
+  - [OpenAPI Documentation](#openapi-documentation)
+
+  - [Database Integration](#database-integration)
+
+  - [Websockets](#websockets)
+    - [RPC protocol](#rpc-protocol)
+    - [Publish/Subscribe](#publishsubscribe)
+  - [Environment Variables](#environment-variables)
+
+
+  <!-- END doctoc generated TOC please keep comment here to allow auto update
+  -->
+
 
 
   ## Installation
@@ -51587,40 +51612,45 @@ lendingblock/aio-openapi: >
   * Data validation, serialization and unserialization with python
   [dataclasses](https://docs.python.org/3/library/dataclasses.html)
 
-  * [OpenApi](https://www.openapis.org/) v 3 auto documentation
+  * [OpenApi][] v 3 auto documentation
 
-  * [SqlAlchemy](https://www.sqlalchemy.org/) expression language
+  * [SqlAlchemy][] expression language
 
   * Asynchronous DB interaction with
   [asyncpg](https://github.com/MagicStack/asyncpg)
 
-  * Migrations with [alembic](http://alembic.zzzcomputing.com/en/latest/)
+  * Migrations with [alembic][]
 
   * SqlAlchemy tables as python dataclasses
 
-  * [Click](https://github.com/pallets/click) command line interface
+  * Support [click][] command line interface
+
+  * Optional [sentry](https://sentry.io) middleware
 
 
   ## Web App
 
 
-  to create an openapi RESTful application:
+  To create an openapi RESTful application follow this schema (lets call the
+  file ``main.py``)
 
   ```python
 
+  from openapi.rest import rest
+
+
   def create_app():
-      app = rest(
+      return rest(
           openapi=dict(
               title='A REST API',
               ...
           ),
-          base_path='/v1,
+          base_path='/v1',
           allowed_tags=[...],
           validate_docs=True,
           setup_app=setup_app,
           commands=[...]
       )
-      return app
 
 
   def setup_app(app):
@@ -51630,6 +51660,117 @@ lendingblock/aio-openapi: >
 
   if __name__ == '__main__':
       create_app().main()
+  ```
+
+  The ``create_app`` function creates the [aiohttp][] server application by
+  invoking the ``rest`` function.
+
+  This function adds the [click][] command in the `cli` mapping entry and add
+
+  documentation for routes which support OpenAPI docs.
+
+  The ``setup_app`` function is used to actually setup the custom application,
+  usually by adding middleware, routes,
+
+  shutdown callbacks, database integration and so forth.
+
+
+  ## OpenAPI Documentation
+
+
+  The library provide tools for creating OpenAPI v 3 compliant endpoints and
+
+  auto-document them.
+
+
+  An example from test ``tests/example`` directory
+
+
+  ```python
+
+  from aiohttp import web
+
+
+  from openapi.db.path import SqlApiPath
+
+  from openapi.spec import op
+
+
+
+  routes = web.RouteTableDef()
+
+
+
+  @routes.view('/tasks')
+
+  class TasksPath(SqlApiPath):
+      """
+      ---
+      summary: Create and query Tasks
+      tags:
+          - Task
+      """
+      table = 'tasks'
+
+      @op(query_schema=TaskOrderableQuery, response_schema=[Task])
+      async def get(self):
+          """
+          ---
+          summary: Retrieve Tasks
+          description: Retrieve a list of Tasks
+          responses:
+              200:
+                  description: Authenticated tasks
+          """
+          paginated = await self.get_list()
+          return paginated.json_response()
+
+      @op(response_schema=Task, body_schema=TaskAdd)
+      async def post(self):
+          """
+          ---
+          summary: Create a Task
+          description: Create a new Task
+          responses:
+              201:
+                  description: the task was successfully added
+              422:
+                  description: Failed validation
+          """
+          data = await self.create_one()
+          return self.json_response(data, status=201)
+  ```
+
+
+  ## Database Integration
+
+
+  This library provides integration with [asyncpg][], an high performant
+  asynchronous
+
+  connector with [PostgreSql][] database.
+
+  To add the database extension simply use the ``get_db`` function in the
+  applicatiuon ``setup_app`` function:
+
+  ```python
+
+  from openapi.db import get_db
+
+
+  def setup_app(app):
+      db = get_db(app)
+      meta = db.metadata
+
+  ```
+
+  This will enable database connection and command line tools (most of them from
+  [alembic][]):
+
+  ```
+
+  python main.py db --help
+
   ```
 
 
@@ -51723,6 +51864,34 @@ lendingblock/aio-openapi: >
   }
 
   ```
+
+  ## Environment Variables
+
+
+  Several environment variables are used by the library to support testing and
+  deployment.
+
+
+  * ``DATASTORE``: PostgreSql connection string (same as [SqlAlchemy][] syntax)
+
+  * ``DBPOOL_MIN_SIZE``: minimum size of database connection pool (default is
+  10)
+
+  * ``DBPOOL_MAX_SIZE``: maximum size of database connection pool (default is
+  10)
+
+
+  [aiohttp]: https://aiohttp.readthedocs.io/en/stable/
+
+  [OpenApi]: https://www.openapis.org/
+
+  [PostgreSql]: https://www.postgresql.org/
+
+  [SqlAlchemy]: https://www.sqlalchemy.org/
+
+  [click]: https://github.com/pallets/click
+
+  [alembic]: http://alembic.zzzcomputing.com/en/latest/
 Mermade/swaggerplusplus: >
   # swaggerplusplus
 
@@ -52341,26 +52510,10 @@ foxel/openapi3-typescript-codegen: >
   * parameters encoder supports only style='form',explode=false encoding scheme,
 
   * only GET, POST, PUT, DELETE operations code is generated 
-muskratjs/muskrat: >
+muskratjs/muskrat: |
   # muskrat
 
-
   Runtime API schema generation
-
-
-
-  ## Features
-      
-  - Parsing 
-      - types
-      - decorators
-      - annotations
-  - Swagger spec generation
-
-  - OpenAPI spec generation 
-
-  - [routing-controllers](https://github.com/typestack/routing-controllers)
-  support
 kinecosystem/ecosystem-api: "# Kin Ecosystem SDK API\n\n## marketplace API\nThe `openapi.yaml` file contains definitions of the services and models that will be available for our client to access on the server.\n\nTo edit the file you can use the [online editor](http://editor.swagger.io/?url=https://raw.githubusercontent.com/kinfoundation/ecosystem-api/master/openapi.yaml)\n\n### JWT specs and examples:\n#### JWT encoded messages\n##### JWT header format\n\nFor all 3 JWTs we will use the following template:\n```\n{\n\talg: string; // ES256 but can be discussed\n\ttyp: string; // JWT\n\tkid: string; // identifier of the keypair that was used to sign the JWT. identifiers and public keys will be provided by signer authority. This enables using multiple private/public key pairs (a list of public keys and their ids need to be provided by signer authority to verifier in advanced)\n}\n```\n\n#### Register payload\n```\n{\n\t// common/ standard fields\n\tiat: number;  // issued at - seconds from epoc\n\tiss: string; // issuer\n\texp: number; // expiration\n\tsub: string; // subject - \"register\"\n\n\t// application fields\n\tuser_id: string; // id of the user - or a deterministic unique id for the user (hash)\n}\n```\n##### [Example (viewable on jwt.io)](https://jwt.io/?token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InJlZ2lzdGVyIiwidXNlcl9pZCI6ImFfaGFzaF9vbl9raWtfdXNlcl9pZCJ9.6DwojspQ46inlwYwn3NNH0bmQIzKd7mL0VX8V2ZmlH8aZqWF2UbK_Md5kcxgnXgq0P6tExVTr1vxpwhfj7_3dg)\n```\neyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InJlZ2lzdGVyIiwidXNlcl9pZCI6ImFfaGFzaF9vbl9raWtfdXNlcl9pZCJ9.6DwojspQ46inlwYwn3NNH0bmQIzKd7mL0VX8V2ZmlH8aZqWF2UbK_Md5kcxgnXgq0P6tExVTr1vxpwhfj7_3dg\n```\n\n#### Spend payload\n```\n{\n\tiat: number;  // issued at - seconds from epoc\n\tiss: string; // issuer\n\texp: number; // expiration\n\tsub: string; // subject - \"spend\"\n\n\tnonce: string; // optional, to create a unique pair for offer id per user\n\toffer: {\n\t\tid: string; // offer id - id is decided by digital service\n\t\tamount: number; // amount of kin for this offer - price\n\t};\n\tsender: {\n\t\tuser_id: string; // optional: user_id who will perform the\n\t\ttitle: string; // order title - appears in order history\n\t\tdescription: string; // order description - appears in order history\n\t};\n}\n```\n##### [Example (viewable on jwt.io)](https://jwt.io/?token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InNwZW5kIiwib2ZmZXIiOnsiaWQiOiJPMTIzMTIzMTIzIiwiYW1vdW50Ijo1MDAwfSwic2VuZGVyIjp7InRpdGxlIjoiQmx1ZSBUaGVtZSIsImRlc2NyaXB0aW9uIjoiT2NlYW4gQmx1ZSIsInVzZXJfaWQiOiJzb21lX3VzZXIifX0.BRacJ37zbbaKivWD_uhC2JXozzrHDN5B9VeG7d1BXjkpPYEfpaEy_kKF6xqp7oUMjEG2ltrOQPJ-UkFcFl6H-g)\n```\neyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InNwZW5kIiwib2ZmZXIiOnsiaWQiOiJPMTIzMTIzMTIzIiwiYW1vdW50Ijo1MDAwfSwic2VuZGVyIjp7InRpdGxlIjoiQmx1ZSBUaGVtZSIsImRlc2NyaXB0aW9uIjoiT2NlYW4gQmx1ZSIsInVzZXJfaWQiOiJzb21lX3VzZXIifX0.BRacJ37zbbaKivWD_uhC2JXozzrHDN5B9VeG7d1BXjkpPYEfpaEy_kKF6xqp7oUMjEG2ltrOQPJ-UkFcFl6H-g\n```\n#### Earn payload\n```\n{\n\tiat: number;  // issued at - seconds from epoc\n\tiss: string; // issuer\n\texp: number; // expiration\n\tsub: string; // subject - \"earn\"\n\n\tnonce: string; // optional, to create a unique pair for offer id per user\n\toffer: {\n\t\tid: string; // offer id - id is decided by digital service\n\t\tamount: number; // amount of kin for this offer - price\n\t};\n\trecipient: {\n\t\tuser_id: string; // user_id who will perform the order\n\t\ttitle: string; // order title - appears in order history\n\t\tdescription: string; // order description - appears in order history\n\t};\n}\n```\n##### [Example (viewable on jwt.io)](https://jwt.io/?token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6ImVhcm4iLCJvZmZlciI6eyJpZCI6Ik8xMjMxMjMxMjMiLCJhbW91bnQiOjUwMDB9LCJyZWNpcGllbnQiOnsidGl0bGUiOiJCbHVlIFRoZW1lIiwiZGVzY3JpcHRpb24iOiJPY2VhbiBCbHVlIiwidXNlcl9pZCI6InNvbWVfdXNlciJ9fQ.R7OpvaZQIAzjQ0MSi5nC1c39oC9oN08NVKwricMyWnuMbK5FD9Qn6ecmol4JnMGE5IZA7j_LR-EEbVhhEYi57g)\n```\neyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6ImVhcm4iLCJvZmZlciI6eyJpZCI6Ik8xMjMxMjMxMjMiLCJhbW91bnQiOjUwMDB9LCJyZWNpcGllbnQiOnsidGl0bGUiOiJCbHVlIFRoZW1lIiwiZGVzY3JpcHRpb24iOiJPY2VhbiBCbHVlIiwidXNlcl9pZCI6InNvbWVfdXNlciJ9fQ.R7OpvaZQIAzjQ0MSi5nC1c39oC9oN08NVKwricMyWnuMbK5FD9Qn6ecmol4JnMGE5IZA7j_LR-EEbVhhEYi57g\n```\n#### PayToUser payload\n```\n{\n\tiat: number;  // issued at - seconds from epoc\n\tiss: string; // issuer\n\texp: number; // expiration\n\tsub: string; // subject - \"pay_to_user\"\n\n\tnonce: string; // optional, to create a unique pair for offer id per user\n\toffer: {\n\t\tid: string; // offer id - id is decided by digital service\n\t\tamount: number; // amount of kin for this offer - price\n\t};\n\tsender: {\n\t\tuser_id: string; // optional: user_id who will perform the order\n\t\ttitle: string; // offer title - appears in order history\n\t\tdescription: string; // offer description - appears in order history\n\t};\n\trecipient: {\n\t\tuser_id: string; // user_id who will receive the order\n\t\ttitle: string; // offer title - appears in order history\n\t\tdescription: string; // offer description - appears in order history\n\t};\n}\n```\n##### [Example (viewable on jwt.io)](https://jwt.io/?tokeneyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InBheV90b191c2VyIiwib2ZmZXIiOnsiaWQiOiJPMTIzMTIzMTIzIiwiYW1vdW50Ijo1MDAwfSwic2VuZGVyIjp7InRpdGxlIjoiVGlwIEZyb20gRG9vZHkiLCJkZXNjcmlwdGlvbiI6IkRvb2R5IHRpcHBlZCB5b3UiLCJ1c2VyX2lkIjoidXNlcjpuaXR6YW4ifSwicmVjaXBpZW50Ijp7InRpdGxlIjoiVGlwIFRvIE5pdHphbiIsImRlc2NyaXB0aW9uIjoiWW91IHRpcHBlZCBOaXR6YW4iLCJ1c2VyX2lkIjoidXNlcjpkb29keSJ9fQ.GVufyAI2UkpzzLlSL7a_kb5JcdSkgBb1PnzdL7wUkIGx-IUUu_pgTecElwTbZvWrCSr_GkJ4leD1MnXHSUb_QQ)\n```\neyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayBzZXJ2ZXIiLCJleHAiOjE1MjYyMzkwMjIsInN1YiI6InBheV90b191c2VyIiwib2ZmZXIiOnsiaWQiOiJPMTIzMTIzMTIzIiwiYW1vdW50Ijo1MDAwfSwic2VuZGVyIjp7InRpdGxlIjoiVGlwIEZyb20gRG9vZHkiLCJkZXNjcmlwdGlvbiI6IkRvb2R5IHRpcHBlZCB5b3UiLCJ1c2VyX2lkIjoidXNlcjpuaXR6YW4ifSwicmVjaXBpZW50Ijp7InRpdGxlIjoiVGlwIFRvIE5pdHphbiIsImRlc2NyaXB0aW9uIjoiWW91IHRpcHBlZCBOaXR6YW4iLCJ1c2VyX2lkIjoidXNlcjpkb29keSJ9fQ.GVufyAI2UkpzzLlSL7a_kb5JcdSkgBb1PnzdL7wUkIGx-IUUu_pgTecElwTbZvWrCSr_GkJ4leD1MnXHSUb_QQ\n```\n#### PaymentConfirmation payload\n```\n{\n\tiat: number;  // issued at - seconds from epoc\n\tiss: string; // issuer\n\texp: number; // expiration\n\tsub: string; // subject - \"payment_confirmation\"\n\n\tsender_user_id: string; // user identifier - same value as given by register\n\trecipient_user_id: string; // user identifier - same value as given by register\n\toffer_id: string; // offer id - id is decided by digital service\n\tnonce: string; // the same as was send in the order JWT, or a default value in case none was used\n\tpayment: {\n\t\tblockchain: string; // identifier of the blockchain network the transaction was made on\n\t\ttransaction_id: string; // stellar identifier of the blockchain transaction\n\t};\n}\n```\n##### [Example (viewable on jwt.io)](https://jwt.io/?token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayIsImV4cCI6MTUyNjIzOTAyMiwic3ViIjoicGF5bWVudF9jb25maXJtYXRpb24iLCJvZmZlcl9pZCI6Ik8xMjMxMjMxMjMiLCJzZW5kZXJfdXNlcl9pZCI6InVzZXI6ZG9vZHkiLCJyZWNpcGllbnRfdXNlcl9pZCI6InVzZXI6bml0emFuIiwicGF5bWVudCI6eyJibG9ja2NoYWluIjoic3RlbGxhci1tYWlubmV0IiwidHJhbnNhY3Rpb25faWQiOiJ0cmFuc2FjdGlvbjoxMjM0NSJ9fQ.-AbZOfC69eY1It43RccOXluY-sjWSi4JFvQkVKO9D2UgYU3jNPbEcBERLrqBHPSpS6f26LVpIsg5A81UQNoukw)\n```\neyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNvbWVfaWQifQ.eyJpYXQiOjE1MTYyMzkwMjIsImlzcyI6ImtpayIsImV4cCI6MTUyNjIzOTAyMiwic3ViIjoicGF5bWVudF9jb25maXJtYXRpb24iLCJvZmZlcl9pZCI6Ik8xMjMxMjMxMjMiLCJzZW5kZXJfdXNlcl9pZCI6InVzZXI6ZG9vZHkiLCJyZWNpcGllbnRfdXNlcl9pZCI6InVzZXI6bml0emFuIiwicGF5bWVudCI6eyJibG9ja2NoYWluIjoic3RlbGxhci1tYWlubmV0IiwidHJhbnNhY3Rpb25faWQiOiJ0cmFuc2FjdGlvbjoxMjM0NSJ9fQ.-AbZOfC69eY1It43RccOXluY-sjWSi4JFvQkVKO9D2UgYU3jNPbEcBERLrqBHPSpS6f26LVpIsg5A81UQNoukw\n```\n\n#### Key Pair used in Examples\nPublic:\n```\n-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEVs/o5+uQbTjL3chynL4wXgUg2R9\nq9UU8I5mEovUf86QZ7kOBIjJwqnzD1omageEHWwHdBO6B+dFabmdT9POxg==\n-----END PUBLIC KEY-----\n```\nPrivate:\n```\n-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgevZzL1gdAFr88hb2\nOF/2NxApJCzGCEDdfSp6VQO30hyhRANCAAQRWz+jn65BtOMvdyHKcvjBeBSDZH2r\n1RTwjmYSi9R/zpBnuQ4EiMnCqfMPWiZqB4QdbAd0E7oH50VpuZ1P087G\n-----END PRIVATE KEY-----\n```\n\n## internal payment\n\nTo edit the file you can use the [online editor](http://editor.swagger.io/?url=https://raw.githubusercontent.com/kinfoundation/ecosystem-api/master/payment.yaml)\n\n## creating client stubs\n\nopenapi3 code generation is supported by a few projects\n\n### java\n\nusing `github.com:swagger-api/swagger-codegen` on branch `v3.0.0-rc0` compile the maven project and run the following:\n```\njava -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate -i ~/Workspace/ecosystem-api/openapi.yaml -l java  -o java_client\n```\n"
 microprofile-extensions/openapi-ext: >
   [Extensions for MicroProfile](https://www.microprofile-ext.org/)
@@ -55975,16 +56128,16 @@ m3-moretv/smogger: >
   required:
       - id
       - name
-    properties:
-      id:
-        type: integer
-        format: int64
-      name:
-        type: string
-        format: name.firstName
-      tag:
-        type: string
-        format: random.word
+  properties:
+    id:
+      type: integer
+      format: int64
+    name:
+      type: string
+      format: name.firstName
+    tag:
+      type: string
+      format: random.word
   ```
 
   **Вернет такие данные:**
