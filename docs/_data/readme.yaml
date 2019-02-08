@@ -3844,6 +3844,16 @@ go-swagger/go-swagger: >
   ```
 
 
+  ## Try it
+
+
+  Try `go-swagger` in a free online workspace using Gitpod:
+
+
+  [![Open in
+  Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/go-swagger/go-swagger)
+
+
   ## Licensing
 
 
@@ -19974,9 +19984,9 @@ mobilcom-debitel/got-swag: >
 metosin/ring-swagger: >
   # Ring-Swagger [![Build
   Status](https://travis-ci.org/metosin/ring-swagger.svg?branch=master)](https://travis-ci.org/metosin/ring-swagger)
-  [![Downloads](https://jarkeeper.com/metosin/ring-swagger/downloads.svg)](https://jarkeeper.com/metosin/ring-swagger)
+  [![Downloads](https://versions.deps.co/metosin/ring-swagger/downloads.svg)](https://versions.deps.co/metosin/ring-swagger)
   [![Dependencies
-  Status](https://jarkeeper.com/metosin/ring-swagger/status.svg)](https://jarkeeper.com/metosin/ring-swagger)
+  Status](https://versions.deps.co/metosin/ring-swagger/status.svg)](https://versions.deps.co/metosin/ring-swagger)
 
 
   [Swagger](http://swagger.io/) 2.0 implementation for Clojure/Ring using
@@ -37954,7 +37964,7 @@ BigstickCarpet/swagger-express-middleware: >
   Compatibility](https://apidevtools.org/img/os-badges.svg)](https://travis-ci.com/APIDevTools/swagger-express-middleware)
 
   [![Build
-  Status](https://api.travis-ci.com/APIDevTools/swagger-express-middleware.svg)](https://travis-ci.com/APIDevTools/swagger-express-middleware)
+  Status](https://api.travis-ci.com/APIDevTools/swagger-express-middleware.svg?branch=master)](https://travis-ci.com/APIDevTools/swagger-express-middleware)
 
   [![Coverage
   Status](https://coveralls.io/repos/github/APIDevTools/swagger-express-middleware/badge.svg?branch=master)](https://coveralls.io/github/APIDevTools/swagger-express-middleware)
@@ -38872,8 +38882,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-01-31T09:57:39Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":420,"watchers_count":420,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":29,"watchers":420,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-02-07T20:31:08Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":424,"watchers_count":424,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":29,"watchers":424,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -42372,6 +42382,16 @@ casualjim/go-swagger: >
   ```
 
 
+  ## Try it
+
+
+  Try `go-swagger` in a free online workspace using Gitpod:
+
+
+  [![Open in
+  Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/go-swagger/go-swagger)
+
+
   ## Licensing
 
 
@@ -44612,6 +44632,11 @@ OpenAPITools/openapi-generator: >
   APIの定義書から色々自動生成する](https://ky-yk-d.hatenablog.com/entry/2019/01/13/234108) by
   [@ky_yk_d](https://twitter.com/ky_yk_d)
 
+  - 2019/02/02 - [平静を保ち、コードを生成せよ 〜 OpenAPI Generator誕生の背景と軌跡
+  〜](https://speakerdeck.com/akihito_nakano/gunmaweb34) by
+  [中野暁人](https://github.com/ackintosh) at [Gunma.web #34
+  スキーマ駆動開発](https://gunmaweb.connpass.com/event/113974/)
+
 
   ## [6 - About Us](#table-of-contents)
 
@@ -45048,7 +45073,7 @@ marshmallow-code/apispec: >
 
 
   .. image:: https://badgen.net/pypi/v/apispec
-      :target: https://badge.fury.io/py/apispec
+      :target: https://pypi.org/project/apispec/
       :alt: PyPI version
 
   .. image:: https://badgen.net/travis/marshmallow-code/apispec/dev
@@ -45063,6 +45088,14 @@ marshmallow-code/apispec: >
       :target: https://marshmallow.readthedocs.io/en/latest/upgrading.html
       :alt: marshmallow 2/3 compatible
 
+  .. image:: https://badgen.net/badge/OAS/2,3?list=1&color=cyan
+      :target: https://github.com/OAI/OpenAPI-Specification
+      :alt: OpenAPI Specification 2/3 compatible
+
+  .. image:: https://badgen.net/badge/code%20style/black/000
+      :target: https://github.com/ambv/black
+      :alt: code style: black
+
   A pluggable API specification generator. Currently supports the `OpenAPI
   Specification <https://github.com/OAI/OpenAPI-Specification>`_ (f.k.a. the
   Swagger specification).
@@ -45073,8 +45106,8 @@ marshmallow-code/apispec: >
   ========
 
 
-  - Supports OpenAPI Specification version 2 (f.k.a. the Swagger specification)
-    with limited support for version 3
+  - Supports the OpenAPI Specification (versions 2 and 3)
+
   - Framework-agnostic
 
   - Built-in support for `marshmallow <https://marshmallow.readthedocs.io/>`_
@@ -45098,13 +45131,10 @@ marshmallow-code/apispec: >
 
       # Create an APISpec
       spec = APISpec(
-          title='Swagger Petstore',
-          version='1.0.0',
-          openapi_version='2.0',
-          plugins=[
-              FlaskPlugin(),
-              MarshmallowPlugin(),
-          ],
+          title="Swagger Petstore",
+          version="1.0.0",
+          openapi_version="3.0.2",
+          plugins=[FlaskPlugin(), MarshmallowPlugin()],
       )
 
       # Optional marshmallow support
@@ -45112,30 +45142,35 @@ marshmallow-code/apispec: >
           id = fields.Int()
           name = fields.Str(required=True)
 
+
       class PetSchema(Schema):
           category = fields.Nested(CategorySchema, many=True)
           name = fields.Str()
 
+
       # Optional Flask support
       app = Flask(__name__)
 
-      @app.route('/random')
+
+      @app.route("/random")
       def random_pet():
           """A cute furry animal endpoint.
           ---
           get:
-              description: Get a random pet
-              responses:
-                  200:
-                      description: A pet to be returned
-                      schema: PetSchema
+            description: Get a random pet
+            responses:
+              200:
+                content:
+                  application/json:
+                    schema: PetSchema
           """
           pet = get_random_pet()
           return jsonify(PetSchema().dump(pet).data)
 
+
       # Register entities and paths
-      spec.definition('Category', schema=CategorySchema)
-      spec.definition('Pet', schema=PetSchema)
+      spec.components.schema("Category", schema=CategorySchema)
+      spec.components.schema("Pet", schema=PetSchema)
       with app.test_request_context():
           spec.path(view=random_pet)
 
@@ -45147,72 +45182,100 @@ marshmallow-code/apispec: >
 
   .. code-block:: python
 
-      spec.to_dict()
+      import json
+
+      print(json.dumps(spec.to_dict(), indent=2))
       # {
+      #   "paths": {
+      #     "/random": {
+      #       "get": {
+      #         "description": "Get a random pet",
+      #         "responses": {
+      #           "200": {
+      #             "content": {
+      #               "application/json": {
+      #                 "schema": {
+      #                   "$ref": "#/components/schemas/Pet"
+      #                 }
+      #               }
+      #             }
+      #           }
+      #         }
+      #       }
+      #     }
+      #   },
+      #   "tags": [],
       #   "info": {
       #     "title": "Swagger Petstore",
       #     "version": "1.0.0"
       #   },
-      #   "swagger": "2.0",
-      #   "paths": {
-      #     "/random": {
-      #       "get": {
-      #         "description": "A cute furry animal endpoint.",
-      #         "responses": {
-      #           "200": {
-      #             "schema": {
-      #               "$ref": "#/definitions/Pet"
-      #             },
-      #             "description": "A pet to be returned"
+      #   "openapi": "3.0.2",
+      #   "components": {
+      #     "parameters": {},
+      #     "responses": {},
+      #     "schemas": {
+      #       "Category": {
+      #         "type": "object",
+      #         "properties": {
+      #           "name": {
+      #             "type": "string"
+      #           },
+      #           "id": {
+      #             "type": "integer",
+      #             "format": "int32"
       #           }
       #         },
-      #       }
-      #     }
-      #   },
-      #   "definitions": {
-      #     "Pet": {
-      #       "properties": {
-      #         "category": {
-      #           "type": "array",
-      #           "items": {
-      #             "$ref": "#/definitions/Category"
+      #         "required": [
+      #           "name"
+      #         ]
+      #       },
+      #       "Pet": {
+      #         "type": "object",
+      #         "properties": {
+      #           "name": {
+      #             "type": "string"
+      #           },
+      #           "category": {
+      #             "type": "array",
+      #             "items": {
+      #               "$ref": "#/components/schemas/Category"
+      #             }
       #           }
-      #         },
-      #         "name": {
-      #           "type": "string"
-      #         }
-      #       }
-      #     },
-      #     "Category": {
-      #       "required": [
-      #         "name"
-      #       ],
-      #       "properties": {
-      #         "name": {
-      #           "type": "string"
-      #         },
-      #         "id": {
-      #           "type": "integer",
-      #           "format": "int32"
       #         }
       #       }
       #     }
-      #   },
+      #   }
       # }
 
-      spec.to_yaml()
-      # definitions:
-      #   Pet:
-      #     enum: [name, photoUrls]
-      #     properties:
-      #       id: {format: int64, type: integer}
-      #       name: {example: doggie, type: string}
-      # info: {description: 'This is a sample Petstore server.  You can find out more ', title: Swagger Petstore, version: 1.0.0}
-      # parameters: {}
-      # paths: {}
-      # security:
-      # - apiKey: []
-      # swagger: '2.0'
+      print(spec.to_yaml())
+      # components:
+      #   parameters: {}
+      #   responses: {}
+      #   schemas:
+      #     Category:
+      #       properties:
+      #         id: {format: int32, type: integer}
+      #         name: {type: string}
+      #       required: [name]
+      #       type: object
+      #     Pet:
+      #       properties:
+      #         category:
+      #           items: {$ref: '#/components/schemas/Category'}
+      #           type: array
+      #         name: {type: string}
+      #       type: object
+      # info: {title: Swagger Petstore, version: 1.0.0}
+      # openapi: 3.0.2
+      # paths:
+      #   /random:
+      #     get:
+      #       description: Get a random pet
+      #       responses:
+      #         200:
+      #           content:
+      #             application/json:
+      #               schema: {$ref: '#/components/schemas/Pet'}
       # tags: []
 
 
@@ -45221,7 +45284,7 @@ marshmallow-code/apispec: >
   =============
 
 
-  Documentation is available at http://apispec.readthedocs.io/ .
+  Documentation is available at https://apispec.readthedocs.io/ .
 
 
   Ecosystem
@@ -45744,6 +45807,7 @@ thomaxxl/safrs: >
       - [Custom Serialization](#custom-serialization)
       - [Custom Decorators](#custom-decorators)
       - [API Methods](#api-methods)
+      - [Custom Swagger](#custom-swagger)
   - [Limitations & TODOs](#limitations--todos)
 
   - [References](#references)
@@ -46242,6 +46306,25 @@ thomaxxl/safrs: >
 
   Some additional API RPC methods are implemented in
   [api_methods.py](safrs/api_methods.py), e.g. mysql regex search. 
+
+
+  <a class="mk-toclify" id="custom-swagger"></a>
+
+  ### Custom swagger
+
+  The swagger schema can be merged with a modified schema dictionary by
+  supplying the to-be-merged dictionary as the `custom_swagger` argument to
+  `SAFRSAPI`, e.g.
+
+  ```python
+
+  custom_swagger = {"info": {"title" : "New Title" }} # Customized swagger title
+  will be merged
+
+  api = SAFRSAPI(app, host=swagger_host, port=PORT, prefix=OAS_PREFIX,
+  api_spec_url=OAS_PREFIX+'/swagger',
+                 custom_swagger=custom_swagger, schemes=['http', 'https'], description=description)
+  ```
 
 
   <a class="mk-toclify" id="limitations--todos"></a>
@@ -46760,8 +46843,10 @@ danielgtaylor/apisprout: >
 
   ```
 
-  docker run -p 8000:8000 -v localfile.yaml:/api.yaml danielgtaylor/apisprout
-  /api.yaml
+  # Remeber to put the full path to local archive YAML in -v
+
+  docker run -p 8000:8000 -v $FULLPATH/localfile.yaml:/api.yaml
+  danielgtaylor/apisprout /api.yaml
 
   ```
 
@@ -47340,7 +47425,7 @@ epiphone/routing-controllers-openapi: >
 
   - `@HeaderParam` and `@HeaderParams`
 
-  - `@Body`
+  - `@Body` and `@BodyParam`
 
   - Parse response keywords from `@HttpCode` and `@ContentType` values
 
@@ -55700,6 +55785,10 @@ stoplightio/spectral: >
   [![Maintainability](https://api.codeclimate.com/v1/badges/1aa53502913a428f40ac/maintainability)](https://codeclimate.com/github/stoplightio/spectral/maintainability)
 
 
+  A flexible JSON object linter with out of the box support for OpenAPI
+  Specification 2 and 3
+
+
   ## Features
 
 
@@ -58278,6 +58367,17 @@ mrin9/RapiDoc: >-
   src="https://github.com/mrin9/RapiDoc/blob/master/logo.png" width="60px" />
 
 
+
+  <p align="center">
+      <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"/>
+      <img src="https://img.shields.io/github/size/mrin9/rapidoc/dist/rapidoc-min.js.svg?colorB=blue&label=minified&style=flat-square">
+      <img src="https://img.shields.io/github/size/mrin9/rapidoc/dist/rapidoc-min.js.gz.svg?colorB=blue&label=zip&style=flat-square">
+      <a href="https://www.webcomponents.org/element/rapidoc" alt="published on webcomponents.org">
+          <img src="https://img.shields.io/badge/webcomponents.org-rapidoc-blue.svg?style=social"/>
+      </a>
+  </p>        
+
+
   # RapiDoc
 
   Custom Eelement for Open-API spec viewing
@@ -58293,7 +58393,7 @@ mrin9/RapiDoc: >-
 
   - Easy to use. No build or framework needed
 
-  - Lightweight and Fast (under 150 KB gzipped)
+  - Lightweight and Fast (under 125 KB gzipped)
 
   - Works with React, Angular and Vue
 
@@ -58308,15 +58408,17 @@ mrin9/RapiDoc: >-
 
   ## Roadmap
 
-  - Get the bundle size even smaller (~ 115 Kb gzipped)
+  - &#128077; Get the bundle size even smaller (~ 125 Kb gzipped)
 
-  - Allow replacing logo
+  - &#128077; Provide a console to try out the APIs
+
+  - &#128077; HTTP and Token based Authentication process
+
+  - Enable OAuth
 
   - Search API Functionality
 
-  - Provide a console to try out the APIs
-
-  - Enable OAuth, HTTP and Token based Authentication process
+  - Allow replacing logo
 swagger-api/swagger-js: >+
   # Swagger Client <img
   src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SW-logo-clr.png"
