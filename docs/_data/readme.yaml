@@ -5512,7 +5512,9 @@ smartrecruiters/openapi-first: >
 
   - content type validation,
 
-  - routing to appropriate controller.
+  - routing to appropriate controller,
+
+  - oauth scopes authorization.
 
 
   ### Validation middlewares
@@ -7837,6 +7839,33 @@ p1c2u/openapi-spec-validator: >
   ```
 
 
+  ## Security Note
+
+
+  PyYAML, a requirement of this project, has a
+
+  [security vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2017-18342)
+
+  in the default implementation of `yaml.load()`, which allows execution
+
+  of arbitrary code while loading a target file or stream.  OpenAPI Spec
+
+  Validator uses a safe loader to ensure that only Python objects
+
+  marked as safe can be executed.  Thus, you are not exposed to this
+
+  vulnerability by using this package.
+
+
+  If you use `PyYAML` directly, be sure to use `yaml.safe_load()` to
+
+  avoid inadvertantly exposing youself to potentially malicous data.  The
+
+  [PyYAML docs](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml)
+
+  describe this issue in detail.
+
+
   ## Related projects
 
 
@@ -8345,7 +8374,7 @@ apiaryio/dredd: >
   [Jenkins]: https://jenkins.io/
 
   [AppVeyor]: https://www.appveyor.com/
-quen2404/openapi-diff: >+
+quen2404/openapi-diff: >
   # OpenAPI-diff 
 
 
@@ -8772,6 +8801,9 @@ quen2404/openapi-diff: >+
   * Adarsh Sharma / [adarshsharma](https://github.com/adarshsharma)
 
 
+  * [Sayi](https://github.com/Sayi) for his project
+  [swagger-diff](https://github.com/Sayi/swagger-diff) 
+    which was a source of inspiration for this tool
 Mermade/openapi-filter: >
   # openapi-filter
 
@@ -18044,7 +18076,7 @@ marcelojaloto/SwagDoc: >
 
 
 
-  ## Swagger - version 2.0
+  ## Swagger (Open API) - version 2.0
 
 
   SwagDoc follows the specification 2.0 because it is more popular in the market
@@ -18060,20 +18092,63 @@ marcelojaloto/SwagDoc: >
   https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
 
 
+  https://swagger.io/docs/specification/2-0/basic-structure/
+
+
   When creating a Swagger documentation for your REST API you can produce a page
   like the following example.
+
+
+  https://app.swaggerhub.com/apis-docs/swagdoc/sample-api/v1
 
 
   ![image](https://user-images.githubusercontent.com/20048296/46588904-c6cd5880-ca79-11e8-8a8a-ec38ba7ff95a.png)
 
 
 
+  ## Json Schema
+
+
+  https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schemaObject
+
+
+  http://json-schema.org
+
+
+
+  ## SwagDoc Speeches
+
+
+  https://www.youtube.com/watch?v=9U3HP3B5UT0 (Pt-Br)
+
+
+
+  ## Swagger References and Tutorials 
+
+
+  https://swagger.io/swagger/media/blog/wp-content/uploads/2017/02/Documenting-An-Existing-API-with-Swagger-2.pdf
+
+
+  https://idratherbewriting.com/learnapidoc/pubapis_swagger_intro.html
+
+
+
   ## Swagger Tools
+
+
+  - Swagger:
+
+  https://swagger.io
 
 
   - Swagger Editor:
 
   https://editor.swagger.io
+
+
+  - Swagger Hub:
+
+  https://swagger.io/tools/swaggerhub
 
 
   - The classic swagger sample:
@@ -29635,7 +29710,7 @@ metosin/fnhouse-swagger: >
 
 
   Distributed under the Eclipse Public License, the same as Clojure.
-yonaskolb/SwagGen: "# SwagGen\n\n![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS-blue.svg?style=for-the-badge)\n[![SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=for-the-badge)](https://swift.org/package-manager)\n[![Git Version](https://img.shields.io/github/release/yonaskolb/swaggen.svg?style=for-the-badge)](https://github.com/yonaskolb/SwagGen/releases)\n[![Build Status](https://img.shields.io/circleci/project/github/yonaskolb/SwagGen.svg?style=for-the-badge)](https://circleci.com/gh/yonaskolb/SwagGen)\n[![license](https://img.shields.io/github/license/yonaskolb/SwagGen.svg?style=for-the-badge)](https://github.com/yonaskolb/SwagGen/blob/master/LICENSE)\n\nSwagGen is a command line tool that generates client code from a [Swagger/OpenAPI](http://swagger.io) 2.0 Spec.\n\nIt is an alternative the official [swagger-codegen](https://github.com/swagger-api/swagger-codegen) java code generator, and adds some improvements such as speed, configurability, simplicity, extensibility, an improved templating language, and a great Swift template.\n\nThe default Swift templates it generates include support for model inheritance, shared enums, mutable parameter structs, convenience initialisers, inline schemas, Codable and Equatable models, configurable model options, generic networking stack, decoding options, and many other niceties.\n\n## Installing\nMake sure Xcode 9.3 is installed first.\n\n### [Mint](https://github.com/yonaskolb/mint)\n```sh\n$ mint install yonaskolb/SwagGen\n```\n### Homebrew\n\n```sh\n$ brew tap yonaskolb/SwagGen https://github.com/yonaskolb/SwagGen.git\n$ brew install SwagGen\n```\n\n### Make\n\n```sh\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd SwagGen\n$ make install\n```\n\n### Swift Package Manager\n\n#### Use as CLI\n\n```sh\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd swaggen\n$ swift run\n```\n\n#### Use as dependency\n\nAdd the following to your Package.swift file's dependencies:\n\n```swift\n.package(url: \"https://github.com/yonaskolb/SwagGen.git\", from: \"1.1.0\"),\n```\n\nAnd then import wherever needed:\n\n```swift\nimport SwagGenKit\n```\n\n## Usage\n\nUse `--help` to see usage information\n\n```\nswaggen --help\nUsage: swaggen <command> [options]\n\nCommands:\n  generate        Generates a template from a Swagger spec\n  help            Prints this help information\n  version         Prints the current version of this app\n```\n\n### generate\n\n```sh\nswaggen generate path_to_spec\n```\n\nUse `swaggen generate --help` to see the list of generation options.\n\n- **spec**: This is the path to the Swagger spec and is a required parameter. It can either be a file path or a web url to a YAML or JSON file\n- **--language**: The language to generate a template for. This defaults to `swift` for now.\n- **--template**:: This is the path to the template config yaml file. It can either be a direct path to the file, or a path to the parent directory which will by default look for `/template.yml`. If this is not passed, the default template for the language will be used.\n- **--destination**: The directory that the generated files will be added to.\n- **--option**: An option that will be merged with the template config options with those in this argument taking precedence, meaning any existing options of the same name will be overwritten. This argument can be repeated to pass in multiple options. Options must specify the option name and option value seperated by a colon, with any spaces contained in quotes. The following formats are allowed:\n\t- `-- option myOption:myValue`\n\t- `-- option \"myOption: my value\"`\n\t- `-- option myOption:\" my value\"`\n\n- **--clean**: Controls if and how the destination directory is cleaned of non generated files. Options are:\n\t- `none`: no files are removed (default)\n\t- `all`: all other files are removed\n\t- `leave.files`: all files and directories except those that start with `.` in the destination directory are removed. This is useful for keeping configuration files and directories such as `.git` around, while still making sure that items removed from the spec are removed from the generated API.\n- **--verbose**: Show more verbose output\n- **--silent**: Silences any standard output. Errors will still be shown\n\nExample:\n\n```\nswaggen generate http://myapi.com/spec --template Templates/Swift  --destination generated --option name:MyAPI --option \"customProperty: custom value --clean leave.files\"\n```\n\nFor the Swift template, a handy option is `name`, which changes the name of the generated framework from the default of `API`. This can be set in the template or by passing in `--option name:MyCoolAPI`.\n\n\n### Swift Template\n\nList of all available options:\n\nname | action | expected values | default value\n--- | --- | --- | ---\nname | name of the API | `String` | API\nauthors | authors in podspec | `String` | Yonas Kolb\nbaseURL | baseURL in APIClient | `String` | first scheme, host, and base path of spec\nfixedWidthIntegers | whether to use types like Int32 and Int64 | `Bool` | false\nhomepage | homepage in podspec  | `String` | https://github.com/yonaskolb/SwagGen\nmodelPrefix | model by adding a prefix and model file name | `String` | null\nmodelSuffix | model by adding a suffix and model file name | `String` | null\nmutableModels | whether model properties are mutable | `Bool` | true\nmodelType | whether each model is a `struct` or `class` | `String` | class\nmodelInheritance | whether models use inheritance. Must be false for structs | Bool | true\nmodelNames | override model names | `[String: String]` | [:]\nmodelProtocol | customize protocol name that all models conform to | `String` | APIModel\nenumNames | override enum names | `[String: String]` | [:]\nsafeArrayDecoding | filter out invalid items in array instead of throwing | `Bool` | false\nsafeOptionalDecoding | set invalid optionals to nil instead of throwing | `Bool` | false\ntagPrefix | prefix for all tags | `String` | null\ntagSuffix | suffix for all tags | `String` | null\n\nIf writing your own Swift template there are a few types that are generated that you will need to provide typealias's for:\n\n- `ID`: The `UUID` format. Usually `UUID` or `String`\n- `File`: The `file` format. Usually `URL`, `Data` or a custom type with a mimeType and fileName\n- `DateTime`: The `date-time` format. Usually `Date`\n- `DateDay`:  The `date` format. Usually `Date` or a custom type.\n\n## Editing\n```\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd SwagGen\n$ swift package generate-xcodeproj\n```\nThis use Swift Project Manager to create an `xcodeproj` file that you can open, edit and run in Xcode, which makes editing any code easier.\n\nIf you want to pass any required arguments when running in XCode, you can edit the scheme to include launch arguments.\n\n## Templates\nTemplates are made up of a template config file, a bunch of **Stencil** files, and other files that will be copied over during generation\n\n### Template config\nThis is the configuration and manifest file for the template in YAML or JSON format. It can contain:\n\n- **formatter**: Optional formatter to use. This affects what properties are available in the templates and how they are formatted e.g. `Swift`\n- **templateFiles**: a list of template files. These can each have their paths, contents and destination directories modified through Stencil tags. One template file can also output to multiple files if they path is changed depending on a list context. Each file contains:\n\t- **path**: relative path to the template config. The extension is usually .stencil or the type it is going to end up as\n\t- **context**: optional context within the spec. This is provided to the generated file, otherwise the full context will be passed. If this is a list then a file will be created for each object and the context within that list is used. (e.g. a file for every model in the spec `definitions` gets it's own definition context). Note that properties in the template `options` field can be used here\n\t- **destination**: optional destination path. This can contain stencil tags whose context is that from the context above. e.g. if context was `definitions` then the path could be `Models/{{ type }}.swift` and the filename would be the type of the definition. If this is left out the destination will be the same as the path, relative to the final destination directory. If it resolves to an empty string it will be skipped and not generated.\n- **copiedFiles**: this is an array of relative paths that will be copied to the destination. They can be files or directories. This is used for files that won't have their contents, filenames or paths changed.\n- **options**: these are the options passed into every stencil file and can be used to customize the template. These options are merged with the `options` argument, with the argument options taking precendance. These options can be references in template file paths and their contents.\n\nAn example template for Swift can be found [here](Templates/Swift/template.yml)\n\n### Template Files\nThese files follow the **Stencil** file format outlined here [https://stencil.fuller.li](https://stencil.fuller.li)\n\n## Formatters\nFormatters change what information is available to the templates and how it's formatted. They can be specified via the `formatter` property in the template config. Usually these would map to a specific target language, but can be customized for different purposes.\n\n## Output Languages\nSwagGen can be used to generate code for any language. At the moment there is only a formatter and template for **Swift**\n\n## Swift API usage\nUsage documentation can be found in the [Readme](Templates/Swift/README.md) that is generated with your template.\n\n---\n\n## Attributions\n\nThis tool is powered by:\n\n- [JSONUtilities](https://github.com/yonaskolb/JSONUtilities)\n- [Stencil](https://github.com/stencilproject/Stencil)\n- [StencilSwiftKit](https://github.com/SwiftGen/StencilSwiftKit)\n- [Spectre](https://github.com/kylef/Spectre)\n- [PathKit](https://github.com/kylef/PathKit)\n- [SwiftCLI](https://github.com/jakeheis/SwiftCLI)\n- [Yams](https://github.com/jpsim/Yams)\n\nThanks also to [Logan Shire](https://github.com/AttilaTheFun) and his initial work on [Swagger Parser](https://github.com/AttilaTheFun/SwaggerParser)\n\n## Contributions\nPull requests and issues are welcome\n\n## License\n\nSwagGen is licensed under the MIT license. See [LICENSE](LICENSE) for more info.\n"
+yonaskolb/SwagGen: "# SwagGen\n\n![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS-blue.svg?style=for-the-badge)\n[![SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=for-the-badge)](https://swift.org/package-manager)\n[![Git Version](https://img.shields.io/github/release/yonaskolb/swaggen.svg?style=for-the-badge)](https://github.com/yonaskolb/SwagGen/releases)\n[![Build Status](https://img.shields.io/circleci/project/github/yonaskolb/SwagGen.svg?style=for-the-badge)](https://circleci.com/gh/yonaskolb/SwagGen)\n[![license](https://img.shields.io/github/license/yonaskolb/SwagGen.svg?style=for-the-badge)](https://github.com/yonaskolb/SwagGen/blob/master/LICENSE)\n\nSwagGen is a library and command line tool for parsing and generating code for [OpenAPI/Swagger 3.0](https://swagger.io/specification) specs, completely written in Swift.\n\n> Swagger 2 support has been removed. For Swagger 2 use version `3.0.2` or the `swagger_2` branch\n\n#### Swagger parser\nIt contains a `Swagger` library that can be used in Swift to load and parse Swagger specs.\n\n#### Swagger code generator\n`SwagGen` is command line tool that generates code from a [OpenAPI/Swagger 3.0](https://swagger.io/specification) spec.\nTemplates for any language can be written that leverage this generator.\n\nIt is an alternative the official [swagger-codegen](https://github.com/swagger-api/swagger-codegen) java code generator, and adds some improvements such as speed, configurability, simplicity, extensibility, and an improved templating language.\n\n#### Swift template\n`SwagGen` includes a bundled template for generating a client side Swift library for interfacing with the Swagger spec. It includes support for model inheritance, shared enums, discrete and mutable request objects, inline schemas, Codable and Equatable models, configurable options, generic networking stack, and many other niceties.\n\n## Installing\nMake sure Xcode 10.0 is installed first.\n\n### [Mint](https://github.com/yonaskolb/mint)\n```sh\n$ mint install yonaskolb/SwagGen\n```\n### Homebrew\n\n```sh\n$ brew tap yonaskolb/SwagGen https://github.com/yonaskolb/SwagGen.git\n$ brew install SwagGen\n```\n\n### Make\n\n```sh\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd SwagGen\n$ make install\n```\n\n### Swift Package Manager\n\n#### Use as CLI\n\n```sh\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd swaggen\n$ swift run\n```\n\n#### Use as dependency\n\nAdd the following to your Package.swift file's dependencies:\n\n```swift\n.package(url: \"https://github.com/yonaskolb/SwagGen.git\", from: \"4.0.0\"),\n```\n\nAnd then import wherever needed:\n\n```swift\nimport SwagGenKit\nimport Swagger\n```\n\n## Usage\n\nUse `--help` to see usage information\n\n```\nswaggen --help\nUsage: swaggen <command> [options]\n\nCommands:\n  generate        Generates a template from a Swagger spec\n  help            Prints this help information\n  version         Prints the current version of this app\n```\n\n### generate\n\n```sh\nswaggen generate path_to_spec\n```\n\nUse `swaggen generate --help` to see the list of generation options.\n\n- **spec**: This is the path to the Swagger spec and is a required parameter. It can either be a file path or a web url to a YAML or JSON file\n- **--language**: The language to generate a template for. This defaults to `swift` for now.\n- **--template**:: This is the path to the template config yaml file. It can either be a direct path to the file, or a path to the parent directory which will by default look for `/template.yml`. If this is not passed, the default template for the language will be used.\n- **--destination**: The directory that the generated files will be added to.\n- **--option**: An option that will be merged with the template config options with those in this argument taking precedence, meaning any existing options of the same name will be overwritten. This argument can be repeated to pass in multiple options. Options must specify the option name and option value seperated by a colon, with any spaces contained in quotes. The following formats are allowed:\n\t- `-- option myOption:myValue`\n\t- `-- option \"myOption: my value\"`\n\t- `-- option myOption:\" my value\"`\n\n- **--clean**: Controls if and how the destination directory is cleaned of non generated files. Options are:\n\t- `none`: no files are removed (default)\n\t- `all`: all other files are removed\n\t- `leave.files`: all files and directories except those that start with `.` in the destination directory are removed. This is useful for keeping configuration files and directories such as `.git` around, while still making sure that items removed from the spec are removed from the generated API.\n- **--verbose**: Show more verbose output\n- **--silent**: Silences any standard output. Errors will still be shown\n\nExample:\n\n```\nswaggen generate http://myapi.com/spec --template Templates/Swift  --destination generated --option name:MyAPI --option \"customProperty: custom value --clean leave.files\"\n```\n\nFor the Swift template, a handy option is `name`, which changes the name of the generated framework from the default of `API`. This can be set in the template or by passing in `--option name:MyCoolAPI`.\n\n\n### Swift Template\n\nList of all available options:\n\nname | action | expected values | default value\n--- | --- | --- | ---\nname | name of the API | `String` | API\nauthors | authors in podspec | `String` | Yonas Kolb\nbaseURL | baseURL in APIClient | `String` | first scheme, host, and base path of spec\nfixedWidthIntegers | whether to use types like Int32 and Int64 | `Bool` | false\nhomepage | homepage in podspec  | `String` | https://github.com/yonaskolb/SwagGen\nmodelPrefix | model by adding a prefix and model file name | `String` | null\nmodelSuffix | model by adding a suffix and model file name | `String` | null\nmutableModels | whether model properties are mutable | `Bool` | true\nmodelType | whether each model is a `struct` or `class` | `String` | class\nmodelInheritance | whether models use inheritance. Must be false for structs | Bool | true\nmodelNames | override model names | `[String: String]` | [:]\nmodelProtocol | customize protocol name that all models conform to | `String` | APIModel\nenumNames | override enum names | `[String: String]` | [:]\nsafeArrayDecoding | filter out invalid items in array instead of throwing | `Bool` | false\nsafeOptionalDecoding | set invalid optionals to nil instead of throwing | `Bool` | false\ntagPrefix | prefix for all tags | `String` | null\ntagSuffix | suffix for all tags | `String` | null\n\nIf writing your own Swift template there are a few types that are generated that you will need to provide typealias's for:\n\n- `ID`: The `UUID` format. Usually `UUID` or `String`\n- `File`: The `file` format. Usually `URL`, `Data` or a custom type with a mimeType and fileName\n- `DateTime`: The `date-time` format. Usually `Date`\n- `DateDay`:  The `date` format. Usually `Date` or a custom type.\n\n## Editing\n```\n$ git clone https://github.com/yonaskolb/SwagGen.git\n$ cd SwagGen\n$ swift package generate-xcodeproj\n```\nThis use Swift Project Manager to create an `xcodeproj` file that you can open, edit and run in Xcode, which makes editing any code easier.\n\nIf you want to pass any required arguments when running in XCode, you can edit the scheme to include launch arguments.\n\n## Templates\nTemplates are made up of a template config file, a bunch of **Stencil** files, and other files that will be copied over during generation\n\n### Template config\nThis is the configuration and manifest file for the template in YAML or JSON format. It can contain:\n\n- **formatter**: Optional formatter to use. This affects what properties are available in the templates and how they are formatted e.g. `Swift`\n- **templateFiles**: a list of template files. These can each have their paths, contents and destination directories modified through Stencil tags. One template file can also output to multiple files if they path is changed depending on a list context. Each file contains:\n\t- **path**: relative path to the template config. The extension is usually .stencil or the type it is going to end up as\n\t- **context**: optional context within the spec. This is provided to the generated file, otherwise the full context will be passed. If this is a list then a file will be created for each object and the context within that list is used. (e.g. a file for every model in the spec `definitions` gets it's own definition context). Note that properties in the template `options` field can be used here\n\t- **destination**: optional destination path. This can contain stencil tags whose context is that from the context above. e.g. if context was `definitions` then the path could be `Models/{{ type }}.swift` and the filename would be the type of the definition. If this is left out the destination will be the same as the path, relative to the final destination directory. If it resolves to an empty string it will be skipped and not generated.\n- **copiedFiles**: this is an array of relative paths that will be copied to the destination. They can be files or directories. This is used for files that won't have their contents, filenames or paths changed.\n- **options**: these are the options passed into every stencil file and can be used to customize the template. These options are merged with the `options` argument, with the argument options taking precendance. These options can be references in template file paths and their contents.\n\nAn example template for Swift can be found [here](Templates/Swift/template.yml)\n\n### Template Files\nThese files follow the **Stencil** file format outlined here [https://stencil.fuller.li](https://stencil.fuller.li)\n\n## Formatters\nFormatters change what information is available to the templates and how it's formatted. They can be specified via the `formatter` property in the template config. Usually these would map to a specific target language, but can be customized for different purposes.\n\n## Output Languages\nSwagGen can be used to generate code for any language. At the moment there is only a formatter and template for **Swift**\n\n## Swift API usage\nUsage documentation can be found in the [Readme](Templates/Swift/README.md) that is generated with your template.\n\n---\n\n## Attributions\n\nThis tool is powered by:\n\n- [JSONUtilities](https://github.com/yonaskolb/JSONUtilities)\n- [Stencil](https://github.com/stencilproject/Stencil)\n- [StencilSwiftKit](https://github.com/SwiftGen/StencilSwiftKit)\n- [Spectre](https://github.com/kylef/Spectre)\n- [PathKit](https://github.com/kylef/PathKit)\n- [SwiftCLI](https://github.com/jakeheis/SwiftCLI)\n- [Yams](https://github.com/jpsim/Yams)\n\nThanks also to [Logan Shire](https://github.com/AttilaTheFun) and his initial work on [Swagger Parser](https://github.com/AttilaTheFun/SwaggerParser)\n\n## Contributions\nPull requests and issues are welcome\n\n## License\n\nSwagGen is licensed under the MIT license. See [LICENSE](LICENSE) for more info.\n"
 jolie/jester: >
   # Jester (Jolie 1.6.0 Beta or greater required)
 
@@ -36482,7 +36557,7 @@ slanatech/swagger-stats: >
    
   MIT
 notonthehighstreet/svelte: "# Svelte\n\nSvelte is a Swagger-to-Ruby object mapper.\n\nIt reads a Swagger specification file in JSON, and automatically generates Resource Classes with static methods to represent the various HTTP endpoints.\n\n[![Build Status](https://secure.travis-ci.org/notonthehighstreet/svelte.png?branch=master)](http://travis-ci.org/notonthehighstreet/svelte)\n[![Code Climate](https://codeclimate.com/github/notonthehighstreet/svelte/badges/gpa.svg)](https://codeclimate.com/github/notonthehighstreet/svelte)\n\n## Installation\n\nAdd this line to your application's Gemfile:\n\n```ruby\ngem \"svelte\"\n```\n\nAnd then execute:\n\n    $ bundle\n\nOr install it yourself as:\n\n    $ gem install svelte\n\n## Usage\n\nPoint a service at an actual API spec.\n\nYou may pass in a URL pointing to a Swagger spec or the JSON directly:\n\n```ruby\nservice = Svelte::Service.create(url: \"http://path/to/swagger/spec/resource.json\", module_name: 'PetStore')\nservice = Svelte::Service.create(json: \"{ <JSON here> }\", module_name: 'PetStore')\n```\n\nThis will build a dynamically generated client on top of `Svelte::Service::PetStore`.\n\nThe structure of the new module will be based on the API paths and their respective operations.\nLet's look at an example. Using the complete PetStore spec, we can find the following path:\n\n```json\n\"/pet/findByStatus\": {\n  \"get\": {\n    \"tags\": [\n      \"pet\"\n    ],\n    \"summary\": \"Finds Pets by status\",\n    \"description\": \"Multiple status values can be provided with comma separated strings\",\n    \"operationId\": \"findPetsByStatus\",\n    \"produces\": [\n      \"application/xml\",\n      \"application/json\"\n    ],\n    \"parameters\": [\n      {\n        \"name\": \"status\",\n        \"in\": \"query\",\n        \"description\": \"Status values that need to be considered for filter\",\n        \"required\": true,\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"available\",\n            \"pending\",\n            \"sold\"\n          ],\n          \"default\": \"available\"\n        },\n        \"collectionFormat\": \"multi\"\n      }\n    ],\n    \"responses\": {\n      \"200\": {\n        \"description\": \"successful operation\",\n        \"schema\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"$ref\": \"#/definitions/Pet\"\n          }\n        }\n      },\n      \"400\": {\n        \"description\": \"Invalid status value\"\n      }\n    },\n    \"security\": [\n      {\n        \"petstore_auth\": [\n          \"write:pets\",\n          \"read:pets\"\n        ]\n      }\n    ]\n  }\n}\n```\n\nThe path contains two parts: `pet` and `findByStatus`. This will generate\nthe following hierarchy in the new module:\n\n```ruby\nSvelte::Service::PetStore::Pet::FindByStatus\n```\n\nWe can see the path has one `get` operation. A method will be generated in the\n`FindByStatus` module based on the `operationId` Swagger attribute, which will\nhave the following signature:\n\n```ruby\nSvelte::Service::PetStore::Pet::FindByStatus.find_pets_by_status(\n  request_payload,\n  request_options = {}\n)\n```\n\nWhere `request_payload` is a `Hash` representing the parameters of the operation\nand `request_options`, defaulting to an empty `Hash`, will be a `Hash` of\noptions to pass to the request.\n\nIn our case, the parameters would look like this:\n\n```ruby\nrequest_parameters = {\n  status: ['available', 'pending']\n}\n```\n\n### Responses\n\nSvelte will return a [`Faraday::Request`](http://www.rubydoc.info/gems/faraday/0.9.1/Faraday/Response) object as a response to a call.\n\n### Models\n\nSvelte also provides generators for Swagger models. They allow an easy way\nto programmatically create and validate requests.\nThey also provide an `as_json` that will generate a valid json body for\n a given request.\n\nConsider the definitions key of this Swagger model:\n\n```json\n{\n  \"definitions\": {\n    \"MoneyView\": {\n      \"id\": \"MoneyView\",\n      \"description\": \"\",\n      \"required\": [\n        \"amount\",\n        \"currencyCode\"\n      ],\n      \"extends\": \"\",\n      \"properties\": {\n        \"amount\": {\n          \"type\": \"number\",\n          \"format\": \"double\",\n          \"description\": \"Decimal amount\"\n        },\n        \"currencyCode\": {\n          \"type\": \"string\",\n          \"description\": \"ISO 3 letter currency code\"\n        }\n      }\n    }\n  }\n}\n```\n\nIn Svelte you can generate the ruby mapper like this:\n\n```ruby\nclass MoneyRequest\n  extend Svelte::ModelFactory\n  define_models_from_file(path_to_models_json_file)\nend\n\nview = MoneyRequest::MoneyView.new\nview.valid? # false\nview.validate # {\"currencyCode\"=>\"Invalid parameter: Missing required parameter\", \"amount\"=>\"Invalid parameter: Missing required parameter\"}\nview.currencyCode = \"GBP\"\nview.amount = 40.00\nview.valid? # true\nview.as_json # {:currencyCode=>\"GBP\", :amount=>40.0}\n```\n\n### Options\n\nYou can specify a timeout option on a per request basis. If the request times out a `Svelte::TimeoutError` exception\nwill be raised.\n\n```ruby\nbegin\n  Svelte::Service::PetStore::Pet::FindByStatus.find_pets_by_status(request.as_json, { timeout: 10 })\nrescue Svelte::TimeoutError => e\n  handle_timeout_error(e)\nend\n```\n\n##\_Limitations\n\nSvelte is still a work in progress gem and it lacks some features that will be\nimplemented in the future. Feel free to request or comment on what you'd like\nto see supported. Here is a non exhaustive list of the pitfalls we've identified\nso far:\n\n* Supports `application/json` request and response types only\n* API calls return a raw [Faraday::Response] objects. We'll support returning\n  dynamically generated model responses based on the Swagger spec response\n  schema\n* Request parameter validation is only done for url based parameters.\n    It'd be possible to add validations to all parameters of the request.\n    In fact the `ModelFactory` already provides that functionality, but it\n    requires the client to call `valid?` on the requests to perform the\n    validation. This should happen automatically\n\n## Development\n\nAfter checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.\n\nTo install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).\n\n## Contributing\n\n1. Fork it ( https://github.com/notonthehighstreet/svelte/fork )\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Add some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create a new Pull Request\n"
-domaindrivendev/Swashbuckle.AspNetCore: "| :mega: Important for anyone upgrading major versions! |\n|--------------|\n|* If you're upgrading from 2.x to 3.x, there's a couple of breaking changes to be aware of. See the [release notes](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/releases/tag/v3.0.0) for details<br />* If you're upgrading from 3.x to 4.x, there's more breaking changes to be aware of. See those [release notes here](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/releases/tag/v4.0.0)|\n\nSwashbuckle.AspNetCore\n=========\n\n[![Build status](https://ci.appveyor.com/api/projects/status/xpsk2cj1xn12c0r7/branch/master?svg=true)](https://ci.appveyor.com/project/domaindrivendev/ahoy/branch/master)\n\n[Swagger](http://swagger.io) tooling for API's built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.\n\nIn addition to its [Swagger](http://swagger.io/specification/) generator, Swashbuckle also provides an embedded version of the awesome [swagger-ui](https://github.com/swagger-api/swagger-ui) that's powered by the generated Swagger JSON. This means you can complement your API with living documentation that's always in sync with the latest code. Best of all, it requires minimal coding and maintenance, allowing you to focus on building an awesome API.\n\nAnd that's not all ...\n\nOnce you have an API that can describe itself in Swagger, you've opened the treasure chest of Swagger-based tools including a client generator that can be targeted to a wide range of popular platforms. See [swagger-codegen](https://github.com/swagger-api/swagger-codegen) for more details.\n\n# Compatibility #\n\n|Swashbuckle Version|ASP.NET Core|Swagger / OpenAPI Spec.|swagger-ui|ReDoc UI|\n|----------|----------|----------|----------|----------|\n|[master](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/README-v5.md)|>=2.0.0|2.0, 3.0|3.19.5|1.22.2|\n|[5.0.0-beta](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/README-v5.md)|>=2.0.0|2.0, 3.0|3.19.5|1.22.2|\n|[4.0.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v4.0.0)|>=2.0.0|2.0|3.19.5|1.22.2|\n|[3.0.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v3.0.0)|>=1.0.4|2.0|3.17.1|1.20.0|\n|[2.5.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v2.5.0)|>=1.0.4|2.0|3.16.0|1.20.0|\n\n# Getting Started #\n\n1. Install the standard Nuget package into your ASP.NET Core application.\n\n    ```\n    Package Manager : Install-Package Swashbuckle.AspNetCore\n    CLI : dotnet add package Swashbuckle.AspNetCore\n    ```\n\n2. In the _ConfigureServices_ method of _Startup.cs_, register the Swagger generator, defining one or more Swagger documents.\n\n    ```csharp\n    using Swashbuckle.AspNetCore.Swagger;\n    \n    services.AddMvc();\n\n    services.AddSwaggerGen(c =>\n    {\n        c.SwaggerDoc(\"v1\", new Info { Title = \"My API\", Version = \"v1\" });\n    });\n    ```\n\n3. Ensure your API actions and non-route parameters are decorated with explicit \"Http\" and \"From\" bindings.\n\n    ```csharp\n    [HttpPost]\n    public void CreateProduct([FromBody]Product product)\n    ...\n\n    [HttpGet]\n    public IEnumerable<Product> SearchProducts([FromQuery]string keywords)\n    ...\n    ```\n\n    _NOTE: If you omit the explicit parameter bindings, the generator will describe them as \"query\" params by default._\n\n4. In the _Configure_ method, insert middleware to expose the generated Swagger as JSON endpoint(s)\n\n    ```csharp\n    app.UseSwagger();\n    ```\n\n    _At this point, you can spin up your application and view the generated Swagger JSON at \"/swagger/v1/swagger.json.\"_\n\n5. Optionally insert the swagger-ui middleware if you want to expose interactive documentation, specifying the Swagger JSON endpoint(s) to power it from.\n\n    ```csharp\n    app.UseSwaggerUI(c =>\n    {\n        c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n    });\n    ```\n\n    _Now you can restart your application and check out the auto-generated, interactive docs at \"/swagger\"._\n\n# Swashbuckle, ApiExplorer, and Routing #\n\nSwashbuckle relies heavily on _ApiExplorer_, the API metadata layer that ships with ASP.NET Core. If you're using the _AddMvc_ helper to bootstrap the MVC stack, then _ApiExplorer_ will be automatically registered and SB will work without issue. However, if you're using _AddMvcCore_ for a more pared-down MVC stack, you'll need to explicitly add the Api Explorer service:\n\n```csharp\nservices.AddMvcCore()\n    .AddApiExplorer();\n```\n\nAdditionally, if you are using _[conventional routing](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#conventional-routing)_ (as opposed to attribute routing), any controllers and the actions on those controllers that use conventional routing will not be represented in ApiExplorer, which means Swashbuckle won't be able to find those controllers and generate Swagger documents from them. For instance:\n\n```csharp\napp.UseMvc(routes =>\n{\n   // SwaggerGen won't find controllers that are routed via this technique.\n   routes.MapRoute(\"default\", \"{controller=Home}/{action=Index}/{id?}\");\n});\n```\n\nYou **must** use attribute routing for any controllers that you want represented in your Swagger document(s):\n\n```csharp\n[Route(\"example\")]\npublic class ExampleController : Controller\n{\n    [HttpGet(\"\")]\n    public IActionResult DoStuff() { /**/ }\n}\n```\nRefer to the [routing documentation](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing) for more information.\n\n# Components #\n\nSwashbuckle consists of multiple components that can be used together or individually dependening on your needs. At its core, there's a Swagger object model, a Swagger generator and a packaged version of the [swagger-ui](https://github.com/swagger-api/swagger-ui). These 3 packages can be installed with the `Swashbuckle.AspNetCore` \"metapackage\" and will work together seamlessly (see [Getting Started](#getting-started)) to provide beautiful API docs that are automatically generated from your code.\n\nAdditionally, there's add-on packages (CLI tools, [an alternate UI](https://github.com/Rebilly/ReDoc) etc.) that you can optinally install and configure as needed.\n\n## \"Core\" Packages (i.e. installed via Swashbuckle.AspNetCore)\n\n|Package|Description|\n|---------|-----------|\n|Swashbuckle.AspNetCore.Swagger|Exposes _SwaggerDocument_ objects as a JSON API. It expects an implementation of _ISwaggerProvider_ to be registered which it queries to retrieve Swagger document(s) before returning as serialized JSON|\n|Swashbuckle.AspNetCore.SwaggerGen|Injects an implementation of _ISwaggerProvider_ that can be used by the above component. This particular implementation automatically generates _SwaggerDocument_(s) from your routes, controllers and models|\n|Swashbuckle.AspNetCore.SwaggerUI|Exposes an embedded version of the swagger-ui. You specify the API endpoints where it can obtain Swagger JSON and it uses them to power interactive docs for your API|\n\n## Additional Packages ##\n\n|Package|Description|\n|---------|-----------|\n|Swashbuckle.AspNetCore.Annotations|Includes a set of custom attributes that can be applied to controllers, actions and models to enrich the generated Swagger|\n|Swashbuckle.AspNetCore.Cli (Beta)|Provides a CLI interface for retrieving Swagger directly from a startup assembly, and writing to file|\n|Swashbuckle.AspNetCore.ReDoc|Exposes an embedded version of the ReDoc UI (an alternative to swagger-ui)|\n\n## Community Packages ##\n\nThese packages are provided by the open-source community.\n\n|Package|Description|\n|---------|-----------|\n|[Swashbuckle.AspNetCore.Filters](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters)| Some useful Swashbuckle filters which add additional documentation, e.g. request and response examples, a file upload button, etc. See its Readme for more details |\n|[MicroElements.Swashbuckle.FluentValidation](https://github.com/micro-elements/MicroElements.Swashbuckle.FluentValidation)| Use FluentValidation rules instead of ComponentModel attributes to augment generated Swagger Schemas |\n\n# Configuration & Customization #\n\nThe steps described above will get you up and running with minimal setup. However, Swashbuckle offers a lot of flexibility to customize as you see fit. Check out the table below for the full list of options:\n\n* [Swashbuckle.AspNetCore.Swagger](#swashbuckleaspnetcoreswagger)\n\n    * [Change the Path for Swagger JSON Endpoints](#change-the-path-for-swagger-json-endpoints)\n    * [Modify Swagger with Request Context](#modify-swagger-with-request-context)\n    * [Pretty Print Swagger JSON](#pretty-print-swagger-json)\n\n* [Swashbuckle.AspNetCore.SwaggerGen](#swashbuckleaspnetcoreswaggergen)\n\n    * [Assign Explicit OperationIds](#assign-explicit-operationids)\n    * [List Operations Responses](#list-operation-responses)\n    * [Flag Required Parameters and Schema Properties](#flag-required-parameters-and-schema-properties)\n    * [Include Descriptions from XML Comments](#include-descriptions-from-xml-comments)\n    * [Provide Global API Metadata](#provide-global-api-metadata)\n    * [Generate Multiple Swagger Documents](#generate-multiple-swagger-documents)\n    * [Omit Obsolete Operations and/or Schema Properties](#omit-obsolete-operations-andor-schema-properties)\n    * [Omit Arbitrary Operations](#omit-arbitrary-operations)\n    * [Customize Operation Tags (e.g. for UI Grouping)](#customize-operation-tags-eg-for-ui-grouping)\n    * [Change Operation Sort Order (e.g. for UI Sorting)](#change-operation-sort-order-eg-for-ui-sorting)\n    * [Customize Schema Id's](#customize-schema-ids)\n    * [Customize Schema for Enum Types](#customize-schema-for-enum-types)\n    * [Override Schema for Specific Types](#override-schema-for-specific-types)\n    * [Extend Generator with Operation, Schema & Document Filters](#extend-generator-with-operation-schema--document-filters)\n    * [Add Security Definitions and Requirements](#add-security-definitions-and-requirements)\n\n* [Swashbuckle.AspNetCore.SwaggerUI](#swashbuckleaspnetcoreswaggerui)\n    * [Change Releative Path to the UI](#change-relative-path-to-the-ui)\n    * [Change Document Title](#change-document-title)\n    * [List Multiple Swagger Documents](#list-multiple-swagger-documents)\n    * [Apply swagger-ui Parameters](#apply-swagger-ui-parameters)\n    * [Inject Custom CSS](#inject-custom-css)\n    * [Customize index.html](#customize-indexhtml)\n    * [Enable OAuth2.0 Flows](#enable-oauth20-flows)\n\n* [Swashbuckle.AspNetCore.Annotations](#swashbuckleaspnetcoreannotations)\n\t* [Install and Enable Annotations](#install-and-enable-annotations)\n\t* [Enrich Operation Metadata](#enrich-operation-metadata)\n\t* [Enrich Response Metadata](#enrich-response-metadata)\n\t* [Enrich Parameter Metadata](#enrich-parameter-metadata)\n\t* [Enrich Schema Metadata](#enrich-schema-metadata)\n\t* [Add Tag Metadata](#add-tag-metadata)\n\n* [Swashbuckle.AspNetCore.Cli](#swashbuckleaspnetcorecli)\n\t* [Retrieve Swagger Directly from a Startup Assembly](#retrieve-swagger-directly-from-a-startup-assembly)\n\n* [Swashbuckle.AspNetCore.ReDoc](#swashbuckleaspnetcoreredoc)\n\t* Docs coming soon\n\n## Swashbuckle.AspNetCore.Swagger ##\n\n### Change the Path for Swagger JSON Endpoints ###\n\nBy default, Swagger JSON will be exposed at the following route - \"/swagger/{documentName}/swagger.json\". If necessary, you can change this when enabling the Swagger middleware. Custom routes MUST include the {documentName} parameter.\n\n```csharp\napp.UseSwagger(c =>\n{\n    c.RouteTemplate = \"api-docs/{documentName}/swagger.json\";\n});\n```\n\n_NOTE: If you're using the SwaggerUI middleware, you'll also need to update its configuration to reflect the new endpoints:_\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.SwaggerEndpoint(\"/api-docs/v1/swagger.json\", \"My API V1\");\n})\n```\n\n### Modify Swagger with Request Context ###\n\nIf you need to set some Swagger metadata based on the current request, you can configure a filter that's executed prior to serializing the document.\n\n```csharp\napp.UseSwagger(c =>\n{\n    c.PreSerializeFilters.Add((swaggerDoc, httpReq) => swaggerDoc.Host = httpReq.Host.Value);\n});\n```\n\nThe _SwaggerDocument_ and the current _HttpRequest_ are passed to the filter. This provides a lot of flexibility. For example, you can assign the \"host\" property (as shown) or you could inspect session information or an Authorization header and remove operations int the document based on user permissions.\n\n### Pretty Print Swagger JSON ###\n\nBy default, Swagger JSON will not be formatted. If the Swagger JSON should be indented properly, set the _SerializerSettings_  option in your _AddMvc_ helper:\n\n```csharp\nservices.AddMvc()\n    .AddJsonOptions(options =>\n    {\n        options.SerializerSettings.Formatting = Formatting.Indented;\n    });\n```\n\n## Swashbuckle.AspNetCore.SwaggerGen ##\n\n### Assign Explicit OperationIds ###\n\nIn Swagger, Operations can be a assigned a unique `operationId`. This is often used by code generation tools (e.g. client libraries) and so, it's important for the value to follow common programming conventions while also revealing the purpose of the operation. To best meet these goals, Swashbuckle requires API authors to provide the value explicitly and provides two different options to do so:\n\n__Option 1) Action Names__\n\n```csharp\n[HttpGet(\"{id}\")]\npublic IActionResult GetProductById(int id) // operationId = \"GetProductById\"\n```\n\n__Option 2) Route Names__\n\n```csharp\n[HttpGet(\"{id}\", Name = \"GetProductById\")]\npublic IActionResult Get(int id) // operationId = \"GetProductById\"\n```\n\n_NOTE: In both cases, API authors are responsible for ensuring the uniqueness of `operationId`s across all Operations_\n\n__Display Operations In SwaggerUI__\nTo display the operations in you SwaggerUI, you need to invoke `DisplayOperationId()` on the `SwaggerUIOptions` as follows:\n```csharp\napp.UseSwaggerUI(c =>\n{\n\t...\n    c.DisplayOperationId();\n    ...\n}\n```\n\n### List Operation Responses ###\n\nBy default, Swashbuckle will generate a \"200\" response for each operation. If the action returns a response DTO, then this will be used to generate a \"schema\" for the response body. For example ...\n\n```csharp\n[HttpPost(\"{id}\")]\npublic Product GetById(int id)\n```\n\nWill produce the following response metadata:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  }\n}\n```\n\n#### Explicit Responses ####\n\nIf you need to specify a different status code and/or additional responses, or your actions return _IActionResult_ instead of a response DTO, you can describe explicit responses with the `ProducesResponseTypeAttribute` that ships with ASP.NET Core. For example ...\n\n```csharp\n[HttpPost(\"{id}\")]\n[ProducesResponseType(typeof(Product), 200)]\n[ProducesResponseType(typeof(IDictionary<string, string>), 400)]\n[ProducesResponseType(500)]\npublic IActionResult GetById(int id)\n```\n\nWill produce the following response metadata:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  },\n  400: {\n    description: \"Bad Request\",\n    schema: {\n      type: \"object\",\n      additionalProperties: {\n        type: \"string\"\n      }\n    }\n  },\n  500: {\n    description: \"Server Error\"\n  }\n}\n```\n\n### Flag Required Parameters and Schema Properties ###\n\nIn a Swagger document, you can flag parameters and schema properties that are required for a request. If a parameter (top-level or property-based) is decorated with the `BindRequiredAttribute` or `RequiredAttribute`, then Swashbuckle will automatically flag it as a \"required\" parameter in the generated Swagger:\n\n```csharp\n// ProductsController.cs\npublic IActionResult Search([FromQuery, BindRequired]string keywords, [FromQuery]PagingParams pagingParams)\n{\n    if (!ModelState.IsValid)\n        return BadRequest(ModelState);\n    ...\n}\n\n// SearchParams.cs\npublic class PagingParams\n{\n    [Required]\n    public int PageNo { get; set; }\n\n    public int PageSize { get; set; }\n}\n```\n\nIn addition to parameters, Swashbuckle will also honor the `RequiredAttribute` when used in a model that's bound to the request body. In this case, the decorated properties will be flagged as \"required\" properties in the body description:\n\n```csharp\n// ProductsController.cs\npublic IActionResult Create([FromBody]Product product)\n{\n    if (!ModelState.IsValid)\n        return BadRequest(ModelState);\n    ...\n}\n\n// Product.cs\npublic class Product\n{\n    [Required]\n    public string Name { get; set; }\n\n    public string Description { get; set; }\n}\n```\n\n### Include Descriptions from XML Comments ###\n\nTo enhance the generated docs with human-friendly descriptions, you can annotate controller actions and models with [Xml Comments](http://msdn.microsoft.com/en-us/library/b2s063f7(v=vs.110).aspx) and configure Swashbuckle to incorporate those comments into the outputted Swagger JSON:\n\n1. Open the Properties dialog for your project, click the \"Build\" tab and ensure that \"XML documentation file\" is checked. This will produce a file containing all XML comments at build-time.\n\n    _At this point, any classes or methods that are NOT annotated with XML comments will trigger a build warning. To suppress this, enter the warning code \"1591\" into the \"Suppress warnings\" field in the properties dialog._\n\n2. Configure Swashbuckle to incorporate the XML comments on file into the generated Swagger JSON:\n\n    ```csharp\n    services.AddSwaggerGen(c =>\n    {\n        c.SwaggerDoc(\"v1\",\n            new Info\n            {\n                Title = \"My API - V1\",\n                Version = \"v1\"\n            }\n         );\n\n         var filePath = Path.Combine(System.AppContext.BaseDirectory, \"MyApi.xml\");\n         c.IncludeXmlComments(filePath);\n    }\n    ```\n\n3. Annotate your actions with summary, remarks and response tags:\n\n    ```csharp\n    /// <summary>\n    /// Retrieves a specific product by unique id\n    /// </summary>\n    /// <remarks>Awesomeness!</remarks>\n    /// <response code=\"200\">Product created</response>\n    /// <response code=\"400\">Product has missing/invalid values</response>\n    /// <response code=\"500\">Oops! Can't create your product right now</response>\n    [HttpGet(\"{id}\")]\n    [ProducesResponseType(typeof(Product), 200)]\n    [ProducesResponseType(typeof(IDictionary<string, string>), 400)]\n    [ProducesResponseType(500)]\n    public Product GetById(int id)\n    ```\n\n4. You can also annotate types with summary and example tags:\n\n    ```csharp\n    public class Product\n    {\n        /// <summary>\n        /// The name of the product\n        /// </summary>\n        /// <example>Men's basketball shoes</example>\n        public string Name { get; set; }\n\n        /// <summary>\n        /// Quantity left in stock\n        /// </summary>\n        /// <example>10</example>\n        public int AvailableStock { get; set; }\n    }\n    ```\n\n5. Rebuild your project to update the XML Comments file and navigate to the Swagger JSON endpoint. Note how the descriptions are mapped onto corresponding Swagger fields.\n\n_NOTE: You can also provide Swagger Schema descriptions by annotating your API models and their properties with summary tags. If you have multiple XML comments files (e.g. separate libraries for controllers and models), you can invoke the IncludeXmlComments method multiple times and they will all be merged into the outputted Swagger JSON._\n\n### Provide Global API Metadata ###\n\nIn addition to _Paths_, _Operations_ and _Responses_, which Swashbuckle generates for you, Swagger also supports global metadata (see http://swagger.io/specification/#swaggerObject). For example, you can provide a full description for your API, terms of service or even contact and licensing information:\n\n```csharp\nc.SwaggerDoc(\"v1\",\n    new Info\n    {\n        Title = \"My API - V1\",\n        Version = \"v1\",\n        Description = \"A sample API to demo Swashbuckle\",\n        TermsOfService = \"Knock yourself out\",\n        Contact = new Contact\n        {\n            Name = \"Joe Developer\",\n            Email = \"joe.developer@tempuri.org\"\n        },\n        License = new License\n        {\n            Name = \"Apache 2.0\",\n            Url = \"http://www.apache.org/licenses/LICENSE-2.0.html\"\n        }\n    }\n)\n```\n\n_Use IntelliSense to see what other fields are available._\n\n### Generate Multiple Swagger Documents ###\n\nWith the setup described above, the generator will include all API operations in a single Swagger document. However, you can create multiple documents if necessary. For example, you may want a separate document for each version of your API. To do this, start by defining multiple Swagger docs in _Startup.cs_:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    c.SwaggerDoc(\"v1\", new Info { Title = \"My API - V1\", Version = \"v1\" });\n    c.SwaggerDoc(\"v2\", new Info { Title = \"My API - V2\", Version = \"v2\" });\n})\n```\n\n_Take note of the first argument to SwaggerDoc. It MUST be a URI-friendly name that uniquely identifies the document. It's subsequently used to make up the path for requesting the corresponding Swagger JSON. For example, with the default routing, the above documents will be available at \"/swagger/v1/swagger.json\" and \"/swagger/v2/swagger.json\"._\n\nNext, you'll need to inform Swashbuckle which actions to include in each document. Although this can be customized (see below), by default, the generator will use the _ApiDescription.GroupName_ property, part of the built-in metadata layer that ships with ASP.NET Core, to make this distinction. You can set this by decorating individual actions OR by applying an application wide convention.\n\n#### Decorate Individual Actions ####\n\nTo include an action in a specific Swagger document, decorate it with the _ApiExplorerSettingsAttribute_ and set _GroupName_ to the corresponding document name (case sensitive):\n\n```csharp\n[HttpPost]\n[ApiExplorerSettings(GroupName = \"v2\")]\npublic void Post([FromBody]Product product)\n```\n\n#### Assign Actions to Documents by Convention ####\n\nTo group by convention instead of decorating every action, you can apply a custom controller or action convention. For example, you could wire up the following convention to assign actions to documents based on the controller namespace.\n\n```csharp\n// ApiExplorerGroupPerVersionConvention.cs\npublic class ApiExplorerGroupPerVersionConvention : IControllerModelConvention\n{\n    public void Apply(ControllerModel controller)\n    {\n        var controllerNamespace = controller.ControllerType.Namespace; // e.g. \"Controllers.V1\"\n        var apiVersion = controllerNamespace.Split('.').Last().ToLower();\n\n        controller.ApiExplorer.GroupName = apiVersion;\n    }\n}\n\n// Startup.cs\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddMvc(c =>\n        c.Conventions.Add(new ApiExplorerGroupPerVersionConvention())\n    );\n\n    ...\n}\n```\n\n#### Customize the Action Selection Process ####\n\nWhen selecting actions for a given Swagger document, the generator invokes a _DocInclusionPredicate_ against every _ApiDescription_ that's surfaced by the framework. The default implementation inspects _ApiDescription.GroupName_ and returns true if the value is either null OR equal to the requested document name. However, you can also provide a custom inclusion predicate. For example, if you're using an attribute-based approach to implement API versioning (e.g. Microsoft.AspNetCore.Mvc.Versioning), you could configure a custom predicate that leverages this instead:\n\n```csharp\nc.DocInclusionPredicate((docName, apiDesc) =>\n{\n    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;\n\n    var versions = methodInfo.DeclaringType\n        .GetCustomAttributes(true)\n        .OfType<ApiVersionAttribute>()\n        .SelectMany(attr => attr.Versions);\n\n    return versions.Any(v => $\"v{v.ToString()}\" == docName);\n});\n```\n\n#### Exposing Multiple Documents through the UI ####\n\nIf you're using the _SwaggerUI_ middleware, you'll need to specify any additional Swagger endpoints you want to expose. See [List Multiple Swagger Documents](#list-multiple-swagger-documents) for more.\n\n### Omit Obsolete Operations and/or Schema Properties ###\n\nThe [Swagger spec](http://swagger.io/specification/) includes a \"deprecated\" flag for indicating that an operation is deprecated and should be refrained from use. The Swagger generator will automatically set this flag if the corresponding action is decorated with the _ObsoleteAttribute_. However, instead of setting a flag, you can configure the generator to ignore obsolete actions altogether:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.IgnoreObsoleteActions();\n};\n```\n\nA similar approach can also be used to omit obsolete properties from Schemas in the Swagger output. That is, you can decorate model properties with the _ObsoleteAttribute_ and configure Swashbuckle to omit those properties when generating JSON Schemas:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.IgnoreObsoleteProperties();\n};\n```\n\n### Omit Arbitrary Operations ###\n\nYou can omit operations from the Swagger output by decorating individual actions OR by applying an application wide convention.\n\n#### Decorate Individual Actions ####\n\nTo omit a specific action, decorate it with the _ApiExplorerSettingsAttribute_ and set the _IgnoreApi_ flag:\n\n```csharp\n[HttpGet(\"{id}\")]\n[ApiExplorerSettings(IgnoreApi = true)]\npublic Product GetById(int id)\n```\n\n#### Omit Actions by Convention ####\n\nTo omit actions by convention instead of decorating them individually, you can apply a custom action convention. For example, you could wire up the following convention to only document GET operations:\n\n```csharp\n// ApiExplorerGetsOnlyConvention.cs\npublic class ApiExplorerGetsOnlyConvention : IActionModelConvention\n{\n    public void Apply(ActionModel action)\n    {\n        action.ApiExplorer.IsVisible = action.Attributes.OfType<HttpGetAttribute>().Any();\n    }\n}\n\n// Startup.cs\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddMvc(c =>\n        c.Conventions.Add(new ApiExplorerGetsOnlyConvention())\n    );\n\n    ...\n}\n```\n\n### Customize Operation Tags (e.g. for UI Grouping) ###\n\nThe [Swagger spec](http://swagger.io/specification/) allows one or more \"tags\" to be assigned to an operation. The Swagger generator will assign the controller name as the default tag. This is particularly interesting if you're using the _SwaggerUI_ middleware as it uses this value to group operations.\n\nYou can override the default tag by providing a function that applies tags by convention. For example, the following configuration will tag, and therefore group operations in the UI, by HTTP method:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.TagActionsBy(api => api.HttpMethod);\n};\n```\n\n### Change Operation Sort Order (e.g. for UI Sorting) ###\n\nBy default, actions are ordered by assigned tag (see above) before they're grouped into the path-based, hierarchichal structure imposed by the [Swagger spec](http://swagger.io/specification). You can change this behavior with a custom sorting strategy:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.OrderActionsBy((apiDesc) => $\"{apiDesc.ActionDescriptor.RouteValues[\"controller\"]}_{apiDesc.HttpMethod}\");\n};\n```\n\n_NOTE: This dictates the sort order BEFORE actions are grouped and transformed into the Swagger format. So, it affects the ordering of groups (i.e. Swagger PathItems), AND the ordering of operations within a group, in the Swagger output._\n\n### Customize Schema Id's ###\n\nIf the generator encounters complex parameter or response types, it will generate a corresponding JSON Schema, add it to the global \"definitions\" dictionary, and reference it from the operation description by unique Id. For example, if you have an action that returns a \"Product\" type, the generated schema will be referenced as follows:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  }\n}\n```\n\nHowever, if it encounters multiple \"Product\" classes under different namespaces (e.g. \"RequestModels.Product\" & \"ResponseModels.Product\"), then Swashbuckle will raise an exception due to \"Conflicting schemaIds\". In this case, you'll need to provide a custom Id strategy that further qualifies the name:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.CustomSchemaIds((type) => type.FullName);\n};\n```\n\n### Customize Schema for Enum Types ###\n\nWhen describing parameters and responses, Swashbuckle does its best to reflect the application's serialization settings. For example, if the _CamelCaseContractResolver_ is enabled, Schema property names will be camelCased in the generated Swagger.\n\nSimilarly for enum types, if the _StringEnumConverter_ is enabled, then the corresponding Schemas will list enum names rather than integer values.\n\nFor most cases this should be sufficient. However, if you need more control, Swashbuckle exposes the following options to override the default behavior:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.DescribeAllEnumsAsStrings();\n    c.DescribeStringEnumsInCamelCase();\n};\n```\n\n### Override Schema for Specific Types ###\n\nOut-of-the-box, Swashbuckle does a decent job at generating JSON Schemas that accurately describe your request and response payloads. However, if you're customizing serialization behavior for certain types in your API, you may need to help it out.\n\nFor example, you might have a class with multiple properties that you want to represent in JSON as a comma-separated string. To do this you would probably implement a custom _JsonConverter_. In this case, Swashbuckle doesn't know how the converter is implemented and so you would need to provide it with a Schema that accurately describes the type:\n\n```csharp\n// PhoneNumber.cs\npublic class PhoneNumber\n{\n    public string CountryCode { get; set; }\n\n    public string AreaCode { get; set; }\n\n    public string SubscriberId { get; set; }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.MapType<PhoneNumber>(() => new Schema { Type = \"string\" });\n};\n```\n\n### Extend Generator with Operation, Schema & Document Filters ###\n\nSwashbuckle exposes a filter pipeline that hooks into the generation process. Once generated, individual metadata objects are passed into the pipeline where they can be modified further. You can wire up one or more custom filters for _Operation_, _Schema_ and _Document_ objects:\n\n#### Operation Filters ####\n\nSwashbuckle retrieves an _ApiDescription_, part of ASP.NET Core, for every action and uses it to generate a corresponding _Swagger Operation_. Once generated, it passes the _Operation_ and the _ApiDescription_ through the list of configured Operation Filters.\n\nIn a typical filter implementation, you inspect the _ApiDescription_ for relevant information (e.g. route info, action attributes etc.) and then update the Swagger _Operation_ accordingly. For example, the following filter lists an additional \"401\" response for all actions that are decorated with the _AuthorizeAttribute_:\n\n```csharp\n// AuthResponsesOperationFilter.cs\npublic class AuthResponsesOperationFilter : IOperationFilter\n{\n    public void Apply(Operation operation, OperationFilterContext context)\n    {\n        var authAttributes = context.MethodInfo.DeclaringType.GetCustomAttributes(true)\n            .Union(context.MethodInfo.GetCustomAttributes(true))\n            .OfType<AuthorizeAttribute>();\n\n        if (authAttributes.Any())\n            operation.Responses.Add(\"401\", new Response { Description = \"Unauthorized\" });\n    }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.OperationFilter<AuthResponsesOperationFilter>();\n};\n```\n\n_NOTE: Filter pipelines are DI-aware. That is, you can create filters with constructor parameters and if the parameter types are registered with the DI framework, they'll be automatically injected when the filters are instantiated_\n\n#### Schema Filters ####\n\nSwashbuckle generates a Swagger-flavored _[JSONSchema](http://swagger.io/specification/#schemaObject)_ for every parameter, response and property type that's exposed by your controller actions. Once generated, it passes the _Schema_ and _Type_ through the list of configured Schema Filters.\n\nThe example below adds an AutoRest vendor extension (see https://github.com/Azure/autorest/blob/master/docs/extensions/readme.md#x-ms-enum) to inform the AutoRest tool how enums should be modelled when it generates the API client.\n\n```csharp\n// AutoRestSchemaFilter.cs\npublic class AutoRestSchemaFilter : ISchemaFilter\n{\n    public void Apply(Schema schema, SchemaFilterContext context)\n    {\n        var typeInfo = context.SystemType.GetTypeInfo();\n\n        if (typeInfo.IsEnum)\n        {\n            schema.Extensions.Add(\n                \"x-ms-enum\",\n                new { name = typeInfo.Name,  modelAsString = true }\n            );\n        };\n    }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.SchemaFilter<AutoRestSchemaFilter>();\n};\n```\n\n#### Document Filters ####\n\nOnce a _Swagger Document_ has been generated, it too can be passed through a set of pre-configured _Document_ Filters. This gives full control to modify the document however you see fit. To ensure you're still returning valid Swagger JSON, you should have a read through the [specification](http://swagger.io/specification/) before using this filter type.\n\nThe example below provides a description for any tags that are assigned to operations in the document:\n\n```csharp\npublic class TagDescriptionsDocumentFilter : IDocumentFilter\n{\n    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)\n    {\n        swaggerDoc.Tags = new[] {\n            new Tag { Name = \"Products\", Description = \"Browse/manage the product catalog\" },\n            new Tag { Name = \"Orders\", Description = \"Submit orders\" }\n        };\n    }\n}\n```\n\n_NOTE: If you're using the SwaggerUI middleware, this filter can be used to display additional descriptions beside each group of Operations._\n\n### Add Security Definitions and Requirements ###\n\nIn Swagger, you can describe how your API is secured by defining one or more security schemes (e.g basic, api key, oauth2 etc.) and declaring which of those schemes are applicable globally OR for specific operations. For more details, take a look at the \"securityDefinitions\" and \"security\" fields in the [Swagger spec](http://swagger.io/specification/#swaggerObject).\n\nIn Swashbuckle, you can define schemes by invoking the `AddSecurityDefinition` method, providing a name and an instance of BasicAuthScheme, ApiKeyScheme or OAuth2Scheme. For example you can define an [OAuth 2.0 - implicit flow](https://oauth.net/2/) as follows:\n\n```csharp\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n\n    // Define the OAuth2.0 scheme that's in use (i.e. Implicit Flow)\n    c.AddSecurityDefinition(\"oauth2\", new OAuth2Scheme\n    {\n        Type = \"oauth2\",\n        Flow = \"implicit\",\n        AuthorizationUrl = \"http://petstore.swagger.io/oauth/dialog\",\n        Scopes = new Dictionary<string, string>\n        {\n            { \"readAccess\", \"Access read operations\" },\n            { \"writeAccess\", \"Access write operations\" }\n        }\n    });\n};\n```\n\n__NOTE__: In addition to defining a scheme, you also need to indicate which operations that scheme is applicable to. You can apply schemes globally (i.e. to ALL operations) through the `AddSecurityRequirement` method. The example below indicates that the scheme called \"oauth2\" should be applied to all operations, and that the \"readAccess\" and \"writeAccess\" scopes are required. When applying schemes of type other than \"oauth2\", the array of scopes MUST be empty.\n\n```csharp\nc.AddSwaggerGen(c =>\n{\n\t...\n\n    c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>\n    {\n        { \"oauth2\", new[] { \"readAccess\", \"writeAccess\" } }\n    });\n})\n```\n\nIf you have schemes that only apply to specific operations, you can apply them through an `OperationFilter`. For example, the following filter adds OAuth2 requirements based on the presence of the `AuthorizeAttribute`:\n\n```csharp\n// SecurityRequirementsOperationFilter.cs\npublic class SecurityRequirementsOperationFilter : IOperationFilter\n{\n    public void Apply(Operation operation, OperationFilterContext context)\n    {\n        // Policy names map to scopes\n        var requiredScopes = context.MethodInfo\n            .GetCustomAttributes(true)\n            .OfType<AuthorizeAttribute>()\n            .Select(attr => attr.Policy)\n            .Distinct();\n\n        if (requiredScopes.Any())\n        {\n            operation.Responses.Add(\"401\", new Response { Description = \"Unauthorized\" });\n            operation.Responses.Add(\"403\", new Response { Description = \"Forbidden\" });\n\n            operation.Security = new List<IDictionary<string, IEnumerable<string>>>();\n            operation.Security.Add(new Dictionary<string, IEnumerable<string>>\n            {\n                { \"oauth2\", requiredScopes }\n            });\n        }\n    }\n}\n```\n\n__NOTE__: If you're using the SwaggerUI middleware, you can enable interactive OAuth2.0 flows that are powered by the emitted security metadata. See [Enabling OAuth2.0 Flows](#enable-oauth20-flows) for more details.\n\n## Swashbuckle.AspNetCore.SwaggerUI ##\n\n### Change Relative Path to the UI ###\n\nBy default, the Swagger UI will be exposed at \"/swagger\". If necessary, you can alter this when enabling the SwaggerUI middleware:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.RoutePrefix = \"api-docs\"\n    ...\n}\n```\n\n### Change Document Title ###\n\nBy default, the Swagger UI will have a generic document title. When you have multiple Swagger pages open, it can be difficult to tell them apart. You can alter this when enabling the SwaggerUI middleware:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.DocumentTitle = \"My Swagger UI\";\n    ...\n}\n```\n\n### List Multiple Swagger Documents ###\n\nWhen enabling the middleware, you're required to specify one or more Swagger endpoints (fully qualified or relative to the current host) to power the UI. If you provide multiple endpoints, they'll be listed in the top right corner of the page, allowing users to toggle between the different documents. For example, the following configuration could be used to document different versions of an API.\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"V1 Docs\");\n    c.SwaggerEndpoint(\"/swagger/v2/swagger.json\", \"V2 Docs\");\n}\n```\n\n### Apply swagger-ui Parameters ###\n\nThe swagger-ui ships with it's own set of configuration parameters, all described here https://github.com/swagger-api/swagger-ui/blob/v3.8.1/docs/usage/configuration.md#display. In Swashbuckle, most of these are surfaced through the SwaggerUI middleware options:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.DefaultModelExpandDepth(2);\n    c.DefaultModelRendering(ModelRendering.Model);\n    c.DefaultModelsExpandDepth(-1);\n    c.DisplayOperationId();\n    c.DisplayRequestDuration();\n    c.DocExpansion(DocExpansion.None);\n    c.EnableDeepLinking();\n    c.EnableFilter();\n    c.MaxDisplayedTags(5);\n    c.ShowExtensions();\n    c.EnableValidator();\n    c.SupportedSubmitMethods(SubmitMethod.Get, SubmitMethod.Head);\n});\n```\n\n__NOTE:__ The `InjectOnCompleteJavaScript` and `InjectOnFailureJavaScript` options have been removed because the latest version of swagger-ui doesn't expose the neccessary hooks. Instead, it provides a [flexible customization system](https://github.com/swagger-api/swagger-ui/blob/master/docs/customization/overview.md) based on concepts and patterns from React and Redux. To leverage this, you'll need to provide a custom version of index.html as described [below](#customize-indexhtml).\n\nThe [custom index sample app](test/WebSites/CustomUIIndex/Swagger/index.html) demonstrates this approach, using the swagger-ui plugin system provide a custom topbar, and to hide the info component.\n\n### Inject Custom CSS ###\n\nTo tweak the look and feel, you can inject additional CSS stylesheets by adding them to your _wwwroot_ folder and specifying the relative paths in the middleware options:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    ...\n    c.InjectStylesheet(\"/swagger-ui/custom.css\");\n}\n```\n\n### Customize index.html ###\n\nTo customize the UI beyond the basic options listed above, you can provide your own version of the swagger-ui index.html page:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.IndexStream = () => GetType().GetTypeInfo().Assembly\n        .GetManifestResourceStream(\"CustomUIIndex.Swagger.index.html\"); // requires file to be added as an embedded resource\n});\n```\n\nTo get started, you should base your custom index.html on the [default version](src/Swashbuckle.AspNetCore.SwaggerUI/index.html)\n\n### Enable OAuth2.0 Flows ###\n\nThe swagger-ui has built-in support to participate in OAuth2.0 authorization flows. It interacts with authorization and/or token endpoints, as specified in the Swagger JSON, to obtain access tokens for subsequent API calls. See [Adding Security Definitions and Requirements](#add-security-definitions-and-requirements) for an example of adding OAuth2.0 metadata to the generated Swagger.\n\nIf you're Swagger endpoint includes the appropriate security metadata, the UI interaction should be automatically enabled. However, you can further customize OAuth support in the UI with the following settings below. See https://github.com/swagger-api/swagger-ui/blob/v3.10.0/docs/usage/oauth2.md for more info:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n\t...\n\n\tc.OAuthClientId(\"test-id\");\n\tc.OAuthClientSecret(\"test-secret\");\n\tc.OAuthRealm(\"test-realm\");\n\tc.OAuthAppName(\"test-app\");\n\tc.OAuthScopeSeparator(\" \");\n\tc.OAuthAdditionalQueryStringParams(new { foo = \"bar\" });\n\tc.OAuthUseBasicAuthenticationWithAccessCodeGrant();\n});\n```\n\n## Swashbuckle.AspNetCore.Annotations ##\n\n### Install and Enable Annotations ###\n\n1. Install the following Nuget package into your ASP.NET Core application.\n\n    ```\n    Package Manager : Install-Package Swashbuckle.AspNetCore.Annotations\n    CLI : dotnet add package Swashbuckle.AspNetCore.Annotations\n    ```\n\n2. In the _ConfigureServices_ method of _Startup.cs_, enable annotations within the `SwaggerGen` config block:\n\n    ```csharp\n    services.AddSwaggerGen(c =>\n    {\n       ...\n\n\t   c.EnableAnnotations();\n    });\n    ```\n\n### Enrich Operation Metadata ###\n\nOnce annotations have been enabled, you can enrich the generated Operation metadata by decorating actions with a `SwaggerOperationAttribute`.\n\n\n```csharp\n[HttpPost]\n\n[SwaggerOperation(\n\tSummary = \"Creates a new product\",\n\tDescription = \"Requires admin privileges\",\n\tOperationId = \"CreateProduct\",\n\tTags = new[] { \"Purchase\", \"Products\" }\n)]\npublic IActionResult Create([FromBody]Product product)\n```\n\n### Enrich Response Metadata ###\n\nASP.NET Core provides the `ProducesResponseTypeAttribute` for listing the different responses that can be returned by an action. These attributes can be combined with XML comments, as described [above](#include-descriptions-from-xml-comments), to include human friendly descriptions with each response in the generated Swagger. If you'd prefer to do all of this with a single attribute, and avoid the use of XML comments, you can alternatively apply one or more `SwaggerResponseAttributes`:\n\n```csharp\n[HttpPost]\n[SwaggerResponse(201, \"The product was created\", typeof(Product))]\n[SwaggerResponse(400, \"The product data is invalid\")]\npublic IActionResult Create([FromBody]Product product)\n```\n\n### Enrich Parameter Metadata ###\n\nYou can annotate top-level parameters (i.e. not part of a model) with a `SwaggerParameterAttribute` to include a description and/or flag it as \"required\" in the generated Swagger document:\n\n```csharp\n[HttpGet]\npublic IActionResult GetProducts(\n\t[FromQuery, SwaggerParameter(\"Search keywords\", Required = true)]string keywords)\n```\n\n### Enrich Schema Metadata ###\n\nThe `SwaggerGen` package provides several extension points, including Schema Filters ([described here](#extend-generator-with-operation-schema--document-filter)) for customizing ALL generated Schemas. However, there may be cases where it's preferable to apply a filter to a specific Schema. For example, if you'd like to include an example for a specific type in your API. This can be done by decorating the type with a `SwaggerSchemaFilterAttribute`:\n\n```csharp\n// Product.cs\n[SwaggerSchemaFilter(typeof(ProductSchemaFilter))]\npublic class Product\n{\n\t...\n}\n\n// ProductSchemaFilter.cs\npublic class ProductSchemaFilter : ISchemaFilter\n{\n    public void Apply(Schema schema, SchemaFilterContext context)\n    {\n        schema.Example = new Product\n        {\n            Id = 1,\n            Description = \"An awesome product\"\n        };\n    }\n}\n```\n\n### Add Tag Metadata\n\nBy default, the Swagger generator will tag all operations with the controller name. This tag is then used to drive the operation groupings in the swagger-ui. If you'd like to provide a description for each of these groups, you can do so by adding metadata for each controller name tag via the `SwaggerTagAttribute`:\n\n```csharp\n[SwaggerTag(\"Create, read, update and delete Products\")]\npublic class ProductsController\n{\n\t...\n}\n```\n\n_NOTE:_ This will add the above description specifically to the tag named \"Products\". Therefore, you should avoid using this attribute if you're tagging Operations with something other than controller name - e.g. if you're customizing the tagging behavior with TagActionsBy.\n\n## Swashbuckle.AspNetCore.Cli ##\n\n_NOTE:_ This feature is currently beta only. Please post feedback to the following [issue](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/541)\n\n### Retrieve Swagger Directly from a Startup Assembly ###\n\nThe Swashbuckle CLI tool can retrieve Swagger JSON directly from your application startup assembly, and write it to file. This can be useful if you want to incorporate Swagger generation into a CI/CD process, or if you want to serve it from static file at run-time.\n\nThe tool can be installed as a [per-project, framework-dependent CLI extension](https://docs.microsoft.com/en-us/dotnet/core/tools/extensibility#per-project-based-extensibility) by adding the following reference to your .csproj file and running `dotnet restore`:\n\n```xml\n<ItemGroup>\n  <DotNetCliToolReference Include=\"Swashbuckle.AspNetCore.Cli\" Version=\"2.1.0-beta1\" />\n</ItemGroup>\n```\n\nOnce this is done, you should be able to run the following command from your project root:\n\n```\ndotnet swagger tofile --help\n```\n\nBefore you invoke the `tofile` command, you need to ensure your application is configured to expose Swagger JSON, as described in [Getting Started](#getting-started). Once this is done, you can point to your startup assembly and generate a local Swagger JSON file with the following command:\n\n```\ndotnet swagger tofile --output [output] [startupassembly] [swaggerdoc]\n```\n\nWhere ...\n* [output] is the relative path where the Swagger JSON will be output to\n* [startupassembly] is the relative path to your application's startup assembly\n* [swaggerdoc] is the name of the swagger document you want to retrieve, as configured in your startup class\n\nCheckout the [CliExample app](test/WebSites/CliExample) for more inspiration. It leverages the MSBuild Exec command to generate Swagger JSON at build-time.\n"
+domaindrivendev/Swashbuckle.AspNetCore: "| :mega: Important for anyone upgrading major versions! |\n|--------------|\n|* If you're upgrading from 2.x to 3.x, there's a couple of breaking changes to be aware of. See the [release notes](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/releases/tag/v3.0.0) for details<br />* If you're upgrading from 3.x to 4.x, there's more breaking changes to be aware of. See those [release notes here](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/releases/tag/v4.0.0)|\n\nSwashbuckle.AspNetCore\n=========\n\n[![Build status](https://ci.appveyor.com/api/projects/status/xpsk2cj1xn12c0r7/branch/master?svg=true)](https://ci.appveyor.com/project/domaindrivendev/ahoy/branch/master)\n\n[Swagger](http://swagger.io) tooling for API's built with ASP.NET Core. Generate beautiful API documentation, including a UI to explore and test operations, directly from your routes, controllers and models.\n\nIn addition to its [Swagger](http://swagger.io/specification/) generator, Swashbuckle also provides an embedded version of the awesome [swagger-ui](https://github.com/swagger-api/swagger-ui) that's powered by the generated Swagger JSON. This means you can complement your API with living documentation that's always in sync with the latest code. Best of all, it requires minimal coding and maintenance, allowing you to focus on building an awesome API.\n\nAnd that's not all ...\n\nOnce you have an API that can describe itself in Swagger, you've opened the treasure chest of Swagger-based tools including a client generator that can be targeted to a wide range of popular platforms. See [swagger-codegen](https://github.com/swagger-api/swagger-codegen) for more details.\n\n# Compatibility #\n\n|Swashbuckle Version|ASP.NET Core|Swagger / OpenAPI Spec.|swagger-ui|ReDoc UI|\n|----------|----------|----------|----------|----------|\n|[master](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/README-v5.md)|>=2.0.0|2.0, 3.0|3.19.5|1.22.2|\n|[5.0.0-beta](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/README-v5.md)|>=2.0.0|2.0, 3.0|3.19.5|1.22.2|\n|[4.0.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v4.0.0)|>=2.0.0|2.0|3.19.5|1.22.2|\n|[3.0.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v3.0.0)|>=1.0.4|2.0|3.17.1|1.20.0|\n|[2.5.0](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/v2.5.0)|>=1.0.4|2.0|3.16.0|1.20.0|\n\n# Getting Started #\n\n1. Install the standard Nuget package into your ASP.NET Core application.\n\n    ```\n    Package Manager : Install-Package Swashbuckle.AspNetCore\n    CLI : dotnet add package Swashbuckle.AspNetCore\n    ```\n\n2. In the _ConfigureServices_ method of _Startup.cs_, register the Swagger generator, defining one or more Swagger documents.\n\n    ```csharp\n    using Swashbuckle.AspNetCore.Swagger;\n    \n    services.AddMvc();\n\n    services.AddSwaggerGen(c =>\n    {\n        c.SwaggerDoc(\"v1\", new Info { Title = \"My API\", Version = \"v1\" });\n    });\n    ```\n\n3. Ensure your API actions and non-route parameters are decorated with explicit \"Http\" and \"From\" bindings.\n\n    ```csharp\n    [HttpPost]\n    public void CreateProduct([FromBody]Product product)\n    ...\n\n    [HttpGet]\n    public IEnumerable<Product> SearchProducts([FromQuery]string keywords)\n    ...\n    ```\n\n    _NOTE: If you omit the explicit parameter bindings, the generator will describe them as \"query\" params by default._\n\n4. In the _Configure_ method, insert middleware to expose the generated Swagger as JSON endpoint(s)\n\n    ```csharp\n    app.UseSwagger();\n    ```\n\n    _At this point, you can spin up your application and view the generated Swagger JSON at \"/swagger/v1/swagger.json.\"_\n\n5. Optionally insert the swagger-ui middleware if you want to expose interactive documentation, specifying the Swagger JSON endpoint(s) to power it from.\n\n    ```csharp\n    app.UseSwaggerUI(c =>\n    {\n        c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"My API V1\");\n    });\n    ```\n\n    _Now you can restart your application and check out the auto-generated, interactive docs at \"/swagger\"._\n\n# Swashbuckle, ApiExplorer, and Routing #\n\nSwashbuckle relies heavily on _ApiExplorer_, the API metadata layer that ships with ASP.NET Core. If you're using the _AddMvc_ helper to bootstrap the MVC stack, then _ApiExplorer_ will be automatically registered and SB will work without issue. However, if you're using _AddMvcCore_ for a more pared-down MVC stack, you'll need to explicitly add the Api Explorer service:\n\n```csharp\nservices.AddMvcCore()\n    .AddApiExplorer();\n```\n\nAdditionally, if you are using _[conventional routing](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#conventional-routing)_ (as opposed to attribute routing), any controllers and the actions on those controllers that use conventional routing will not be represented in ApiExplorer, which means Swashbuckle won't be able to find those controllers and generate Swagger documents from them. For instance:\n\n```csharp\napp.UseMvc(routes =>\n{\n   // SwaggerGen won't find controllers that are routed via this technique.\n   routes.MapRoute(\"default\", \"{controller=Home}/{action=Index}/{id?}\");\n});\n```\n\nYou **must** use attribute routing for any controllers that you want represented in your Swagger document(s):\n\n```csharp\n[Route(\"example\")]\npublic class ExampleController : Controller\n{\n    [HttpGet(\"\")]\n    public IActionResult DoStuff() { /**/ }\n}\n```\nRefer to the [routing documentation](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing) for more information.\n\n# Components #\n\nSwashbuckle consists of multiple components that can be used together or individually dependening on your needs. At its core, there's a Swagger object model, a Swagger generator and a packaged version of the [swagger-ui](https://github.com/swagger-api/swagger-ui). These 3 packages can be installed with the `Swashbuckle.AspNetCore` \"metapackage\" and will work together seamlessly (see [Getting Started](#getting-started)) to provide beautiful API docs that are automatically generated from your code.\n\nAdditionally, there's add-on packages (CLI tools, [an alternate UI](https://github.com/Rebilly/ReDoc) etc.) that you can optinally install and configure as needed.\n\n## \"Core\" Packages (i.e. installed via Swashbuckle.AspNetCore)\n\n|Package|Description|\n|---------|-----------|\n|Swashbuckle.AspNetCore.Swagger|Exposes _SwaggerDocument_ objects as a JSON API. It expects an implementation of _ISwaggerProvider_ to be registered which it queries to retrieve Swagger document(s) before returning as serialized JSON|\n|Swashbuckle.AspNetCore.SwaggerGen|Injects an implementation of _ISwaggerProvider_ that can be used by the above component. This particular implementation automatically generates _SwaggerDocument_(s) from your routes, controllers and models|\n|Swashbuckle.AspNetCore.SwaggerUI|Exposes an embedded version of the swagger-ui. You specify the API endpoints where it can obtain Swagger JSON and it uses them to power interactive docs for your API|\n\n## Additional Packages ##\n\n|Package|Description|\n|---------|-----------|\n|Swashbuckle.AspNetCore.Annotations|Includes a set of custom attributes that can be applied to controllers, actions and models to enrich the generated Swagger|\n|Swashbuckle.AspNetCore.Cli (Beta)|Provides a CLI interface for retrieving Swagger directly from a startup assembly, and writing to file|\n|Swashbuckle.AspNetCore.ReDoc|Exposes an embedded version of the ReDoc UI (an alternative to swagger-ui)|\n\n## Community Packages ##\n\nThese packages are provided by the open-source community.\n\n|Package|Description|\n|---------|-----------|\n|[Swashbuckle.AspNetCore.Filters](https://github.com/mattfrear/Swashbuckle.AspNetCore.Filters)| Some useful Swashbuckle filters which add additional documentation, e.g. request and response examples, a file upload button, etc. See its Readme for more details |\n|[MicroElements.Swashbuckle.FluentValidation](https://github.com/micro-elements/MicroElements.Swashbuckle.FluentValidation)| Use FluentValidation rules instead of ComponentModel attributes to augment generated Swagger Schemas |\n\n# Configuration & Customization #\n\nThe steps described above will get you up and running with minimal setup. However, Swashbuckle offers a lot of flexibility to customize as you see fit. Check out the table below for the full list of options:\n\n* [Swashbuckle.AspNetCore.Swagger](#swashbuckleaspnetcoreswagger)\n\n    * [Change the Path for Swagger JSON Endpoints](#change-the-path-for-swagger-json-endpoints)\n    * [Modify Swagger with Request Context](#modify-swagger-with-request-context)\n    * [Pretty Print Swagger JSON](#pretty-print-swagger-json)\n\n* [Swashbuckle.AspNetCore.SwaggerGen](#swashbuckleaspnetcoreswaggergen)\n\n    * [Assign Explicit OperationIds](#assign-explicit-operationids)\n    * [List Operations Responses](#list-operation-responses)\n    * [Flag Required Parameters and Schema Properties](#flag-required-parameters-and-schema-properties)\n    * [Include Descriptions from XML Comments](#include-descriptions-from-xml-comments)\n    * [Provide Global API Metadata](#provide-global-api-metadata)\n    * [Generate Multiple Swagger Documents](#generate-multiple-swagger-documents)\n    * [Omit Obsolete Operations and/or Schema Properties](#omit-obsolete-operations-andor-schema-properties)\n    * [Omit Arbitrary Operations](#omit-arbitrary-operations)\n    * [Customize Operation Tags (e.g. for UI Grouping)](#customize-operation-tags-eg-for-ui-grouping)\n    * [Change Operation Sort Order (e.g. for UI Sorting)](#change-operation-sort-order-eg-for-ui-sorting)\n    * [Customize Schema Id's](#customize-schema-ids)\n    * [Customize Schema for Enum Types](#customize-schema-for-enum-types)\n    * [Override Schema for Specific Types](#override-schema-for-specific-types)\n    * [Extend Generator with Operation, Schema & Document Filters](#extend-generator-with-operation-schema--document-filters)\n    * [Add Security Definitions and Requirements](#add-security-definitions-and-requirements)\n\n* [Swashbuckle.AspNetCore.SwaggerUI](#swashbuckleaspnetcoreswaggerui)\n    * [Change Relative Path to the UI](#change-relative-path-to-the-ui)\n    * [Change Document Title](#change-document-title)\n    * [List Multiple Swagger Documents](#list-multiple-swagger-documents)\n    * [Apply swagger-ui Parameters](#apply-swagger-ui-parameters)\n    * [Inject Custom CSS](#inject-custom-css)\n    * [Customize index.html](#customize-indexhtml)\n    * [Enable OAuth2.0 Flows](#enable-oauth20-flows)\n\n* [Swashbuckle.AspNetCore.Annotations](#swashbuckleaspnetcoreannotations)\n\t* [Install and Enable Annotations](#install-and-enable-annotations)\n\t* [Enrich Operation Metadata](#enrich-operation-metadata)\n\t* [Enrich Response Metadata](#enrich-response-metadata)\n\t* [Enrich Parameter Metadata](#enrich-parameter-metadata)\n\t* [Enrich Schema Metadata](#enrich-schema-metadata)\n\t* [Add Tag Metadata](#add-tag-metadata)\n\n* [Swashbuckle.AspNetCore.Cli](#swashbuckleaspnetcorecli)\n\t* [Retrieve Swagger Directly from a Startup Assembly](#retrieve-swagger-directly-from-a-startup-assembly)\n\n* [Swashbuckle.AspNetCore.ReDoc](#swashbuckleaspnetcoreredoc)\n\t* Docs coming soon\n\n## Swashbuckle.AspNetCore.Swagger ##\n\n### Change the Path for Swagger JSON Endpoints ###\n\nBy default, Swagger JSON will be exposed at the following route - \"/swagger/{documentName}/swagger.json\". If necessary, you can change this when enabling the Swagger middleware. Custom routes MUST include the {documentName} parameter.\n\n```csharp\napp.UseSwagger(c =>\n{\n    c.RouteTemplate = \"api-docs/{documentName}/swagger.json\";\n});\n```\n\n_NOTE: If you're using the SwaggerUI middleware, you'll also need to update its configuration to reflect the new endpoints:_\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.SwaggerEndpoint(\"/api-docs/v1/swagger.json\", \"My API V1\");\n})\n```\n\n### Modify Swagger with Request Context ###\n\nIf you need to set some Swagger metadata based on the current request, you can configure a filter that's executed prior to serializing the document.\n\n```csharp\napp.UseSwagger(c =>\n{\n    c.PreSerializeFilters.Add((swaggerDoc, httpReq) => swaggerDoc.Host = httpReq.Host.Value);\n});\n```\n\nThe _SwaggerDocument_ and the current _HttpRequest_ are passed to the filter. This provides a lot of flexibility. For example, you can assign the \"host\" property (as shown) or you could inspect session information or an Authorization header and remove operations int the document based on user permissions.\n\n### Pretty Print Swagger JSON ###\n\nBy default, Swagger JSON will not be formatted. If the Swagger JSON should be indented properly, set the _SerializerSettings_  option in your _AddMvc_ helper:\n\n```csharp\nservices.AddMvc()\n    .AddJsonOptions(options =>\n    {\n        options.SerializerSettings.Formatting = Formatting.Indented;\n    });\n```\n\n## Swashbuckle.AspNetCore.SwaggerGen ##\n\n### Assign Explicit OperationIds ###\n\nIn Swagger, Operations can be a assigned a unique `operationId`. This is often used by code generation tools (e.g. client libraries) and so, it's important for the value to follow common programming conventions while also revealing the purpose of the operation. To best meet these goals, Swashbuckle requires API authors to provide the value explicitly and provides two different options to do so:\n\n__Option 1) Action Names__\n\n```csharp\n[HttpGet(\"{id}\")]\npublic IActionResult GetProductById(int id) // operationId = \"GetProductById\"\n```\n\n__Option 2) Route Names__\n\n```csharp\n[HttpGet(\"{id}\", Name = \"GetProductById\")]\npublic IActionResult Get(int id) // operationId = \"GetProductById\"\n```\n\n_NOTE: In both cases, API authors are responsible for ensuring the uniqueness of `operationId`s across all Operations_\n\n__Display Operations In SwaggerUI__\nTo display the operations in you SwaggerUI, you need to invoke `DisplayOperationId()` on the `SwaggerUIOptions` as follows:\n```csharp\napp.UseSwaggerUI(c =>\n{\n\t...\n    c.DisplayOperationId();\n    ...\n}\n```\n\n### List Operation Responses ###\n\nBy default, Swashbuckle will generate a \"200\" response for each operation. If the action returns a response DTO, then this will be used to generate a \"schema\" for the response body. For example ...\n\n```csharp\n[HttpPost(\"{id}\")]\npublic Product GetById(int id)\n```\n\nWill produce the following response metadata:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  }\n}\n```\n\n#### Explicit Responses ####\n\nIf you need to specify a different status code and/or additional responses, or your actions return _IActionResult_ instead of a response DTO, you can describe explicit responses with the `ProducesResponseTypeAttribute` that ships with ASP.NET Core. For example ...\n\n```csharp\n[HttpPost(\"{id}\")]\n[ProducesResponseType(typeof(Product), 200)]\n[ProducesResponseType(typeof(IDictionary<string, string>), 400)]\n[ProducesResponseType(500)]\npublic IActionResult GetById(int id)\n```\n\nWill produce the following response metadata:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  },\n  400: {\n    description: \"Bad Request\",\n    schema: {\n      type: \"object\",\n      additionalProperties: {\n        type: \"string\"\n      }\n    }\n  },\n  500: {\n    description: \"Server Error\"\n  }\n}\n```\n\n### Flag Required Parameters and Schema Properties ###\n\nIn a Swagger document, you can flag parameters and schema properties that are required for a request. If a parameter (top-level or property-based) is decorated with the `BindRequiredAttribute` or `RequiredAttribute`, then Swashbuckle will automatically flag it as a \"required\" parameter in the generated Swagger:\n\n```csharp\n// ProductsController.cs\npublic IActionResult Search([FromQuery, BindRequired]string keywords, [FromQuery]PagingParams pagingParams)\n{\n    if (!ModelState.IsValid)\n        return BadRequest(ModelState);\n    ...\n}\n\n// SearchParams.cs\npublic class PagingParams\n{\n    [Required]\n    public int PageNo { get; set; }\n\n    public int PageSize { get; set; }\n}\n```\n\nIn addition to parameters, Swashbuckle will also honor the `RequiredAttribute` when used in a model that's bound to the request body. In this case, the decorated properties will be flagged as \"required\" properties in the body description:\n\n```csharp\n// ProductsController.cs\npublic IActionResult Create([FromBody]Product product)\n{\n    if (!ModelState.IsValid)\n        return BadRequest(ModelState);\n    ...\n}\n\n// Product.cs\npublic class Product\n{\n    [Required]\n    public string Name { get; set; }\n\n    public string Description { get; set; }\n}\n```\n\n### Include Descriptions from XML Comments ###\n\nTo enhance the generated docs with human-friendly descriptions, you can annotate controller actions and models with [Xml Comments](http://msdn.microsoft.com/en-us/library/b2s063f7(v=vs.110).aspx) and configure Swashbuckle to incorporate those comments into the outputted Swagger JSON:\n\n1. Open the Properties dialog for your project, click the \"Build\" tab and ensure that \"XML documentation file\" is checked. This will produce a file containing all XML comments at build-time.\n\n    _At this point, any classes or methods that are NOT annotated with XML comments will trigger a build warning. To suppress this, enter the warning code \"1591\" into the \"Suppress warnings\" field in the properties dialog._\n\n2. Configure Swashbuckle to incorporate the XML comments on file into the generated Swagger JSON:\n\n    ```csharp\n    services.AddSwaggerGen(c =>\n    {\n        c.SwaggerDoc(\"v1\",\n            new Info\n            {\n                Title = \"My API - V1\",\n                Version = \"v1\"\n            }\n         );\n\n         var filePath = Path.Combine(System.AppContext.BaseDirectory, \"MyApi.xml\");\n         c.IncludeXmlComments(filePath);\n    }\n    ```\n\n3. Annotate your actions with summary, remarks and response tags:\n\n    ```csharp\n    /// <summary>\n    /// Retrieves a specific product by unique id\n    /// </summary>\n    /// <remarks>Awesomeness!</remarks>\n    /// <response code=\"200\">Product created</response>\n    /// <response code=\"400\">Product has missing/invalid values</response>\n    /// <response code=\"500\">Oops! Can't create your product right now</response>\n    [HttpGet(\"{id}\")]\n    [ProducesResponseType(typeof(Product), 200)]\n    [ProducesResponseType(typeof(IDictionary<string, string>), 400)]\n    [ProducesResponseType(500)]\n    public Product GetById(int id)\n    ```\n\n4. You can also annotate types with summary and example tags:\n\n    ```csharp\n    public class Product\n    {\n        /// <summary>\n        /// The name of the product\n        /// </summary>\n        /// <example>Men's basketball shoes</example>\n        public string Name { get; set; }\n\n        /// <summary>\n        /// Quantity left in stock\n        /// </summary>\n        /// <example>10</example>\n        public int AvailableStock { get; set; }\n    }\n    ```\n\n5. Rebuild your project to update the XML Comments file and navigate to the Swagger JSON endpoint. Note how the descriptions are mapped onto corresponding Swagger fields.\n\n_NOTE: You can also provide Swagger Schema descriptions by annotating your API models and their properties with summary tags. If you have multiple XML comments files (e.g. separate libraries for controllers and models), you can invoke the IncludeXmlComments method multiple times and they will all be merged into the outputted Swagger JSON._\n\n### Provide Global API Metadata ###\n\nIn addition to _Paths_, _Operations_ and _Responses_, which Swashbuckle generates for you, Swagger also supports global metadata (see http://swagger.io/specification/#swaggerObject). For example, you can provide a full description for your API, terms of service or even contact and licensing information:\n\n```csharp\nc.SwaggerDoc(\"v1\",\n    new Info\n    {\n        Title = \"My API - V1\",\n        Version = \"v1\",\n        Description = \"A sample API to demo Swashbuckle\",\n        TermsOfService = \"Knock yourself out\",\n        Contact = new Contact\n        {\n            Name = \"Joe Developer\",\n            Email = \"joe.developer@tempuri.org\"\n        },\n        License = new License\n        {\n            Name = \"Apache 2.0\",\n            Url = \"http://www.apache.org/licenses/LICENSE-2.0.html\"\n        }\n    }\n)\n```\n\n_Use IntelliSense to see what other fields are available._\n\n### Generate Multiple Swagger Documents ###\n\nWith the setup described above, the generator will include all API operations in a single Swagger document. However, you can create multiple documents if necessary. For example, you may want a separate document for each version of your API. To do this, start by defining multiple Swagger docs in _Startup.cs_:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    c.SwaggerDoc(\"v1\", new Info { Title = \"My API - V1\", Version = \"v1\" });\n    c.SwaggerDoc(\"v2\", new Info { Title = \"My API - V2\", Version = \"v2\" });\n})\n```\n\n_Take note of the first argument to SwaggerDoc. It MUST be a URI-friendly name that uniquely identifies the document. It's subsequently used to make up the path for requesting the corresponding Swagger JSON. For example, with the default routing, the above documents will be available at \"/swagger/v1/swagger.json\" and \"/swagger/v2/swagger.json\"._\n\nNext, you'll need to inform Swashbuckle which actions to include in each document. Although this can be customized (see below), by default, the generator will use the _ApiDescription.GroupName_ property, part of the built-in metadata layer that ships with ASP.NET Core, to make this distinction. You can set this by decorating individual actions OR by applying an application wide convention.\n\n#### Decorate Individual Actions ####\n\nTo include an action in a specific Swagger document, decorate it with the _ApiExplorerSettingsAttribute_ and set _GroupName_ to the corresponding document name (case sensitive):\n\n```csharp\n[HttpPost]\n[ApiExplorerSettings(GroupName = \"v2\")]\npublic void Post([FromBody]Product product)\n```\n\n#### Assign Actions to Documents by Convention ####\n\nTo group by convention instead of decorating every action, you can apply a custom controller or action convention. For example, you could wire up the following convention to assign actions to documents based on the controller namespace.\n\n```csharp\n// ApiExplorerGroupPerVersionConvention.cs\npublic class ApiExplorerGroupPerVersionConvention : IControllerModelConvention\n{\n    public void Apply(ControllerModel controller)\n    {\n        var controllerNamespace = controller.ControllerType.Namespace; // e.g. \"Controllers.V1\"\n        var apiVersion = controllerNamespace.Split('.').Last().ToLower();\n\n        controller.ApiExplorer.GroupName = apiVersion;\n    }\n}\n\n// Startup.cs\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddMvc(c =>\n        c.Conventions.Add(new ApiExplorerGroupPerVersionConvention())\n    );\n\n    ...\n}\n```\n\n#### Customize the Action Selection Process ####\n\nWhen selecting actions for a given Swagger document, the generator invokes a _DocInclusionPredicate_ against every _ApiDescription_ that's surfaced by the framework. The default implementation inspects _ApiDescription.GroupName_ and returns true if the value is either null OR equal to the requested document name. However, you can also provide a custom inclusion predicate. For example, if you're using an attribute-based approach to implement API versioning (e.g. Microsoft.AspNetCore.Mvc.Versioning), you could configure a custom predicate that leverages this instead:\n\n```csharp\nc.DocInclusionPredicate((docName, apiDesc) =>\n{\n    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;\n\n    var versions = methodInfo.DeclaringType\n        .GetCustomAttributes(true)\n        .OfType<ApiVersionAttribute>()\n        .SelectMany(attr => attr.Versions);\n\n    return versions.Any(v => $\"v{v.ToString()}\" == docName);\n});\n```\n\n#### Exposing Multiple Documents through the UI ####\n\nIf you're using the _SwaggerUI_ middleware, you'll need to specify any additional Swagger endpoints you want to expose. See [List Multiple Swagger Documents](#list-multiple-swagger-documents) for more.\n\n### Omit Obsolete Operations and/or Schema Properties ###\n\nThe [Swagger spec](http://swagger.io/specification/) includes a \"deprecated\" flag for indicating that an operation is deprecated and should be refrained from use. The Swagger generator will automatically set this flag if the corresponding action is decorated with the _ObsoleteAttribute_. However, instead of setting a flag, you can configure the generator to ignore obsolete actions altogether:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.IgnoreObsoleteActions();\n};\n```\n\nA similar approach can also be used to omit obsolete properties from Schemas in the Swagger output. That is, you can decorate model properties with the _ObsoleteAttribute_ and configure Swashbuckle to omit those properties when generating JSON Schemas:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.IgnoreObsoleteProperties();\n};\n```\n\n### Omit Arbitrary Operations ###\n\nYou can omit operations from the Swagger output by decorating individual actions OR by applying an application wide convention.\n\n#### Decorate Individual Actions ####\n\nTo omit a specific action, decorate it with the _ApiExplorerSettingsAttribute_ and set the _IgnoreApi_ flag:\n\n```csharp\n[HttpGet(\"{id}\")]\n[ApiExplorerSettings(IgnoreApi = true)]\npublic Product GetById(int id)\n```\n\n#### Omit Actions by Convention ####\n\nTo omit actions by convention instead of decorating them individually, you can apply a custom action convention. For example, you could wire up the following convention to only document GET operations:\n\n```csharp\n// ApiExplorerGetsOnlyConvention.cs\npublic class ApiExplorerGetsOnlyConvention : IActionModelConvention\n{\n    public void Apply(ActionModel action)\n    {\n        action.ApiExplorer.IsVisible = action.Attributes.OfType<HttpGetAttribute>().Any();\n    }\n}\n\n// Startup.cs\npublic void ConfigureServices(IServiceCollection services)\n{\n    services.AddMvc(c =>\n        c.Conventions.Add(new ApiExplorerGetsOnlyConvention())\n    );\n\n    ...\n}\n```\n\n### Customize Operation Tags (e.g. for UI Grouping) ###\n\nThe [Swagger spec](http://swagger.io/specification/) allows one or more \"tags\" to be assigned to an operation. The Swagger generator will assign the controller name as the default tag. This is particularly interesting if you're using the _SwaggerUI_ middleware as it uses this value to group operations.\n\nYou can override the default tag by providing a function that applies tags by convention. For example, the following configuration will tag, and therefore group operations in the UI, by HTTP method:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.TagActionsBy(api => api.HttpMethod);\n};\n```\n\n### Change Operation Sort Order (e.g. for UI Sorting) ###\n\nBy default, actions are ordered by assigned tag (see above) before they're grouped into the path-based, hierarchichal structure imposed by the [Swagger spec](http://swagger.io/specification). You can change this behavior with a custom sorting strategy:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.OrderActionsBy((apiDesc) => $\"{apiDesc.ActionDescriptor.RouteValues[\"controller\"]}_{apiDesc.HttpMethod}\");\n};\n```\n\n_NOTE: This dictates the sort order BEFORE actions are grouped and transformed into the Swagger format. So, it affects the ordering of groups (i.e. Swagger PathItems), AND the ordering of operations within a group, in the Swagger output._\n\n### Customize Schema Id's ###\n\nIf the generator encounters complex parameter or response types, it will generate a corresponding JSON Schema, add it to the global \"definitions\" dictionary, and reference it from the operation description by unique Id. For example, if you have an action that returns a \"Product\" type, the generated schema will be referenced as follows:\n\n```\nresponses: {\n  200: {\n    description: \"Success\",\n    schema: {\n      $ref: \"#/definitions/Product\"\n    }\n  }\n}\n```\n\nHowever, if it encounters multiple \"Product\" classes under different namespaces (e.g. \"RequestModels.Product\" & \"ResponseModels.Product\"), then Swashbuckle will raise an exception due to \"Conflicting schemaIds\". In this case, you'll need to provide a custom Id strategy that further qualifies the name:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.CustomSchemaIds((type) => type.FullName);\n};\n```\n\n### Customize Schema for Enum Types ###\n\nWhen describing parameters and responses, Swashbuckle does its best to reflect the application's serialization settings. For example, if the _CamelCaseContractResolver_ is enabled, Schema property names will be camelCased in the generated Swagger.\n\nSimilarly for enum types, if the _StringEnumConverter_ is enabled, then the corresponding Schemas will list enum names rather than integer values.\n\nFor most cases this should be sufficient. However, if you need more control, Swashbuckle exposes the following options to override the default behavior:\n\n```csharp\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.DescribeAllEnumsAsStrings();\n    c.DescribeStringEnumsInCamelCase();\n};\n```\n\n### Override Schema for Specific Types ###\n\nOut-of-the-box, Swashbuckle does a decent job at generating JSON Schemas that accurately describe your request and response payloads. However, if you're customizing serialization behavior for certain types in your API, you may need to help it out.\n\nFor example, you might have a class with multiple properties that you want to represent in JSON as a comma-separated string. To do this you would probably implement a custom _JsonConverter_. In this case, Swashbuckle doesn't know how the converter is implemented and so you would need to provide it with a Schema that accurately describes the type:\n\n```csharp\n// PhoneNumber.cs\npublic class PhoneNumber\n{\n    public string CountryCode { get; set; }\n\n    public string AreaCode { get; set; }\n\n    public string SubscriberId { get; set; }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.MapType<PhoneNumber>(() => new Schema { Type = \"string\" });\n};\n```\n\n### Extend Generator with Operation, Schema & Document Filters ###\n\nSwashbuckle exposes a filter pipeline that hooks into the generation process. Once generated, individual metadata objects are passed into the pipeline where they can be modified further. You can wire up one or more custom filters for _Operation_, _Schema_ and _Document_ objects:\n\n#### Operation Filters ####\n\nSwashbuckle retrieves an _ApiDescription_, part of ASP.NET Core, for every action and uses it to generate a corresponding _Swagger Operation_. Once generated, it passes the _Operation_ and the _ApiDescription_ through the list of configured Operation Filters.\n\nIn a typical filter implementation, you inspect the _ApiDescription_ for relevant information (e.g. route info, action attributes etc.) and then update the Swagger _Operation_ accordingly. For example, the following filter lists an additional \"401\" response for all actions that are decorated with the _AuthorizeAttribute_:\n\n```csharp\n// AuthResponsesOperationFilter.cs\npublic class AuthResponsesOperationFilter : IOperationFilter\n{\n    public void Apply(Operation operation, OperationFilterContext context)\n    {\n        var authAttributes = context.MethodInfo.DeclaringType.GetCustomAttributes(true)\n            .Union(context.MethodInfo.GetCustomAttributes(true))\n            .OfType<AuthorizeAttribute>();\n\n        if (authAttributes.Any())\n            operation.Responses.Add(\"401\", new Response { Description = \"Unauthorized\" });\n    }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.OperationFilter<AuthResponsesOperationFilter>();\n};\n```\n\n_NOTE: Filter pipelines are DI-aware. That is, you can create filters with constructor parameters and if the parameter types are registered with the DI framework, they'll be automatically injected when the filters are instantiated_\n\n#### Schema Filters ####\n\nSwashbuckle generates a Swagger-flavored _[JSONSchema](http://swagger.io/specification/#schemaObject)_ for every parameter, response and property type that's exposed by your controller actions. Once generated, it passes the _Schema_ and _Type_ through the list of configured Schema Filters.\n\nThe example below adds an AutoRest vendor extension (see https://github.com/Azure/autorest/blob/master/docs/extensions/readme.md#x-ms-enum) to inform the AutoRest tool how enums should be modelled when it generates the API client.\n\n```csharp\n// AutoRestSchemaFilter.cs\npublic class AutoRestSchemaFilter : ISchemaFilter\n{\n    public void Apply(Schema schema, SchemaFilterContext context)\n    {\n        var typeInfo = context.SystemType.GetTypeInfo();\n\n        if (typeInfo.IsEnum)\n        {\n            schema.Extensions.Add(\n                \"x-ms-enum\",\n                new { name = typeInfo.Name,  modelAsString = true }\n            );\n        };\n    }\n}\n\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n    c.SchemaFilter<AutoRestSchemaFilter>();\n};\n```\n\n#### Document Filters ####\n\nOnce a _Swagger Document_ has been generated, it too can be passed through a set of pre-configured _Document_ Filters. This gives full control to modify the document however you see fit. To ensure you're still returning valid Swagger JSON, you should have a read through the [specification](http://swagger.io/specification/) before using this filter type.\n\nThe example below provides a description for any tags that are assigned to operations in the document:\n\n```csharp\npublic class TagDescriptionsDocumentFilter : IDocumentFilter\n{\n    public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context)\n    {\n        swaggerDoc.Tags = new[] {\n            new Tag { Name = \"Products\", Description = \"Browse/manage the product catalog\" },\n            new Tag { Name = \"Orders\", Description = \"Submit orders\" }\n        };\n    }\n}\n```\n\n_NOTE: If you're using the SwaggerUI middleware, this filter can be used to display additional descriptions beside each group of Operations._\n\n### Add Security Definitions and Requirements ###\n\nIn Swagger, you can describe how your API is secured by defining one or more security schemes (e.g basic, api key, oauth2 etc.) and declaring which of those schemes are applicable globally OR for specific operations. For more details, take a look at the \"securityDefinitions\" and \"security\" fields in the [Swagger spec](http://swagger.io/specification/#swaggerObject).\n\nIn Swashbuckle, you can define schemes by invoking the `AddSecurityDefinition` method, providing a name and an instance of BasicAuthScheme, ApiKeyScheme or OAuth2Scheme. For example you can define an [OAuth 2.0 - implicit flow](https://oauth.net/2/) as follows:\n\n```csharp\n// Startup.cs\nservices.AddSwaggerGen(c =>\n{\n    ...\n\n    // Define the OAuth2.0 scheme that's in use (i.e. Implicit Flow)\n    c.AddSecurityDefinition(\"oauth2\", new OAuth2Scheme\n    {\n        Type = \"oauth2\",\n        Flow = \"implicit\",\n        AuthorizationUrl = \"http://petstore.swagger.io/oauth/dialog\",\n        Scopes = new Dictionary<string, string>\n        {\n            { \"readAccess\", \"Access read operations\" },\n            { \"writeAccess\", \"Access write operations\" }\n        }\n    });\n};\n```\n\n__NOTE__: In addition to defining a scheme, you also need to indicate which operations that scheme is applicable to. You can apply schemes globally (i.e. to ALL operations) through the `AddSecurityRequirement` method. The example below indicates that the scheme called \"oauth2\" should be applied to all operations, and that the \"readAccess\" and \"writeAccess\" scopes are required. When applying schemes of type other than \"oauth2\", the array of scopes MUST be empty.\n\n```csharp\nc.AddSwaggerGen(c =>\n{\n\t...\n\n    c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>\n    {\n        { \"oauth2\", new[] { \"readAccess\", \"writeAccess\" } }\n    });\n})\n```\n\nIf you have schemes that only apply to specific operations, you can apply them through an `OperationFilter`. For example, the following filter adds OAuth2 requirements based on the presence of the `AuthorizeAttribute`:\n\n```csharp\n// SecurityRequirementsOperationFilter.cs\npublic class SecurityRequirementsOperationFilter : IOperationFilter\n{\n    public void Apply(Operation operation, OperationFilterContext context)\n    {\n        // Policy names map to scopes\n        var requiredScopes = context.MethodInfo\n            .GetCustomAttributes(true)\n            .OfType<AuthorizeAttribute>()\n            .Select(attr => attr.Policy)\n            .Distinct();\n\n        if (requiredScopes.Any())\n        {\n            operation.Responses.Add(\"401\", new Response { Description = \"Unauthorized\" });\n            operation.Responses.Add(\"403\", new Response { Description = \"Forbidden\" });\n\n            operation.Security = new List<IDictionary<string, IEnumerable<string>>>();\n            operation.Security.Add(new Dictionary<string, IEnumerable<string>>\n            {\n                { \"oauth2\", requiredScopes }\n            });\n        }\n    }\n}\n```\n\n__NOTE__: If you're using the SwaggerUI middleware, you can enable interactive OAuth2.0 flows that are powered by the emitted security metadata. See [Enabling OAuth2.0 Flows](#enable-oauth20-flows) for more details.\n\n## Swashbuckle.AspNetCore.SwaggerUI ##\n\n### Change Relative Path to the UI ###\n\nBy default, the Swagger UI will be exposed at \"/swagger\". If necessary, you can alter this when enabling the SwaggerUI middleware:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.RoutePrefix = \"api-docs\"\n    ...\n}\n```\n\n### Change Document Title ###\n\nBy default, the Swagger UI will have a generic document title. When you have multiple Swagger pages open, it can be difficult to tell them apart. You can alter this when enabling the SwaggerUI middleware:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.DocumentTitle = \"My Swagger UI\";\n    ...\n}\n```\n\n### List Multiple Swagger Documents ###\n\nWhen enabling the middleware, you're required to specify one or more Swagger endpoints (fully qualified or relative to the current host) to power the UI. If you provide multiple endpoints, they'll be listed in the top right corner of the page, allowing users to toggle between the different documents. For example, the following configuration could be used to document different versions of an API.\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.SwaggerEndpoint(\"/swagger/v1/swagger.json\", \"V1 Docs\");\n    c.SwaggerEndpoint(\"/swagger/v2/swagger.json\", \"V2 Docs\");\n}\n```\n\n### Apply swagger-ui Parameters ###\n\nThe swagger-ui ships with it's own set of configuration parameters, all described here https://github.com/swagger-api/swagger-ui/blob/v3.8.1/docs/usage/configuration.md#display. In Swashbuckle, most of these are surfaced through the SwaggerUI middleware options:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.DefaultModelExpandDepth(2);\n    c.DefaultModelRendering(ModelRendering.Model);\n    c.DefaultModelsExpandDepth(-1);\n    c.DisplayOperationId();\n    c.DisplayRequestDuration();\n    c.DocExpansion(DocExpansion.None);\n    c.EnableDeepLinking();\n    c.EnableFilter();\n    c.MaxDisplayedTags(5);\n    c.ShowExtensions();\n    c.EnableValidator();\n    c.SupportedSubmitMethods(SubmitMethod.Get, SubmitMethod.Head);\n});\n```\n\n__NOTE:__ The `InjectOnCompleteJavaScript` and `InjectOnFailureJavaScript` options have been removed because the latest version of swagger-ui doesn't expose the neccessary hooks. Instead, it provides a [flexible customization system](https://github.com/swagger-api/swagger-ui/blob/master/docs/customization/overview.md) based on concepts and patterns from React and Redux. To leverage this, you'll need to provide a custom version of index.html as described [below](#customize-indexhtml).\n\nThe [custom index sample app](test/WebSites/CustomUIIndex/Swagger/index.html) demonstrates this approach, using the swagger-ui plugin system provide a custom topbar, and to hide the info component.\n\n### Inject Custom CSS ###\n\nTo tweak the look and feel, you can inject additional CSS stylesheets by adding them to your _wwwroot_ folder and specifying the relative paths in the middleware options:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    ...\n    c.InjectStylesheet(\"/swagger-ui/custom.css\");\n}\n```\n\n### Customize index.html ###\n\nTo customize the UI beyond the basic options listed above, you can provide your own version of the swagger-ui index.html page:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n    c.IndexStream = () => GetType().GetTypeInfo().Assembly\n        .GetManifestResourceStream(\"CustomUIIndex.Swagger.index.html\"); // requires file to be added as an embedded resource\n});\n```\n\nTo get started, you should base your custom index.html on the [default version](src/Swashbuckle.AspNetCore.SwaggerUI/index.html)\n\n### Enable OAuth2.0 Flows ###\n\nThe swagger-ui has built-in support to participate in OAuth2.0 authorization flows. It interacts with authorization and/or token endpoints, as specified in the Swagger JSON, to obtain access tokens for subsequent API calls. See [Adding Security Definitions and Requirements](#add-security-definitions-and-requirements) for an example of adding OAuth2.0 metadata to the generated Swagger.\n\nIf you're Swagger endpoint includes the appropriate security metadata, the UI interaction should be automatically enabled. However, you can further customize OAuth support in the UI with the following settings below. See https://github.com/swagger-api/swagger-ui/blob/v3.10.0/docs/usage/oauth2.md for more info:\n\n```csharp\napp.UseSwaggerUI(c =>\n{\n\t...\n\n\tc.OAuthClientId(\"test-id\");\n\tc.OAuthClientSecret(\"test-secret\");\n\tc.OAuthRealm(\"test-realm\");\n\tc.OAuthAppName(\"test-app\");\n\tc.OAuthScopeSeparator(\" \");\n\tc.OAuthAdditionalQueryStringParams(new { foo = \"bar\" });\n\tc.OAuthUseBasicAuthenticationWithAccessCodeGrant();\n});\n```\n\n## Swashbuckle.AspNetCore.Annotations ##\n\n### Install and Enable Annotations ###\n\n1. Install the following Nuget package into your ASP.NET Core application.\n\n    ```\n    Package Manager : Install-Package Swashbuckle.AspNetCore.Annotations\n    CLI : dotnet add package Swashbuckle.AspNetCore.Annotations\n    ```\n\n2. In the _ConfigureServices_ method of _Startup.cs_, enable annotations within the `SwaggerGen` config block:\n\n    ```csharp\n    services.AddSwaggerGen(c =>\n    {\n       ...\n\n\t   c.EnableAnnotations();\n    });\n    ```\n\n### Enrich Operation Metadata ###\n\nOnce annotations have been enabled, you can enrich the generated Operation metadata by decorating actions with a `SwaggerOperationAttribute`.\n\n\n```csharp\n[HttpPost]\n\n[SwaggerOperation(\n\tSummary = \"Creates a new product\",\n\tDescription = \"Requires admin privileges\",\n\tOperationId = \"CreateProduct\",\n\tTags = new[] { \"Purchase\", \"Products\" }\n)]\npublic IActionResult Create([FromBody]Product product)\n```\n\n### Enrich Response Metadata ###\n\nASP.NET Core provides the `ProducesResponseTypeAttribute` for listing the different responses that can be returned by an action. These attributes can be combined with XML comments, as described [above](#include-descriptions-from-xml-comments), to include human friendly descriptions with each response in the generated Swagger. If you'd prefer to do all of this with a single attribute, and avoid the use of XML comments, you can alternatively apply one or more `SwaggerResponseAttributes`:\n\n```csharp\n[HttpPost]\n[SwaggerResponse(201, \"The product was created\", typeof(Product))]\n[SwaggerResponse(400, \"The product data is invalid\")]\npublic IActionResult Create([FromBody]Product product)\n```\n\n### Enrich Parameter Metadata ###\n\nYou can annotate top-level parameters (i.e. not part of a model) with a `SwaggerParameterAttribute` to include a description and/or flag it as \"required\" in the generated Swagger document:\n\n```csharp\n[HttpGet]\npublic IActionResult GetProducts(\n\t[FromQuery, SwaggerParameter(\"Search keywords\", Required = true)]string keywords)\n```\n\n### Enrich Schema Metadata ###\n\nThe `SwaggerGen` package provides several extension points, including Schema Filters ([described here](#extend-generator-with-operation-schema--document-filter)) for customizing ALL generated Schemas. However, there may be cases where it's preferable to apply a filter to a specific Schema. For example, if you'd like to include an example for a specific type in your API. This can be done by decorating the type with a `SwaggerSchemaFilterAttribute`:\n\n```csharp\n// Product.cs\n[SwaggerSchemaFilter(typeof(ProductSchemaFilter))]\npublic class Product\n{\n\t...\n}\n\n// ProductSchemaFilter.cs\npublic class ProductSchemaFilter : ISchemaFilter\n{\n    public void Apply(Schema schema, SchemaFilterContext context)\n    {\n        schema.Example = new Product\n        {\n            Id = 1,\n            Description = \"An awesome product\"\n        };\n    }\n}\n```\n\n### Add Tag Metadata\n\nBy default, the Swagger generator will tag all operations with the controller name. This tag is then used to drive the operation groupings in the swagger-ui. If you'd like to provide a description for each of these groups, you can do so by adding metadata for each controller name tag via the `SwaggerTagAttribute`:\n\n```csharp\n[SwaggerTag(\"Create, read, update and delete Products\")]\npublic class ProductsController\n{\n\t...\n}\n```\n\n_NOTE:_ This will add the above description specifically to the tag named \"Products\". Therefore, you should avoid using this attribute if you're tagging Operations with something other than controller name - e.g. if you're customizing the tagging behavior with TagActionsBy.\n\n## Swashbuckle.AspNetCore.Cli ##\n\n_NOTE:_ This feature is currently beta only. Please post feedback to the following [issue](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/541)\n\n### Retrieve Swagger Directly from a Startup Assembly ###\n\nThe Swashbuckle CLI tool can retrieve Swagger JSON directly from your application startup assembly, and write it to file. This can be useful if you want to incorporate Swagger generation into a CI/CD process, or if you want to serve it from static file at run-time.\n\nThe tool can be installed as a [per-project, framework-dependent CLI extension](https://docs.microsoft.com/en-us/dotnet/core/tools/extensibility#per-project-based-extensibility) by adding the following reference to your .csproj file and running `dotnet restore`:\n\n```xml\n<ItemGroup>\n  <DotNetCliToolReference Include=\"Swashbuckle.AspNetCore.Cli\" Version=\"2.1.0-beta1\" />\n</ItemGroup>\n```\n\nOnce this is done, you should be able to run the following command from your project root:\n\n```\ndotnet swagger tofile --help\n```\n\nBefore you invoke the `tofile` command, you need to ensure your application is configured to expose Swagger JSON, as described in [Getting Started](#getting-started). Once this is done, you can point to your startup assembly and generate a local Swagger JSON file with the following command:\n\n```\ndotnet swagger tofile --output [output] [startupassembly] [swaggerdoc]\n```\n\nWhere ...\n* [output] is the relative path where the Swagger JSON will be output to\n* [startupassembly] is the relative path to your application's startup assembly\n* [swaggerdoc] is the name of the swagger document you want to retrieve, as configured in your startup class\n\nCheckout the [CliExample app](test/WebSites/CliExample) for more inspiration. It leverages the MSBuild Exec command to generate Swagger JSON at build-time.\n"
 z0mt3c/hapi-swaggered: >
   # hapi-swaggered 3.x
 
@@ -38895,8 +38970,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-02-21T07:56:16Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":431,"watchers_count":431,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":29,"watchers":431,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-02-25T05:53:20Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":435,"watchers_count":435,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":29,"watchers":435,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -45473,6 +45548,12 @@ Mermade/openapi-codegen: >+
   * `npm i`
 
 
+  or
+
+
+  `npx -p openapi-codegen cg ...`
+
+
   ### CLI
 
 
@@ -48558,7 +48639,7 @@ outofcoffee/vertx-oas: >
 
 
   Pete Cornish (outofcoffee@gmail.com)
-cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.0.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.0.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.swagger.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n"
+cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/openapi-spring-webflux-validator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.cdimascio%22%20AND%20a:%22openapi-spring-webflux-validator%22)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.1.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.1.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.swagger.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n"
 fmvilas/openapi3-generator: >
   <h1 align="center">OpenAPI 3 Generator</h1>
 
@@ -49909,14 +49990,14 @@ wzshiming/gen: >
 
   2. Add gen tool to $PATH
 
-  3. Execute it `gen run github.com/wzshiming/gen/examples/service/...`
+  3. Execute it `gen run github.com/wzshiming/gen-examples/service/...`
 
   4. Open
   [http://127.0.0.1:8080/swagger/?url=./openapi.json#](http://127.0.0.1:8080/swagger/?url=./openapi.json#)
   with your browser
 
 
-  [Examples](https://github.com/wzshiming/gen/blob/master/examples/)  
+  [Examples](https://github.com/wzshiming/gen-examples/)  
 
 
   ## License
@@ -51745,8 +51826,7 @@ lendingblock/aio-openapi: >
 
   * [SqlAlchemy][] expression language
 
-  * Asynchronous DB interaction with
-  [asyncpg](https://github.com/MagicStack/asyncpg)
+  * Asynchronous DB interaction with [asyncpg][]
 
   * Migrations with [alembic][]
 
@@ -51902,6 +51982,14 @@ lendingblock/aio-openapi: >
 
   ```
 
+  The database container is available at the `db` app key:
+
+  ```python
+
+  app['db']
+
+  ```
+
 
   ## Websockets
 
@@ -52021,6 +52109,8 @@ lendingblock/aio-openapi: >
   [click]: https://github.com/pallets/click
 
   [alembic]: http://alembic.zzzcomputing.com/en/latest/
+
+  [asyncpg]: https://github.com/MagicStack/asyncpg
 Mermade/swaggerplusplus: >
   # swaggerplusplus
 
@@ -52510,6 +52600,10 @@ nasa9084/go-openapi: >
   ---
 
 
+  **This package is still under development, so the API will be changed without
+  any notification**
+
+
   ## Overview
 
 
@@ -52691,6 +52785,8 @@ philosowaffle/vs-openapi-designer: >
 
   ## Usage
 
+
+  - Open the root of your schema
 
   - `ctrl-shft-p` > `OpenApi Designer: Preview`
 
@@ -56499,6 +56595,12 @@ mrin9/OpenAPI-Viewer: >+
   ### [Demo](https://mrin9.github.io/OpenAPI-Viewer)
 
 
+  ### Checkout RapiDoc - Another project for Viewing OpenAPI spec using
+  web-Componnet
+
+  #### [Checkout RapiDoc](https://mrin9.github.io/RapiDoc)
+
+
   # Features
 
   - Supports Swagger V2.0 and OpenAPI 3.0
@@ -56586,7 +56688,7 @@ mrin9/OpenAPI-Viewer: >+
 
 tiangolo/fastapi: >
   <p align="center">
-    <a href="https://fastapi.tiangolo.com"><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal-vector.svg" alt='FastAPI'></a>
+    <a href="https://fastapi.tiangolo.com"><img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI"></a>
   </p>
 
   <p align="center">
@@ -58204,51 +58306,76 @@ apiaryio/dredd-transactions: >
   ## Usage
 
 
-  ### `compile`
+  ### `parse`
 
 
-  Compiles *HTTP Transactions* from given API description document.
+  Parses given API description document into API Elements with options specific
+
+  to Dredd. Assumes that documents with unrecognizable format are
+
+  [API Blueprint][api-blueprint]. Turns any parser failures, including
+
+  the unexpected ones, into [API Elements][api-elements] annotations.
 
 
   ```javascript
 
-  var dt = require('dredd-transactions');
+  const parse = require('dredd-transactions/parse');
+
+  // const { parse } = require('dredd-transactions');
 
 
-  dt.compile('# My API\n...', 'apiary.apib', function (error, compilationResult)
-  {
+  parse('# My API\n...', (error, parseResult) => {
     // ...
   });
 
   ```
 
 
-  ### Arguments
+  ### `compile`
 
 
-  - (string) - API description document provided as string.
-
-  - (string) - Original file name of the API description document. **To be
-  removed! See [#6][filename-deprecation].**
-
-  - (function) - Callback.
+  Compiles *HTTP Transactions* from given [API Elements][api-elements]. *HTTP
+  Transactions* are a backbone data structure to Dredd.
 
 
-  ### Callback Arguments
+  ```javascript
+
+  const compile = require('dredd-transactions/compile');
+
+  // const { compile } = require('dredd-transactions');
 
 
-  - (enum[null, object]) - Standard JavaScript error object.
+  const compileResult = compile(mediaType, apiElements, filename);
 
-  - ([Compilation Result][compilation-result-object-spec])
+  ```
+
+
+  > **Note:** The `filename` argument is optional and about to get deprecated,
+  see [#6][filename-deprecation]
 
 
 
   ## Data Structures
 
 
-  <a name="compilation-result-object"></a>
+  <a name="parse-result-object"></a>
 
-  ### Compilation Result (object)
+  ### Parse Result (object)
+
+
+  Result of parsing.
+
+
+  - `mediaType`: `text/vnd.apiblueprint` (string, default, nullable) - Media
+  type of the input format, can be empty in case of some fatal errors
+
+  - `apiElements` ([API Elements][api-elements]) - API Elements parse result
+
+
+  <a name="compile-result-object"></a>
+
+  ### Compile Result (object)
 
 
   Result of compilation. Alongside compiled
@@ -58350,19 +58477,22 @@ apiaryio/dredd-transactions: >
       - `error`
       - `warning`
   - component (enum[string]) - In which component of the compilation process the
-  annotation occurred.
+  annotation occurred
       - `apiDescriptionParser`
       - `parametersValidation`
       - `uriTemplateExpansion`
   - message (string) - Textual annotation. This is – in most cases – a
-  human-readable message to be displayed to user.
+  human-readable message to be displayed to user
 
-  - location (array) - Locations of the annotation in the source file. A series
-  of character-blocks, which may be non-continuous. For further details refer to
-  API Elements' [Source Map](source-map) element.
-      - (array, fixed) - Continuous characters block. A pair of character index and character count.
-          - (number) - Zero-based index of a character in the source document.
-          - (number) - Count of characters starting from the character index.
+  - location (array, fixed, nullable) - Location of the annotation in the source
+  file, represented by a single range of line and column number pairs if
+  available, or by `null` otherwise
+      - (array) - Start location
+          - (number) - Line number
+          - (number) - Column number
+      - (array) - End location
+          - (number) - Line number
+          - (number) - Column number
 
   ### Deprecated Properties
 
@@ -58382,11 +58512,13 @@ apiaryio/dredd-transactions: >
 
 
 
-  [dredd]: https://github.com/apiaryio/dredd
+  [dredd]: https://dredd.org
 
   [mson-spec]: https://github.com/apiaryio/mson
 
   [api-elements]: http://api-elements.readthedocs.org/
+
+  [api-blueprint]: https://apiblueprint.org/
 
   [api-blueprint-glossary]:
   https://github.com/apiaryio/api-blueprint/blob/master/Glossary%20of%20Terms.md
@@ -58398,7 +58530,7 @@ apiaryio/dredd-transactions: >
   [filename-deprecation]:
   https://github.com/apiaryio/dredd-transactions/issues/6
 
-  [compilation-result-object-spec]: #compilation-result-object
+  [compile-result-object-spec]: #compile-result-object
 
   [transaction-object-spec]: #transaction-object
 
@@ -58480,6 +58612,8 @@ mrin9/RapiDoc: >-
   - &#128077; Allow replacing default logo
 
   - &#128077; Allow embeding custom HTML content 
+
+  - &#128077; Responsive design
 
   - Enable OAuth
 
@@ -60159,8 +60293,7 @@ quantmind/aio-openapi: >
 
   * [SqlAlchemy][] expression language
 
-  * Asynchronous DB interaction with
-  [asyncpg](https://github.com/MagicStack/asyncpg)
+  * Asynchronous DB interaction with [asyncpg][]
 
   * Migrations with [alembic][]
 
@@ -60316,6 +60449,14 @@ quantmind/aio-openapi: >
 
   ```
 
+  The database container is available at the `db` app key:
+
+  ```python
+
+  app['db']
+
+  ```
+
 
   ## Websockets
 
@@ -60435,3 +60576,853 @@ quantmind/aio-openapi: >
   [click]: https://github.com/pallets/click
 
   [alembic]: http://alembic.zzzcomputing.com/en/latest/
+
+  [asyncpg]: https://github.com/MagicStack/asyncpg
+swagger-mock/swagger-mock: >
+  # Swagger Mock Server
+
+
+  [![Build
+  Status](https://travis-ci.org/swagger-mock/swagger-mock.svg?branch=master)](https://travis-ci.org/swagger-mock/swagger-mock)
+
+  [![Scrutinizer Code
+  Quality](https://scrutinizer-ci.com/g/swagger-mock/swagger-mock/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/swagger-mock/swagger-mock/?branch=master)
+
+  [![Code
+  Coverage](https://scrutinizer-ci.com/g/swagger-mock/swagger-mock/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/swagger-mock/swagger-mock/?branch=master)
+
+  [![StyleCI](https://github.styleci.io/repos/145602302/shield?branch=master)](https://github.styleci.io/repos/145602302)
+
+
+  Swagger API mock server with fake data generation with main features.
+
+
+  * OpenAPI 3.x support.
+
+  * Load specification from local file or URL.
+
+  * JSON and YAML format supported.
+
+  * Generates fake response data by provided schemas.
+
+  * Content negotiation by Accept header.
+
+  * Runs in Docker container.
+
+
+  ## Supported features
+
+
+  | Feature | Support status |
+
+  | --- | --- |
+
+  | generating xml response | basic support ([without xml
+  tags](https://swagger.io/docs/specification/data-models/representing-xml/)) |
+
+  | generating json response | supported |
+
+  | generation of [basic
+  types](https://swagger.io/docs/specification/data-models/data-types/) |
+  supported |
+
+  | generation of
+  [enums](https://swagger.io/docs/specification/data-models/enums/) | supported
+  |
+
+  | generation of [associative
+  arrays](https://swagger.io/docs/specification/data-models/dictionaries/) |
+  supported |
+
+  | generation of [combined
+  types](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/)
+  | supported (without tag `not` and discriminator) |
+
+  | local reference resolving | supported |
+
+  | remote reference resolving | not supported |
+
+  | URL reference resolving | not supported |
+
+  | validating request data | not supported |
+
+  | force using custom response schema | not supported (schema detected
+  automatically) |
+
+
+  ## How to use
+
+
+  Recommended way is to use [Docker](https://www.docker.com/) container.
+
+
+  ```bash
+
+  docker pull swaggermock/swagger-mock
+
+
+  # with remote file
+
+  docker run -p 8080:8080 -e
+  "SWAGGER_MOCK_SPECIFICATION_URL=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml"
+  --rm swaggermock/swagger-mock
+
+
+  # with local file
+
+  docker run -p 8080:8080 -v $PWD/examples/petstore.yaml:/openapi/petstore.yaml
+  -e "SWAGGER_MOCK_SPECIFICATION_URL=/openapi/petstore.yaml" --rm
+  swaggermock/swagger-mock
+
+  ```
+
+
+  Also, you can use [Docker Compose](https://docs.docker.com/compose/). Example
+  of `docker-compose.yml`
+
+
+  ```yaml
+
+  version: '3.0'
+
+
+  services:
+    swagger_mock:
+      container_name: swagger_mock
+      image: swaggermock/swagger-mock
+      environment:
+        SWAGGER_MOCK_SPECIFICATION_URL: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml'
+      ports:
+        - "8080:8080"
+  ```
+
+
+  To start up container run command
+
+
+  ```bash
+
+  docker-compose up -d
+
+  ```
+
+
+  ## Configuration
+
+
+  ### Environment variables
+
+
+  Mock server options can be set via environment variables.
+
+
+  #### SWAGGER_MOCK_SPECIFICATION_URL
+
+
+  * Path to file with OpenAPI v3 specification (_required_)
+
+  * _Possible values_: any valid URL or path to file
+
+
+  #### SWAGGER_MOCK_LOG_LEVEL
+
+
+  * Error log level
+
+  * _Default value_: `warning`
+
+  * _Possible values_: `error`, `warning`, `info`, `debug`
+
+
+  #### SWAGGER_MOCK_CACHE_DIRECTORY
+
+
+  * Directory for OpenAPI specification cache
+
+  * _Default value_: `/dev/shm/openapi-cache`
+
+  * _Possible values_: any valid path
+
+
+  #### SWAGGER_MOCK_CACHE_TTL
+
+
+  * Time to live for OpenAPI specification cache in seconds
+
+  * _Default value_: 0
+
+  * _Possible values_: positive integer
+
+
+  #### SWAGGER_MOCK_CACHE_STRATEGY
+
+
+  * Caching strategy for OpenAPI specification cache
+
+  * _Default value_: `disabled`
+
+  * _Possible values_: `disabled`, `url_md5`, `url_and_timestamp_md5`
+
+
+  ### Specification cache
+
+
+  To speed up server response time you can use caching mechanism for OpenAPI.
+  There are several caching strategies. Specific strategy can be set by
+  environment variable `SWAGGER_MOCK_CACHE_STRATEGY`.
+
+
+  * `url_md5` calculates hash from specification URL and if specification URL
+  was not changed uses parsed objects from cache.
+
+  * `url_and_timestamp_md5` calculates hash from specification URL and timestamp
+  (file timestamp or value of `Last-Modified` header). If you are using file
+  from remote server make sure that valid `Last-Modified` header is present. 
+
+
+  Recommended options for use with remote file (accessible by URL).
+
+
+  * `SWAGGER_MOCK_CACHE_STRATEGY='url_md5'`
+
+  * `SWAGGER_MOCK_CACHE_TTL=3600`
+
+
+  Recommended options for use with local file (at local server).
+
+
+  * `SWAGGER_MOCK_CACHE_STRATEGY='url_and_timestamp_md5'`
+
+  * `SWAGGER_MOCK_CACHE_TTL=3600`
+
+
+  ## License
+
+
+  This project is licensed under the MIT License - see the LICENSE file for
+  details.
+
+
+  ## Features roadmap for next versions
+
+
+  * [ ] extra response negotiation (return of 405 code)
+    * [ ] path parser
+    * [ ] route matcher in path object
+    * [ ] routing by path and endpoints
+  * [ ] response cache
+
+  * [ ] faker expression extension for numbers
+
+  * [ ] faker expression extension for strings
+
+  * [ ] request body validation
+
+  * [ ] remote reference support
+
+  * [ ] url reference support
+
+  * [ ] discriminator in combined types
+tiangolo/full-stack-fastapi-couchbase: >
+  # Full Stack FastAPI Couchbase - project generator
+
+
+  [![Build
+  Status](https://travis-ci.org/tiangolo/full-stack-fastapi-couchbase.svg?branch=master)](https://travis-ci.org/tiangolo/full-stack-fastapi-couchbase)
+
+
+  Generate a backend and frontend stack using Python, including interactive API
+  documentation.
+
+
+  [![Screenshot](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)](https://github.com/tiangolo/full-stack-fastapi-couchbase)
+
+
+  ## Features
+
+
+  * Full **Docker** integration (Docker based).
+
+  * Docker Swarm Mode deployment.
+
+  * **Docker Compose** integration and optimization for local development.
+
+  * **Production ready** Python web server using Uvicorn and Gunicorn.
+
+  * Python **[FastAPI](https://github.com/tiangolo/fastapi)** backend:
+      * **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic).
+      * **Intuitive**: Great editor support. <abbr title="also known as auto-complete, autocompletion, IntelliSense">Completion</abbr> everywhere. Less time debugging.
+      * **Easy**: Designed to be easy to use and learn. Less time reading docs.
+      * **Short**: Minimize code duplication. Multiple features from each parameter declaration.
+      * **Robust**: Get production-ready code. With automatic interactive documentation.
+      * **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI</a> and <a href="http://json-schema.org/" target="_blank">JSON Schema</a>.
+      * [**Many other features**](https://github.com/tiangolo/fastapi) including automatic validation, serialization, interactive documentation, authentication with OAuth2 JWT tokens, etc.
+  * **Secure password** hashing by default.
+
+  * **JWT token** authentication.
+
+  * **CORS** (Cross Origin Resource Sharing).
+
+  * **Celery** worker that can import and use code from the rest of the backend
+  selectively (you don't have to install the complete app in each worker).
+
+  * **NoSQL Couchbase** database that supports direct synchronization via
+  Couchbase Sync Gateway for offline-first applications.
+
+  * **Full Text Search** integrated, using Couchbase.
+
+  * REST backend tests based on Pytest, integrated with Docker, so you can test
+  the full API interaction, independent on the database. As it runs in Docker,
+  it can build a new data store from scratch each time (so you can use
+  ElasticSearch, MongoDB, or whatever you want, and just test that the API
+  works).
+
+  * Easy Python integration with **Jupyter** Kernels for remote or in-Docker
+  development with extensions like Atom Hydrogen or Visual Studio Code Jupyter.
+
+  * **Email notifications** for account creation and password recovery,
+  compatible with:
+      * Mailgun
+      * SparkPost
+      * SendGrid
+      * ...any other provider that can generate standard SMTP credentials.
+  * **Vue** frontend:
+      * Generated with Vue CLI.
+      * **JWT Authentication** handling.
+      * Login view.
+      * After login, main dashboard view.
+      * Main dashboard with user creation and edition.
+      * Self user edition.
+      * **Vuex**.
+      * **Vue-router**.
+      * **Vuetify** for beautiful material design components.
+      * **TypeScript**.
+      * Docker server based on **Nginx** (configured to play nicely with Vue-router).
+      * Docker multi-stage building, so you don't need to save or commit compiled code.
+      * Frontend tests ran at build time (can be disabled too).
+      * Made as modular as possible, so it works out of the box, but you can re-generate with Vue CLI or create it as you need, and re-use what you want.
+  * **Flower** for Celery jobs monitoring.
+
+  * Load balancing between frontend and backend with **Traefik**, so you can
+  have both under the same domain, separated by path, but served by different
+  containers.
+
+  * Traefik integration, including Let's Encrypt **HTTPS** certificates
+  automatic generation.
+
+  * GitLab **CI** (continuous integration), including frontend and backend
+  testing.
+
+
+  ## How to use it
+
+
+  Go to the directoy where you want to create your project and run:
+
+
+  ```bash
+
+  pip install cookiecutter
+
+  cookiecutter https://github.com/tiangolo/full-stack-fastapi-couchbase
+
+  ```
+
+
+  ### Generate passwords
+
+
+  You will be asked to provide passwords and secret keys for several components.
+  Open another terminal and run:
+
+
+  ```bash
+
+  openssl rand -hex 32
+
+  # Outputs something like:
+  99d3b1f01aa639e4a76f4fc281fc834747a543720ba4c8a8648ba755aef9be7f
+
+  ```
+
+
+  Copy the contents and use that as password / secret key. And run that again to
+  generate another secure key.
+
+
+
+  ### Input variables
+
+
+  The generator (cookiecutter) will ask you for some data, you might want to
+  have at hand before generating the project.
+
+
+  The input variables, with their default values (some auto generated) are:
+
+
+  * `project_name`: The name of the project
+
+  * `project_slug`: The development friendly name of the project. By default,
+  based on the project name
+
+  * `domain_main`: The domain in where to deploy the project for production
+  (from the branch `production`), used by the load balancer, backend, etc. By
+  default, based on the project slug.
+
+  * `domain_staging`: The domain in where to deploy while staging (before
+  production) (from the branch `master`). By default, based on the main domain.
+
+
+  * `docker_swarm_stack_name_main`: The name of the stack while deploying to
+  Docker in Swarm mode for production. By default, based on the domain.
+
+  * `docker_swarm_stack_name_staging`: The name of the stack while deploying to
+  Docker in Swarm mode for staging. By default, based on the domain.
+
+
+  * `secret_key`: Backend server secret key. Use the method above to generate
+  it.
+
+  * `first_superuser`: The first superuser generated, with it you will be able
+  to create more users, etc. By default, based on the domain.
+
+  * `first_superuser_password`: First superuser password. Use the method above
+  to generate it.
+
+  * `backend_cors_origins`: Origins (domains, more or less) that are enabled for
+  CORS (Cross Origin Resource Sharing). This allows a frontend in one domain
+  (e.g. `https://dashboard.example.com`) to communicate with this backend, that
+  could be living in another domain (e.g. `https://api.example.com`). It can
+  also be used to allow your local frontend (with a custom `hosts` domain
+  mapping, as described in the project's `README.md`) that could be living in
+  `http://dev.example.com:8080` to cummunicate with the backend at
+  `https://stag.example.com`. Notice the `http` vs `https` and the `dev.` prefix
+  for local development vs the "staging" `stag.` prefix. By default, it includes
+  origins for production, staging and development, with ports commonly used
+  during local development by several popular frontend frameworks (Vue with
+  `:8080`, React, Angular).
+
+  * `smtp_port`: Port to use to send emails via SMTP. By default `587`.
+
+  * `smtp_host`: Host to use to send emails, it would be given by your email
+  provider, like Mailgun, Sparkpost, etc.
+
+  * `smtp_user`: The user to use in the SMTP connection. The value will be given
+  by your email provider.
+
+  * `smtp_password`: The password to be used in the SMTP connection. The value
+  will be given by the email provider.
+
+  * `smtp_emails_from_email`: The email account to use as the sender in the
+  notification emails, it would be something like `info@your-custom-domain.com`.
+   
+  * `couchbase_user`: Couchbase main user to be used by the application (code).
+  By default `admin`.
+
+  * `couchbase_password`: Password of the main user, for the backend code.
+  Generate it with the method above.
+
+  * `couchbase_sync_gateway_cors`: List of CORS origins that the Sync Gateway
+  should allow to talk to directly. Similar to `backend_cors_origins`.
+
+  * `couchbase_sync_gateway_user`: User to be created for the Couchbase Sync
+  Gateway. This is what allows synchronization using the CouchDB protocol, with
+  Couchbase Lite in mobile apps and PouchDB in the web and hybrid mobile apps.
+
+  * `couchbase_sync_gateway_password`: Couchbase Sync Gateway password. Generate
+  it with the method above.
+   
+  * `traefik_constraint_tag`: The tag to be used by the internal Traefik load
+  balancer (for example, to divide requests between backend and frontend) for
+  production. Used to separate this stack from any other stack you might have.
+  This should identify each stack in each environment (production, staging,
+  etc).
+
+  * `traefik_constraint_tag_staging`: The Traefik tag to be used while on
+  staging. 
+
+
+  * `traefik_public_network`: This assumes you have another separate publicly
+  facing Traefik at the server / cluster level. This is the network that main
+  Traefik lives in.
+
+  * `traefik_public_constraint_tag`: The tag that should be used by stack
+  services that should communicate with the public.
+
+
+  * `flower_auth`: Basic HTTP authentication for flower, in the
+  form`user:password`. By default: "`root:changethis`".
+
+
+  * `sentry_dsn`: Key URL (DSN) of Sentry, for live error reporting. If you are
+  not using it yet, you should, is open source. E.g.:
+  `https://1234abcd:5678ef@sentry.example.com/30`.
+
+
+  * `docker_image_prefix`: Prefix to use for Docker image names. If you are
+  using GitLab Docker registry it would be based on your code repository. E.g.:
+  `git.example.com/development-team/my-awesome-project/`.
+
+  * `docker_image_backend`: Docker image name for the backend. By default, it
+  will be based on your Docker image prefix, e.g.:
+  `git.example.com/development-team/my-awesome-project/backend`. And depending
+  on your environment, a different tag will be appended ( `prod`, `stag`,
+  `branch` ). So, the final image names used will be like:
+  `git.example.com/development-team/my-awesome-project/backend:prod`.
+
+  * `docker_image_celeryworker`: Docker image for the celery worker. By default,
+  based on your Docker image prefix.
+
+  * `docker_image_frontend`: Docker image for the frontend. By default, based on
+  your Docker image prefix.
+
+  * `docker_image_sync_gateway`: Docker image for the Sync Gateway. By default,
+  based on your Docker image prefix.
+
+
+  ## How to deploy
+
+
+  This stack can be adjusted and used with several deployment options that are
+  compatible with Docker Compose, but it is designed to be used in a cluster
+  controlled with pure Docker in Swarm Mode with a Traefik main load balancer
+  proxy handling automatic HTTPS certificates, using the ideas from <a
+  href="https://dockerswarm.rocks" target="_blank">DockerSwarm.rocks</a>.
+
+
+  Please refer to <a href="https://dockerswarm.rocks"
+  target="_blank">DockerSwarm.rocks</a> to see how to deploy such a cluster in
+  20 minutes.
+
+
+  ## More details
+
+
+  After using this generator, your new project (the directory created) will
+  contain an extensive `README.md` with instructions for development,
+  deployment, etc. You can pre-read [the project `README.md` template here
+  too](./{{cookiecutter.project_slug}}/README.md).
+
+
+  ## Sibling project generators
+
+
+  * Based on PostgreSQL:
+  [https://github.com/tiangolo/full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql).
+
+
+  ## License
+
+
+  This project is licensed under the terms of the MIT license.
+tiangolo/full-stack-fastapi-postgresql: >
+  # Full Stack FastAPI and PostgreSQL - Base Project Generator
+
+
+  [![Build
+  Status](https://travis-ci.org/tiangolo/full-stack-fastapi-postgresql.svg?branch=master)](https://travis-ci.org/tiangolo/full-stack-fastapi-postgresql)
+
+
+  Generate a backend and frontend stack using Python, including interactive API
+  documentation.
+
+
+  ### Interactive API documentation
+
+
+  [![API
+  docs](img/docs.png)](https://github.com/tiangolo/full-stack-fastapi-postgresql)
+
+
+
+  ### Alternative API documentation
+
+
+  [![API
+  docs](img/redoc.png)](https://github.com/tiangolo/full-stack-fastapi-postgresql)
+
+
+
+  ### Dashboard Login
+
+
+  [![API
+  docs](img/login.png)](https://github.com/tiangolo/full-stack-fastapi-postgresql)
+
+
+
+  ### Dashboard - Create User
+
+
+  [![API
+  docs](img/dashboard.png)](https://github.com/tiangolo/full-stack-fastapi-postgresql)
+
+
+  ## Features
+
+
+  * Full **Docker** integration (Docker based).
+
+  * Docker Swarm Mode deployment.
+
+  * **Docker Compose** integration and optimization for local development
+
+  * **Production ready** Python web server using Uvicorn and Gunicorn.
+
+  * Python **[FastAPI](https://github.com/tiangolo/fastapi)** backend:
+      * **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic).
+      * **Intuitive**: Great editor support. <abbr title="also known as auto-complete, autocompletion, IntelliSense">Completion</abbr> everywhere. Less time debugging.
+      * **Easy**: Designed to be easy to use and learn. Less time reading docs.
+      * **Short**: Minimize code duplication. Multiple features from each parameter declaration.
+      * **Robust**: Get production-ready code. With automatic interactive documentation.
+      * **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI</a> and <a href="http://json-schema.org/" target="_blank">JSON Schema</a>.
+      * [**Many other features**](https://github.com/tiangolo/fastapi) including automatic validation, serialization, interactive documentation, authentication with OAuth2 JWT tokens, etc.
+  * **Secure password** hashing by default.
+
+  * **JWT token** authentication.
+
+  * **SQLAlchemy** models (independent of Flask extensions, so they can be used
+  with Celery workers directly).
+
+  * Basic starting models for users (modify and remove as you need).
+
+  * **Alembic** migrations.
+
+  * **CORS** (Cross Origin Resource Sharing).
+
+  * **Celery** worker that can import and use models and code from the rest of
+  the backend selectively (you don't have to install the complete app in each
+  worker).
+
+  * REST backend tests based on **Pytest**, integrated with Docker, so you can
+  test the full API interaction, independent on the database. As it runs in
+  Docker, it can build a new data store from scratch each time (so you can use
+  ElasticSearch, MongoDB, CouchDB, or whatever you want, and just test that the
+  API works).
+
+  * Easy Python integration with **Jupyter Kernels** for remote or in-Docker
+  development with extensions like Atom Hydrogen or Visual Studio Code Jupyter.
+
+  * **Vue** frontend:
+      * Generated with Vue CLI.
+      * **JWT Authentication** handling.
+      * Login view.
+      * After login, main dashboard view.
+      * Main dashboard with user creation and edition.
+      * Self user edition.
+      * **Vuex**.
+      * **Vue-router**.
+      * **Vuetify** for beautiful material design components.
+      * **TypeScript**.
+      * Docker server based on **Nginx** (configured to play nicely with Vue-router).
+      * Docker multi-stage building, so you don't need to save or commit compiled code.
+      * Frontend tests ran at build time (can be disabled too).
+      * Made as modular as possible, so it works out of the box, but you can re-generate with Vue CLI or create it as you need, and re-use what you want.
+  * **PGAdmin** for PostgreSQL database, you can modify it to use PHPMyAdmin and
+  MySQL easily.
+
+  * **Flower** for Celery jobs monitoring.
+
+  * Load balancing between frontend and backend with **Traefik**, so you can
+  have both under the same domain, separated by path, but served by different
+  containers.
+
+  * Traefik integration, including Let's Encrypt **HTTPS** certificates
+  automatic generation.
+
+  * GitLab **CI** (continuous integration), including frontend and backend
+  testing.
+
+
+  ## How to use it
+
+
+  Go to the directoy where you want to create your project and run:
+
+
+  ```bash
+
+  pip install cookiecutter
+
+  cookiecutter https://github.com/tiangolo/full-stack-fastapi-postgresql
+
+  ```
+
+
+  ### Generate passwords
+
+
+  You will be asked to provide passwords and secret keys for several components.
+  Open another terminal and run:
+
+
+  ```bash
+
+  openssl rand -hex 32
+
+  # Outputs something like:
+  99d3b1f01aa639e4a76f4fc281fc834747a543720ba4c8a8648ba755aef9be7f
+
+  ```
+
+
+  Copy the contents and use that as password / secret key. And run that again to
+  generate another secure key.
+
+
+
+  ### Input variables
+
+
+  The generator (cookiecutter) will ask you for some data, you might want to
+  have at hand before generating the project.
+
+
+  The input variables, with their default values (some auto generated) are:
+
+
+  * `project_name`: The name of the project
+
+  * `project_slug`: The development friendly name of the project. By default,
+  based on the project name
+
+  * `domain_main`: The domain in where to deploy the project for production
+  (from the branch `production`), used by the load balancer, backend, etc. By
+  default, based on the project slug.
+
+  * `domain_staging`: The domain in where to deploy while staging (before
+  production) (from the branch `master`). By default, based on the main domain.
+
+
+  * `docker_swarm_stack_name_main`: The name of the stack while deploying to
+  Docker in Swarm mode for production. By default, based on the domain.
+
+  * `docker_swarm_stack_name_staging`: The name of the stack while deploying to
+  Docker in Swarm mode for staging. By default, based on the domain.
+
+
+  * `secret_key`: Backend server secret key. Use the method above to generate
+  it.
+
+  * `first_superuser`: The first superuser generated, with it you will be able
+  to create more users, etc. By default, based on the domain.
+
+  * `first_superuser_password`: First superuser password. Use the method above
+  to generate it.
+
+  * `backend_cors_origins`: Origins (domains, more or less) that are enabled for
+  CORS (Cross Origin Resource Sharing). This allows a frontend in one domain
+  (e.g. `https://dashboard.example.com`) to communicate with this backend, that
+  could be living in another domain (e.g. `https://api.example.com`). It can
+  also be used to allow your local frontend (with a custom `hosts` domain
+  mapping, as described in the project's `README.md`) that could be living in
+  `http://dev.example.com:8080` to cummunicate with the backend at
+  `https://stag.example.com`. Notice the `http` vs `https` and the `dev.` prefix
+  for local development vs the "staging" `stag.` prefix. By default, it includes
+  origins for production, staging and development, with ports commonly used
+  during local development by several popular frontend frameworks (Vue with
+  `:8080`, React, Angular).
+
+  * `smtp_port`: Port to use to send emails via SMTP. By default `587`.
+
+  * `smtp_host`: Host to use to send emails, it would be given by your email
+  provider, like Mailgun, Sparkpost, etc.
+
+  * `smtp_user`: The user to use in the SMTP connection. The value will be given
+  by your email provider.
+
+  * `smtp_password`: The password to be used in the SMTP connection. The value
+  will be given by the email provider.
+
+  * `smtp_emails_from_email`: The email account to use as the sender in the
+  notification emails, it would be something like `info@your-custom-domain.com`.
+   
+  * `postgres_password`: Postgres database password. Use the method above to
+  generate it. (You could easily modify it to use MySQL, MariaDB, etc).
+
+  * `pgadmin_default_user`: PGAdmin default user, to log-in to the PGAdmin
+  interface.
+
+  * `pgadmin_default_user_password`: PGAdmin default user password. Generate it
+  with the method above.
+   
+  * `traefik_constraint_tag`: The tag to be used by the internal Traefik load
+  balancer (for example, to divide requests between backend and frontend) for
+  production. Used to separate this stack from any other stack you might have.
+  This should identify each stack in each environment (production, staging,
+  etc).
+
+  * `traefik_constraint_tag_staging`: The Traefik tag to be used while on
+  staging. 
+
+  * `traefik_public_network`: This assumes you have another separate publicly
+  facing Traefik at the server / cluster level. This is the network that main
+  Traefik lives in.
+
+  * `traefik_public_constraint_tag`: The tag that should be used by stack
+  services that should communicate with the public.
+
+
+  * `flower_auth`: Basic HTTP authentication for flower, in the
+  form`user:password`. By default: "`root:changethis`".
+
+
+  * `sentry_dsn`: Key URL (DSN) of Sentry, for live error reporting. If you are
+  not using it yet, you should, is open source. E.g.:
+  `https://1234abcd:5678ef@sentry.example.com/30`.
+
+
+  * `docker_image_prefix`: Prefix to use for Docker image names. If you are
+  using GitLab Docker registry it would be based on your code repository. E.g.:
+  `git.example.com/development-team/my-awesome-project/`.
+
+  * `docker_image_backend`: Docker image name for the backend. By default, it
+  will be based on your Docker image prefix, e.g.:
+  `git.example.com/development-team/my-awesome-project/backend`. And depending
+  on your environment, a different tag will be appended ( `prod`, `stag`,
+  `branch` ). So, the final image names used will be like:
+  `git.example.com/development-team/my-awesome-project/backend:prod`.
+
+  * `docker_image_celeryworker`: Docker image for the celery worker. By default,
+  based on your Docker image prefix.
+
+  * `docker_image_frontend`: Docker image for the frontend. By default, based on
+  your Docker image prefix.
+
+
+  ## How to deploy
+
+
+  This stack can be adjusted and used with several deployment options that are
+  compatible with Docker Compose, but it is designed to be used in a cluster
+  controlled with pure Docker in Swarm Mode with a Traefik main load balancer
+  proxy handling automatic HTTPS certificates, using the ideas from <a
+  href="https://dockerswarm.rocks" target="_blank">DockerSwarm.rocks</a>.
+
+
+  Please refer to <a href="https://dockerswarm.rocks"
+  target="_blank">DockerSwarm.rocks</a> to see how to deploy such a cluster in
+  20 minutes.
+
+
+  ## More details
+
+
+  After using this generator, your new project (the directory created) will
+  contain an extensive `README.md` with instructions for development,
+  deployment, etc. You can pre-read [the project `README.md` template here
+  too](./{{cookiecutter.project_slug}}/README.md).
+
+
+  ## Sibling project generators
+
+
+  * Based on Couchbase:
+  [https://github.com/tiangolo/full-stack-fastapi-couchbase](https://github.com/tiangolo/full-stack-fastapi-couchbase).
+
+
+  ## License
+
+
+  This project is licensed under the terms of the MIT license.
