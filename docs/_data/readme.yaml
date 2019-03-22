@@ -4556,15 +4556,42 @@ networknt/light-rest-4j: >
   A RESTful API or service framework built on top of light-4j
 
 
-  [Developer Chat](https://gitter.im/networknt/light-rest-4j) |
+  [Stack Overflow](https://stackoverflow.com/questions/tagged/light-4j) |
+
+  [Google Group](https://groups.google.com/forum/#!forum/light-4j) |
+
+  [Gitter Chat](https://gitter.im/networknt/light-rest-4j) |
+
+  [Subreddit](https://www.reddit.com/r/lightapi/) |
+
+  [Youtube Channel](https://www.youtube.com/channel/UCHCRMWJVXw8iB7zKxF55Byw) |
 
   [Documentation](https://doc.networknt.com/style/light-rest-4j/) |
 
-  [Contribution Guide](CONTRIBUTING.md) |
+  [Contribution Guide](https://doc.networknt.com/contribute/) |
 
 
   [![Build
   Status](https://travis-ci.org/networknt/light-rest-4j.svg?branch=master)](https://travis-ci.org/networknt/light-rest-4j)
+  [![codecov.io](https://codecov.io/github/networknt/light-rest-4j/coverage.svg?branch=master)](https://codecov.io/github/networknt/light-rest-4j?branch=master)
+
+
+  This repository contains middleware handlers that work with either Swagger 2.0
+  or OpenAPI 3.0 specification. If you are starting a brand new project, it is
+  highly recommended using the OpenAPI 3.0 specification for your design. 
+
+
+  To get started your first project, please visit the [getting
+  started](http://localhost:1313/getting-started/light-rest-4j/) to walk through
+  the process with Petstore application. 
+
+
+  For documentation on the handlers, please visit the [reference
+  document](http://localhost:1313/style/light-rest-4j/).
+
+
+  There are also numeric [tutorials](http://localhost:1313/tutorial/rest/) to
+  show users how to build Restful services. 
 apioo/fusio: >
 
   <p align="center">
@@ -5990,22 +6017,6 @@ swagger-api/swagger-parser: >
     <version>2.0.10-SNAPSHOT</version>
   </dependency>
 
-
-  ```
-
-
-  or
-
-
-  ```xml
-
-  <dependency>
-    <groupId>io.swagger.parser.v3</groupId>
-    <artifactId>swagger-parser</artifactId>
-    <version>2.0.10-SNAPSHOT</version>
-  </dependency>
-
-
   ```
 
 
@@ -6515,10 +6526,27 @@ RepreZen/KaiZen-OpenApi-Parser: >
 networknt/openapi-parser: >
   # openapi-parser
 
-  A light-weight, fast OpenAPI 3.0 parser and validator with minimum third party
-  dependencies. It is based on
 
-  the generated code from [KaiZen OpenAPI
+  A light-weight, fast OpenAPI 3.0 parser and validator with minimum third party
+  dependencies. 
+
+
+  [Stack Overflow](https://stackoverflow.com/questions/tagged/light-4j) |
+
+  [Google Group](https://groups.google.com/forum/#!forum/light-4j) |
+
+  [Gitter Chat](https://gitter.im/networknt/light-rest-4j) |
+
+  [Subreddit](https://www.reddit.com/r/lightapi/) |
+
+  [Youtube Channel](https://www.youtube.com/channel/UCHCRMWJVXw8iB7zKxF55Byw) |
+
+  [Documentation](https://doc.networknt.com/library/openapi-parser/) |
+
+  [Contribution Guide](https://doc.networknt.com/contribute/) |
+
+
+  It is based on the generated code from [KaiZen OpenAPI
   Parser](https://github.com/RepreZen/KaiZen-OpenApi-Parser) without
 
   dependency on javaparser-core, guava, commons-cli, commons-io, javax.mail and
@@ -7882,33 +7910,6 @@ p1c2u/openapi-spec-validator: >
   errors_iterator = openapi_v3_spec_validator.iter_errors(spec)
 
   ```
-
-
-  ## Security Note
-
-
-  PyYAML, a requirement of this project, has a
-
-  [security vulnerability](https://nvd.nist.gov/vuln/detail/CVE-2017-18342)
-
-  in the default implementation of `yaml.load()`, which allows execution
-
-  of arbitrary code while loading a target file or stream.  OpenAPI Spec
-
-  Validator uses a safe loader to ensure that only Python objects
-
-  marked as safe can be executed.  Thus, you are not exposed to this
-
-  vulnerability by using this package.
-
-
-  If you use `PyYAML` directly, be sure to use `yaml.safe_load()` to
-
-  avoid inadvertantly exposing youself to potentially malicous data.  The
-
-  [PyYAML docs](https://pyyaml.org/wiki/PyYAMLDocumentation#loading-yaml)
-
-  describe this issue in detail.
 
 
   ## Related projects
@@ -16748,7 +16749,7 @@ signalfx/swagger-ajax-client: >
   npm run dist
 
   ```
-swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to three different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n* [swagger-ui-react](https://www.npmjs.com/package/swagger-ui-react) is Swagger UI packaged as a React component for use in React applciations.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttp://nightwatchjs.org/gettingstarted#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
+swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to three different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n* [swagger-ui-react](https://www.npmjs.com/package/swagger-ui-react) is Swagger UI packaged as a React component for use in React applications.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttp://nightwatchjs.org/gettingstarted#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
 wkennedy/swagger4spring-web: >
   swagger4spring-web
 
@@ -37036,10 +37037,10 @@ z0mt3c/hapi-swaggered: >
   hapi whenever the response validation is disabled. In this case hapi-swaggered
   will not be able to show any response types. A very low sampling rate is
   sufficient to keep the repsonse types.
-jfinkhaeuser/prance: >
+jfinkhaeuser/prance: >+
   |Posix Build Status| |Windows Build Status| |Docs| |License|
 
-  |PyPI| |Python Versions| |Package Format| |Package Status|
+  |PyPI| |Python Versions| |Package Format| |Package Status| |FOSSA Status|
 
 
   |Logo|
@@ -37493,8 +37494,12 @@ jfinkhaeuser/prance: >
      :target: https://pypi.python.org/pypi/prance/
   .. |Package Status| image:: https://img.shields.io/pypi/status/prance.svg
      :target: https://pypi.python.org/pypi/prance/
+  .. |FOSSA Status| image::
+  https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance.svg?type=shield
+     :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance?ref=badge_shield
   .. |Logo| image::
   https://raw.githubusercontent.com/jfinkhaeuser/prance/master/docs/images/prance_logo_256.png
+
 swimlane/qswag: >
   # qswag
 
@@ -38099,7 +38104,7 @@ BigstickCarpet/swagger-express-middleware: >
 
   ============================
 
-  #### Swagger middleware and mocks for Express.js
+  ### Swagger 2.0 middleware and mocks for Express.js
 
 
   [![Cross-Platform
@@ -38120,6 +38125,17 @@ BigstickCarpet/swagger-express-middleware: >
   [![Dependencies](https://david-dm.org/APIDevTools/swagger-express-middleware.svg)](https://david-dm.org/APIDevTools/swagger-express-middleware)
 
   [![License](https://img.shields.io/npm/l/swagger-express-middleware.svg)](LICENSE)
+
+
+
+
+  OpenAPI 3.0 Support
+
+  --------------------------
+
+  We are currently working on migrating Swagger Express Middleware to OpenAPI
+  3.0.  You can find the latest information in [**the v3
+  branch**](https://github.com/APIDevTools/swagger-express-middleware/tree/v3).
 
 
 
@@ -39024,8 +39040,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-03-14T09:45:43Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":442,"watchers_count":442,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":72,"mirror_url":null,"archived":false,"open_issues_count":29,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":72,"open_issues":29,"watchers":442,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":72,"subscribers_count":19}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-03-14T09:45:43Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":442,"watchers_count":442,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":72,"mirror_url":null,"archived":false,"open_issues_count":30,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":72,"open_issues":30,"watchers":442,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":72,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44790,6 +44806,10 @@ OpenAPITools/openapi-generator: >
   [中野暁人](https://github.com/ackintosh) at [Gunma.web #34
   スキーマ駆動開発](https://gunmaweb.connpass.com/event/113974/)
 
+  - 2019/02/20 - [An adventure in OpenAPI V3 code
+  generation](https://mux.com/blog/an-adventure-in-openapi-v3-api-code-generation/)
+  by [Phil Cluff](https://mux.com/blog/author/philc/)
+
   - 2019/02/26 - [Building API Services: A Beginner’s
   Guide](https://medium.com/google-cloud/building-api-services-a-beginners-guide-7274ae4c547f)
   by [Ratros Y.](https://medium.com/@ratrosy) in [Google Cloud Platofrm
@@ -46943,6 +46963,16 @@ danielgtaylor/apisprout: >
   width="300" alt="API Sprout"/>
 
 
+  [![Go Report
+  Card](https://goreportcard.com/badge/github.com/danielgtaylor/apisprout)](https://goreportcard.com/report/github.com/danielgtaylor/apisprout)
+  [![Build
+  Status](https://travis-ci.org/danielgtaylor/apisprout.svg?branch=master)](https://travis-ci.org/danielgtaylor/apisprout)
+  [![GitHub tag (latest
+  SemVer)](https://img.shields.io/github/tag/danielgtaylor/apisprout.svg)](https://github.com/danielgtaylor/apisprout/releases)
+  [![Docker
+  Pulls](https://img.shields.io/docker/pulls/danielgtaylor/apisprout.svg)](https://hub.docker.com/r/danielgtaylor/apisprout/)
+
+
   A simple, quick, cross-platform API mock server that returns examples
   specified in an API description document. Features include:
 
@@ -46975,6 +47005,11 @@ danielgtaylor/apisprout: >
   # Load from a local file
 
   apisprout my-api.yaml
+
+
+  # Validate server name and use base path
+
+  apisprout --validate-server my-api.yaml
 
 
   # Load from a URL
@@ -47069,7 +47104,7 @@ danielgtaylor/apisprout: >
   ## License
 
 
-  Copyright &copy; 2018 Daniel G. Taylor
+  Copyright &copy; 2018-2019 Daniel G. Taylor
 
 
   http://dgt.mit-license.org/
@@ -56086,7 +56121,7 @@ stoplightio/spectral: >
   style guide for your JSON objects.
 
 
-  ### Creating a custom rule:
+  ### Creating a custom rule
 
 
   Spectral has a built-in set of functions which you can reference in your
@@ -56258,7 +56293,7 @@ stoplightio/spectral: >
   ```
 
 
-  ### Linting an OAS 2 document:
+  ### Linting an OAS 2 document
 
 
   Spectral also includes a number of ready made rules and functions for OpenAPI
@@ -56849,7 +56884,7 @@ tiangolo/fastapi: >
   * **Fast to code**: Increase the speed to develop features by about 200% to
   300% *.
 
-  * **Less bugs**: Reduce about 40% of human (developer) induced errors. *
+  * **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *
 
   * **Intuitive**: Great editor support. <abbr title="also known as
   auto-complete, autocompletion, IntelliSense">Completion</abbr> everywhere.
@@ -56858,7 +56893,7 @@ tiangolo/fastapi: >
   * **Easy**: Designed to be easy to use and learn. Less time reading docs.
 
   * **Short**: Minimize code duplication. Multiple features from each parameter
-  declaration. Less bugs.
+  declaration. Fewer bugs.
 
   * **Robust**: Get production-ready code. With automatic interactive
   documentation.
@@ -57836,7 +57871,7 @@ postmanlabs/openapi-to-postman: >
   | request.url.raw | server.url (path level server >> openapi server) + path |
   - |  |
 
-  | requser.url.variables | parameter (`in = path`) | - |
+  | request.url.variables | parameter (`in = path`) | - |
   [link](#Header/Path-param-conversion-example) |
 
   | request.url.params | parameter (`in = query`) | - | {"key": param.name,
@@ -57883,7 +57918,7 @@ hh-h/aiohttp-swagger3: >
 
   - python3.6+
 
-  - aiohttp>3 (haven't tested with v2, though)
+  - aiohttp>=3
 
   - pyyaml
 
