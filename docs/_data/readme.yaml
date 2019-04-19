@@ -4907,6 +4907,20 @@ apioo/fusio: >
   services. Then we simply fire some queries and return the response.
 
 
+  ## Code-Generation
+
+
+  Fusio can be used in a lot of use cases. If you build an API based on entities
+
+  which should be stored in a relational database you can use our code generator
+
+  to simply build all routes, schemas and actions based on a simple YAML
+
+  definition. The code can be used as great starting point to rapidly build your
+
+  API. The tool is available at: https://generate.apioo.de/
+
+
   # Backend
 
 
@@ -7221,7 +7235,7 @@ kevindew/openapi3_parser: >
 
 
   [MIT License](LICENCE)
-getkin/kin-openapi: "[![Build Status](https://travis-ci.com/getkin/kin-openapi.svg?branch=master)](https://travis-ci.com/getkin/kin-openapi)\n[![Go Report Card](https://goreportcard.com/badge/github.com/getkin/kin-openapi)](https://goreportcard.com/report/github.com/getkin/kin-openapi)\n[![GoDoc](https://godoc.org/github.com/getkin/kin-openapi?status.svg)](https://godoc.org/github.com/getkin/kin-openapi)\n[![Join Gitter Chat Channel -](https://badges.gitter.im/getkin/kin.svg)](https://gitter.im/getkin/kin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n# Introduction\nA [Go](https://golang.org) project for handling [OpenAPI](https://www.openapis.org/) files. We target the latest OpenAPI version (currently 3), but the project contains support for older OpenAPI versions too.\n\nLicensed under the [MIT License](LICENSE).\n\n## Contributors and users\nThe project has received pull requests from many people. Thanks to everyone!\n\nHere's some projects that depend on _kin-openapi_:\n  * [github.com/getkin/kin](https://github.com/getkin/kin) - \"A configurable backend\"\n  * [github.com/danielgtaylor/apisprout](https://github.com/danielgtaylor/apisprout) - \"Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation\"\n  * (Feel free to add your project by [creating an issue](https://github.com/getkin/kin-openapi/issues/new) or a pull request)\n\n## Alternative projects\n  * [go-openapi](https://github.com/go-openapi)\n    * Supports OpenAPI version 2.\n  * See [this list](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/IMPLEMENTATIONS.md).\n\n# Structure\n  * _openapi2_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2))\n    * Support for OpenAPI 2 files, including serialization, deserialization, and validation.\n  * _openapi2conv_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2conv))\n    * Converts OpenAPI 2 files into OpenAPI 3 files.\n  * _openapi3_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3))\n    * Support for OpenAPI 3 files, including serialization, deserialization, and validation.\n  * _openapi3filter_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3filter))\n    * Validates HTTP requests and responses\n  * _openapi3gen_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3gen))\n    * Generates `*openapi3.Schema` values for Go types.\n  * _pathpattern_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/pathpattern))\n    * Matches strings with OpenAPI path patterns (\"/path/{parameter}\")\n\n# Some recipes\n## Loading OpenAPI document\nUse `SwaggerLoader`, which resolves all JSON references:\n```go\nswagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromFile(\"swagger.json\")\n```\n\n## Getting OpenAPI operation that matches request\n```go\nfunc GetOperation(httpRequest *http.Request) (*openapi3.Operation, error) {\n  // Load Swagger file\n  router := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\n  // Find route\n  route, _, err := router.FindRoute(\"GET\", req.URL.String())\n  if err!=nil {\n    return nil, err\n  }\n\n  // Get OpenAPI 3 operation\n  return route.Operation\n}\n```\n\n## Validating HTTP requests/responses\n```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"log\"\n\t\"net/http\"\n\n\t\"github.com/getkin/kin-openapi/openapi3filter\"\n)\n\nfunc main() {\n\trouter := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\tctx := context.TODO()\n\thttpReq, _ := http.NewRequest(http.MethodGet, \"/items\", nil)\n\n\t// Find route\n\troute, pathParams, _ := router.FindRoute(httpReq.Method, httpReq.URL)\n\n\t// Validate request\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\tvar (\n\t\trespStatus      = 200\n\t\trespContentType = \"application/json\"\n\t\trespBody        = bytes.NewBufferString(`{}`)\n\t)\n\n\tlog.Println(\"Response:\", respStatus)\n\tresponseValidationInput := &openapi3filter.ResponseValidationInput{\n\t\tRequestValidationInput: requestValidationInput,\n\t\tStatus:                 respStatus,\n\t\tHeader: http.Header{\n\t\t\t\"Content-Type\": []string{\n\t\t\t\trespContentType,\n\t\t\t},\n\t\t},\n\t}\n\tif respBody != nil {\n\t\tdata, _ := json.Marshal(respBody)\n\t\tresponseValidationInput.SetBodyBytes(data)\n\t}\n\n\t// Validate response.\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n```\n\n## Custom content type for body of HTTP request/response\n\nBy default, the library parses a body of HTTP request and response\nif it has one of the next content types: `\"plain/text\"` or `\"application/json\"`.\nTo support other content types you must register decoders for them:\n\n```go\nfunc main() {\n\t// ...\n\n\t// Register a body's decoder for content type \"application/xml\".\n\topenapi3filter.RegisterBodyDecoder(\"application/xml\", xmlBodyDecoder)\n\n\t// Now you can validate HTTP request that contains a body with content type \"application/xml\".\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\t// ...\n\n\t// And you can validate HTTP response that contains a body with content type \"application/xml\".\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n\nfunc xmlBodyDecoder(body []byte) (interface{}, error) {\n\t// Decode body to a primitive, []inteface{}, or map[string]interface{}.\n}\n```\n"
+getkin/kin-openapi: "[![Build Status](https://travis-ci.com/getkin/kin-openapi.svg?branch=master)](https://travis-ci.com/getkin/kin-openapi)\n[![Go Report Card](https://goreportcard.com/badge/github.com/getkin/kin-openapi)](https://goreportcard.com/report/github.com/getkin/kin-openapi)\n[![GoDoc](https://godoc.org/github.com/getkin/kin-openapi?status.svg)](https://godoc.org/github.com/getkin/kin-openapi)\n[![Join Gitter Chat Channel -](https://badges.gitter.im/getkin/kin.svg)](https://gitter.im/getkin/kin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n# Introduction\nA [Go](https://golang.org) project for handling [OpenAPI](https://www.openapis.org/) files. We target the latest OpenAPI version (currently 3), but the project contains support for older OpenAPI versions too.\n\nLicensed under the [MIT License](LICENSE).\n\n## Contributors and users\nThe project has received pull requests from many people. Thanks to everyone!\n\nHere's some projects that depend on _kin-openapi_:\n  * [github.com/getkin/kin](https://github.com/getkin/kin) - \"A configurable backend\"\n  * [github.com/danielgtaylor/apisprout](https://github.com/danielgtaylor/apisprout) - \"Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation\"\n  * [github.com/deepmap/oapi-codegen](https://github.com/deepmap/oapi-codegen) - Generate Go server boilerplate from an OpenAPI 3 spec\n  * (Feel free to add your project by [creating an issue](https://github.com/getkin/kin-openapi/issues/new) or a pull request)\n\n## Alternative projects\n  * [go-openapi](https://github.com/go-openapi)\n    * Supports OpenAPI version 2.\n  * See [this list](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/IMPLEMENTATIONS.md).\n\n# Structure\n  * _openapi2_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2))\n    * Support for OpenAPI 2 files, including serialization, deserialization, and validation.\n  * _openapi2conv_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2conv))\n    * Converts OpenAPI 2 files into OpenAPI 3 files.\n  * _openapi3_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3))\n    * Support for OpenAPI 3 files, including serialization, deserialization, and validation.\n  * _openapi3filter_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3filter))\n    * Validates HTTP requests and responses\n  * _openapi3gen_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3gen))\n    * Generates `*openapi3.Schema` values for Go types.\n  * _pathpattern_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/pathpattern))\n    * Matches strings with OpenAPI path patterns (\"/path/{parameter}\")\n\n# Some recipes\n## Loading OpenAPI document\nUse `SwaggerLoader`, which resolves all JSON references:\n```go\nswagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromFile(\"swagger.json\")\n```\n\n## Getting OpenAPI operation that matches request\n```go\nfunc GetOperation(httpRequest *http.Request) (*openapi3.Operation, error) {\n  // Load Swagger file\n  router := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\n  // Find route\n  route, _, err := router.FindRoute(\"GET\", req.URL.String())\n  if err!=nil {\n    return nil, err\n  }\n\n  // Get OpenAPI 3 operation\n  return route.Operation\n}\n```\n\n## Validating HTTP requests/responses\n```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"log\"\n\t\"net/http\"\n\n\t\"github.com/getkin/kin-openapi/openapi3filter\"\n)\n\nfunc main() {\n\trouter := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\tctx := context.TODO()\n\thttpReq, _ := http.NewRequest(http.MethodGet, \"/items\", nil)\n\n\t// Find route\n\troute, pathParams, _ := router.FindRoute(httpReq.Method, httpReq.URL)\n\n\t// Validate request\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\tvar (\n\t\trespStatus      = 200\n\t\trespContentType = \"application/json\"\n\t\trespBody        = bytes.NewBufferString(`{}`)\n\t)\n\n\tlog.Println(\"Response:\", respStatus)\n\tresponseValidationInput := &openapi3filter.ResponseValidationInput{\n\t\tRequestValidationInput: requestValidationInput,\n\t\tStatus:                 respStatus,\n\t\tHeader: http.Header{\n\t\t\t\"Content-Type\": []string{\n\t\t\t\trespContentType,\n\t\t\t},\n\t\t},\n\t}\n\tif respBody != nil {\n\t\tdata, _ := json.Marshal(respBody)\n\t\tresponseValidationInput.SetBodyBytes(data)\n\t}\n\n\t// Validate response.\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n```\n\n## Custom content type for body of HTTP request/response\n\nBy default, the library parses a body of HTTP request and response\nif it has one of the next content types: `\"text/plain\"` or `\"application/json\"`.\nTo support other content types you must register decoders for them:\n\n```go\nfunc main() {\n\t// ...\n\n\t// Register a body's decoder for content type \"application/xml\".\n\topenapi3filter.RegisterBodyDecoder(\"application/xml\", xmlBodyDecoder)\n\n\t// Now you can validate HTTP request that contains a body with content type \"application/xml\".\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\t// ...\n\n\t// And you can validate HTTP response that contains a body with content type \"application/xml\".\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n\nfunc xmlBodyDecoder(body []byte) (interface{}, error) {\n\t// Decode body to a primitive, []inteface{}, or map[string]interface{}.\n}\n```\n"
 adwhit/openapi3-rust: >
   # OpenAPIv3
 
@@ -8904,6 +8918,7 @@ Mermade/openapi-filter: >
 
 
   Options:
+    --valid        try to ensure inverse output is valid                 [boolean]
     -h, --help     Show help                                             [boolean]
     --version      Show version number                                   [boolean]
     -i, --inverse  output filtered elements only                         [boolean]
@@ -8917,7 +8932,7 @@ Mermade/openapi-filter: >
   `openapi-filter --tags x-private x-hidden -- source.yaml target.yaml`
 
 
-  or 
+  or
 
 
   ```javascript
@@ -8927,6 +8942,8 @@ Mermade/openapi-filter: >
   let options = {}; // defaults are shown
 
   //options.inverse = false;
+
+  //options.valid = false;
 
   //options.tags = ['x-internal'];
 
@@ -23215,7 +23232,7 @@ Azure/AutoRest: >+
   Installing AutoRest on Windows, MacOS or Linux involves two steps:
 
 
-  1. __Install [Node.js](https://nodejs.org/en/)__ (8.11.x LTS HIGHLY
+  1. __Install [Node.js](https://nodejs.org/en/)__ (10.15.x LTS HIGHLY
   RECOMENDED)
 
   > for more help, check out [Installing Node.JS on different
@@ -39117,8 +39134,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-04-10T13:38:33Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":451,"watchers_count":451,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":72,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":72,"open_issues":31,"watchers":451,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":72,"subscribers_count":19}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-04-17T07:53:10Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":454,"watchers_count":454,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":31,"watchers":454,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":19}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44791,6 +44808,8 @@ OpenAPITools/openapi-generator: >
 
   - [Boxever](https://www.boxever.com/)
 
+  - [Camptocamp](https://www.camptocamp.com/en)
+
   - [codecentric AG](https://www.codecentric.de/)
 
   - [Cupix](https://www.cupix.com/)
@@ -46154,7 +46173,7 @@ thomaxxl/safrs: >
 
 
   The result is an easy-to-use [swagger/OpenAPI](https://swagger.io/) and
-  [JSON:API](jsonapi.org) compliant API specification.
+  [JSON:API](https://jsonapi.org) compliant API implementation.
 
 
   A __[LIVE DEMO](http://thomaxxl.pythonanywhere.com) is available__,
@@ -46603,8 +46622,9 @@ thomaxxl/safrs: >
 
   ### Custom Serialization
 
-  Serialization and deserialization are implemented by the SAFRSBase `to_dict`
-  and `__init__` respectively: you can extend these methods as usual.
+  Serialization and deserialization are implemented by the SAFRSBase
+  `_s_to_dict` and `__init__` respectively: you can extend these methods as
+  usual.
 
 
   <a class="mk-toclify" id="custom-decorators"></a>
@@ -49037,13 +49057,13 @@ fmvilas/openapi3-generator: >
   webserver and including ./api/index.js
 
   |+ api/
-   |- index.js           // This is a static template, it contains placeholders that will be filled in, e.g. includes for each file in routes
+   |- index.js.hbs       // This is a static template, it contains placeholders that will be filled in, e.g. includes for each file in routes
    |+ routes/
-    |- $$path$$.route.js      // This file will be generated for each operation and contains skeleton code for each method for an operation.
+    |- $$path$$.route.js.hbs      // This file will be generated for each operation and contains skeleton code for each method for an operation.
   ```
 
   The first important thing to notice here is the variable notation in
-  `$$path$$.route.js`. It will be replaced by the name of the path.
+  `$$path$$.route.js.hbs`. It will be replaced by the name of the path.
 
 
   In this example the generated directory structure will be like this:
@@ -49060,6 +49080,26 @@ fmvilas/openapi3-generator: >
     |- user.route.js     // This file will contain the code for methods on users.
                          // (e.g. postUserLogin, getUserByUsername, putUserByUsername, deleteUserByUsername).
   ```
+
+
+  ### Template file extensions
+
+  You can (optionally) name your template files with `.hbs` extensions, which
+  will be removed when writing the generated
+
+  file. e.g. `index.js.hbs` writes `index.js`. `index.js` would also write to
+  `index.js`, if you prefer to omit the hbs
+
+  extension.
+
+
+  The only case where the `.hbs` extension isn't optional would be if you are
+  writing handlebars templates with the
+
+  templates. In that case the the template would need the extension `.hbs.hbs`.
+  `usertpl.hbs.hbs` writes `usertpl.hbs`
+
+  (but `usertpl.hbs` as a source would write `usertpl` with no extension).
 
 
   ### Template file content
@@ -52626,7 +52666,7 @@ niteoweb/pyramid_openapi3: >
     </a>
     <a href="https://github.com/niteoweb/pyramid_openapi3/blob/master/Makefile#L56">
       <img alt="Test coverage (master branch)"
-           src="https://img.shields.io/badge/coverage-34%25-orange.svg">
+           src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg">
     </a>
     <a href="https://pypi.org/project/pyramid_openapi3/">
       <img alt="latest version of pyramid_openapi3 on PyPI"
@@ -52784,6 +52824,10 @@ niteoweb/pyramid_openapi3: >
 
   ## Running tests
 
+
+  You need to have [pipenv](https://pipenv.readthedocs.io/) and Python 3.7
+  installed on your machine. Then you can run:
+
       $ make tests
 
   ## Related packages
@@ -52824,21 +52868,23 @@ niteoweb/pyramid_openapi3: >
 
   - [x] pre-commit.
 
-  - [ ] Testing framework.
+  - [x] Testing framework.
 
   - [x] CircleCI integration.
 
-  - [ ] Beta PyPI release.
+  - [x] Beta PyPI release.
 
-  - [ ] Go through all docstrings.
+  - [x] Go through all docstrings.
 
-  - [ ] Automatic PyPI releases for tags, via CircleCI.
+  - [x] Automatic PyPI releases for tags, via CircleCI.
 
-  - [ ] 100% test coverage.
+  - [x] 100% test coverage.
 
-  - [ ] How to contribute.
+  - [x] How to contribute.
 
-  - [ ] How to release (`vim setup.py && git add setup.py && git ci -m "release
+  - [x] Add Changelog.
+
+  - [x] How to release (`vim setup.py && git add setup.py && git ci -m "release
   0.2.0" && git tag 0.2.0 && git push --tags`
 
   - [ ] Document that `pyramid_openapi3_validation_error_view()` is [registered
@@ -57668,7 +57714,7 @@ tiangolo/fastapi: >
 
   @app.put("/items/{item_id}")
 
-  def create_item(item_id: int, item: Item):
+  def update_item(item_id: int, item: Item):
       return {"item_name": item.name, "item_id": item_id}
   ```
 
@@ -58368,7 +58414,7 @@ postmanlabs/openapi-to-postman: >
 
   | collectionName | info.title | - |  |
 
-  | descrition | info.description + info.contact | - |  |
+  | description | info.description + info.contact | - |  |
 
   | collectionVariables| server.variables + pathVariables | - |  |
 
@@ -62289,6 +62335,12 @@ tiangolo/full-stack-fastapi-postgresql: >
   ### Next release
 
 
+  * Upgrade Python to 3.7 as Celery is now compatible too. <a
+  href="https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/10"
+  target="_blank">PR #10</a> by <a href="https://github.com/ebreton"
+  target="_blank">@ebreton</a>.
+
+
   ### 0.2.2
 
 
@@ -62991,7 +63043,7 @@ cebe/yii2-openapi: >
 
   Development of this library is sponsored by [cebe.:cloud: "Your Professional
   Deployment Platform"](https://cebe.cloud).
-cdimascio/generator-express-no-stress: "# generator-express-no-stress\n\n![](https://img.shields.io/badge/status-stable-green.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/56c006ccc44c47f49d12b6b35fcf35da)](https://www.codacy.com/app/cdimascio/generator-express-no-stress?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/generator-express-no-stress&utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-MIT-blue.svg)\n\nCreate awesome [Express.js](http://www.expressjs.com) applications with best of breed tech including ES.next via [Babel.js](https://babeljs.io/), structured logging with [Pino](https://github.com/pinojs/pino), API validation and interactive documentation using an [OpenAPI 3](https://swagger.io/specification/) or [Swagger 2](http://swagger.io/) spec, environment based config with [dotenv](https://github.com/motdotla/dotenv), and linting with [ESLint](http://eslint.org/).\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/express-no-stress-logo-v.png\">\n</p>\n\ngenerator-express-no-stress gets you up and running in seconds. It's ridiculously easy to configure. Heck, just take the defaults. Start it. Write code.\n\nThis generator scaffolds a fully functioning REST API server, complete with interactive documentation, API validation, structured logging, environment driven config, and more. Simply run the generator and smile :-D\n\n[Here's what you get!](#what-you-get)\n\n## Install\n\n_Requires Node 8 or greater_\n\n```shell\nnpm install -g yo generator-express-no-stress\n```\n\n- See [here](#usage-cli) for use with Yarn and/or Docker\n- See [here](#faqs) for Node 6 support\n\n## Scaffold\n\n```shell\nyo express-no-stress myapp\ncd myapp\n```\n\n## Run\n\nRun in _development mode_:\n\n```shell\nnpm run dev\n```\n\nPackage and run in _production mode_\n\n```shell\nnpm run compile\nnpm start\n```\n\n## Test\n\n```shell\nnpm test\n```\n\n## Debug\n\nRun one of the following, then attach your favorite inspector e.g. [VSCode](#debug-in-vscode):\n\n```shell\n# debug the server\nnpm run dev:debug\n\n# debug the tests\nnpm run test:debug\n```\n\n## Try it!\n\n- Interactive API doc at [http://localhost:3000/api-explorer](http://localhost:3000/api-explorer)\n- Landing page at [http://localhost:3000](http://localhost:3000)\n\n---\n\n## Usage: CLI\n\n```shell\nyo express-no-stress [appname] [--yarn] [--docker]\n```\n\n| Option     | default | Description                                                                |\n| ---------- | ------- | -------------------------------------------------------------------------- |\n| `appname`  | myapp   | The application folder                                                     |\n| `--yarn`   | -       | Use the [`yarn`](https://yarnpkg.com) package manager, instead of `npm`    |\n| `--docker` |         | Install [Docker](https://www.docker.com/) artifacts including a Dockerfile |\n\n## Usage: Project\n\nThe sections below describe all usage options available once the project is generated/scaffolded.\n\n### npm targets\n\n| Target               | Description                                                              |\n| -------------------- | ------------------------------------------------------------------------ |\n| `npm run dev`        | Run in _development_ mode                                                |\n| `npm run dev:debug`  | Debug in _development_ mode                                              |\n| `npm run test`       | Run tests                                                                |\n| `npm run test:debug` | Debug tests                                                              |\n| `npm run lint`       | View a listing of all errors discovered by the linter                    |\n| `npm run lint:fix`   | Fix all errors discovered by the linter                                  |\n| `npm run compile`    | Transpile source code for production use                                 |\n| `npm start`          | Run the in _production_ mode. \\*Requires running `npm run compile` first |\n\n### Debug in VSCode\n\nAdd these [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json) to your `.vscode/launch.json` file\n\n### Deploy to the Cloud\n\ne.g. CloudFoundry\n\n```\ncf push myapp\n```\n\n### Use Yarn\n\n```\n# scaffold\nyo express-no-stress myapp --yarn\ncd myapp\n\n# run in development mode\nyarn run dev\n\n# run in production mode\nyarn run compile\nyarn start\n\n# test\nyarn test\n```\n\n---\n\n## What you get!\n\n- [Express.js](http://www.expressjs.com) - Fast, unopinionated\n  , minimalist web framework for Node.js\n- [Babel.js](https://babeljs.io/) - Use new syntax, right now without waiting for support\n- [Pino](https://github.com/pinojs/pino) - Extremely fast node.js logger, inspired by Bunyan. It also includes a shell utility to pretty-print its log files\n- [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from .env for nodejs projects\n- [ESLint](http://eslint.org/) - a pluggable linting utility for JavaScript and JSX\n\n\tChoose from the following ESLint lint rules:\n\t- [Airbnb](https://github.com/airbnb/javascript) - A mostly reasonable approach to JavaScript\n\t- [Prettier](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter\n- [Swagger](http://swagger.io/) - is a simple yet powerful representation of your RESTful API\n- [SwaggerUI](http://swagger.io/) - dynamically generate beautiful documentation and sandbox from a Swagger-compliant API\n\n### API Validation\n\nSimply describe your APIs with Swagger and automagically get for free:\n\n- Interactive documentation\n- API validation\n\n#### Interactive API Doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc1.png)\n\n#### API Validation!\n\nOops! I the API caller forgot to pass a `name` field, no stress, we've got this!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/api-validation.png)\n\n### Structured Logging\n\nStructured logging out of the box!\n\n#### raw\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-raw.png)\n\n#### pretty\n\nStructured logging pretty printed by default - great for dev!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-pretty.png)\n\n### API Validation Example\n\nSimply describe your APIs with Swagger and automatically get:\n\n- API request validation\n- Interactive documentation\n\n### example\n\n#### Swagger API spec\n\n```yaml\nswagger: '2.0'\ninfo:\n  version: 1.0.0\n  title: myapp\n  description: My cool app\nbasePath: /api/v1\ntags:\n  - name: Examples\n    description: Simple example endpoints\n  - name: Specification\n    description: The swagger API specification\n\nconsumes:\n  - application/json\nproduces:\n  - application/json\n\n\ndefinitions:\n  ExampleBody:\n    type: object\n    title: example\n    required:\n      - name\n    properties:\n      name:\n        type: string\n        example: no_stress\n\npaths:\n  /examples:\n    get:\n      tags:\n        - Examples\n      description: Fetch all examples\n      responses:\n        200:\n          description: Returns all examples\n    post:\n      tags:\n        - Examples\n      description: Create a new example\n      parameters:\n        - name: example\n          in: body\n          description: an example\n          required: true\n          schema:\n            $ref: \"#/definitions/ExampleBody\"\n      responses:\n        200:\n          description: Returns all examples\n\n  /examples/{id}:\n    get:\n      tags:\n        - Examples\n      parameters:\n        - name: id\n          in: path\n          required: true\n          description: The id of the example to retrieve\n          type: integer\n      responses:\n        200:\n          description: Return the example with the specified id\n        404:\n          description: Example not found\n\n  /spec:\n    get:\n      tags:\n        - Specification\n      responses:\n        200:\n          description: Return the API specification\n```\n\n#### Invoke a POST request via the Interactive doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc.png)\n\n### Linting\n\nexpress-no-stress uses [ESLint](http://eslint.org/) and provides two choices, Airbnb or Prettier.\n\nTo add your own ESLint customizations, edit`.eslintrc.json`.\n\nNote that the Airbnb variant provides a slightly modified Airbnb [base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) configuration.\n\n## FAQs\n\n**Q**: What about Node.js 6.x?\n\n**A**:`generator-express-no-stress` now uses Babel 7. Babel 7 tooling requires Node.js 8 or greater. To use `generator-express-no-stress` with Node.js 6, install version 3.5.4.\n\n```shell\nnpm install -g yo generator-express-no-stress@3.5.4\n```\n\n## License\n\n[MIT](LICENSE)\n"
+cdimascio/generator-express-no-stress: "# generator-express-no-stress\n\n![](https://img.shields.io/badge/status-stable-green.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/56c006ccc44c47f49d12b6b35fcf35da)](https://www.codacy.com/app/cdimascio/generator-express-no-stress?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/generator-express-no-stress&utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-MIT-blue.svg)\n\nCreate awesome [Express.js](http://www.expressjs.com) applications with best of breed tech including ES.next via [Babel.js](https://babeljs.io/), structured logging with [Pino](https://github.com/pinojs/pino), API validation and interactive documentation using an [OpenAPI 3](https://swagger.io/specification/) or [Swagger 2](https://swagger.io/specification/v2/) spec, environment based config with [dotenv](https://github.com/motdotla/dotenv), and linting with [ESLint](http://eslint.org/).\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/express-no-stress-logo-v.png\">\n</p>\n\ngenerator-express-no-stress gets you up and running in seconds. It's ridiculously easy to configure. Heck, just take the defaults. Start it. Write code.\n\nThis generator scaffolds a fully functioning REST API server, complete with interactive documentation, API validation, structured logging, environment driven config, and more. Simply run the generator and smile :-D\n\n[Here's what you get!](#what-you-get)\n\n## Install\n\n_Requires Node 8 or greater_\n\n```shell\nnpm install -g yo generator-express-no-stress\n```\n\n- See [here](#usage-cli) for use with Yarn and/or Docker\n- See [here](#faqs) for Node 6 support\n\n## Scaffold\n\n```shell\nyo express-no-stress myapp\ncd myapp\n```\n\n## Run\n\nRun in _development mode_:\n\n```shell\nnpm run dev\n```\n\nPackage and run in _production mode_\n\n```shell\nnpm run compile\nnpm start\n```\n\n## Test\n\n```shell\nnpm test\n```\n\n## Debug\n\nRun one of the following, then attach your favorite inspector e.g. [VSCode](#debug-in-vscode):\n\n```shell\n# debug the server\nnpm run dev:debug\n\n# debug the tests\nnpm run test:debug\n```\n\n## Try it!\n\n- Interactive API doc at [http://localhost:3000/api-explorer](http://localhost:3000/api-explorer)\n- Landing page at [http://localhost:3000](http://localhost:3000)\n\n---\n\n## Usage: CLI\n\n```shell\nyo express-no-stress [appname] [--yarn] [--docker]\n```\n\n| Option     | default | Description                                                                |\n| ---------- | ------- | -------------------------------------------------------------------------- |\n| `appname`  | myapp   | The application folder                                                     |\n| `--yarn`   | -       | Use the [`yarn`](https://yarnpkg.com) package manager, instead of `npm`    |\n| `--docker` |         | Install [Docker](https://www.docker.com/) artifacts including a Dockerfile |\n\n## Usage: Project\n\nThe sections below describe all usage options available once the project is generated/scaffolded.\n\n### npm targets\n\n| Target               | Description                                                              |\n| -------------------- | ------------------------------------------------------------------------ |\n| `npm run dev`        | Run in _development_ mode                                                |\n| `npm run dev:debug`  | Debug in _development_ mode                                              |\n| `npm run test`       | Run tests                                                                |\n| `npm run test:debug` | Debug tests                                                              |\n| `npm run lint`       | View a listing of all errors discovered by the linter                    |\n| `npm run lint:fix`   | Fix all errors discovered by the linter                                  |\n| `npm run compile`    | Transpile source code for production use                                 |\n| `npm start`          | Run the in _production_ mode. \\*Requires running `npm run compile` first |\n\n### Debug in VSCode\n\nAdd these [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json) to your `.vscode/launch.json` file\n\n### Deploy to the Cloud\n\ne.g. CloudFoundry\n\n```\ncf push myapp\n```\n\n### Use Yarn\n\n```\n# scaffold\nyo express-no-stress myapp --yarn\ncd myapp\n\n# run in development mode\nyarn run dev\n\n# run in production mode\nyarn run compile\nyarn start\n\n# test\nyarn test\n```\n\n---\n\n## What you get!\n\n- [Express.js](http://www.expressjs.com) - Fast, unopinionated\n  , minimalist web framework for Node.js\n- [Babel.js](https://babeljs.io/) - Use new syntax, right now without waiting for support\n- [Pino](https://github.com/pinojs/pino) - Extremely fast node.js logger, inspired by Bunyan. It also includes a shell utility to pretty-print its log files\n- [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from .env for nodejs projects\n- [ESLint](http://eslint.org/) - a pluggable linting utility for JavaScript and JSX\n\n      \tChoose from the following ESLint lint rules:\n      \t- [Airbnb](https://github.com/airbnb/javascript) - A mostly reasonable approach to JavaScript\n      \t- [Prettier](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter\n\n- [Swagger](http://swagger.io/) - is a simple yet powerful representation of your RESTful API\n- [SwaggerUI](http://swagger.io/) - dynamically generate beautiful documentation and sandbox from a Swagger-compliant API\n\n### API Validation\n\nSimply describe your APIs with Swagger and automagically get for free:\n\n- Interactive documentation\n- API validation\n\n#### Interactive API Doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc1.png)\n\n#### API Validation!\n\nOops! I the API caller forgot to pass a `name` field, no stress, we've got this!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/api-validation.png)\n\n### Structured Logging\n\nStructured logging out of the box!\n\n#### raw\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-raw.png)\n\n#### pretty\n\nStructured logging pretty printed by default - great for dev!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-pretty.png)\n\n### API Validation Example\n\nSimply describe your APIs with Swagger and automatically get:\n\n- API request validation\n- Interactive documentation\n\n### example\n\n#### Swagger API spec\n\n```yaml\nswagger: '2.0'\ninfo:\n  version: 1.0.0\n  title: myapp\n  description: My cool app\nbasePath: /api/v1\ntags:\n  - name: Examples\n    description: Simple example endpoints\n  - name: Specification\n    description: The swagger API specification\n\nconsumes:\n  - application/json\nproduces:\n  - application/json\n\ndefinitions:\n  ExampleBody:\n    type: object\n    title: example\n    required:\n      - name\n    properties:\n      name:\n        type: string\n        example: no_stress\n\npaths:\n  /examples:\n    get:\n      tags:\n        - Examples\n      description: Fetch all examples\n      responses:\n        200:\n          description: Returns all examples\n    post:\n      tags:\n        - Examples\n      description: Create a new example\n      parameters:\n        - name: example\n          in: body\n          description: an example\n          required: true\n          schema:\n            $ref: '#/definitions/ExampleBody'\n      responses:\n        200:\n          description: Returns all examples\n\n  /examples/{id}:\n    get:\n      tags:\n        - Examples\n      parameters:\n        - name: id\n          in: path\n          required: true\n          description: The id of the example to retrieve\n          type: integer\n      responses:\n        200:\n          description: Return the example with the specified id\n        404:\n          description: Example not found\n\n  /spec:\n    get:\n      tags:\n        - Specification\n      responses:\n        200:\n          description: Return the API specification\n```\n\n#### Invoke a POST request via the Interactive doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc.png)\n\n### Linting\n\nexpress-no-stress uses [ESLint](http://eslint.org/) and provides two choices, Airbnb or Prettier.\n\nTo add your own ESLint customizations, edit`.eslintrc.json`.\n\nNote that the Airbnb variant provides a slightly modified Airbnb [base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) configuration.\n\n## FAQs\n\n**Q**: What about Node.js 6.x?\n\n**A**:`generator-express-no-stress` now uses Babel 7. Babel 7 tooling requires Node.js 8 or greater. To use `generator-express-no-stress` with Node.js 6, install version 3.5.4.\n\n```shell\nnpm install -g yo generator-express-no-stress@3.5.4\n```\n\n## License\n\n[MIT](LICENSE)\n"
 dansharisan/larapiauth: >
   # larapiauth
 
@@ -63011,8 +63063,7 @@ dansharisan/larapiauth: >
   Admin has the access to the panel, while normal member can only see his/her
   info.
 
-  You can go to http://larapiauth.rakuyomi.net/api/documentation to play with
-  the API.
+  You can go to http://larapiauth.rakuyomi.net/api/ to play with the API.
 
 
   # Features
@@ -63021,7 +63072,7 @@ dansharisan/larapiauth: >
 
   - API Documentation with L5-Swagger 5.8.x (Swagger)
 
-  - Authentication API using Laravel Passport driver
+  - Authentication API using tymondesigns/jwt-auth
 
   - CoreUI Admin panel with authorization system
 
@@ -63072,8 +63123,8 @@ dansharisan/larapiauth: >
 
   - Run "php artisan db:seed" to seed db
 
-  - Run "php artisan passport:install" to generate encryption key and
-  oauth_clients table data
+  - Run "php artisan jwt:secret" to update your .env file with something like
+  JWT_SECRET=xxxxxxxxxx
 
   - Run "php artisan key:generate" to generate application key
 
@@ -63087,7 +63138,7 @@ dansharisan/larapiauth: >
   need to create docs\asset if it's not existing.
 
   - Run "php artisan serve" to start the server then go to localhost:8000 and
-  enjoy 
+  enjoy
 
 
   # Donation
