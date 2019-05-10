@@ -3077,90 +3077,7 @@ mermade/openapi-gui: >+
   * See the [TODO list](/docs/TODO.md) and the current status of [OpenAPI 3.0
   specification support](docs/openapi3-support.md).
 
-stoplightio/prism: >
-  # Prism API Server by
-  [Stoplight](http://stoplight.io/?utm_source=github&utm_medium=prism)
-
-
-  [![Maintainability](https://api.codeclimate.com/v1/badges/64eb87e8bb92267e322e/maintainability)](https://codeclimate.com/github/stoplightio/prism/maintainability)
-  [![Test
-  Coverage](https://api.codeclimate.com/v1/badges/64eb87e8bb92267e322e/test_coverage)](https://codeclimate.com/github/stoplightio/prism/test_coverage)
-
-
-  ### Current Prism Version: 2.0.20
-
-
-  The perfect OpenAPI Specification (formerly known as Swagger) companion. Turn
-  any OpenAPI Specification document into an API server with dynamic mocking,
-  transformations, validations, and more.
-
-
-  ```shell
-
-  Usage:
-    prism [command]
-
-  Available Commands:
-    conduct     Run scenarios to orchestrate and test web APIs
-    help        Help about any command
-    login       Login to Stoplight
-    logout      Logout of Stoplight
-    mock        Create a mock server given an OASv2 specification
-    serve       Start a prism server instance
-    update      Update prism to latest or specific version
-    validate    Run a contract server, validating upstream responses match a OASv2 specification
-    version     Print prism version
-
-  Flags:
-    -h, --help           help for prism
-    -t, --token string   Stoplight token for user account
-
-  Use "prism [command] --help" for more information about a command.
-
-  ```
-
-
-  Supports OpenAPI Specification 2. OpenAPI Specification 3 coming soon.
-
-
-  [More
-  documentation](https://docs.stoplight.io/mocking/introduction?utm_source=github&utm_medium=prism)
-
-
-  ## Installation
-
-
-  On OS X or Linux:
-
-
-  ```
-
-  curl https://raw.githubusercontent.com/stoplightio/prism/2.x/install.sh | sh
-
-  ```
-
-
-  With Docker
-
-
-  ```
-
-  docker pull stoplight/prism
-
-  ```
-
-
-  On Windows download [binary](https://github.com/stoplightio/prism/releases).
-
-
-  ## Update
-
-
-  ```
-
-  prism update
-
-  ```
+stoplightio/prism: "# Prism\n\n<a href=\"https://codeclimate.com/github/stoplightio/prism/test_coverage\"><img src=\"https://api.codeclimate.com/v1/badges/f5e363a7eb5b8f4e570f/test_coverage\" /></a>\n\nPrism is a set of packages that relate to API specification mocking. One use case, spinning up a mock HTTP server which will response realistically to the requests you send it.\n\n**Note: this branch refers to Prism 3.x, which is the current version most likely you will use. If you're looking for the 2.x version, point your browser to the [right branch][2.x]**\n\nBeing based on [Graphite], Prism supports any description format that Graphite supports:\n\n- OpenAPI v3.0\n- OpenAPI v2.0 (formerly Swagger)\n\nPrims is a multi-package repository:\n\n- [`core:`][core] basic interfaces and abstraction for API descriptions\n- [`http:`][http] A Prism implementation to work with HTTP Requests\n- [`http-server:`][http-server] A _[Fastify]_ instance that uses Prism to validate/mock/respond and forward to http requests\n- [`cli:`][cli] A CLI to spin up servers locally easily\n\nLook at the relative repositories' README for the specific documentation.\n\n## Install\n\nMost of the users will probably want to use the CLI, which is a Node module, and can either be installed via NPM or Yarn…\n\n```bash\nnpm install -g @stoplight/prism-cli\n# or\nyarn global add @stoplight/prism-cli\n```\n\n…or if you do not want to install [Node](https://nodejs.org), you can download the latest release from [GitHub directly][download-release]\n\n## Usage\n\n### CLI\n\nWe'll present here only the main use cases. For a complete overview of the CLI, you can consult the relevant [documentation][cli-docs]\n\n#### Mock server\n\nRunning Prism on the CLI will create a HTTP mock server.\n\n```bash\nprism mock https://raw.githack.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore-expanded.yaml\n> http://127.0.0.1:4010\n```\n\nThen in another tab, you can hit the HTTP server with your favorite HTTP client.\n\n```bash\ncurl -s -D \"/dev/stderr\" http://127.0.0.1:4010/pets/123 | json_pp\nHTTP/1.1 200 OK\ncontent-type: application/json\ncontent-length: 85\nDate: Thu, 09 May 2019 15:25:40 GMT\nConnection: keep-alive\n\n{\n   \"tag\" : \"proident et \",\n   \"id\" : -66955049,\n   \"name\" : \"ut consectetur cillum sit exercitation\"\n}\n```\n\nResponses will be mocked using realistic data that conforms to the type in the description.\n\n#### Determine Response Status\n\nPrism can be forced to return different HTTP responses by specifying the status code in the query\nstring:\n\n```bash\ncurl -v http://127.0.0.1:4010/pets/123?__code=404\n\nHTTP/1.1 404 Not Found\ncontent-type: application/json\ncontent-length: 52\nDate: Thu, 09 May 2019 15:26:07 GMT\nConnection: keep-alive\n```\n\nThe body, headers, etc. for this response will be taken from the API description document.\n\n#### Request Validation\n\nRequests to operations which expect a request body will be validated, for example: a POST with JSON.\n\n```bash\ncurl -X POST -s -D \"/dev/stderr\" -H \"content-type: application/json\" -d '{\"tag\":\"Stowford\"}' http://127.0.0.1:4010/pets | json_pp\n```\n\nThis will generate an error, conforming the [application/problem+json][rfc7807] specification:\n\n```\nHTTP/1.1 422 Unprocessable Entity\ncontent-type: application/problem+json\ncontent-length: 274\nDate: Thu, 09 May 2019 16:36:38 GMT\nConnection: keep-alive\n\n{\n   \"detail\" : \"Your request body is not valid: [{\\\"path\\\":[\\\"body\\\"],\\\"code\\\":\\\"required\\\",\\\"message\\\":\\\"should have required property 'name'\\\",\\\"severity\\\":0}]\",\n   \"type\" : \"https://stoplight.io/prism/errors#UNPROCESSABLE_ENTITY\",\n   \"title\" : \"Invalid request body payload\",\n   \"status\" : 422\n}\n```\n\nThis error shows the request is missing a required property `name` from the HTTP request body.\n\n## FAQ\n\nBase paths are completely ignored by the Prism HTTP server, so they can be removed from the request.\nIf you have a base path of `/api` and your path is defined as `hello`, then a request to\n`http://localhost:4010/hello` would work, but `http://localhost:4010/api/hello` will fail.\n\n## What's next for Prism?\n\n- [ ] Server Validation\n- [ ] Accept header validation\n- [ ] Content header validation\n- [ ] Security Validation\n- [ ] Dynamic Mocking (use JS to script custom interactions)\n- [ ] Forwarding proxy with validation\n- [ ] Recording traffic to spec file\n- [ ] Data Persistence (turn Prism into a sandbox server)\n- [\_] Support files ending with `.yml` and extensionless files\n\n## Testing\n\nPrism has an extensive test suite. To run it, just use the regular `test` script\n\n```bash\nyarn test\n# or\nnpm test\n```\n\n## Debugging\n\nThe best way to debug a Prism behaviour is probably to attach your debugger to the CLI and go from there. To make that happen:\n\n```bash\ncd packages/cli\n\nnode --inspect-brk -r tsconfig-paths/register bin/run mock file.oas.yml\n```\n\nThe application will wait for a debugger to be attached and break on the first line; from there, you can put your breakpoint here and there and help us debug the software!\n\n## Contributing\n\nPlease see [CONTRIBUTING] and [CODE_OF_CONDUCT] for details.\n\n### Common issues\n\n1. `jest --watch` throws ENOSPC error\n\n- [optional] Install `watchman` as per [documentation](https://facebook.github.io/watchman/docs/install.html#installing-from-source)\n- Modify `fs.inotify.max_user_watches` as per [issue resolution](https://github.com/facebook/jest/issues/3254)\n\n[CODE_OF_CONDUCT]: CODE_OF_CONDUCT.md\n[CONTRIBUTING]: CONTRIBUTING.md\n[Fastify]: https://www.fastify.io/\n[Graphite]: https://github.com/stoplightio/graphite\n[download-release]: https://github.com/stoplightio/prism/releases/latest\n[rfc7807]: https://tools.ietf.org/html/rfc7807\n[core]: https://www.npmjs.com/package/@stoplight/prism-core\n[http]: https://www.npmjs.com/package/@stoplight/prism-http\n[http-server]: https://www.npmjs.com/package/@stoplight/prism-http-server\n[cli]: https://www.npmjs.com/package/@stoplight/prism-cli\n[2.x]: https://github.com/stoplightio/prism/tree/2.x\n[cli-docs]: packages/cli/README.md\n"
 Szasza/express-gateway-plugin-openapi3-mock-server: >
   # Express Gateway OpenAPI 3 Mock Server Plugin
 
@@ -18723,7 +18640,7 @@ senchalabs/connect: >
     - Connect `1.x` - node `0.4`
     - Connect `< 2.8` - node `0.6`
     - Connect `>= 2.8 < 3` - node `0.8`
-    - Connect `>= 3` - node `0.10`, `0.12`, `4.x`, `5.x`, `6.x`, `7.x`, `8.x`, `9.x`, `10.x`; io.js `1.x`, `2.x`, `3.x`
+    - Connect `>= 3` - node `0.10`, `0.12`, `4.x`, `5.x`, `6.x`, `7.x`, `8.x`, `9.x`, `10.x`, `11.x`, `12.x`; io.js `1.x`, `2.x`, `3.x`
 
   ## License
 
@@ -26033,7 +25950,7 @@ striglia/pyramid_swagger: >
   :Current coverage on master:
       .. image:: https://coveralls.io/repos/striglia/pyramid_swagger/badge.png
           :target: https://coveralls.io/r/striglia/pyramid_swagger
-  :Persistent chat for questions: 
+  :Persistent chat for questions:
       .. image:: https://badges.gitter.im/Join%20Chat.svg
           :alt: Join the chat at https://gitter.im/striglia/pyramid_swagger
           :target: https://gitter.im/striglia/pyramid_swagger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
@@ -29010,10 +28927,14 @@ oatpp/oatpp-swagger: >
   Swagger UI for oatpp services
 
 
-  More about oatpp see [https://oatpp.io/](https://oatpp.io/)  
+  Read more:
 
-  More about Swagger UI see
-  [https://swagger.io/tools/swagger-ui/](https://swagger.io/tools/swagger-ui/)
+  - [About oatpp](https://oatpp.io/)  
+
+  - [What is Swagger UI](https://swagger.io/tools/swagger-ui/)
+
+  - [Endpoint annotation and API documentation in
+  oatpp](https://oatpp.io/docs/components/api-controller/#endpoint-annotation-and-api-documentation).
 
 
   ## Example
@@ -30218,7 +30139,8 @@ jolie/jester: >
   router as it is addressed from a final user, thus put the external IP and the
   exposed port number. 
 Yelp/bravado-core: >
-  .. image:: https://img.shields.io/travis/Yelp/bravado-core.svg
+  .. image::
+  https://img.shields.io/travis/Yelp/bravado-core/master.svg?label=Linux+Build
     :target: https://travis-ci.org/Yelp/bravado-core?branch=master
 
   .. image:: https://img.shields.io/coveralls/Yelp/bravado-core.svg
@@ -31586,6 +31508,24 @@ noirbizarre/flask-restplus: >
       if __name__ == '__main__':
           app.run(debug=True)
 
+
+  Contributors
+
+  ============
+
+
+  Flask-RESTPlus is brought to you by @noirbizarre. Since early 2019
+  @SteadBytes,
+
+  @a-luna, @j5awry, @ziirish volunteered to help @noirbizarre keep the project
+  up
+
+  and running.
+
+  Of course everyone is welcome to contribute and we will be happy to review
+  your
+
+  PR's or answer to your issues.
 
 
 
@@ -34118,7 +34058,7 @@ rochacbruno/flasgger: >+
 
 
   Flasgger is a Flask extension to **extract
-  [OpenAPI=Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)**
+  [OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#operation-object)**
   from all Flask views registered in your API.
 
 
@@ -35024,6 +34964,18 @@ rochacbruno/flasgger: >+
 
 
   ```
+
+
+  # OpenAPI 3.0 Support
+
+
+  There is experimental support for OpenAPI 3.0 that should work when using
+  SwaggerUI 3. To use OpenAPI 3.0, set `app.config['SWAGGER']['openapi']` to a
+  version that the current SwaggerUI 3 supports such as `'3.0.2'`.
+
+
+  For an example of this that uses `callbacks` and `requestBody`, see the
+  [callbacks example](examples/callbacks.py).
 
 
   ## Externally loading Swagger UI and jQuery JS/CSS
@@ -39137,8 +39089,8 @@ raphael/goa: >
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-05-02T11:08:22Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":456,"watchers_count":456,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":72,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":72,"open_issues":31,"watchers":456,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":72,"subscribers_count":18}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-05-09T01:26:47Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":459,"watchers_count":459,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":72,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":72,"open_issues":31,"watchers":459,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":72,"subscribers_count":18}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -43955,6 +43907,7 @@ OpenAPITools/openapi-generator: >
 
   [![NamSor](https://openapi-generator.tech/img/companies/namsor.png)](https://www.namsor.com/?utm_source=openapi_generator&utm_medium=github_webpage&utm_campaign=sponsor)
 
+  [![LightBow](https://openapi-generator.tech/img/companies/lightbow.png)](https://www.lightbow.net/?utm_source=openapi_generator&utm_medium=github_webpage&utm_campaign=sponsor)
 
 
   ## Overview
@@ -43983,9 +43936,9 @@ OpenAPITools/openapi-generator: >
   Fetch, Inversify, jQuery, Node, Rxjs)
 
   **Server stubs**                 | **Ada**, **C#** (ASP.NET Core, NancyFx),
-  **C++** (Pistache, Restbed), **Erlang**, **Go** (net/http, Gin), **Haskell**
-  (Servant), **Java** (MSF4J, Spring, Undertow, JAX-RS: CDI, CXF, Inflector,
-  RestEasy, Play Framework,
+  **C++** (Pistache, Restbed, Qt5 QHTTPEngine), **Erlang**, **F#** (Giraffe),
+  **Go** (net/http, Gin), **Haskell** (Servant), **Java** (MSF4J, Spring,
+  Undertow, JAX-RS: CDI, CXF, Inflector, RestEasy, Play Framework,
   [PKMST](https://github.com/ProKarma-Inc/pkmst-getting-started-examples)),
   **Kotlin** (Spring Boot, Ktor), **PHP** (Laravel, Lumen, Slim, Silex,
   [Symfony](https://symfony.com/), [Zend
@@ -44690,6 +44643,7 @@ OpenAPITools/openapi-generator: >
                   [--remove-operation-id-prefix]
                   [--reserved-words-mappings <reserved word mappings>...]
                   [(-s | --skip-overwrite)] [--skip-validate-spec]
+                  [--strict-spec <true/false strict behavior>]
                   [(-t <template directory> | --template-dir <template directory>)]
                   [--type-mappings <type mappings>...] [(-v | --verbose)]
 
@@ -45094,6 +45048,7 @@ OpenAPITools/openapi-generator: >
      * C++ Pistache: @sebymiano
      * C++ Restbed: @stkrwork
      * Erlang Server: @galaxie
+     * F# (Giraffe) Server: @nmfisher
      * Go Server: @guohuang
      * Go (Gin) Server: @kemokemo
      * GraphQL Express Server: @renepardon
@@ -45212,6 +45167,8 @@ OpenAPITools/openapi-generator: >
 
   | Erlang    | @tsloughter (2017/11) @jfacorro (2018/10) @robertoaloi (2018/10)
   |
+
+  | F#        | @nmfisher (2019/05) |
 
   | Go        | @antihax (2017/11) @bvwells (2017/12) @grokify (2018/07)
   @kemokemo (2018/09 |
@@ -46807,11 +46764,16 @@ cebe/php-openapi: >
   do awesome work:
 
 
-  - https://github.com/cebe/yii2-openapi Code Generator for REST API from
-  OpenAPI spec, includes fake data generator.
+  - [cebe/yii2-openapi](https://github.com/cebe/yii2-openapi) Code Generator for
+  REST API from OpenAPI spec, includes fake data generator.
 
-  - https://github.com/cebe/yii2-app-api Yii framework application template for
-  developing API-first applications
+  - [cebe/yii2-app-api](https://github.com/cebe/yii2-app-api) Yii framework
+  application template for developing API-first applications
+
+  -
+  [lezhnev74/openapi-psr7-validator](https://github.com/lezhnev74/openapi-psr7-validator)
+  validates PSR-7 messages (HTTP request/response) against OpenAPI
+  specifications 
 
   - ... ([add
   yours](https://github.com/cebe/php-openapi/edit/master/README.md#L24))
@@ -52853,22 +52815,17 @@ niteoweb/pyramid_openapi3: >
   3.0](https://swagger.io/specification/) document
 
 
-  > **Warning: This project is currently in beta. Stable release planned in May
-  2019. If you're curious about the progress, ping `zupo` on
-  [irc.freenode.net](https://webchat.freenode.net/?channels=niteo).**
-
-
   <p align="center">
-    <img height="200" src="https://github.com/niteoweb/pyramid_openapi3/blob/master/header.jpg?raw=true" />
+    <img height="200" src="https://github.com/Pylons/pyramid_openapi3/blob/master/header.jpg?raw=true" />
   </p>
 
 
   <p align="center">
-    <a href="https://circleci.com/gh/niteoweb/pyramid_openapi3">
+    <a href="https://circleci.com/gh/Pylons/pyramid_openapi3">
       <img alt="CircleCI for pyramid_openapi3 (master branch)"
-           src="https://circleci.com/gh/niteoweb/pyramid_openapi3.svg?style=shield">
+           src="https://circleci.com/gh/Pylons/pyramid_openapi3.svg?style=shield">
     </a>
-    <a href="https://github.com/niteoweb/pyramid_openapi3/blob/master/Makefile#L56">
+    <a href="https://github.com/Pylons/pyramid_openapi3/blob/master/Makefile#L56">
       <img alt="Test coverage (master branch)"
            src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg">
     </a>
@@ -52880,13 +52837,13 @@ niteoweb/pyramid_openapi3: >
       <img alt="Supported Python versions"
            src="https://img.shields.io/pypi/pyversions/pyramid_openapi3.svg">
     </a>
-    <a href="https://github.com/niteoweb/pyramid_openapi3/blob/master/LICENSE">
+    <a href="https://github.com/Pylons/pyramid_openapi3/blob/master/LICENSE">
       <img alt="License: MIT"
            src="https://img.shields.io/badge/License-MIT-yellow.svg">
     </a>
-    <a href="https://github.com/niteoweb/pyramid_openapi3/graphs/contributors">
+    <a href="https://github.com/Pylons/pyramid_openapi3/graphs/contributors">
       <img alt="Built by these great folks!"
-           src="https://img.shields.io/github/contributors/niteoweb/pyramid_openapi3.svg">
+           src="https://img.shields.io/github/contributors/Pylons/pyramid_openapi3.svg">
     </a>
     <a href="https://webchat.freenode.net/?channels=pyramid">
       <img alt="Talk to us in #pyramid on Freenode IRC"
@@ -52899,8 +52856,8 @@ niteoweb/pyramid_openapi3: >
 
 
   The reason this package exists is to give you peace of mind when providing a
-  RESTful API with your Pyramid app. Instead of chasing down preventable bugs
-  and saying sorry to consumers, you can focus on more important things in life.
+  RESTful API. Instead of chasing down preventable bugs and saying sorry to
+  consumers, you can focus on more important things in life.
 
 
   - Your **API documentation is never out-of-date**, since it is generated out
@@ -52929,6 +52886,15 @@ niteoweb/pyramid_openapi3: >
   reality. You have a single source of truth to consult when asking an API
   related question, such as "Remind me again, which fields does the endpoint
   /user/info return?".
+
+  - Based on [Pyramid](https://trypyramid.com), a **mature Python Web
+  framework**. Companies such as Mozilla, Yelp, RollBar and SurveyMonkey [trust
+  Pyramid](https://trypyramid.com/community-powered-by-pyramid.html), and the
+  new [pypi.org](https://github.com/pypa/warehouse) runs on Pyramid too. Pyramid
+  is thoroughly [tested](https://travis-ci.org/Pylons/pyramid) and
+  [documented](http://docs.pylonsproject.org/projects/pyramid/en/latest/),
+  providing flexibility, performance, and a large ecosystem of [high-quality
+  add-ons](https://trypyramid.com/extending-pyramid.html).
 
 
   ## Features
@@ -52993,14 +52959,22 @@ niteoweb/pyramid_openapi3: >
   There are two examples provided with this package:
 
   * A fairly simple [single-file app providing a Hello World
-  API](https://github.com/niteoweb/pyramid_openapi3/tree/master/examples/singlefile).
+  API](https://github.com/Pylons/pyramid_openapi3/tree/master/examples/singlefile).
 
   * A slightly more [built-out app providing a TODO app
-  API](https://github.com/niteoweb/pyramid_openapi3/tree/master/examples/todoapp).
+  API](https://github.com/Pylons/pyramid_openapi3/tree/master/examples/todoapp).
 
 
-  All examples come with tests that exhibit pyramid_openapi's error handling and
-  validation capabilities.
+  Both examples come with tests that exhibit pyramid_openapi's error handling
+  and validation capabilities.
+
+
+  A **fully built-out app**, with 100% test coverage, providing a
+  [RealWorld.io](https://realworld.io) API is available at
+  [niteoweb/pyramid-realworld-example-app](https://github.com/niteoweb/pyramid-realworld-example-app).
+  It is a Heroku-deployable Pyramid app that provides an API for a
+  Medium.com-like social app. You are encouraged to use it as a scaffold for
+  your next project.
 
 
 
@@ -53063,69 +53037,6 @@ niteoweb/pyramid_openapi3: >
 
   - [WooCart API](https://app.woocart.com/api/v1/) - Users' control panel for
   WooCart Managed WooCommerce service.
-
-
-  ## TODO
-
-
-  - [x] Makefile.
-
-  - [x] Flake8.
-
-  - [x] Black.
-
-  - [x] mypy.
-
-  - [x] codespell.
-
-  - [x] pre-commit.
-
-  - [x] Testing framework.
-
-  - [x] CircleCI integration.
-
-  - [x] Beta PyPI release.
-
-  - [x] Go through all docstrings.
-
-  - [x] Automatic PyPI releases for tags, via CircleCI.
-
-  - [x] 100% test coverage.
-
-  - [x] How to contribute.
-
-  - [x] Add Changelog.
-
-  - [x] How to release
-
-  - [ ] Document that `pyramid_openapi3_validation_error_view()` is [registered
-  without
-  permissions](https://github.com/niteoweb/pyramid_openapi3/pull/6#discussion_r272651906).
-
-  - [x] Move demo.py into examples/singlefile/
-
-  - [x] Move https://github.com/zupo/minimal_openapi into examples/minimal/
-
-  - [ ] Move this repo to https://github.com/Pylons organization.
-
-  - [ ] Documentation how to validate Enums, Dataclases, PyDantic models against
-  schema.
-
-  - [ ] Create a https://realworld.io/ example.
-
-  - [ ] Add to https://trypyramid.com/extending-pyramid.html.
-
-  - [x] Add to https://github.com/p1c2u/openapi-core.
-
-  - [ ] Add to https://github.com/uralbash/awesome-pyramid.
-
-  - [ ] Add to https://github.com/vinta/awesome-python.
-
-  - [ ] Announcement blog post.
-
-  - [ ] Announce to https://groups.google.com/forum/#!forum/pylons-discuss.
-
-  - [ ] Announce via Twitter https://twitter.com/pylonsproject.
 OverSpeedIO/koa2-oas3: >
   # OpenAPI 3 Koa 2 Request Validation Middleware
 
@@ -61294,7 +61205,7 @@ Frameio/rolodex: >
 
   def deps do
     [
-      {:rolodex, "~> 0.4.1"}
+      {:rolodex, "~> 0.5.0"}
     ]
   end
 
@@ -62237,6 +62148,12 @@ tiangolo/full-stack-fastapi-couchbase: >
   ## Release Notes
 
 
+  ### Next release
+
+
+  * Forward arguments from script to `pytest` inside container.
+
+
   * Update Jupyter Lab installation and util script/environment variable for
   local development.
 
@@ -62616,6 +62533,16 @@ tiangolo/full-stack-fastapi-postgresql: >
 
 
   ### Next release
+
+
+  * Fix locations of scripts in generated README. PR
+  [#19](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/19) by
+  [@ebreton](https://github.com/ebreton).
+
+
+  * Forward arguments from script to `pytest` inside container. PR
+  [#17](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/17) by
+  [@ebreton](https://github.com/ebreton).
 
 
   * Update development scripts.
@@ -64371,3 +64298,711 @@ namsor/namsor-r-sdk2: >+
 
   contact@namsor.com
 
+lezhnev74/openapi-psr7-validator: >
+  [![Latest Stable
+  Version](https://poser.pugx.org/lezhnev74/openapi-psr7-validator/v/stable)](https://packagist.org/packages/lezhnev74/openapi-psr7-validator)
+
+  [![Build
+  Status](https://travis-ci.org/lezhnev74/openapi-psr7-validator.svg?branch=master)](https://travis-ci.org/lezhnev74/openapi-psr7-validator)
+
+  [![License](https://poser.pugx.org/lezhnev74/openapi-psr7-validator/license)](https://packagist.org/packages/lezhnev74/openapi-psr7-validator)
+
+  ![contributions
+  welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
+
+
+  # OpenAPI PSR-7 Message (HTTP Request/Response) Validator
+
+  This package can validate PSR-7 messages against OpenAPI (3.0.x)
+  specifications 
+
+  expressed in YAML or JSON. 
+
+
+  ![](image.jpg)
+
+
+  ## Requirements
+
+  n/a
+
+
+  ## Installation
+
+  ```
+
+  composer require lezhnev74/openapi-psr7-validator
+
+  ```
+
+
+  ## OpenAPI (OAS) Terms
+
+  There are some specific terms that are used in the package. These terms come 
+
+  from OpenAPI:
+
+  - `specification` - an OpenAPI document describing an API, expressed in JSON
+  or YAML file
+
+  - `data` - actual thing that we validate against a specification, including
+  body and metadata
+
+  - `schema` - the part of the specification that describes the body of the
+  request / response
+
+  - `keyword` - properties that are used to describe the instance are called key
+
+  words, or schema keywords
+
+  - `path` - a relative path to an individual endpoint
+
+  - `operation` - a method that we apply on the path (like `get /password`)
+
+  - `response` - described response (includes status code, content types etc)
+
+
+
+  ## How To Validate
+
+
+  ### Note for Windows users
+
+
+  There is [a known
+  issue](https://github.com/lezhnev74/openapi-psr7-validator/issues/9) in the
+  underlying `cebe/php-openapi` package that we use
+
+  which prevents you from using
+  `\cebe\openapi\Reader::readFromYamlFile('api.yaml')` on a Windows machine.
+
+
+  Until the issue is resolved we recommend using loading from file contents like
+  this:
+
+  ```
+
+  $validator =
+  \OpenAPIValidation\PSR7\ServerRequestValidator::fromYaml(file_get_contents($yamlFile)); 
+
+  ```
+
+
+  ### ServerRequest Message
+
+  You can validate `\Psr\Http\Message\ServerRequestInterface` instance like
+  this:
+
+
+  ```php
+
+  $yamlFile = "api.yaml";
+
+  $jsonFile = "api.json";
+
+
+  $validator =
+  \OpenAPIValidation\PSR7\ServerRequestValidator::fromYamlFile($yamlFile);
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ServerRequestValidator::fromYaml(file_get_contents($yamlFile));
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ServerRequestValidator::fromJson(file_get_contents($jsonFile));
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ServerRequestValidator::fromJsonFile($jsonFile);
+
+
+  $validator->validate($request);
+
+  ```
+
+
+  ### Response Message
+
+  Validation of `\Psr\Http\Message\ResponseInterface` is a bit more complicated
+
+  . Because you need not only YAML file and Response itself, but also you need 
+
+  to know which operation this response belongs to (in terms of OpenAPI).
+
+
+  Example:
+
+
+  ```php
+
+  $yamlFile = "api.yaml";
+
+  $jsonFile = "api.json";
+
+
+  $validator =
+  \OpenAPIValidation\PSR7\ResponseValidator::fromYamlFile($yamlFile);
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ResponseValidator::fromYaml(file_get_contents($yamlFile));
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ResponseValidator::fromJson(file_get_contents($jsonFile));
+
+  #or
+
+  $validator =
+  \OpenAPIValidation\PSR7\ResponseValidator::fromJsonFile($jsonFile);
+
+
+  $operation = new \OpenAPIValidation\PSR7\OperationAddress('/password/gen',
+  'get') ;
+
+
+  $validator->validate($operation, $request);
+
+  ```
+
+
+  ### Request Message
+
+  `\Psr\Http\Message\RequestInterface` validation is not implemented. 
+
+
+  ### PSR-15 Middleware
+
+  PSR-15 middleware can be used like this:
+
+
+  ```php
+
+  $yamlFile = 'api.yaml';
+
+  $jsonFile = 'api.json';
+
+
+  $middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromYamlFile($yamlFile);
+
+  #or
+
+  $middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromYaml(file_get_contents($yamlFile));
+
+  #or
+
+  $middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromJson(file_get_contents($jsonFile));
+
+  #or
+
+  $middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromJsonFile($jsonFile);
+
+  ```
+
+
+  ### SlimFramework middleware
+
+  Slim framework uses slightly different middleware interface, so here is an 
+
+  adapter which you can use like this:
+
+
+  ```php
+
+  $yamlFile = 'api.yaml';
+
+  $jsonFile = 'api.json';
+
+
+  $psr15Middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromYamlFile($yamlFile);
+
+  #or
+
+  $psr15Middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromYaml(file_get_contents($yamlFile));
+
+  #or
+
+  $psr15Middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromJsonFile($jsonFile);
+
+  #or
+
+  $psr15Middleware =
+  \OpenAPIValidation\PSR15\ValidationMiddleware::fromJson(file_get_contents($jsonFile));
+
+
+  $slimMiddleware = new \OpenAPIValidation\PSR15\SlimAdapter($psr15Middleware);
+
+
+  /** @var \Slim\App $app */
+
+  $app->add($slimMiddleware);
+
+  ```
+
+
+  ### Standalone OpenAPI Validator
+
+  The package contains a standalone validator which can validate any data 
+
+  against an OpenAPI schema like this:
+
+
+  ```php
+
+  $spec = <<<SPEC
+
+  schema:
+    type: string
+    enum:
+    - a
+    - b
+  SPEC;
+
+  $data = "c";
+
+
+  $spec   = cebe\openapi\Reader::readFromYaml($spec);
+
+
+  #optional reference resolving
+
+  $spec->resolveReferences(new ReferenceContext($spec, "/"));
+
+
+  $schema = new cebe\openapi\spec\Schema($spec->schema);
+
+
+  try {
+      (new OpenAPIValidation\Schema\Validator($schema, $data))->validate();
+  } catch(\OpenAPIValidation\Schema\Exception\ValidationKeywordFailed $e) {
+      // you can evaluate failure details
+      // $e->keyword() == "enum"
+      // $e->data() == "c"
+      // $e->dataBreadCrumb()->buildChain() -- only for nested data
+  }
+
+  ```
+
+
+  ## Custom Type Formats
+
+  As you know, OpenAPI allows you to add formats to types:
+
+
+  ```yaml
+
+  schema:
+    type: string
+    format: binary
+  ```
+
+
+  This package contains a bunch of built-in format validators:
+
+  - `string` type:
+      - `byte`
+      - `date`
+      - `date-time`
+      - `email`
+      - `hostname`
+      - `ipv4`
+      - `ipv6`
+      - `uri`
+      - `uuid` (uuid4)
+  - `number` type
+      - `float`
+      - `double`
+
+  You can also add your own formats. Like this:
+
+  ```php
+
+  # A format validator must be a callable
+
+  # It must return bool value (true if format matched the data, false otherwise)
+
+
+  # A callable class:
+
+  $customFormat = new class()
+
+  {
+      function __invoke($value): bool
+      {
+          return $value === "good value";
+      }
+  };
+
+
+  # Or just a closure:
+
+  $customFormat = function ($value): bool {
+      return $value === "good value";
+  };
+
+
+  # Register your callable like this before validating your data
+
+  \OpenAPIValidation\Schema\TypeFormats\FormatsContainer::registerFormat('string',
+  'custom', $customFormat);
+
+  ```
+
+
+  ## Exceptions
+
+  The package throws a list of various exceptions which you can catch and 
+
+  handle. There are some of them:
+
+  - Schema related:
+      - `\OpenAPIValidation\Schema\Exception\ValidationKeywordFailed` - data does 
+      not match given keyword's rule. For example `type:string` won't match integer 
+      `12`.
+      - `\OpenAPIValidation\Schema\Exception\FormatMismatch` - data mismatched a 
+      given type format. For example `type: string, format: email` won't match 
+      `not-email`.
+  - PSR7 Messages related:
+      - `\OpenAPIValidation\PSR7\Exception\NoContentType` - Response contains 
+      no Content-Type header. General HTTP errors.
+      - `\OpenAPIValidation\PSR7\Exception\NoPath` - path is not found in the spec
+      - `\OpenAPIValidation\PSR7\Exception\NoOperation` - operation os not 
+      found in the path
+      - `\OpenAPIValidation\PSR7\Exception\NoResponseCode` - response code not 
+      found under the operation in the spec
+      - Request related:
+          - `\OpenAPIValidation\PSR7\Exception
+          \MultipleOperationsMismatchForRequest` - request matched multiple 
+          operations in the spec, but validation failed for all of them.
+          - `\OpenAPIValidation\PSR7\Exception\MissedRequestCookie` - Request 
+          does not contain expected cookie
+          - `\OpenAPIValidation\PSR7\Exception\MissedRequestHeader` - Request 
+          does not contain expected header
+          - `\OpenAPIValidation\PSR7\Exception\MissedRequestQueryArgument` - 
+          Request does not have expected query argument
+          - `\OpenAPIValidation\PSR7\Exception\RequestBodyMismatch` - request's
+           body does not match the specification schema
+          - `\OpenAPIValidation\PSR7\Exception\RequestCookiesMismatch` - 
+          request's cookie does not match the specification schema
+          - `\OpenAPIValidation\PSR7\Exception\RequestHeadersMismatch` - 
+          request's headers do not match spec schema
+          - `\OpenAPIValidation\PSR7\Exception\RequestPathParameterMismatch` - 
+          request's path does not match spec's path template
+          - `\OpenAPIValidation\PSR7\Exception\RequestQueryArgumentMismatch` - 
+          request's query arguments does not match the spec schema
+          - `\OpenAPIValidation\PSR7\Exception\UnexpectedRequestContentType` - 
+          request's body content type is unexpected
+          - `\OpenAPIValidation\PSR7\Exception\UnexpectedRequestHeader` - 
+          request carries unexpected header
+          - `\OpenAPIValidation\PSR7\Exception\Request\Security\NoRequestSecurityApiKey` - described security apiKey not found in the request
+          - `\OpenAPIValidation\PSR7\Exception\Request\Security\RequestSecurityMismatch` - request does not match with the described security requirements  
+      - Response related:
+          - `\OpenAPIValidation\PSR7\Exception\MissedResponseHeader` - response
+           does not have a header
+          - `\OpenAPIValidation\PSR7\Exception\ResponseBodyMismatch` - response
+           body does not match a schema
+          - `\OpenAPIValidation\PSR7\Exception\ResponseHeadersMismatch` - 
+          response headers do not match the spec
+          - `\OpenAPIValidation\PSR7\Exception\UnexpectedResponseHeader` - 
+          response contains header not mentioned in the spec
+          - `\OpenAPIValidation\PSR7\Exception\UnexpectedResponseContentType` -
+           response contains unexpected content-type 
+
+
+  ## Testing
+
+  You can run the tests with:
+
+
+  ```
+
+  vendor/bin/phpunit
+
+  ```
+
+
+  ## Credits
+
+  People:
+
+  - [Dmitry Lezhnev](https://github.com/lezhnev74)
+
+  - [Carsten Brandt](https://github.com/cebe)
+
+  - [Samuel Nela](https://github.com/samnela)
+
+  - [Pavel Batanov](https://github.com/scaytrase)
+
+  - [Christopher L Bray](https://github.com/brayniverse)
+
+  - [David Pauli](https://github.com/dpauli)
+
+  - A big thank you to [Henrik Karlström](https://github.com/hkarlstrom) who
+  kind of inspired me to work on this package. 
+
+
+  Resources:
+
+  - Icons made by Freepik, licensed by CC 3.0 BY
+
+  - [cebe/php-openapi](https://github.com/cebe/php-openapi) package for Reading
+  OpenAPI files
+
+  - [slim3-psr15](https://github.com/bnf/slim3-psr15) package for Slim
+  middleware adapter
+   
+  ## License
+
+  The MIT License (MIT). Please see `License.md` file for more information.
+
+
+  ## TODO
+
+  - [ ] Support Discriminator Object (note: apparently, this is not so
+  straightforward, as discriminator can point to any external scheme)
+
+  - [ ] parameters serialization
+      - Does anyone use this serialization? It looks very... unpractical.
+  - [ ] add validation for Request class.
+      - Usually for serverside testing purposes ServerRequest is what we need. 
+      But, Request should be quite easy to add.
+Pylons/pyramid_openapi3: >
+  ## Validate [Pyramid](https://trypyramid.com) views against an [OpenAPI
+  3.0](https://swagger.io/specification/) document
+
+
+  <p align="center">
+    <img height="200" src="https://github.com/Pylons/pyramid_openapi3/blob/master/header.jpg?raw=true" />
+  </p>
+
+
+  <p align="center">
+    <a href="https://circleci.com/gh/Pylons/pyramid_openapi3">
+      <img alt="CircleCI for pyramid_openapi3 (master branch)"
+           src="https://circleci.com/gh/Pylons/pyramid_openapi3.svg?style=shield">
+    </a>
+    <a href="https://github.com/Pylons/pyramid_openapi3/blob/master/Makefile#L56">
+      <img alt="Test coverage (master branch)"
+           src="https://img.shields.io/badge/coverage-100%25-brightgreen.svg">
+    </a>
+    <a href="https://pypi.org/project/pyramid_openapi3/">
+      <img alt="latest version of pyramid_openapi3 on PyPI"
+           src="https://img.shields.io/pypi/v/pyramid_openapi3.svg">
+    </a>
+    <a href="https://pypi.org/project/pyramid_openapi3/">
+      <img alt="Supported Python versions"
+           src="https://img.shields.io/pypi/pyversions/pyramid_openapi3.svg">
+    </a>
+    <a href="https://github.com/Pylons/pyramid_openapi3/blob/master/LICENSE">
+      <img alt="License: MIT"
+           src="https://img.shields.io/badge/License-MIT-yellow.svg">
+    </a>
+    <a href="https://github.com/Pylons/pyramid_openapi3/graphs/contributors">
+      <img alt="Built by these great folks!"
+           src="https://img.shields.io/github/contributors/Pylons/pyramid_openapi3.svg">
+    </a>
+    <a href="https://webchat.freenode.net/?channels=pyramid">
+      <img alt="Talk to us in #pyramid on Freenode IRC"
+           src="https://img.shields.io/badge/irc-freenode-blue.svg">
+    </a>
+  </p>
+
+
+  ## Peace of Mind
+
+
+  The reason this package exists is to give you peace of mind when providing a
+  RESTful API. Instead of chasing down preventable bugs and saying sorry to
+  consumers, you can focus on more important things in life.
+
+
+  - Your **API documentation is never out-of-date**, since it is generated out
+  of the API document that you write.
+
+  - The documentation comes with **_try-it-out_ examples** for every endpoint in
+  your API. You don't have to provide (and maintain) `curl` commands to showcase
+  how your API works. Users can try it themselves, right in their browsers.
+
+  - Your **API document is always valid**, since your Pyramid app won't even
+  start if the document is not according to OpenAPI 3.0 specification.
+
+  - Automatic request **payload validation and sanitization**. Your views do not
+  require any code for validation and input sanitation. Your view code only
+  deals with business logic. Tons of tests never need to be written since every
+  request, and its payload, is validated against your API document before it
+  reaches your view code.
+
+  - Your API **responses always match your API document**. Every response from
+  your view is validated against your document and a `500 Internal Server Error`
+  is returned if the response does not exactly match what your document says the
+  output of a certain API endpoint should be.
+
+  - **A single source of truth**. Because of the checks outlined above you can
+  be sure that whatever your API document says is in fact what is going on in
+  reality. You have a single source of truth to consult when asking an API
+  related question, such as "Remind me again, which fields does the endpoint
+  /user/info return?".
+
+  - Based on [Pyramid](https://trypyramid.com), a **mature Python Web
+  framework**. Companies such as Mozilla, Yelp, RollBar and SurveyMonkey [trust
+  Pyramid](https://trypyramid.com/community-powered-by-pyramid.html), and the
+  new [pypi.org](https://github.com/pypa/warehouse) runs on Pyramid too. Pyramid
+  is thoroughly [tested](https://travis-ci.org/Pylons/pyramid) and
+  [documented](http://docs.pylonsproject.org/projects/pyramid/en/latest/),
+  providing flexibility, performance, and a large ecosystem of [high-quality
+  add-ons](https://trypyramid.com/extending-pyramid.html).
+
+
+  ## Features
+
+
+  - Validates your API document (for example, `openapi.yaml` or `openapi.json`)
+  against the OpenAPI 3.0 specification using the
+  [openapi-spec-validator](https://github.com/p1c2u/openapi-spec-validator).
+
+  - Generates and serves the [Swagger try-it-out
+  documentation](https://swagger.io/tools/swagger-ui/) for your API.
+
+  - Validates incoming requests *and* outgoing responses against your API
+  document using [openapi-core](https://github.com/p1c2u/openapi-core).
+
+
+
+  ## Getting started
+
+
+  1. Declare `pyramid_openapi3` as a dependency in your Pyramid project.
+
+
+  2. Include the following lines:
+
+
+  ```python
+
+  config.include("pyramid_openapi3")
+
+  config.pyramid_openapi3_spec('openapi.yaml', route='/api/v1/openapi.yaml')
+
+  config.pyramid_openapi3_add_explorer(route='/api/v1/')
+
+  ```
+
+
+  3. Use the `openapi` [view
+  predicate](https://docs.pylonsproject.org/projects/pyramid/en/latest/narr/viewconfig.html#view-configuration-parameters)
+  to enable request/response validation:
+
+
+  ```python
+
+  @view_config(route_name="foobar", openapi=True, renderer='json')
+
+  def myview(request):
+      return request.openapi_validated.parameters
+  ```
+
+
+  For requests, `request.openapi_validated` is available with two fields:
+  `parameters` and `body`.
+
+  For responses, if the payload does not match the API document, an exception is
+  raised.
+
+
+  ## Demo / Examples
+
+
+  There are two examples provided with this package:
+
+  * A fairly simple [single-file app providing a Hello World
+  API](https://github.com/Pylons/pyramid_openapi3/tree/master/examples/singlefile).
+
+  * A slightly more [built-out app providing a TODO app
+  API](https://github.com/Pylons/pyramid_openapi3/tree/master/examples/todoapp).
+
+
+  Both examples come with tests that exhibit pyramid_openapi's error handling
+  and validation capabilities.
+
+
+  A **fully built-out app**, with 100% test coverage, providing a
+  [RealWorld.io](https://realworld.io) API is available at
+  [niteoweb/pyramid-realworld-example-app](https://github.com/niteoweb/pyramid-realworld-example-app).
+  It is a Heroku-deployable Pyramid app that provides an API for a
+  Medium.com-like social app. You are encouraged to use it as a scaffold for
+  your next project.
+
+
+
+  ## Design defense
+
+
+  The authors of pyramid_openapi3 believe that the approach of validating a
+  manually-written API document is superior to the approach of generating the
+  API document from Python code. Here are the reasons:
+
+
+  a) Both generation and validation against a document are lossy processes. The
+  underlying libraries running the generation/validation will always have
+  something missing. Either a feature from the latest OpenAPI specification, or
+  an implementation bug. Having to fork the underlying library in order to
+  generate the part of your API document that might only be needed for the
+  frontend is unfortunate.
+
+     Validation on the other hand allows one to skip parts of validation that are not supported yet, and not block a team from shipping the document.
+
+  b) Validation approach does sacrifice DRY-ness, one has to write the API
+  document and then the (view) code in Pyramid. Feels a bit redundant at first.
+  However, this provides a clear separation between the intent and the
+  implementation.
+
+
+  c) Generation approach has the drawback of having to write Python code even
+  for parts of the API document that the Pyramid backend does not handle, as it
+  might be handled by a different system, or be specific only to documentation
+  or only to the client side of the API. This bloats your Pyramid codebase with
+  code that does not belong there.
+
+
+  ## Running tests
+
+
+  You need to have [pipenv](https://pipenv.readthedocs.io/) and Python 3.7
+  installed on your machine. Then you can run:
+
+      $ make tests
+
+  ## Related packages
+
+
+  These packages tackle the same problem-space:
+
+
+  - [pyramid_swagger](https://github.com/striglia/pyramid_swagger) does a
+  similar
+    thing, but for Swagger 2.0 documents
+  - [pyramid_apispec](https://github.com/ergo/pyramid_apispec) uses generation
+  with
+    help of apispec and marshmallow validation library. See above [why we prefer validation instead of generation](#why---design-defense).
+
+  ## Use in the wild
+
+
+  A couple of projects that use pyramid_openapi3 in production:
+
+
+  - [WooCart API](https://app.woocart.com/api/v1/) - Users' control panel for
+  WooCart Managed WooCommerce service.
