@@ -2293,21 +2293,22 @@ Rebilly/generator-openapi-repo: >
 
   ## Why?
 
-  There are a few advantages in hosting your API specification + docs on GitHub:
+  There are a few advantages in hosting your API definition + docs on GitHub:
    - Community engagement (PR's and issues)
    - Hosting on GitHub pages (perfect uptime, CDN, Jekyll, custom domains with CNAME)
    - Advertisment in the GitHub community
    - Revision history, branching, CI
-   - Fast on-boarding time (everyone knows how to use GitHub :smile:)
+   - Fast on-boarding time (developers and tech writers know how to use GitHub :smile:)
+   - Fully compatible with Redocly API Reference too
 
   ## Features
 
   This generator helps to create a GitHub repo with the following features:
-   - Possibility to split a big OpenAPI spec into smaller files and bundle it for deployment
+   - Possibility to split a big OpenAPI definition into smaller files and bundle it for deployment
    - Continuous integration/deployment on Travis
    - Code samples as separate files
-   - OpenAPI spec is validated after each commit
-   - OpenAPI spec + ReDoc deployed to Github Pages (you can use a custom domain)
+   - OpenAPI definition is validated after each commit
+   - OpenAPI definition + ReDoc deployed to Github Pages (you can use a custom domain)
    - Live editing in your editor or `swagger-editor` :heart_eyes:
    ![live editing](./live-edit.gif)
 
@@ -3161,7 +3162,7 @@ stoplightio/prism: >
 
 
   We'll present here only the main use cases. For a complete overview of the
-  CLI, you can consult the relevant [documentation][cli-docs].
+  CLI, you can consult the relevant [documentation ⇗][cli-docs].
 
 
   #### Mock server
@@ -3338,16 +3339,16 @@ stoplightio/prism: >
   **How can I debug Prism?**
 
 
-  Check out our [debugging section][debugging] in the [contribution
-  docs][contributing].
+  Check out our [debugging section ⇗][debugging] in the [contribution docs
+  ⇗][contributing].
 
 
   ## Contributing
 
 
   If you are interested in contributing to Prism itself, check out our
-  [contributing docs][contributing] and [code of conduct][code_of_conduct] to
-  get started.
+  [contributing docs ⇗][contributing] and [code of conduct ⇗][code_of_conduct]
+  to get started.
 
 
   [code_of_conduct]: CODE_OF_CONDUCT.md
@@ -14616,51 +14617,74 @@ glennjones/hapi-swagger: >
 
 
   [![build
-  status](https://img.shields.io/travis/glennjones/hapi-swagger.svg?style=flat-square)](http://travis-ci.org/glennjones/hapi-swagger)
+  status](https://img.shields.io/travis/glennjones/hapi-swagger.svg?style=for-the-badge)](http://travis-ci.org/glennjones/hapi-swagger)
 
   [![Coverage
-  Status](https://img.shields.io/coveralls/glennjones/hapi-swagger/dev.svg?style=flat-square)](https://coveralls.io/r/glennjones/hapi-swagger)
+  Status](https://img.shields.io/coveralls/glennjones/hapi-swagger/dev.svg?style=for-the-badge)](https://coveralls.io/r/glennjones/hapi-swagger)
 
   [![npm
-  downloads](https://img.shields.io/npm/dm/hapi-swagger.svg?style=flat-square)](https://www.npmjs.com/package/hapi-swagger)
+  downloads](https://img.shields.io/npm/dm/hapi-swagger.svg?style=for-the-badge)](https://www.npmjs.com/package/hapi-swagger)
 
   [![MIT
-  license](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.github.com/glennjones/microformat-shic/master/license.txt)
+  license](http://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://raw.github.com/glennjones/hapi-swagger/master/license.txt)
 
 
-  [Release Notes for
-  v9.0.x](https://github.com/glennjones/hapi-swagger/issues/487) which only
-  supports hapi v17 and above.
-
-  Note: For hapi versions below v17, you must use versions
-  [v7.x.x](https://github.com/glennjones/hapi-swagger/tree/v7.x) of this module.
+  ## Compatibility
 
 
-  # Install
+  | Version | [hapi.js](https://github.com/hapijs/hapi) | Node  | Release
+  Notes                                                 |
+
+  | ------- | ----------------------------------------- | ----- |
+  ------------------------------------------------------------- |
+
+  | `v10.x` | `>=18.3.1 @hapi/hapi`                     | `>=8` |
+  [#587](https://github.com/glennjones/hapi-swagger/issues/587) |
+
+  | `9.x`   | `>=17 hapi`                               | `>=8` |
+  [#487](https://github.com/glennjones/hapi-swagger/issues/487) |
+
+  | `7.x`   | `<17 hapi`                                | ???   |
+  [#325](https://github.com/glennjones/hapi-swagger/issues/325) |
+
+
+  ## Installation
 
 
   You can add the module to your HAPI using npm:
 
-      $ npm install hapi-swagger --save
+
+  ```bash
+
+  > npm install hapi-swagger --save
+
+  ```
+
 
   If you want to view the documentation from your API you will also need to
   install the `inert` and `vision` plugs-ins which support templates and static
 
   content serving.
 
-      $ npm install inert --save
-      $ npm install vision --save
 
-  # Documentation
+  ```bash
 
+  > npm install @hapi/inert --save
 
-  * [Options Reference](optionsreference.md)
+  > npm install @hapi/vision --save
 
-  * [Usage Guide](usageguide.md)
-
+  ```
 
 
-  # Quick start
+  ## Documentation
+
+
+  -   [Options Reference](optionsreference.md)
+
+  -   [Usage Guide](usageguide.md)
+
+
+  ## Quick start
 
 
   In your HAPI apps main JavaScript file add the following code to created a
@@ -14668,14 +14692,13 @@ glennjones/hapi-swagger: >
   hapijs.com site.
 
 
-
   ```Javascript
 
-  const Hapi = require('hapi');
+  const Hapi = require('@hapi/hapi');
 
-  const Inert = require('inert');
+  const Inert = require('@hapi/inert');
 
-  const Vision = require('vision');
+  const Vision = require('@hapi/vision');
 
   const HapiSwagger = require('hapi-swagger');
 
@@ -14687,14 +14710,14 @@ glennjones/hapi-swagger: >
           host: 'localhost',
           port: 3000,
       });
-      
+
       const swaggerOptions = {
           info: {
                   title: 'Test API Documentation',
                   version: Pack.version,
               },
           };
-      
+
       await server.register([
           Inert,
           Vision,
@@ -14703,21 +14726,22 @@ glennjones/hapi-swagger: >
               options: swaggerOptions
           }
       ]);
-      
+
       try {
           await server.start();
           console.log('Server running at:', server.info.uri);
       } catch(err) {
           console.log(err);
       }
-      
+
       server.route(Routes);
   })();
 
   ```
 
 
-  # Tagging your API routes
+  ### Tagging your API routes
+
 
   As a project may be a mixture of web pages and API endpoints you need to tag
   the routes you wish Swagger to
@@ -14758,16 +14782,14 @@ glennjones/hapi-swagger: >
   ```
 
 
-  Once you have tagged your routes start the application. __The plugin adds a
-  page into your site with the route `/documentation`__,
+  Once you have tagged your routes start the application. **The plugin adds a
+  page into your site with the route `/documentation`**,
 
   so the the full URL for the above options would be
   `http://localhost:3000/documentation`.
 
 
-
-
-  # Contributing
+  ## Contributing
 
 
   Read the [contributing
@@ -14775,10 +14797,8 @@ glennjones/hapi-swagger: >
   for details.
 
 
+  ## Thanks
 
-
-
-  # Thanks
 
   I would like to thank all that have contributed to the project over the last
   couple of years. This is a hard project to maintain, getting HAPI to work with
@@ -33873,7 +33893,7 @@ zalando/connexion: >
 
   .. code-block:: python
 
-     from connexion.decorators.uri_parsing import Swagger2URIParser
+     from connexion.decorators.uri_parsing import AlwaysMultiURIParser
      options = {'uri_parsing_class': AlwaysMultiURIParser}
      app = connexion.App(__name__, specification_dir='swagger/', options=options)
 
@@ -37416,6 +37436,7 @@ jfinkhaeuser/prance: >+
   |Posix Build Status| |Windows Build Status| |Docs| |License|
 
   |PyPI| |Python Versions| |Package Format| |Package Status| |FOSSA Status|
+  |Liberapay|
 
 
   |Logo|
@@ -37872,6 +37893,9 @@ jfinkhaeuser/prance: >+
   .. |FOSSA Status| image::
   https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance.svg?type=shield
      :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance?ref=badge_shield
+  .. |Liberapay| image::
+  http://img.shields.io/liberapay/receives/jfinkhaeuser.svg?logo=liberapay
+     :target: https://liberapay.com/jfinkhaeuser/donate
   .. |Logo| image::
   https://raw.githubusercontent.com/jfinkhaeuser/prance/master/docs/images/prance_logo_256.png
 
@@ -37984,6 +38008,32 @@ swimlane/qswag: >
   }
 
   ```
+
+
+  ## Building Locally
+
+  Before running tests locally you must set an an environment variable called
+  `Newtonsoft` that contains the your Newtonsoft JSONSchema key.  Tests will not
+  execute successfully without this key.
+
+
+  ## Build Job Details
+
+  Before merging to master the semver version attrbutes (major, minor, or patch)
+  must be updated to reflect the type of change made.  The publish to NuGet upon
+  merging to master will fail if the version is not updated.
+
+
+  ### Stages
+
+  [Dotnet Restore] - Restore 3rd party NuGet packages for all projects
+
+  [Dotnet Build] - Build all projects in release mode
+
+  [Run Tests] - Run all tests
+
+  [Publish] - Publishes QSwagGenerator and QSwagSchema to NuGet if a master
+  branch build
 
 
   ## Credits
@@ -38777,12 +38827,12 @@ RobWin/swagger2markup-gradle-plugin: >
   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
   License for the specific language governing permissions and limitations under
   the License.
-raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nGoa is a framework for building micro-services and APIs in Go using a unique\ndesign-first approach.\n\n---\n[![Build Status](https://travis-ci.org/goadesign/goa.svg?branch=v3)](https://travis-ci.org/goadesign/goa)\n[![Windows Build status](https://ci.appveyor.com/api/projects/status/vixp37loj5i6qmaf/branch/v3?svg=true)](https://ci.appveyor.com/project/RaphaelSimon/goa-oqtis/branch/master)\n[![Godoc](https://godoc.org/goa.design/goa?status.svg)](https://godoc.org/goa.design/goa)\n[![Slack](https://img.shields.io/badge/slack-gophers-orange.svg?style=flat)](https://gophers.slack.com/messages/goa/)\n\n## [Goa v2 and v3 released!!!](https://goa.design/blog/009-v_3_0_0/)\n\n## Overview\n\nGoa takes a different approach to building services by making it possible to\ndescribe the *design* of the service API using a simple Go DSL. Goa uses the\ndescription to generate specialized service helper code, client code and\ndocumentation. Goa is extensible via plugins, for example the\n[goakit](https://github.com/goadesign/plugins/tree/master/goakit) plugin\ngenerates code that leverage the Go kit library.\n\nThe service design describes the transport independent layer of the services in\nthe form of simple methods that accept a context and a payload and return a\nresult and an error. The design also describes how the payloads, results and\nerrors are serialized in the transport (HTTP or gRPC). For example a service\nmethod payload may be built from an HTTP request by extracting values from the\nrequest path, headers and body. This clean separation of layers makes it\npossible to expose the same service using multiple transports. It also promotes\ngood design where the service business logic concerns are expressed and\nimplemented separately from the transport logic.\n\nThe Goa DSL consists of Go functions so that it may be extended easily to avoid\nrepetition and promote standards. The design code itself can easily be shared\nacross multiple services by simply importing the corresponding Go package again\npromoting reuse and standardization across services.\n\n## Code Generation\n\nThe Goa tool accepts the Go design package import path as input and produces the\ninterface as well as the glue that binds the service and client code with the\nunderlying transport. The code is specific to the API so that for example there\nis no need to cast or \"bind\" any data structure prior to using the request\npayload or response result. The design may define validations in which case the\ngenerated code takes care of validating the incoming request payload prior to\ninvoking the service method on the server, and validating the response prior to\ninvoking the client code.\n\n## Installation\n\nAssuming you have a working [Go](https://golang.org) setup, and are in a\ndirectory where a `go.mod` file is present:\n\n```bash\nexport GO111MODULE=on\ngo get -u goa.design/goa/v3\ngo get -u goa.design/goa/v3/...\n```\n\nIf you don't have a `go.mod` file present, and only want to install the\nGoa command globally:\n\n```bash\ngo get -u goa.design/goa/v3/cmd/goa\n```\n\nAlternatively, when NOT using Go modules (this installs Goa v2, see below):\n\n```bash\ngo get -u goa.design/goa/...\n```\n\n### Goa Versions and Go Module Support\n\nGoa v2 and Goa v3 are functionally the exact same. The only addition provided by\nGoa v3 is Go module support. Goa v3 requires Go v1.11 or above, it also requires\nprojects that use Goa to be within modules.\n\nProjects that use Goa v3 use `goa.design/goa/v3` as root package import path\nwhile projects that use v2 use `goa.design/goa` (projects that use v1 use\n`github.com/goadesign/goa`).\n\nNote that the Goa v3 tool is backwards compatible and can generate code for v2\ndesigns. This means that you don't need to swap the tool to generate code for\ndesigns using v2 or v3 (designs using v1 use a different tool altogether).\n\n### Vendoring\n\nSince Goa generates and compiles code vendoring tools are not able to\nautomatically identify all the dependencies. In particular the `generator`\npackage is only used by the generated code. To alleviate this issue simply add\n`goa.design/goa/codegen/generator` as a required package to the vendor manifest.\nFor example if you are using `dep` add the following line to `Gopkg.toml`:\n\n``` toml\nrequired = [\"goa.design/goa/codegen/generator\"]\n```\n\nThis only applies to Goa v2 as vendoring is not used together with Go modules.\n\n### Stable Versions\n\nGoa follows [Semantic Versioning](http://semver.org/) which is a fancy way of\nsaying it publishes releases with version numbers of the form `vX.Y.Z` and makes\nsure that your code can upgrade to new versions with the same `X` component\nwithout having to make changes.\n\nReleases are tagged with the corresponding version number. There is also a\nbranch for each major version (`v1`, `v2` and `v3`).\n\nCurrent Release: `v3.0.0`\n\n## Teaser\n\nNote: the instructions below assume Goa v3.\n\n### 1. Design\n\nCreate a new Goa project:\n\n```bash\nmkdir -p calcsvc/design\ncd calcsvc\ngo mod init calcsvc\n```\n\nCreate the file `design.go` in the `design` directory with the following\ncontent:\n\n```go\npackage design\n\nimport . \"goa.design/goa/v3/dsl\"\n\n// API describes the global properties of the API server.\nvar _ = API(\"calc\", func() {\n        Title(\"Calculator Service\")\n        Description(\"HTTP service for adding numbers, a goa teaser\")\n        Server(\"calc\", func() {\n\t\tHost(\"localhost\", func() { URI(\"http://localhost:8088\") })\n        })\n})\n\n// Service describes a service\nvar _ = Service(\"calc\", func() {\n        Description(\"The calc service performs operations on numbers\")\n        // Method describes a service method (endpoint)\n        Method(\"add\", func() {\n                // Payload describes the method payload\n                // Here the payload is an object that consists of two fields\n                Payload(func() {\n                        // Attribute describes an object field\n                        Attribute(\"a\", Int, \"Left operand\")\n                        Attribute(\"b\", Int, \"Right operand\")\n                        // Both attributes must be provided when invoking \"add\"\n                        Required(\"a\", \"b\")\n                })\n                // Result describes the method result\n                // Here the result is a simple integer value\n                Result(Int)\n                // HTTP describes the HTTP transport mapping\n                HTTP(func() {\n                        // Requests to the service consist of HTTP GET requests\n                        // The payload fields are encoded as path parameters\n                        GET(\"/add/{a}/{b}\")\n                        // Responses use a \"200 OK\" HTTP status\n                        // The result is encoded in the response body\n                        Response(StatusOK)\n                })\n        })\n})\n```\n\nThis file contains the design for a `calc` service which accepts HTTP GET\nrequests to `/add/{a}/{b}` where `{a}` and `{b}` are placeholders for integer\nvalues. The API returns the sum of `a` and `b` in the HTTP response body.\n\n### 2. Implement\n\nNow that the design is done, let's run `goa` on the design package.\nIn the `calcsvc` directory run:\n\n``` bash\ngoa gen calcsvc/design\n```\n\nThis produces a `gen` directory with the following directory structure:\n\n``` text\ngen\n├── calc\n│\_\_ ├── client.go\n│\_\_ ├── endpoints.go\n│\_\_ └── service.go\n└── http\n    ├── calc\n    │\_\_ ├── client\n    │\_\_ │\_\_ ├── cli.go\n    │\_\_ │\_\_ ├── client.go\n    │\_\_ │\_\_ ├── encode_decode.go\n    │\_\_ │\_\_ ├── paths.go\n    │\_\_ │\_\_ └── types.go\n    │\_\_ └── server\n    │\_\_     ├── encode_decode.go\n    │\_\_     ├── paths.go\n    │\_\_     ├── server.go\n    │\_\_     └── types.go\n    ├── cli\n    │\_\_ └── calc\n    │\_\_     └── cli.go\n    ├── openapi.json\n    └── openapi.yaml\n\n7 directories, 15 files\n```\n\n* `calc` contains the service endpoints and interface as well as a service\n  client.\n* `http` contains the HTTP transport layer. This layer maps the service\n  endpoints to HTTP handlers server side and HTTP client methods client side.\n  The `http` directory also contains a complete\n  [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md)\n  spec for the service.\n\nThe `goa` tool can also generate example implementations for both the service\nand client. These examples provide a good starting point:\n\n``` text\ngoa example calcsvc/design\n\ncalc.go\ncmd/calc-cli/http.go\ncmd/calc-cli/main.go\ncmd/calc/http.go\ncmd/calc/main.go\n```\n\nThe tool generated the `main` functions for two commands: one that runs the\nserver and one the client. The tool also generated a dummy service\nimplementation that prints a log message. Again note that the `example` command\nis intended to generate just that: an *example*, in particular it is not\nintended to be re-run each time the design changes (as opposed to the `gen`\ncommand which should be re-run each time the design changes).\n\nLet's implement our service by providing a proper implementation for the `add`\nmethod. Goa generated a payload struct for the `add` method that contains both\nfields. Goa also generated the transport layer that takes care of decoding the\nrequest so all we have to do is to perform the actual sum. Edit the file\n`calc.go` and change the code of the `add` function as follows:\n\n```go\n// Add returns the sum of attributes a and b of p.\nfunc (s *calcsrvc) Add(ctx context.Context, p *calcsvc.AddPayload) (res int, err error) {\n        return p.A + p.B, nil\n}\n```\n\nThat's it! we have now a full-fledged HTTP service with a corresponding OpenAPI\nspecification and a client tool.\n\n### 3. Run\n\nNow let's compile and run the service:\n\n```bash\ncd cmd/calc\ngo build\n./calc\n[calcapi] 16:10:47 HTTP \"Add\" mounted on GET /add/{a}/{b}\n[calcapi] 16:10:47 HTTP server listening on \"localhost:8088\"\n```\n\nOpen a new console and compile the generated CLI tool:\n\n```bash\ncd calcsvc/cmd/calc-cli\ngo build\n```\n\nand run it:\n\n```bash\n./calc-cli calc add -a 1 -b 2\n3\n```\n\nThe tool includes contextual help:\n\n``` bash\n./calc-cli --help\n```\n\nHelp is also available on each command:\n\n``` bash\n./calc-cli calc add --help\n```\n\nNow let's see how robust our code is and try to use non integer values:\n\n``` bash\n./calc-cli calc add -a 1 -b foo\ninvalid value for b, must be INT\nrun './calccli --help' for detailed usage.\n```\n\nThe generated code validates the command line arguments against the types\ndefined in the design. The server also validates the types when decoding\nincoming requests so that your code only has to deal with the business logic.\n\n### 4. Document\n\nThe `http` directory contains the OpenAPI 2.0 specification in both YAML and\nJSON format.\n\nThe specification can easily be served from the service itself using a file\nserver. The [Files](http://godoc.org/goa.design/goa/dsl/http.go#Files) DSL\nfunction makes it possible to server static file. Edit the file\n`design/design.go` and add:\n\n```go\nvar _ = Service(\"openapi\", func() {\n        // Serve the file with relative path ../../gen/http/openapi.json for\n        // requests sent to /swagger.json.\n        Files(\"/swagger.json\", \"../../gen/http/openapi.json\")\n})\n```\n\nRe-run `goa gen calcsvc/design` and note the new directory `gen/openapi` and\n`gen/http/openapi` which contain the implementation for a HTTP handler that\nserves the `openapi.json` file.\n\nAll we need to do is mount the handler on the service mux. Add the corresponding\nimport statement to `cmd/calc/http.go`:\n\n```go\nimport openapisvr \"calcsvc/gen/http/openapi/server\"\n```\n\nand mount the handler by adding the following line in the same file and after\nthe mux creation (e.g. one the line after the `// Configure the mux.` comment):\n\n```go\nopenapisvr.Mount(mux)\n```\n\nThat's it! we now have a self-documenting service. Stop the running service\nwith CTRL-C. Rebuild and re-run it then make requests to the newly added\n`/swagger.json` endpoint:\n\n``` bash\n^C[calcapi] 16:17:37 exiting (interrupt)\n[calcapi] 16:17:37 shutting down HTTP server at \"localhost:8088\"\n[calcapi] 16:17:37 exited\ngo build\n./calc\n```\n\nIn a different console:\n\n``` bash\ncurl localhost:8088/swagger.json\n{\"swagger\":\"2.0\",\"info\":{\"title\":\"Calculator Service\",\"description\":...\n```\n\n## Resources\n\nConsult the following resources to learn more about Goa.\n\n### Docs\n\nSee the [goa.design](https://goa.design) website.\n\n### Examples\n\nThe [examples](https://github.com/goadesign/examples) directory\ncontains simple examples illustrating basic concepts.\n\n## Contributing\n\nSee [CONTRIBUTING](https://github.com/goadesign/goa/blob/v3/CONTRIBUTING.md).\n"
+raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nGoa is a framework for building micro-services and APIs in Go using a unique\ndesign-first approach.\n\n---\n[![Build Status](https://travis-ci.org/goadesign/goa.svg?branch=v3)](https://travis-ci.org/goadesign/goa)\n[![Windows Build status](https://ci.appveyor.com/api/projects/status/vixp37loj5i6qmaf/branch/v3?svg=true)](https://ci.appveyor.com/project/RaphaelSimon/goa-oqtis/branch/v3)\n[![Godoc](https://godoc.org/goa.design/goa?status.svg)](https://godoc.org/goa.design/goa)\n[![Slack](https://img.shields.io/badge/slack-gophers-orange.svg?style=flat)](https://gophers.slack.com/messages/goa/)\n\n## [Goa v2 and v3 released!!!](https://goa.design/blog/009-v_3_0_0/)\n\n## Overview\n\nGoa takes a different approach to building services by making it possible to\ndescribe the *design* of the service API using a simple Go DSL. Goa uses the\ndescription to generate specialized service helper code, client code and\ndocumentation. Goa is extensible via plugins, for example the\n[goakit](https://github.com/goadesign/plugins/tree/master/goakit) plugin\ngenerates code that leverage the Go kit library.\n\nThe service design describes the transport independent layer of the services in\nthe form of simple methods that accept a context and a payload and return a\nresult and an error. The design also describes how the payloads, results and\nerrors are serialized in the transport (HTTP or gRPC). For example a service\nmethod payload may be built from an HTTP request by extracting values from the\nrequest path, headers and body. This clean separation of layers makes it\npossible to expose the same service using multiple transports. It also promotes\ngood design where the service business logic concerns are expressed and\nimplemented separately from the transport logic.\n\nThe Goa DSL consists of Go functions so that it may be extended easily to avoid\nrepetition and promote standards. The design code itself can easily be shared\nacross multiple services by simply importing the corresponding Go package again\npromoting reuse and standardization across services.\n\n## Code Generation\n\nThe Goa tool accepts the Go design package import path as input and produces the\ninterface as well as the glue that binds the service and client code with the\nunderlying transport. The code is specific to the API so that for example there\nis no need to cast or \"bind\" any data structure prior to using the request\npayload or response result. The design may define validations in which case the\ngenerated code takes care of validating the incoming request payload prior to\ninvoking the service method on the server, and validating the response prior to\ninvoking the client code.\n\n## Installation\n\nAssuming you have a working [Go](https://golang.org) setup, and are in a\ndirectory where a `go.mod` file is present:\n\n```bash\nexport GO111MODULE=on\ngo get -u goa.design/goa/v3\ngo get -u goa.design/goa/v3/...\n```\n\nIf you don't have a `go.mod` file present, and only want to install the\nGoa command globally:\n\n```bash\ngo get -u goa.design/goa/v3/cmd/goa\n```\n\nAlternatively, when NOT using Go modules (this installs Goa v2, see below):\n\n```bash\ngo get -u goa.design/goa/...\n```\n\n### Goa Versions and Go Module Support\n\nGoa v2 and Goa v3 are functionally the exact same. The only addition provided by\nGoa v3 is Go module support. Goa v3 requires Go v1.11 or above, it also requires\nprojects that use Goa to be within modules.\n\nProjects that use Goa v3 use `goa.design/goa/v3` as root package import path\nwhile projects that use v2 use `goa.design/goa` (projects that use v1 use\n`github.com/goadesign/goa`).\n\nNote that the Goa v3 tool is backwards compatible and can generate code for v2\ndesigns. This means that you don't need to swap the tool to generate code for\ndesigns using v2 or v3 (designs using v1 use a different tool altogether).\n\n### Vendoring\n\nSince Goa generates and compiles code vendoring tools are not able to\nautomatically identify all the dependencies. In particular the `generator`\npackage is only used by the generated code. To alleviate this issue simply add\n`goa.design/goa/codegen/generator` as a required package to the vendor manifest.\nFor example if you are using `dep` add the following line to `Gopkg.toml`:\n\n``` toml\nrequired = [\"goa.design/goa/codegen/generator\"]\n```\n\nThis only applies to Goa v2 as vendoring is not used together with Go modules.\n\n### Stable Versions\n\nGoa follows [Semantic Versioning](http://semver.org/) which is a fancy way of\nsaying it publishes releases with version numbers of the form `vX.Y.Z` and makes\nsure that your code can upgrade to new versions with the same `X` component\nwithout having to make changes.\n\nReleases are tagged with the corresponding version number. There is also a\nbranch for each major version (`v1`, `v2` and `v3`).\n\nCurrent Release: `v3.0.1`\n\n## Teaser\n\nNote: the instructions below assume Goa v3.\n\n### 1. Design\n\nCreate a new Goa project:\n\n```bash\nmkdir -p calcsvc/design\ncd calcsvc\ngo mod init calcsvc\n```\n\nCreate the file `design.go` in the `design` directory with the following\ncontent:\n\n```go\npackage design\n\nimport . \"goa.design/goa/v3/dsl\"\n\n// API describes the global properties of the API server.\nvar _ = API(\"calc\", func() {\n        Title(\"Calculator Service\")\n        Description(\"HTTP service for adding numbers, a goa teaser\")\n        Server(\"calc\", func() {\n\t\tHost(\"localhost\", func() { URI(\"http://localhost:8088\") })\n        })\n})\n\n// Service describes a service\nvar _ = Service(\"calc\", func() {\n        Description(\"The calc service performs operations on numbers\")\n        // Method describes a service method (endpoint)\n        Method(\"add\", func() {\n                // Payload describes the method payload\n                // Here the payload is an object that consists of two fields\n                Payload(func() {\n                        // Attribute describes an object field\n                        Attribute(\"a\", Int, \"Left operand\")\n                        Attribute(\"b\", Int, \"Right operand\")\n                        // Both attributes must be provided when invoking \"add\"\n                        Required(\"a\", \"b\")\n                })\n                // Result describes the method result\n                // Here the result is a simple integer value\n                Result(Int)\n                // HTTP describes the HTTP transport mapping\n                HTTP(func() {\n                        // Requests to the service consist of HTTP GET requests\n                        // The payload fields are encoded as path parameters\n                        GET(\"/add/{a}/{b}\")\n                        // Responses use a \"200 OK\" HTTP status\n                        // The result is encoded in the response body\n                        Response(StatusOK)\n                })\n        })\n})\n```\n\nThis file contains the design for a `calc` service which accepts HTTP GET\nrequests to `/add/{a}/{b}` where `{a}` and `{b}` are placeholders for integer\nvalues. The API returns the sum of `a` and `b` in the HTTP response body.\n\n### 2. Implement\n\nNow that the design is done, let's run `goa` on the design package.\nIn the `calcsvc` directory run:\n\n``` bash\ngoa gen calcsvc/design\n```\n\nThis produces a `gen` directory with the following directory structure:\n\n``` text\ngen\n├── calc\n│\_\_ ├── client.go\n│\_\_ ├── endpoints.go\n│\_\_ └── service.go\n└── http\n    ├── calc\n    │\_\_ ├── client\n    │\_\_ │\_\_ ├── cli.go\n    │\_\_ │\_\_ ├── client.go\n    │\_\_ │\_\_ ├── encode_decode.go\n    │\_\_ │\_\_ ├── paths.go\n    │\_\_ │\_\_ └── types.go\n    │\_\_ └── server\n    │\_\_     ├── encode_decode.go\n    │\_\_     ├── paths.go\n    │\_\_     ├── server.go\n    │\_\_     └── types.go\n    ├── cli\n    │\_\_ └── calc\n    │\_\_     └── cli.go\n    ├── openapi.json\n    └── openapi.yaml\n\n7 directories, 15 files\n```\n\n* `calc` contains the service endpoints and interface as well as a service\n  client.\n* `http` contains the HTTP transport layer. This layer maps the service\n  endpoints to HTTP handlers server side and HTTP client methods client side.\n  The `http` directory also contains a complete\n  [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md)\n  spec for the service.\n\nThe `goa` tool can also generate example implementations for both the service\nand client. These examples provide a good starting point:\n\n``` text\ngoa example calcsvc/design\n\ncalc.go\ncmd/calc-cli/http.go\ncmd/calc-cli/main.go\ncmd/calc/http.go\ncmd/calc/main.go\n```\n\nThe tool generated the `main` functions for two commands: one that runs the\nserver and one the client. The tool also generated a dummy service\nimplementation that prints a log message. Again note that the `example` command\nis intended to generate just that: an *example*, in particular it is not\nintended to be re-run each time the design changes (as opposed to the `gen`\ncommand which should be re-run each time the design changes).\n\nLet's implement our service by providing a proper implementation for the `add`\nmethod. Goa generated a payload struct for the `add` method that contains both\nfields. Goa also generated the transport layer that takes care of decoding the\nrequest so all we have to do is to perform the actual sum. Edit the file\n`calc.go` and change the code of the `add` function as follows:\n\n```go\n// Add returns the sum of attributes a and b of p.\nfunc (s *calcsrvc) Add(ctx context.Context, p *calcsvc.AddPayload) (res int, err error) {\n        return p.A + p.B, nil\n}\n```\n\nThat's it! we have now a full-fledged HTTP service with a corresponding OpenAPI\nspecification and a client tool.\n\n### 3. Run\n\nNow let's compile and run the service:\n\n```bash\ncd cmd/calc\ngo build\n./calc\n[calcapi] 16:10:47 HTTP \"Add\" mounted on GET /add/{a}/{b}\n[calcapi] 16:10:47 HTTP server listening on \"localhost:8088\"\n```\n\nOpen a new console and compile the generated CLI tool:\n\n```bash\ncd calcsvc/cmd/calc-cli\ngo build\n```\n\nand run it:\n\n```bash\n./calc-cli calc add -a 1 -b 2\n3\n```\n\nThe tool includes contextual help:\n\n``` bash\n./calc-cli --help\n```\n\nHelp is also available on each command:\n\n``` bash\n./calc-cli calc add --help\n```\n\nNow let's see how robust our code is and try to use non integer values:\n\n``` bash\n./calc-cli calc add -a 1 -b foo\ninvalid value for b, must be INT\nrun './calccli --help' for detailed usage.\n```\n\nThe generated code validates the command line arguments against the types\ndefined in the design. The server also validates the types when decoding\nincoming requests so that your code only has to deal with the business logic.\n\n### 4. Document\n\nThe `http` directory contains the OpenAPI 2.0 specification in both YAML and\nJSON format.\n\nThe specification can easily be served from the service itself using a file\nserver. The [Files](http://godoc.org/goa.design/goa/dsl/http.go#Files) DSL\nfunction makes it possible to server static file. Edit the file\n`design/design.go` and add:\n\n```go\nvar _ = Service(\"openapi\", func() {\n        // Serve the file with relative path ../../gen/http/openapi.json for\n        // requests sent to /swagger.json.\n        Files(\"/swagger.json\", \"../../gen/http/openapi.json\")\n})\n```\n\nRe-run `goa gen calcsvc/design` and note the new directory `gen/openapi` and\n`gen/http/openapi` which contain the implementation for a HTTP handler that\nserves the `openapi.json` file.\n\nAll we need to do is mount the handler on the service mux. Add the corresponding\nimport statement to `cmd/calc/http.go`:\n\n```go\nimport openapisvr \"calcsvc/gen/http/openapi/server\"\n```\n\nand mount the handler by adding the following line in the same file and after\nthe mux creation (e.g. one the line after the `// Configure the mux.` comment):\n\n```go\nopenapisvr.Mount(mux)\n```\n\nThat's it! we now have a self-documenting service. Stop the running service\nwith CTRL-C. Rebuild and re-run it then make requests to the newly added\n`/swagger.json` endpoint:\n\n``` bash\n^C[calcapi] 16:17:37 exiting (interrupt)\n[calcapi] 16:17:37 shutting down HTTP server at \"localhost:8088\"\n[calcapi] 16:17:37 exited\ngo build\n./calc\n```\n\nIn a different console:\n\n``` bash\ncurl localhost:8088/swagger.json\n{\"swagger\":\"2.0\",\"info\":{\"title\":\"Calculator Service\",\"description\":...\n```\n\n## Resources\n\nConsult the following resources to learn more about Goa.\n\n### Docs\n\nSee the [goa.design](https://goa.design) website.\n\n### Examples\n\nThe [examples](https://github.com/goadesign/examples) directory\ncontains simple examples illustrating basic concepts.\n\n## Contributing\n\nSee [CONTRIBUTING](https://github.com/goadesign/goa/blob/v3/CONTRIBUTING.md).\n"
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-05-18T04:47:15Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":462,"watchers_count":462,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":73,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":73,"open_issues":32,"watchers":462,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":73,"subscribers_count":18}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-05-28T01:21:25Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":464,"watchers_count":464,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":74,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":74,"open_issues":32,"watchers":464,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":74,"subscribers_count":18}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44685,6 +44735,10 @@ OpenAPITools/openapi-generator: >
   Generator)](https://gum.co/openapi_generator_ebook_gb) by [William
   Cheng](https://twitter.com/wing328), [Xin Meng](https://github.com/xmeng1)
 
+  - 2019-05/24 - [REST API 代碼生成指南 (OpenAPI
+  Generator)](https://gum.co/openapi_generator_ebook_big5) by [William
+  Cheng](https://twitter.com/wing328)
+
 
   ## [6 - About Us](#table-of-contents)
 
@@ -44784,6 +44838,7 @@ OpenAPITools/openapi-generator: >
      * TypeScript (jQuery): @bherila
      * TypeScript (Node):  @mhardorf
      * TypeScript (Rxjs): @denyo
+     * TypeScript (Inversify): @gualtierim
    * Server Stubs
      * Ada: @stcarrez
      * C# ASP.NET5: @jimschubert [:heart:](https://www.patreon.com/jimschubert)
@@ -57953,21 +58008,22 @@ ReDoc-ly/create-openapi-repo: >
 
   ## Why?
 
-  There are a few advantages in hosting your API specification + docs on GitHub:
+  There are a few advantages in hosting your API definition + docs on GitHub:
    - Community engagement (PR's and issues)
    - Hosting on GitHub pages (perfect uptime, CDN, Jekyll, custom domains with CNAME)
    - Advertisment in the GitHub community
    - Revision history, branching, CI
-   - Fast on-boarding time (everyone knows how to use GitHub :smile:)
+   - Fast on-boarding time (developers and tech writers know how to use GitHub :smile:)
+   - Fully compatible with Redocly API Reference too
 
   ## Features
 
   This generator helps to create a GitHub repo with the following features:
-   - Possibility to split a big OpenAPI spec into smaller files and bundle it for deployment
+   - Possibility to split a big OpenAPI definition into smaller files and bundle it for deployment
    - Continuous integration/deployment on Travis
    - Code samples as separate files
-   - OpenAPI spec is validated after each commit
-   - OpenAPI spec + ReDoc deployed to Github Pages (you can use a custom domain)
+   - OpenAPI definition is validated after each commit
+   - OpenAPI definition + ReDoc deployed to Github Pages (you can use a custom domain)
    - Live editing in your editor or `swagger-editor` :heart_eyes:
    ![live editing](./live-edit.gif)
 
@@ -58564,7 +58620,7 @@ hh-h/aiohttp-swagger3: >
   - [ ] form data serialization (array, object)
 
   - [ ] default (array, object)
-dolmen-go/openapi-preprocessor: >-
+dolmen-go/openapi-preprocessor: >
   # openapi-preprocessor
 
 
@@ -58625,6 +58681,24 @@ dolmen-go/openapi-preprocessor: >-
   `/parameters`) and responses (under `/responses`). This reduces risk of
   leaking work in progress or internal details.
 
+
+  ## Install
+
+
+  ### Install from source
+
+
+  A [Go development environment](https://golang.org/doc/install#install) is
+  required. Go 1.12+ recommended.
+
+
+  Build `openapi-preprocessor` binary and install in `$GOPATH/bin`:
+
+      $ make install
+
+  ## Usage
+
+      openapi-preprocessor [<option>...] <file>
 
   ## Keywords
 
@@ -58697,6 +58771,11 @@ dolmen-go/openapi-preprocessor: >-
   See the
   [testsuite](https://github.com/dolmen-go/openapi-preprocessor/tree/master/testdata).
 
+
+  Running a basic example:
+
+      $ make
+      $ ./openapi-preprocessor testdata/10-ref-ext/input.yml
 
   ## License
 
@@ -61898,6 +61977,14 @@ tiangolo/full-stack-fastapi-couchbase: >
   ### Next release
 
 
+  ### 0.4.0
+
+
+  * Fix security on resetting a password. Receive `password` and `token` as
+  body, not query. PR
+  [#16](https://github.com/tiangolo/full-stack-fastapi-couchbase/pull/16).
+
+
   * Forward arguments from script to `pytest` inside container.
 
 
@@ -62282,6 +62369,18 @@ tiangolo/full-stack-fastapi-postgresql: >
   ### Next release
 
 
+  ### 0.4.0
+
+
+  * Fix security on resetting a password. Receive token as body, not query. PR
+  [#34](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/34).
+
+
+  * Fix security on resetting a password. Receive it as body, not query. PR
+  [#33](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/33) by
+  [@dmontagu](https://github.com/dmontagu).
+
+
   * Fix SQLAlchemy class lookup on initialization. PR
   [#29](https://github.com/tiangolo/full-stack-fastapi-postgresql/pull/29) by
   [@ebreton](https://github.com/ebreton).
@@ -62662,6 +62761,8 @@ cdimascio/express-openapi-validator: >
 
   Try the complete example below:
 
+  (_it includes file upload as well!_)
+
 
   ```javascript
 
@@ -62726,6 +62827,24 @@ cdimascio/express-openapi-validator: >
 
   app.get('/v1/pets/:id', function(req, res, next) {
     res.json({ id: req.params.id, name: 'sparky' });
+  });
+
+
+  // 4. Define route(s) to upload file(s)
+
+  app.post('/v1/pets/:id/photos', function(req, res, next) {
+    // files are found in req.files
+    // non-file multipart params can be found as such: req.body['my-param']
+
+    res.json({
+      files_metadata: req.files.map(f => ({
+        originalname: f.originalname,
+        encoding: f.encoding,
+        mimetype: f.mimetype,
+        // Buffer of file conents
+        buffer: f.buffer,
+      })),
+    });
   });
 
 
@@ -62855,6 +62974,27 @@ cdimascio/express-openapi-validator: >
         "path": "name",
         "errorCode": "required.openapi.validation",
         "message": "should have required property 'name'",
+        "location": "body"
+      }
+    ]
+  }
+
+  ```
+
+
+  #### Validate a POST multipart/form-data request
+
+
+  ```shell
+
+  curl -XPOST http://localhost:3000/v1/pets/10/photos -F filez=@app.js | jq
+
+  {
+    "errors": [
+      {
+        "path": "file",
+        "errorCode": "required.openapi.validation",
+        "message": "should have required property 'file'",
         "location": "body"
       }
     ]
@@ -63042,7 +63182,487 @@ cebe/yii2-openapi: >
 
   Development of this library is sponsored by [cebe.:cloud: "Your Professional
   Deployment Platform"](https://cebe.cloud).
-cdimascio/generator-express-no-stress: "# generator-express-no-stress\n\n![](https://img.shields.io/badge/status-stable-green.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/56c006ccc44c47f49d12b6b35fcf35da)](https://www.codacy.com/app/cdimascio/generator-express-no-stress?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/generator-express-no-stress&utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-MIT-blue.svg)\n\nCreate awesome [Express.js](http://www.expressjs.com) applications with best of breed tech including ES.next via [Babel.js](https://babeljs.io/), structured logging with [Pino](https://github.com/pinojs/pino), API validation and interactive documentation using an [OpenAPI 3](https://swagger.io/specification/) or [Swagger 2](https://swagger.io/specification/v2/) spec, environment based config with [dotenv](https://github.com/motdotla/dotenv), and linting with [ESLint](http://eslint.org/).\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/express-no-stress-logo-v.png\">\n</p>\n\ngenerator-express-no-stress gets you up and running in seconds. It's ridiculously easy to configure. Heck, just take the defaults. Start it. Write code.\n\nThis generator scaffolds a fully functioning REST API server, complete with interactive documentation, API validation, structured logging, environment driven config, and more. Simply run the generator and smile :-D\n\n[Here's what you get!](#what-you-get)\n\n## Install\n\n_Requires Node 8 or greater_\n\n```shell\nnpm install -g yo generator-express-no-stress\n```\n\n- See [here](#usage-cli) for use with Yarn and/or Docker\n- See [here](#faqs) for Node 6 support\n\n## Scaffold\n\n```shell\nyo express-no-stress myapp\ncd myapp\n```\n\n## Run\n\nRun in _development mode_:\n\n```shell\nnpm run dev\n```\n\nPackage and run in _production mode_\n\n```shell\nnpm run compile\nnpm start\n```\n\n## Test\n\n```shell\nnpm test\n```\n\n## Debug\n\nRun one of the following, then attach your favorite inspector e.g. [VSCode](#debug-in-vscode):\n\n```shell\n# debug the server\nnpm run dev:debug\n\n# debug the tests\nnpm run test:debug\n```\n\n## Try it!\n\n- Interactive API doc at [http://localhost:3000/api-explorer](http://localhost:3000/api-explorer)\n- Landing page at [http://localhost:3000](http://localhost:3000)\n\n---\n\n## Usage: CLI\n\n```shell\nyo express-no-stress [appname] [--yarn] [--docker]\n```\n\n| Option     | default | Description                                                                |\n| ---------- | ------- | -------------------------------------------------------------------------- |\n| `appname`  | myapp   | The application folder                                                     |\n| `--yarn`   | -       | Use the [`yarn`](https://yarnpkg.com) package manager, instead of `npm`    |\n| `--docker` |         | Install [Docker](https://www.docker.com/) artifacts including a Dockerfile |\n\n## Usage: Project\n\nThe sections below describe all usage options available once the project is generated/scaffolded.\n\n### npm targets\n\n| Target               | Description                                                              |\n| -------------------- | ------------------------------------------------------------------------ |\n| `npm run dev`        | Run in _development_ mode                                                |\n| `npm run dev:debug`  | Debug in _development_ mode                                              |\n| `npm run test`       | Run tests                                                                |\n| `npm run test:debug` | Debug tests                                                              |\n| `npm run lint`       | View a listing of all errors discovered by the linter                    |\n| `npm run lint:fix`   | Fix all errors discovered by the linter                                  |\n| `npm run compile`    | Transpile source code for production use                                 |\n| `npm start`          | Run the in _production_ mode. \\*Requires running `npm run compile` first |\n\n### Debug in VSCode\n\nAdd these [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json) to your `.vscode/launch.json` file\n\n### Deploy to the Cloud\n\ne.g. CloudFoundry\n\n```\ncf push myapp\n```\n\n### Use Yarn\n\n```\n# scaffold\nyo express-no-stress myapp --yarn\ncd myapp\n\n# run in development mode\nyarn run dev\n\n# run in production mode\nyarn run compile\nyarn start\n\n# test\nyarn test\n```\n\n---\n\n## What you get!\n\n- [Express.js](http://www.expressjs.com) - Fast, unopinionated\n  , minimalist web framework for Node.js\n- [Babel.js](https://babeljs.io/) - Use new syntax, right now without waiting for support\n- [Pino](https://github.com/pinojs/pino) - Extremely fast node.js logger, inspired by Bunyan. It also includes a shell utility to pretty-print its log files\n- [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from .env for nodejs projects\n- [ESLint](http://eslint.org/) - a pluggable linting utility for JavaScript and JSX\n\n      \tChoose from the following ESLint lint rules:\n      \t- [Airbnb](https://github.com/airbnb/javascript) - A mostly reasonable approach to JavaScript\n      \t- [Prettier](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter\n\n- [Swagger](http://swagger.io/) - is a simple yet powerful representation of your RESTful API\n- [SwaggerUI](http://swagger.io/) - dynamically generate beautiful documentation and sandbox from a Swagger-compliant API\n\n### API Validation\n\nSimply describe your APIs with Swagger and automagically get for free:\n\n- Interactive documentation\n- API validation\n\n#### Interactive API Doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc1.png)\n\n#### API Validation!\n\nOops! I the API caller forgot to pass a `name` field, no stress, we've got this!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/api-validation.png)\n\n### Structured Logging\n\nStructured logging out of the box!\n\n#### raw\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-raw.png)\n\n#### pretty\n\nStructured logging pretty printed by default - great for dev!\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-pretty.png)\n\n### API Validation Example\n\nSimply describe your APIs with Swagger and automatically get:\n\n- API request validation\n- Interactive documentation\n\n### example\n\n#### Swagger API spec\n\n```yaml\nswagger: '2.0'\ninfo:\n  version: 1.0.0\n  title: myapp\n  description: My cool app\nbasePath: /api/v1\ntags:\n  - name: Examples\n    description: Simple example endpoints\n  - name: Specification\n    description: The swagger API specification\n\nconsumes:\n  - application/json\nproduces:\n  - application/json\n\ndefinitions:\n  ExampleBody:\n    type: object\n    title: example\n    required:\n      - name\n    properties:\n      name:\n        type: string\n        example: no_stress\n\npaths:\n  /examples:\n    get:\n      tags:\n        - Examples\n      description: Fetch all examples\n      responses:\n        200:\n          description: Returns all examples\n    post:\n      tags:\n        - Examples\n      description: Create a new example\n      parameters:\n        - name: example\n          in: body\n          description: an example\n          required: true\n          schema:\n            $ref: '#/definitions/ExampleBody'\n      responses:\n        200:\n          description: Returns all examples\n\n  /examples/{id}:\n    get:\n      tags:\n        - Examples\n      parameters:\n        - name: id\n          in: path\n          required: true\n          description: The id of the example to retrieve\n          type: integer\n      responses:\n        200:\n          description: Return the example with the specified id\n        404:\n          description: Example not found\n\n  /spec:\n    get:\n      tags:\n        - Specification\n      responses:\n        200:\n          description: Return the API specification\n```\n\n#### Invoke a POST request via the Interactive doc\n\n![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc.png)\n\n### Linting\n\nexpress-no-stress uses [ESLint](http://eslint.org/) and provides two choices, Airbnb or Prettier.\n\nTo add your own ESLint customizations, edit`.eslintrc.json`.\n\nNote that the Airbnb variant provides a slightly modified Airbnb [base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) configuration.\n\n## FAQs\n\n**Q**: What about Node.js 6.x?\n\n**A**:`generator-express-no-stress` now uses Babel 7. Babel 7 tooling requires Node.js 8 or greater. To use `generator-express-no-stress` with Node.js 6, install version 3.5.4.\n\n```shell\nnpm install -g yo generator-express-no-stress@3.5.4\n```\n\n## License\n\n[MIT](LICENSE)\n"
+cdimascio/generator-express-no-stress: >
+  # generator-express-no-stress
+
+
+  ![](https://img.shields.io/badge/status-stable-green.svg)
+  ![](https://img.shields.io/npm/v/generator-express-no-stress.svg) [![Codacy
+  Badge](https://api.codacy.com/project/badge/Grade/56c006ccc44c47f49d12b6b35fcf35da)](https://www.codacy.com/app/cdimascio/generator-express-no-stress?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/generator-express-no-stress&utm_campaign=Badge_Grade)
+  ![](https://img.shields.io/badge/license-MIT-blue.svg)
+
+
+  Create awesome [Express.js](http://www.expressjs.com) applications with best
+  of breed tech including ES.next via [Babel.js](https://babeljs.io/),
+  structured logging with [Pino](https://github.com/pinojs/pino), API validation
+  and interactive documentation using an [OpenAPI
+  3](https://swagger.io/specification/) or [Swagger
+  2](https://swagger.io/specification/v2/) spec, environment based config with
+  [dotenv](https://github.com/motdotla/dotenv), and linting with
+  [ESLint](http://eslint.org/).
+
+
+  <p align="center">
+
+  <img
+  src="https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/express-no-stress-logo-v.png">
+
+  </p>
+
+
+  generator-express-no-stress gets you up and running in seconds. It's
+  ridiculously easy to configure. Heck, just take the defaults. Start it. Write
+  code.
+
+
+  This generator scaffolds a fully functioning REST API server, complete with
+  interactive documentation, API validation, structured logging, environment
+  driven config, and more. Simply run the generator and smile :-D
+
+
+  [Here's what you get!](#what-you-get)
+
+
+  ## Install
+
+
+  _Requires Node 8 or greater_
+
+
+  ```shell
+
+  npm install -g yo generator-express-no-stress
+
+  ```
+
+
+  - See [here](#usage-cli) for use with Yarn and/or Docker
+
+  - See [here](#faqs) for Node 6 support
+
+
+  ## Scaffold
+
+
+  ```shell
+
+  yo express-no-stress myapp
+
+  cd myapp
+
+  ```
+
+
+  ## Run
+
+
+  Run in _development mode_:
+
+
+  ```shell
+
+  npm run dev
+
+  ```
+
+
+  Package and run in _production mode_
+
+
+  ```shell
+
+  npm run compile
+
+  npm start
+
+  ```
+
+
+  ## Test
+
+
+  ```shell
+
+  npm test
+
+  ```
+
+
+  ## Debug
+
+
+  Run one of the following, then attach your favorite inspector e.g.
+  [VSCode](#debug-in-vscode):
+
+
+  ```shell
+
+  # debug the server
+
+  npm run dev:debug
+
+
+  # debug the tests
+
+  npm run test:debug
+
+  ```
+
+
+  ## Try it!
+
+
+  - Interactive API doc at
+  [http://localhost:3000/api-explorer](http://localhost:3000/api-explorer)
+
+  - Landing page at [http://localhost:3000](http://localhost:3000)
+
+
+  ---
+
+
+  ## Usage: CLI
+
+
+  ```shell
+
+  yo express-no-stress [appname] [--yarn] [--docker]
+
+  ```
+
+
+  | Option     | default |
+  Description                                                                |
+
+  | ---------- | ------- |
+  -------------------------------------------------------------------------- |
+
+  | `appname`  | myapp   | The application
+  folder                                                     |
+
+  | `--yarn`   | -       | Use the [`yarn`](https://yarnpkg.com) package
+  manager, instead of `npm`    |
+
+  | `--docker` |         | Install [Docker](https://www.docker.com/) artifacts
+  including a Dockerfile |
+
+
+  ## Usage: Project
+
+
+  The sections below describe all usage options available once the project is
+  generated/scaffolded.
+
+
+  ### npm targets
+
+
+  | Target               |
+  Description                                                              |
+
+  | -------------------- |
+  ------------------------------------------------------------------------ |
+
+  | `npm run dev`        | Run in _development_
+  mode                                                |
+
+  | `npm run dev:debug`  | Debug in _development_
+  mode                                              |
+
+  | `npm run test`       | Run
+  tests                                                                |
+
+  | `npm run test:debug` | Debug
+  tests                                                              |
+
+  | `npm run lint`       | View a listing of all errors discovered by the
+  linter                    |
+
+  | `npm run lint:fix`   | Fix all errors discovered by the
+  linter                                  |
+
+  | `npm run compile`    | Transpile source code for production
+  use                                 |
+
+  | `npm start`          | Run the in _production_ mode. \*Requires running `npm
+  run compile` first |
+
+
+  ### Debug in VSCode
+
+
+  Add these
+  [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json)
+  to your `.vscode/launch.json` file
+
+
+  ### Deploy to the Cloud
+
+
+  e.g. CloudFoundry
+
+
+  ```
+
+  cf push myapp
+
+  ```
+
+
+  ### Use Yarn
+
+
+  ```
+
+  # scaffold
+
+  yo express-no-stress myapp --yarn
+
+  cd myapp
+
+
+  # run in development mode
+
+  yarn run dev
+
+
+  # run in production mode
+
+  yarn run compile
+
+  yarn start
+
+
+  # test
+
+  yarn test
+
+  ```
+
+
+  ---
+
+
+  ## What you get!
+
+
+  - [Express.js](http://www.expressjs.com) - Fast, unopinionated
+    , minimalist web framework for Node.js
+  - [Babel.js](https://babeljs.io/) - Use new syntax, right now without waiting
+  for support
+
+  - [Pino](https://github.com/pinojs/pino) - Extremely fast node.js logger,
+  inspired by Bunyan. It also includes a shell utility to pretty-print its log
+  files
+
+  - [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables
+  from .env for nodejs projects
+
+  - [ESLint](http://eslint.org/) - a pluggable linting utility for JavaScript
+  and JSX
+
+    Choose from the following ESLint lint rules:
+
+       - [Airbnb](https://github.com/airbnb/javascript) - A mostly reasonable approach to JavaScript
+       - [Prettier](https://github.com/prettier/prettier) - Prettier is an opinionated code formatter
+
+  - [Swagger](http://swagger.io/) - is a simple yet powerful representation of
+  your RESTful API
+
+  - [SwaggerUI](http://swagger.io/) - dynamically generate beautiful
+  documentation and sandbox from a Swagger-compliant API
+
+
+  ### API Validation
+
+
+  Simply describe your APIs with Swagger and automagically get for free:
+
+
+  - Interactive documentation
+
+  - API validation
+
+
+  #### Interactive API Doc
+
+
+  ![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc1.png)
+
+
+  #### API Validation!
+
+
+  Oops! I the API caller forgot to pass a `name` field, no stress, we've got
+  this!
+
+
+  ![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/api-validation.png)
+
+
+  ### Structured Logging
+
+
+  Structured logging out of the box!
+
+
+  #### raw
+
+
+  ![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-raw.png)
+
+
+  #### pretty
+
+
+  Structured logging pretty printed by default - great for dev!
+
+
+  ![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/logging-pretty.png)
+
+
+  ### API Validation Example
+
+
+  Simply describe your APIs with Swagger and automatically get:
+
+
+  - API request validation
+
+  - Interactive documentation
+
+
+  ### example
+
+
+  #### Swagger API spec
+
+
+  ```yaml
+
+  swagger: '2.0'
+
+  info:
+    version: 1.0.0
+    title: myapp
+    description: My cool app
+  basePath: /api/v1
+
+  tags:
+    - name: Examples
+      description: Simple example endpoints
+    - name: Specification
+      description: The swagger API specification
+
+  consumes:
+    - application/json
+  produces:
+    - application/json
+
+  definitions:
+    ExampleBody:
+      type: object
+      title: example
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          example: no_stress
+
+  paths:
+    /examples:
+      get:
+        tags:
+          - Examples
+        description: Fetch all examples
+        responses:
+          200:
+            description: Returns all examples
+      post:
+        tags:
+          - Examples
+        description: Create a new example
+        parameters:
+          - name: example
+            in: body
+            description: an example
+            required: true
+            schema:
+              $ref: '#/definitions/ExampleBody'
+        responses:
+          200:
+            description: Returns all examples
+
+    /examples/{id}:
+      get:
+        tags:
+          - Examples
+        parameters:
+          - name: id
+            in: path
+            required: true
+            description: The id of the example to retrieve
+            type: integer
+        responses:
+          200:
+            description: Return the example with the specified id
+          404:
+            description: Example not found
+
+    /spec:
+      get:
+        tags:
+          - Specification
+        responses:
+          200:
+            description: Return the API specification
+  ```
+
+
+  #### Invoke a POST request via the Interactive doc
+
+
+  ![](https://raw.githubusercontent.com/cdimascio/generator-express-no-stress/master/assets/interactive-doc.png)
+
+
+  ### Linting
+
+
+  express-no-stress uses [ESLint](http://eslint.org/) and provides two choices,
+  Airbnb or Prettier.
+
+
+  To add your own ESLint customizations, edit`.eslintrc.json`.
+
+
+  Note that the Airbnb variant provides a slightly modified Airbnb
+  [base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)
+  configuration.
+
+
+  ## FAQs
+
+
+  **Q**: What about Node.js 6.x?
+
+
+  **A**:`generator-express-no-stress` now uses Babel 7. Babel 7 tooling requires
+  Node.js 8 or greater. To use `generator-express-no-stress` with Node.js 6,
+  install version 3.5.4.
+
+
+  ```shell
+
+  npm install -g yo generator-express-no-stress@3.5.4
+
+  ```
+
+
+  ## License
+
+
+  [MIT](LICENSE)
 dansharisan/larapiauth: >
   # larapiauth
 
@@ -63151,7 +63771,9 @@ cdimascio/generator-express-no-stress-typescript: >
   # generator-express-no-stress-typescript
 
 
-  ![](https://img.shields.io/badge/status-stable-green.svg) [![Codacy
+  ![](https://img.shields.io/badge/status-stable-green.svg)
+  ![](https://img.shields.io/npm/v/generator-express-no-stress-typescript.svg)
+  [![Codacy
   Badge](https://api.codacy.com/project/badge/Grade/21e362094c5a4c0da4841fc172cee95d)](https://www.codacy.com/app/cdimascio/generator-express-no-stress-typescript?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/generator-express-no-stress-typescript&utm_campaign=Badge_Grade)
   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -64589,6 +65211,8 @@ lezhnev74/openapi-psr7-validator: >
 
   - [Jason Judge](https://github.com/judgej)
 
+  - [Yannick Chenot](https://github.com/osteel)
+
   - A big thank you to [Henrik Karlström](https://github.com/hkarlstrom) who
   kind of inspired me to work on this package. 
 
@@ -64878,21 +65502,22 @@ Redocly/create-openapi-repo: >
 
   ## Why?
 
-  There are a few advantages in hosting your API specification + docs on GitHub:
+  There are a few advantages in hosting your API definition + docs on GitHub:
    - Community engagement (PR's and issues)
    - Hosting on GitHub pages (perfect uptime, CDN, Jekyll, custom domains with CNAME)
    - Advertisment in the GitHub community
    - Revision history, branching, CI
-   - Fast on-boarding time (everyone knows how to use GitHub :smile:)
+   - Fast on-boarding time (developers and tech writers know how to use GitHub :smile:)
+   - Fully compatible with Redocly API Reference too
 
   ## Features
 
   This generator helps to create a GitHub repo with the following features:
-   - Possibility to split a big OpenAPI spec into smaller files and bundle it for deployment
+   - Possibility to split a big OpenAPI definition into smaller files and bundle it for deployment
    - Continuous integration/deployment on Travis
    - Code samples as separate files
-   - OpenAPI spec is validated after each commit
-   - OpenAPI spec + ReDoc deployed to Github Pages (you can use a custom domain)
+   - OpenAPI definition is validated after each commit
+   - OpenAPI definition + ReDoc deployed to Github Pages (you can use a custom domain)
    - Live editing in your editor or `swagger-editor` :heart_eyes:
    ![live editing](./live-edit.gif)
 
@@ -64954,3 +65579,67 @@ Redocly/create-openapi-repo: >
   https://david-dm.org/Rebilly/generator-openapi-repo.svg?theme=shields.io
 
   [daviddm-url]: https://david-dm.org/Rebilly/generator-openapi-repo
+mrin9/RapiPdf: >-
+  <img alt="MrinDoc logo"
+  src="https://github.com/mrin9/RapiPdf/blob/master/logo.png" width="60px" />
+
+
+
+  <p align="center">
+      <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"/>
+      <img src="https://img.shields.io/github/size/mrin9/rapipdf/dist/rapipdf-min.js.svg?colorB=blue&label=minified&style=flat-square">
+      <img src="https://img.shields.io/github/size/mrin9/rapipdf/dist/rapipdf-min.js.gz.svg?colorB=blue&label=zip&style=flat-square">
+  </p>        
+
+
+  # RapiPDF
+
+  Custom Eelement for Open-API to PDF generation
+
+
+  ## Features
+
+  - Supports Swagger 2.0 and OpenAPI 3.0 
+
+  - Generate PDF using Web-Component 
+
+  - Works with any framework or with no framework
+
+  - Plenty of customizing options, including selection of brand colors
+
+  - Supported on Chrome, FireFox and Safari. (Not yet tested on Edge)
+
+
+  ## Documentation
+
+  [Check out the usage and examples](https://mrin9.github.io/RapiPdf/)
+
+
+  ## Build Process
+
+  We recommend `yarn` over `npm` as we use yarn
+  [resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/)
+  to keep the bundle size smaller. As of this writing this feature is not
+  supported in npm natively 
+
+  ```bash
+
+  # Clone / Download the project then
+
+  yarn install
+
+
+  # build will generate rapidoc-min.js, this is the only file you will need.
+
+  # use it in the script tag of your html <script type="text/javascript"
+  src="rapidoc-min.js"></script></body>
+
+  yarn build 
+
+
+  # for developement use yarn serve (this will start an webserver at port 8080,
+  then navigate to localhost:8080) 
+
+  yarn serve
+
+  ```
