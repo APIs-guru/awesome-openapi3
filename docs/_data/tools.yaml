@@ -471,7 +471,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -862,24 +862,6 @@
   license: MIT
   downloads: 1085
   downloadStr: 1.09K
-- github: 'https://github.com/Rebilly/ReDoc'
-  v2: true
-  v3: true
-  category: documentation
-  name: redoc
-  description: "\U0001F4D8  OpenAPI/Swagger-generated API Reference Documentation"
-  language: TypeScript
-  archived: false
-  stars: 5743
-  watch: 147
-  forks: 665
-  updated: '2019-06-06T20:52:51Z'
-  issues: 206
-  owner: Redocly
-  logo: 'https://avatars1.githubusercontent.com/u/32099856?v=4'
-  license: MIT
-  downloads: 715449
-  downloadStr: 715.45K
 - name: create-openapi-repo
   category: documentation
   github: 'https://github.com/Rebilly/generator-openapi-repo'
@@ -932,8 +914,9 @@
   downloads: 1085
   downloadStr: 1.09K
 - github: 'https://github.com/Redocly/redoc'
+  v2: true
   v3: true
-  category: unclassified
+  category: documentation
   name: redoc
   description: "\U0001F4D8  OpenAPI/Swagger-generated API Reference Documentation"
   language: TypeScript
