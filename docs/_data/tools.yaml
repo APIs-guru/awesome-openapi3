@@ -1,3 +1,11 @@
+- name: VS Code / OpenAPI editor
+  category: editors
+  language: Various
+  link: 'https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi'
+  description: >-
+    Microsoft Visual Studio Code extension for OpenAPI v2 and v3 
+    including features such as IntelliSense, linting, schema enforcement, 
+    code navigation, definition links, snippets, and more!
 - name: Vert.x Web API Contract
   category: frameworks
   description: >-
