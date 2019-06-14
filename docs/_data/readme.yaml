@@ -6347,7 +6347,7 @@ BigstickCarpet/swagger-cli: >
 
   --------------------------
 
-  Install using [npm](https://docs.npmjs.com/getting-started/what-is-npm):
+  Install using [npm](https://docs.npmjs.com/about-npm/):
 
 
   ```bash
@@ -6772,7 +6772,7 @@ RepreZen/KaiZen-OpenApi-Parser: >
   * [Getting Started Guide](GettingStarted.md)
 
   * [API Overview](API-Overview.md)
-networknt/openapi-parser: >-
+networknt/openapi-parser: >
   # openapi-parser
 
 
@@ -9165,11 +9165,14 @@ Mermade/openapi-filter: >
 
 
   Options:
-    --valid        try to ensure inverse output is valid                 [boolean]
-    -h, --help     Show help                                             [boolean]
-    --version      Show version number                                   [boolean]
-    -i, --inverse  output filtered elements only                         [boolean]
-    -t, --tags     tags to filter by             [array] [default: ["x-internal"]]
+    --valid           try to ensure inverse output is valid                 [boolean]
+    -h, --help        Show help                                             [boolean]
+    --version         Show version number                                   [boolean]
+    -i, --inverse     output filtered elements only                         [boolean]
+    -t, --tags        tags to filter by             [array] [default: ["x-internal"]]
+    -s, --strip       strip the tags after filtering                        [boolean]
+    -o, --overrides   tags that act as overrides                [array] [default: []]
+    -l, --lineWidth   determines the line width of the output                [number]
   ```
 
 
@@ -38865,8 +38868,8 @@ raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nG
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-06-06T10:31:26Z","pushed_at":"2019-01-25T20:55:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":29779,"stargazers_count":467,"watchers_count":467,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":74,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":34,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":74,"open_issues":34,"watchers":467,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":74,"subscribers_count":18}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-06-13T09:52:06Z","pushed_at":"2019-06-12T17:14:07Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":30713,"stargazers_count":467,"watchers_count":467,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":74,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":74,"open_issues":32,"watchers":467,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":74,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44798,7 +44801,8 @@ OpenAPITools/openapi-generator: >
   * [@ackintosh](https://github.com/ackintosh) (2018/02)
   [:heart:](https://www.patreon.com/ackintosh/overview)
 
-  * [@jmini](https://github.com/jmini) (2018/04)
+  * [@jmini](https://github.com/jmini) (2018/04) 
+  [:heart:](https://www.patreon.com/jmini)
 
   * [@etherealjoy](https://github.com/etherealjoy) (2019/06)
 
@@ -45114,6 +45118,7 @@ OpenAPITools/openapi-generator: >
   - [Jon Schoning](https://github.com/jonschoning)
 
   - [Jérémie Bresson](https://github.com/jmini)
+  [:heart:](https://www.patreon.com/jmini)
 
   - [Jörn Ahrens](https://github.com/jayearn)
 
@@ -46230,6 +46235,10 @@ thomaxxl/safrs: >
   This decorator generates a schema based on the function documentation. This
   documentation contains yaml specification of the API which is used by the
   swagger UI. 
+
+
+  [api_methods.py](safrs/api_methods.py) contains a couple of methods that can
+  be used in your models.
 
 
   The yaml specification has to be in the first part of the function and class
@@ -50355,8 +50364,10 @@ wzshiming/gen: >
             - [X] File
             - [X] Value
           - [ ] URLEncode
-    - [Javascript client](https://github.com/swagger-api/swagger-js)
-    - [Other language client](https://github.com/swagger-api/swagger-codegen/tree/3.0.0)
+    - Other Client
+      - [OpenAPITools/openapi-generator](https://github.com/OpenAPITools/openapi-generator)
+      - [swagger-api/swagger-js](https://github.com/swagger-api/swagger-js)
+      - [swagger-api/swagger-codegen](https://github.com/swagger-api/swagger-codegen/tree/3.0.0)
   - [ ] gRPC & Proto3
 
 
@@ -50666,7 +50677,7 @@ Rots/n26-api: >+
 
   * https://github.com/PierrickP/n26 JSON API
 
-isa-group/oas-tools: "# oas-tools\n\n[![Build Status](https://travis-ci.org/isa-group/oas-tools.svg?branch=master)](https://travis-ci.org/isa-group/oas-tools)\n[![dependencies Status](https://david-dm.org/isa-group/oas-tools/status.svg)](https://david-dm.org/isa-group/oas-tools)\n[![codecov](https://codecov.io/gh/isa-group/oas-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-tools)\n[![Known Vulnerabilities](https://snyk.io/test/github/isa-group/oas-tools/badge.svg?targetFile=package.json)](https://snyk.io/test/github/isa-group/oas-tools?targetFile=package.json)\n[![Greenkeeper badge](https://badges.greenkeeper.io/isa-group/oas-tools.svg)](https://greenkeeper.io/)\n\n[![NPM](https://nodei.co/npm/oas-tools.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-tools/)\n\nThis module supports the management of RESTfull APIs defined with OpenAPI 3.0 Specs over express servers.\n\nIf you are creating an API from scratch we recommend you to take a look at [oas-generator](https://github.com/isa-group/oas-generator)\n\nWe have a 3 min. tutorial:\n\n<a href=\"https://youtu.be/1R0K2smpBt0\" alt=\"oas-tools (v2.0.3) introduction - Click to Watch!\"><img src=\"https://i.imgur.com/DFJx5LK.jpg\" align=\"center\" width=\"300\" alt=\"oas-tools introduction (v2.0.3)- Click to Watch!\"></a>\n\n## 1. Install oas-tools\n```bash\nnpm install oas-tools --save\n```\n\n## 2. Use oas-tools\n\nRequire the installed module in your app's index file, just like:\n\n```javascript\nvar oasTools = require('oas-tools');\n```\n\nThe module oas-tools requires the specification file of the NodeJS application, therefore load it as follow using fs and jsyaml:\n\n```javascript\nvar jsyaml = require('js-yaml');\nvar fs = require('fs');\n\nvar spec = fs.readFileSync(path.join('path/to/spec/file'), 'utf8');\nvar oasDoc = jsyaml.safeLoad(spec);\n```\n\n[Note: you might want to use the module ‘path’ for loading the specification file, that way your app will work on any OS]\n\n\n__It is also possible to set configuration variables, these are them:__\n\n| Name\t| Type\t| Explanation / Values |\n| ------------- | ------------- | ------------- |\n|`logLevel` | `String` | Possible values from less to more level of verbosity are: error, warning, custom, info and debug. Ignored if `customLogger` is used. Default is info. |\n|`logFile` | `String` | Logs file path. Ignored if `customLogger` is used. |\n|`customLogger` | `Object` | Replaces the included logger with the one specified here, so that you can reuse your own logger. `logLevel` and `logFile` will be ignored if this variable is used. Null by default. |\n|`controllers` | `String` | Controllers location path. |\n|`checkControllers` | `Boolean` | Checks if controllers exist for all specified methods. True by default. |\n|`strict`\t| `Boolean` | Indicates whether validation must stop the request process if errors were found when validating according to specification file. false by default. |\n|`router`\t| `Boolean` | Indicates whether router middleware should be used. True by default. |\n|`validator` | `Boolean` | Indicates whether validator middleware should be used. True by default. |\n|`docs` | `Object` | Settings used for Swagger UI, detailed in the following four rows. If you do not want to use the default values, you must specify values for all four settings, even if you only want to change one of them. |\n|`docs.apiDocs` | `String` | Indicates the path where the OAS specification will be available. `/api-docs` by default. |\n|`docs.apiDocsPrefix` | `String` | Indicates a prefix to be prepended to `docs.apiDocs`. Empty by default. |\n|`docs.swaggerUi` | `String` | Indicates the path where Swagger UI will be available. Ignored if `docs.apiDocs` is not set. `/docs` by default. |\n|`docs.swaggerUiPrefix` | `String` | Indicates a prefix to be prepended to `docs.swaggerUi`. Empty by default. |\n|`oasSecurity` | `Boolean` | Indicates whether security components defined in the spec file will be handled based on `securityFile` settings. `securityFile` will be ignored if this is set to false. Refer to [oasSecurity](#2-oassecurity) for more information. False by default. |\n|`securityFile` | `Object`| Defines the settings that will be used to handle security. Ignored if `oasSecurity` is set to false. Null by default. |\n|`oasAuth` | `Boolean` | Indicates whether authorization will be automatically handled based on `grantsFile` settings. `grantsFile` will be ignored if this is set to false. Refer to [oasAuth](#3-oasauth) for more information. False by default. |\n|`grantsFile` | `Object` | Defines the settings that will be use to handle automatic authorization. Ignored if `oasAuth` is set to false. Null by default. |\n|`ignoreUnknownFormats` | `Boolean`\t| Indicates whether z-schema validator must ignore unknown formats when validating requests and responses. True by default. |\n\nFor setting these variables you can use the function configure and pass to it either a JavaScript object or a yaml/json file containing such object.\n\n```javascript\nvar options_object = {\n  controllers: '/path/to/controllers',\n  checkControllers: true,\n  loglevel: 'info',\n  logfile: '/path/to/logs/file',\n  // customLogger: myLogger,\n  strict: false,\n  router: true,\n  validator: true,\n  docs: {\n    apiDocs: '/api-docs',\n    apiDocsPrefix: '',\n    swaggerUi: '/docs',\n    swaggerUiPrefix: ''\n  }\n  oasSecurity: true,\n  securityFile: {\n    // your security settings\n  },\n  oasAuth: true,\n  grantsFile: {\n    // your authorization settings\n  },\n  ignoreUnknownFormats: true\n};\n\noasTools.configure(options_object);\n```\n\n[Note: it is not mandatory to set all configuration variables when using this functions, oas-tools will set the other ones by default]\n\n\nFinally for initializing the middlewares right before your app is up and running, the function ‘initialize’ must be used. It receives the specification file, the express server object and a callback function where you must start your server:\n\n```javascript\noasTools.initialize(oasDoc, app, function() {\n  http.createServer(app).listen(8080, function() {\n    console.log(\"App up and running!\");\n  });\n});\n```\n\n### 1. Migrate from swagger-tools to oas-tools\n\nOas-tools works with Express while swagger-tools works with Connect, therefore in order to use your swagger-codegen generated NodeJS server with oas-tools you have to leave connect behind and use express and an openapi version 3 file. This can be easily achievable by following just 4 simple steps:\n\n\n__1.Change from connect to express:__\n\nOas-tools needs express module to work, connect doesn’t have the needed features.\nTherefore you must install express:\n\n```bash\nnpm install express --save\n```\n\nThen change the require on your app’s index file, get rid of connect!\n\n```javascript\nvar express = require('express');\nvar app = express();\n```\n\n\n__2.Require oas-tools instead of swagger-tools:__\n\nChange from swagger-tools to oas-tools by just installing it and modifying the require:\n\n```bash\nnpm install oas-tools --save\n```\n\n```javascript\nvar swaggerTools = require('oas-tools');\n```\n\n\n __3.\tConvert your specification file from version 2 to version 3:__\n\nAs you may know oas-tools works only with the version 3 of the specification, therefore you should update you specification file.\nUse [this tool](https://mermade.org.uk/openapi-converter) to do so. Once you get the translation simply copy-past it to you former specification file.\n\n[Note: Minor adjustment on the translated specification may be required. Validate it using [swagger validator](https://editor.swagger.io//?_ga=2.51587887.728712022.1527179832-1439038723.1495297764#/) ]\n\n __4.\tProvide express server object to initialize method:__\n\nFinally give the server object to oas-tools. It needs it to manage routes the right way. Just place it as a second parameter for the initializeMiddleware function.\n\n```javascript\nswaggerTools.initializeMiddleware(swaggerDoc, app, function(middleware) {\n  // Configuration of usage of swagger middlewares with app.use()\n  ...\n\n  // Start the server\n  ...\n});\n```\n\n__5.\tAdd name property to request bodies:__\n\nOpenAPI Specification version 3 defines request's body in a different way, it is not a parameter as it is in Swagger version 2. Now requests bodies are defined in a section 'requestBody' which doesn't have name property, therefore it needs this property to work with your swagger-codegen generated controllers. Simply add to each requestBody secction the property 'x-name:' and the name of the resource. Check out this example:\n\n```yaml\npost:\n  summary: Create a pet\n  operationId: createPets\n  tags:\n    - pets\n  requestBody:\n    description: Pet to add to the store\n    x-name: pet\n    required: true\n    content:\n      application/json:\n        schema:\n          $ref: '#/components/schemas/Pet'\n```\n\n__6.\t(optional) use `multer` for binary uploads:__\n\nThe default middleware for handling file uploads in `express` via `multipart/form-data` is [`multer`](https://github.com/expressjs/multer). Use it in addition to the json body parser when initializing the server:\n```js \nconst bodyParser = require('body-parser');\nconst multer = require('multer');\nconst upload = multer();\n\nconst app = express();\napp.use(bodyParser.json({\n  strict: false\n}));\napp.use(upload.any());\n``` \n\nAlso make sure that the application consuming the openAPI server sends the file input form name according to the openAPI spec:\n```yaml\n/endPoint:\n    post:\n      requestBody:\n        required: true\n        x-name: endPointPost\n        content:\n          multipart/form-data:\n            schema:\n              type: object\n              required:\n                - file\n                - id\n                - name\n              properties:\n                file: # <- this is the form field name that needs to be present in the POST payload\n                  type: string\n                  format: binary\n                  description: a binary file uploaded via openAPI spec\n                id:\n                  type: string # it's a form field, so will always be a string\n                name:\n                  type: string\n```\n\n\nOnce you have done all this, leave the rest the way it is and just run your appliaction with ‘node index.js’ or any other command you have specified at your package.json for running the application.\n\n## 2. oasSecurity\n\nThe configuration variables `oasSecurity` and `securityFile` allow the use of handlers to manage authentication. This works similarly to the swagger-security middleware found in [swagger-tools](https://github.com/apigee-127/swagger-tools). In fact, most of our code is reused from that same middleware. We have only adapted it to work with OAS 3.0 and made some changes to allow automatic validation of JWTs (more on that later).\n\nTo start using oasSecurity, you should include some [security schemes](https://swagger.io/docs/specification/authentication/) in your specification file. For example, to define a scheme named Bearer that will use JWTs:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n```\n\nThen you need to bind the different schemes to your endpoints. You can bind a scheme to the whole API, or to specific paths and methods. Refer to the previous link for more information.\n\nNow you need to define the handlers that will take care of the validation of the requests made to your API. To do this, simply create a function that takes the express req object, the security scheme, the value that will be validated, and a callback as inputs. Inside this function, perform all the checks and validations that you need, and finally call the callback function. Following the previous example, if we want to validate a JWT signed with the key 'secretKey' and check that the issuer is 'ISA Auth', we would define the following function:\n\n```javascript\nvar jwt = require('jsonwebtoken');\n\nfunction verifyToken(req, secDef, token, next) {\n  const bearerRegex = /^Bearer\\s/;\n  \n  if (token && bearerRegex.test(token)) {\n    var newToken = token.replace(bearerRegex, '');\n    jwt.verify(newToken, 'secretKey',\n      {\n        issuer: 'ISA Auth'\n      },\n      (error, decoded) => {\n        if (error === null && decoded) {\n          return next();\n        }\n        return next(req.res.sendStatus(403));\n      }\n    );\n  } else {\n    return next(req.res.sendStatus(403));\n  }\n}\n```\n\nFinally, you must link the defined functions to their corresponding security schemes. In order to do that, you need to pass an object to the `securityFile` configuration variable containing these relationships. For example, to specify that our `verifyToken` function should be used to handle our previously defined Bearer scheme:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: verifyToken\n  }\n});\n```\n\nAfter following these steps, your validating function will be executed each time a request to any of the endpoints you applied the corresponding security scheme to is made. Please note that any schemes without a linked function will be ignored, except for the ones based on JWTs where configuration is included in the specification file (explained later).\n\nMoreover, since JWT ([JSON Web Token](https://jwt.io/)) validations are almost always the same, oas-tools can do them automatically, that is, you just need to specify some simple parameters instead of a whole function. However, only the issuer, the expiration date and the key are validated, so if you want to check something else, you will need to create a function.\n\nTo automatically validate a JWT, first ensure that your security scheme defines that its type is 'http', its scheme is 'bearer' and its bearerFormat is 'JWT'. Then, simply specify the issuer, the supported algorithms (optional, defaults to only HS256) and the key in the `securityFile` configuration variable. In our previous example, this would be:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: {\n      issuer: 'ISA Auth',\n      algorithms: ['HS256'],\n      key: 'secretKey'\n  }\n});\n```\n\nYou can also pass a file path (absolute or relative) or a URL containing the JSON representation of an object containing these parameters. For example, we have this grants.json file:\n```json\n{\n  \"issuer\": \"ISA Auth\",\n  \"algorithms\": [\"HS256\"],\n  \"key\": \"secretKey\"\n}\n```\n\nOur corresponding configuration would be as follows:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: 'path/to/grants.json'\n  }\n});\n```\n\nYou can also include these parameters directly in your specification file. Simply add an additional attribute in your security scheme definition called 'x-bearer-config' containing the parameters to be used during validation. For example:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n      x-bearer-config:\n        issuer: ISA Auth\n        algorithms:\n          - HS256\n        key: secretKey\n```\n\nSimilarly to the `securityFile` variable, you could specify a path or a URL with a JSON representation of an object with these parameters instead. Remember that even if 'x-bearer-config' is defined in a security scheme, it will be ignored if the `oasSecurity` variable is set to false. Moreover, if a security scheme has been configured in the `securityFile` variable, that configuration will take preference over the one included in 'x-bearer-config'.\n\n## 3. oasAuth\n\nWhen using JWTs in your API, oas-tools also allows you to automatically manage authorization to a certain degree. This is achieved through simple configuration files, and using the modules [accesscontrol](https://github.com/onury/accesscontrol) and [accesscontrol-middleware](https://github.com/pawangspandey/accesscontrol-middleware).\n\nFirst, create a security scheme which uses JWTs in your specification file, ensuring that the type is 'http', the scheme is 'bearer' and the bearerFormat is 'JWT':\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n```\n\nThen, you need to create an object containing the access restrictions. This object is based on the one used in the module 'accesscontrol', so refer to its GitHub page if you need more information. We will create an example and further explain what it defines below:\n\n```javascript\nvar grants = {\n  user: {\n    \"$extend\": [\"anonymous\"],\n    \"pets/cats\": {\n      \"update:own\": [\"*\"]\n    },\n    \"users\": {\n      \"read:any\": [\"*\"]\n    }\n  },\n  anonymous: {\n    \"pets/cats\": {\n      \"read:any\": [\"*\"]\n    }\n  }\n};\n```\n\nIn this object, we have defined two roles: 'user' and 'anonymous'. 'anonymous' can read any cat in the system. 'user' extends 'anonymous', so it inherits the same access restrictions from its parent. Moreover, a 'user' can update its own cats, and it can also read any user in the system. Now, we will take a closer look at the syntax to see what everything means:\n\n- The '$extend' attribute is a list, that means that a role can extend multiple roles.\n- 'pets/cats' means that the defined restriction will be applied to every endpoint that includes 'pets' and 'cats' in its path, in that same order. For example, 'api/pets/{petstoreId}/cats/{catId}' or simply 'pets/cats' will count.\n- 'update' means that the restriction applies to PUT requests. Similarly, you can use 'read' for GET requests, 'create' for POST, and 'delete' for DELETE.\n- 'own' specifies that the role can only access one cat, based on a parameter that we will explain later. 'any' means that the role can access any cat in the whole API.\n- '\\[\"\\*\"\\]' means that the role can access every resource attribute. oas-tools does not use this, but since you can reuse this restrictions in your controllers along with the 'accesscontrol' module, it may be interesting to take it into account. For example, '\\[\"id\", \"breed\"\\]' would mean that the role can only access these two attributes from a cat.\n\nTo use this grants object in your API, simply provide it while configuring oas-tools, linking it to a JWT scheme definition:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasAuth: true,\n  grantsFile: {\n    Bearer: grants\n  }\n});\n```\n\nYou can also pass a file path (absolute or relative) or a URL containing a JSON representation of your access restrictions. Additionally, you can specify the restrictions directly in the security scheme definition in your specification file, including the 'x-acl-config' attribute:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n      x-acl-config:\n        anonymous:\n          pets:\n            \"read:any\":\n              - \"*\"\n```\n\nYou can use a file path or a URL here too. Please note that even if you define 'x-acl-config' here, it will be ignored if the `oasAuth` configuration variable is set to false. Additionally, if a scheme was already linked to a grants object in the `grantsFile` variable, that configuration will take precedence over the one in 'x-acl-config'.\n\nThe role of a client will be taken from the provided JWT. This JWT should contain an attribute called 'role'. If this attribute is not defined, oas-tools will assume the default role of 'anonymous'. Moreover, the parameters used to check ownership should also be present in the JWT, and must be named in a specific way. For example, if a request is made to 'api/pets/{petstoreId}/cats/{catId}' and you want to check 'catId' for ownership, there must be a 'catId' attribute in the JWT. If it is not provided and no 'any' restriction was defined, the client will not have access to this resource. However, if you want to match the path 'catId' parameter to another attribute from the JWT, you can do that in the specification file adding a 'x-acl-binding' attribute to the corresponding parameter:\n\n```yaml\npaths:\n  api/pets/{petstoreId}/cats/{catId}:\n    put:\n      parameters:\n        - name: catId\n          in: path\n          x-acl-binding: customAttribute\n    # ...\n```\n\nThis example will look for a 'customAttribute' attribute in the JWT.\n\n## 4. Errors\n\nSince oas-tools reports validation errors with a common structure, we provide a JSON Schema so that you can validate this errors accordingly in your API implementation. You can use [speccy](https://www.npmjs.com/package/speccy) to convert this JSON Schema into an OpenAPI file.\n\n```json\n{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"required\": [\n      \"message\"\n    ],\n    \"properties\": {\n      \"message\": {\n        \"type\": \"string\",\n        \"examples\": [\n          \"Wrong data in the response.\"\n        ]\n      },\n      \"error\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"required\": [\n            \"code\",\n            \"params\",\n            \"message\",\n            \"path\"\n          ],\n          \"properties\": {\n            \"code\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"INVALID_TYPE\"\n              ]\n            },\n            \"params\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"examples\": [\n                  \"array\",\n                  \"object\"\n                ]\n              }\n            },\n            \"message\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"Expected type array but found type object\"\n              ]\n            },\n            \"path\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"#/\"\n              ]\n            }\n          }\n        }\n      },\n      \"content\": {\n        \"type\": \"object\",\n        \"required\": [\n          \"message\"\n        ],\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"examples\": [\n              \"This is the mockup controller for findPets\"\n            ]\n          }\n        }\n      }\n    }\n  }\n}\n```\n\n## License\n\nCopyright 2018, [ISA Group](http://www.isa.us.es), [University of Sevilla](http://www.us.es)\n\nFor technical inquiry please contact to [engineering team](./extra/team.md).\n\n[![ISA Group](http://www.isa.us.es/2.0/assets/img/theme/logo2.png)](http://www.isa.us.es)\n\nLicensed under the **Apache License, Version 2.0** (the \"[License](./LICENSE)\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\n"
+isa-group/oas-tools: "# oas-tools\n\n[![Build Status](https://travis-ci.org/isa-group/oas-tools.svg?branch=master)](https://travis-ci.org/isa-group/oas-tools)\n[![dependencies Status](https://david-dm.org/isa-group/oas-tools/status.svg)](https://david-dm.org/isa-group/oas-tools)\n[![codecov](https://codecov.io/gh/isa-group/oas-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/isa-group/oas-tools)\n[![Known Vulnerabilities](https://snyk.io/test/github/isa-group/oas-tools/badge.svg?targetFile=package.json)](https://snyk.io/test/github/isa-group/oas-tools?targetFile=package.json)\n[![Greenkeeper badge](https://badges.greenkeeper.io/isa-group/oas-tools.svg)](https://greenkeeper.io/)\n\n[![NPM](https://nodei.co/npm/oas-tools.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/oas-tools/)\n\nThis module supports the management of RESTfull APIs defined with OpenAPI 3.0 Specs over express servers.\n\nIf you are creating an API from scratch we recommend you to take a look at [oas-generator](https://github.com/isa-group/oas-generator)\n\nWe have a 3 min. tutorial:\n\n<a href=\"https://youtu.be/1R0K2smpBt0\" alt=\"oas-tools (v2.0.3) introduction - Click to Watch!\"><img src=\"https://i.imgur.com/DFJx5LK.jpg\" align=\"center\" width=\"300\" alt=\"oas-tools introduction (v2.0.3)- Click to Watch!\"></a>\n\n## 1. Install oas-tools\n```bash\nnpm install oas-tools --save\n```\n\n## 2. Use oas-tools\n\nRequire the installed module in your app's index file, just like:\n\n```javascript\nvar oasTools = require('oas-tools');\n```\n\nThe module oas-tools requires the specification file of the NodeJS application, therefore load it as follow using fs and jsyaml:\n\n```javascript\nvar jsyaml = require('js-yaml');\nvar fs = require('fs');\n\nvar spec = fs.readFileSync(path.join('path/to/spec/file'), 'utf8');\nvar oasDoc = jsyaml.safeLoad(spec);\n```\n\n[Note: you might want to use the module ‘path’ for loading the specification file, that way your app will work on any OS]\n\n\n__It is also possible to set configuration variables, these are them:__\n\n| Name\t| Type\t| Explanation / Values |\n| ------------- | ------------- | ------------- |\n|`logLevel` | `String` | Possible values from less to more level of verbosity are: error, warning, custom, info and debug. Ignored if `customLogger` is used. Default is info. |\n|`logFile` | `String` | Logs file path. Ignored if `customLogger` is used. |\n|`customLogger` | `Object` | Replaces the included logger with the one specified here, so that you can reuse your own logger. `logLevel` and `logFile` will be ignored if this variable is used. Null by default. |\n|`customErrorHandling` | `Boolean` | Indicates if there should be a direct response (`false`) or `next()` should be called for custom error handling |\n|`controllers` | `String` | Controllers location path. |\n|`checkControllers` | `Boolean` | Checks if controllers exist for all specified methods. True by default. |\n|`strict`\t| `Boolean` | Indicates whether validation must stop the request process if errors were found when validating according to specification file. false by default. |\n|`router`\t| `Boolean` | Indicates whether router middleware should be used. True by default. |\n|`validator` | `Boolean` | Indicates whether validator middleware should be used. True by default. |\n|`docs` | `Object` | Settings used for Swagger UI, detailed in the following four rows. If you do not want to use the default values, you must specify values for all four settings, even if you only want to change one of them. |\n|`docs.apiDocs` | `String` | Indicates the path where the OAS specification will be available. `/api-docs` by default. |\n|`docs.apiDocsPrefix` | `String` | Indicates a prefix to be prepended to `docs.apiDocs`. Empty by default. |\n|`docs.swaggerUi` | `String` | Indicates the path where Swagger UI will be available. Ignored if `docs.apiDocs` is not set. `/docs` by default. |\n|`docs.swaggerUiPrefix` | `String` | Indicates a prefix to be prepended to `docs.swaggerUi`. Empty by default. |\n|`oasSecurity` | `Boolean` | Indicates whether security components defined in the spec file will be handled based on `securityFile` settings. `securityFile` will be ignored if this is set to false. Refer to [oasSecurity](#2-oassecurity) for more information. False by default. |\n|`securityFile` | `Object`| Defines the settings that will be used to handle security. Ignored if `oasSecurity` is set to false. Null by default. |\n|`oasAuth` | `Boolean` | Indicates whether authorization will be automatically handled based on `grantsFile` settings. `grantsFile` will be ignored if this is set to false. Refer to [oasAuth](#3-oasauth) for more information. False by default. |\n|`grantsFile` | `Object` | Defines the settings that will be use to handle automatic authorization. Ignored if `oasAuth` is set to false. Null by default. |\n|`ignoreUnknownFormats` | `Boolean`\t| Indicates whether z-schema validator must ignore unknown formats when validating requests and responses. True by default. |\n\nFor setting these variables you can use the function configure and pass to it either a JavaScript object or a yaml/json file containing such object.\n\n```javascript\nvar options_object = {\n  controllers: '/path/to/controllers',\n  checkControllers: true,\n  loglevel: 'info',\n  logfile: '/path/to/logs/file',\n  // customLogger: myLogger,\n  strict: false,\n  router: true,\n  validator: true,\n  docs: {\n    apiDocs: '/api-docs',\n    apiDocsPrefix: '',\n    swaggerUi: '/docs',\n    swaggerUiPrefix: ''\n  }\n  oasSecurity: true,\n  securityFile: {\n    // your security settings\n  },\n  oasAuth: true,\n  grantsFile: {\n    // your authorization settings\n  },\n  ignoreUnknownFormats: true\n};\n\noasTools.configure(options_object);\n```\n\n[Note: it is not mandatory to set all configuration variables when using this functions, oas-tools will set the other ones by default]\n\n\nFinally for initializing the middlewares right before your app is up and running, the function ‘initialize’ must be used. It receives the specification file, the express server object and a callback function where you must start your server:\n\n```javascript\noasTools.initialize(oasDoc, app, function() {\n  http.createServer(app).listen(8080, function() {\n    console.log(\"App up and running!\");\n  });\n});\n```\n\n### 1. Migrate from swagger-tools to oas-tools\n\nOas-tools works with Express while swagger-tools works with Connect, therefore in order to use your swagger-codegen generated NodeJS server with oas-tools you have to leave connect behind and use express and an openapi version 3 file. This can be easily achievable by following just 4 simple steps:\n\n\n__1.Change from connect to express:__\n\nOas-tools needs express module to work, connect doesn’t have the needed features.\nTherefore you must install express:\n\n```bash\nnpm install express --save\n```\n\nThen change the require on your app’s index file, get rid of connect!\n\n```javascript\nvar express = require('express');\nvar app = express();\n```\n\n\n__2.Require oas-tools instead of swagger-tools:__\n\nChange from swagger-tools to oas-tools by just installing it and modifying the require:\n\n```bash\nnpm install oas-tools --save\n```\n\n```javascript\nvar swaggerTools = require('oas-tools');\n```\n\n\n __3.\tConvert your specification file from version 2 to version 3:__\n\nAs you may know oas-tools works only with the version 3 of the specification, therefore you should update you specification file.\nUse [this tool](https://mermade.org.uk/openapi-converter) to do so. Once you get the translation simply copy-past it to you former specification file.\n\n[Note: Minor adjustment on the translated specification may be required. Validate it using [swagger validator](https://editor.swagger.io//?_ga=2.51587887.728712022.1527179832-1439038723.1495297764#/) ]\n\n __4.\tProvide express server object to initialize method:__\n\nFinally give the server object to oas-tools. It needs it to manage routes the right way. Just place it as a second parameter for the initializeMiddleware function.\n\n```javascript\nswaggerTools.initializeMiddleware(swaggerDoc, app, function(middleware) {\n  // Configuration of usage of swagger middlewares with app.use()\n  ...\n\n  // Start the server\n  ...\n});\n```\n\n__5.\tAdd name property to request bodies:__\n\nOpenAPI Specification version 3 defines request's body in a different way, it is not a parameter as it is in Swagger version 2. Now requests bodies are defined in a section 'requestBody' which doesn't have name property, therefore it needs this property to work with your swagger-codegen generated controllers. Simply add to each requestBody secction the property 'x-name:' and the name of the resource. Check out this example:\n\n```yaml\npost:\n  summary: Create a pet\n  operationId: createPets\n  tags:\n    - pets\n  requestBody:\n    description: Pet to add to the store\n    x-name: pet\n    required: true\n    content:\n      application/json:\n        schema:\n          $ref: '#/components/schemas/Pet'\n```\n\n__6.\t(optional) use `multer` for binary uploads:__\n\nThe default middleware for handling file uploads in `express` via `multipart/form-data` is [`multer`](https://github.com/expressjs/multer). Use it in addition to the json body parser when initializing the server:\n```js \nconst bodyParser = require('body-parser');\nconst multer = require('multer');\nconst upload = multer();\n\nconst app = express();\napp.use(bodyParser.json({\n  strict: false\n}));\napp.use(upload.any());\n``` \n\nAlso make sure that the application consuming the openAPI server sends the file input form name according to the openAPI spec:\n```yaml\n/endPoint:\n    post:\n      requestBody:\n        required: true\n        x-name: endPointPost\n        content:\n          multipart/form-data:\n            schema:\n              type: object\n              required:\n                - file\n                - id\n                - name\n              properties:\n                file: # <- this is the form field name that needs to be present in the POST payload\n                  type: string\n                  format: binary\n                  description: a binary file uploaded via openAPI spec\n                id:\n                  type: string # it's a form field, so will always be a string\n                name:\n                  type: string\n```\n\n\nOnce you have done all this, leave the rest the way it is and just run your appliaction with ‘node index.js’ or any other command you have specified at your package.json for running the application.\n\n## 2. oasSecurity\n\nThe configuration variables `oasSecurity` and `securityFile` allow the use of handlers to manage authentication. This works similarly to the swagger-security middleware found in [swagger-tools](https://github.com/apigee-127/swagger-tools). In fact, most of our code is reused from that same middleware. We have only adapted it to work with OAS 3.0 and made some changes to allow automatic validation of JWTs (more on that later).\n\nTo start using oasSecurity, you should include some [security schemes](https://swagger.io/docs/specification/authentication/) in your specification file. For example, to define a scheme named Bearer that will use JWTs:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n```\n\nThen you need to bind the different schemes to your endpoints. You can bind a scheme to the whole API, or to specific paths and methods. Refer to the previous link for more information.\n\nNow you need to define the handlers that will take care of the validation of the requests made to your API. To do this, simply create a function that takes the express req object, the security scheme, the value that will be validated, and a callback as inputs. Inside this function, perform all the checks and validations that you need, and finally call the callback function. Following the previous example, if we want to validate a JWT signed with the key 'secretKey' and check that the issuer is 'ISA Auth', we would define the following function:\n\n```javascript\nvar jwt = require('jsonwebtoken');\n\nfunction verifyToken(req, secDef, token, next) {\n  const bearerRegex = /^Bearer\\s/;\n  \n  if (token && bearerRegex.test(token)) {\n    var newToken = token.replace(bearerRegex, '');\n    jwt.verify(newToken, 'secretKey',\n      {\n        issuer: 'ISA Auth'\n      },\n      (error, decoded) => {\n        if (error === null && decoded) {\n          return next();\n        }\n        return next(req.res.sendStatus(403));\n      }\n    );\n  } else {\n    return next(req.res.sendStatus(403));\n  }\n}\n```\n\nFinally, you must link the defined functions to their corresponding security schemes. In order to do that, you need to pass an object to the `securityFile` configuration variable containing these relationships. For example, to specify that our `verifyToken` function should be used to handle our previously defined Bearer scheme:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: verifyToken\n  }\n});\n```\n\nAfter following these steps, your validating function will be executed each time a request to any of the endpoints you applied the corresponding security scheme to is made. Please note that any schemes without a linked function will be ignored, except for the ones based on JWTs where configuration is included in the specification file (explained later).\n\nMoreover, since JWT ([JSON Web Token](https://jwt.io/)) validations are almost always the same, oas-tools can do them automatically, that is, you just need to specify some simple parameters instead of a whole function. However, only the issuer, the expiration date and the key are validated, so if you want to check something else, you will need to create a function.\n\nTo automatically validate a JWT, first ensure that your security scheme defines that its type is 'http', its scheme is 'bearer' and its bearerFormat is 'JWT'. Then, simply specify the issuer, the supported algorithms (optional, defaults to only HS256) and the key in the `securityFile` configuration variable. In our previous example, this would be:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: {\n      issuer: 'ISA Auth',\n      algorithms: ['HS256'],\n      key: 'secretKey'\n  }\n});\n```\n\nYou can also pass a file path (absolute or relative) or a URL containing the JSON representation of an object containing these parameters. For example, we have this grants.json file:\n```json\n{\n  \"issuer\": \"ISA Auth\",\n  \"algorithms\": [\"HS256\"],\n  \"key\": \"secretKey\"\n}\n```\n\nOur corresponding configuration would be as follows:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasSecurity: true,\n  securityFile: {\n    Bearer: 'path/to/grants.json'\n  }\n});\n```\n\nYou can also include these parameters directly in your specification file. Simply add an additional attribute in your security scheme definition called 'x-bearer-config' containing the parameters to be used during validation. For example:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n      x-bearer-config:\n        issuer: ISA Auth\n        algorithms:\n          - HS256\n        key: secretKey\n```\n\nSimilarly to the `securityFile` variable, you could specify a path or a URL with a JSON representation of an object with these parameters instead. Remember that even if 'x-bearer-config' is defined in a security scheme, it will be ignored if the `oasSecurity` variable is set to false. Moreover, if a security scheme has been configured in the `securityFile` variable, that configuration will take preference over the one included in 'x-bearer-config'.\n\n## 3. oasAuth\n\nWhen using JWTs in your API, oas-tools also allows you to automatically manage authorization to a certain degree. This is achieved through simple configuration files, and using the modules [accesscontrol](https://github.com/onury/accesscontrol) and [accesscontrol-middleware](https://github.com/pawangspandey/accesscontrol-middleware).\n\nFirst, create a security scheme which uses JWTs in your specification file, ensuring that the type is 'http', the scheme is 'bearer' and the bearerFormat is 'JWT':\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n```\n\nThen, you need to create an object containing the access restrictions. This object is based on the one used in the module 'accesscontrol', so refer to its GitHub page if you need more information. We will create an example and further explain what it defines below:\n\n```javascript\nvar grants = {\n  user: {\n    \"$extend\": [\"anonymous\"],\n    \"pets/cats\": {\n      \"update:own\": [\"*\"]\n    },\n    \"users\": {\n      \"read:any\": [\"*\"]\n    }\n  },\n  anonymous: {\n    \"pets/cats\": {\n      \"read:any\": [\"*\"]\n    }\n  }\n};\n```\n\nIn this object, we have defined two roles: 'user' and 'anonymous'. 'anonymous' can read any cat in the system. 'user' extends 'anonymous', so it inherits the same access restrictions from its parent. Moreover, a 'user' can update its own cats, and it can also read any user in the system. Now, we will take a closer look at the syntax to see what everything means:\n\n- The '$extend' attribute is a list, that means that a role can extend multiple roles.\n- 'pets/cats' means that the defined restriction will be applied to every endpoint that includes 'pets' and 'cats' in its path, in that same order. For example, 'api/pets/{petstoreId}/cats/{catId}' or simply 'pets/cats' will count.\n- 'update' means that the restriction applies to PUT requests. Similarly, you can use 'read' for GET requests, 'create' for POST, and 'delete' for DELETE.\n- 'own' specifies that the role can only access one cat, based on a parameter that we will explain later. 'any' means that the role can access any cat in the whole API.\n- '\\[\"\\*\"\\]' means that the role can access every resource attribute. oas-tools does not use this, but since you can reuse this restrictions in your controllers along with the 'accesscontrol' module, it may be interesting to take it into account. For example, '\\[\"id\", \"breed\"\\]' would mean that the role can only access these two attributes from a cat.\n\nTo use this grants object in your API, simply provide it while configuring oas-tools, linking it to a JWT scheme definition:\n\n```javascript\noasTools.configure({\n  // other configuration variables\n  oasAuth: true,\n  grantsFile: {\n    Bearer: grants\n  }\n});\n```\n\nYou can also pass a file path (absolute or relative) or a URL containing a JSON representation of your access restrictions. Additionally, you can specify the restrictions directly in the security scheme definition in your specification file, including the 'x-acl-config' attribute:\n\n```yaml\ncomponents:\n  securitySchemes:\n    Bearer:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n      x-acl-config:\n        anonymous:\n          pets:\n            \"read:any\":\n              - \"*\"\n```\n\nYou can use a file path or a URL here too. Please note that even if you define 'x-acl-config' here, it will be ignored if the `oasAuth` configuration variable is set to false. Additionally, if a scheme was already linked to a grants object in the `grantsFile` variable, that configuration will take precedence over the one in 'x-acl-config'.\n\nThe role of a client will be taken from the provided JWT. This JWT should contain an attribute called 'role'. If this attribute is not defined, oas-tools will assume the default role of 'anonymous'. Moreover, the parameters used to check ownership should also be present in the JWT, and must be named in a specific way. For example, if a request is made to 'api/pets/{petstoreId}/cats/{catId}' and you want to check 'catId' for ownership, there must be a 'catId' attribute in the JWT. If it is not provided and no 'any' restriction was defined, the client will not have access to this resource. However, if you want to match the path 'catId' parameter to another attribute from the JWT, you can do that in the specification file adding a 'x-acl-binding' attribute to the corresponding parameter:\n\n```yaml\npaths:\n  api/pets/{petstoreId}/cats/{catId}:\n    put:\n      parameters:\n        - name: catId\n          in: path\n          x-acl-binding: customAttribute\n    # ...\n```\n\nThis example will look for a 'customAttribute' attribute in the JWT.\n\n## 4. Errors\n\nSince oas-tools reports validation errors with a common structure, we provide a JSON Schema so that you can validate this errors accordingly in your API implementation. You can use [speccy](https://www.npmjs.com/package/speccy) to convert this JSON Schema into an OpenAPI file.\n\n```json\n{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"required\": [\n      \"message\"\n    ],\n    \"properties\": {\n      \"message\": {\n        \"type\": \"string\",\n        \"examples\": [\n          \"Wrong data in the response.\"\n        ]\n      },\n      \"error\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"required\": [\n            \"code\",\n            \"params\",\n            \"message\",\n            \"path\"\n          ],\n          \"properties\": {\n            \"code\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"INVALID_TYPE\"\n              ]\n            },\n            \"params\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"string\",\n                \"examples\": [\n                  \"array\",\n                  \"object\"\n                ]\n              }\n            },\n            \"message\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"Expected type array but found type object\"\n              ]\n            },\n            \"path\": {\n              \"type\": \"string\",\n              \"examples\": [\n                \"#/\"\n              ]\n            }\n          }\n        }\n      },\n      \"content\": {\n        \"type\": \"object\",\n        \"required\": [\n          \"message\"\n        ],\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"examples\": [\n              \"This is the mockup controller for findPets\"\n            ]\n          }\n        }\n      }\n    }\n  }\n}\n```\n\nBy default, the errors are returned by a direct HTTP 400 response. If you need custom error handling, you may set the `customErrorHandling` config property to `true`, \nwhich causes validation errors to be passed to `next()`. The following properties are set:\n\n| Name\t| Type\t| Explanation / Values |\n| ------------- | ------------- | ------------- |\n|`failedValidation` | `Boolean` | Property can be used to check if the error comes from the oas validation. |\n|`validationResult` | `Object` | Validation results conforming to the beforementioned schema. |\n \n\n## License\n\nCopyright 2018, [ISA Group](http://www.isa.us.es), [University of Sevilla](http://www.us.es)\n\nFor technical inquiry please contact to [engineering team](./extra/team.md).\n\n[![ISA Group](http://www.isa.us.es/2.0/assets/img/theme/logo2.png)](http://www.isa.us.es)\n\nLicensed under the **Apache License, Version 2.0** (the \"[License](./LICENSE)\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\n"
 ckaratzas/vertx-openapi-spec-generator: >+
   # Vertx-OpenApi-Spec-Generator
 
@@ -56592,96 +56603,7 @@ stoplightio/spectral: >
   CLI, see [Customization](#Customization).
 
 
-  ### Example: Linting an OpenAPI document
-
-
-  Spectral includes a number of ready made rules and functions for OpenAPI v2
-  and v3 documents.
-
-
-  This example uses the OpenAPI v3 rules to lint a document.
-
-
-  ```javascript
-
-  const { Spectral } = require('@stoplight/spectral');
-
-  const { oas3Functions, oas3Rules } =
-  require('@stoplight/spectral/rulesets/oas3');
-
-  // for YAML
-
-  const { parseWithPointers } = require("@stoplight/yaml");
-
-  const myOAS = parseWithPointers(`
-
-  responses:
-    '200':
-      description: ''
-      schema:
-        $ref: '#/definitions/error-response'
-  `)
-
-
-  // an OASv3 document
-
-  const myOAS = {
-    // ... properties in your document
-    responses: {
-      '200': {
-        description: '',
-        schema: {
-          $ref: '#/definitions/error-response',
-        },
-      },
-    },
-    // ... properties in your document
-  };
-
-
-  // create a new instance of spectral with all of the baked in rulesets
-
-  const spectral = new Spectral();
-
-
-  spectral.addFunctions(oas3Functions());
-
-  spectral.addRules(oas3Rules());
-
-
-  spectral.addRules({
-    // .. extend with your own custom rules
-  });
-
-
-  // run!
-
-  spectral.run(myOAS).then(results => {
-    console.log(JSON.stringify(results, null, 4));
-  });
-
-  ```
-
-
-  You can also [add to these rules](#Creating-a-custom-rule) to create a
-  customized linting style guide for your OpenAPI documents.
-
-
-  The existing OAS rules are opinionated. There might be some rules that you
-  prefer to change. We encourage you to create your rules to fit your use case.
-  We welcome additions to the existing rulesets as well!
-
-
-  ## Rulesets
-
-
-  You can find all about [rulesets here](docs/rulesets.md).
-
-
-  ## Advanced
-
-
-  ### Customization
+  ## Concepts
 
 
   There are three key concepts in Spectral: **Rulesets**, **Rules** and
@@ -56700,164 +56622,18 @@ stoplightio/spectral: >
   style guide for your JSON objects.
 
 
-  #### Creating a custom rule
+  ## Programmatic usage
 
 
-  Spectral has a built-in set of functions which you can reference in your
-  rules. This example uses the `RuleFunction.PATTERN` to create a rule that
-  checks that all property values are in snake case.
+  Spectral is written in TypeScript (JavaScript) and can be used directly for
+  when you need to use Spectral programatically. Take a look at our ["JavaScript
+  API documentation"](docs/js-api.md).
 
 
-  ```javascript
+  ## Rulesets
 
-  const { RuleFunction, Spectral } = require('@stoplight/spectral');
 
-
-  const spectral = new Spectral();
-
-
-  spectral.addRules({
-    snake_case: {
-      summary: 'Checks for snake case pattern',
-
-      // evaluate every property
-      given: '$..*',
-
-      then: {
-        function: RuleFunction.PATTERN,
-        functionOptions: {
-          match: '^[a-z]+[a-z0-9_]*[a-z0-9]+$',
-        },
-      },
-    },
-  });
-
-
-  // run!
-
-  spectral.run({name: 'helloWorld',}).then(results => {
-    console.log(JSON.stringify(results, null, 4));
-  });
-
-
-  // => outputs a single result since `helloWorld` is not snake_case
-
-  // [
-
-  //   {
-
-  //     "code": "snake_case",
-
-  //     "message": "must match the pattern '^[a-z]+[a-z0-9_]*[a-z0-9]+$'",
-
-  //     "severity": 1,
-
-  //     "path": [
-
-  //       "name"
-
-  //     ]
-
-  //   }
-
-  // ]
-
-  ```
-
-
-  #### Creating a custom function
-
-
-  Sometimes the built-in functions don't cover your use case. This example
-  creates a custom function, `customNotThatFunction`, and then uses it within a
-  rule, `openapi_not_swagger`. The custom function checks that you are not using
-  a specific string (e.g., "Swagger") and suggests what to use instead (e.g.,
-  "OpenAPI").
-
-
-  ```javascript
-
-  const { Spectral } = require('@stoplight/spectral');
-
-
-  // custom function
-
-  const customNotThatFunction = (targetValue, options) => {
-    const { match, suggestion } = options;
-
-    if (targetValue && targetValue.match(new RegExp(match))) {
-      // return the single error
-      return [
-        {
-          message: `Use ${suggestion} instead of ${match}!`,
-        },
-      ];
-    }
-  };
-
-
-  const spectral = new Spectral();
-
-
-  spectral.addFunctions({
-    notThat: customNotThatFunction,
-  });
-
-
-  spectral.addRules({
-    openapi_not_swagger: {
-      summary: 'Checks for use of Swagger, and suggests OpenAPI.',
-
-      // check every property
-      given: '$..*',
-
-      then: {
-        // reference the function we added!
-        function: 'notThat',
-
-        // pass it the options it needs
-        functionOptions: {
-          match: 'Swagger',
-          suggestion: 'OpenAPI',
-        },
-      },
-    },
-  });
-
-
-  // run!
-
-  spectral.run({description: 'Swagger is pretty cool!',}).then(results => {
-    console.log(JSON.stringify(results, null, 4));
-  });
-
-
-  // => outputs a single result since we are using the term `Swagger` in our
-  object
-
-  // [
-
-  //   {
-
-  //     "code": "openapi_not_swagger",
-
-  //     "message": "Use OpenAPI instead of Swagger!",
-
-  //     "severity": 1,
-
-  //     "path": [
-
-  //       "description"
-
-  //     ]
-
-  //   }
-
-  // ]
-
-  ```
-
-
+  You can find all about [rulesets here](docs/rulesets.md).
 
 
   ## FAQs
@@ -66159,4 +65935,599 @@ Redocly/redoc: >
 
   see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with microservices, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour HTTP routing engine, due to its speed and simplicity for the generated\nstubs.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32   `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the server boilerplate. `server` requires the types in the\n same package to compile.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `additionalProperties` isn't supported, and will exit with an error. This\n should be possible to support in the future via a `map[string]interface{}` or\n `map[string]string`.\n\n- `patternProperties` isn't yet supported and will exit with an error. This too\n should be possible to implement.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
-sugarkubes/generators: "# Instantly Generate Rest & GraphQL OAS 3.0 compliant APIs \U0001F525\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n\n## Install\n\n```sh\nnpm i -g sugar-generate\n```\n\n## Prereqs\n\n- have mongodb [installed and running](https://treehouse.github.io/installation-guides/mac/mongo-mac.html)!\n- have nodejs installed\n\n## Getting Started\n\n1. Create your schema. It could be as simple as:\n\n```json\n{\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"isDead\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  },\n  \"statics\": {}\n}\n```\nsave this to **monkey.json**\n\n2. generate your api\n\n```sh\nsugar-generate \\\n--type api \\\n--name monkey \\\n--schema ./samples/monkey.json \\\n--destination /private/var/andrew/generator-tests/3\n```\n\n3. Run or build the docker container and visit [http://localhost:3000](http://localhost:3000)\n\n```sh\ncd /wrannaman/generator\nnpm i\nnpm start\n# Or build the docker container!\ndocker build -t myMonkeys:0.1.0 .\n```\n\n![running](https://github.com/sugarkubes/generators/blob/master/start.png?raw=true)\n![oas docs](https://github.com/sugarkubes/generators/blob/master/monkey.png?raw=true)\n\n## Features \U0001F649\n- Generates simple Nodejs code\n- Graphql and Rest out of the box\n- Uses Mongodb with Mongoose ORM\n- Easy to build / deploy\n- Dockerfile included\n- Generates CRUD APIs\n  - create\n  - get (many, with pagination; supports search, sort, filter, pagination out of the box)\n  - getOne\n  - update\n  - delete\n\n## What it's good at \U0001F64A\n\n- Generating an initial API\n- Microservice oriented\n- Ready to deploy (build with docker => deploy)\n\n## What it's not good at (yet) \U0001F648\n\n- idempotent changes (i.e. it doesn't know if you wrote code in there or changed things around)\n- working with modified code\n- populating table joins\n- custom actions inside controller functions\n\n# How It Works\n\n1. Feed it a json schema (see below's [Example Schema](#Example-Schema))\n2. Name it\n3. Tell it where to put the code.\n4. Build your generated code with the docker file\n5. Deploy it and move on\n\n## TODO\n\n- ~~basic generator tests~~\n- graphql tests\n- other databases?\n- **your ideas?**\n- react components for the api?!?!\n- middleware for auth, token validation, etc.\n\n## Example Schema\n\n```js\n{\n  \"schema\": {\n    \"first_name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"last_name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"email\": {\n      \"type\": \"String\",\n      \"trim\": true,\n      \"required\": true,\n      \"unique\": true,\n      \"immutable\": true, // Don't let this change from api on update\n    },\n    \"password\": {\n      \"type\": \"String\",\n      \"trim\": true,\n      \"select\": false,\n      \"immutable\": true, // Don't let this change from api on update\n    },\n    \"intro\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"team\": {\n      \"type\": \"ObjectId\", // This references another collection\n      \"ref\": \"Team\"\n    },\n    \"sub\": {\n      \"one\": {\n        \"type\": \"String\",\n        \"trim\": true,\n        \"required\": true\n      },\n      \"two\": {\n        \"type\": \"Number\",\n        \"required\": true\n      }\n    },\n    \"role\": {\n      \"type\": \"String\",\n      \"enum\": [\"user\", \"maker\"],\n      \"default\": \"user\"\n    }\n  },\n  \"statics\": {\n    \"statuses\": [\"created\", \"under_review\", \"listed\", \"deleted\"],\n    \"status\": {\n      \"active\": \"active\",\n      \"inactive\": \"inactive\",\n      \"deleted\": \"deleted\"\n    }\n  }\n}\n\n```\n\n\n## Graphql support\n\n![graphql mutation](https://github.com/sugarkubes/generators/blob/master/graphql-mutation.png?raw=true)\n\n![graphql schema](https://github.com/sugarkubes/generators/blob/master/graphql-schema.png?raw=true)\n\n\ngraphql is supported and gets created by default so you can choose between rest and graphql\n\nGraphql is on [http://localhost:3000/graphql](http://localhost:3000/graphql)\n\n\n\n## Generated project structure\n\n    .\n    ├── configs                 # Config File\n    ├── connection              # DB Connections (mongo, redis)\n    ├── controller              # Controllers\n    │   ├── <model name>        # Functions (one file, one function) create, delete, update, get, getOne\n    ├── models                  # DB Models\n    ├── router                  # Endpoint Routes\n    ├── tests                   # Single Test File\n\n## Generated tests\n\n** WARNING ** running the tests will pull the config file from **configs/config.json** and clear the DB\n\n```sh\nnpm run test\n```\n"
+sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n"
+ErikWittern/swagger-snippet: >
+  # Swagger Snippet
+
+  **Generates code snippets for given Swagger / Open API specification files.**
+
+
+  This package takes as input a Swagger 2.0 / OpenAPI v3.0.x specification. It
+  translates the specification into an [HTTP Archive 1.2 request
+  object](http://www.softwareishard.com/blog/har-12-spec/#request). It uses the
+  [HTTP Snippet](https://github.com/Mashape/httpsnippet) library to generate
+  code snippets for every API endpoint (URL path + HTTP method) defined in the
+  specification in various languages & tools (`cURL`, `Node`, `Python`, `Ruby`,
+  `Java`, `Go`, `C#`...).
+
+
+  ## Installation
+
+
+  ```bash
+
+  npm i swagger-snippet
+
+  ```
+
+
+  ## Build Swagger Snippet (for use in browser)
+
+  Clone the Swagger Snippet repository. Install required dependencies:
+
+
+  ```bash
+
+  npm i
+
+  ```
+
+
+  Build a minified version of Swagger Snippet (`swaggersnippet.min.js`):
+
+
+  ```bash
+
+  npm run build
+
+  ```
+
+
+  ## Usage
+
+
+  ### As a module
+
+
+  ```javascript
+
+  const SwaggerSnippet = require('swagger-snippet')
+
+
+  // define input:
+
+  const swagger = ... // a Swagger / Open API specification
+
+  const targets = ['node_unirest', 'c'] // array of targets for code snippets.
+  See list below...
+
+
+  try {
+    // either, get snippets for ALL endpoints:
+    const results = SwaggerSnippet.getSwaggerSnippets(swagger, targets) // results is now array of snippets, see "Output" below.
+
+    // ...or, get snippets for a single endpoint:
+    const results2 = SwaggerSnippet.getEndpointSnippets(swagger, '/users/{user-id}/relationship', 'get', targets)
+  } catch (err) {
+    // do something with potential errors...
+  }
+
+  ```
+
+
+  ### Within the browser
+
+
+  Include the `swaggersnippet.min.js` file created after building the the
+  library (see above) in your HTML page:
+
+
+  ```html
+
+  <script type="text/javascript" src="path/to/swaggersnippet.min.js"></script>
+
+  ```
+
+
+  Use Swagger Snippet, which now defines the global variable `SwaggerSnippet`.
+
+
+
+  ## Output
+
+  The output for every endpoint is an object, containing the `method`, `url`, a
+  human-readable `description`, and the corresponding `resource` - all of these
+  values stem from the specification. In addition, within the `snippets` list,
+  an object containing a code snippet for every chosen target is provided. As of
+  version `0.4.0`, the snippets include exemplary payload data.
+
+
+  If `getSwaggerSnippets` is used, an array of the above described objects is
+  returned.
+
+
+  For example:
+
+
+  ```json
+
+  [
+    ...
+    {
+      "method": "GET",
+      "url": "https://api.instagram.com/v1/users/{user-id}/relationship",
+      "description": "Get information about a relationship to another user.",
+      "resource": "relationship",
+      "snippets": [
+        {
+          "id": "node",
+          "title": "Node + Native",
+          "content": "var http = require(\"https\");\n\nvar options = {..."
+        }
+      ]
+    }
+    ...
+  ]
+
+  ```
+
+
+  ## Targets
+
+  Currently, swagger-snippet supports the following targets (depending on the
+  HTTP Snippet library):
+
+
+  * `c_libcurl` (default)
+
+  * `csharp_restsharp` (default)
+
+  * `go_native` (default)
+
+  * `java_okhttp`
+
+  * `java_unirest` (default)
+
+  * `javascript_jquery`
+
+  * `javascript_xhr` (default)
+
+  * `node_native` (default)
+
+  * `node_request`
+
+  * `node_unirest`
+
+  * `objc_nsurlsession` (default)
+
+  * `ocaml_cohttp` (default)
+
+  * `php_curl` (default)
+
+  * `php_http1`
+
+  * `php_http2`
+
+  * `python_python3` (default)
+
+  * `python_requests`
+
+  * `ruby_native` (default)
+
+  * `shell_curl` (default)
+
+  * `shell_httpie`
+
+  * `shell_wget`
+
+  * `swift_nsurlsession` (default)
+
+
+  If only the language is provided (e.g., `c`), the default library will be
+  selected.
+
+
+
+  License: MIT
+airtasker/spot: >
+  # Spot
+
+
+  **Spot** (_"Single Point Of Truth"_) is a concise, developer-friendly way to
+  describe your API contract.
+
+
+  Leveraging the TypeScript syntax, it lets you describe your API and generate
+  other API contract formats you need (OpenAPI, Swagger, JSON Schema).
+
+
+  You don't need to use TypeScript in your codebase to benefit from using Spot.
+
+
+  Example of an API definition file `api.ts` which defines a single `POST`
+  endpoint to create a user:
+
+
+  ```typescript
+
+  import { api, endpoint, request, response, body } from "@airtasker/spot";
+
+
+  @api({
+    name: "My API"
+  })
+
+  class Api {}
+
+
+  @endpoint({
+    method: "POST",
+    path: "/users"
+  })
+
+  class CreateUser {
+    @request
+    request(@body body: CreateUserRequest) {}
+
+    @response({ status: 201 })
+    response(@body body: CreateUserResponse) {}
+  }
+
+
+  interface CreateUserRequest {
+    firstName: string;
+    lastName: string;
+  }
+
+
+  interface CreateUserResponse {
+    firstName: string;
+    lastName: string;
+    role: string;
+  }
+
+  ```
+
+
+  For available methods, please check
+  [here](https://github.com/airtasker/spot/wiki/Spot-available-methods)
+
+
+  With [yarn](https://yarnpkg.com/en/docs/usage) installed and initialized add
+  `@airtasker/spot` to your project:
+
+
+  ```sh
+
+  yarn add @airtasker/spot
+
+  ```
+
+
+  You can pass the definition above to a generator by simply running:
+
+
+  ```sh
+
+  npx @airtasker/spot generate --contract api.ts
+
+  ```
+
+
+  # Why we built Spot
+
+
+  At first glance, you may wonder why we bothered building Spot. Why not use
+  OpenAPI (formely known as Swagger) to describe your API?
+
+
+  At the core, we built Spot because we wanted a better developer experience.
+
+
+  ## Writing contracts
+
+
+  OpenAPI documents are stored as YAML files, following a very specific schema.
+  You won’t know that you used the wrong field name or forgot to wrap a type
+  definition into a schema object unless you run a good OpenAPI linter. Most
+  developers who aren’t intimately familiar with the OpenAPI specification end
+  up using a visual editor such as Swagger Editor or Stoplight.
+
+
+  Since Spot leverages the TypeScript syntax, all you need is to write valid
+  TypeScript code. Your editor will immediately tell you when your code is
+  invalid. It will tell you what’s missing, and you even get autocomplete for
+  free. We could have picked any other typed language—TypeScript just happened
+  to be one of the most concise and ubiquitous for us.
+
+
+  ## Reviewing contracts
+
+
+  We believe that API contracts should be checked into Git, or whichever code
+  versioning system you use. In addition, API contracts should be systematically
+  peer reviewed. It’s far too easy for a backend engineer to incorrectly assume
+  what client engineers expect from an endpoint.
+
+
+  Because of their complex nested structure and the richness of the OpenAPI
+  specification, OpenAPI documents can be difficult to review in a pull request.
+  They’re great for machines, but not always for humans.
+
+
+  Spot aims to be as human-readable as possible. We’ve seen developers become a
+  lot more engaged in discussions on pull requests for Spot contracts, compared
+  to our previous OpenAPI documents.
+
+
+  ## Interoperability with various formats
+
+
+  Depending on what you're trying to achieve (testing, documentation, client
+  code generation…), you'll find tools that only work with OpenAPI 2 (Swagger),
+  and newer tools that only support OpenAPI 3. You may also find tools for a
+  different API ecosystem such as JSON Schema or API Blueprint.
+
+
+  We built Spot with this in mind. Instead of having to juggle various API
+  format converters, Spot can generate every major API document format. This is
+  why we called it "Single Point Of Truth".
+
+
+  [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+
+  [![Version](https://img.shields.io/npm/v/@airtasker/spot.svg)](https://npmjs.org/package/@airtasker/spot)
+
+  [![CircleCI](https://circleci.com/gh/airtasker/spot/tree/master.svg?style=shield)](https://circleci.com/gh/airtasker/spot/tree/master)
+
+  [![Downloads/week](https://img.shields.io/npm/dw/@airtasker/spot.svg)](https://npmjs.org/package/@airtasker/spot)
+
+  [![License](https://img.shields.io/npm/l/@airtasker/spot.svg)](https://github.com/airtasker/spot/blob/master/package.json)
+
+
+  <!-- toc -->
+
+  * [Spot](#spot)
+
+  * [Why we built Spot](#why-we-built-spot)
+
+  * [Usage](#usage)
+
+  * [Commands](#commands)
+
+  <!-- tocstop -->
+
+
+  # Usage
+
+
+  To get started and set up an API declaration in the current directory, run:
+
+
+  ```
+
+  npx @airtasker/spot init
+
+  ```
+
+
+  You can then run a generator with:
+
+
+  ```
+
+  npx @airtasker/spot generate --contract api.ts
+
+  ```
+
+
+  # Commands
+
+
+  <!-- commands -->
+
+  * [`spot generate`](#spot-generate)
+
+  * [`spot help [COMMAND]`](#spot-help-command)
+
+  * [`spot init`](#spot-init)
+
+  * [`spot lint SPOT_CONTRACT`](#spot-lint-spot_contract)
+
+  * [`spot mock SPOT_CONTRACT`](#spot-mock-spot_contract)
+
+  * [`spot test SPOT_CONTRACT`](#spot-test-spot_contract)
+
+  * [`spot validate SPOT_CONTRACT`](#spot-validate-spot_contract)
+
+
+  ## `spot generate`
+
+
+  Runs a generator on an API. Used to produce client libraries, server
+  boilerplates and well-known API contract formats such as OpenAPI.
+
+
+  ```
+
+  USAGE
+    $ spot generate
+
+  OPTIONS
+    -c, --contract=contract    (required) Path to a TypeScript Contract definition
+    -g, --generator=generator  Generator to run
+    -h, --help                 show CLI help
+    -l, --language=language    Language to generate
+    -o, --out=out              Directory in which to output generated files
+
+  EXAMPLE
+    $ spot generate --contract api.ts --language yaml --generator openapi3 --out output/
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/generate.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/generate.js)_
+
+
+  ## `spot help [COMMAND]`
+
+
+  display help for spot
+
+
+  ```
+
+  USAGE
+    $ spot help [COMMAND]
+
+  ARGUMENTS
+    COMMAND  command to show help for
+
+  OPTIONS
+    --all  see all commands in CLI
+  ```
+
+
+  _See code:
+  [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.0/src/commands/help.ts)_
+
+
+  ## `spot init`
+
+
+  Generates the boilerplate for an API.
+
+
+  ```
+
+  USAGE
+    $ spot init
+
+  OPTIONS
+    -h, --help  show CLI help
+
+  EXAMPLE
+    $ spot init
+    Generated the following files:
+    - api.ts
+    - tsconfig.json
+    - package.json
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/init.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/init.js)_
+
+
+  ## `spot lint SPOT_CONTRACT`
+
+
+  Lint a Spot contract
+
+
+  ```
+
+  USAGE
+    $ spot lint SPOT_CONTRACT
+
+  ARGUMENTS
+    SPOT_CONTRACT  path to Spot contract
+
+  OPTIONS
+    -h, --help  show CLI help
+
+  EXAMPLE
+    $ spot lint api.ts
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/lint.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/lint.js)_
+
+
+  ## `spot mock SPOT_CONTRACT`
+
+
+  Run a mock server based on a Spot contract
+
+
+  ```
+
+  USAGE
+    $ spot mock SPOT_CONTRACT
+
+  ARGUMENTS
+    SPOT_CONTRACT  path to Spot contract
+
+  OPTIONS
+    -h, --help               show CLI help
+    -p, --port=port          (required) [default: 3010] Port on which to run the mock server
+    --pathPrefix=pathPrefix  Prefix to prepend to each endpoint path
+
+  EXAMPLE
+    $ spot mock api.ts
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/mock.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/mock.js)_
+
+
+  ## `spot test SPOT_CONTRACT`
+
+
+  Test a Spot contract
+
+
+  ```
+
+  USAGE
+    $ spot test SPOT_CONTRACT
+
+  ARGUMENTS
+    SPOT_CONTRACT  path to Spot contract
+
+  OPTIONS
+    -h, --help                   show CLI help
+    -s, --stateUrl=stateUrl      Base URL for state changes
+    -t, --testFilter=testFilter  Filter by endpoint and test
+    -u, --url=url                (required) Base URL
+    --debug                      Enable debug logs
+
+  EXAMPLES
+    $ spot test api.ts -u http://localhost:3000
+    $ spot test api.ts -u http://localhost:3000 -s http://localhost:3000/spot
+    $ spot test api.ts -u http://localhost:3000 -t MyEndpoint:myTest
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/test.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/test.js)_
+
+
+  ## `spot validate SPOT_CONTRACT`
+
+
+  Validate a Spot contract
+
+
+  ```
+
+  USAGE
+    $ spot validate SPOT_CONTRACT
+
+  ARGUMENTS
+    SPOT_CONTRACT  path to Spot contract
+
+  OPTIONS
+    -h, --help  show CLI help
+
+  EXAMPLE
+    $ spot validate api.ts
+  ```
+
+
+  _See code:
+  [build/cli/src/commands/validate.js](https://github.com/airtasker/spot/blob/v0.2.13/build/cli/src/commands/validate.js)_
+
+  <!-- commandsstop -->
