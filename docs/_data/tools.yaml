@@ -6,6 +6,9 @@
     Microsoft Visual Studio Code extension for OpenAPI v2 and v3 
     including features such as IntelliSense, linting, schema enforcement, 
     code navigation, definition links, snippets, and more!
+  v2: true
+  v3: true
+  github: https://github.com/42Crunch/vscode-openapi
 - name: Vert.x Web API Contract
   category: frameworks
   description: >-
