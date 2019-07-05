@@ -3084,20 +3084,22 @@ stoplightio/prism: >
   # Prism
 
 
-  <a href="https://codeclimate.com/github/stoplightio/prism/test_coverage"><img
-  src="https://api.codeclimate.com/v1/badges/f5e363a7eb5b8f4e570f/test_coverage"
-  /></a>
+  [![Build
+  Status](https://dev.azure.com/vncz/vncz/_apis/build/status/stoplightio.prism?branchName=master)](https://dev.azure.com/vncz/vncz/_build/latest?definitionId=1&branchName=master)
+
+  [![CircleCI](https://circleci.com/gh/stoplightio/prism.svg?style=svg)](https://circleci.com/gh/stoplightio/prism)
 
 
   Prism is a set of packages for API mocking with **OpenAPI Specification v2**
   (formerly known as Swagger Specification) and **OpenAPI Specification v3**.
 
 
-  For example, given an API specification:
+  For example, given an API specification you can spin up a mock HTTP server and
+  respond realistically based on your requests
 
 
-  - You can spin up a mock HTTP server and respond realistically based on your
-  requests
+  ![Demo of Prism Mock Server being called with curl from the
+  CLI](./examples/prism-cli.svg)
 
 
   The set of packages are made up of:
@@ -3108,7 +3110,7 @@ stoplightio/prism: >
   - [`http`][http]: A Prism implementation to work with HTTP Requests
 
   - [`http-server`][http-server]: A _[Fastify]_ instance that uses Prism to
-  validate/mock/respond and forward to http requests
+  validate/mock/respond to http requests
 
   - [`cli`][cli]: A CLI to spin up servers locally easily
 
@@ -3492,6 +3494,16 @@ stoplightio/prism: >
   [cli-docs]: packages/cli/README.md
 
   [http-docs]: packages/http/README.md
+
+
+  ## Prism Decision Flow Diagram
+
+
+  The below diagram represents all logical decision we make to figure out the
+  best HTTP response to the specific request.
+
+
+  ![Decision Flow Diagram](./docs/images/mock-server-dfd.png)
 Szasza/express-gateway-plugin-openapi3-mock-server: >
   # Express Gateway OpenAPI 3 Mock Server Plugin
 
@@ -17918,121 +17930,8 @@ apiaryio/fury-adapter-swagger: >
   # Fury Swagger 2.0 Adapter
 
 
-  [![Greenkeeper
-  badge](https://badges.greenkeeper.io/apiaryio/fury-adapter-swagger.svg)](https://greenkeeper.io/)
-
-
-  [![Build
-  Status](https://img.shields.io/travis/apiaryio/fury-adapter-swagger.svg)](https://travis-ci.org/apiaryio/fury-adapter-swagger)
-
-  [![Test
-  Coverage](https://img.shields.io/codeclimate/coverage/github/apiaryio/fury-adapter-swagger.svg)](https://codeclimate.com/github/apiaryio/fury-adapter-swagger/coverage)
-
-  [![NPM
-  version](https://img.shields.io/npm/v/fury-adapter-swagger.svg)](https://www.npmjs.org/package/fury-adapter-swagger)
-
-  [![License](https://img.shields.io/npm/l/fury-adapter-swagger.svg)](https://www.npmjs.org/package/fury-adapter-swagger)
-
-
-  This adapter provides support for parsing [Swagger 2.0](http://swagger.io/) in
-  [Fury.js](https://github.com/apiaryio/fury.js). It does not yet provide a
-  serializer.
-
-
-  Try the [Fury adapter in your
-  browser](https://tonicdev.com/npm/fury-adapter-swagger) to convert Swagger 2.0
-  documents into Refract elements.
-
-
-  ## Install
-
-
-  ```sh
-
-  npm install fury-adapter-swagger
-
-  ```
-
-
-  ## Usage
-
-
-  ```js
-
-  import fury from 'fury';
-
-  import swaggerAdapter from 'fury-adapter-swagger';
-
-
-  fury.use(swaggerAdapter);
-
-
-  fury.parse({source: '... your Swagger 2.0 document ...'}, (err, result) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-
-    // The returned `result` is a Minim parse result element.
-    console.log(result.api.title);
-  });
-
-  ```
-
-
-  ### Parser Codes
-
-
-  The following codes are used by the parser when creating warning and error
-  annotations.
-
-
-  Warnings:
-
-
-  Code | Description
-
-  ---: | -----------
-     2 | Source maps are unavailable due either to the input format or an issue parsing the input.
-     3 | Data is being lost in the conversion.
-
-  Errors:
-
-
-  Code | Description
-
-  ---: | -----------
-     1 | Error parsing input (e.g. malformed YAML).
-     4 | Swagger validation error.
-     5 | Swagger to Refract converter error (JS exception).
-
-  ### Swagger Vendor Extensions
-
-
-  Some Swagger Vendor extensions found in source Swagger documents are converted
-
-  into the output API Element as extension elements.
-
-
-  The following locations of vendor extensions are supported:
-
-
-  - within the info object
-
-  - within the paths object
-
-  - within the path-item object
-
-  - within the operation object
-
-  - within the responses object
-
-  - within the security-scheme object
-
-
-  These vendor extensions will be available as extensions using the relation
-
-  [`https://help.apiary.io/profiles/api-elements/vendor-extensions/`](https://help.apiary.io/profiles/api-elements/vendor-extensions/).
+  This repository has moved location to [API Elements:
+  JS](https://github.com/apiaryio/api-elements.js).
 fleekjs/fleek-response: |
   # Fleek Response - [DEPRECATED]
 
@@ -30327,17 +30226,20 @@ unicredit/sbt-swagger-codegen: >
 
 
   This code generator is designed specifically for Swagger Spec Version 2.0.
-  Moreover, it relies on [Play! Framework](http://www.playframework.com/) 2.6
+  Moreover, it relies on [Play! Framework](http://www.playframework.com/) 2.7
   for Json marshalling/unmarshalling, server- and client-side code.
 
 
   ## Install
 
 
+  First clone this project and `publishLocal` it.
+
+
   Enable it inside your `project\plugins.sbt` like this:
 
 
-  `addSbtPlugin("eu.unicredit" % "sbt-swagger-codegen" % "0.0.11")`
+  `addSbtPlugin("eu.unicredit" % "sbt-swagger-codegen" % "0.0.12-SNAPSHOT")`
 
 
   Enable it in your `build.sbt` like this:
@@ -30379,22 +30281,11 @@ unicredit/sbt-swagger-codegen: >
 
   - `swaggerClientCodeGen` -> generates client code using `play-ws`
 
-  - `swaggerRoutesCodeGen` -> generates Play Framework routes
-
   - `swaggerClean` -> cleans up already generated code
 
 
   The `swaggerModelCodeGen`, `swaggerServerCodeGen` and `swaggerClientCodeGen`
   will run automatically when the swagger sources change.
-
-
-  `swaggerRoutesCodeGen` will _not_ run automatically because it generates code
-  inside the "src/main/resources" directory instead of in
-  "target/scala-2.12/src_managed".
-
-
-  Tasks can be chained with other tasks (ex: ```(compile in Compile) <<=
-  (compile in Compile) dependsOn swaggerRoutesCodeGen```)
 
 
   ## Keys (and defaults)
@@ -30409,8 +30300,8 @@ unicredit/sbt-swagger-codegen: >
   - `swaggerCodeGenPackage` -> "swagger.codegen" (package name of the generated
   sources)
 
-  - `swaggerModelFileSplitting` -> "singleFile" (in model generation how to
-  group classes in '.scala' files available options are "oneFilePerSource"
+  - `swaggerModelFileSplitting` -> "oneFilePerSource" (in model generation how
+  to group classes in '.scala' files available options are "oneFilePerSource"
   "oneFilePerModel")
 
   - `swaggerCodeProvidedPackage` -> "com.yourcompany" (where you will provide
@@ -30431,9 +30322,6 @@ unicredit/sbt-swagger-codegen: >
   - `swaggerServerCodeTargetDir` ->
   "target/scala-2.1x/src_managed/src/main/swagger/server" (path where to put
   generated server code files)
-
-  - `swaggerServerRoutesFile` -> "src/main/resources/routes" (routes file to be
-  generated)
 
 
   These keys can be used to determine what kind of code should be generated:
@@ -37941,7 +37829,7 @@ gengo/grpc-gateway: >
 
   * `protoc-gen-grpc-gateway`
 
-  * `protoc-gen-grpc-swagger`
+  * `protoc-gen-swagger`
 
   * `protoc-gen-go`
 
@@ -38098,7 +37986,7 @@ gengo/grpc-gateway: >
      }
      ```
 
-  7. (Optional) Generate swagger definitions using `protoc-gen-grpc-swagger`
+  7. (Optional) Generate swagger definitions using `protoc-gen-swagger`
 
      ```sh
      protoc -I/usr/local/include -I. \
@@ -38566,12 +38454,12 @@ RobWin/swagger2markup-gradle-plugin: >
   WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
   License for the specific language governing permissions and limitations under
   the License.
-raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nGoa is a framework for building micro-services and APIs in Go using a unique\ndesign-first approach.\n\n---\n[![Build Status](https://travis-ci.org/goadesign/goa.svg?branch=v3)](https://travis-ci.org/goadesign/goa)\n[![Windows Build status](https://ci.appveyor.com/api/projects/status/vixp37loj5i6qmaf/branch/v3?svg=true)](https://ci.appveyor.com/project/RaphaelSimon/goa-oqtis/branch/v3)\n[![Godoc](https://godoc.org/goa.design/goa?status.svg)](https://godoc.org/goa.design/goa)\n[![Slack](https://img.shields.io/badge/slack-gophers-orange.svg?style=flat)](https://gophers.slack.com/messages/goa/)\n\n## [Goa v2 and v3 released!!!](https://goa.design/blog/009-v_3_0_0/)\n\n## Overview\n\nGoa takes a different approach to building services by making it possible to\ndescribe the *design* of the service API using a simple Go DSL. Goa uses the\ndescription to generate specialized service helper code, client code and\ndocumentation. Goa is extensible via plugins, for example the\n[goakit](https://github.com/goadesign/plugins/tree/master/goakit) plugin\ngenerates code that leverage the Go kit library.\n\nThe service design describes the transport independent layer of the services in\nthe form of simple methods that accept a context and a payload and return a\nresult and an error. The design also describes how the payloads, results and\nerrors are serialized in the transport (HTTP or gRPC). For example a service\nmethod payload may be built from an HTTP request by extracting values from the\nrequest path, headers and body. This clean separation of layers makes it\npossible to expose the same service using multiple transports. It also promotes\ngood design where the service business logic concerns are expressed and\nimplemented separately from the transport logic.\n\nThe Goa DSL consists of Go functions so that it may be extended easily to avoid\nrepetition and promote standards. The design code itself can easily be shared\nacross multiple services by simply importing the corresponding Go package again\npromoting reuse and standardization across services.\n\n## Code Generation\n\nThe Goa tool accepts the Go design package import path as input and produces the\ninterface as well as the glue that binds the service and client code with the\nunderlying transport. The code is specific to the API so that for example there\nis no need to cast or \"bind\" any data structure prior to using the request\npayload or response result. The design may define validations in which case the\ngenerated code takes care of validating the incoming request payload prior to\ninvoking the service method on the server, and validating the response prior to\ninvoking the client code.\n\n## Installation\n\nAssuming you have a working [Go](https://golang.org) setup, and are in a\ndirectory where a `go.mod` file is present:\n\n```bash\nexport GO111MODULE=on\ngo get -u goa.design/goa/v3\ngo get -u goa.design/goa/v3/...\n```\n\nIf you don't have a `go.mod` file present, and only want to install the\nGoa command globally:\n\n```bash\ngo get -u goa.design/goa/v3/cmd/goa\n```\n\nAlternatively, when NOT using Go modules (this installs Goa v2, see below):\n\n```bash\ngo get -u goa.design/goa/...\n```\n\n### Goa Versions and Go Module Support\n\nGoa v2 and Goa v3 are functionally the exact same. The only addition provided by\nGoa v3 is Go module support. Goa v3 requires Go v1.11 or above, it also requires\nprojects that use Goa to be within modules.\n\nProjects that use Goa v3 use `goa.design/goa/v3` as root package import path\nwhile projects that use v2 use `goa.design/goa` (projects that use v1 use\n`github.com/goadesign/goa`).\n\nNote that the Goa v3 tool is backwards compatible and can generate code for v2\ndesigns. This means that you don't need to swap the tool to generate code for\ndesigns using v2 or v3 (designs using v1 use a different tool altogether).\n\n### Vendoring\n\nSince Goa generates and compiles code vendoring tools are not able to\nautomatically identify all the dependencies. In particular the `generator`\npackage is only used by the generated code. To alleviate this issue simply add\n`goa.design/goa/codegen/generator` as a required package to the vendor manifest.\nFor example if you are using `dep` add the following line to `Gopkg.toml`:\n\n``` toml\nrequired = [\"goa.design/goa/codegen/generator\"]\n```\n\nThis only applies to Goa v2 as vendoring is not used together with Go modules.\n\n### Stable Versions\n\nGoa follows [Semantic Versioning](http://semver.org/) which is a fancy way of\nsaying it publishes releases with version numbers of the form `vX.Y.Z` and makes\nsure that your code can upgrade to new versions with the same `X` component\nwithout having to make changes.\n\nReleases are tagged with the corresponding version number. There is also a\nbranch for each major version (`v1`, `v2` and `v3`).\n\nCurrent Release: `v3.0.2`\n\n## Teaser\n\nNote: the instructions below assume Goa v3.\n\n### 1. Design\n\nCreate a new Goa project:\n\n```bash\nmkdir -p calcsvc/design\ncd calcsvc\ngo mod init calcsvc\n```\n\nCreate the file `design.go` in the `design` directory with the following\ncontent:\n\n```go\npackage design\n\nimport . \"goa.design/goa/v3/dsl\"\n\n// API describes the global properties of the API server.\nvar _ = API(\"calc\", func() {\n        Title(\"Calculator Service\")\n        Description(\"HTTP service for adding numbers, a goa teaser\")\n        Server(\"calc\", func() {\n\t\tHost(\"localhost\", func() { URI(\"http://localhost:8088\") })\n        })\n})\n\n// Service describes a service\nvar _ = Service(\"calc\", func() {\n        Description(\"The calc service performs operations on numbers\")\n        // Method describes a service method (endpoint)\n        Method(\"add\", func() {\n                // Payload describes the method payload\n                // Here the payload is an object that consists of two fields\n                Payload(func() {\n                        // Attribute describes an object field\n                        Attribute(\"a\", Int, \"Left operand\")\n                        Attribute(\"b\", Int, \"Right operand\")\n                        // Both attributes must be provided when invoking \"add\"\n                        Required(\"a\", \"b\")\n                })\n                // Result describes the method result\n                // Here the result is a simple integer value\n                Result(Int)\n                // HTTP describes the HTTP transport mapping\n                HTTP(func() {\n                        // Requests to the service consist of HTTP GET requests\n                        // The payload fields are encoded as path parameters\n                        GET(\"/add/{a}/{b}\")\n                        // Responses use a \"200 OK\" HTTP status\n                        // The result is encoded in the response body\n                        Response(StatusOK)\n                })\n        })\n})\n```\n\nThis file contains the design for a `calc` service which accepts HTTP GET\nrequests to `/add/{a}/{b}` where `{a}` and `{b}` are placeholders for integer\nvalues. The API returns the sum of `a` and `b` in the HTTP response body.\n\n### 2. Implement\n\nNow that the design is done, let's run `goa` on the design package.\nIn the `calcsvc` directory run:\n\n``` bash\ngoa gen calcsvc/design\n```\n\nThis produces a `gen` directory with the following directory structure:\n\n``` text\ngen\n├── calc\n│\_\_ ├── client.go\n│\_\_ ├── endpoints.go\n│\_\_ └── service.go\n└── http\n    ├── calc\n    │\_\_ ├── client\n    │\_\_ │\_\_ ├── cli.go\n    │\_\_ │\_\_ ├── client.go\n    │\_\_ │\_\_ ├── encode_decode.go\n    │\_\_ │\_\_ ├── paths.go\n    │\_\_ │\_\_ └── types.go\n    │\_\_ └── server\n    │\_\_     ├── encode_decode.go\n    │\_\_     ├── paths.go\n    │\_\_     ├── server.go\n    │\_\_     └── types.go\n    ├── cli\n    │\_\_ └── calc\n    │\_\_     └── cli.go\n    ├── openapi.json\n    └── openapi.yaml\n\n7 directories, 15 files\n```\n\n* `calc` contains the service endpoints and interface as well as a service\n  client.\n* `http` contains the HTTP transport layer. This layer maps the service\n  endpoints to HTTP handlers server side and HTTP client methods client side.\n  The `http` directory also contains a complete\n  [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md)\n  spec for the service.\n\nThe `goa` tool can also generate example implementations for both the service\nand client. These examples provide a good starting point:\n\n``` text\ngoa example calcsvc/design\n\ncalc.go\ncmd/calc-cli/http.go\ncmd/calc-cli/main.go\ncmd/calc/http.go\ncmd/calc/main.go\n```\n\nThe tool generated the `main` functions for two commands: one that runs the\nserver and one the client. The tool also generated a dummy service\nimplementation that prints a log message. Again note that the `example` command\nis intended to generate just that: an *example*, in particular it is not\nintended to be re-run each time the design changes (as opposed to the `gen`\ncommand which should be re-run each time the design changes).\n\nLet's implement our service by providing a proper implementation for the `add`\nmethod. Goa generated a payload struct for the `add` method that contains both\nfields. Goa also generated the transport layer that takes care of decoding the\nrequest so all we have to do is to perform the actual sum. Edit the file\n`calc.go` and change the code of the `add` function as follows:\n\n```go\n// Add returns the sum of attributes a and b of p.\nfunc (s *calcsrvc) Add(ctx context.Context, p *calcsvc.AddPayload) (res int, err error) {\n        return p.A + p.B, nil\n}\n```\n\nThat's it! we have now a full-fledged HTTP service with a corresponding OpenAPI\nspecification and a client tool.\n\n### 3. Run\n\nNow let's compile and run the service:\n\n```bash\ncd cmd/calc\ngo build\n./calc\n[calcapi] 16:10:47 HTTP \"Add\" mounted on GET /add/{a}/{b}\n[calcapi] 16:10:47 HTTP server listening on \"localhost:8088\"\n```\n\nOpen a new console and compile the generated CLI tool:\n\n```bash\ncd calcsvc/cmd/calc-cli\ngo build\n```\n\nand run it:\n\n```bash\n./calc-cli calc add -a 1 -b 2\n3\n```\n\nThe tool includes contextual help:\n\n``` bash\n./calc-cli --help\n```\n\nHelp is also available on each command:\n\n``` bash\n./calc-cli calc add --help\n```\n\nNow let's see how robust our code is and try to use non integer values:\n\n``` bash\n./calc-cli calc add -a 1 -b foo\ninvalid value for b, must be INT\nrun './calccli --help' for detailed usage.\n```\n\nThe generated code validates the command line arguments against the types\ndefined in the design. The server also validates the types when decoding\nincoming requests so that your code only has to deal with the business logic.\n\n### 4. Document\n\nThe `http` directory contains the OpenAPI 2.0 specification in both YAML and\nJSON format.\n\nThe specification can easily be served from the service itself using a file\nserver. The [Files](http://godoc.org/goa.design/goa/dsl/http.go#Files) DSL\nfunction makes it possible to server static file. Edit the file\n`design/design.go` and add:\n\n```go\nvar _ = Service(\"openapi\", func() {\n        // Serve the file with relative path ../../gen/http/openapi.json for\n        // requests sent to /swagger.json.\n        Files(\"/swagger.json\", \"../../gen/http/openapi.json\")\n})\n```\n\nRe-run `goa gen calcsvc/design` and note the new directory `gen/openapi` and\n`gen/http/openapi` which contain the implementation for a HTTP handler that\nserves the `openapi.json` file.\n\nAll we need to do is mount the handler on the service mux. Add the corresponding\nimport statement to `cmd/calc/http.go`:\n\n```go\nimport openapisvr \"calcsvc/gen/http/openapi/server\"\n```\n\nand mount the handler by adding the following line in the same file and after\nthe mux creation (e.g. one the line after the `// Configure the mux.` comment):\n\n```go\nopenapisvr.Mount(mux)\n```\n\nThat's it! we now have a self-documenting service. Stop the running service\nwith CTRL-C. Rebuild and re-run it then make requests to the newly added\n`/swagger.json` endpoint:\n\n``` bash\n^C[calcapi] 16:17:37 exiting (interrupt)\n[calcapi] 16:17:37 shutting down HTTP server at \"localhost:8088\"\n[calcapi] 16:17:37 exited\ngo build\n./calc\n```\n\nIn a different console:\n\n``` bash\ncurl localhost:8088/swagger.json\n{\"swagger\":\"2.0\",\"info\":{\"title\":\"Calculator Service\",\"description\":...\n```\n\n## Resources\n\nConsult the following resources to learn more about Goa.\n\n### Docs\n\nSee the [goa.design](https://goa.design) website.\n\n### Examples\n\nThe [examples](https://github.com/goadesign/examples) directory\ncontains simple examples illustrating basic concepts.\n\n## Contributing\n\nSee [CONTRIBUTING](https://github.com/goadesign/goa/blob/v3/CONTRIBUTING.md).\n"
+raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nGoa is a framework for building micro-services and APIs in Go using a unique\ndesign-first approach.\n\n---\n[![Build Status](https://travis-ci.org/goadesign/goa.svg?branch=v3)](https://travis-ci.org/goadesign/goa)\n[![Windows Build status](https://ci.appveyor.com/api/projects/status/vixp37loj5i6qmaf/branch/v3?svg=true)](https://ci.appveyor.com/project/RaphaelSimon/goa-oqtis/branch/v3)\n[![Godoc](https://godoc.org/goa.design/goa?status.svg)](https://godoc.org/goa.design/goa)\n[![Slack](https://img.shields.io/badge/slack-gophers-orange.svg?style=flat)](https://gophers.slack.com/messages/goa/)\n\n## Overview\n\nGoa takes a different approach to building services by making it possible to\ndescribe the *design* of the service API using a simple Go DSL. Goa uses the\ndescription to generate specialized service helper code, client code and\ndocumentation. Goa is extensible via plugins, for example the\n[goakit](https://github.com/goadesign/plugins/tree/master/goakit) plugin\ngenerates code that leverage the Go kit library.\n\nThe service design describes the transport independent layer of the services in\nthe form of simple methods that accept a context and a payload and return a\nresult and an error. The design also describes how the payloads, results and\nerrors are serialized in the transport (HTTP or gRPC). For example a service\nmethod payload may be built from an HTTP request by extracting values from the\nrequest path, headers and body. This clean separation of layers makes it\npossible to expose the same service using multiple transports. It also promotes\ngood design where the service business logic concerns are expressed and\nimplemented separately from the transport logic.\n\nThe Goa DSL consists of Go functions so that it may be extended easily to avoid\nrepetition and promote standards. The design code itself can easily be shared\nacross multiple services by simply importing the corresponding Go package again\npromoting reuse and standardization across services.\n\n## Code Generation\n\nThe Goa tool accepts the Go design package import path as input and produces the\ninterface as well as the glue that binds the service and client code with the\nunderlying transport. The code is specific to the API so that for example there\nis no need to cast or \"bind\" any data structure prior to using the request\npayload or response result. The design may define validations in which case the\ngenerated code takes care of validating the incoming request payload prior to\ninvoking the service method on the server, and validating the response prior to\ninvoking the client code.\n\n## Installation\n\nAssuming you have a working [Go](https://golang.org) setup, and are in a\ndirectory where a `go.mod` file is present:\n\n```bash\nexport GO111MODULE=on\ngo get -u goa.design/goa/v3\ngo get -u goa.design/goa/v3/...\n```\n\nIf you don't have a `go.mod` file present, and only want to install the\nGoa command globally:\n\n```bash\ngo get -u goa.design/goa/v3/cmd/goa\n```\n\nAlternatively, when NOT using Go modules (this installs Goa v2, see below):\n\n```bash\ngo get -u goa.design/goa/...\n```\n\n### Goa Versions and Go Module Support\n\nGoa v2 and Goa v3 are functionally the exact same. The only addition provided by\nGoa v3 is Go module support. Goa v3 requires Go v1.11 or above, it also requires\nprojects that use Goa to be within modules.\n\nProjects that use Goa v3 use `goa.design/goa/v3` as root package import path\nwhile projects that use v2 use `goa.design/goa` (projects that use v1 use\n`github.com/goadesign/goa`).\n\nNote that the Goa v3 tool is backwards compatible and can generate code for v2\ndesigns. This means that you don't need to swap the tool to generate code for\ndesigns using v2 or v3 (designs using v1 use a different tool altogether).\n\n### Vendoring\n\nSince Goa generates and compiles code vendoring tools are not able to\nautomatically identify all the dependencies. In particular the `generator`\npackage is only used by the generated code. To alleviate this issue simply add\n`goa.design/goa/codegen/generator` as a required package to the vendor manifest.\nFor example if you are using `dep` add the following line to `Gopkg.toml`:\n\n``` toml\nrequired = [\"goa.design/goa/codegen/generator\"]\n```\n\nThis only applies to Goa v2 as vendoring is not used together with Go modules.\n\n### Stable Versions\n\nGoa follows [Semantic Versioning](http://semver.org/) which is a fancy way of\nsaying it publishes releases with version numbers of the form `vX.Y.Z` and makes\nsure that your code can upgrade to new versions with the same `X` component\nwithout having to make changes.\n\nReleases are tagged with the corresponding version number. There is also a\nbranch for each major version (`v1`, `v2` and `v3`).\n\nCurrent Release: `v3.0.2`\n\n## Teaser\n\nNote: the instructions below assume Goa v3.\n\n### 1. Design\n\nCreate a new Goa project:\n\n```bash\nmkdir -p calcsvc/design\ncd calcsvc\ngo mod init calcsvc\n```\n\nCreate the file `design.go` in the `design` directory with the following\ncontent:\n\n```go\npackage design\n\nimport . \"goa.design/goa/v3/dsl\"\n\n// API describes the global properties of the API server.\nvar _ = API(\"calc\", func() {\n        Title(\"Calculator Service\")\n        Description(\"HTTP service for adding numbers, a goa teaser\")\n        Server(\"calc\", func() {\n\t\tHost(\"localhost\", func() { URI(\"http://localhost:8088\") })\n        })\n})\n\n// Service describes a service\nvar _ = Service(\"calc\", func() {\n        Description(\"The calc service performs operations on numbers\")\n        // Method describes a service method (endpoint)\n        Method(\"add\", func() {\n                // Payload describes the method payload\n                // Here the payload is an object that consists of two fields\n                Payload(func() {\n                        // Attribute describes an object field\n                        Attribute(\"a\", Int, \"Left operand\")\n                        Attribute(\"b\", Int, \"Right operand\")\n                        // Both attributes must be provided when invoking \"add\"\n                        Required(\"a\", \"b\")\n                })\n                // Result describes the method result\n                // Here the result is a simple integer value\n                Result(Int)\n                // HTTP describes the HTTP transport mapping\n                HTTP(func() {\n                        // Requests to the service consist of HTTP GET requests\n                        // The payload fields are encoded as path parameters\n                        GET(\"/add/{a}/{b}\")\n                        // Responses use a \"200 OK\" HTTP status\n                        // The result is encoded in the response body\n                        Response(StatusOK)\n                })\n        })\n})\n```\n\nThis file contains the design for a `calc` service which accepts HTTP GET\nrequests to `/add/{a}/{b}` where `{a}` and `{b}` are placeholders for integer\nvalues. The API returns the sum of `a` and `b` in the HTTP response body.\n\n### 2. Implement\n\nNow that the design is done, let's run `goa` on the design package.\nIn the `calcsvc` directory run:\n\n``` bash\ngoa gen calcsvc/design\n```\n\nThis produces a `gen` directory with the following directory structure:\n\n``` text\ngen\n├── calc\n│\_\_ ├── client.go\n│\_\_ ├── endpoints.go\n│\_\_ └── service.go\n└── http\n    ├── calc\n    │\_\_ ├── client\n    │\_\_ │\_\_ ├── cli.go\n    │\_\_ │\_\_ ├── client.go\n    │\_\_ │\_\_ ├── encode_decode.go\n    │\_\_ │\_\_ ├── paths.go\n    │\_\_ │\_\_ └── types.go\n    │\_\_ └── server\n    │\_\_     ├── encode_decode.go\n    │\_\_     ├── paths.go\n    │\_\_     ├── server.go\n    │\_\_     └── types.go\n    ├── cli\n    │\_\_ └── calc\n    │\_\_     └── cli.go\n    ├── openapi.json\n    └── openapi.yaml\n\n7 directories, 15 files\n```\n\n* `calc` contains the service endpoints and interface as well as a service\n  client.\n* `http` contains the HTTP transport layer. This layer maps the service\n  endpoints to HTTP handlers server side and HTTP client methods client side.\n  The `http` directory also contains a complete\n  [OpenAPI 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md)\n  spec for the service.\n\nThe `goa` tool can also generate example implementations for both the service\nand client. These examples provide a good starting point:\n\n``` text\ngoa example calcsvc/design\n\ncalc.go\ncmd/calc-cli/http.go\ncmd/calc-cli/main.go\ncmd/calc/http.go\ncmd/calc/main.go\n```\n\nThe tool generated the `main` functions for two commands: one that runs the\nserver and one the client. The tool also generated a dummy service\nimplementation that prints a log message. Again note that the `example` command\nis intended to generate just that: an *example*, in particular it is not\nintended to be re-run each time the design changes (as opposed to the `gen`\ncommand which should be re-run each time the design changes).\n\nLet's implement our service by providing a proper implementation for the `add`\nmethod. Goa generated a payload struct for the `add` method that contains both\nfields. Goa also generated the transport layer that takes care of decoding the\nrequest so all we have to do is to perform the actual sum. Edit the file\n`calc.go` and change the code of the `add` function as follows:\n\n```go\n// Add returns the sum of attributes a and b of p.\nfunc (s *calcsrvc) Add(ctx context.Context, p *calc.AddPayload) (res int, err error) {\n        return p.A + p.B, nil\n}\n```\n\nThat's it! we have now a full-fledged HTTP service with a corresponding OpenAPI\nspecification and a client tool.\n\n### 3. Run\n\nNow let's compile and run the service:\n\n```bash\ncd cmd/calc\ngo build\n./calc\n[calcapi] 16:10:47 HTTP \"Add\" mounted on GET /add/{a}/{b}\n[calcapi] 16:10:47 HTTP server listening on \"localhost:8088\"\n```\n\nOpen a new console and compile the generated CLI tool:\n\n```bash\ncd calcsvc/cmd/calc-cli\ngo build\n```\n\nand run it:\n\n```bash\n./calc-cli calc add -a 1 -b 2\n3\n```\n\nThe tool includes contextual help:\n\n``` bash\n./calc-cli --help\n```\n\nHelp is also available on each command:\n\n``` bash\n./calc-cli calc add --help\n```\n\nNow let's see how robust our code is and try to use non integer values:\n\n``` bash\n./calc-cli calc add -a 1 -b foo\ninvalid value for b, must be INT\nrun './calccli --help' for detailed usage.\n```\n\nThe generated code validates the command line arguments against the types\ndefined in the design. The server also validates the types when decoding\nincoming requests so that your code only has to deal with the business logic.\n\n### 4. Document\n\nThe `http` directory contains the OpenAPI 2.0 specification in both YAML and\nJSON format.\n\nThe specification can easily be served from the service itself using a file\nserver. The [Files](http://godoc.org/goa.design/goa/dsl/http.go#Files) DSL\nfunction makes it possible to server static file. Edit the file\n`design/design.go` and add:\n\n```go\nvar _ = Service(\"openapi\", func() {\n        // Serve the file with relative path ../../gen/http/openapi.json for\n        // requests sent to /swagger.json.\n        Files(\"/swagger.json\", \"../../gen/http/openapi.json\")\n})\n```\n\nRe-run `goa gen calcsvc/design` and note the new directory `gen/openapi` and\n`gen/http/openapi` which contain the implementation for a HTTP handler that\nserves the `openapi.json` file.\n\nAll we need to do is mount the handler on the service mux. Add the corresponding\nimport statement to `cmd/calc/http.go`:\n\n```go\nimport openapisvr \"calcsvc/gen/http/openapi/server\"\n```\n\nand mount the handler by adding the following line in the same file and after\nthe mux creation (e.g. one the line after the `// Configure the mux.` comment):\n\n```go\nopenapisvr.Mount(mux)\n```\n\nThat's it! we now have a self-documenting service. Stop the running service\nwith CTRL-C. Rebuild and re-run it then make requests to the newly added\n`/swagger.json` endpoint:\n\n``` bash\n^C[calcapi] 16:17:37 exiting (interrupt)\n[calcapi] 16:17:37 shutting down HTTP server at \"localhost:8088\"\n[calcapi] 16:17:37 exited\ngo build\n./calc\n```\n\nIn a different console:\n\n``` bash\ncurl localhost:8088/swagger.json\n{\"swagger\":\"2.0\",\"info\":{\"title\":\"Calculator Service\",\"description\":...\n```\n\n## Resources\n\nConsult the following resources to learn more about Goa.\n\n### Docs\n\nSee the [goa.design](https://goa.design) website.\n\n### Examples\n\nThe [examples](https://github.com/goadesign/examples) directory\ncontains simple examples illustrating basic concepts.\n\n## Contributing\n\nSee [CONTRIBUTING](https://github.com/goadesign/goa/blob/v3/CONTRIBUTING.md).\n"
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-06-27T15:48:01Z","pushed_at":"2019-06-22T18:30:17Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":31955,"stargazers_count":478,"watchers_count":478,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":77,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":77,"open_issues":31,"watchers":478,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":77,"subscribers_count":17}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-07-04T06:39:25Z","pushed_at":"2019-06-22T18:30:17Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":31955,"stargazers_count":482,"watchers_count":482,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":77,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":77,"open_issues":31,"watchers":482,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":77,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44339,6 +44227,8 @@ OpenAPITools/openapi-generator: >
 
   - [Cupix](https://www.cupix.com/)
 
+  - [DB Systel](https://www.dbsystel.de)
+
   - [FormAPI](https://formapi.io/)
 
   - [Fuse](https://www.fuse.no/)
@@ -44530,6 +44420,11 @@ OpenAPITools/openapi-generator: >
   by [William Cheng](https://twitter.com/wing328) at [Kubernetes Contributor
   Summits Shanghai
   2019](https://www.lfasiallc.com/events/contributors-summit-china-2019/)
+
+  - 2019-07-04 - [REST API のためのコード生成入門 (OpenAPI
+  Generator)](https://gum.co/openapi_generator_ebook_big5) by [William
+  Cheng](https://twitter.com/wing328), [中野暁人](https://github.com/ackintosh),
+  [和田拓朗](https://github.com/taxpon)
 
 
   ## [6 - About Us](#table-of-contents)
@@ -44985,9 +44880,10 @@ marshmallow-code/apispec: >
       :target: https://pypi.org/project/apispec/
       :alt: PyPI version
 
-  .. image:: https://badgen.net/travis/marshmallow-code/apispec/dev
-      :target: https://travis-ci.org/marshmallow-code/apispec
-      :alt: TravisCI build status
+  .. image::
+  https://dev.azure.com/sloria/sloria/_apis/build/status/marshmallow-code.apispec?branchName=dev
+      :target: https://dev.azure.com/sloria/sloria/_build/latest?definitionId=8&branchName=dev
+      :alt: Build status
 
   .. image:: https://readthedocs.org/projects/apispec/badge/
      :target: https://apispec.readthedocs.io/
@@ -46332,8 +46228,8 @@ cebe/php-openapi: >
   and make the content accessible in PHP objects.
 
 
-  It also provides a CLI tool for validating and converting OpenAPI 3.0.x YAML
-  and JSON files.
+  It also provides a CLI tool for validating and converting OpenAPI 3.0.x
+  Description files.
 
 
   [![Latest Stable
@@ -46369,15 +46265,14 @@ cebe/php-openapi: >
 
 
   - [cebe/yii2-openapi](https://github.com/cebe/yii2-openapi) Code Generator for
-  REST API from OpenAPI spec, includes fake data generator.
+  REST API from OpenAPI 3 Descriptions, includes fake data generator.
 
   - [cebe/yii2-app-api](https://github.com/cebe/yii2-app-api) Yii framework
-  application template for developing API-first applications
+  application template for developing API-first applications.
 
   -
   [lezhnev74/openapi-psr7-validator](https://github.com/lezhnev74/openapi-psr7-validator)
-  validates PSR-7 messages (HTTP request/response) against OpenAPI
-  specifications 
+  validates PSR-7 messages (HTTP request/response) against OpenAPI descriptions.
 
   - ... ([add
   yours](https://github.com/cebe/php-openapi/edit/master/README.md#L24))
@@ -46386,7 +46281,7 @@ cebe/php-openapi: >
   ## Usage
 
 
-  ### CLI tool
+  ### CLI Tool
 
       $ vendor/bin/php-openapi help
       PHP OpenAPI 3 tool
@@ -46398,9 +46293,9 @@ cebe/php-openapi: >
 
         The following commands are available:
 
-          validate   Validate the API description in the specified input file against the OpenAPI v3.0 schema.
+          validate   Validate the API Description in the specified input file against the OpenAPI v3.0 schema.
                      Note: the validation is performed in two steps. The results is composed of
-                      (1) structural errors found while reading the API description file, and
+                      (1) structural errors found while reading the API Description file, and
                       (2) violations of the OpenAPI v3.0 schema.
 
                      If no input file is specified input will be read from STDIN.
@@ -46410,7 +46305,7 @@ cebe/php-openapi: >
                      Exits with code 2 on validation errors, 1 on other errors and 0 on success.
 
           convert    Convert a JSON or YAML input file to JSON or YAML output file.
-                     References are being resolved so the output will be a single specification file.
+                     References are being resolved so the output will be a single API Description file.
 
                      If no input file is specified input will be read from STDIN.
                      If no output file is specified output will be written to STDOUT.
@@ -46428,10 +46323,10 @@ cebe/php-openapi: >
           --write-yaml  force writing output as YAML. Auto-detect if not specified.
 
 
-  ### Reading Specification information
+  ### Reading API Description Files
 
 
-  Read OpenAPI spec from JSON file:
+  Read OpenAPI Description from JSON file:
 
 
   ```php
@@ -46446,7 +46341,7 @@ cebe/php-openapi: >
   ```
 
 
-  Read OpenAPI spec from YAML:
+  Read OpenAPI Description from YAML:
 
 
   ```php
@@ -46458,7 +46353,7 @@ cebe/php-openapi: >
 
   $openapi = Reader::readFromYamlFile(realpath('openapi.json'));
 
-  // you may also specify the URL to your description file
+  // you may also specify the URL to your API Description file
 
   $openapi =
   Reader::readFromYamlFile('https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.0.2/examples/v3.0/petstore-expanded.yaml');
@@ -46466,7 +46361,7 @@ cebe/php-openapi: >
   ```
 
 
-  Access specification data:
+  Access API Description data:
 
 
   ```php
@@ -46483,19 +46378,25 @@ cebe/php-openapi: >
 
 
   Object properties are exactly like in the [OpenAPI
-  specification](https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md#openapi-specification).
+  Specification](https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md#openapi-specification).
 
-  You may also access additional properties added by specification extensions.
+  You may also access additional properties added by [specification
+  extensions](https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md#specificationExtensions).
 
 
-  ### Writing Specification files
+  ### Writing API Description Files
 
 
   ```php
 
-  // create base description
+  use cebe\openapi\spec\OpenApi;
 
-  $openapi = new \cebe\openapi\spec\OpenApi([
+  use cebe\openapi\spec\PathItem;
+
+
+  // create base API Description
+
+  $openapi = new OpenApi([
       'openapi' => '3.0.2',
       'info' => [
           'title' => 'Test API',
@@ -46506,7 +46407,7 @@ cebe/php-openapi: >
 
   // manipulate description as needed
 
-  $openapi->paths['/test'] = new \cebe\openapi\spec\PathItem([
+  $openapi->paths['/test'] = new PathItem([
       'description' => 'something'
   ]);
 
@@ -46539,21 +46440,57 @@ cebe/php-openapi: >
   ```
 
 
-  ### Reading Specification Files and Resolving References
+  ### Writing API Description Files using prepared Objects
+
+
+  Since version 1.2.0, the above example can also be written like this (passing
+  objects instead of arrays):
+
+
+  ```php
+
+  use cebe\openapi\spec\OpenApi;
+
+  use cebe\openapi\spec\PathItem;
+
+  use cebe\openapi\spec\Info;
+
+
+
+  // create base API Description
+
+  $openapi = new OpenApi([
+      'openapi' => '3.0.2',
+      'info' => new Info([
+          'title' => 'Test API',
+          'version' => '1.0.0',
+      ]),
+      'paths' => [
+          '/test' => new PathItem([
+              'description' => 'something'
+          ]),
+      ],
+  ]);
+
+  $json = \cebe\openapi\Writer::writeToJson($openapi);
+
+  ```
+
+
+  ### Reading API Description Files and Resolving References
 
 
   In the above we have passed the raw JSON or YAML data to the Reader. In order
   to be able to resolve
 
-  references to external files that may exist in the specification files, we
-  must provide the full context.
+  references to structures in external files, we must provide the full context.
 
 
   ```php
 
   use cebe\openapi\Reader;
 
-  // an absolute URL or file path is needed to allow resolving internal
+  // an absolute URL or file path is needed to allow resolving external
   references
 
   $openapi =
@@ -46588,7 +46525,7 @@ cebe/php-openapi: >
   The library provides simple validation operations, that check basic OpenAPI
   spec requirements.
 
-  This is the same as "structural errors found while reading the API description
+  This is the same as "structural errors found while reading the API Description
   file" from the CLI tool.
 
   This validation does not include checking against the OpenAPI v3.0 JSON
@@ -49127,11 +49064,14 @@ Microsoft/OpenAPI.NET.OData: >
   and uses the following :
 
 
-  1. Capabilities annotation
+  1. [Capabilities vocabulary
+  annotation](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Capabilities.V1.xml)
 
-  2. Authorization annotation
+  2. [Authorization vocabulary
+  annotation](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Authorization.V1.xml)
 
-  3. HttpRequest annotation
+  3. [Core vocabulary
+  annotation](https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Core.V1.xml)
 
   4. Navigation property path
 
@@ -53515,14 +53455,13 @@ unifysell/unifysell-sdk-php: >
 
   ### Authenticate
 
-      $keycloakClient = new \Unifysell\OAuth2\Client\Keycloak();
-      $accessToken = $keycloakClient->createAccessToken();
+      Download Access Token from unifysell Control Center (UCC).
 
   ### Make your first request
 
       $config = Unifysell\SDK\Configuration::getDefaultConfiguration()->setApiKey(
           'Authorization', 
-          $keycloakClient->getAccessToken()->getToken()
+          '----INSERT BEARER TOKEN HERE----'
       );
       $config->setApiKeyPrefix('Authorization', 'Bearer');
       
@@ -62350,6 +62289,46 @@ cebe/yii2-app-api: >
           ...
       ]
 
+  ## Application structure
+
+
+  - `api/` - API application tier
+    - `config/` - configuration for API tier
+      - `url-rules.php` - custom URL rules
+      - `url-rules.rest.php` - URL rules **generated** from OpenAPI Description
+      - `components.php` - application components
+      - `app.php` - Yii application config (+ overrides for different environments `app-*.php`)
+    - `controllers/` - Controller classes **generated** from OpenAPI Description
+    - `web/` - public web directory for API application
+
+  - `backend/` - Backend application tier
+    - `config/` - configuration for Backend tier
+      - `components.php` - application components
+      - `app.php` - Yii application config (+ overrides for different environments `app-*.php`)
+    - `controllers/` - Controller classes
+    - `views/` - View files
+    - `web/` - public web directory for Backend application
+
+  - `common/` - common code files
+    - `models/` - model classes **generated** from OpenAPI Description
+    - `migrations/` - database migrations **generated** from OpenAPI Description
+
+  - `config/` - Common configuration for all application tiers
+    - `components.php` - Yii application components (+ overrides for different environments `components-*.php`)
+    - `env.php` - Environment setup (YII_DEBUG, YII_ENV, path aliases, composer autoloader)
+    - `events.php` - Class wide event listeners
+    - `gii-generators.php` - configuration for the Gii code generator (allows to set default values for the ApiGenerator)
+    - `params.php` - Configuration for `Yii::$app->params`
+
+  - `console/` - Console application tier
+    - `config/` - configuration for Console tier
+      - `components.php` - application components
+      - `app.php` - Yii application config (+ overrides for different environments `app-*.php`)
+
+  - `logs/` - log files
+
+  - `runtime/` - temporary runtime files
+
 
   # Support
 
@@ -62370,7 +62349,7 @@ cdimascio/express-openapi-validator: >
   # express-openapi-validator
 
 
-  [![](https://travis-ci.com/cdimascio/express-openapi-validator.svg?branch=master)](#)
+  [![](https://travis-ci.org/cdimascio/express-openapi-validator.svg?branch=master)](#)
   [![](https://img.shields.io/npm/v/express-openapi-validator.svg)](https://www.npmjs.com/package/express-openapi-validator)
   [![Coverage
   Status](https://coveralls.io/repos/github/cdimascio/express-openapi-validator/badge.svg)](https://coveralls.io/github/cdimascio/express-openapi-validator)
@@ -64918,6 +64897,8 @@ lezhnev74/openapi-psr7-validator: >
 
   - [Dmytro Demchyna](https://github.com/dmytro-demchyna)
 
+  - [Will Chambers](https://github.com/willchambers99)
+
   - A big thank you to [Henrik Karlström](https://github.com/hkarlstrom) who
   kind of inspired me to work on this package. 
 
@@ -65831,7 +65812,7 @@ Redocly/redoc: >
   ## Development
 
   see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with microservices, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour HTTP routing engine, due to its speed and simplicity for the generated\nstubs.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32   `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the server boilerplate. `server` requires the types in the\n same package to compile.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `additionalProperties` isn't supported, and will exit with an error. This\n should be possible to support in the future via a `map[string]interface{}` or\n `map[string]string`.\n\n- `patternProperties` isn't yet supported and will exit with an error. This too\n should be possible to implement.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
+deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with microservices, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour HTTP routing engine, due to its speed and simplicity for the generated\nstubs.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tadditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema. We've used a\nprivate field that's not exported in JSON, since the structure would be wrong,\nso we provide a bunch of helper functions to deal with these additional properties:\n```\n// Returns the additional properties dict\nfunc (a NewPet) AdditionalProperties() map[string]string {...}\n\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples. \n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the server boilerplate. `server` requires the types in the\n same package to compile.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
 sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n"
 ErikWittern/swagger-snippet: >
   # Swagger Snippet
