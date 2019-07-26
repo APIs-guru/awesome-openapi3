@@ -1861,6 +1861,11 @@ mermade/widdershins: >
   ### News
 
 
+  * Version 4.0 changes:
+    * Option to output html directly, and to ReSpec format
+    * Unified JavaScript and Node.js code-samples, PHP added
+    * `restrictions` column (`readOnly`/`writeOnly`) added to schema templates
+    * Numerous bug fixes
   * As of v3.0.0 Widdershins no longer expands the definition of OpenAPI body
   parameters / requestBodies by default, unless they have an inline schema. You
   can restore the old behaviour by using the `--expandBody` option.
@@ -1874,15 +1879,30 @@ mermade/widdershins: >
   OpenAPI code samples. If you wish to omit this, see
   [here](/templates/openapi3/README.md).
 
-  * If you are using Node.js 6 or lower, please specify the `--harmony` flag.
-
 
   ### To install
 
 
-  * Clone the git repository, or
+  * Clone the git repository, and `npm i` to install dependencies, or
 
   * `npm install [-g] widdershins`
+
+
+  ### Getting started
+
+
+  Widdershins is generally used as a stage in an API documentation pipeline. The
+  pipeline begins with an API definition in OpenAPI 3.x, OpenAPI 2.0 (fka
+  Swagger), API Blueprint, AsyncAPI or Semoasa format. Widdershins converts this
+  description into markdown suitable for use by a **renderer**, such as
+  [Slate](https://github.com/lord/slate),
+  [Shins](https://github.com/mermade/shins) or html suitable for use with
+  [ReSpec](https://github.com/w3c/respec).
+
+
+  If you need to create your input API definition, [this list of available
+  editors](https://apis.guru/awesome-openapi3/category.html#editors) may be
+  useful.
 
 
   ### Examples
@@ -1941,7 +1961,11 @@ mermade/widdershins: >
   | --summary | options.tocSummary | `boolean` | `false` | Use the operation
   summary as the TOC entry instead of the ID. |
 
-  | --verbose | options.verbose | `boolean` | `false` | Increase verbosity. |
+  | --useBodyName | options.useBodyName | `boolean` | Use original param name
+  for OpenAPI 2.0 body parameter. |
+
+  | -v, --verbose | options.verbose | `boolean` | `false` | Increase verbosity.
+  |
 
   | -h, --help | options.help | `boolean` | `false` | Show help. |
 
@@ -2655,7 +2679,7 @@ temando/open-api-renderer: >
   retailers to people. The Temando Platform combines shipping experiences,
   multi-carrier connectivity and lightning fast fulfillment in one solution. If
   this sounds like fun, [work with us](http://temando.com/en/about/careers)!
-RepreZen/KaiZen-OpenAPI-Editor: >+
+RepreZen/KaiZen-OpenAPI-Editor: >
   <img src="https://cdn2.hubspot.net/hubfs/597611/Assets_Swagger/KZOE.png"
   alt="KaiZen OpenAPI Editor Logo" height="50%" width="50%"/>
 
@@ -2795,8 +2819,8 @@ RepreZen/KaiZen-OpenAPI-Editor: >+
 
   ### Installing from the Update Site 
 
-  You can install KaiZen OpenAPI Editor into your Eclipse IDE by clicking on
-  `Help > Install New Software... > Add...`
+  You can install KaiZen OpenAPI Editor into your Eclipse IDE by clicking `Help
+  > Install New Software... > Add...`
 
   This will show a dialog box where you can select the location of the update
   site.
@@ -2871,9 +2895,8 @@ RepreZen/KaiZen-OpenAPI-Editor: >+
   are available as separate plugins.<br/>
 
   [RepreZen API Studio](http://reprezen.com/swagger-tools) includes the mock
-  service, live Swagger-UI, code generation, and other features that are not
-  part of KaiZen Editor._
-
+  service, live Swagger-UI, advanced code generation, and other features that
+  are not part of KaiZen Editor._
 swagger-api/swagger-editor: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png\" height=\"80\">\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-editor)\n[![Build Status](https://travis-ci.org/swagger-api/swagger-editor.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-editor)\n[![Code Climate](https://codeclimate.com/github/swagger-api/swagger-editor/badges/gpa.svg)](https://codeclimate.com/github/swagger-api/swagger-editor)\n[![Dependency Status](https://david-dm.org/swagger-api/swagger-editor/status.svg)](https://david-dm.org/swagger-api/swagger-editor)\n[![devDependency Status](https://david-dm.org/swagger-api/swagger-editor/dev-status.svg)](https://david-dm.org/swagger-api/swagger-editor-#info=devDependencies)\n[![Build Status](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/)\n\n**\U0001F570️ Looking for the older version of Swagger Editor?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\nSwagger Editor lets you edit [Swagger API specifications](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) in YAML inside your browser and to preview documentations in real time.\nValid Swagger JSON descriptions can then be generated and used with the full Swagger tooling (code generation, documentation, etc).\n\nAs a brand new version, written from the ground up, there are some known issues and unimplemented features. Check out the [Known Issues](#known-issues) section for more details.\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-editor](https://www.npmjs.com/package/swagger-editor) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-editor-dist](https://www.npmjs.com/package/swagger-editor-dist) is a dependency-free module that includes everything you need to serve Swagger Editor in a server-side project, or a web project that can't resolve npm module dependencies.\n\nIf you're building a single-page application, using `swagger-editor` is strongly recommended, since `swagger-editor-dist` is significantly larger.\n\nFor the older version of swagger-editor, refer to the [*2.x branch*](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\n## Running locally\n\n##### Prerequisites\n- Node 6.x\n- NPM 3.x\n\nIf you have Node.js and npm installed, you can run `npm start` to spin up a static server.\n\nOtherwise, you can open `index.html` directly from your filesystem in your browser.\n\nIf you'd like to make code changes to Swagger Editor, you can start up a Webpack hot-reloading dev server via `npm run dev`. \n\n##### Browser support\n\nSwagger Editor works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Everything listed in [Swagger UI's Known Issues](https://github.com/swagger-api/swagger-ui/blob/master/README.md#known-issues).\n- The integration with the codegen is still missing.\n- Importing specs from a URL is not implemented.\n\n## Docker\n\n### Running the image from DockerHub\nThere is a docker image published in [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-editor/).\n\nTo use this, run the following:\n\n```\ndocker pull swaggerapi/swagger-editor\ndocker run -d -p 80:8080 swaggerapi/swagger-editor\n```\n\nThis will run Swagger Editor (in detached mode) on port 80 on your machine, so you can open it by navigating to `http://localhost` in your browser.\n\n### Building and running an image locally\n\nTo build and run a docker image with the code checked out on your machine, run the following from the root directory of the project:\n\n```\n# Install npm packages (if needed)\nnpm install\n\n# Build the app\nnpm run build\n\n# Build an image\ndocker build -t swagger-editor .\n\n# Run the container\ndocker run -d -p 80:8080 swagger-editor\n\n```\n\nYou can then view the app by navigating to `http://localhost` in your browser.\n\n## Documentation\n\n* [Importing your OpenAPI document](docs/import.md)\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2018 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n"
 apicurio/apicurio-studio: >
   [![CircleCI](https://circleci.com/gh/Apicurio/apicurio-studio.svg?style=svg)](https://circleci.com/gh/Apicurio/apicurio-studio)
@@ -7704,6 +7727,17 @@ p1c2u/openapi-spec-validator: >
   ```
 
 
+  docker way:
+
+
+  ```bash
+
+  $ docker run -v path/to/some.yaml:/some.yaml --rm p1c2u/openapi-spec-validator
+  /some.yaml
+
+  ```
+
+
   or more pythonic way:
 
 
@@ -8189,24 +8223,28 @@ apiaryio/dredd: >
   ## Howtos, Tutorials, Blogposts (3rd party)
 
 
-  - [Maintenir à jour sa documentation d'API avec Dredd
-  !](https://blog.itnetwork.fr/blog-post/2019/05/06/dredd-partie-1-ecriture-documentation.html)
+  - [Maintenir à jour sa documentation d'API avec
+  Dredd!](https://blog.itnetwork.fr/blog-post/2019/05/06/dredd-partie-1-ecriture-documentation.html)
   *05/06/2019*
 
   - [Dredd - Language-agnostic HTTP API Testing Tool - Interview with Honza
-  Javorek](https://survivejs.com/blog/dredd-interview/) *3/22/2019*
+  Javorek](https://survivejs.com/blog/dredd-interview/) *03/22/2019*
+
+  - [Laravel OpenAPI 3 Documentation Verification Using
+  Dredd](https://commandz.io/snippets/laravel/laravel-dredd-openapi-v3/)
+  *02/24/2019*
 
   - [Testing your API with
   Dredd](https://medium.com/mop-developers/testing-your-api-with-dredd-c02e6ca151f2)
-  *9/27/2018*
+  *09/27/2018*
 
   - [Writing Testable API Documentation Using APIB and Dredd
   (Rails)](https://blog.rebased.pl/2018/06/29/testable-api-docs.html)
-  *6/29/2018*
+  *06/29/2018*
 
   - [Design-first API Specification Workflow
   Matures](https://philsturgeon.uk/api/2018/03/01/api-specification-workflow-matures/)
-  *3/1/2018*
+  *03/01/2018*
 
   - [Writing and testing API specifications with API Blueprint, Dredd and
   Apiary](https://hackernoon.com/writing-and-testing-api-specifications-with-api-blueprint-dreed-and-apiary-df138accce5a)
@@ -16343,7 +16381,6 @@ astaxie/beego: >
   It is inspired by Tornado, Sinatra and Flask. beego has some Go-specific
   features such as interfaces and struct embedding.
 
-   Response time ranking: [web-frameworks](https://github.com/the-benchmarker/web-frameworks).
 
   ###### More info at [beego.me](http://beego.me).
 
@@ -38236,8 +38273,8 @@ raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nG
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-07-18T01:55:38Z","pushed_at":"2019-06-22T18:30:17Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":31955,"stargazers_count":486,"watchers_count":486,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":79,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":31,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":79,"open_issues":31,"watchers":486,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":79,"subscribers_count":17}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-07-25T08:21:42Z","pushed_at":"2019-06-22T18:30:17Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":31955,"stargazers_count":490,"watchers_count":490,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":79,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":79,"open_issues":32,"watchers":490,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":79,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -43106,6 +43143,17 @@ OpenAPITools/openapi-generator: >
   [![LightBow](https://openapi-generator.tech/img/companies/lightbow.png)](https://www.lightbow.net/?utm_source=openapi_generator&utm_medium=github_webpage&utm_campaign=sponsor)
 
 
+  #### Thank you GoDaddy for sponsoring the domain names and Linode for
+  sponsoring the VPS
+
+
+  [<img src="https://openapi-generator.tech/img/companies/godaddy.png"
+  width="150">](https://www.godaddy.com/?utm_source=openapi_generator&utm_medium=github_webpage&utm_campaign=sponsor)
+
+  [![Linode](https://www.linode.com/media/images/logos/standard/light/linode-logo_standard_light_small.png)](https://www.linode.com/?utm_source=openapi_generator&utm_medium=github_webpage&utm_campaign=sponsor)
+
+
+
   ## Overview
 
   OpenAPI Generator allows generation of API client libraries (SDK generation),
@@ -43124,12 +43172,13 @@ OpenAPITools/openapi-generator: >
   **Erlang**, **Go**, **Groovy**, **Haskell** (http-client, Servant), **Java**
   (Jersey1.x, Jersey2.x, OkHttp, Retrofit1.x, Retrofit2.x, Feign, RestTemplate,
   RESTEasy, Vertx, Google API Client Library for Java, Rest-assured, Spring 5
-  Web Client), **Kotlin**, **Lua**, **Node.js** (ES5, ES6, AngularJS with Google
-  Closure Compiler annotations, Flow types) **Objective-C**, **Perl**, **PHP**,
-  **PowerShell**, **Python**, **R**, **Ruby**, **Rust** (rust, rust-server),
-  **Scala** (akka, http4s, scalaz, swagger-async-httpclient), **Swift** (2.x,
-  3.x, 4.x), **Typescript** (AngularJS, Angular (2.x - 7.x), Aurelia, Axios,
-  Fetch, Inversify, jQuery, Node, Rxjs)
+  Web Client), **Kotlin**, **Lua**, **Node.js/JavaScript** (ES5, ES6, AngularJS
+  with Google Closure Compiler annotations, Flow types) **Objective-C**,
+  **Perl**, **PHP**, **PowerShell**, **Python**, **R**, **Ruby**, **Rust**
+  (rust, rust-server), **Scala** (akka, http4s, scalaz,
+  swagger-async-httpclient), **Swift** (2.x, 3.x, 4.x), **Typescript**
+  (AngularJS, Angular (2.x - 7.x), Aurelia, Axios, Fetch, Inversify, jQuery,
+  Node, Rxjs)
 
   **Server stubs**                 | **Ada**, **C#** (ASP.NET Core, NancyFx),
   **C++** (Pistache, Restbed, Qt5 QHTTPEngine), **Erlang**, **F#** (Giraffe),
@@ -43441,10 +43490,10 @@ OpenAPITools/openapi-generator: >
   `$PATH:`
 
 
-  * [Java 8](http://java.oracle.com)
+  * [Java 8](https://www.oracle.com/technetwork/java/index.html)
 
 
-  * [Apache Maven 3.3.4 or greater](http://maven.apache.org/)
+  * [Apache Maven 3.3.4 or greater](https://maven.apache.org/)
 
 
   After cloning the project, you can build it from source with this command:
@@ -43485,6 +43534,27 @@ OpenAPITools/openapi-generator: >
 
   To reinstall with the latest master, run `brew uninstall openapi-generator &&
   brew install --HEAD openapi-generator`
+
+
+  To install OpenJDK (pre-requisites), please run
+
+  ```sh
+
+  brew cask install adoptopenjdk12
+
+  export
+  JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/
+
+  ```
+
+
+  To install Maven, please run
+
+  ```sh
+
+  brew install maven
+
+  ```
 
 
   ### [1.6 - Docker](#table-of-contents)
@@ -43666,7 +43736,7 @@ OpenAPITools/openapi-generator: >
   Prerequisite: install [Vagrant](https://www.vagrantup.com/downloads.html) and
   [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
    ```sh
-  git clone http://github.com/openapitools/openapi-generator.git
+  git clone https://github.com/openapitools/openapi-generator.git
 
   cd openapi-generator
 
@@ -43920,10 +43990,10 @@ OpenAPITools/openapi-generator: >
   Here are the public online services:
 
 
-  - latest stable version: http://api.openapi-generator.tech
+  - latest stable version: https://api.openapi-generator.tech
 
-  - latest master: http://api-latest-master.openapi-generator.tech (updated with
-  latest master every hour)
+  - latest master: https://api-latest-master.openapi-generator.tech (updated
+  with latest master every hour)
 
 
   The server is sponsored by [Linode](https://www.linode.com/) [![Linode
@@ -44203,6 +44273,13 @@ OpenAPITools/openapi-generator: >
   GeneratorでPythonのクライアントライブラリを作成した](https://qiita.com/yuji38kwmt/items/dfb929316a1335a161c0)
   by [yuji38kwmt](https://qiita.com/yuji38kwmt)
 
+  - 2019-07-19 - [Developer Experience (DX) for Open-Source Projects: How to
+  Engage Developers and Build a Growing Developer
+  Community](https://speakerdeck.com/wing328/developer-experience-dx-for-open-source-projects-english-japanese)
+  by [William Cheng](https://twitter.com/wing328),
+  [中野暁人](https://github.com/ackintosh) at [Open Source Summit Japan
+  2019](https://events.linuxfoundation.org/events/open-source-summit-japan-2019/)
+
 
   ## [6 - About Us](#table-of-contents)
 
@@ -44438,7 +44515,7 @@ OpenAPITools/openapi-generator: >
   | F#        | @nmfisher (2019/05) |
 
   | Go        | @antihax (2017/11) @bvwells (2017/12) @grokify (2018/07)
-  @kemokemo (2018/09 |
+  @kemokemo (2018/09) @bkabrda (2019/07) |
 
   | GraphQL   | @renepardon (2018/12) |
 
@@ -44630,7 +44707,7 @@ OpenAPITools/openapi-generator: >
   you may not use this file except in compliance with the License.
 
   You may obtain a copy of the License at
-  [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+  [apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 
   Unless required by applicable law or agreed to in writing, software
@@ -45354,6 +45431,9 @@ thomaxxl/safrs: >
 
   [![License](https://img.shields.io/pypi/l/safrs.svg)](https://github.com/thomaxxl/safrs/blob/master/LICENSE)
 
+  [![Codacy
+  Badge](https://api.codacy.com/project/badge/Grade/d121f32b06ee41a7813f5c7650b172c2)](https://app.codacy.com/app/thomaxxl/safrs?utm_source=github.com&utm_medium=referral&utm_content=thomaxxl/safrs&utm_campaign=Badge_Grade_Dashboard)
+
   [![Downloads](https://pepy.tech/badge/safrs)](https://pepy.tech/project/safrs)
 
 
@@ -45868,6 +45948,11 @@ thomaxxl/safrs: >
   - Flask-Admin integration example, eg.:
 
   ![demo](docs/images/flask-admin.png)
+
+
+  A docker image can be found here:
+
+  [https://github.com/thomaxxl/safrs-example](https://github.com/thomaxxl/safrs-example)
 
 
   <a class="mk-toclify" id="advanced-usage"></a>
@@ -60352,7 +60437,7 @@ Frameio/rolodex: >
 
   def deps do
     [
-      {:rolodex, "~> 0.8.0"}
+      {:rolodex, "~> 0.9.0"}
     ]
   end
 
@@ -62070,358 +62155,7 @@ cebe/yii2-app-api: >
 
   Development of this library is sponsored by [cebe.:cloud: "Your Professional
   Deployment Platform"](https://cebe.cloud).
-cdimascio/express-openapi-validator: >
-  # express-openapi-validator
-
-
-  [![](https://travis-ci.org/cdimascio/express-openapi-validator.svg?branch=master)](#)
-  [![](https://img.shields.io/npm/v/express-openapi-validator.svg)](https://www.npmjs.com/package/express-openapi-validator)
-  [![Coverage
-  Status](https://coveralls.io/repos/github/cdimascio/express-openapi-validator/badge.svg)](https://coveralls.io/github/cdimascio/express-openapi-validator)
-  [![](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
-
-
-  An OpenApi validator for ExpressJS that automatically validates API requests
-  using an OpenAPI 3 specification.
-
-
-  <p align="center">
-
-  <img
-  src="https://raw.githubusercontent.com/cdimascio/express-openapi-validator/master/assets/express-openapi-validator.png"
-  width="500">
-
-  </p>
-
-
-  [express-openapi-validator](https://github.com/cdimascio/express-openapi-validator)
-  is unopinionated and does not impose any  coding convention or project
-  structure. Simply, install the validator onto your express app, point it to
-  your OpenAPI 3 specification, then define and implement routes the way you
-  prefer. See an [example](#example-express-api-server).
-
-
-  ## Install
-
-
-  ```shell
-
-  npm i express-openapi-validator
-
-  ```
-
-
-  ## Usage
-
-
-  Install the openapi validator
-
-
-  ```javascript
-
-  new OpenApiValidator({
-    apiSpec: './openapi.yaml',
-  }).install(app);
-
-  ```
-
-
-
-  Then, register an error handler to customize errors
-
-
-  ```javascript
-
-  app.use((err, req, res, next) => {
-    // format error
-    res.status(err.status).json({
-      errors: err.errors,
-    });
-  });
-
-  ```
-
-
-  #### Alternatively...
-
-  The `apiSpec` option may be specified as the spec object itself, rather than a
-  path e.g. 
-
-
-  ```javascript
-
-  const apiSpec = {
-    openapi: "3.0.0",
-    info: {...},
-    servers: [...],
-    paths: {...},
-    components: {
-      responses: {...},
-      schemas: {...}
-    }
-  }
-
-
-  new OpenApiValidator({ apiSpec }).install(app);
-
-  ```
-
-
-
-  ## Example Express API Server
-
-
-  Try the complete example below:
-
-  (_it includes file upload as well!_)
-
-
-  ```javascript
-
-  var express = require('express');
-
-  var path = require('path');
-
-  var cookieParser = require('cookie-parser');
-
-  var bodyParser = require('body-parser');
-
-  var logger = require('morgan');
-
-  var http = require('http');
-
-  var app = express();
-
-
-  // 1. Import the express-openapi-validator library
-
-  var OpenApiValidator = require('express-openapi-validator').OpenApiValidator;
-
-
-  app.use(bodyParser.json());
-
-  app.use(logger('dev'));
-
-  app.use(express.json());
-
-  app.use(express.urlencoded({ extended: false }));
-
-  app.use(cookieParser());
-
-  app.use(express.static(path.join(__dirname, 'public')));
-
-
-  // 2. (optionally) Serve the OpenAPI spec
-
-  const spec = path.join(__dirname, 'openapi.yaml');
-
-  app.use('/spec', express.static(spec));
-
-
-  // 3. Install the OpenApiValidator onto your express app
-
-  new OpenApiValidator({
-    apiSpecPath: './openapi.yaml',
-  }).install(app);
-
-
-  // 4. Define routes using Express
-
-  app.get('/v1/pets', function(req, res, next) {
-    res.json([{ id: 1, name: 'max' }, { id: 2, name: 'mini' }]);
-  });
-
-
-  app.post('/v1/pets', function(req, res, next) {
-    res.json({ name: 'sparky' });
-  });
-
-
-  app.get('/v1/pets/:id', function(req, res, next) {
-    res.json({ id: req.params.id, name: 'sparky' });
-  });
-
-
-  // 4. Define route(s) to upload file(s)
-
-  app.post('/v1/pets/:id/photos', function(req, res, next) {
-    // files are found in req.files
-    // non-file multipart params can be found as such: req.body['my-param']
-
-    res.json({
-      files_metadata: req.files.map(f => ({
-        originalname: f.originalname,
-        encoding: f.encoding,
-        mimetype: f.mimetype,
-        // Buffer of file conents
-        buffer: f.buffer,
-      })),
-    });
-  });
-
-
-  // 5. Create an Express error handler
-
-  app.use((err, req, res, next) => {
-    // 6. Customize errors
-    res.status(err.status).json({
-      errors: err.errors,
-    });
-  });
-
-  ```
-
-
-  ## [Example Express API
-  Server](https://github.com/cdimascio/express-openapi-validator-example) (clone
-  it)
-
-
-  A fully working example lives
-  [here](https://github.com/cdimascio/express-openapi-validator-example)
-
-
-  ## Example validation responses
-
-
-  #### Validate a query parameter with a value constraint
-
-
-  `/pets/:id` should be of type integer, express-openapi-validator returns:
-
-
-  ```shell
-
-  curl http://localhost:3000/v1/pets/as |jq
-
-  {
-    "errors": [
-      {
-        "path": "id",
-        "errorCode": "type.openapi.validation",
-        "message": "should be integer",
-        "location": "path"
-      }
-    ]
-  }
-
-  ```
-
-
-  #### Validate a query parameter with a range constraint
-
-
-  `/pets?limit=?` should be of type integer with a value greater than 5. It
-  should also require an additional query paramter, `test`,
-  express-openapi-validator returns:
-
-
-  ```shell
-
-  curl http://localhost:3000/v1/pets?limit=1 |jq
-
-  {
-    "errors": [
-      {
-        "path": "limit",
-        "errorCode": "minimum.openapi.validation",
-        "message": "should be >= 5",
-        "location": "query"
-      },
-      {
-        "path": "test",
-        "errorCode": "required.openapi.validation",
-        "message": "should have required property 'test'",
-        "location": "query"
-      }
-    ]
-  }
-
-  ```
-
-
-  #### Validate the query parameter's value type
-
-
-  `POST /pets` is defined to only accept media type application/json,
-  express-openapi-validator returns:
-
-
-  ```shell
-
-  curl --request POST \
-    --url http://localhost:3000/v1/pets \
-    --header 'content-type: application/xml' \
-    --data '{
-          "name": "test"
-  }' |jq
-
-  {
-    "errors": [
-      {
-        "message": "Unsupported Content-Type application/xml"
-      }
-    ]
-  }
-
-  ```
-
-
-  #### Validate a POST body to ensure required parameters are present
-
-
-  `POST /pets` request body is required to contain the `name` properly,
-  express-openapi-validator returns:
-
-
-  ```shell
-
-  λ  my-test curl --request POST \
-    --url http://localhost:3000/v1/pets \
-    --header 'content-type: application/json' \
-    --data '{
-  }'|jq
-    "errors": [
-      {
-        "path": "name",
-        "errorCode": "required.openapi.validation",
-        "message": "should have required property 'name'",
-        "location": "body"
-      }
-    ]
-  }
-
-  ```
-
-
-  #### Validate a POST multipart/form-data request
-
-
-  ```shell
-
-  curl -XPOST http://localhost:3000/v1/pets/10/photos -F filez=@app.js | jq
-
-  {
-    "errors": [
-      {
-        "path": "file",
-        "errorCode": "required.openapi.validation",
-        "message": "should have required property 'file'",
-        "location": "body"
-      }
-    ]
-  }
-
-  ```
-
-
-  #### ...and much more. Try it out!
-
-
-  ## License
-
-
-  [MIT](LICENSE)
+cdimascio/express-openapi-validator: "# express-openapi-validator\n\n[![](https://travis-ci.org/cdimascio/express-openapi-validator.svg?branch=master)](#) [![](https://img.shields.io/npm/v/express-openapi-validator.svg)](https://www.npmjs.com/package/express-openapi-validator) ![](https://img.shields.io/npm/dm/express-openapi-validator.svg) [![Coverage Status](https://coveralls.io/repos/github/cdimascio/express-openapi-validator/badge.svg)](https://coveralls.io/github/cdimascio/express-openapi-validator) [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors) [![](https://img.shields.io/badge/license-MIT-blue.svg)](#license)\n\nAn OpenApi validator for ExpressJS that automatically validates API requests using an OpenAPI 3 specification.\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/express-openapi-validator/master/assets/express-openapi-validator.png\" width=\"500\">\n</p>\n\n[express-openapi-validator](https://github.com/cdimascio/express-openapi-validator) is unopinionated and does not impose any coding convention or project structure. Simply, install the validator onto your express app, point it to your OpenAPI 3 specification, then define and implement routes the way you prefer. See an [example](#example-express-api-server).\n\n## Install\n\n```shell\nnpm i express-openapi-validator\n```\n\n## Usage\n\nInstall the openapi validator\n\n```javascript\nnew OpenApiValidator({\n  apiSpec: './openapi.yaml',\n}).install(app);\n```\n\nThen, register an error handler to customize errors\n\n```javascript\napp.use((err, req, res, next) => {\n  // format error\n  res.status(err.status).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n#### Alternatively...\n\nThe `apiSpec` option may be specified as the spec object itself, rather than a path e.g.\n\n```javascript\nconst apiSpec = {\n  openapi: \"3.0.0\",\n  info: {...},\n  servers: [...],\n  paths: {...},\n  components: {\n    responses: {...},\n    schemas: {...}\n  }\n}\n\nnew OpenApiValidator({ apiSpec }).install(app);\n```\n\n## Example Express API Server\n\nTry the complete example below:\n(_it includes file upload as well!_)\n\n```javascript\nvar express = require('express');\nvar path = require('path');\nvar cookieParser = require('cookie-parser');\nvar bodyParser = require('body-parser');\nvar logger = require('morgan');\nvar http = require('http');\nvar app = express();\n\n// 1. Import the express-openapi-validator library\nvar OpenApiValidator = require('express-openapi-validator').OpenApiValidator;\n\napp.use(bodyParser.json());\napp.use(logger('dev'));\napp.use(express.json());\napp.use(express.urlencoded({ extended: false }));\napp.use(cookieParser());\napp.use(express.static(path.join(__dirname, 'public')));\n\n// 2. (optionally) Serve the OpenAPI spec\nconst spec = path.join(__dirname, 'openapi.yaml');\napp.use('/spec', express.static(spec));\n\n// 3. Install the OpenApiValidator onto your express app\nnew OpenApiValidator({\n  apiSpecPath: './openapi.yaml',\n}).install(app);\n\n// 4. Define routes using Express\napp.get('/v1/pets', function(req, res, next) {\n  res.json([{ id: 1, name: 'max' }, { id: 2, name: 'mini' }]);\n});\n\napp.post('/v1/pets', function(req, res, next) {\n  res.json({ name: 'sparky' });\n});\n\napp.get('/v1/pets/:id', function(req, res, next) {\n  res.json({ id: req.params.id, name: 'sparky' });\n});\n\n// 4. Define route(s) to upload file(s)\napp.post('/v1/pets/:id/photos', function(req, res, next) {\n  // files are found in req.files\n  // non-file multipart params can be found as such: req.body['my-param']\n\n  res.json({\n    files_metadata: req.files.map(f => ({\n      originalname: f.originalname,\n      encoding: f.encoding,\n      mimetype: f.mimetype,\n      // Buffer of file conents\n      buffer: f.buffer,\n    })),\n  });\n});\n\n// 5. Create an Express error handler\napp.use((err, req, res, next) => {\n  // 6. Customize errors\n  res.status(err.status).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n## [Example Express API Server](https://github.com/cdimascio/express-openapi-validator-example) (clone it)\n\nA fully working example lives [here](https://github.com/cdimascio/express-openapi-validator-example)\n\n## Example validation responses\n\n#### Validate a query parameter with a value constraint\n\n`/pets/:id` should be of type integer, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets/as |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".params.id\",\n      \"message\": \"should be integer\",\n      \"errorCode\": \"type.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a query parameter with a range constraint\n\n`/pets?limit=?` should be of type integer with a value greater than 5. It should also require an additional query paramter, `test`, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets?limit=1 |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".query.limit\",\n      \"message\": \"should be >= 5\",\n      \"errorCode\": \"minimum.openapi.validation\"\n    },\n    {\n      \"path\": \"test\",\n      \"message\": \"should have required property 'test'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate the query parameter's value type\n\n`POST /pets` is defined to only accept media type application/json, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/xml' \\\n  --data '{\n        \"name\": \"test\"\n}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \"/v1/pets\",\n      \"message\": \"unsupported media type application/xml\"\n    }\n  ]\n}\n```\n\n#### Validate a POST body to ensure required parameters are present\n\n`POST /pets` request body is required to contain the `name` properly, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/json' \\\n  --data '{}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \"name\",\n      \"message\": \"should have required property 'name'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a POST multipart/form-data request\n\n```shell\ncurl -s -XPOST http://localhost:3000/v1/pets/10/photos -F fileZZ=@app.js | jq\n{\n  \"errors\": [\n    {\n      \"path\": \"file\",\n      \"message\": \"should have required property 'file'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### ...and much more. Try it out!\n\n## Contributors ✨\n\nThanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"http://www.twitter.com/carminedimascio\"><img src=\"https://avatars1.githubusercontent.com/u/4706618?v=4\" width=\"100px;\" alt=\"Carmine DiMascio\"/><br /><sub><b>Carmine DiMascio</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Tests\">⚠️</a> <a href=\"#infra-cdimascio\" title=\"Infrastructure (Hosting, Build-Tools, etc)\">\U0001F687</a></td>\n    <td align=\"center\"><a href=\"http://litr.cc/\"><img src=\"https://avatars2.githubusercontent.com/u/4166193?v=4\" width=\"100px;\" alt=\"Sheldhur Mornor\"/><br /><sub><b>Sheldhur Mornor</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Tests\">⚠️</a></td>\n  </tr>\n</table>\n\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n\n## License\n\n[MIT](LICENSE)\n"
 cebe/yii2-openapi: >
   # yii2-openapi
 
@@ -66187,9 +65921,12 @@ airtasker/spot: >
     SPOT_CONTRACT  path to Spot contract
 
   OPTIONS
-    -h, --help               show CLI help
-    -p, --port=port          (required) [default: 3010] Port on which to run the mock server
-    --pathPrefix=pathPrefix  Prefix to prepend to each endpoint path
+    -h, --help                   show CLI help
+    -p, --port=port              (required) [default: 3010] Port on which to run the mock server
+    --pathPrefix=pathPrefix      Prefix to prepend to each endpoint path
+
+    --proxyBaseUrl=proxyBaseUrl  If set, the server will act as a proxy and fetch data from the given remote server
+                                 instead of mocking it
 
   EXAMPLE
     $ spot mock api.ts
@@ -66479,3 +66216,98 @@ leosussan/fastapi-gino-postgres: >
 
   * **SQLAlchemy_Utils:** Provides essential handles & datatypes. Compatible
   with GINO.
+Cornutum/tcases: >
+  # Tcases: A Model-Based Test Case Generator #
+
+
+  ## What's New? ##
+
+    * The latest version ([Tcases 3.1.0](ReleaseNotes.md#310)) is now available at the Maven Central Repository.
+      See [HowToDownload](HowToDownload.md) for download instructions.
+
+    * Tcases 3.1.0 adds two new capabilities: cardinality conditions and Tcases for OpenAPI. See the [release notes](ReleaseNotes.md#310) for details.
+
+    * Subscribe to the [Tcases Forum](https://groups.google.com/d/forum/tcases) group to get notifications and share experiences with other Tcases users.
+
+  ## What Does It Do? ##
+
+
+  Tcases is a tool for designing tests. It doesn't matter what kind of system
+  you are testing. Nor does it matter what level of the system you are testing
+  -- unit, subsystem, or full system. You can use Tcases to design your tests in
+  any of these situations. With Tcases, you define the input space for your
+  system-under-test and the level of coverage that you want. Then Tcases
+  generates a minimal set of test cases that meets your requirements.
+
+
+  Tcases is primarily a tool for black-box test design. For such tests, the
+  concept of "coverage" is different from structural testing critieria such as
+  line coverage, branch converage, etc. Instead, Tcases is guided by coverage of
+  the input space of your system.
+
+
+  Tcases gives you a way to define the input space for your system in a form
+  that is concise but comprehensive. Then Tcases allows you to control the
+  number of test cases in your sample subset by specifying the level of coverage
+  you want. You can start with a basic level of coverage, and Tcases will
+  generate a small set of test cases that touches every significant element of
+  the input space. Then you can improve your tests by selectively adding
+  coverage in specific high-risk areas. For example, you can specify pairwise
+  coverage or higher-order combinations of selected input variables.
+
+
+  ## How Does It Work? ##
+
+
+  First, you create a system input definition, a document that defines your
+  system as a set of functions. For each system function, the system input
+  definition defines the variables that characterize the function input space.
+
+
+  Then, you can create a generator definition. That's another document that
+  defines the coverage you want for each system function. The generator
+  definition is optional. You can skip this step and still get a basic level of
+  coverage.
+
+
+  Finally, you run Tcases. Tcases is a Java program that you can run from the
+  command line or using the [Tcases Maven
+  Plugin](http://www.cornutum.org/tcases/docs/tcases-maven-plugin/). The command
+  line version of Tcases comes with built-in support for running using a shell
+  script or an ant target. Using your input definition and your generator
+  definition, Tcases generates a system test definition. The system test
+  definition is an document that lists, for each system function, a set of test
+  cases that provides the specified level of coverage. Each test case defines a
+  specific value for every function input variable. Tcases generates not only
+  valid input values that define successful test cases but also invalid values
+  for the tests cases that are needed to verify expected error handling.
+
+
+  Of course, the system test definition is not something you can execute
+  directly. But it follows a well-defined schema, which means you can use a
+  variety of XML transformation tools to convert it into a form that is suitable
+  for testing your system. For example, Tcases comes with a built-in transformer
+  that converts a system test definition into a Java source code template for a
+  JUnit or TestNG test class.
+
+
+  ## Get Started! ##
+
+    * [Tcases: The Complete Guide](http://www.cornutum.org/tcases/docs/Tcases-Guide.htm)
+    * [Tcases: The JSON Guide](http://www.cornutum.org/tcases/docs/Tcases-Json.htm): A companion to _The Complete Guide_ adding info specific to JSON
+    * [Tcases for OpenAPI](tcases-openapi/README.md): Testing a REST-ful API? Generate test cases directly from your OpenAPI v3 spec.
+    * [The Tcases Maven Plugin](http://www.cornutum.org/tcases/docs/tcases-maven-plugin/)
+    * [How To Download Using Maven](HowToDownload.md)
+    * [Model-Driven Testing Using Tcases](ModelDrivenTestingForAgileTeams.md)
+    * [Release Notes](ReleaseNotes.md)
+    * Javadoc: [Tcases API](http://www.cornutum.org/tcases/docs/api/)
+
+  ## Contributors ##
+
+
+  Thanks to the following people, who have contributed significant improvements
+  to Tcases.
+
+    * [Kerry Kimbrough](https://github.com/kerrykimbrough) (project founder)
+    * [Juglar](https://github.com/juglar)
+    * [Thibault Kruse](https://github.com/tkruse)
