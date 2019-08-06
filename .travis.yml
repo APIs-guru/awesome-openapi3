@@ -6,7 +6,7 @@ script:
   - node index.js
   - rvm install 2.3
   - rvm use 2.3
-  - gem install bundler
+  - gem install bundler -v '2.0.1'
   - bundle install
   - cd docs
   - bundle exec jekyll doctor
