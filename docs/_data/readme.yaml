@@ -274,28 +274,39 @@ googleapis/gnostic: >
   ## Installation
 
 
-  1. Get this package by downloading it with `go get`.
+  The following instructions are for installing gnostic using
 
-          go get github.com/googleapis/gnostic
+  [Go modules](https://blog.golang.org/using-go-modules),
+
+  supported by Go 1.11 and later.
+
+
+  1. Get this package by downloading it with `git clone`.
+
+          git clone https://github.com/googleapis/gnostic
+          cd gnostic
     
-  2. [Optional] Build and run the compiler generator. 
+  2. [Optional] Build and run the gnostic compiler generator. 
 
-  This uses the OpenAPI JSON schema to generate a Protocol Buffer language file 
+  This uses JSON schemas to generate Protocol Buffer language files
 
-  that describes the OpenAPI specification and a Go-language file of code that 
+  that describes supported API specification formats and Go-language
 
-  will read a JSON or YAML OpenAPI representation into the generated protocol 
+  files of code that will read JSON or YAML API descriptions into
 
-  buffers. Pre-generated versions of these files are in the OpenAPIv2 directory.
+  the generated protocol buffer models. 
 
-          cd $GOPATH/src/github.com/googleapis/gnostic/generate-gnostic
-          go install
-          cd ..
+
+  Pre-generated versions of these files are checked into the directories
+
+  named OpenAPIv2, OpenAPIv3, and discovery.
+
+          go install ./generate-gnostic
           generate-gnostic --v2
+          generate-gnostic --v3
+          generate-gnostic --discovery
 
-  3. [Optional] Generate Protocol Buffer support code. 
-
-  A pre-generated version of this file is checked into the OpenAPIv2 directory.
+  3. Generate Protocol Buffer support code. 
 
   This step requires a local installation of protoc, the Protocol Buffer
   Compiler,
@@ -306,21 +317,18 @@ googleapis/gnostic: >
 
   You can install the plugin with this command:
 
-          go get -u github.com/golang/protobuf/protoc-gen-go
+          go get github.com/golang/protobuf/protoc-gen-go
 
-  Then use the following to recompile the Gnostic Protocol Buffer models:
+  Then use the following to compile the gnostic Protocol Buffer models:
 
           ./COMPILE-PROTOS.sh
 
-  4. [Optional] Rebuild **gnostic**. This is only necessary if you've performed
-  steps
+  4. Build **gnostic**. 
 
-  2 or 3 above.
+          go install .
 
-          go install github.com/googleapis/gnostic
-
-  5. Run **gnostic**. This will create a file in the current directory named
-  "petstore.pb" that contains a binary
+  5. Run **gnostic**. This sample invocation creates a file in the current
+  directory named "petstore.pb" that contains a binary
 
   Protocol Buffer description of a sample API.
 
@@ -334,11 +342,11 @@ googleapis/gnostic: >
 
   Protocol Buffer description. This is mainly for use in testing and debugging.
 
-          gnostic --text-out=petstore.text https://raw.githubusercontent.com/googleapis/gnostic/master/examples/petstore.json
+          gnostic --text-out=petstore.text https://raw.githubusercontent.com/googleapis/gnostic/master/examples/v2.0/json/petstore.json
 
   7. For a sample application, see apps/report.
 
-          go install github.com/googleapis/gnostic/apps/report
+          go install ./apps/report
           report petstore.pb
 
   8. **gnostic** supports plugins. Some are already implemented in the `plugins`
@@ -1000,8 +1008,7 @@ contentjet/openapi-ui: >
   # NOTE
 
 
-  This project is work-in-progress/experimental at this stage. Contributions and
-  feedback welcome.
+  This project was experimental and is not being actively maintained.
 
 
   ## Getting started
@@ -3234,8 +3241,8 @@ stoplightio/prism: >
   [![CircleCI](https://circleci.com/gh/stoplightio/prism.svg?style=svg)](https://circleci.com/gh/stoplightio/prism)
 
 
-  Prism is a set of packages for API mocking with **OpenAPI Specification v2**
-  (formerly known as Swagger Specification) and **OpenAPI Specification v3**.
+  Prism is a set of packages for API mocking with **OpenAPI v2** (formerly known
+  as Swagger Specification) and **OpenAPI v3**.
 
 
   For example, given an API specification you can spin up a mock HTTP server and
@@ -3247,61 +3254,37 @@ stoplightio/prism: >
 
 
   > Note: This branch refers to Prism 3.x, which is the current version most
-  likely you will use. If you're looking for the 2.x version, point your browser
-  to the [2.x branch][2.x]
+  likely you will use. If you're looking for the 2.x version, look at the [`2.x`
+  branch][2.x]
 
 
   ## Installation
-
-
-  Most of the users will probably want to use the CLI, which is a Node module,
-  and can either be installed via NPM or Yarn…
 
 
   ```bash
 
   npm install -g @stoplight/prism-cli
 
-  # or
+
+  # OR
+
 
   yarn global add @stoplight/prism-cli
 
   ```
 
 
-  …or if you do not want to install [Node](https://nodejs.org), you can either
-  use the installation script (if you're using Linux or MacOS)…
+  For more installation options, see [Getting Started >
+  Installation](https://stoplight.io/p/docs/gh/stoplightio/prism/docs/getting-started/installation.md)
 
 
-  ```bash
-
-  curl -L https://raw.githack.com/stoplightio/prism/master/install | sh
-
-  ```
+  ## Getting Started
 
 
-  …or download the latest release from [GitHub directly][download-release]. We
-  offer binaries for Windows as well.
-
-
-  ## Usage
-
-
-  Please check out our `docs` directory. A good point to start is the [CLI
-  section][cli-docs]
-
-
-  ### Docker Image
-
-
-  Prism is avaiable as Docker Image as well under the `3` tag.
-
-
-  ```bash
-
-  docker run -P stoplight/prism:3 mock -h 0.0.0.0 api.oas2.yml
-
-  ```
+  After
+  [installation](https://stoplight.io/p/docs/gh/stoplightio/prism/docs/getting-started/installation.md)
+  take a look at our [getting started
+  documentation](https://stoplight.io/p/docs/gh/stoplightio/prism/docs/getting-started/concepts.md).
 
 
   ## What's next for Prism?
@@ -3320,21 +3303,6 @@ stoplightio/prism: >
   - [ ] Recording / "Learning" mode to create spec files
 
   - [ ] Data Persistence (allow Prism act like a sandbox)
-
-
-  ## Experimental programmatic APIs (advanced topic)
-
-
-  ### HTTP Client
-
-
-  Prism's HTTP Client programmatic API lets you write custom code and build
-  things like request makers and mocking servers (in fact Prism CLI uses the
-  HTTP Client deep inside!).
-
-
-  You can find more details about this package in [its dedicated
-  documentation](packages/http/README.md).
 
 
   ## FAQs
@@ -3371,13 +3339,6 @@ stoplightio/prism: >
   see what URLs you have available.
 
 
-  **How can I debug Prism?**
-
-
-  Check out our [debugging section ⇗][debugging] in the [contribution docs
-  ⇗][contributing].
-
-
   ## Contributing
 
 
@@ -3397,8 +3358,6 @@ stoplightio/prism: >
   [code_of_conduct]: CODE_OF_CONDUCT.md
 
   [contributing]: CONTRIBUTING.md
-
-  [debugging]: CONTRIBUTING.md#debugging
 
   [fastify]: https://www.fastify.io/
 
@@ -30090,13 +30049,18 @@ unicredit/sbt-swagger-codegen: >
   ## Install
 
 
-  First clone this project and `publishLocal` it.
+  Current release is
+  [`0.0.12`](https://github.com/unicredit/sbt-swagger-codegen/tree/0.0.12)
+
+
+  If you want to try the latest version on `master`, first clone this project
+  and `publishLocal` it.
 
 
   Enable it inside your `project\plugins.sbt` like this:
 
 
-  `addSbtPlugin("eu.unicredit" % "sbt-swagger-codegen" % "0.0.12-SNAPSHOT")`
+  `addSbtPlugin("eu.unicredit" % "sbt-swagger-codegen" % "0.1.0-SNAPSHOT")`
 
 
   Enable it in your `build.sbt` like this:
@@ -38315,8 +38279,8 @@ raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nG
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-08-01T15:56:28Z","pushed_at":"2019-06-22T18:30:17Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":31955,"stargazers_count":492,"watchers_count":492,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":79,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":79,"open_issues":32,"watchers":492,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":79,"subscribers_count":17}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-08-13T15:53:19Z","pushed_at":"2019-08-09T12:07:08Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apidevtools.org/swagger-parser","size":32008,"stargazers_count":494,"watchers_count":494,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":80,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":32,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":80,"open_issues":32,"watchers":494,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":80,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -43099,6 +43063,23 @@ OpenAPITools/openapi-generator: >
   Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/master)](https://cloud.drone.io/OpenAPITools/openapi-generator)
 
 
+  [`4.2.x`](https://github.com/OpenAPITools/openapi-generator/tree/4.2.x)
+  branch: [![Build
+  Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/4.2.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
+
+  [![Integration
+  Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/4.2.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
+
+  [![Run
+  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=4.2.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
+
+  [![Windows
+  Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=4.2.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
+
+  [![JDK11
+  Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/4.2.x)](https://cloud.drone.io/OpenAPITools/openapi-generator)
+
+
   [`5.0.x`](https://github.com/OpenAPITools/openapi-generator/tree/5.0.x)
   branch: [![Build
   Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/5.0.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
@@ -43294,13 +43275,17 @@ OpenAPITools/openapi-generator: >
   [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.0.0-SNAPSHOT/)|
   13.05.2020 | Major release with breaking changes (no fallback)
 
-  4.1.0 (upcoming minor release)
-  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.1.0-SNAPSHOT/)|
-  31.07.2019 | Minor release (breaking changes with fallbacks)
+  4.2.0 (upcoming minor release)
+  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.2.0-SNAPSHOT/)|
+  09.10.2019 | Minor release (breaking changes with fallbacks)
 
-  [4.0.3](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.0.3)
-  (latest stable release) | 09.07.2019 | Patch release (bug fixes, minor
-  enhancements, etc)
+  4.1.1 (upcoming minor release)
+  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.1.1-SNAPSHOT/)|
+  23.08.2019 | Patch release (bug fixes, enhancements)
+
+  [4.1.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.1.0)
+  (latest stable release) | 09.08.2019 | Minor release (breaking changes with
+  fallbacks)
 
 
   OpenAPI Spec compatibility: 1.0, 1.1, 1.2, 2.0, 3.0
@@ -43400,7 +43385,7 @@ OpenAPITools/openapi-generator: >
 
 
   JAR location:
-  `http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.0.3/openapi-generator-cli-4.0.3.jar`
+  `http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.0/openapi-generator-cli-4.1.0.jar`
 
 
   For **Mac/Linux** users:
@@ -43408,7 +43393,7 @@ OpenAPITools/openapi-generator: >
   ```sh
 
   wget
-  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.0.3/openapi-generator-cli-4.0.3.jar
+  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.0/openapi-generator-cli-4.1.0.jar
   -O openapi-generator-cli.jar
 
   ```
@@ -43421,7 +43406,7 @@ OpenAPITools/openapi-generator: >
   ```
 
   Invoke-WebRequest -OutFile openapi-generator-cli.jar
-  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.0.3/openapi-generator-cli-4.0.3.jar
+  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.0/openapi-generator-cli-4.1.0.jar
 
   ```
 
@@ -43826,12 +43811,12 @@ OpenAPITools/openapi-generator: >
 
   <!-- RELEASE_VERSION -->
 
-  Or install a particular OpenAPI Generator version (e.g. v4.0.3):
+  Or install a particular OpenAPI Generator version (e.g. v4.1.0):
 
 
   ```sh
 
-  npm install @openapitools/openapi-generator-cli@cli-4.0.3 -g
+  npm install @openapitools/openapi-generator-cli@cli-4.1.0 -g
 
   ```
 
@@ -43878,7 +43863,7 @@ OpenAPITools/openapi-generator: >
   <!-- RELEASE_VERSION -->
 
   You can also download the JAR (latest release) directly from
-  [maven.org](http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.0.3/openapi-generator-cli-4.0.3.jar)
+  [maven.org](http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.0/openapi-generator-cli-4.1.0.jar)
 
   <!-- /RELEASE_VERSION -->
 
@@ -43944,7 +43929,6 @@ OpenAPITools/openapi-generator: >
   SYNOPSIS
           openapi-generator-cli generate
                   [(-a <authorization> | --auth <authorization>)]
-                  [--additional-properties <additional properties>...]
                   [--api-package <api package>] [--artifact-id <artifact id>]
                   [--artifact-version <artifact version>]
                   [(-c <configuration file> | --config <configuration file>)]
@@ -43965,12 +43949,13 @@ OpenAPITools/openapi-generator: >
                   [--model-name-prefix <model name prefix>]
                   [--model-name-suffix <model name suffix>]
                   [--model-package <model package>]
-                  [(-o <output directory> | --output <output directory>)]
+                  [(-o <output directory> | --output <output directory>)] 
+                  [(-p <additional properties> | --additional-properties <additional properties>)...]
                   [--package-name <package name>] [--release-note <release note>]
                   [--remove-operation-id-prefix]
                   [--reserved-words-mappings <reserved word mappings>...]
-                  [(-s | --skip-overwrite)] [--skip-validate-spec]
-                  [--strict-spec <true/false strict behavior>]
+                  [(-s | --skip-overwrite)] [--server-variables <server variables>...]
+                  [--skip-validate-spec] [--strict-spec <true/false strict behavior>]
                   [(-t <template directory> | --template-dir <template directory>)]
                   [--type-mappings <type mappings>...] [(-v | --verbose)]
 
@@ -44552,7 +44537,7 @@ OpenAPITools/openapi-generator: >
   | C         | @zhemant (2018/11) |
 
   | C++       | @ravinikam (2017/07) @stkrwork (2017/07) @etherealjoy (2018/02)
-  @martindelille (2018/03) |
+  @martindelille (2018/03) @muttleyxd (2019/08) |
 
   | C#        | @mandrean (2017/08), @jimschubert (2017/09)
   [:heart:](https://www.patreon.com/jimschubert) |
@@ -49937,6 +49922,47 @@ wzshiming/gen: >
 
 
   ## Examples
+
+
+  '#' is the annotation, the annotation is the golang tag syntax, the only
+  difference here is '#' wraps not '`'.
+
+
+  ``` golang
+
+  // ItemService #path:"/item/"#
+
+  type ItemService struct {}
+
+
+  // Create a Item #route:"POST /"#
+
+  func (s *ItemService) Create(item *Item) (err error) {}
+
+
+  // Update the Item #route:"PUT /{item_id}"#
+
+  func (s *ItemService) Update(itemID int /* #name:"item_id"# */, item *Item)
+  (err error) {}
+
+
+  // Delete the Item #route:"DELETE /{item_id}"#
+
+  func (s *ItemService) Delete(itemID int /* #name:"item_id"# */) (err error) {}
+
+
+  // Get the Item #route:"GET /{item_id}"#
+
+  func (s *ItemService) Get(itemID int /* #name:"item_id"# */) (item
+  *ItemWithID, err error) {}
+
+
+  // List of the Item #route:"GET /"#
+
+  func (s *ItemService) List(offset, limit int) (items []*ItemWithID, err error)
+  {}
+
+  ```
 
 
   1. Install gen tool `go get -v github.com/wzshiming/gen/cmd/gen`
@@ -60416,7 +60442,7 @@ Frameio/rolodex: >
 
   def deps do
     [
-      {:rolodex, "~> 0.9.0"}
+      {:rolodex, "~> 0.10.0"}
     ]
   end
 
@@ -63965,6 +63991,8 @@ lezhnev74/openapi-psr7-validator: >
 
   - [Will Chambers](https://github.com/willchambers99)
 
+  - [Ignacio](https://github.com/imefisto)
+
   - A big thank you to [Henrik Karlström](https://github.com/hkarlstrom) who
   kind of inspired me to work on this package. 
 
@@ -64884,7 +64912,7 @@ Redocly/redoc: >
 
   see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with microservices, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour HTTP routing engine, due to its speed and simplicity for the generated\nstubs.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tAdditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema.\n```\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}w\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples. \n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the server boilerplate. `server` requires the types in the\n same package to compile.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
-sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
+sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Buy Ligit License](https://s3.us-west-1.wasabisys.com/public.sugarkubes/ligit_embed.svg)](https://ligit.dev)\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
 ErikWittern/swagger-snippet: >
   # Swagger Snippet
 
@@ -65857,4 +65885,4 @@ Cornutum/tcases: >
     * [Kerry Kimbrough](https://github.com/kerrykimbrough) (project founder)
     * [Juglar](https://github.com/juglar)
     * [Thibault Kruse](https://github.com/tkruse)
-wrannaman/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
+wrannaman/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Buy Ligit License](https://s3.us-west-1.wasabisys.com/public.sugarkubes/ligit_embed.svg)](https://ligit.dev)\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
