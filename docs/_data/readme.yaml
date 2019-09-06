@@ -4233,10 +4233,8 @@ go-swagger/go-swagger: >
 
   Note that the `--skip-flatten` option has been phased out and replaced by the
   more explicit `--with-expand` option.
-swagger-api/swagger-inflector: >-
-  # Swagger Inflector <img
-  src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SW-logo-clr.png"
-  height="50" align="right">
+swagger-api/swagger-inflector: >
+  # Swagger Inflector
 
 
   [![Build
@@ -4247,14 +4245,20 @@ swagger-api/swagger-inflector: >-
   Central](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-inflector/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-inflector)
 
 
-  [![Build
-  Status](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-inflector-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-inflector-master/)
+  ----
 
 
+  **NOTE:** If you're looking for `swagger-inflector` 1.X and Swagger/OpenApi
+  2.0, please refer to [v1
+  branch](https://github.com/swagger-api/swagger-inflector/tree/v1)
 
-  This project uses the OpenAPI Specification to drive an API implementation. 
-  Rather than a typical top-down or bottom-up integration, the Inflector uses
-  the OpenAPI Specification as a DSL for the REST API.  The spec drives the
+
+  ----
+
+
+  This project uses the Swagger Specification to drive an API implementation. 
+  Rather than a typical top-down or bottom-up swagger integration, the Inflector
+  uses the swagger specification as a DSL for the REST API.  The spec drives the
   creation of routes and controllers automatically, matching methods and method
   signatures from the implementation.  This brings a similar integration
   approach to the JVM as
@@ -4286,8 +4290,9 @@ swagger-api/swagger-inflector: >-
   ```
 
 
-  This will download everything you need to start editing and running a Swagger
-  Inflector based project.  See the output of the command for instructions.
+  This will download everything you need to start editing and running a
+  swagger-inflector based project.  See the output of the command for
+  instructions.
 
 
   ### Components
@@ -4295,10 +4300,10 @@ swagger-api/swagger-inflector: >-
 
   Inflector uses the following libraries:
 
-   - Swagger models for the swagger definition
+   - swagger models for the swagger definition
    - Jackson for JSON processing
-   - Jersey 2.6 for REST
-   - Minimum Java 7 
+   - Jersey 2.26 for REST
+   - Minimum Java 8
 
   ### Integration
 
@@ -4318,7 +4323,7 @@ swagger-api/swagger-inflector: >-
     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
-      <param-value>io.swagger.inflector.SwaggerInflector</param-value>
+      <param-value>io.swagger.oas.inflector.OpenAPIInflector</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -4364,29 +4369,40 @@ swagger-api/swagger-inflector: >-
 
   # configure your default controller package for method discovery
 
-  controllerPackage: io.swagger.sample.controllers
+  controllerPackage: io.swagger.oas.sample.controllers
 
 
   # configure the default model package for model discovery
 
-  modelPackage: io.swagger.sample.models
+  modelPackage: io.swagger.oas.sample.models
 
 
   # the path to the swagger definition (Note! this can be overridden with
   -DswaggerUrl as a system property
 
-  swaggerUrl: swagger.yaml
+  swaggerUrl: openapi.yaml
 
 
   # specific mappings for models, used to locate models in the
   `#/definitions/${model}`
 
   modelMappings:
-    User: io.swagger.sample.models.User
+    User: io.swagger.oas.sample.models.User
 
   # HTTP response code when required parameters are missing
 
   invalidRequestCode: 400
+
+
+  #Allows to configure the exposed spec (values in example are the defaults)
+
+  exposedSpecOptions:
+    parseOptions:
+      resolve: false
+      resolveFully: false
+    useOriginalNotParsed: false
+    hideInflectorExtensions: true
+    mergeRootPath: true
 
   ```
 
@@ -4448,12 +4464,8 @@ swagger-api/swagger-inflector: >-
         x-swagger-router-controller: SampleController
         operationId: getTest1
         parameters:
-          - name: id
-            in: formData
-            type: integer
-            format: int64
           - name: name
-            in: formData
+            in: query
             type: string
         responses:
           200:
@@ -4477,8 +4489,7 @@ swagger-api/swagger-inflector: >-
   ```
 
   method: public Object getTest1(
-      io.swagger.inflector.models.RequestContext,
-      java.lang.Integer id,
+      RequestContext,
       java.lang.String name)
   ```
 
@@ -4496,11 +4507,12 @@ swagger-api/swagger-inflector: >-
       post:
         x-swagger-router-controller: SampleController
         operationId: addUser
+        requestBody:
+            content:
+              "application/json":
+                schema:
+                  $ref: '#/definitions/User'
         parameters:
-          - name: user
-            in: body
-            schema:
-              $ref: '#/definitions/User'
           - name: name
             in: query
             type: string
@@ -4544,9 +4556,8 @@ swagger-api/swagger-inflector: >-
    - If the definition does not exist, the `modelPackage` from the configuration will be used to attempt to load the class:
 
    ```
-   // ref.getSimpleRef() returns only the `User` from `#/definitions/User`
 
-   Class<?> cls = Class.forName(config.getModelPackage() + "." + ref.getSimpleRef())
+
    ```
 
    If the definition can be loaded it will be used as the method signature
@@ -4571,8 +4582,8 @@ swagger-api/swagger-inflector: >-
 
 
   Your controllers can return null (void response), an object (entity), or a
-  `io.swagger.inflector.models.ResponseContext`, which allows you to send
-  specific error codes, headers, and an optional entity.
+  `ResponseContext`, which allows you to send specific error codes, headers, and
+  an optional entity.
 
 
   For example, if you want to return a `Pet` from a controller:
@@ -4728,7 +4739,7 @@ swagger-api/swagger-inflector: >-
 
   ```
 
-  becase the required field `id` is missing.
+  because the required field `id` is missing.
 
 
   The same goes for responses generated by the server.  Any response code that
@@ -4784,10 +4795,17 @@ swagger-api/swagger-inflector: >-
 
   #### Samples
 
+  The samples are a being refactor to support the new inflector.
 
-  You can find samples for the inflector project in the
+
+  You will soon find samples for the inflector project in the
   [Swagger-Samples](https://github.com/swagger-api/swagger-samples) repository. 
   The inflector projects start with `inflector-`
+
+
+  ---
+
+  <img src="http://swagger.io/wp-content/uploads/2016/02/logo.jpg"/>
 
 
   ## Security contact
@@ -4799,7 +4817,6 @@ swagger-api/swagger-inflector: >-
 
 
   ## License
-
 
   ```
 
@@ -5243,14 +5260,6 @@ apioo/fusio: >
   # Apps
 
 
-  The following apps are working with the Fusio API. Beside the standard apps
-
-  which are shipped with Fusio we have also a [dedicated
-  page](https://www.fusio-project.org/apps)
-
-  on our website which lists available apps for Fusio.
-
-
   ## Backend
 
 
@@ -5263,58 +5272,14 @@ apioo/fusio: >
   app is located at `/fusio/`.
 
 
-  ## Developer
+  ## Marketplace
 
 
-  ![Developer](https://github.com/apioo/fusio/blob/master/doc/_static/developer.png)
+  Fusio has a [marketplace](https://www.fusio-project.org/marketplace) which
 
+  contains a variety of apps for specific use cases. Every app can be directly
 
-  The developer app is designed to quickly setup an API program where new 
-
-  developers can register and create/manage their apps. The app is located at 
-
-  `/developer/`.
-
-
-  ## Documentation
-
-
-  ![Documentation](https://github.com/apioo/fusio/blob/master/doc/_static/documentation.png)
-
-
-  The documentation app simply provides an overview of all available endpoints. 
-
-  It is possible to export the API definition into other schema formats like
-  i.e. 
-
-  Swagger. The app is located at `/documentation/`.
-
-
-  ## Swagger-UI
-
-
-  ![Swagger-UI](https://github.com/apioo/fusio/blob/master/doc/_static/swagger-ui.png)
-
-
-  The [swagger-ui](https://github.com/swagger-api/swagger-ui) app renders a 
-
-  documentation based on the OpenAPI specification. The app is located at 
-
-  `/swagger-ui/`.
-
-
-  ## VSCode
-
-
-  ![VSCode](https://github.com/apioo/fusio/blob/master/doc/_static/vscode.png)
-
-
-  The VSCode app helps to develop all endpoint logic online using the
-
-  [monaco editor](https://microsoft.github.io/monaco-editor/). The app is
-  located
-
-  at `/vscode/`.
+  installed from the backend app under System / Marketplace.
 
 
   # Installation
@@ -28768,6 +28733,12 @@ oatpp/oatpp-swagger: >
 
     .addServer("http://localhost:8000", "server on localhost");
 
+    // When you are using the AUTHENTICATION() Endpoint-Macro you must add an SecurityScheme object (https://swagger.io/specification/#securitySchemeObject)
+    // For basic-authentication you can use the default Basic-Authorization-Security-Scheme like this
+    // For more complex authentication schemes you can use the oatpp::swagger::DocumentInfo::SecuritySchemeBuilder builder
+    // Don't forget to add info->addSecurityRequirement("basic_auth") to your ENDPOINT_INFO() Macro!
+    .addSecurityScheme("basic_auth", oatpp::swagger::DocumentInfo::SecuritySchemeBuilder::DefaultBasicAuthorizationSecurityScheme());
+
     return builder.build();
 
   }());
@@ -33795,7 +33766,7 @@ rochacbruno/flasgger: >+
 
 
   [![Build
-  Status](https://travis-ci.org/rochacbruno/flasgger.svg?branch=master)](https://travis-ci.org/rochacbruno/flasgger)
+  Status](https://travis-ci.com/flasgger/flasgger.svg?branch=master)](https://travis-ci.com/flasgger/flasgger)
 
   [![Code
   Health](https://landscape.io/github/rochacbruno/flasgger/master/landscape.svg?style=flat)](https://landscape.io/github/rochacbruno/flasgger/master)
@@ -35932,11 +35903,14 @@ slanatech/swagger-stats: >
 
 
 
-  ## API Telemetry and APM
+  ## API Telemetry and APM 
 
 
   > Trace API calls and Monitor API performance, health and usage statistics in
   Node.js Microservices
+
+
+  ### Supports Express, Koa and Hapi
 
 
   **swagger-stats** traces REST API requests and responses in Node.js
@@ -35948,7 +35922,6 @@ slanatech/swagger-stats: >
 
   and swagger-stats will match API requests with API Operations defined in
   swagger specification. 
-
 
 
   **swagger-stats** exposes statistics and metrics per API Operation, such as
@@ -36119,6 +36092,39 @@ slanatech/swagger-stats: >
   ```
 
 
+  #### Hapi
+
+
+  ```javascript
+
+  const Inert = require('@hapi/inert');
+
+  const swStats = require('swagger-stats');
+
+  const swaggerSpec = require('./petstore.json');
+
+
+  const init = async () => {
+
+      server = Hapi.server({
+          port: 3040,
+          host: 'localhost'
+      });
+
+      await server.register({
+          plugin: swStats.getHapiPlugin,
+          options: {
+               swaggerSpec:swaggerSpec
+          }
+      });
+
+      await server.start();
+      console.log('Server running on %s', server.info.uri);
+  };
+
+  ````
+
+
   See `/examples` for sample apps
 
 
@@ -36262,6 +36268,19 @@ slanatech/swagger-stats: >
 
 
   ## Updates 
+
+
+  #### v0.95.8
+
+
+  * [feature] Hapijs support
+  [#75](https://github.com/slanatech/swagger-stats/issues/75) - [Example how to
+  use](https://github.com/slanatech/swagger-stats/blob/master/examples/hapijstest/hapijstest.js)
+   
+  * [feature] Koa support
+  [#70](https://github.com/slanatech/swagger-stats/pull/70),
+  [#67](https://github.com/slanatech/swagger-stats/issues/67) - thank you
+  @gombosg!
 
 
   #### v0.95.7
@@ -36933,10 +36952,14 @@ jfinkhaeuser/prance: >+
   .. code:: bash
 
       $ pip install prance[osv,icu,cli]
-      
-  Make sure you have [ICU Unicode Library](http://site.icu-project.org/home)
-  installed, as well as Python dev library before running the commands above. If
-  not, use the following commands:
+
+  Make sure you have `ICU Unicode Library <http://site.icu-project.org/home>`__
+  installed,
+
+  as well as Python dev library before running the commands above. If not, use
+  the
+
+  following commands:
 
 
   ### Ubuntu
@@ -38283,8 +38306,8 @@ raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nG
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-08-29T18:51:42Z","pushed_at":"2019-08-25T10:45:14Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apitools.dev/swagger-parser","size":32391,"stargazers_count":500,"watchers_count":500,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":80,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":33,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":80,"open_issues":33,"watchers":500,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":80,"subscribers_count":17}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-09-04T21:28:14Z","pushed_at":"2019-09-03T16:15:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apitools.dev/swagger-parser","size":32392,"stargazers_count":502,"watchers_count":502,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":80,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":35,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":80,"open_issues":35,"watchers":502,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":80,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -44340,6 +44363,20 @@ OpenAPITools/openapi-generator: >
   Generatorを使ってモックサーバー作成](https://qiita.com/masayoshi0222/items/4845e4c715d04587c104)
   by [坂本正義](https://qiita.com/masayoshi0222)
 
+  - 2019-08-29 -
+  [OpenAPI初探](https://cloud.tencent.com/developer/article/1495986) by
+  [peakxie](https://cloud.tencent.com/developer/user/1113152) at
+  [腾讯云社区](https://cloud.tencent.com/developer)
+
+  - 2019-08-29 - [全面进化：Kubernetes CRD 1.16
+  GA前瞻](https://www.servicemesher.com/blog/kubernetes-1.16-crd-ga-preview/) by
+  [Min Kim](https://github.com/yue9944882) at [ServiceMesher
+  Blog](https://www.servicemesher.com/blog/)
+
+  - 2019-09-01 - [Creating a PHP-Slim server using OpenAPI (Youtube
+  video)](https://www.youtube.com/watch?v=5cJtbIrsYkg) by [Daniel
+  Persson](https://www.youtube.com/channel/UCnG-TN23lswO6QbvWhMtxpA)
+
 
   ## [6 - About Us](#table-of-contents)
 
@@ -44566,7 +44603,8 @@ OpenAPITools/openapi-generator: >
 
   | Clojure   |  |
 
-  | Dart      | @ircecho (2017/07) @swipesight (2018/09) @jaumard (2018/09) |
+  | Dart      | @ircecho (2017/07) @swipesight (2018/09) @jaumard (2018/09)
+  @nickmeinhold (2019/09)  |
 
   | Eiffel    | @jvelilla (2017/09) |
 
@@ -49164,6 +49202,12 @@ Mermade/openapi-lint-vscode: >
   # openapi-lint README
 
 
+  ![Visual Studio Marketplace
+  Downloads](https://img.shields.io/visual-studio-marketplace/d/mermade.openapi-lint)
+  ![Visual Studio Marketplace
+  Stars](https://img.shields.io/visual-studio-marketplace/stars/mermade.openapi-lint)
+
+
   This extension can be used to validate and
   [lint](https://en.wikipedia.org/wiki/Lint_(software)) OpenAPI 3.0.x documents,
   and convert between OpenAPI 2.0 and 3.0.0. It provides 11 Visual Studio Code
@@ -51760,8 +51804,8 @@ SkeLLLa/fastify-oas: >
   `/documentation/index.html`.
 
 
-  ReDoc UI is available via `/<routePrefix>/redoc.html`. By default it's
-  `/documentation/redoc.html`.
+  ReDoc UI is available via `/<routePrefix>/docs.html`. By default it's
+  `/documentation/docs.html`.
 
 
   <sub>[Back to top](#toc)</sub>
@@ -52012,7 +52056,8 @@ lendingblock/aio-openapi: >
       ---
       summary: Create and query Tasks
       tags:
-          - Task
+          - name: Task
+            description: Task tag description
       """
       table = 'tasks'
 
@@ -56676,7 +56721,38 @@ tiangolo/fastapi: >
   ---
 
 
+  "*If you're looking to learn one **modern framework** for building REST APIs,
+  check out **FastAPI** [...] It's fast, easy to use and easy to learn [...]*"
 
+
+  "*We've switched over to **FastAPI** for our **APIs** [...] I think you'll
+  like it [...]*"
+
+
+  <div style="text-align: right; margin-right: 10%;">Ines Montani - Matthew
+  Honnibal - <strong><a href="https://explosion.ai" target="_blank">Explosion
+  AI</a> founders - <a href="https://spacy.io" target="_blank">spaCy</a>
+  creators</strong> <a
+  href="https://twitter.com/_inesmontani/status/1144173225322143744"
+  target="_blank"><small>(ref)</small></a> - <a
+  href="https://twitter.com/honnibal/status/1144031421859655680"
+  target="_blank"><small>(ref)</small></a></div>
+
+
+  ---
+
+
+  "*We adopted the **FastAPI** library to spawn a **REST** server that can be
+  queried to obtain **predictions**. [for Ludwig]*"
+
+
+  <div style="text-align: right; margin-right: 10%;">Piero Molino, Yaroslav
+  Dudin, and Sai Sumanth Miryala - <strong>Uber</strong> <a
+  href="https://eng.uber.com/ludwig-v0-2/"
+  target="_blank"><small>(ref)</small></a></div>
+
+
+  ---
 
 
   ## Requirements
@@ -59088,27 +59164,44 @@ swagger-api/validator-badge: >-
   [![Build
   Status](https://img.shields.io/jenkins/s/https/jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-validator-badge-master.svg)](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-validator-badge-master)
 
-  [![Maven
-  Central](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-validator/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-validator)
 
-  [![Build
-  Status](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-validator-badge-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-validator-badge-master/)
+  This project shows a "valid swagger" badge on your site, supporting
+  Swagger/OpenAPI 2.0 and OpenAPI 3.0 specifications.  
 
 
-  This project shows a "valid swagger" badge on your site.  There is an online
-  version hosted on http://swagger.io.  You can also pull a docker image of the
-  validator directly from
-  [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-validator/).
+  There is an online version hosted on http://validator.swagger.io.  
 
 
-  You can validate any OpenAPI specification against the [OpenAPI 2.0
+  You can also pull a docker image of the validator directly from
+  [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-validator-v2/), e.g.:
+
+
+  ```
+
+  docker pull swaggerapi/swagger-validator-v2:v2.0.1
+
+  docker run -it -p 8080:8080 --name swagger-validator-v2
+  swaggerapi/swagger-validator-v2:v2.0.1
+
+  ```
+
+
+  Web UI is reachable at http://localhost:8080/index.html and OpenAPI spec at
+  http://localhost:8080/validator/openapi.json
+
+
+
+
+  You can validate any OpenAPI specification against the [Swagger/OpenAPI 2.0
   Schema](https://github.com/OAI/OpenAPI-Specification/blob/master/schemas/v2.0/schema.json)
+  and [OpenAPI 3.0
+  Schema](https://github.com/OAI/OpenAPI-Specification/blob/v3.0.1/versions/3.0.1.md)
   as follows:
 
 
   ```
 
-  <img src="http://online.swagger.io/validator?url={YOUR_URL}">
+  <img src="http://validator.swagger.io/validator?url={YOUR_URL}">
 
   ```
 
@@ -59124,12 +59217,12 @@ swagger-api/validator-badge: >-
   as a source, we get ...
 
 
-  ![](https://online.swagger.io/validator?url=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/petstore-expanded.json)
+  ![](https://validator.swagger.io/validator?url=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/petstore-expanded.json)
 
 
   If your specification fails to validate for some reason, or if there is an
   error, you can get more information on why by visiting
-  ```http://online.swagger.io/validator/debug?url={YOUR_URL}```.
+  ```http://validator.swagger.io/validator/debug?url={YOUR_URL}```.
 
 
   Since the validator uses a browserless back-end to fetch the contents and
@@ -59142,13 +59235,23 @@ swagger-api/validator-badge: >-
   ```
 
   curl -X POST -d @swagger.json -H 'Content-Type:application/json'
-  http://online.swagger.io/validator/debug
+  http://validator.swagger.io/validator/debug
 
   ```
 
 
   In this example, `swagger.json` is the swagger definition in JSON format, in
   the CWD.
+
+
+  Note that all the above is also applicable to OpenAPI 3.0 specifications; for
+  example, using
+  [https://petstore3.swagger.io/api/v3/openapi.json](https://petstore3.swagger.io/api/v3/openapi.json)
+  as a source, we get ...
+
+
+  ![](https://validator.swagger.io/validator?url=https://petstore3.swagger.io/api/v3/openapi.json)
+
 
 
   ### Running locally
@@ -59169,7 +59272,7 @@ swagger-api/validator-badge: >-
 
   ```
 
-  http://localhost:8002/?url={URL}
+  http://localhost:8080/validator?url={URL}
 
   ```
 
@@ -59179,7 +59282,13 @@ swagger-api/validator-badge: >-
 
   ```
 
-  http://localhost:8002/?url=http://petstore.swagger.io/v2/swagger.json
+  http://localhost:8080/validator?url=http://petstore.swagger.io/v2/swagger.json
+
+  ```
+
+  ```
+
+  http://localhost:8080/validator?url=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml
 
   ```
 
@@ -60492,7 +60601,8 @@ quantmind/aio-openapi: >
       ---
       summary: Create and query Tasks
       tags:
-          - Task
+          - name: Task
+            description: Task tag description
       """
       table = 'tasks'
 
@@ -64762,7 +64872,7 @@ Redocly/redoc: >
   ## Development
 
   see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with microservices, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour HTTP routing engine, due to its speed and simplicity for the generated\nstubs.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tAdditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema.\n```\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}w\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples. \n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the server boilerplate. `server` requires the types in the\n same package to compile.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
+deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with services, it's important to have an API\ncontract which servers and clients both imprement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour default HTTP routing engine, due to its speed and simplicity for the generated\nstubs, and [Chi](https://github.com/go-chi/chi) is also supported as an alternative.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```go\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nserver.\n\n```go\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```go\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```go\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```go\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```go\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tAdditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema.\n```go\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}w\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples. \n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```go\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```go\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditor func(req *http.Request, ctx context.Context) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper \nfunctions which create requests. In the case of the pet store, we have:\n\n```go\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n \n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the Echo server boilerplate. `server` requires the types in the\n same package to compile.\n- `chi-server`: generate the Chi server boilerplate. This code is dependent on\n that produced by the `types` target.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n is useful for creating runtime validators.\n \nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate --generate types,server`. You could generate `types` and `server`\ninto separate files, but both are required for the server code.  \n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\n\n"
 sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Buy Ligit License](https://s3.us-west-1.wasabisys.com/public.sugarkubes/ligit_embed.svg)](https://ligit.dev)\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
 ErikWittern/swagger-snippet: >
   # Swagger Snippet
@@ -65528,14 +65638,6 @@ airtasker/spot: >
   ## Known issues
 
 
-  - Versions of 0.5.0 and 0.5.1 of RedHat YAML extension introduced a
-  [regression](https://github.com/redhat-developer/vscode-yaml/issues/216) which
-  breaks autocompletion and schema checks for YAML files. Until this is resolved
-  the workaround is to downgrade the YAML extension to 0.4.1. To do this, open
-  the command palette (using `Ctrl+Shift+P` or `F1` depending on your OS),
-  choose `Install Specific Version of Extension...` and choose the `YAML`
-  extension version `0.4.1`.
-
   - For new files, IntelliSense does not work until you save the file. File
   extension needs to be .json or .yaml.
 
@@ -65931,3 +66033,48 @@ fukamachi/apispec: >
 
 
   Licensed under the BSD 3-Clause License.
+sphinx-contrib/openapi: |
+  =====================
+  sphinxcontrib-openapi
+  =====================
+
+  **sphinxcontrib-openapi** is a `Sphinx`_ extension to generate APIs docs from
+  `OpenAPI`_ (fka Swagger) spec. It depends on `sphinxcontrib-httpdomain`_ that
+  provides an HTTP domain for describing RESTful HTTP APIs, so we don't need to
+  reinvent the wheel.
+
+  .. code:: bash
+
+     pip install sphinxcontrib-openapi
+
+
+  Usage
+  =====
+
+  Pass ``sphinxcontrib-openapi`` to ``extensions`` list in  Sphinx's ``conf.py``
+
+  .. code:: python
+
+     extensions = [
+        ...
+        'sphinxcontrib.openapi',
+     ]
+
+  and feel free to use the ``openapi`` directive to render OpenAPI specs
+
+  .. code:: restructuredtext
+
+     .. openapi:: path/to/openapi.yml
+
+
+  Links
+  =====
+
+  * Documentation: https://sphinxcontrib-openapi.readthedocs.org/
+  * Source: https://github.com/ikalnytskyi/sphinxcontrib-openapi
+  * Bugs: https://github.com/ikalnytskyi/sphinxcontrib-openapi/issues
+
+
+  .. _Sphinx: https://www.sphinx-doc.org/en/master/
+  .. _OpenAPI: https://github.com/OAI/OpenAPI-Specification
+  .. _sphinxcontrib-httpdomain: https://sphinxcontrib-httpdomain.readthedocs.io/
