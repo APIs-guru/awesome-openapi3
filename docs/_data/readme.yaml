@@ -6960,8 +6960,8 @@ Apicurio/oai-ts-core: >
   Please note that this library has deprecated in favor of
   [apicurio-data-models](https://github.com/Apicurio/apicurio-data-models). 
   Please report all bugs and contribute all pull requests there.
-kevindew/openapi3_parser: "# OpenAPI 3 Parser\n\n[![Build Status](https://travis-ci.org/kevindew/openapi3_parser.svg?branch=master)](https://travis-ci.org/kevindew/openapi3_parser)\n\nThis a Ruby based parser/validator for [OpenAPI 3][openapi-3]. It is used to\nconvert an OpenAPI file (can be a local file, a URL, a string or even a Ruby\nhash) into an object graph with a simple API that follows the [OpenAPI\nspecification][openapi-3-spec].\n\nBasic example:\n\n```ruby\nrequire \"openapi3_parser\"\n\ndocument = Openapi3Parser.load_url(\"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml\")\n\ndocument.paths[\"/pets\"].get.summary\n# => \"List all pets\"\n```\n\nIt aims to support 100% of the OpenAPI 3.0 specification, with key features\nbeing:\n\n- Supports loading a specification by path to a file, URL, Ruby file objects,\n  and strings in YAML and JSON formats, it even supports loading via a Ruby hash;\n- Support for loading references from external files including URLs;\n- Handles recursive references;\n- All of OpenAPI specification mapped to Ruby objects, providing a natural\n  Ruby interface that maps clearly to the specification;\n- OpenAPI files validated with a simple API to quickly and simply see all\n  problems with a file\n- Built-in Markdown to HTML conversion;\n- Documentation for the API to navigate the OpenAPI nodes is available on\n  [rubydoc.info][docs].\n\n\n[openapi-3]: https://github.com/OAI/OpenAPI-Specification\n[openapi-3-spec]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#specification\n[docs]: http://www.rubydoc.info/github/kevindew/openapi3_parser/Openapi3Parser/Node/Openapi\n\n## Usage\n\n### Loading a specification\n\n```ruby\n# by URL\nOpenapi3Parser.load_url(\"https://raw.githubusercontent.com/kevindew/openapi3_parser/master/spec/support/examples/petstore-expanded.yaml\")\n\n# by path to file\nOpenapi3Parser.load_file(\"spec/support/examples/uber.yaml\")\n\n# by File\nOpenapi3Parser.load(File.open(\"spec/support/examples/uber.yaml\"))\n\n# by String\nOpenapi3Parser.load('{ \"openapi\": \"3.0.0\", \"info\": { \"title\": \"API\", \"version\": \"1.0.0\" }, \"paths\": {}  }')\n\n# by Hash\nOpenapi3Parser.load(openapi: \"3.0.0\", info: { title: \"API\", version: \"1.0.0\" }, paths: {})\n\n```\n\n### Validating\n\n```ruby\ndocument = Openapi3Parser.load(openapi: \"3.0.0\", info: {}, paths: {})\ndocument.valid?\n# => false\ndocument.errors\n#\_=> Openapi3Parser::Validation::ErrorCollection(errors: {\"#/info\"=>[\"Missing required fields: title and version\"]})\n```\n\n### Traversing\n\n```ruby\ndocument = Openapi3Parser.load_url(\"https://raw.githubusercontent.com/kevindew/openapi3_parser/master/spec/support/examples/petstore-expanded.yaml\")\n\n# by objects\n\ndocument.info.terms_of_service\n# => \"http://swagger.io/terms/\"\n\ndocument.paths.keys\n# => [\"/pets\", \"/pets/{id}\"]\n\ndocument.paths[\"/pets\"].get.parameters.map(&:name)\n# => [\"tags\", \"limit\"]\n\n# by hash syntax\n\ndocument[\"info\"][\"termsOfService\"]\n=> \"http://swagger.io/terms/\"\n\ndocument[\"paths\"].keys\n# => [\"/pets\", \"/pets/{id}\"]\n\ndocument[\"paths\"][\"/pets\"][\"get\"][\"parameters\"].map(&:name)\n# => [\"tags\", \"limit\"]\n\n# by a path to a node\ndocument.node_at(\"#/paths/%2Fpets/get/operationId\")\n=> \"findPets\"\n\ndocument.node_at(\"#/components/schemas/Pet/allOf/0/required/0\")\n=> \"name\"\n\n# or combining\n\ndocument.components.schemas[\"Pet\"].node_at(\"#../NewPet\")\n=> Openapi3Parser::Node::Schema(#/components/schemas/NewPet)\n```\n\nYou can learn more about the API on [rubydoc.info][docs]\n\n## Installation\n\nYou can install this gem into your bundler application by adding this line to\nyour Gemfile:\n\n```\ngem \"openapi3_parser\", \"~> 0.5.0\"\n```\n\nand then running `$ bundle install`\n\nOr install the gem onto your machine via `$ gem install openapi3_parser`\n\n## Status\n\nThis is currently a work in progress and will remain so until it reaches 1.0.\n\nSee [TODO](TODO.md) for details of the features still to implement.\n\n## Licence\n\n[MIT License](LICENCE)\n"
-getkin/kin-openapi: "[![Build Status](https://travis-ci.com/getkin/kin-openapi.svg?branch=master)](https://travis-ci.com/getkin/kin-openapi)\n[![Go Report Card](https://goreportcard.com/badge/github.com/getkin/kin-openapi)](https://goreportcard.com/report/github.com/getkin/kin-openapi)\n[![GoDoc](https://godoc.org/github.com/getkin/kin-openapi?status.svg)](https://godoc.org/github.com/getkin/kin-openapi)\n[![Join Gitter Chat Channel -](https://badges.gitter.im/getkin/kin.svg)](https://gitter.im/getkin/kin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n# Introduction\nA [Go](https://golang.org) project for handling [OpenAPI](https://www.openapis.org/) files. We target the latest OpenAPI version (currently 3), but the project contains support for older OpenAPI versions too.\n\nLicensed under the [MIT License](LICENSE).\n\n## Contributors and users\nThe project has received pull requests from many people. Thanks to everyone!\n\nHere's some projects that depend on _kin-openapi_:\n  * [github.com/getkin/kin](https://github.com/getkin/kin) - \"A configurable backend\"\n  * [github.com/danielgtaylor/apisprout](https://github.com/danielgtaylor/apisprout) - \"Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation\"\n  * [github.com/deepmap/oapi-codegen](https://github.com/deepmap/oapi-codegen) - Generate Go server boilerplate from an OpenAPI 3 spec\n  * (Feel free to add your project by [creating an issue](https://github.com/getkin/kin-openapi/issues/new) or a pull request)\n\n## Alternative projects\n  * [go-openapi](https://github.com/go-openapi)\n    * Supports OpenAPI version 2.\n  * See [this list](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/IMPLEMENTATIONS.md).\n\n# Structure\n  * _openapi2_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2))\n    * Support for OpenAPI 2 files, including serialization, deserialization, and validation.\n  * _openapi2conv_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2conv))\n    * Converts OpenAPI 2 files into OpenAPI 3 files.\n  * _openapi3_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3))\n    * Support for OpenAPI 3 files, including serialization, deserialization, and validation.\n  * _openapi3filter_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3filter))\n    * Validates HTTP requests and responses\n  * _openapi3gen_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3gen))\n    * Generates `*openapi3.Schema` values for Go types.\n  * _pathpattern_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/pathpattern))\n    * Matches strings with OpenAPI path patterns (\"/path/{parameter}\")\n\n# Some recipes\n## Loading OpenAPI document\nUse `SwaggerLoader`, which resolves all JSON references:\n```go\nswagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromFile(\"swagger.json\")\n```\n\n## Getting OpenAPI operation that matches request\n```go\nfunc GetOperation(httpRequest *http.Request) (*openapi3.Operation, error) {\n  // Load Swagger file\n  router := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\n  // Find route\n  route, _, err := router.FindRoute(\"GET\", req.URL.String())\n  if err!=nil {\n    return nil, err\n  }\n\n  // Get OpenAPI 3 operation\n  return route.Operation\n}\n```\n\n## Validating HTTP requests/responses\n```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"log\"\n\t\"net/http\"\n\n\t\"github.com/getkin/kin-openapi/openapi3filter\"\n)\n\nfunc main() {\n\trouter := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\tctx := context.TODO()\n\thttpReq, _ := http.NewRequest(http.MethodGet, \"/items\", nil)\n\n\t// Find route\n\troute, pathParams, _ := router.FindRoute(httpReq.Method, httpReq.URL)\n\n\t// Validate request\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\tvar (\n\t\trespStatus      = 200\n\t\trespContentType = \"application/json\"\n\t\trespBody        = bytes.NewBufferString(`{}`)\n\t)\n\n\tlog.Println(\"Response:\", respStatus)\n\tresponseValidationInput := &openapi3filter.ResponseValidationInput{\n\t\tRequestValidationInput: requestValidationInput,\n\t\tStatus:                 respStatus,\n\t\tHeader: http.Header{\n\t\t\t\"Content-Type\": []string{\n\t\t\t\trespContentType,\n\t\t\t},\n\t\t},\n\t}\n\tif respBody != nil {\n\t\tdata, _ := json.Marshal(respBody)\n\t\tresponseValidationInput.SetBodyBytes(data)\n\t}\n\n\t// Validate response.\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n```\n\n## Custom content type for body of HTTP request/response\n\nBy default, the library parses a body of HTTP request and response\nif it has one of the next content types: `\"text/plain\"` or `\"application/json\"`.\nTo support other content types you must register decoders for them:\n\n```go\nfunc main() {\n\t// ...\n\n\t// Register a body's decoder for content type \"application/xml\".\n\topenapi3filter.RegisterBodyDecoder(\"application/xml\", xmlBodyDecoder)\n\n\t// Now you can validate HTTP request that contains a body with content type \"application/xml\".\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\t// ...\n\n\t// And you can validate HTTP response that contains a body with content type \"application/xml\".\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n\nfunc xmlBodyDecoder(body []byte) (interface{}, error) {\n\t// Decode body to a primitive, []inteface{}, or map[string]interface{}.\n}\n```\n"
+kevindew/openapi3_parser: "# OpenAPI 3 Parser\n\n[![Build Status](https://travis-ci.org/kevindew/openapi3_parser.svg?branch=master)](https://travis-ci.org/kevindew/openapi3_parser)\n\nThis a Ruby based parser/validator for [OpenAPI 3][openapi-3]. It is used to\nconvert an OpenAPI file (can be a local file, a URL, a string or even a Ruby\nhash) into an object graph with a simple API that follows the [OpenAPI\nspecification][openapi-3-spec].\n\nBasic example:\n\n```ruby\nrequire \"openapi3_parser\"\n\ndocument = Openapi3Parser.load_url(\"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore.yaml\")\n\ndocument.paths[\"/pets\"].get.summary\n# => \"List all pets\"\n```\n\nIt aims to support 100% of the OpenAPI 3.0 specification, with key features\nbeing:\n\n- Supports loading a specification by path to a file, URL, Ruby file objects,\n  and strings in YAML and JSON formats, it even supports loading via a Ruby hash;\n- Support for loading references from external files including URLs;\n- Handles recursive references;\n- All of OpenAPI specification mapped to Ruby objects, providing a natural\n  Ruby interface that maps clearly to the specification;\n- OpenAPI files validated with a simple API to quickly and simply see all\n  problems with a file\n- Built-in Markdown to HTML conversion;\n- Documentation for the API to navigate the OpenAPI nodes is available on\n  [rubydoc.info][docs].\n\n\n[openapi-3]: https://github.com/OAI/OpenAPI-Specification\n[openapi-3-spec]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#specification\n[docs]: http://www.rubydoc.info/github/kevindew/openapi3_parser/Openapi3Parser/Node/Openapi\n\n## Usage\n\n### Loading a specification\n\n```ruby\n# by URL\nOpenapi3Parser.load_url(\"https://raw.githubusercontent.com/kevindew/openapi3_parser/master/spec/support/examples/petstore-expanded.yaml\")\n\n# by path to file\nOpenapi3Parser.load_file(\"spec/support/examples/uber.yaml\")\n\n# by File\nOpenapi3Parser.load(File.open(\"spec/support/examples/uber.yaml\"))\n\n# by String\nOpenapi3Parser.load('{ \"openapi\": \"3.0.0\", \"info\": { \"title\": \"API\", \"version\": \"1.0.0\" }, \"paths\": {}  }')\n\n# by Hash\nOpenapi3Parser.load(openapi: \"3.0.0\", info: { title: \"API\", version: \"1.0.0\" }, paths: {})\n\n```\n\n### Validating\n\n```ruby\ndocument = Openapi3Parser.load(openapi: \"3.0.0\", info: {}, paths: {})\ndocument.valid?\n# => false\ndocument.errors\n#\_=> Openapi3Parser::Validation::ErrorCollection(errors: {\"#/info\"=>[\"Missing required fields: title and version\"]})\n```\n\n### Traversing\n\n```ruby\ndocument = Openapi3Parser.load_url(\"https://raw.githubusercontent.com/kevindew/openapi3_parser/master/spec/support/examples/petstore-expanded.yaml\")\n\n# by objects\n\ndocument.info.terms_of_service\n# => \"http://swagger.io/terms/\"\n\ndocument.paths.keys\n# => [\"/pets\", \"/pets/{id}\"]\n\ndocument.paths[\"/pets\"].get.parameters.map(&:name)\n# => [\"tags\", \"limit\"]\n\n# by hash syntax\n\ndocument[\"info\"][\"termsOfService\"]\n=> \"http://swagger.io/terms/\"\n\ndocument[\"paths\"].keys\n# => [\"/pets\", \"/pets/{id}\"]\n\ndocument[\"paths\"][\"/pets\"][\"get\"][\"parameters\"].map(&:name)\n# => [\"tags\", \"limit\"]\n\n# by a path to a node\ndocument.node_at(\"#/paths/%2Fpets/get/operationId\")\n=> \"findPets\"\n\ndocument.node_at(\"#/components/schemas/Pet/allOf/0/required/0\")\n=> \"name\"\n\n# or combining\n\ndocument.components.schemas[\"Pet\"].node_at(\"#../NewPet\")\n=> Openapi3Parser::Node::Schema(#/components/schemas/NewPet)\n```\n\nYou can learn more about the API on [rubydoc.info][docs]\n\n## Installation\n\nYou can install this gem into your bundler application by adding this line to\nyour Gemfile:\n\n```\ngem \"openapi3_parser\", \"~> 0.6.0\"\n```\n\nand then running `$ bundle install`\n\nOr install the gem onto your machine via `$ gem install openapi3_parser`\n\n## Status\n\nThis is currently a work in progress and will remain so until it reaches 1.0.\n\nSee [TODO](TODO.md) for details of the features still to implement.\n\n## Licence\n\n[MIT License](LICENCE)\n"
+getkin/kin-openapi: "[![Build Status](https://travis-ci.com/getkin/kin-openapi.svg?branch=master)](https://travis-ci.com/getkin/kin-openapi)\n[![Go Report Card](https://goreportcard.com/badge/github.com/getkin/kin-openapi)](https://goreportcard.com/report/github.com/getkin/kin-openapi)\n[![GoDoc](https://godoc.org/github.com/getkin/kin-openapi?status.svg)](https://godoc.org/github.com/getkin/kin-openapi)\n[![Join Gitter Chat Channel -](https://badges.gitter.im/getkin/kin.svg)](https://gitter.im/getkin/kin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\n# Introduction\nA [Go](https://golang.org) project for handling [OpenAPI](https://www.openapis.org/) files. We target the latest OpenAPI version (currently 3), but the project contains support for older OpenAPI versions too.\n\nLicensed under the [MIT License](LICENSE).\n\n## Contributors and users\nThe project has received pull requests from many people. Thanks to everyone!\n\nHere's some projects that depend on _kin-openapi_:\n  * [github.com/getkin/kin](https://github.com/getkin/kin) - \"A configurable backend\"\n  * [github.com/danielgtaylor/apisprout](https://github.com/danielgtaylor/apisprout) - \"Lightweight, blazing fast, cross-platform OpenAPI 3 mock server with validation\"\n  * [github.com/deepmap/oapi-codegen](https://github.com/deepmap/oapi-codegen) - Generate Go server boilerplate from an OpenAPI 3 spec\n  * (Feel free to add your project by [creating an issue](https://github.com/getkin/kin-openapi/issues/new) or a pull request)\n\n## Alternative projects\n  * [go-openapi](https://github.com/go-openapi)\n    * Supports OpenAPI version 2.\n  * See [this list](https://github.com/OAI/OpenAPI-Specification/blob/OpenAPI.next/IMPLEMENTATIONS.md).\n\n# Structure\n  * _openapi2_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2))\n    * Support for OpenAPI 2 files, including serialization, deserialization, and validation.\n  * _openapi2conv_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi2conv))\n    * Converts OpenAPI 2 files into OpenAPI 3 files.\n  * _openapi3_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3))\n    * Support for OpenAPI 3 files, including serialization, deserialization, and validation.\n  * _openapi3filter_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3filter))\n    * Validates HTTP requests and responses\n  * _openapi3gen_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/openapi3gen))\n    * Generates `*openapi3.Schema` values for Go types.\n  * _pathpattern_ ([godoc](https://godoc.org/github.com/getkin/kin-openapi/pathpattern))\n    * Matches strings with OpenAPI path patterns (\"/path/{parameter}\")\n\n# Some recipes\n## Loading OpenAPI document\nUse `SwaggerLoader`, which resolves all JSON references:\n```go\nswagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromFile(\"swagger.json\")\n```\n\n## Getting OpenAPI operation that matches request\n```go\nfunc GetOperation(httpRequest *http.Request) (*openapi3.Operation, error) {\n  // Load Swagger file\n  router := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\n  // Find route\n  route, _, err := router.FindRoute(\"GET\", req.URL)\n  if err != nil {\n    return nil, err\n  }\n\n  // Get OpenAPI 3 operation\n  return route.Operation\n}\n```\n\n## Validating HTTP requests/responses\n```go\npackage main\n\nimport (\n\t\"bytes\"\n\t\"context\"\n\t\"encoding/json\"\n\t\"log\"\n\t\"net/http\"\n\n\t\"github.com/getkin/kin-openapi/openapi3filter\"\n)\n\nfunc main() {\n\trouter := openapi3filter.NewRouter().WithSwaggerFromFile(\"swagger.json\")\n\tctx := context.TODO()\n\thttpReq, _ := http.NewRequest(http.MethodGet, \"/items\", nil)\n\n\t// Find route\n\troute, pathParams, _ := router.FindRoute(httpReq.Method, httpReq.URL)\n\n\t// Validate request\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\tvar (\n\t\trespStatus      = 200\n\t\trespContentType = \"application/json\"\n\t\trespBody        = bytes.NewBufferString(`{}`)\n\t)\n\n\tlog.Println(\"Response:\", respStatus)\n\tresponseValidationInput := &openapi3filter.ResponseValidationInput{\n\t\tRequestValidationInput: requestValidationInput,\n\t\tStatus:                 respStatus,\n\t\tHeader: http.Header{\n\t\t\t\"Content-Type\": []string{\n\t\t\t\trespContentType,\n\t\t\t},\n\t\t},\n\t}\n\tif respBody != nil {\n\t\tdata, _ := json.Marshal(respBody)\n\t\tresponseValidationInput.SetBodyBytes(data)\n\t}\n\n\t// Validate response.\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n```\n\n## Custom content type for body of HTTP request/response\n\nBy default, the library parses a body of HTTP request and response\nif it has one of the next content types: `\"text/plain\"` or `\"application/json\"`.\nTo support other content types you must register decoders for them:\n\n```go\nfunc main() {\n\t// ...\n\n\t// Register a body's decoder for content type \"application/xml\".\n\topenapi3filter.RegisterBodyDecoder(\"application/xml\", xmlBodyDecoder)\n\n\t// Now you can validate HTTP request that contains a body with content type \"application/xml\".\n\trequestValidationInput := &openapi3filter.RequestValidationInput{\n\t\tRequest:    httpReq,\n\t\tPathParams: pathParams,\n\t\tRoute:      route,\n\t}\n\tif err := openapi3filter.ValidateRequest(ctx, requestValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n\n\t// ...\n\n\t// And you can validate HTTP response that contains a body with content type \"application/xml\".\n\tif err := openapi3filter.ValidateResponse(ctx, responseValidationInput); err != nil {\n\t\tpanic(err)\n\t}\n}\n\nfunc xmlBodyDecoder(body []byte) (interface{}, error) {\n\t// Decode body to a primitive, []inteface{}, or map[string]interface{}.\n}\n```\n"
 adwhit/openapi3-rust: >
   # OpenAPIv3
 
@@ -16354,6 +16354,8 @@ astaxie/beego: >
   [https://beego.slack.com](https://beego.slack.com), you can get invited from
   [here](https://github.com/beego/beedoc/issues/232)
 
+  * QQ Group Group ID:523992905
+
 
   ## License
 
@@ -16561,7 +16563,7 @@ signalfx/swagger-ajax-client: >
   npm run dist
 
   ```
-swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n[![Build Status](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-ui-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-ui-master/)\n[![npm audit](https://jenkins.swagger.io/buildStatus/icon?job=oss-swagger-ui-security-audit&subject=npm%20audit)](https://jenkins.swagger.io/job/oss-swagger-ui-security-audit/lastBuild/console)\n![total GitHub contributors](https://img.shields.io/github/contributors-anon/swagger-api/swagger-ui.svg)\n\n![monthly npm installs](https://img.shields.io/npm/dm/swagger-ui.svg?label=npm%20downloads)\n![total docker pulls](https://img.shields.io/docker/pulls/swaggerapi/swagger-ui.svg)\n![monthly packagist installs](https://img.shields.io/packagist/dm/swagger-api/swagger-ui.svg?label=packagist%20installs)\n![gzip size](https://img.shields.io/bundlephobia/minzip/swagger-ui.svg?label=gzip%20size)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to three different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n* [swagger-ui-react](https://www.npmjs.com/package/swagger-ui-react) is Swagger UI packaged as a React component for use in React applications.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttp://nightwatchjs.org/gettingstarted#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
+swagger-api/swagger-ui: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png\" height=\"80\">\n\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)\n[![Build Status](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-ui-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-ui-master/)\n[![npm audit](https://jenkins.swagger.io/buildStatus/icon?job=oss-swagger-ui-security-audit&subject=npm%20audit)](https://jenkins.swagger.io/job/oss-swagger-ui-security-audit/lastBuild/console)\n![total GitHub contributors](https://img.shields.io/github/contributors-anon/swagger-api/swagger-ui.svg)\n\n![monthly npm installs](https://img.shields.io/npm/dm/swagger-ui.svg?label=npm%20downloads)\n![total docker pulls](https://img.shields.io/docker/pulls/swaggerapi/swagger-ui.svg)\n![monthly packagist installs](https://img.shields.io/packagist/dm/swagger-api/swagger-ui.svg?label=packagist%20installs)\n![gzip size](https://img.shields.io/bundlephobia/minzip/swagger-ui.svg?label=gzip%20size)\n\n**\U0001F449\U0001F3FC Want to score an easy open-source contribution?** Check out our [Good first issue](https://github.com/swagger-api/swagger-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22Good+first+issue%22) label.\n\n**\U0001F570️ Looking for the older version of Swagger UI?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-ui/tree/2.x).\n\n\nThis repository publishes to three different NPM modules:\n\n* [swagger-ui](https://www.npmjs.com/package/swagger-ui) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-ui-dist](https://www.npmjs.com/package/swagger-ui-dist) is a dependency-free module that includes everything you need to serve Swagger UI in a server-side project, or a single-page application that can't resolve npm module dependencies.\n* [swagger-ui-react](https://www.npmjs.com/package/swagger-ui-react) is Swagger UI packaged as a React component for use in React applications.\n\nWe strongly suggest that you use `swagger-ui` instead of `swagger-ui-dist` if you're building a single-page application, since `swagger-ui-dist` is significantly larger.\n\n\n## Compatibility\nThe OpenAPI Specification has undergone 5 revisions since initial creation in 2010.  Compatibility between Swagger UI and the OpenAPI Specification is as follows:\n\nSwagger UI Version | Release Date | OpenAPI Spec compatibility | Notes\n------------------ | ------------ | -------------------------- | -----\n3.18.3 | 2018-08-03 | 2.0, 3.0 | [tag v3.18.3](https://github.com/swagger-api/swagger-ui/tree/v3.18.3)\n3.0.21 | 2017-07-26 | 2.0 | [tag v3.0.21](https://github.com/swagger-api/swagger-ui/tree/v3.0.21)\n2.2.10 | 2017-01-04 | 1.1, 1.2, 2.0 | [tag v2.2.10](https://github.com/swagger-api/swagger-ui/tree/v2.2.10)\n2.1.5 | 2016-07-20 | 1.1, 1.2, 2.0 | [tag v2.1.5](https://github.com/swagger-api/swagger-ui/tree/v2.1.5)\n2.0.24 | 2014-09-12 | 1.1, 1.2 | [tag v2.0.24](https://github.com/swagger-api/swagger-ui/tree/v2.0.24)\n1.0.13 | 2013-03-08 | 1.1, 1.2 | [tag v1.0.13](https://github.com/swagger-api/swagger-ui/tree/v1.0.13)\n1.0.1 | 2011-10-11 | 1.0, 1.1 | [tag v1.0.1](https://github.com/swagger-api/swagger-ui/tree/v1.0.1)\n\n## Documentation\n\n#### Usage\n- [Installation](docs/usage/installation.md)\n- [Configuration](docs/usage/configuration.md)\n- [CORS](docs/usage/cors.md)\n- [OAuth2](docs/usage/oauth2.md)\n- [Deep Linking](docs/usage/deep-linking.md)\n- [Limitations](docs/usage/limitations.md)\n- [Version detection](docs/usage/version-detection.md)\n\n#### Customization\n- [Overview](docs/customization/overview.md)\n- [Plugin API](docs/customization/plugin-api.md)\n- [Custom layout](docs/customization/custom-layout.md)\n\n#### Development\n- [Setting up](docs/development/setting-up.md)\n- [Scripts](docs/development/scripts.md)\n\n##### Integration Tests\n\nYou will need JDK of version 7 or higher as instructed here\nhttps://nightwatchjs.org/gettingstarted/#selenium-server-setup\n\nIntegration tests can be run locally with `npm run e2e` - be sure you aren't running a dev server when testing!\n\n### Browser support\nSwagger UI works in the latest versions of Chrome, Safari, Firefox, Edge and IE11.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Only part of the parameters previously supported are available.\n- The JSON Form Editor is not implemented.\n- Support for `collectionFormat` is partial.\n- l10n (translations) is not implemented.\n- Relative path support for external files is not implemented.\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n\n## License\n\nCopyright 2019 SmartBear Software\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\n"
 wkennedy/swagger4spring-web: >
   swagger4spring-web
 
@@ -31963,7 +31965,7 @@ domaindrivendev/rswag: >
 
   |----------|----------|----------|
 
-  |[master](https://github.com/rswag/rswag/tree/master)|2.0|3.17.3|
+  |[master](https://github.com/rswag/rswag/tree/master)|2.0|3.18.2|
 
   |[2.0.6](https://github.com/rswag/rswag/tree/2.0.6)|2.0|3.17.3|
 
@@ -33489,7 +33491,7 @@ zalando/connexion: >
      options = {'swagger_path': '/path/to/swagger_ui/'}
      app = connexion.App(__name__, specification_dir='openapi/', options=options)
 
-  If you wish to provide your own swagger-ui distro, note that connextion
+  If you wish to provide your own swagger-ui distro, note that connexion
 
   expects a jinja2 file called ``swagger_ui/index.j2`` in order to load the
 
@@ -38063,8 +38065,8 @@ raphael/goa: "#\n\n![Goa logo](https://goa.design/img/goa-logo.svg \"Goa\")\n\nG
 'BigstickCarpet/swagger-parser#swagger-parser': >-
   {"id":25453221,"node_id":"MDEwOlJlcG9zaXRvcnkyNTQ1MzIyMQ==","name":"swagger-parser","full_name":"APIDevTools/swagger-parser","private":false,"owner":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/APIDevTools/swagger-parser","description":"Swagger
   2.0 and OpenAPI 3.0
-  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-09-30T09:08:56Z","pushed_at":"2019-09-03T16:15:41Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apitools.dev/swagger-parser","size":32392,"stargazers_count":508,"watchers_count":508,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":81,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":35,"license":{"key":"mit","name":"MIT
-  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":81,"open_issues":35,"watchers":508,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":81,"subscribers_count":17}
+  parser/validator","fork":false,"url":"https://api.github.com/repos/APIDevTools/swagger-parser","forks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/forks","keys_url":"https://api.github.com/repos/APIDevTools/swagger-parser/keys{/key_id}","collaborators_url":"https://api.github.com/repos/APIDevTools/swagger-parser/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/APIDevTools/swagger-parser/teams","hooks_url":"https://api.github.com/repos/APIDevTools/swagger-parser/hooks","issue_events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/events{/number}","events_url":"https://api.github.com/repos/APIDevTools/swagger-parser/events","assignees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/assignees{/user}","branches_url":"https://api.github.com/repos/APIDevTools/swagger-parser/branches{/branch}","tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/tags","blobs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/refs{/sha}","trees_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/trees{/sha}","statuses_url":"https://api.github.com/repos/APIDevTools/swagger-parser/statuses/{sha}","languages_url":"https://api.github.com/repos/APIDevTools/swagger-parser/languages","stargazers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/stargazers","contributors_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contributors","subscribers_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscribers","subscription_url":"https://api.github.com/repos/APIDevTools/swagger-parser/subscription","commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/commits{/sha}","git_commits_url":"https://api.github.com/repos/APIDevTools/swagger-parser/git/commits{/sha}","comments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/comments{/number}","issue_comment_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues/comments{/number}","contents_url":"https://api.github.com/repos/APIDevTools/swagger-parser/contents/{+path}","compare_url":"https://api.github.com/repos/APIDevTools/swagger-parser/compare/{base}...{head}","merges_url":"https://api.github.com/repos/APIDevTools/swagger-parser/merges","archive_url":"https://api.github.com/repos/APIDevTools/swagger-parser/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/APIDevTools/swagger-parser/downloads","issues_url":"https://api.github.com/repos/APIDevTools/swagger-parser/issues{/number}","pulls_url":"https://api.github.com/repos/APIDevTools/swagger-parser/pulls{/number}","milestones_url":"https://api.github.com/repos/APIDevTools/swagger-parser/milestones{/number}","notifications_url":"https://api.github.com/repos/APIDevTools/swagger-parser/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/APIDevTools/swagger-parser/labels{/name}","releases_url":"https://api.github.com/repos/APIDevTools/swagger-parser/releases{/id}","deployments_url":"https://api.github.com/repos/APIDevTools/swagger-parser/deployments","created_at":"2014-10-20T06:14:51Z","updated_at":"2019-10-11T01:03:19Z","pushed_at":"2019-10-11T01:03:22Z","git_url":"git://github.com/APIDevTools/swagger-parser.git","ssh_url":"git@github.com:APIDevTools/swagger-parser.git","clone_url":"https://github.com/APIDevTools/swagger-parser.git","svn_url":"https://github.com/APIDevTools/swagger-parser","homepage":"https://apitools.dev/swagger-parser","size":32539,"stargazers_count":509,"watchers_count":509,"language":"JavaScript","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":true,"forks_count":82,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":35,"license":{"key":"mit","name":"MIT
+  License","spdx_id":"MIT","url":"https://api.github.com/licenses/mit","node_id":"MDc6TGljZW5zZTEz"},"forks":82,"open_issues":35,"watchers":509,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"organization":{"login":"APIDevTools","id":43750074,"node_id":"MDEyOk9yZ2FuaXphdGlvbjQzNzUwMDc0","avatar_url":"https://avatars0.githubusercontent.com/u/43750074?v=4","gravatar_id":"","url":"https://api.github.com/users/APIDevTools","html_url":"https://github.com/APIDevTools","followers_url":"https://api.github.com/users/APIDevTools/followers","following_url":"https://api.github.com/users/APIDevTools/following{/other_user}","gists_url":"https://api.github.com/users/APIDevTools/gists{/gist_id}","starred_url":"https://api.github.com/users/APIDevTools/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/APIDevTools/subscriptions","organizations_url":"https://api.github.com/users/APIDevTools/orgs","repos_url":"https://api.github.com/users/APIDevTools/repos","events_url":"https://api.github.com/users/APIDevTools/events{/privacy}","received_events_url":"https://api.github.com/users/APIDevTools/received_events","type":"Organization","site_admin":false},"network_count":82,"subscribers_count":17}
 kogosoftwarellc/express-openapi: >
   # @open-api [![Build Status][travis-image]][travis-url] [![Coveralls
   Status][coveralls-image]][coveralls-url] [![Gitter
@@ -42831,7 +42833,7 @@ OpenAPITools/openapi-generator: >
 
 
   [Master](https://github.com/OpenAPITools/openapi-generator/tree/master)
-  (`4.1.3-SNAPSHOT`): [![Build
+  (`4.2.0-SNAPSHOT`): [![Build
   Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/master.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
 
   [![Integration
@@ -42845,23 +42847,6 @@ OpenAPITools/openapi-generator: >
 
   [![JDK11
   Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/master)](https://cloud.drone.io/OpenAPITools/openapi-generator)
-
-
-  [`4.2.x`](https://github.com/OpenAPITools/openapi-generator/tree/4.2.x)
-  branch: [![Build
-  Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/4.2.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
-
-  [![Integration
-  Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/4.2.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
-
-  [![Run
-  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=4.2.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
-
-  [![Windows
-  Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=4.2.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
-
-  [![JDK11
-  Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/4.2.x)](https://cloud.drone.io/OpenAPITools/openapi-generator)
 
 
   [`5.0.x`](https://github.com/OpenAPITools/openapi-generator/tree/5.0.x)
@@ -43065,12 +43050,8 @@ OpenAPITools/openapi-generator: >
   [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.2.0-SNAPSHOT/)|
   09.10.2019 | Minor release (breaking changes with fallbacks)
 
-  4.1.3 (upcoming minor release)
-  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/4.1.3-SNAPSHOT/)|
-  30.09.2019 | Patch release (bug fixes, enhancements)
-
-  [4.1.2](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.1.2)
-  (latest stable release) | 12.09.2019 | Patch release (bug fixes, enhancements)
+  [4.1.3](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.1.3)
+  (latest stable release) | 04.10.2019 | Patch release (bug fixes, enhancements)
 
 
   OpenAPI Spec compatibility: 1.0, 1.1, 1.2, 2.0, 3.0
@@ -43170,7 +43151,7 @@ OpenAPITools/openapi-generator: >
 
 
   JAR location:
-  `http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar`
+  `http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.3/openapi-generator-cli-4.1.3.jar`
 
 
   For **Mac/Linux** users:
@@ -43178,7 +43159,7 @@ OpenAPITools/openapi-generator: >
   ```sh
 
   wget
-  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar
+  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.3/openapi-generator-cli-4.1.3.jar
   -O openapi-generator-cli.jar
 
   ```
@@ -43191,7 +43172,7 @@ OpenAPITools/openapi-generator: >
   ```
 
   Invoke-WebRequest -OutFile openapi-generator-cli.jar
-  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar
+  http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.3/openapi-generator-cli-4.1.3.jar
 
   ```
 
@@ -43596,12 +43577,12 @@ OpenAPITools/openapi-generator: >
 
   <!-- RELEASE_VERSION -->
 
-  Or install a particular OpenAPI Generator version (e.g. v4.1.2):
+  Or install a particular OpenAPI Generator version (e.g. v4.1.3):
 
 
   ```sh
 
-  npm install @openapitools/openapi-generator-cli@cli-4.1.2 -g
+  npm install @openapitools/openapi-generator-cli@cli-4.1.3 -g
 
   ```
 
@@ -43648,7 +43629,7 @@ OpenAPITools/openapi-generator: >
   <!-- RELEASE_VERSION -->
 
   You can also download the JAR (latest release) directly from
-  [maven.org](http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.2/openapi-generator-cli-4.1.2.jar)
+  [maven.org](http://central.maven.org/maven2/org/openapitools/openapi-generator-cli/4.1.3/openapi-generator-cli-4.1.3.jar)
 
   <!-- /RELEASE_VERSION -->
 
@@ -44145,6 +44126,11 @@ OpenAPITools/openapi-generator: >
   - 2019-09-01 - [Creating a PHP-Slim server using OpenAPI (Youtube
   video)](https://www.youtube.com/watch?v=5cJtbIrsYkg) by [Daniel
   Persson](https://www.youtube.com/channel/UCnG-TN23lswO6QbvWhMtxpA)
+
+  - 2019-09-06 - [Vert.x and
+  OpenAPI](https://wissel.net/blog/2019/09/vertx-and-openapi.html) by [Stephan H
+  Wissel](https://twitter.com/notessensei) at [wissel.net
+  blog](https://wissel.net)
 
   - 2019-09-09 - [Cloud-native development - Creating RESTful
   microservices](https://cloud.ibm.com/docs/cloud-native?topic=cloud-native-rest-api)
@@ -45512,20 +45498,21 @@ thomaxxl/safrs: >
   corresponding REST API is invoked. 
 
 
-  Following example from [demo.py](examples/demo.py) illustrates how the API is
-  built and documented:
+  Following example [app](examples/mini_app.py) illustrates how the API is built
+  and documented:
 
 
   ```python
 
   class User(SAFRSBase, db.Model):
-      '''
+      """
           description: User description
-      '''
-      __tablename__ = 'Users'
-      id = Column(String, primary_key=True)
-      name = Column(String, default='')
-      email = Column(String, default='')
+      """
+
+      __tablename__ = "Users"
+      id = db.Column(db.Integer, primary_key=True)
+      name = db.Column(db.String)
+      email = db.Column(db.String)
 
   ```
 
@@ -47895,34 +47882,15 @@ apisyouwonthate/openapi.tools: >
 
 
   A collection of Editors, Linters, Parsers, Code Generators, Documentation,
-  Testing, and validation tools for OpenAPI v2 and v3.
+  Testing, and Schema/Data validation tools for OpenAPI v2 and v3 (but mostly
+  v3).
 
 
   ## Contributing
 
 
-  Please add tools to `_data/tools.yml`, and talk about OpenAPI, not "Swagger".
-
-
-  We use [jekyll](https://jekyllrb.com/) so you should use ruby and install it
-  using bundler.
-
-
-  ```
-
-  $ bundle install
-
-  ```
-
-
-  If you want to check changes, execute jekyll server and open browser.
-
-
-  ```
-
-  $ bundle exec jekyll serve
-
-  ```
+  Please read [CONTRIBUTING.md](./CONTRIBUTING.md) if you are interested in
+  improving this site.
 fsprojects/OpenAPITypeProvider: >
   <img src="https://github.com/Dzoukr/OpenAPITypeProvider/raw/master/logo.jpg"
   alt="drawing" width="100px"/>
@@ -48431,7 +48399,7 @@ outofcoffee/vertx-oas: >
 
 
   Pete Cornish (outofcoffee@gmail.com)
-cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/openapi-spring-webflux-validator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.cdimascio%22%20AND%20a:%22openapi-spring-webflux-validator%22)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.1.1</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.1.1'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.swagger.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.swagger.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n"
+cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/openapi-spring-webflux-validator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.cdimascio%22%20AND%20a:%22openapi-spring-webflux-validator%22)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade)![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)\n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3.0.0_ or _Swagger 2.0_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>2.1.1</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:2.1.1'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.openapi.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n\tfun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.body\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\t\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n        }\n    }\n\t \n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().body(Mono.just(it))\n       }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n"
 fmvilas/openapi3-generator: >
   <h1 align="center">OpenAPI 3 Generator</h1>
 
@@ -49184,9 +49152,7 @@ Mermade/openapi-lint-vscode: >
   ## Known Issues
 
 
-  * Messages need better formatting
-
-  * Jump-to-error functionality not implemented yet
+  * Jump-to-error functionality not implemented yet (all show as line 1)
 
   * No way to override/amend linter rules yet
 
@@ -58398,7 +58364,7 @@ apiaryio/dredd-transactions: >
 
   [source-map]:
   https://github.com/refractproject/refract-spec/blob/master/namespaces/parse-result-namespace.md#source-map-element
-mrin9/RapiDoc: >-
+mrin9/RapiDoc: >
   <img alt="MrinDoc logo"
   src="https://github.com/mrin9/RapiDoc/blob/master/logo.png" width="60px" />
 
@@ -58447,7 +58413,7 @@ mrin9/RapiDoc: >-
     - Use it inside another framework (react, vue, angular, lit-element)
     - Use JavaScript to change its attributes, and it will react to those changes
     - Style the element with standard css (change padding, position, border, margin )
-  - Lightweight and fast (under 125 KB gzipped)
+  - Lightweight and fast
 
   - Load local json spec from the disk
 
@@ -58467,11 +58433,6 @@ mrin9/RapiDoc: >-
 
 
   ## Build Process
-
-  We recommend `yarn` over `npm` as we use yarn
-  [resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/)
-  to keep the bundle size smaller. As of this writing this feature is not
-  supported in npm natively 
 
   ```bash
 
@@ -58494,6 +58455,9 @@ mrin9/RapiDoc: >-
   yarn serve
 
   ```
+
+
+  ## Contribution
 swagger-api/swagger-js: >+
   # Swagger Client <img
   src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SW-logo-clr.png"
@@ -61982,7 +61946,7 @@ cebe/yii2-app-api: >
 
   Development of this library is sponsored by [cebe.:cloud: "Your Professional
   Deployment Platform"](https://cebe.cloud).
-cdimascio/express-openapi-validator: "# express-openapi-validator\n\n[![](https://travis-ci.org/cdimascio/express-openapi-validator.svg?branch=master)](#) [![](https://img.shields.io/npm/v/express-openapi-validator.svg)](https://www.npmjs.com/package/express-openapi-validator) ![](https://img.shields.io/npm/dm/express-openapi-validator.svg) [![Coverage Status](https://coveralls.io/repos/github/cdimascio/express-openapi-validator/badge.svg)](https://coveralls.io/github/cdimascio/express-openapi-validator) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![](https://img.shields.io/badge/license-MIT-blue.svg)](#license)\n\nAn OpenApi validator for ExpressJS that automatically validates API requests using an OpenAPI 3 specification.\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/express-openapi-validator/master/assets/express-openapi-validator.png\" width=\"500\">\n</p>\n\n[express-openapi-validator](https://github.com/cdimascio/express-openapi-validator) is unopinionated and does not impose any coding convention or project structure. Simply, install the validator onto your express app, point it to your OpenAPI 3 specification, then define and implement routes the way you prefer. See an [example](#example-express-api-server).\n\n[![GitHub stars](https://img.shields.io/github/stars/cdimascio/express-openapi-validator.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/cdimascio/express-openapi-validator/stargazers/) [![Twitter URL](https://img.shields.io/twitter/url/https/github.com/cdimascio/express-openapi-validator.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20express-openapi-validator%20by%20%40CarmineDiMascio%20https%3A%2F%2Fgithub.com%2Fcdimascio%2Fexpress-openapi-validator%20%F0%9F%91%8D)\n\n## Install\n\n```shell\nnpm i express-openapi-validator\n```\n\n## Usage\n\nInstall the openapi validator\n\n```javascript\nnew OpenApiValidator({\n  apiSpec: './test/resources/openapi.yaml',\n  validateRequests: true, // (default)\n  validateResponses: true, // false by default\n}).install(app);\n```\n_Note: response validation is currently a beta feature_\n\nThen, register an error handler to customize errors\n\n```javascript\napp.use((err, req, res, next) => {\n  // format error\n  res.status(err.status).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n#### Alternatively...\n\nThe `apiSpec` option may be specified as the spec object itself, rather than a path e.g.\n\n```javascript\nconst apiSpec = {\n  openapi: \"3.0.1\",\n  info: {...},\n  servers: [...],\n  paths: {...},\n  components: {\n    responses: {...},\n    schemas: {...}\n  }\n}\n\nnew OpenApiValidator({ apiSpec }).install(app);\n```\n\n## Options\n\n```javascript\nnew OpenApiValidator(options).install(app);\n```\n\n**`apiSpec:`** a string value specifying the path to the OpenAPI 3.0.x spec or a JSON object representing an OpenAPI spec.\n\n**`validateRequests:`** enable response validation.\n\n- true - (default) validate requests.\n- false - do not validate requests.\n\n**`validateResponses:`** enable response validation.\n\n- true - validate responses\n- false - (default) do not validate responses\n\n**`coerceTypes:`** change data type of data to match type keyword. See the example in Coercing data types and coercion rules. Option values:\n\n- true - (default) coerce scalar data types.\n- false - no type coercion.\n- \"array\" - in addition to coercions between scalar types, coerce scalar data to an array with one element and vice versa (as required by the schema).\n\n**`multerOpts:`** the [multer opts](https://github.com/expressjs/multer) to passthrough to multer\n\n## Example Express API Server\n\nTry the complete example below:\n(_it includes file upload as well!_)\n\n```javascript\nconst express = require('express');\nconst path = require('path');\nconst cookieParser = require('cookie-parser');\nconst bodyParser = require('body-parser');\nconst logger = require('morgan');\nconst http = require('http');\nconst app = express();\n\n// 1. Import the express-openapi-validator library\nconst OpenApiValidator = require('express-openapi-validator').OpenApiValidator;\n\napp.use(bodyParser.json());\napp.use(logger('dev'));\napp.use(express.json());\napp.use(express.urlencoded({ extended: false }));\napp.use(cookieParser());\napp.use(express.static(path.join(__dirname, 'public')));\n\n// 2. (optionally) Serve the OpenAPI spec\napp.use('/spec', express.static(spec));\n\n// 3. Install the OpenApiValidator onto your express app\nnew OpenApiValidator({\n  apiSpec: './openapi.yaml',\n}).install(app);\n\n// 4. Define routes using Express\napp.get('/v1/pets', function(req, res, next) {\n  res.json([{ id: 1, name: 'max' }, { id: 2, name: 'mini' }]);\n});\n\napp.post('/v1/pets', function(req, res, next) {\n  res.json({ name: 'sparky' });\n});\n\napp.get('/v1/pets/:id', function(req, res, next) {\n  res.json({ id: req.params.id, name: 'sparky' });\n});\n\n// 4. Define route(s) to upload file(s)\napp.post('/v1/pets/:id/photos', function(req, res, next) {\n  // files are found in req.files\n  // non-file multipart params can be found as such: req.body['my-param']\n\n  res.json({\n    files_metadata: req.files.map(f => ({\n      originalname: f.originalname,\n      encoding: f.encoding,\n      mimetype: f.mimetype,\n      // Buffer of file conents\n      buffer: f.buffer,\n    })),\n  });\n});\n\n// 5. Create an Express error handler\napp.use((err, req, res, next) => {\n  // 6. Customize errors\n  res.status(err.status).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n## The Base URL\n\nThe validator will only validate requests — and (optionally) responses — that are under\nthe server's [base URL](https://spec.openapis.org/oas/v3.0.0.html#serverVariableObject).\n\nThis is useful for those times when the API and frontend are being served by the same\napplication. ([More detail about the base URL](https://swagger.io/docs/specification/api-host-and-base-path/).)\n\n```yaml\nservers:\n  - url: https://api.example.com/v1\n``` \n\nThe validation applies to all paths defined under this base URL. Routes in your app\nthat are _not_ under the base URL—such as pages—will not be validated.\n\n| URL                                  | Validated?                  |\n| :----------------------------------- | :-------------------------- |\n| `https://api.example.com/v1/users`   | :white_check_mark:          |\n| `https://api.example.com/index.html` | no; not under the base URL  |\n\n## [Example Express API Server](https://github.com/cdimascio/express-openapi-validator-example) (clone it)\n\nA fully working example lives [here](https://github.com/cdimascio/express-openapi-validator-example)\n\n## Example validation responses\n\n#### Validate a query parameter with a value constraint\n\n`/pets/:id` should be of type integer, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets/as |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".params.id\",\n      \"message\": \"should be integer\",\n      \"errorCode\": \"type.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a query parameter with a range constraint\n\n`/pets?limit=1` should be of type integer with a value greater than 5. It should also require an additional query paramter, `test`, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets?limit=1 |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".query.limit\",\n      \"message\": \"should be >= 5\",\n      \"errorCode\": \"minimum.openapi.validation\"\n    },\n    {\n      \"path\": \".query.test\",\n      \"message\": \"should have required property 'test'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate the query parameter's value type\n\n`POST /pets` is defined to only accept media type application/json, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/xml' \\\n  --data '{\n        \"name\": \"test\"\n}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \"/v1/pets\",\n      \"message\": \"unsupported media type application/xml\"\n    }\n  ]\n}\n```\n\n#### Validate a POST body to ensure required parameters are present\n\n`POST /pets` request body is required to contain the `name` properly, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/json' \\\n  --data '{}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".query.name\",\n      \"message\": \"should have required property 'name'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a POST multipart/form-data request\n\n```shell\ncurl -s -XPOST http://localhost:3000/v1/pets/10/photos -F fileZZ=@app.js | jq\n{\n  \"errors\": [\n    {\n      \"path\": \"file\",\n      \"message\": \"should have required property 'file'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### ...and much more. Try it out!\n\n## Contributors ✨\n\nThanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"http://www.twitter.com/carminedimascio\"><img src=\"https://avatars1.githubusercontent.com/u/4706618?v=4\" width=\"100px;\" alt=\"Carmine DiMascio\"/><br /><sub><b>Carmine DiMascio</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Tests\">⚠️</a> <a href=\"#infra-cdimascio\" title=\"Infrastructure (Hosting, Build-Tools, etc)\">\U0001F687</a></td>\n    <td align=\"center\"><a href=\"http://litr.cc/\"><img src=\"https://avatars2.githubusercontent.com/u/4166193?v=4\" width=\"100px;\" alt=\"Sheldhur Mornor\"/><br /><sub><b>Sheldhur Mornor</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Tests\">⚠️</a></td>\n    <td align=\"center\"><a href=\"https://github.com/trebler\"><img src=\"https://avatars2.githubusercontent.com/u/5610569?v=4\" width=\"100px;\" alt=\"Andrey Trebler\"/><br /><sub><b>Andrey Trebler</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=trebler\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=trebler\" title=\"Tests\">⚠️</a></td>\n  </tr>\n</table>\n\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n\n## License\n\n[MIT](LICENSE)\n\n\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n"
+cdimascio/express-openapi-validator: "# express-openapi-validator\n\n[![](https://travis-ci.org/cdimascio/express-openapi-validator.svg?branch=master)](#) [![](https://img.shields.io/npm/v/express-openapi-validator.svg)](https://www.npmjs.com/package/express-openapi-validator) ![](https://img.shields.io/npm/dm/express-openapi-validator.svg) [![Coverage Status](https://coveralls.io/repos/github/cdimascio/express-openapi-validator/badge.svg)](https://coveralls.io/github/cdimascio/express-openapi-validator) [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors) [![](https://img.shields.io/badge/license-MIT-blue.svg)](#license)\n\nAn OpenApi validator for ExpressJS that automatically validates API requests using an OpenAPI 3 specification.\n\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/cdimascio/express-openapi-validator/master/assets/express-openapi-validator.png\" width=\"500\">\n</p>\n\n[express-openapi-validator](https://github.com/cdimascio/express-openapi-validator) is unopinionated and does not impose any coding convention or project structure. Simply, install the validator onto your express app, point it to your OpenAPI 3 specification, then define and implement routes the way you prefer. See an [example](#example-express-api-server).\n\n[![GitHub stars](https://img.shields.io/github/stars/cdimascio/express-openapi-validator.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/cdimascio/express-openapi-validator/stargazers/) [![Twitter URL](https://img.shields.io/twitter/url/https/github.com/cdimascio/express-openapi-validator.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20out%20express-openapi-validator%20by%20%40CarmineDiMascio%20https%3A%2F%2Fgithub.com%2Fcdimascio%2Fexpress-openapi-validator%20%F0%9F%91%8D)\n\n## Install\n\n```shell\nnpm i express-openapi-validator\n```\n\n## Usage\n\n1. Install the openapi validator\n\n```javascript\nnew OpenApiValidator({\n  apiSpec: './test/resources/openapi.yaml',\n  validateRequests: true, // (default)\n  validateResponses: true, // false by default\n}).install(app);\n```\n\n2. Register an error handler\n\n```javascript\napp.use((err, req, res, next) => {\n  // format error\n  res.status(err.status || 500).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n_**Note:** Ensure express is configured with all relevant body parsers. See an [example](#example-express-api-server)_\n\n## Advanced Usage\n\nFor OpenAPI 3.0.x 3rd party and custom formats, see [Options](#Options).\n\n#### Optionally inline the spec...\n\nThe `apiSpec` option may be specified as the spec object itself, rather than a path e.g.\n\n```javascript\nconst apiSpec = {\n  openapi: \"3.0.1\",\n  info: {...},\n  servers: [...],\n  paths: {...},\n  components: {\n    responses: {...},\n    schemas: {...}\n  }\n}\n\nnew OpenApiValidator({ apiSpec }).install(app);\n```\n\n## Options\n\n```javascript\nnew OpenApiValidator(options).install(app);\n```\n\n**`apiSpec:`** a string value specifying the path to the OpenAPI 3.0.x spec or a JSON object representing an OpenAPI spec.\n\n**`validateRequests:`** enable response validation.\n\n- `true` - (default) validate requests.\n- `false` - do not validate requests.\n\n**`validateResponses:`** enable response validation.\n\n- `true` - validate responses\n- `false` - (default) do not validate responses\n\n**`unknownFormats:`** handling of unknown and/or custom formats. Option values:\n\n- `true` (default) - if an unknown format is encountered, validation will report a 400 error.\n- `[string]` - an array of unknown format names that will be ignored by the validator. This option can be used to allow usage of third party schemas with format(s), but still fail if another unknown format is used. (_Recommended if unknown formats are used_)\n- `\"ignore\"` - to log warning during schema compilation and always pass validation. This option is not recommended, as it allows to mistype format name and it won't be validated without any error message.\n\n\t**example:**\n\t\n\t```javascript\n\tunknownFormats: ['phone-number', 'uuid']\n\t```\n\n**`coerceTypes:`** change data type of data to match type keyword. See the example in Coercing data types and coercion rules. Option values:\n\n- `true` - (default) coerce scalar data types.\n- `false` - no type coercion.\n- `\"array\"` - in addition to coercions between scalar types, coerce scalar data to an array with one element and vice versa (as required by the schema).\n\n**`multerOpts:`** the [multer opts](https://github.com/expressjs/multer) to passthrough to multer\n\n## Example Express API Server\n\nTry the complete example below:\n(_it includes file upload as well!_)\n\n```javascript\nconst express = require('express');\nconst path = require('path');\nconst cookieParser = require('cookie-parser');\nconst bodyParser = require('body-parser');\nconst logger = require('morgan');\nconst http = require('http');\nconst app = express();\n\n// 1. Import the express-openapi-validator library\nconst OpenApiValidator = require('express-openapi-validator').OpenApiValidator;\n\n// 2. Set up body parsers for the request body types you expect\napp.use(bodyParser.json());\napp.use(bodyParser.text());\napp.use(bodyParser.urlencoded());\n\napp.use(logger('dev'));\napp.use(express.json());\napp.use(express.urlencoded({ extended: false }));\napp.use(cookieParser());\napp.use(express.static(path.join(__dirname, 'public')));\n\n// 3. (optionally) Serve the OpenAPI spec\napp.use('/spec', express.static(spec));\n\n// 4. Install the OpenApiValidator onto your express app\nnew OpenApiValidator({\n  apiSpec: './openapi.yaml',\n}).install(app);\n\n// 4. Define routes using Express\napp.get('/v1/pets', function(req, res, next) {\n  res.json([{ id: 1, name: 'max' }, { id: 2, name: 'mini' }]);\n});\n\napp.post('/v1/pets', function(req, res, next) {\n  res.json({ name: 'sparky' });\n});\n\napp.get('/v1/pets/:id', function(req, res, next) {\n  res.json({ id: req.params.id, name: 'sparky' });\n});\n\n// 5. Define route(s) to upload file(s)\napp.post('/v1/pets/:id/photos', function(req, res, next) {\n  // files are found in req.files\n  // non-file multipart params can be found as such: req.body['my-param']\n\n  res.json({\n    files_metadata: req.files.map(f => ({\n      originalname: f.originalname,\n      encoding: f.encoding,\n      mimetype: f.mimetype,\n      // Buffer of file conents\n      buffer: f.buffer,\n    })),\n  });\n});\n\n// 6. Create an Express error handler\napp.use((err, req, res, next) => {\n  // 7. Customize errors\n  res.status(err.status || 500).json({\n    message: err.message,\n    errors: err.errors,\n  });\n});\n```\n\n## The Base URL\n\nThe validator will only validate requests — and (optionally) responses — that are under\nthe server's [base URL](https://spec.openapis.org/oas/v3.0.0.html#serverVariableObject).\n\nThis is useful for those times when the API and frontend are being served by the same\napplication. ([More detail about the base URL](https://swagger.io/docs/specification/api-host-and-base-path/).)\n\n```yaml\nservers:\n  - url: https://api.example.com/v1\n``` \n\nThe validation applies to all paths defined under this base URL. Routes in your app\nthat are _not_ under the base URL—such as pages—will not be validated.\n\n| URL                                  | Validated?                  |\n| :----------------------------------- | :-------------------------- |\n| `https://api.example.com/v1/users`   | :white_check_mark:          |\n| `https://api.example.com/index.html` | no; not under the base URL  |\n\n## [Example Express API Server](https://github.com/cdimascio/express-openapi-validator-example) (clone it)\n\nA fully working example lives [here](https://github.com/cdimascio/express-openapi-validator-example)\n\n## Example validation responses\n\n#### Validate a query parameter with a value constraint\n\n`/pets/:id` should be of type integer, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets/as |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".params.id\",\n      \"message\": \"should be integer\",\n      \"errorCode\": \"type.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a query parameter with a range constraint\n\n`/pets?limit=1` should be of type integer with a value greater than 5. It should also require an additional query paramter, `test`, express-openapi-validator returns:\n\n```shell\ncurl -s http://localhost:3000/v1/pets?limit=1 |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".query.limit\",\n      \"message\": \"should be >= 5\",\n      \"errorCode\": \"minimum.openapi.validation\"\n    },\n    {\n      \"path\": \".query.test\",\n      \"message\": \"should have required property 'test'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate the query parameter's value type\n\n`POST /pets` is defined to only accept media type application/json, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/xml' \\\n  --data '{\n        \"name\": \"test\"\n}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \"/v1/pets\",\n      \"message\": \"unsupported media type application/xml\"\n    }\n  ]\n}\n```\n\n#### Validate a POST body to ensure required parameters are present\n\n`POST /pets` request body is required to contain the `name` properly, express-openapi-validator returns:\n\n```shell\ncurl -s --request POST \\\n  --url http://localhost:3000/v1/pets \\\n  --header 'content-type: application/json' \\\n  --data '{}' |jq\n{\n  \"errors\": [\n    {\n      \"path\": \".query.name\",\n      \"message\": \"should have required property 'name'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### Validate a POST multipart/form-data request\n\n```shell\ncurl -s -XPOST http://localhost:3000/v1/pets/10/photos -F fileZZ=@app.js | jq\n{\n  \"errors\": [\n    {\n      \"path\": \"file\",\n      \"message\": \"should have required property 'file'\",\n      \"errorCode\": \"required.openapi.validation\"\n    }\n  ]\n}\n```\n\n#### ...and much more. Try it out!\n\n## Contributors ✨\n\nThanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"http://www.twitter.com/carminedimascio\"><img src=\"https://avatars1.githubusercontent.com/u/4706618?v=4\" width=\"100px;\" alt=\"Carmine DiMascio\"/><br /><sub><b>Carmine DiMascio</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=cdimascio\" title=\"Tests\">⚠️</a> <a href=\"#infra-cdimascio\" title=\"Infrastructure (Hosting, Build-Tools, etc)\">\U0001F687</a></td>\n    <td align=\"center\"><a href=\"http://litr.cc/\"><img src=\"https://avatars2.githubusercontent.com/u/4166193?v=4\" width=\"100px;\" alt=\"Sheldhur Mornor\"/><br /><sub><b>Sheldhur Mornor</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=sheldhur\" title=\"Tests\">⚠️</a></td>\n    <td align=\"center\"><a href=\"https://github.com/trebler\"><img src=\"https://avatars2.githubusercontent.com/u/5610569?v=4\" width=\"100px;\" alt=\"Andrey Trebler\"/><br /><sub><b>Andrey Trebler</b></sub></a><br /><a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=trebler\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/express-openapi-validator/commits?author=trebler\" title=\"Tests\">⚠️</a></td>\n  </tr>\n</table>\n\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n\n## License\n\n[MIT](LICENSE)\n\n\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n"
 cebe/yii2-openapi: >
   # yii2-openapi
 
@@ -65963,18 +65927,43 @@ airtasker/spot: >
   Specification](https://github.com/OAI/OpenAPI-Specification) (OAS) (formerly
   known as Swagger Specification) in JSON or YAML format. The features include,
   for example, IntelliSense, linting, schema enforcement, code navigation,
-  definition links, snippets, and more!
+  definition links, snippets, and more! 
+
+
+  The extesion also integrates with [API Contract Security
+  Audit](https://docs.42crunch.com/latest/content/concepts/api_contract_security_audit.htm)
+  by 42Crunch, so that you can check the quality of your API definition directly
+  in VS Code.
 
 
   Both OAS v2 and v3 are supported.
 
 
+  ## Table of contents
+
+
+  - [Quick start](#quick-start)
+
+  - [Use the extension while editing your
+  API](#use-the-extension-while-editing-your-API)
+    * [Create new OpenAPI files](#create-new-openapi-files)
+    * [Navigate API definition](#navigate-API-definition)
+    * [Add new elements in the OpenAPI explorer](#add-new-elements-in-the-openapi-explorer)
+    * [Use IntelliSense](#use-intellisense)
+    * [Jump to a reference](#jump-to-a-reference)
+  - [Use the extension to audit your API](#use-the-extension-to-audit-your-API)
+    * [Navigate the issues in the audit report](#navigate-the-issues-in-the-audit-report)
+  - [Known issues](#known-issues)
+
+  - [Feedback](#feedback)
+
+
   ## Quick start
 
 
-  After installing the plugin, open any JSON or YAML file that contains an API
-  definition following OAS v2 or OAS v3 in VS Code. The plugin automatically
-  detects that this is an OpenAPI file, and the OpenAPI button <img
+  After installing the plugin, open any JSON or YAML file that contains an
+  OpenAPI definition in VS Code. The plugin automatically detects that this is
+  an OpenAPI file, and the OpenAPI button <img
   src="https://raw.githubusercontent.com/42Crunch/vscode-openapi/master/images/OpenAPI%20button.PNG"
   width=20 height=19> is shown in the left-hand panel.
 
@@ -65984,7 +65973,20 @@ airtasker/spot: >
   width=400 height=389>
 
 
-  ## Create new OpenAPI files
+  ## Use the extension while editing your API
+
+
+  OpenAPI extension makes it easier and faster to navigate your OpenAPI
+  definitions, especially when they get longer. 
+
+
+  You can home in on elements in the OpenAPI explorer view, or jump directly to
+  the target of a reference in the API. You can also add new elements to your
+  API directly in the OpenAPI explorer directly where they are needed. Filling
+  in the details is quicker with IntelliSense support for OpenAPI elements.
+
+
+  ### Create new OpenAPI files
 
 
   1. Press **Ctrl+Shift+P** on Windows or Linux, or **Cmd+Shift+P** on a Mac.   
@@ -65995,14 +65997,14 @@ airtasker/spot: >
   3. Use the OpenAPI explorer to populate the template with new paths and other
   elements as needed.
 
-  4. Save the file to your disk to fully enable intellisense.
+  4. Save the file to your disk to fully enable IntelliSense.
 
 
   ![Create new OpenAPI file from a
   template](https://github.com/42Crunch/vscode-openapi/blob/master/images/New%20OpenAPI%20file.gif?raw=true)
 
 
-  ## OpenAPI navigation
+  ### Navigate API definition
 
   1. Open an OpenAPI file.
 
@@ -66016,7 +66018,7 @@ airtasker/spot: >
   file](https://github.com/42Crunch/vscode-openapi/blob/master/images/Naviation.gif?raw=true)
 
 
-  ## Add new elements in the OpenAPI explorer
+  ### Add new elements in the OpenAPI explorer
 
   1. In OpenAPI explorer pane, go to the section where you want to add a new
   element, and click the **...** menu.
@@ -66028,7 +66030,7 @@ airtasker/spot: >
   verb](https://github.com/42Crunch/vscode-openapi/blob/master/images/Add%20paths%20and%20verbs.gif?raw=true)
 
 
-  ## IntelliSense
+  ### Use IntelliSense
 
 
   As you start typing OpenAPI elements or their values, the context-sensitive
@@ -66038,30 +66040,93 @@ airtasker/spot: >
 
 
   You can also use the corresponding VS Code hotkey (**Ctrl+Space** on Windows,
-  **Cmd+Space** on Mac) to forse-open the IntelliSense menu.
+  **Cmd+Space** on Mac) to open the IntelliSense menu.
 
 
   ![IntelliSense for OpenAPI
   editing](https://github.com/42Crunch/vscode-openapi/blob/master/images/Intellisense.gif?raw=true)
 
 
-  ## Go to definition
+  ### Jump to a reference
 
 
-  To jump to view the definition from a reference in your API, either
-  **Ctrl+click** a reference, or right-click a reference and click **Go to
-  Definition** in the shortcut menu.
+  Use Go to Definition to locate the targets of references easily. To jump to
+  view the definition from a reference in your API, either **Ctrl+click** a
+  reference, or right-click a reference and click **Go to Definition** in the
+  shortcut menu.
 
 
   ![Go to
   definition](https://github.com/42Crunch/vscode-openapi/blob/master/images/Go%20to%20Definition.gif?raw=true)
 
 
+
+  ## Use the extension to audit security of your API
+
+
+  You can use OpenAPI extension to check the quality of your API as you work on
+  it. You can run the audit directly from VS Code by clicking the **42C** button
+  in the upper right corner.
+
+
+  To run Security Audit from VS Code, you need a token. On the first time, you
+  are asked to provide your email address. When you supply the address, the
+  extension requests the token to be sent to your mailbox. Once you get the
+  token, paste it in the prompt in VS Code, and you are all set. From now on,
+  all you need to do is to click the button to run the audit.
+
+
+  ### Navigate the issues in the audit report
+
+
+  After the audit finishes, you get the audit report directly in the VS Code
+  view, side by side with your code. Depending on your API definition, the
+  report might be long, so here are some handy ways to navigate the found
+  issues.
+
+
+  1. To scroll through all issues and their details, use the text panel on the
+  right.
+
+
+  ![Perform REST API Security
+  Audit](https://github.com/42Crunch/vscode-openapi/blob/master/images/Perform%20REST%20API%20Security%20Audit.gif?raw=true)
+
+
+  2. Hover on an element that is underlined or marked with three dots
+  (recommendations) in your code to see what the issues in that spot are. If you
+  click on view the descriptions of only these issues, the rest of details are
+  filtered out from the text panel, so you have less to scroll through.
+
+
+  ![Details for specific
+  issues](https://github.com/42Crunch/vscode-openapi/blob/master/images/Details%20for%20specific%20issues.gif?raw=true)
+
+
+  3. For a quick overall look, check the counts in the Status Bar. The different
+  icons match the severity of the issue:
+    - Error: critical or high 
+    - Warning: medium
+    - Info: low
+    
+  ![List of API Sec
+  Issues](https://github.com/42Crunch/vscode-openapi/blob/master/images/List%20of%20API%20Sec%20Issues.gif?raw=true)
+
+
+  4. Click the icons in the Status Bar to open the PROBLEMS panel and scroll
+  through the issue titles. The issues are ordered from most to least severe, so
+  it is easy for fix the worst offenders first. Note that recommendations are
+  not listed in the PROBLEMS panel.
+
+  5. Click on an issue in the PROBLEMS panel to jump to view it inline in your
+  API definition.
+
+
   ## Known issues
 
 
   - For new files, IntelliSense does not work until you save the file. File
-  extension needs to be .json or .yaml.
+  extension must be .json or .yaml.
 
   - When you expand the sections and elements in the OpenAPI explorer, if the
   the left-hand panel gets very long, VS Code may push the last sections out of
@@ -66499,3 +66564,130 @@ sphinx-contrib/openapi: |
   .. _OpenAPI: https://github.com/OAI/OpenAPI-Specification
   .. _sphinxcontrib-httpdomain: https://sphinxcontrib-httpdomain.readthedocs.io/
 VanMoof/gopenapi: "= GOpenAPI\n\nimage:https://circleci.com/gh/VanMoof/gopenapi.svg?style=svg&circle-token=3af6268b2c8da20c22632261882d358e3027c045[\"CircleCI\", link=\"https://circleci.com/gh/VanMoof/gopenapi\"]\n\nAn OpenAPI utility for Go.\nThis project aims to bring support of OpenAPI v3.\n\n== Usage\n\n```bash\n$ gopenapi [command] [arg]\n```\n\n=== Generating Specifications From Code\n\n```bash\ngopenapi generate spec [optional path] [flags]\n```\n\n==== Args\n\n```bash\n[optional path]   Optionally specify the directory in which to search. Accepts absolute paths. Relative paths are relative to the current directory. (default \".\")\n```\n\n==== Flags\n\n```bash\n-f, --format string   The format of the output. May be json or yaml (default \"json\")\n-o, --output string   Where the output should be directed. May be '-' (stdout) or a path to a file (default \"-\")\n```\n\n==== Format\n\nCode is annotated with different types of comments that help generate the spec.\n\nThe comment contains a keyword that specifies the type of the OpenAPI element.\n\nThe content of the comment should be a valid YAML OpenAPI element\n\n===== Info\n\nBegin a comment with `gopenapi:info` and follow up with a YAML representation of the OpenAPI Info element.\n\nThis element is then set to the `info` property of the specification.\n\n```go\npackage main\n\n/*\ngopenapi:info\ntitle: The App Name\nversion: 1.0\ndescription: |-\n  The app description\ncontact:\n  name: Jimbob Jones\n  url: https://jones.com\n  email: jimbob@jones.com\nlicense:\n  name: Apache 2.0\n  url: https://www.apache.org/licenses/LICENSE-2.0.html\n*/\nfunc main() {\n}\n```\n\n===== Path\n\nBegin a comment with `gopenapi:path` and follow up with a YAML representation of the OpenAPI PathItem element.\n\nThis element is then appended to the `paths` property of the specification.\n\n```go\npackage main\n\n/*\ngopenapi:path\n/ping:\n  get:\n    responses:\n      200:\n        description: |-\n          The default response of \"ping\"\n        content:\n          text/plain:\n            example: pong\n*/\nfunc ControllerFunc() {\n}\n```\n\n===== Schema Object\n\nAnnotate a struct with a `gopenapi:objectSchema`.\n\nThe generated ObjectSchema element will be appended to the `components.schemas` property fo the specification.\n\n```go\n//gopenapi:objectSchema\ntype RootModel struct {\n\tIntField    int64  `json:\"intField\"`\n\tStringField string `json:\"stringField\"`\n}\n\n// This struct will be ignored\ntype IgnoredModel struct {\n}\n\n//gopenapi:objectSchema\ntype AliasedModels []*AliasedModel // This alias will appear as a schema too\n\n//gopenapi:objectSchema\ntype AliasedModel struct {\n\tIgnoredField string `json:\"-\"` // This field will be ignored\n\tTimeField    time.Time\n}\n\n```"
+playpauseandstop/rororo: >
+  ======
+
+  rororo
+
+  ======
+
+
+  .. image::
+  https://img.shields.io/circleci/project/github/playpauseandstop/rororo/feature-openapi.svg
+      :target: https://circleci.com/gh/playpauseandstop/rororo
+      :alt: CircleCI
+
+  .. image:: https://img.shields.io/pypi/v/rororo.svg
+      :target: https://pypi.org/project/rororo/
+      :alt: Latest Version
+
+  .. image:: https://img.shields.io/pypi/pyversions/rororo.svg
+      :target: https://pypi.org/project/rororo/
+      :alt: Python versions
+
+  .. image:: https://img.shields.io/pypi/l/rororo.svg
+      :target: https://github.com/playpauseandstop/rororo/blob/master/LICENSE
+      :alt: BSD License
+
+  .. image::
+  https://coveralls.io/repos/playpauseandstop/rororo/badge.svg?branch=feature-openapi&service=github
+      :target: https://coveralls.io/github/playpauseandstop/rororo
+      :alt: Coverage
+
+  .. image:: https://readthedocs.org/projects/rororo/badge/?version=latest
+      :target: https://rororo.readthedocs.io/
+      :alt: Documentation
+
+  `OpenAPI 3 <https://spec.openapis.org/oas/v3.0.2>`_ schema support
+
+  for `aiohttp.web <https://aiohttp.readthedocs.io/en/stable/web.html>`_
+
+  applications.
+
+
+  As well as bunch other utilities to build effective web applications with
+
+  Python 3 & ``aiohttp.web``.
+
+
+  * Works on Python 3.6+
+
+  * BSD licensed
+
+  * Source, issues, and pull requests `on GitHub
+    <https://github.com/playpauseandstop/rororo>`_
+
+  Important
+
+  =========
+
+
+  **2.0.0** version still in development. To install it use,
+
+
+  .. code-block:: bash
+
+      pip install rororo>=2.0.0a3
+
+  or,
+
+
+  .. code-block:: bash
+
+      poetry add rororo^=2.0.0a3
+
+  Quick Start
+
+  ===========
+
+
+  ``rororo`` relies on valid OpenAPI schema file (both JSON or YAML formats
+
+  supported).
+
+
+  Example below, illustrates on how to handle operation ``hello_world`` from
+
+  `openapi.yaml
+  <https://github.com/playpauseandstop/rororo/blob/feature-openapi/tests/openapi.yaml>`_
+
+  schema file.
+
+
+  .. code-block:: python
+
+      from pathlib import Path
+      from typing import List
+
+      from aiohttp import web
+      from rororo import openapi_context, OperationTableDef, setup_openapi
+
+
+      operations = OperationTableDef()
+
+
+      @operations.register
+      async def hello_world(request: web.Request) -> web.Response:
+          with openapi_context(request) as context:
+              name = context.parameters.query.get("name", "world")
+              return web.json_response({"message": f"Hello, {name}!"})
+
+
+      def create_app(argv: List[str] = None) -> web.Application:
+          app = web.Application()
+          setup_openapi(
+              app,
+              Path(__file__).parent / "openapi.yaml",
+              operations,
+              route_prefix="/api"
+          )
+          return app
+
+  Check
+
+  `examples
+  <https://github.com/playpauseandstop/rororo/tree/feature-openapi/examples>`_
+
+  folder to see other examples on how to use OpenAPI 3 schemas with aiohttp.web
+
+  applications.
