@@ -800,6 +800,15 @@
   owner: Nexmo
   logo: 'https://avatars1.githubusercontent.com/u/551057?v=4'
   downloads: 0
+- name: openapi_first
+  description: >-
+    A Rack based microframework to implement APIs based on OpenAPI.
+    It auto-implements routing and request validation and helps testing your API.
+  github: 'https://github.com/ahx/openapi_first'
+  v3: true
+  language: Ruby
+  category: frameworks
+  license: MIT
 - github: 'https://github.com/OpenAPITools/openapi-generator'
   v3: true
   category: sdk
