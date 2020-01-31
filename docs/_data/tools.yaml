@@ -205,10 +205,10 @@
   v3: true
   github: 'https://github.com/42Crunch/vscode-openapi'
   archived: false
-  stars: 58
+  stars: 59
   watch: 5
   forks: 2
-  updated: '2020-01-22T19:37:06Z'
+  updated: '2020-01-24T05:13:18Z'
   issues: 7
   owner: 42Crunch
   logo: 'https://avatars3.githubusercontent.com/u/25365245?v=4'
@@ -221,10 +221,10 @@
   description: "\U0001F60E A list of awesome projects related to OpenAPI 3.0.x, curated by the community"
   language: JavaScript
   archived: false
-  stars: 364
+  stars: 365
   watch: 37
-  forks: 35
-  updated: '2020-01-20T20:26:12Z'
+  forks: 36
+  updated: '2020-01-24T12:26:04Z'
   issues: 1
   license: ''
   owner: APIs-guru
@@ -237,11 +237,11 @@
   description: "\U0001F310 Wikipedia for Web APIs. Directory of REST API definitions in OpenAPI 2.0/3.0 format"
   language: JavaScript
   archived: false
-  stars: 1767
-  watch: 99
-  forks: 306
-  updated: '2020-01-22T17:06:52Z'
-  issues: 105
+  stars: 1773
+  watch: 98
+  forks: 309
+  updated: '2020-01-30T03:27:46Z'
+  issues: 106
   owner: APIs-guru
   logo: 'https://avatars0.githubusercontent.com/u/10975548?v=4'
   license: MIT
@@ -312,11 +312,11 @@
   language: TypeScript
   category: '?'
   archived: false
-  stars: 2668
-  watch: 912
-  updated: '2020-01-23T20:26:39Z'
-  issues: 36
-  forks: 521
+  stars: 2678
+  watch: 910
+  updated: '2020-01-30T23:53:22Z'
+  issues: 40
+  forks: 524
   license: MIT
   owner: Azure
   logo: 'https://avatars0.githubusercontent.com/u/6844498?v=4'
@@ -332,7 +332,7 @@
   stars: 3
   watch: 1
   forks: 4
-  updated: '2019-01-10T11:32:35Z'
+  updated: '2020-01-25T22:22:18Z'
   issues: 0
   license: MIT
   owner: Bankdata
@@ -346,16 +346,16 @@
   description: Swagger 2.0 and OpenAPI 3.0 command-line tool
   v2: true
   archived: false
-  stars: 204
+  stars: 206
   watch: 9
   forks: 34
-  updated: '2020-01-12T07:19:07Z'
-  issues: 12
+  updated: '2020-01-29T13:16:19Z'
+  issues: 13
   license: MIT
   owner: APIDevTools
   logo: 'https://avatars0.githubusercontent.com/u/43750074?v=4'
-  downloads: 6124959
-  downloadStr: 6.12M
+  downloads: 6011553
+  downloadStr: 6.01M
 - name: swagger-express-middleware
   description: Swagger 2.0 middlware and mocks for Express.js
   github: >-
@@ -372,8 +372,8 @@
   license: MIT
   owner: APIDevTools
   logo: 'https://avatars0.githubusercontent.com/u/43750074?v=4'
-  downloads: 511850
-  downloadStr: 511.85K
+  downloads: 529219
+  downloadStr: 529.22K
 - name: swagger-parser
   description: Swagger 2.0 and OpenAPI 3.0 parser/validator
   github: 'https://github.com/BigstickCarpet/swagger-parser#swagger-parser'
@@ -381,16 +381,16 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 554
+  stars: 556
   watch: 17
-  updated: '2020-01-20T11:02:04Z'
+  updated: '2020-01-27T20:22:21Z'
   issues: 36
   forks: 90
   license: MIT
   owner: APIDevTools
   logo: 'https://avatars0.githubusercontent.com/u/43750074?v=4'
-  downloads: 18449214
-  downloadStr: 18.45M
+  downloads: 18937269
+  downloadStr: 18.94M
 - name: swagger-parser
   description: Swagger 2.0 and OpenAPI 3.0 parser/validator
   github: 'https://github.com/BigstickCarpet/swagger-parser#swagger-parser'
@@ -398,16 +398,16 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 554
+  stars: 556
   watch: 17
-  updated: '2020-01-20T11:02:04Z'
+  updated: '2020-01-27T20:22:21Z'
   issues: 36
   forks: 90
   license: MIT
   owner: APIDevTools
   logo: 'https://avatars0.githubusercontent.com/u/43750074?v=4'
-  downloads: 18449214
-  downloadStr: 18.45M
+  downloads: 18937269
+  downloadStr: 18.94M
 - name: blueoak-server
   description: 'express.js-based, swagger-matic, server runtime'
   github: 'https://github.com/BlueOakJS/blueoak-server'
@@ -496,10 +496,10 @@
   description: Generates code snippets for given Swagger / Open API specification files.
   language: JavaScript
   archived: false
-  stars: 18
+  stars: 19
   watch: 3
   forks: 17
-  updated: '2020-01-22T03:10:29Z'
+  updated: '2020-01-30T16:05:13Z'
   issues: 14
   owner: ErikWittern
   logo: 'https://avatars0.githubusercontent.com/u/1745998?v=4'
@@ -513,10 +513,10 @@
   description: Generates code snippets for given Swagger / Open API specification files.
   language: JavaScript
   archived: false
-  stars: 18
+  stars: 19
   watch: 3
   forks: 17
-  updated: '2020-01-22T03:10:29Z'
+  updated: '2020-01-30T16:05:13Z'
   issues: 14
   owner: ErikWittern
   logo: 'https://avatars0.githubusercontent.com/u/1745998?v=4'
@@ -570,7 +570,7 @@
   watch: 101
   updated: '2020-01-11T09:42:57Z'
   issues: 48
-  forks: 305
+  forks: 304
   owner: Luracast
   logo: 'https://avatars0.githubusercontent.com/u/236217?v=4'
   downloads: 1763891
@@ -600,11 +600,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 401
+  stars: 404
   watch: 16
-  forks: 72
-  updated: '2020-01-23T18:23:42Z'
-  issues: 9
+  forks: 73
+  updated: '2020-01-30T01:51:05Z'
+  issues: 11
   license: BSD-3-Clause
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
@@ -616,11 +616,11 @@
   description: OpenAPI 3.0 CodeGen plus Node.js minus the Java and emojis
   language: JavaScript
   archived: false
-  stars: 145
-  watch: 9
-  forks: 33
-  updated: '2020-01-23T21:39:58Z'
-  issues: 10
+  stars: 160
+  watch: 10
+  forks: 34
+  updated: '2020-01-31T00:37:22Z'
+  issues: 11
   license: Apache-2.0
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
@@ -662,8 +662,8 @@
   license: BSD-3-Clause
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
-  downloads: 14740
-  downloadStr: 14.74K
+  downloads: 16487
+  downloadStr: 16.49K
 - github: 'https://github.com/Mermade/openapi-lint-vscode'
   v3: true
   category: editors
@@ -673,10 +673,10 @@
     extension for Visual Studio Code
   language: JavaScript
   archived: false
-  stars: 36
+  stars: 37
   watch: 3
   forks: 3
-  updated: '2020-01-04T04:13:51Z'
+  updated: '2020-01-27T14:27:43Z'
   issues: 4
   license: BSD-3-Clause
   owner: Mermade
@@ -759,11 +759,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 594
-  watch: 53
+  stars: 596
+  watch: 52
   forks: 72
-  updated: '2020-01-23T15:58:05Z'
-  issues: 50
+  updated: '2020-01-28T16:20:52Z'
+  issues: 51
   license: MIT
   owner: microsoft
   logo: 'https://avatars2.githubusercontent.com/u/6154722?v=4'
@@ -778,7 +778,7 @@
   stars: 43
   watch: 15
   forks: 15
-  updated: '2020-01-24T00:57:13Z'
+  updated: '2020-01-24T20:55:51Z'
   issues: 14
   license: MIT
   owner: microsoft
@@ -810,11 +810,11 @@
     given an OpenAPI Spec (v2, v3)
   language: Java
   archived: false
-  stars: 4233
-  watch: 123
-  forks: 1505
-  updated: '2020-01-23T22:22:29Z'
-  issues: 1280
+  stars: 4289
+  watch: 124
+  forks: 1525
+  updated: '2020-01-31T01:18:44Z'
+  issues: 1262
   license: Apache-2.0
   owner: OpenAPITools
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
@@ -826,10 +826,10 @@
   description: 'A node package wrapper for https://github.com/OpenAPITools/openapi-generator'
   language: JavaScript
   archived: false
-  stars: 94
+  stars: 96
   watch: 9
   forks: 23
-  updated: '2020-01-18T21:59:15Z'
+  updated: '2020-01-29T10:14:36Z'
   issues: 2
   owner: OpenAPITools
   logo: 'https://avatars2.githubusercontent.com/u/37325267?v=4'
@@ -866,8 +866,8 @@
   license: ''
   owner: Orange-OpenSource
   logo: 'https://avatars0.githubusercontent.com/u/1506386?v=4'
-  downloads: 136999
-  downloadStr: 137K
+  downloads: 136609
+  downloadStr: 136.61K
 - github: 'https://github.com/OverSpeedIO/koa2-oas3'
   v3: true
   category: parsers
@@ -923,16 +923,16 @@
   description: "\U0001F916 Generator for GH repo to help you manage the OpenAPI definition lifecycle"
   language: JavaScript
   archived: false
-  stars: 372
+  stars: 374
   watch: 7
-  forks: 48
-  updated: '2020-01-20T13:54:47Z'
-  issues: 22
+  forks: 49
+  updated: '2020-01-29T15:03:36Z'
+  issues: 21
   owner: Redocly
   logo: 'https://avatars1.githubusercontent.com/u/32099856?v=4'
   license: MIT
-  downloads: 3252
-  downloadStr: 3.25K
+  downloads: 3284
+  downloadStr: 3.28K
 - name: create-openapi-repo
   category: documentation
   github: 'https://github.com/Rebilly/generator-openapi-repo'
@@ -940,16 +940,16 @@
   description: "\U0001F916 Generator for GH repo to help you manage the OpenAPI definition lifecycle"
   v2: true
   archived: false
-  stars: 372
+  stars: 374
   watch: 7
-  forks: 48
-  updated: '2020-01-20T13:54:47Z'
-  issues: 22
+  forks: 49
+  updated: '2020-01-29T15:03:36Z'
+  issues: 21
   license: MIT
   owner: Redocly
   logo: 'https://avatars1.githubusercontent.com/u/32099856?v=4'
-  downloads: 3252
-  downloadStr: 3.25K
+  downloads: 3284
+  downloadStr: 3.28K
 - name: serverless_swagger
   description: Configure serverless functions from swagger definition
   github: 'https://github.com/Reckon-Limited/serverless_swagger'
@@ -974,16 +974,16 @@
   description: "\U0001F916 Generator for GH repo to help you manage the OpenAPI definition lifecycle"
   language: JavaScript
   archived: false
-  stars: 372
+  stars: 374
   watch: 7
-  forks: 48
-  updated: '2020-01-20T13:54:47Z'
-  issues: 22
+  forks: 49
+  updated: '2020-01-29T15:03:36Z'
+  issues: 21
   owner: Redocly
   logo: 'https://avatars1.githubusercontent.com/u/32099856?v=4'
   license: MIT
-  downloads: 3252
-  downloadStr: 3.25K
+  downloads: 3284
+  downloadStr: 3.28K
 - github: 'https://github.com/Redocly/redoc'
   v2: true
   v3: true
@@ -992,11 +992,11 @@
   description: "\U0001F4D8  OpenAPI/Swagger-generated API Reference Documentation"
   language: TypeScript
   archived: false
-  stars: 8036
-  watch: 164
-  forks: 959
-  updated: '2020-01-24T00:39:11Z'
-  issues: 245
+  stars: 8095
+  watch: 167
+  forks: 967
+  updated: '2020-01-30T22:05:52Z'
+  issues: 247
   owner: Redocly
   logo: 'https://avatars1.githubusercontent.com/u/32099856?v=4'
   license: MIT
@@ -1030,7 +1030,7 @@
   stars: 93
   watch: 9
   forks: 27
-  updated: '2020-01-17T10:20:42Z'
+  updated: '2020-01-30T01:50:09Z'
   issues: 56
   logo: 'https://avatars1.githubusercontent.com/u/15205934?v=4'
   downloads: 0
@@ -1064,9 +1064,9 @@
   archived: false
   stars: 1978
   watch: 88
-  updated: '2020-01-22T07:57:09Z'
-  issues: 78
-  forks: 323
+  updated: '2020-01-29T19:00:40Z'
+  issues: 76
+  forks: 324
   license: Apache-2.0
   owner: Swagger2Markup
   logo: 'https://avatars1.githubusercontent.com/u/13084390?v=4'
@@ -1182,11 +1182,11 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 4676
+  stars: 4685
   watch: 550
-  updated: '2020-01-23T19:05:36Z'
-  issues: 36
-  forks: 1551
+  updated: '2020-01-30T03:42:16Z'
+  issues: 35
+  forks: 1552
   license: ''
   owner: ServiceStack
   logo: 'https://avatars0.githubusercontent.com/u/605728?v=4'
@@ -1200,11 +1200,11 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 4676
+  stars: 4685
   watch: 550
-  updated: '2020-01-23T19:05:36Z'
-  issues: 36
-  forks: 1551
+  updated: '2020-01-30T03:42:16Z'
+  issues: 35
+  forks: 1552
   license: ''
   owner: ServiceStack
   logo: 'https://avatars0.githubusercontent.com/u/605728?v=4'
@@ -1218,10 +1218,10 @@
     Issues tracked main. Main repo =>
   language: JavaScript
   archived: false
-  stars: 21
+  stars: 22
   watch: 3
   forks: 6
-  updated: '2020-01-09T10:29:28Z'
+  updated: '2020-01-26T16:21:00Z'
   issues: 1
   license: MIT
   owner: SkeLLLa
@@ -1252,16 +1252,16 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 733
+  stars: 734
   watch: 13
-  updated: '2020-01-23T23:27:33Z'
-  issues: 20
+  updated: '2020-01-28T18:35:34Z'
+  issues: 21
   forks: 118
   license: MIT
   owner: Surnet
   logo: 'https://avatars2.githubusercontent.com/u/4512080?v=4'
-  downloads: 3521165
-  downloadStr: 3.52M
+  downloads: 3685521
+  downloadStr: 3.69M
 - name: express-gateway-plugin-openapi3-mock-server
   category: mock
   language: JavaScript
@@ -1336,7 +1336,7 @@
   archived: false
   stars: 88
   watch: 12
-  updated: '2019-11-22T11:00:39Z'
+  updated: '2020-01-29T23:41:12Z'
   issues: 7
   forks: 33
   license: MIT
@@ -1368,9 +1368,9 @@
   archived: false
   stars: 482
   watch: 30
-  updated: '2020-01-22T15:59:32Z'
+  updated: '2020-01-30T22:52:26Z'
   issues: 69
-  forks: 102
+  forks: 103
   license: ''
   owner: Yelp
   logo: 'https://avatars1.githubusercontent.com/u/49071?v=4'
@@ -1382,9 +1382,9 @@
   language: Python
   category: '?'
   archived: false
-  stars: 101
-  watch: 26
-  updated: '2019-11-26T19:11:16Z'
+  stars: 102
+  watch: 25
+  updated: '2020-01-28T06:44:46Z'
   issues: 42
   forks: 79
   license: ''
@@ -1399,10 +1399,10 @@
   category: '?'
   archived: false
   stars: 80
-  watch: 24
-  updated: '2020-01-13T14:36:59Z'
-  issues: 22
-  forks: 52
+  watch: 23
+  updated: '2020-01-27T14:41:28Z'
+  issues: 23
+  forks: 53
   license: ''
   owner: Yelp
   logo: 'https://avatars1.githubusercontent.com/u/49071?v=4'
@@ -1417,7 +1417,7 @@
   stars: 104
   watch: 18
   updated: '2020-01-18T05:14:19Z'
-  issues: 36
+  issues: 38
   forks: 73
   license: Apache-2.0
   owner: abelsilva
@@ -1481,11 +1481,11 @@
   description: 'Spot is a concise, developer-friendly way to describe your API contract.'
   language: TypeScript
   archived: false
-  stars: 60
-  watch: 20
+  stars: 66
+  watch: 21
   forks: 1
-  updated: '2020-01-23T23:36:41Z'
-  issues: 3
+  updated: '2020-01-29T15:41:26Z'
+  issues: 4
   owner: airtasker
   logo: 'https://avatars1.githubusercontent.com/u/1745680?v=4'
   license: ''
@@ -1565,11 +1565,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 3249
+  stars: 3254
   watch: 76
-  forks: 259
-  updated: '2020-01-23T23:17:15Z'
-  issues: 199
+  forks: 260
+  updated: '2020-01-30T05:35:08Z'
+  issues: 202
   license: MIT
   owner: apiaryio
   logo: 'https://avatars1.githubusercontent.com/u/765943?v=4'
@@ -1588,7 +1588,7 @@
   watch: 9
   forks: 11
   updated: '2019-10-01T14:31:59Z'
-  issues: 8
+  issues: 9
   owner: apiaryio
   logo: 'https://avatars1.githubusercontent.com/u/765943?v=4'
   license: MIT
@@ -1609,8 +1609,8 @@
   license: MIT
   owner: apiaryio
   logo: 'https://avatars1.githubusercontent.com/u/765943?v=4'
-  downloads: 510113
-  downloadStr: 510.11K
+  downloads: 543924
+  downloadStr: 543.92K
 - name: apicurio-studio
   category: editors
   language: Java
@@ -1621,10 +1621,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 467
+  stars: 468
   watch: 27
-  forks: 181
-  updated: '2020-01-23T15:47:27Z'
+  forks: 182
+  updated: '2020-01-30T17:08:23Z'
   issues: 199
   license: Apache-2.0
   owner: Apicurio
@@ -1649,16 +1649,16 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 645
+  stars: 644
   watch: 55
-  updated: '2020-01-20T22:41:21Z'
-  issues: 138
-  forks: 315
+  updated: '2020-01-28T21:29:42Z'
+  issues: 139
+  forks: 314
   license: MIT
   owner: apigee-127
   logo: 'https://avatars1.githubusercontent.com/u/7990855?v=4'
-  downloads: 2935172
-  downloadStr: 2.94M
+  downloads: 3369262
+  downloadStr: 3.37M
 - name: fusio
   category: frameworks
   github: 'https://github.com/apioo/fusio'
@@ -1667,10 +1667,10 @@
   link: 'http://fusio-project.org/'
   v3: true
   archived: false
-  stars: 801
+  stars: 804
   watch: 46
-  forks: 107
-  updated: '2020-01-22T13:02:25Z'
+  forks: 109
+  updated: '2020-01-28T19:30:54Z'
   issues: 68
   license: AGPL-3.0
   owner: apioo
@@ -1703,11 +1703,11 @@
     Testing
   language: HTML
   archived: false
-  stars: 142
+  stars: 145
   watch: 12
-  forks: 98
-  updated: '2020-01-23T15:03:12Z'
-  issues: 5
+  forks: 99
+  updated: '2020-01-30T07:51:09Z'
+  issues: 6
   license: MIT
   owner: apisyouwonthate
   logo: 'https://avatars3.githubusercontent.com/u/35378327?v=4'
@@ -1721,11 +1721,11 @@
   language: Go
   category: '?'
   archived: false
-  stars: 23096
+  stars: 23124
   watch: 1267
-  updated: '2020-01-23T23:33:45Z'
-  issues: 813
-  forks: 4676
+  updated: '2020-01-30T17:52:18Z'
+  issues: 814
+  forks: 4682
   license: ''
   owner: astaxie
   logo: 'https://avatars3.githubusercontent.com/u/233907?v=4'
@@ -1738,7 +1738,7 @@
   language: TypeScript
   archived: false
   stars: 33
-  watch: 4
+  watch: 3
   forks: 16
   updated: '2020-01-09T10:51:09Z'
   issues: 4
@@ -1803,9 +1803,9 @@
   language: PHP
   category: '?'
   archived: false
-  stars: 54
+  stars: 55
   watch: 3
-  updated: '2020-01-07T03:05:01Z'
+  updated: '2020-01-24T02:53:10Z'
   issues: 3
   forks: 14
   license: MIT
@@ -1871,11 +1871,11 @@
   language: Go
   category: '?'
   archived: false
-  stars: 4730
+  stars: 4742
   watch: 117
-  updated: '2020-01-23T22:34:32Z'
-  issues: 390
-  forks: 758
+  updated: '2020-01-30T10:00:56Z'
+  issues: 375
+  forks: 760
   license: Apache-2.0
   owner: go-swagger
   logo: 'https://avatars2.githubusercontent.com/u/10362650?v=4'
@@ -1887,11 +1887,11 @@
   description: "\U0001F98B Auto-validates api requests, responses, and securities using ExpressJS and an OpenAPI 3.x specification"
   language: TypeScript
   archived: false
-  stars: 125
-  watch: 8
-  forks: 32
-  updated: '2020-01-22T12:13:53Z'
-  issues: 13
+  stars: 153
+  watch: 9
+  forks: 33
+  updated: '2020-01-31T01:27:15Z'
+  issues: 17
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
   license: MIT
@@ -1904,16 +1904,16 @@
   description: "\U0001F682 A Yeoman generator for Express.js based 12-factor apps and apis"
   language: JavaScript
   archived: false
-  stars: 452
-  watch: 21
+  stars: 453
+  watch: 22
   forks: 69
-  updated: '2020-01-23T23:47:54Z'
+  updated: '2020-01-27T17:18:26Z'
   issues: 2
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
   license: MIT
-  downloads: 11231
-  downloadStr: 11.23K
+  downloads: 10849
+  downloadStr: 10.85K
 - github: 'https://github.com/cdimascio/generator-express-no-stress-typescript'
   v3: true
   category: unclassified
@@ -1921,16 +1921,16 @@
   description: "\U0001F684 A Yeoman generator for Express.js based 12-factor apps and apis using Typescript"
   language: TypeScript
   archived: false
-  stars: 228
+  stars: 229
   watch: 7
   forks: 26
-  updated: '2020-01-21T19:46:23Z'
+  updated: '2020-01-29T22:16:29Z'
   issues: 0
   owner: cdimascio
   logo: 'https://avatars1.githubusercontent.com/u/4706618?v=4'
   license: MIT
-  downloads: 8494
-  downloadStr: 8.49K
+  downloads: 8359
+  downloadStr: 8.36K
 - github: 'https://github.com/cdimascio/kotlin-spring-mvc-template'
   v3: true
   category: frameworks
@@ -1955,10 +1955,10 @@
   description: "\U0001F331 A friendly kotlin library to validate API endpoints using an OpenApi 3.0 and Swagger 2.0 specification"
   language: Kotlin
   archived: false
-  stars: 45
+  stars: 46
   watch: 2
   forks: 3
-  updated: '2019-11-21T02:23:49Z'
+  updated: '2020-01-24T08:02:46Z'
   issues: 1
   license: ''
   owner: cdimascio
@@ -1973,10 +1973,10 @@
     PHP objects.
   language: PHP
   archived: false
-  stars: 152
+  stars: 156
   watch: 10
-  forks: 22
-  updated: '2020-01-22T08:13:26Z'
+  forks: 23
+  updated: '2020-01-30T16:38:52Z'
   issues: 12
   license: MIT
   owner: cebe
@@ -2076,7 +2076,7 @@
   category: '?'
   archived: false
   stars: 133
-  watch: 20
+  watch: 19
   updated: '2019-12-05T22:42:34Z'
   issues: 47
   forks: 132
@@ -2127,10 +2127,10 @@
     validation
   language: Go
   archived: false
-  stars: 362
+  stars: 364
   watch: 8
-  forks: 38
-  updated: '2020-01-23T16:31:08Z'
+  forks: 39
+  updated: '2020-01-30T13:08:03Z'
   issues: 14
   owner: danielgtaylor
   logo: 'https://avatars2.githubusercontent.com/u/106826?v=4'
@@ -2175,11 +2175,11 @@
   description: Generate Go client and server boilerplate from OpenAPI 3 specifications
   language: Go
   archived: false
-  stars: 331
-  watch: 7
-  forks: 62
-  updated: '2020-01-23T21:46:41Z'
-  issues: 28
+  stars: 333
+  watch: 8
+  forks: 64
+  updated: '2020-01-27T23:33:41Z'
+  issues: 30
   owner: deepmap
   logo: 'https://avatars0.githubusercontent.com/u/47459865?v=4'
   license: Apache-2.0
@@ -2227,7 +2227,7 @@
   watch: 3
   forks: 2
   updated: '2020-01-14T19:34:06Z'
-  issues: 3
+  issues: 4
   owner: dolmen-go
   logo: 'https://avatars3.githubusercontent.com/u/22580372?v=4'
   license: Apache-2.0
@@ -2239,9 +2239,9 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 2818
+  stars: 2821
   watch: 187
-  updated: '2020-01-20T08:19:40Z'
+  updated: '2020-01-29T08:12:02Z'
   issues: 300
   forks: 658
   license: BSD-3-Clause
@@ -2255,11 +2255,11 @@
   language: 'C#'
   category: '?'
   archived: false
-  stars: 2918
-  watch: 190
-  updated: '2020-01-23T21:25:47Z'
-  issues: 242
-  forks: 703
+  stars: 2928
+  watch: 191
+  updated: '2020-01-30T09:24:37Z'
+  issues: 248
+  forks: 712
   license: MIT
   owner: domaindrivendev
   logo: 'https://avatars1.githubusercontent.com/u/1434343?v=4'
@@ -2271,11 +2271,11 @@
   language: Ruby
   category: '?'
   archived: false
-  stars: 589
+  stars: 594
   watch: 16
-  updated: '2020-01-23T06:46:24Z'
-  issues: 77
-  forks: 159
+  updated: '2020-01-30T13:35:49Z'
+  issues: 78
+  forks: 163
   owner: rswag
   logo: 'https://avatars3.githubusercontent.com/u/55741034?v=4'
   downloads: 0
@@ -2338,11 +2338,11 @@
   language: Go
   category: '?'
   archived: false
-  stars: 3630
+  stars: 3632
   watch: 150
-  updated: '2020-01-22T16:59:41Z'
+  updated: '2020-01-28T05:25:18Z'
   issues: 5
-  forks: 555
+  forks: 556
   license: MIT
   owner: emicklei
   logo: 'https://avatars1.githubusercontent.com/u/686220?v=4'
@@ -2371,16 +2371,16 @@
   description: Convert class-validator-decorated classes into JSON schema
   language: TypeScript
   archived: false
-  stars: 77
+  stars: 78
   watch: 3
   forks: 7
-  updated: '2020-01-20T18:15:37Z'
+  updated: '2020-01-25T15:24:25Z'
   issues: 3
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
-  downloads: 150322
-  downloadStr: 150.32K
+  downloads: 161628
+  downloadStr: 161.63K
 - github: 'https://github.com/epiphone/routing-controllers-openapi'
   v3: true
   category: parsers
@@ -2388,11 +2388,11 @@
   description: Runtime OpenAPI v3 schema generation for routing-controllers.
   language: TypeScript
   archived: false
-  stars: 94
+  stars: 96
   watch: 7
   forks: 14
-  updated: '2020-01-14T07:29:42Z'
-  issues: 4
+  updated: '2020-01-24T14:53:22Z'
+  issues: 5
   license: MIT
   owner: epiphone
   logo: 'https://avatars1.githubusercontent.com/u/1923531?v=4'
@@ -2408,8 +2408,8 @@
   stars: 9
   watch: 8
   forks: 5
-  updated: '2019-09-30T12:23:47Z'
-  issues: 3
+  updated: '2020-01-30T10:59:17Z'
+  issues: 1
   license: MIT
   owner: erasys
   logo: 'https://avatars2.githubusercontent.com/u/1845621?v=4'
@@ -2448,8 +2448,8 @@
   forks: 5
   owner: fleekjs
   logo: 'https://avatars3.githubusercontent.com/u/12417108?v=4'
-  downloads: 399
-  downloadStr: '399'
+  downloads: 419
+  downloadStr: '419'
 - name: fleek-router
   description: a router for the fleek framework
   github: 'https://github.com/fleekjs/fleek-router'
@@ -2518,8 +2518,8 @@
   license: Apache-2.0
   owner: openapi-contrib
   logo: 'https://avatars3.githubusercontent.com/u/49447320?v=4'
-  downloads: 29190
-  downloadStr: 29.19K
+  downloads: 33763
+  downloadStr: 33.76K
 - name: swagger-node-codegen
   category: sdk
   language: JavaScript
@@ -2609,10 +2609,10 @@
   description: 'F# generative Type Provider for Swagger'
   language: 'F#'
   archived: false
-  stars: 158
+  stars: 159
   watch: 8
   forks: 49
-  updated: '2020-01-03T11:11:47Z'
+  updated: '2020-01-28T02:06:56Z'
   issues: 7
   owner: fsprojects
   logo: 'https://avatars2.githubusercontent.com/u/6001315?v=4'
@@ -2628,7 +2628,7 @@
   stars: 16
   watch: 4
   forks: 2
-  updated: '2020-01-21T10:27:34Z'
+  updated: '2020-01-30T10:26:06Z'
   issues: 0
   owner: fukamachi
   logo: 'https://avatars2.githubusercontent.com/u/90570?v=4'
@@ -2657,11 +2657,11 @@
   language: Python
   category: '?'
   archived: false
-  stars: 366
+  stars: 367
   watch: 28
-  updated: '2020-01-16T16:11:34Z'
+  updated: '2020-01-29T08:00:01Z'
   issues: 15
-  forks: 76
+  forks: 77
   license: MIT
   owner: gangverk
   logo: 'https://avatars1.githubusercontent.com/u/1301121?v=4'
@@ -2673,9 +2673,9 @@
   language: Java
   category: '?'
   archived: false
-  stars: 28
+  stars: 29
   watch: 7
-  updated: '2019-05-13T07:29:51Z'
+  updated: '2020-01-29T15:02:46Z'
   issues: 4
   forks: 61
   owner: garethjevans
@@ -2704,11 +2704,11 @@
   language: Go
   category: '?'
   archived: false
-  stars: 7629
+  stars: 7654
   watch: 271
-  updated: '2020-01-24T00:48:59Z'
+  updated: '2020-01-31T00:24:17Z'
   issues: 86
-  forks: 995
+  forks: 1000
   license: BSD-3-Clause
   owner: grpc-ecosystem
   logo: 'https://avatars3.githubusercontent.com/u/19352526?v=4'
@@ -2722,10 +2722,10 @@
     more)
   v3: true
   archived: false
-  stars: 401
+  stars: 403
   watch: 12
-  forks: 91
-  updated: '2020-01-23T23:18:51Z'
+  forks: 92
+  updated: '2020-01-29T18:33:56Z'
   issues: 28
   license: MIT
   owner: getkin
@@ -2754,11 +2754,11 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 781
+  stars: 786
   watch: 29
-  updated: '2020-01-23T15:29:45Z'
-  issues: 60
-  forks: 346
+  updated: '2020-01-30T14:45:46Z'
+  issues: 59
+  forks: 345
   license: MIT
   owner: glennjones
   logo: 'https://avatars1.githubusercontent.com/u/175288?v=4'
@@ -2789,11 +2789,11 @@
   v2: true
   v3_progress_link: 'https://github.com/go-swagger/go-swagger/issues/1122'
   archived: false
-  stars: 4730
+  stars: 4742
   watch: 117
-  forks: 758
-  updated: '2020-01-23T22:34:32Z'
-  issues: 390
+  forks: 760
+  updated: '2020-01-30T10:00:56Z'
+  issues: 375
   license: Apache-2.0
   owner: go-swagger
   logo: 'https://avatars2.githubusercontent.com/u/10362650?v=4'
@@ -2822,10 +2822,10 @@
     code generation and other API support tasks.
   v3: true
   archived: false
-  stars: 561
+  stars: 564
   watch: 31
   forks: 73
-  updated: '2020-01-23T03:45:05Z'
+  updated: '2020-01-30T23:20:26Z'
   issues: 16
   license: Apache-2.0
   owner: googleapis
@@ -2951,9 +2951,9 @@
   language: Erlang
   category: '?'
   archived: false
-  stars: 87
+  stars: 88
   watch: 45
-  updated: '2020-01-02T13:26:17Z'
+  updated: '2020-01-30T09:23:23Z'
   issues: 8
   forks: 36
   license: Apache-2.0
@@ -2973,7 +2973,7 @@
   watch: 8
   forks: 2
   updated: '2019-12-21T22:05:55Z'
-  issues: 16
+  issues: 18
   license: Apache-2.0
   owner: isa-group
   logo: 'https://avatars0.githubusercontent.com/u/2708867?v=4'
@@ -2989,16 +2989,16 @@
     express servers.
   language: JavaScript
   archived: false
-  stars: 61
-  watch: 12
+  stars: 62
+  watch: 11
   forks: 24
-  updated: '2020-01-24T00:25:44Z'
+  updated: '2020-01-27T21:24:30Z'
   issues: 54
   license: Apache-2.0
   owner: isa-group
   logo: 'https://avatars0.githubusercontent.com/u/2708867?v=4'
-  downloads: 40587
-  downloadStr: 40.59K
+  downloads: 42923
+  downloadStr: 42.92K
 - name: open-api
   category: sdk
   language: PHP
@@ -3009,7 +3009,7 @@
   stars: 29
   watch: 2
   forks: 5
-  updated: '2020-01-23T02:54:12Z'
+  updated: '2020-01-30T15:16:52Z'
   issues: 0
   license: MIT
   owner: janephp
@@ -3024,7 +3024,7 @@
   archived: false
   stars: 29
   watch: 2
-  updated: '2020-01-23T02:54:12Z'
+  updated: '2020-01-30T15:16:52Z'
   issues: 0
   forks: 5
   license: MIT
@@ -3197,11 +3197,11 @@
   description: A tool that generates and runs test cases for Open API / Swagger based apps
   language: Python
   archived: false
-  stars: 217
+  stars: 226
   watch: 13
-  forks: 15
-  updated: '2020-01-24T01:21:28Z'
-  issues: 12
+  forks: 18
+  updated: '2020-01-30T10:56:58Z'
+  issues: 15
   owner: kiwicom
   logo: 'https://avatars2.githubusercontent.com/u/25227300?v=4'
   license: MIT
@@ -3213,11 +3213,11 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 352
+  stars: 356
   watch: 14
-  updated: '2020-01-22T22:46:41Z'
-  issues: 42
-  forks: 125
+  updated: '2020-01-28T21:57:03Z'
+  issues: 48
+  forks: 126
   license: MIT
   owner: kogosoftwarellc
   logo: 'https://avatars0.githubusercontent.com/u/15419153?v=4'
@@ -3250,7 +3250,7 @@
   stars: 14
   watch: 2
   forks: 1
-  updated: '2020-01-14T17:32:44Z'
+  updated: '2020-01-29T08:50:34Z'
   issues: 23
   license: AGPL-3.0
   owner: koumoul-dev
@@ -3316,10 +3316,10 @@
   v2: true
   language: JavaScript
   category: '?'
-  archived: false
+  archived: true
   stars: 71
   watch: 9
-  updated: '2019-11-16T22:32:37Z'
+  updated: '2020-01-24T21:30:28Z'
   issues: 12
   forks: 35
   license: ''
@@ -3333,10 +3333,10 @@
   v2: true
   language: JavaScript
   category: '?'
-  archived: false
+  archived: true
   stars: 348
   watch: 29
-  updated: '2019-12-03T18:43:02Z'
+  updated: '2020-01-24T21:30:25Z'
   issues: 32
   forks: 81
   license: ''
@@ -3352,15 +3352,15 @@
   category: '?'
   archived: false
   stars: 177
-  watch: 19
+  watch: 18
   updated: '2020-01-02T15:56:30Z'
-  issues: 13
+  issues: 14
   forks: 65
   license: ''
   owner: krakenjs
   logo: 'https://avatars0.githubusercontent.com/u/7001600?v=4'
-  downloads: 24352
-  downloadStr: 24.35K
+  downloads: 26912
+  downloadStr: 26.91K
 - github: 'https://github.com/kumuluz/kumuluzee-openapi'
   v3: true
   category: parsers
@@ -3390,7 +3390,7 @@
   stars: 9
   watch: 9
   forks: 0
-  updated: '2020-01-19T13:06:52Z'
+  updated: '2020-01-27T08:54:16Z'
   issues: 0
   license: BSD-3-Clause
   owner: quantmind
@@ -3481,7 +3481,7 @@
   stars: 563
   watch: 17
   updated: '2020-01-20T04:04:20Z'
-  issues: 24
+  issues: 25
   forks: 83
   license: MIT
   owner: LucyBot-Inc
@@ -3545,11 +3545,11 @@
   language: Python
   category: '?'
   archived: false
-  stars: 2426
+  stars: 2432
   watch: 70
-  updated: '2020-01-23T14:11:37Z'
-  issues: 155
-  forks: 575
+  updated: '2020-01-30T09:40:21Z'
+  issues: 156
+  forks: 576
   license: BSD-2-Clause
   owner: marcgibbons
   logo: 'https://avatars1.githubusercontent.com/u/1726961?v=4'
@@ -3563,10 +3563,10 @@
     Specification (f.k.a. the Swagger specification)..
   language: Python
   archived: false
-  stars: 661
+  stars: 664
   watch: 22
   forks: 107
-  updated: '2020-01-23T12:29:06Z'
+  updated: '2020-01-30T15:19:12Z'
   issues: 22
   license: MIT
   owner: marshmallow-code
@@ -3596,10 +3596,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 659
+  stars: 662
   watch: 37
   forks: 93
-  updated: '2020-01-21T17:22:45Z'
+  updated: '2020-01-30T01:04:50Z'
   issues: 9
   license: MIT
   owner: Mermade
@@ -3617,11 +3617,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 596
+  stars: 599
   watch: 14
-  forks: 182
-  updated: '2020-01-17T07:20:32Z'
-  issues: 47
+  forks: 186
+  updated: '2020-01-29T15:45:26Z'
+  issues: 51
   license: MIT
   owner: Mermade
   logo: 'https://avatars3.githubusercontent.com/u/15950345?v=4'
@@ -3634,11 +3634,11 @@
   description: TS Model & utils for OpenAPI 3.0.x contracts.
   v3: true
   archived: false
-  stars: 129
+  stars: 131
   watch: 5
   forks: 33
-  updated: '2020-01-21T05:33:16Z'
-  issues: 6
+  updated: '2020-01-30T21:11:37Z'
+  issues: 9
   license: MIT
   owner: metadevpro
   logo: 'https://avatars0.githubusercontent.com/u/24300914?v=4'
@@ -3651,10 +3651,10 @@
   language: Clojure
   category: '?'
   archived: false
-  stars: 992
+  stars: 995
   watch: 36
-  updated: '2020-01-17T01:37:08Z'
-  issues: 24
+  updated: '2020-01-30T19:58:37Z'
+  issues: 23
   forks: 132
   owner: metosin
   logo: 'https://avatars1.githubusercontent.com/u/1569418?v=4'
@@ -3733,10 +3733,10 @@
   description: Open API router in go
   language: Go
   archived: false
-  stars: 12
+  stars: 13
   watch: 2
   forks: 3
-  updated: '2019-11-26T01:22:05Z'
+  updated: '2020-01-28T03:39:35Z'
   issues: 0
   owner: mnf-group
   logo: 'https://avatars1.githubusercontent.com/u/40686352?v=4'
@@ -3759,8 +3759,8 @@
   license: ''
   owner: mobilcom-debitel
   logo: 'https://avatars3.githubusercontent.com/u/22611818?v=4'
-  downloads: 918
-  downloadStr: '918'
+  downloads: 870
+  downloadStr: '870'
 - name: pokemock
   description: A mock server generated from a Swagger file
   github: 'https://github.com/mobilcom-debitel/pokemock'
@@ -3801,10 +3801,10 @@
   description: Vue.js based administrative interface
   language: Vue
   archived: false
-  stars: 25
+  stars: 26
   watch: 2
   forks: 2
-  updated: '2020-01-20T06:12:54Z'
+  updated: '2020-01-25T10:30:29Z'
   issues: 0
   license: MIT
   owner: mrTimofey
@@ -3835,15 +3835,15 @@
   description: RapiDoc - Custom-Element for OpenAPI Spec
   language: JavaScript
   archived: false
-  stars: 133
+  stars: 138
   watch: 3
-  forks: 30
-  updated: '2020-01-23T07:12:18Z'
-  issues: 11
+  forks: 32
+  updated: '2020-01-30T22:54:59Z'
+  issues: 8
   owner: mrin9
   logo: 'https://avatars3.githubusercontent.com/u/5056899?v=4'
-  downloads: 14249
-  downloadStr: 14.25K
+  downloads: 15108
+  downloadStr: 15.11K
   license: MIT
 - github: 'https://github.com/mrin9/RapiPdf'
   v3: true
@@ -3852,16 +3852,16 @@
   description: PDF generation from OpenAPI / Swagger Spec
   language: JavaScript
   archived: false
-  stars: 34
-  watch: 1
+  stars: 36
+  watch: 2
   forks: 10
-  updated: '2020-01-20T06:42:41Z'
-  issues: 4
+  updated: '2020-01-26T19:20:17Z'
+  issues: 5
   owner: mrin9
   logo: 'https://avatars3.githubusercontent.com/u/5056899?v=4'
   license: MIT
-  downloads: 2666
-  downloadStr: 2.67K
+  downloads: 3077
+  downloadStr: 3.08K
 - github: 'https://github.com/muskratjs/muskrat'
   v3: true
   category: parsers
@@ -3908,7 +3908,7 @@
   stars: 6
   watch: 3
   forks: 0
-  updated: '2020-01-11T11:39:28Z'
+  updated: '2020-01-29T17:10:02Z'
   issues: 0
   owner: namsor
   logo: 'https://avatars1.githubusercontent.com/u/6951565?v=4'
@@ -3937,11 +3937,11 @@
   language: PHP
   category: '?'
   archived: false
-  stars: 1799
+  stars: 1804
   watch: 70
-  updated: '2020-01-23T13:47:31Z'
-  issues: 97
-  forks: 698
+  updated: '2020-01-30T16:58:51Z'
+  issues: 98
+  forks: 699
   license: MIT
   owner: nelmio
   logo: 'https://avatars0.githubusercontent.com/u/460596?v=4'
@@ -3955,10 +3955,10 @@
     V2019-09 
   language: Java
   archived: false
-  stars: 145
+  stars: 149
   watch: 29
-  forks: 65
-  updated: '2020-01-21T08:09:44Z'
+  forks: 66
+  updated: '2020-01-30T14:28:21Z'
   issues: 37
   owner: networknt
   logo: 'https://avatars2.githubusercontent.com/u/8740739?v=4'
@@ -3992,10 +3992,10 @@
   demo: 'https://doc.networknt.com/tutorial/rest/openapi/petstore/'
   v3: true
   archived: false
-  stars: 99
+  stars: 100
   watch: 26
   forks: 25
-  updated: '2020-01-22T14:11:15Z'
+  updated: '2020-01-26T15:14:05Z'
   issues: 2
   license: Apache-2.0
   owner: networknt
@@ -4027,9 +4027,9 @@
   language: Erlang
   category: '?'
   archived: false
-  stars: 5807
+  stars: 5814
   watch: 325
-  updated: '2020-01-23T19:45:20Z'
+  updated: '2020-01-30T21:57:49Z'
   issues: 45
   forks: 1035
   license: ISC
@@ -4062,11 +4062,11 @@
   language: Python
   category: '?'
   archived: false
-  stars: 2151
+  stars: 2157
   watch: 126
-  updated: '2020-01-23T11:30:28Z'
-  issues: 357
-  forks: 444
+  updated: '2020-01-30T22:18:13Z'
+  issues: 356
+  forks: 443
   license: ''
   owner: noirbizarre
   logo: 'https://avatars0.githubusercontent.com/u/15725?v=4'
@@ -4097,10 +4097,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 64
+  stars: 65
   watch: 13
   forks: 33
-  updated: '2020-01-23T21:32:38Z'
+  updated: '2020-01-29T12:41:01Z'
   issues: 9
   license: ''
   owner: oasis-tcs
@@ -4113,9 +4113,9 @@
   language: C++
   category: '?'
   archived: false
-  stars: 13
-  watch: 3
-  updated: '2020-01-19T01:25:07Z'
+  stars: 14
+  watch: 4
+  updated: '2020-01-30T19:49:08Z'
   issues: 0
   forks: 7
   license: Apache-2.0
@@ -4139,8 +4139,8 @@
   owner: openapi-contrib
   logo: 'https://avatars3.githubusercontent.com/u/49447320?v=4'
   license: Apache-2.0
-  downloads: 29190
-  downloadStr: 29.19K
+  downloads: 33763
+  downloadStr: 33.76K
 - github: 'https://github.com/outofcoffee/vertx-oas'
   v3: true
   category: parsers
@@ -4163,11 +4163,11 @@
   description: OpenAPI Spec validator
   v3: true
   archived: false
-  stars: 103
+  stars: 104
   watch: 8
-  forks: 22
-  updated: '2020-01-21T19:19:51Z'
-  issues: 18
+  forks: 23
+  updated: '2020-01-24T03:54:21Z'
+  issues: 20
   license: Apache-2.0
   owner: p1c2u
   logo: 'https://avatars1.githubusercontent.com/u/1679024?v=4'
@@ -4179,11 +4179,11 @@
   description: A standard library for microservices.
   language: Go
   archived: false
-  stars: 13
+  stars: 14
   watch: 7
   forks: 6
-  updated: '2020-01-17T09:38:10Z'
-  issues: 48
+  updated: '2020-01-29T16:19:31Z'
+  issues: 46
   owner: pace
   logo: 'https://avatars0.githubusercontent.com/u/16001479?v=4'
   license: MIT
@@ -4280,7 +4280,7 @@
   stars: 63
   watch: 5
   forks: 4
-  updated: '2020-01-22T11:06:25Z'
+  updated: '2020-01-29T23:04:49Z'
   issues: 5
   owner: playpauseandstop
   logo: 'https://avatars0.githubusercontent.com/u/21325?v=4'
@@ -4296,10 +4296,10 @@
   language: JavaScript
   archived: false
   stars: 173
-  watch: 9
-  forks: 39
-  updated: '2020-01-22T14:45:12Z'
-  issues: 45
+  watch: 10
+  forks: 42
+  updated: '2020-01-28T08:24:22Z'
+  issues: 43
   owner: postmanlabs
   logo: 'https://avatars2.githubusercontent.com/u/10251060?v=4'
   license: Apache-2.0
@@ -4314,7 +4314,7 @@
   stars: 9
   watch: 9
   forks: 0
-  updated: '2020-01-19T13:06:52Z'
+  updated: '2020-01-27T08:54:16Z'
   issues: 0
   owner: quantmind
   logo: 'https://avatars2.githubusercontent.com/u/144099?v=4'
@@ -4329,9 +4329,9 @@
   archived: false
   stars: 77
   watch: 6
-  forks: 30
+  forks: 31
   updated: '2020-01-08T14:04:25Z'
-  issues: 21
+  issues: 22
   license: Apache-2.0
   owner: quen2404
   logo: 'https://avatars3.githubusercontent.com/u/5547492?v=4'
@@ -4376,11 +4376,11 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 579
+  stars: 580
   watch: 26
-  updated: '2020-01-19T07:41:33Z'
-  issues: 50
-  forks: 192
+  updated: '2020-01-28T12:51:12Z'
+  issues: 49
+  forks: 194
   license: MIT
   owner: rantav
   logo: 'https://avatars1.githubusercontent.com/u/87037?v=4'
@@ -4457,11 +4457,11 @@
   language: Python
   category: '?'
   archived: false
-  stars: 1927
+  stars: 1936
   watch: 51
-  updated: '2020-01-23T12:33:38Z'
-  issues: 104
-  forks: 273
+  updated: '2020-01-30T19:15:16Z'
+  issues: 106
+  forks: 274
   license: MIT
   owner: flasgger
   logo: 'https://avatars2.githubusercontent.com/u/54032826?v=4'
@@ -4473,11 +4473,11 @@
   language: Ruby
   category: '?'
   archived: false
-  stars: 954
+  stars: 955
   watch: 38
-  updated: '2020-01-20T17:44:57Z'
+  updated: '2020-01-27T04:32:24Z'
   issues: 98
-  forks: 435
+  forks: 436
   license: MIT
   owner: ruby-grape
   logo: 'https://avatars1.githubusercontent.com/u/13624553?v=4'
@@ -4538,9 +4538,9 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 8614
-  watch: 319
-  updated: '2020-01-23T22:38:44Z'
+  stars: 8627
+  watch: 321
+  updated: '2020-01-30T18:35:45Z'
   issues: 4
   forks: 1108
   license: MIT
@@ -4735,22 +4735,22 @@
   logo: 'https://avatars0.githubusercontent.com/u/8448201?v=4'
   downloads: 0
 - name: swagger-stats
-  description: API Telemetry and APM
+  description: API Observability
   github: 'https://github.com/slanatech/swagger-stats'
   v2: true
   language: JavaScript
   category: '?'
   archived: false
-  stars: 366
+  stars: 368
   watch: 15
-  updated: '2020-01-21T23:43:32Z'
-  issues: 34
+  updated: '2020-01-31T01:05:47Z'
+  issues: 32
   forks: 61
   license: MIT
   owner: slanatech
   logo: 'https://avatars3.githubusercontent.com/u/28799285?v=4'
-  downloads: 234443
-  downloadStr: 234.44K
+  downloads: 245222
+  downloadStr: 245.22K
 - name: openapi-first
   category: frameworks
   github: 'https://github.com/smartrecruiters/openapi-first'
@@ -4794,10 +4794,10 @@
   language: Java
   category: '?'
   archived: false
-  stars: 152
-  watch: 16
-  updated: '2020-01-21T11:32:59Z'
-  issues: 6
+  stars: 153
+  watch: 15
+  updated: '2020-01-27T09:35:19Z'
+  issues: 7
   forks: 66
   license: Apache-2.0
   owner: smoketurner
@@ -4829,11 +4829,11 @@
   github: 'https://github.com/sourcey/spectacle'
   v2: true
   archived: false
-  stars: 1047
+  stars: 1050
   watch: 21
-  forks: 215
-  updated: '2020-01-21T21:21:15Z'
-  issues: 28
+  forks: 219
+  updated: '2020-01-29T22:17:31Z'
+  issues: 29
   license: ''
   owner: sourcey
   logo: 'https://avatars2.githubusercontent.com/u/7104704?v=4'
@@ -4861,11 +4861,11 @@
   description: Library for OpenAPI 3 with spring-boot
   language: Java
   archived: false
-  stars: 303
-  watch: 18
-  forks: 54
-  updated: '2020-01-23T22:08:56Z'
-  issues: 2
+  stars: 314
+  watch: 21
+  forks: 57
+  updated: '2020-01-30T21:28:17Z'
+  issues: 3
   owner: springdoc
   logo: 'https://avatars1.githubusercontent.com/u/52804136?v=4'
   license: Apache-2.0
@@ -4944,10 +4944,10 @@
     validations, and more.
   v2: true
   archived: false
-  stars: 864
-  watch: 31
-  forks: 69
-  updated: '2020-01-23T15:00:38Z'
+  stars: 881
+  watch: 32
+  forks: 70
+  updated: '2020-01-30T14:18:49Z'
   issues: 19
   license: Apache-2.0
   owner: stoplightio
@@ -4963,11 +4963,11 @@
     in support for OpenAPI v2 & v3.
   language: TypeScript
   archived: false
-  stars: 393
-  watch: 22
-  forks: 39
-  updated: '2020-01-23T22:06:16Z'
-  issues: 41
+  stars: 405
+  watch: 23
+  forks: 42
+  updated: '2020-01-30T01:50:44Z'
+  issues: 43
   owner: stoplightio
   logo: 'https://avatars1.githubusercontent.com/u/10767217?v=4'
   license: Apache-2.0
@@ -5068,10 +5068,10 @@
     PSR-7 and PSR-15 with support for annotations and OpenApi (Swagger)
   language: PHP
   archived: false
-  stars: 74
+  stars: 75
   watch: 1
   forks: 5
-  updated: '2020-01-21T02:58:16Z'
+  updated: '2020-01-24T09:50:12Z'
   issues: 6
   owner: sunrise-php
   logo: 'https://avatars2.githubusercontent.com/u/41580063?v=4'
@@ -5088,11 +5088,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 10805
-  watch: 433
-  forks: 5005
-  updated: '2020-01-23T20:55:58Z'
-  issues: 2516
+  stars: 10829
+  watch: 432
+  forks: 5021
+  updated: '2020-01-30T23:56:47Z'
+  issues: 2522
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5107,11 +5107,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 6171
+  stars: 6178
   watch: 343
-  forks: 1879
-  updated: '2020-01-23T23:35:03Z'
-  issues: 483
+  forks: 1881
+  updated: '2020-01-30T19:42:10Z'
+  issues: 484
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5125,11 +5125,11 @@
   v3: true
   description: Swagger Editor
   archived: false
-  stars: 5790
-  watch: 257
-  forks: 1606
-  updated: '2020-01-23T19:54:42Z'
-  issues: 100
+  stars: 5803
+  watch: 258
+  forks: 1612
+  updated: '2020-01-30T17:20:23Z'
+  issues: 104
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5160,11 +5160,11 @@
   description: Javascript library to connect to swagger-enabled APIs via browser or nodejs
   language: JavaScript
   archived: false
-  stars: 1994
-  watch: 94
-  forks: 692
-  updated: '2020-01-17T19:22:15Z'
-  issues: 82
+  stars: 1997
+  watch: 95
+  forks: 694
+  updated: '2020-01-30T19:51:39Z'
+  issues: 84
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
   license: Apache-2.0
@@ -5178,16 +5178,16 @@
   v2: true
   v3_progress_link: 'https://github.com/swagger-api/swagger-node/issues/514'
   archived: false
-  stars: 3571
+  stars: 3573
   watch: 157
-  forks: 566
-  updated: '2020-01-23T21:16:18Z'
+  forks: 567
+  updated: '2020-01-30T19:21:07Z'
   issues: 203
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
-  downloads: 522
-  downloadStr: '522'
+  downloads: 686
+  downloadStr: '686'
 - name: swagger-parser
   category: parsers
   github: 'https://github.com/swagger-api/swagger-parser'
@@ -5195,11 +5195,11 @@
   description: Swagger Spec to Java POJOs
   v2: true
   archived: false
-  stars: 385
+  stars: 386
   watch: 48
-  forks: 330
-  updated: '2020-01-23T02:58:26Z'
-  issues: 148
+  forks: 334
+  updated: '2020-01-25T18:51:17Z'
+  issues: 149
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5213,11 +5213,11 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 16897
-  watch: 673
-  updated: '2020-01-24T01:17:15Z'
-  issues: 533
-  forks: 7083
+  stars: 16925
+  watch: 672
+  updated: '2020-01-30T22:10:13Z'
+  issues: 536
+  forks: 7095
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5232,11 +5232,11 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 16897
-  watch: 673
-  updated: '2020-01-24T01:17:15Z'
-  issues: 533
-  forks: 7083
+  stars: 16925
+  watch: 672
+  updated: '2020-01-30T22:10:13Z'
+  issues: 536
+  forks: 7095
   license: Apache-2.0
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
@@ -5253,7 +5253,7 @@
   watch: 19
   forks: 52
   updated: '2020-01-09T21:57:56Z'
-  issues: 34
+  issues: 35
   owner: swagger-api
   logo: 'https://avatars3.githubusercontent.com/u/7658037?v=4'
   license: Apache-2.0
@@ -5265,11 +5265,11 @@
   description: Swagger mock server with fake data generation support
   language: PHP
   archived: false
-  stars: 68
+  stars: 69
   watch: 4
-  forks: 5
-  updated: '2020-01-16T07:42:37Z'
-  issues: 2
+  forks: 6
+  updated: '2020-01-30T11:26:07Z'
+  issues: 3
   owner: swagger-mock
   logo: 'https://avatars3.githubusercontent.com/u/47153655?v=4'
   license: MIT
@@ -5313,10 +5313,10 @@
   description: Parser for OpenAPI Specification
   language: JavaScript
   archived: false
-  stars: 14
+  stars: 15
   watch: 2
   forks: 3
-  updated: '2019-12-28T11:21:54Z'
+  updated: '2020-01-29T16:01:42Z'
   issues: 18
   license: Apache-2.0
   owner: tavis-software
@@ -5337,8 +5337,8 @@
   license: ISC
   owner: technocreatives
   logo: 'https://avatars2.githubusercontent.com/u/4668783?v=4'
-  downloads: 593
-  downloadStr: '593'
+  downloads: 639
+  downloadStr: '639'
 - github: 'https://github.com/technocreatives/openapi-mock-eller'
   v3: true
   category: documentation
@@ -5397,11 +5397,11 @@
   description: SqlAlchemy Flask-Restful Swagger Json-API OpenAPI
   language: Python
   archived: false
-  stars: 151
+  stars: 154
   watch: 7
   forks: 34
-  updated: '2020-01-11T13:32:45Z'
-  issues: 4
+  updated: '2020-01-30T15:44:11Z'
+  issues: 3
   license: MIT
   owner: thomaxxl
   logo: 'https://avatars1.githubusercontent.com/u/4190750?v=4'
@@ -5417,11 +5417,11 @@
   v3: true
   downloads: 0
   archived: false
-  stars: 8484
-  watch: 172
-  forks: 486
-  updated: '2020-01-24T01:43:45Z'
-  issues: 253
+  stars: 8804
+  watch: 178
+  forks: 508
+  updated: '2020-01-31T01:25:28Z'
+  issues: 264
   owner: tiangolo
   logo: 'https://avatars0.githubusercontent.com/u/1326112?v=4'
   license: MIT
@@ -5452,11 +5452,11 @@
     database, Docker, automatic HTTPS and more.
   language: Python
   archived: false
-  stars: 848
-  watch: 36
-  forks: 131
-  updated: '2020-01-23T23:54:14Z'
-  issues: 46
+  stars: 883
+  watch: 35
+  forks: 136
+  updated: '2020-01-31T00:15:31Z'
+  issues: 47
   owner: tiangolo
   logo: 'https://avatars0.githubusercontent.com/u/1326112?v=4'
   license: MIT
@@ -5471,10 +5471,10 @@
     Optionally with Alpine Linux.
   language: Python
   archived: false
-  stars: 213
+  stars: 218
   watch: 4
-  forks: 25
-  updated: '2020-01-23T14:25:11Z'
+  forks: 26
+  updated: '2020-01-29T19:53:08Z'
   issues: 12
   owner: tiangolo
   logo: 'https://avatars0.githubusercontent.com/u/1326112?v=4'
@@ -5694,16 +5694,16 @@
   description: "Well Spectually \U0001F913 Enforce quality rules on your OpenAPI 3.0.x specifications."
   v3: true
   archived: false
-  stars: 525
+  stars: 530
   watch: 31
-  forks: 62
-  updated: '2020-01-23T06:19:21Z'
-  issues: 45
+  forks: 63
+  updated: '2020-01-28T17:01:17Z'
+  issues: 46
   license: MIT
   owner: wework
   logo: 'https://avatars2.githubusercontent.com/u/4072897?v=4'
-  downloads: 411314
-  downloadStr: 411.31K
+  downloads: 441217
+  downloadStr: 441.22K
 - name: swagger4spring-web
   description: Swagger support for Spring MVC
   github: 'https://github.com/wkennedy/swagger4spring-web'
@@ -5736,8 +5736,8 @@
   license: MIT
   owner: wonderlic
   logo: 'https://avatars1.githubusercontent.com/u/8312862?v=4'
-  downloads: 1987
-  downloadStr: 1.99K
+  downloads: 1996
+  downloadStr: 2K
 - name: swagger-jack
   description: >-
     Express middleware to automatically create route and validate inputs from a
@@ -5821,7 +5821,7 @@
   watch: 16
   updated: '2020-01-16T21:50:23Z'
   issues: 28
-  forks: 124
+  forks: 125
   license: MPL-2.0
   owner: xerions
   logo: 'https://avatars0.githubusercontent.com/u/11320029?v=4'
@@ -5867,7 +5867,7 @@
   stars: 24
   watch: 3
   forks: 2
-  updated: '2019-12-22T14:10:58Z'
+  updated: '2020-01-29T01:05:12Z'
   issues: 6
   owner: yayoc
   logo: 'https://avatars3.githubusercontent.com/u/6383334?v=4'
@@ -5881,11 +5881,11 @@
   language: Swift
   category: '?'
   archived: false
-  stars: 264
+  stars: 267
   watch: 13
-  updated: '2020-01-22T12:59:59Z'
-  issues: 39
-  forks: 64
+  updated: '2020-01-29T20:10:30Z'
+  issues: 41
+  forks: 65
   license: MIT
   owner: yonaskolb
   logo: 'https://avatars2.githubusercontent.com/u/2393781?v=4'
@@ -5897,9 +5897,9 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 766
+  stars: 767
   watch: 34
-  updated: '2020-01-17T03:07:45Z'
+  updated: '2020-01-24T07:33:51Z'
   issues: 37
   forks: 136
   license: BSD-3-Clause
@@ -5935,16 +5935,16 @@
   language: JavaScript
   category: '?'
   archived: false
-  stars: 68
+  stars: 69
   watch: 4
-  updated: '2019-11-29T21:39:46Z'
+  updated: '2020-01-27T08:51:55Z'
   issues: 3
   forks: 13
   license: MIT
   owner: zaaack
   logo: 'https://avatars3.githubusercontent.com/u/5233940?v=4'
-  downloads: 4289
-  downloadStr: 4.29K
+  downloads: 4326
+  downloadStr: 4.33K
 - name: connexion
   description: >-
     Swagger/OpenAPI First framework for Python on top of Flask with automatic
@@ -5954,11 +5954,11 @@
   language: Python
   category: '?'
   archived: false
-  stars: 2876
+  stars: 2891
   watch: 84
-  updated: '2020-01-23T22:14:11Z'
-  issues: 260
-  forks: 493
+  updated: '2020-01-30T23:04:51Z'
+  issues: 262
+  forks: 496
   license: ''
   owner: zalando
   logo: 'https://avatars0.githubusercontent.com/u/1564818?v=4'
