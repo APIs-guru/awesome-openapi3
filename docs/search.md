@@ -6,13 +6,15 @@ site:
   show_downloads: false
 ---
 
+{% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
+
 <div class="tile is-ancestor">
-{% for tool in site.data.tools %}
+{% for tool in tmp %}
 <div class="tile is-parent">
 <div class="tile is-8">
 <div class="card">
   <div class="card-image">
-    <img src="{{ tool.avatar }}" alt="Tool Avatar">
+    <img src="{{ tool.logo }}" alt="Tool Avatar">
   </div>
   <div class="card-content">
     <div class="media">
