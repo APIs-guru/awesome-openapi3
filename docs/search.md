@@ -35,7 +35,6 @@ site:
   </div>
 </div>      
 </div>
-</div>
 {% endfor %}
 </div>
 
