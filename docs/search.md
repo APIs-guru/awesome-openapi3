@@ -9,7 +9,7 @@ site:
 <div class="tile is-ancestor">
 {% for tool in site.data.tools %}
 <div class="tile is-parent">
-<div class="tile is-4">
+<div class="tile is-8">
 <div class="card">
   <div class="card-image">
     <img src="{{ tool.avatar }}" alt="Tool Avatar">
