@@ -11,8 +11,8 @@ site:
 <div class="tile is-ancestor is-12">
 <div class="tile is-parent is-12">
 {% for tool in tmp %}
-  <div class="tile is-6 is-child">
-    <div class="card">
+  <div class="card tile is-6 is-child">
+    <!--<div class="card"> -->
       <div class="card-image">
         <img src="{{ tool.logo }}" alt="Tool Avatar">
       </div>
