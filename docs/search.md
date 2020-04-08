@@ -9,8 +9,8 @@ site:
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
 <div class="tile is-ancestor">
-{% for tool in tmp %}
 <div class="tile is-parent">
+{% for tool in tmp %}
 <div class="tile is-8">
 <div class="card">
   <div class="card-image">
@@ -35,8 +35,8 @@ site:
   </div>
 </div>      
 </div>
-</div>
 {% endfor %}
+</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
