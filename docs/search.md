@@ -8,12 +8,11 @@ site:
 
 <div class="tile is-ancestor">
 {% for tool in site.data.tools %}
-<div class="tile">
+<div class="tile is-parent">
+<div class="tile is-4">
 <div class="card">
   <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
+    <img src="{{ tool.avatar }}" alt="Tool Avatar">
   </div>
   <div class="card-content">
     <div class="media">
@@ -33,6 +32,7 @@ site:
     </div>
   </div>
 </div>      
+</div>
 </div>
 {% endfor %}
 </div>
