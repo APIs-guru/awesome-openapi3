@@ -8,10 +8,10 @@ site:
 
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
-<div class="tile is-ancestor">
+<div class="tile is-ancestor is-12">
 {% for tool in tmp %}
-<div class="tile is-parent">
-<div class="tile is-6">
+<div class="tile is-parent is-12">
+<div class="tile is-6 is-child">
 <div class="card">
   <div class="card-image">
     <img src="{{ tool.logo }}" alt="Tool Avatar">
