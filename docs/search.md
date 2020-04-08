@@ -23,13 +23,13 @@ site:
         </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">{% tool.name %}</p>
-        <p class="subtitle is-6">@johnsmith</p>
+        <p class="title is-4">{{ tool.name }}</p>
+        <p class="subtitle is-6">{{ tool.github }}</p>
       </div>
     </div>
 
     <div class="content">
-      {% tool.description %}
+      {{ tool.description }}
     </div>
   </div>
 </div>      
