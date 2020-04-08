@@ -1,5 +1,5 @@
 ---
-layout: bulma
+layout: default
 theme: jekyll-theme-cayman
 title: APIs.guru awesome-openapi3
 site:
