@@ -101,7 +101,7 @@ permalink: /
       </div>
       <div class="media-content">
         <p class="title is-4">{{ tool.name }}</p>
-        <p class="subtitle is-6"><a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}">{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</a>
+        <p class="subtitle is-6"><a href="{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}">{% if tool.link %}{{ tool.link }}{% else %}{{ tool.github }}{% endif %}</a></p>
       </div>
     </div>
 
