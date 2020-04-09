@@ -131,10 +131,18 @@ $(document).ready(function(){
     }, this)
   });
   $('#btnClear').click(function(){
-    $('txtSearch').val('');
+    $('#txtSearch').val('');
+    $('.card').removeClass('is-hidden');
   });
   $('#btnSearch').click(function(){
-    alert(JSON.stringify(idx.search($('#txtSearch').val())));
+    var results = idx.search($('#txtSearch').val());
+    if (results.length) {
+      $('.card').addClass('is-hidden');
+      for (var i=0;i<results.length;i++) {
+        var uuid = results[i].ref;
+        $('#'+uuid).removeClass('is-hidden');
+      }
+    }
   });
 });
 </script>
