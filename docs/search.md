@@ -61,10 +61,10 @@ site:
       <div class="navbar-item">
         <div class="field has-addons">
           <div class="control">
-            <input class="input" type="text" placeholder="Find a project">
+            <input class="input" type="text" id="txtSearch" placeholder="Find a project">
           </div>
           <div class="control">
-            <a class="button is-info">
+            <a class="button is-info" id="btnSearch">
               Search
             </a>
           </div>
@@ -87,7 +87,7 @@ site:
 
 <ul style="columns: 2;">
 {% for tool in tmp %}
-<li class="card is-6">
+<li class="card is-6" id="{{tool.uuid}}">
   <div class="card-content">
     <div class="media">
       <div class="media-left">
@@ -127,6 +127,8 @@ $(document).ready(function(){
       this.add(doc)
     }, this)
   });
-  alert(JSON.stringify(idx.search('mock')));
+  $('#btnSearch').click(function(){
+    alert(JSON.stringify(idx.search($('#txtSearch').val())));
+  });
 });
 </script>
