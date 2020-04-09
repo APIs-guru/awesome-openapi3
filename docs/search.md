@@ -110,3 +110,23 @@ site:
 </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+$(document).ready(function(){
+  var documents = [
+  {% for tool in tmp %}
+  { uuid: "{{tool.uuid}}", name: "{{tool.name}}", description: "{{tool.description}}" },
+  {% endfor %}
+  ];
+  var idx = lunr(function () {
+    this.ref('uuid')
+    this.field('name')
+    this.field('description')
+
+    documents.forEach(function (doc) {
+      this.add(doc)
+    }, this)
+  });
+  alert(idx.search('gui'));
+});
+</script>
