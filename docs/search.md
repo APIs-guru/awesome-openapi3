@@ -8,6 +8,8 @@ site:
 
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
+<div class="level">
+<div class="level-right">
 <div class="field has-addons">
   <div class="control">
     <input class="input" type="text" placeholder="Find a project">
@@ -17,6 +19,8 @@ site:
       Search
     </a>
   </div>
+</div>
+</div>
 </div>
 
 <br>
