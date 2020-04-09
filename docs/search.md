@@ -9,6 +9,7 @@ site:
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
 <div class="level">
+<div class="level-left"/>
 <div class="level-right">
 <div class="level-item field has-addons">
   <div class="control">
