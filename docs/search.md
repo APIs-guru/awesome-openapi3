@@ -69,16 +69,12 @@ site:
             </a>
           </div>
         </div>
-        <div class="field">
-          <div class="control">
-            <a class="button is-info" id="btnClear">
-              Clear
-            </a>
-          </div>
-        </div>
       </div>
       <div class="navbar-item">
         <div class="buttons">
+          <a class="button is-info" id="btnClear">
+            Clear
+          </a>
           <a class="button is-primary" href="https://github.com/apis-guru/awesome-openapi3">
             <strong>GitHub</strong>
           </a>
