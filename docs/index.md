@@ -1,38 +1,149 @@
 ---
-layout: default
+layout: bulma
 theme: jekyll-theme-cayman
-show_downloads: false
 title: APIs.guru awesome-openapi3
+site:
+  show_downloads: false
 permalink: /
 ---
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://apis.guru/assets/images/favicons/icon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="https://apis.guru/assets/images/favicons/icon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://apis.guru/assets/images/favicons/icon-16x16.png">
-<!--<link rel="shortcut icon" type="image/png" href="https://apis.guru/favicon.ico">-->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://apis-guru/awesome-openapi3">
+      <img src="https://avatars0.githubusercontent.com/u/10975548?v=4" width="28" height="28">
+    </a>
 
-Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-## Last updated
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/awesome-openapi3/about.html">
+        About
+      </a>
 
-{{ site.time }}
+      <a class="navbar-item" href="/awesome-openapi3/language.html">
+        By Language
+      </a>
 
-## Contributing
+      <a class="navbar-item" href="/awesome-openapi3/category.html">
+        By Category
+      </a>
 
-Please tag your projects with the GitHub topic `openapi3`.
+      <a class="navbar-item" href="/awesome-openapi3/top100.html">
+        Top 100
+      </a>
 
-Please raise a Pull-Request or issue for any visual or functional changes, or projects not hosted on GitHub.
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          API
+        </a>
 
-## Tools
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/awesome-openapi3/api/tools.json">
+            Tools
+          </a>
+          <a class="navbar-item" href="/awesome-openapi3/api/categories.json">
+            Categories
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="/awesome-openapi3/rss/feed.xml">
+            RSS Feed
+          </a>
+        </div>
+      </div>
+    </div>
 
-* List of all tools [by category](./category.html)
-* [Top 100](./top100.html) list of tools
-* Top 100 [by language](./language.html)
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" id="txtSearch" placeholder="Find a project">
+          </div>
+          <div class="control">
+            <a class="button is-info" id="btnSearch">
+              Search
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-info" id="btnClear">
+            Clear
+          </a>
+          <a class="button is-primary" href="https://github.com/apis-guru/awesome-openapi3">
+            <strong>GitHub</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-## API access
+<br>
 
-* [categories.json](/api/categories.json)
-* [tools.json](/api/tools.json)
+{% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
-<a href="https://apis.guru/awesome-openapi3/rss/feed.xml"><img border="0" alt="Subscribe to What's New" src="https://i.imgur.com/fZIDSoj.png" width="64" height="64">
+<ul style="columns: 2;">
+{% for tool in tmp %}
+<li class="card is-6" id="{{tool.uuid}}">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{ tool.logo }}" alt="">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{ tool.name }}</p>
+        <p class="subtitle is-6"><a href="{{ tool.github or tool.link }}">{{ tool.github or tool.link }}</a></p>
+      </div>
+    </div>
 
+    <div class="content">
+      {{ tool.description }}
+    </div>
+  </div>
+</li>      
+{% endfor %}
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+$(document).ready(function(){
+  var documents = [
+  {% for tool in tmp %}
+  { uuid: "{{tool.uuid}}", name: "{{tool.name}}", description: "{{tool.description}}" },
+  {% endfor %}
+  ];
+  var idx = lunr(function () {
+    this.ref('uuid')
+    this.field('name')
+    this.field('description')
+
+    documents.forEach(function (doc) {
+      this.add(doc)
+    }, this)
+  });
+  $('#btnClear').click(function(){
+    $('#txtSearch').val('');
+    $('.card').removeClass('is-hidden');
+  });
+  $('#btnSearch').click(function(){
+    var results = idx.search($('#txtSearch').val());
+    if (results.length) {
+      $('.card').addClass('is-hidden');
+      for (var i=0;i<results.length;i++) {
+        var uuid = results[i].ref;
+        $('#'+uuid).removeClass('is-hidden');
+      }
+    }
+  });
+});
+</script>
