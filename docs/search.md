@@ -69,6 +69,13 @@ site:
             </a>
           </div>
         </div>
+        <div class="field">
+          <div class="control">
+            <a class="button is-info" id="btnClear">
+              Clear
+            </a>
+          </div>
+        </div>
       </div>
       <div class="navbar-item">
         <div class="buttons">
@@ -126,6 +133,9 @@ $(document).ready(function(){
     documents.forEach(function (doc) {
       this.add(doc)
     }, this)
+  });
+  $('#btnClear').click(function(){
+    $('txtSearch').val('');
   });
   $('#btnSearch').click(function(){
     alert(JSON.stringify(idx.search($('#txtSearch').val())));
