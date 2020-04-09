@@ -14,9 +14,15 @@ permalink: /
     </a>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+      <span aria-hidden="true">
+        <a class="navbar-item" href="/awesome-openapi3/about.html">
+          About
+        </a>
+      </span>
+      <span aria-hidden="true">
+      </span>
+      <span aria-hidden="true">
+      </span>
     </a>
   </div>
 
