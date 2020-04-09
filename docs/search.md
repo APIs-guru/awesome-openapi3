@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: bulma
 theme: jekyll-theme-cayman
 title: APIs.guru awesome-openapi3
 site:
@@ -8,9 +8,9 @@ site:
 
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
-<ul>
+<ul style="columns: 2;">
 {% for tool in tmp %}
-<li class="card is-3">
+<li class="card is-6">
   <div class="card-content">
     <div class="media">
       <div class="media-left">
