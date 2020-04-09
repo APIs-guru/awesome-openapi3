@@ -9,19 +9,19 @@ site:
 {% assign tmp = site.data.tools | where:"v3",true | sort: 'name' %}
 
 <div class="level">
-<div class="level-left"/>
-<div class="level-right">
-<div class="level-item field has-addons">
-  <div class="control">
-    <input class="input" type="text" placeholder="Find a project">
+  <div class="level-left"></div>
+  <div class="level-right">
+    <div class="level-item field has-addons">
+      <div class="control">
+        <input class="input" type="text" placeholder="Find a project">
+      </div>
+      <div class="control">
+        <a class="button is-info">
+          Search
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="control">
-    <a class="button is-info">
-      Search
-    </a>
-  </div>
-</div>
-</div>
 </div>
 
 <br>
