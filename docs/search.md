@@ -127,6 +127,6 @@ $(document).ready(function(){
       this.add(doc)
     }, this)
   });
-  alert(JSON.stringify(idx.search('gui')));
+  alert(JSON.stringify(idx.search('mock')));
 });
 </script>
