@@ -20,7 +20,7 @@ site:
       </div>
       <div class="media-content">
         <p class="title is-4">{{ tool.name }}</p>
-        <p class="subtitle is-6">{{ tool.github }}</p>
+        <p class="subtitle is-6"><a href="{{ tool.github || tool.link }}">{{ tool.github || tool.link }}</a></p>
       </div>
     </div>
 
