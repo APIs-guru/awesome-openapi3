@@ -127,6 +127,6 @@ $(document).ready(function(){
       this.add(doc)
     }, this)
   });
-  alert(idx.search('gui'));
+  alert(JSON.stringify(idx.search('gui')));
 });
 </script>
