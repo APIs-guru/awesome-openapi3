@@ -10,8 +10,7 @@ site:
 
 <div class="level">
 <div class="level-right">
-<div class="level-item">
-<div class="field has-addons">
+<div class="level-item field has-addons">
   <div class="control">
     <input class="input" type="text" placeholder="Find a project">
   </div>
@@ -20,7 +19,6 @@ site:
       Search
     </a>
   </div>
-</div>
 </div>
 </div>
 </div>
