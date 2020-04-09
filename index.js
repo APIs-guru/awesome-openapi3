@@ -4,6 +4,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const fetch = require('node-fetch');
 const humanUnit = require('human-unit').default;
+const uuidv4 = require('uuid').v4;
 
 const stats = require('./stats.js');
 
@@ -32,6 +33,9 @@ entries = entries.sort(function(a,b){
 });
 
 for (let entry of entries) {
+    if (!entry.uuid) {
+        entry.uuid = uuidv4();
+    }
 	if (entry.github && entry.github.indexOf('github.com')>=0) {
       	let url = entry.github.replace('://','');
         let components = url.split('/');
@@ -41,10 +45,10 @@ for (let entry of entries) {
         console.log(apicall);
         const res = await fetch(apicall,options);
         const json = await res.text();
-        //console.log(json);
         const obj = JSON.parse(json);
         if (obj.id) {
             entry.name = obj.name||entry.name;
+            entry.github = obj.html_url;
             entry.description = obj.description||entry.description||'';
             entry.language = obj.language||'Unknown';
             entry.archived = !!obj.archived;
@@ -87,6 +91,8 @@ for (let entry of entries) {
         if (entry.downloads) entry.downloadStr = (Math.round(hu.value*100)/100)+hu.unit;
     }
 }
+
+entries = entries.filter((e,i,a)=>a.findIndex(t=>((t.github||t.uuid) === (e.github||e.uuid)))===i);
 
 }
 
