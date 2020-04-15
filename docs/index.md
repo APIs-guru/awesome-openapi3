@@ -138,6 +138,11 @@ $(document).ready(function(){
     $('#txtSearch').val('');
     $('.card').removeClass('is-hidden');
   });
+  $('#txtSearch').keypress(function(e) {
+    if (e.keyCode == 13) {  // enter
+      $('#btnSearch').click();
+    }
+  });
   $('#btnSearch').click(function(){
     var results = idx.search($('#txtSearch').val());
     if (results.length) {
