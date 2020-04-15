@@ -556,7 +556,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -2911,6 +2911,7 @@
     Transform API Descriptions to formats to and from RAML, API Blueprint, OAI
     v2/v3, WSDL, etc.
   link: 'https://apimatic.io/transformer'
+  logo: 'https://d33wubrfki0l68.cloudfront.net/617a535e398d199762e77419b058166edc64ccb1/55593/static/hero-9435df82ee3ca5059f641c0e0068eda0.svg'
   v2: true
   v3: true
   uuid: 7f31ed5d-bbc1-434b-918e-9f2b37253da1
@@ -4037,7 +4038,7 @@
   name: json-schema-validator
   description: >-
     A fast Java JSON schema validator that supports draft V4, V6, V7 and
-    V2019-09 
+    V2019-09
   language: Java
   archived: false
   stars: 171
