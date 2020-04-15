@@ -112,8 +112,8 @@ permalink: /
       {{ tool.description }}
     </div>
     <div class="card-footer">
-      <span class="card-footer-item">Stars: <strong>{{tool.stars}}</strong></span>
-      <span class="card-footer-item">{% if tool.license %}License: <a href="https://spdx.org/licenses/{{tool.license}}">{{tool.license}}</a>{% endif %}</span>
+      <span class="card-footer-item">Stars:&nbsp;<strong>{{tool.stars}}</strong></span>
+      <span class="card-footer-item">{% if tool.license %}License:&nbsp;<a href="https://spdx.org/licenses/{{tool.license}}">{{tool.license}}</a>{% endif %}</span>
     </div>
   </div>
 </li>      
