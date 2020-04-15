@@ -114,7 +114,7 @@ permalink: /
     <div class="card-footer">
       <span class="card-footer-item">Stars: {{tool.stars}}</span>
       <span class="card-footer-item">License: {{tool.license}}</span>
-    <div>
+    </div>
   </div>
 </li>      
 {% endfor %}
