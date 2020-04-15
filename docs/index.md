@@ -118,6 +118,7 @@ permalink: /
   </div>
 </li>      
 {% endfor %}
+<li class="is-hidden" id="liDummy"></li>
 </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
@@ -141,6 +142,7 @@ $(document).ready(function(){
   $('#btnClear').click(function(){
     $('#txtSearch').val('');
     $('.card').removeClass('is-hidden');
+    $('#liDummy').addClass('is-hidden');
   });
   $('#txtSearch').keypress(function(e) {
     if (e.keyCode == 13) {  // enter
@@ -151,9 +153,13 @@ $(document).ready(function(){
     var results = idx.search($('#txtSearch').val());
     if (results.length) {
       $('.card').addClass('is-hidden');
+      $('#liDummy').addClass('is-hidden');
       for (var i=0;i<results.length;i++) {
         var uuid = results[i].ref;
         $('#'+uuid).removeClass('is-hidden');
+      }
+      if (results.length % 2 === 1) {
+        $('#liDummy').removeClass('is-hidden');
       }
     }
   });
