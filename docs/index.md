@@ -118,7 +118,7 @@ permalink: /
   </div>
 </li>      
 {% endfor %}
-<li class="is-hidden" id="liDummy"></li>
+<li class="is-hidden card is-6" id="liDummy"></li>
 </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
@@ -153,7 +153,6 @@ $(document).ready(function(){
     var results = idx.search($('#txtSearch').val());
     if (results.length) {
       $('.card').addClass('is-hidden');
-      $('#liDummy').addClass('is-hidden');
       for (var i=0;i<results.length;i++) {
         var uuid = results[i].ref;
         $('#'+uuid).removeClass('is-hidden');
