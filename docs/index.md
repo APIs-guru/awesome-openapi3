@@ -112,13 +112,15 @@ permalink: /
       {{ tool.description }}
     </div>
     <div class="card-footer">
-      <span class="card-footer-item">Stars:&nbsp;<strong>{{tool.stars}}</strong></span>
+      <span class="card-footer-item">{% if tool.stars %}Stars:&nbsp;<strong>{{tool.stars}}</strong>{% endif %}</span>
       <span class="card-footer-item">{% if tool.license %}License:&nbsp;<a href="https://spdx.org/licenses/{{tool.license}}">{{tool.license}}</a>{% endif %}</span>
     </div>
   </div>
 </li>      
 {% endfor %}
-<li class="is-hidden card is-6" id="liDummy"></li>
+<li class="is-hidden card is-6" id="liDummy">
+  <div class="card-content"></div>
+</li>
 </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
