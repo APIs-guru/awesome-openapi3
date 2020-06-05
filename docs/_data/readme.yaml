@@ -2827,7 +2827,7 @@ RepreZen/KaiZen-OpenAPI-Editor: >
   service, live Swagger-UI, advanced code generation, and other features that
   are not part of KaiZen Editor. See the [feature comparison
   here](https://support.reprezen.com/support/solutions/articles/24000046272-what-s-the-difference-between-kaizen-openapi-editor-and-reprezen-api-studio-)._
-swagger-api/swagger-editor: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png\" height=\"80\">\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-editor)\n[![Build Status](https://jenkins.swagger.io/buildStatus/icon?job=oss-swagger-editor-master)](https://jenkins.swagger.io/job/oss-swagger-editor-master/)\n[![Code Climate](https://codeclimate.com/github/swagger-api/swagger-editor/badges/gpa.svg)](https://codeclimate.com/github/swagger-api/swagger-editor)\n[![Dependency Status](https://david-dm.org/swagger-api/swagger-editor/status.svg)](https://david-dm.org/swagger-api/swagger-editor)\n[![devDependency Status](https://david-dm.org/swagger-api/swagger-editor/dev-status.svg)](https://david-dm.org/swagger-api/swagger-editor-#info=devDependencies)\n[![Build Status](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/)\n\n**\U0001F570️ Looking for the older version of Swagger Editor?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\nSwagger Editor lets you edit [Swagger API specifications](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) in YAML inside your browser and to preview documentations in real time.\nValid Swagger JSON descriptions can then be generated and used with the full Swagger tooling (code generation, documentation, etc).\n\nAs a brand new version, written from the ground up, there are some known issues and unimplemented features. Check out the [Known Issues](#known-issues) section for more details.\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-editor](https://www.npmjs.com/package/swagger-editor) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-editor-dist](https://www.npmjs.com/package/swagger-editor-dist) is a dependency-free module that includes everything you need to serve Swagger Editor in a server-side project, or a web project that can't resolve npm module dependencies.\n\nIf you're building a single-page application, using `swagger-editor` is strongly recommended, since `swagger-editor-dist` is significantly larger.\n\nFor the older version of swagger-editor, refer to the [*2.x branch*](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\n## Running locally\n\n##### Prerequisites\n\n- NPM 6.x\n\nGenerally, we recommend following guidelines from [Node.js Releases](https://nodejs.org/en/about/releases/) to only use Active LTS or Maintenance LTS releases.\n\nCurrent Node.js Active LTS:\n- Node.js 12.x\n- NPM 6.x\n\nCurrent Node.js Maintenance LTS:\n- Node.js 10.x\n- NPM 6.x\n\n\nIf you have Node.js and npm installed, you can run `npm start` to spin up a static server.\n\nOtherwise, you can open `index.html` directly from your filesystem in your browser.\n\nIf you'd like to make code changes to Swagger Editor, you can start up a Webpack hot-reloading dev server via `npm run dev`.\n\n##### Browser support\n\nSwagger Editor works in the latest versions of Chrome, Safari, Firefox, and Edge.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Everything listed in [Swagger UI's Known Issues](https://github.com/swagger-api/swagger-ui/blob/master/README.md#known-issues).\n- The integration with the codegen is still missing.\n- Importing specs from a URL is not implemented.\n\n## Docker\n\n### Running the image from DockerHub\nThere is a docker image published in [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-editor/).\n\nTo use this, run the following:\n\n```\ndocker pull swaggerapi/swagger-editor\ndocker run -d -p 80:8080 swaggerapi/swagger-editor\n```\n\nThis will run Swagger Editor (in detached mode) on port 80 on your machine, so you can open it by navigating to `http://localhost` in your browser.\n\nYou can also provide a API document from your local machine — for example, if you have a file at `./bar/swagger.json`:\n\n```\ndocker run -d -p 80:8080 -e URL=/foo/swagger.json -v /bar:/usr/share/nginx/html/foo swaggerapi/swagger-editor\n```\n\n### Building and running an image locally\n\nTo build and run a docker image with the code checked out on your machine, run the following from the root directory of the project:\n\n```\n# Install npm packages (if needed)\nnpm install\n\n# Build the app\nnpm run build\n\n# Build an image\ndocker build -t swagger-editor .\n\n# Run the container\ndocker run -d -p 80:8080 swagger-editor\n\n```\n\nYou can then view the app by navigating to `http://localhost` in your browser.\n\n## Documentation\n\n* [Importing your OpenAPI document](docs/import.md)\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n"
+swagger-api/swagger-editor: "# <img src=\"https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWE-logo-clr.png\" height=\"80\">\n[![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-editor)\n[![Build Status](https://jenkins.swagger.io/buildStatus/icon?job=oss-swagger-editor-master)](https://jenkins.swagger.io/job/oss-swagger-editor-master/)\n[![Code Climate](https://codeclimate.com/github/swagger-api/swagger-editor/badges/gpa.svg)](https://codeclimate.com/github/swagger-api/swagger-editor)\n[![Dependency Status](https://david-dm.org/swagger-api/swagger-editor/status.svg)](https://david-dm.org/swagger-api/swagger-editor)\n[![devDependency Status](https://david-dm.org/swagger-api/swagger-editor/dev-status.svg)](https://david-dm.org/swagger-api/swagger-editor-#info=devDependencies)\n[![Build Status](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/badge/icon?subject=jenkins%20build)](https://jenkins.swagger.io/view/OSS%20-%20JavaScript/job/oss-swagger-editor-master/)\n\n**\U0001F570️ Looking for the older version of Swagger Editor?** Refer to the [*2.x* branch](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\nSwagger Editor lets you edit [Swagger API specifications](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) in YAML inside your browser and to preview documentations in real time.\nValid Swagger JSON descriptions can then be generated and used with the full Swagger tooling (code generation, documentation, etc).\n\nAs a brand new version, written from the ground up, there are some known issues and unimplemented features. Check out the [Known Issues](#known-issues) section for more details.\n\nThis repository publishes to two different NPM modules:\n\n* [swagger-editor](https://www.npmjs.com/package/swagger-editor) is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc).\n* [swagger-editor-dist](https://www.npmjs.com/package/swagger-editor-dist) is a dependency-free module that includes everything you need to serve Swagger Editor in a server-side project, or a web project that can't resolve npm module dependencies.\n\nIf you're building a single-page application, using `swagger-editor` is strongly recommended, since `swagger-editor-dist` is significantly larger.\n\nFor the older version of swagger-editor, refer to the [*2.x branch*](https://github.com/swagger-api/swagger-editor/tree/2.x).\n\n## Running locally\n\n##### Prerequisites\n\n- NPM 6.x\n\nGenerally, we recommend following guidelines from [Node.js Releases](https://nodejs.org/en/about/releases/) to only use Active LTS or Maintenance LTS releases.\n\nCurrent Node.js Active LTS:\n- Node.js 12.x\n- NPM 6.x\n\nCurrent Node.js Maintenance LTS:\n- Node.js 10.x\n- NPM 6.x\n\n\nIf you have Node.js and npm installed, you can run `npm start` to spin up a static server.\n\nOtherwise, you can open `index.html` directly from your filesystem in your browser.\n\nIf you'd like to make code changes to Swagger Editor, you can start up a Webpack hot-reloading dev server via `npm run dev`.\n\n##### Browser support\n\nSwagger Editor works in the latest versions of Chrome, Safari, Firefox, and Edge.\n\n### Known Issues\n\nTo help with the migration, here are the currently known issues with 3.X. This list will update regularly, and will not include features that were not implemented in previous versions.\n\n- Everything listed in [Swagger UI's Known Issues](https://github.com/swagger-api/swagger-ui/blob/master/README.md#known-issues).\n- The integration with the codegen is still missing.\n- Importing specs from a URL is not implemented.\n\n## Docker\n\n### Running the image from DockerHub\nThere is a docker image published in [DockerHub](https://hub.docker.com/r/swaggerapi/swagger-editor/).\n\nTo use this, run the following:\n\n```\ndocker pull swaggerapi/swagger-editor\ndocker run -d -p 80:8080 swaggerapi/swagger-editor\n```\n\nThis will run Swagger Editor (in detached mode) on port 80 on your machine, so you can open it by navigating to `http://localhost` in your browser.  \n\n\n* You can provide your own `json` or `yaml` definition file on your host\n\n```\ndocker run -d -p 80:8080 -v $(pwd):/tmp -e SWAGGER_FILE=/tmp/swagger.json swaggerapi/swagger-editor\n```\n\n* You can provide a API document from your local machine — for example, if you have a file at `./bar/swagger.json`:\n\n```\ndocker run -d -p 80:8080 -e URL=/foo/swagger.json -v /bar:/usr/share/nginx/html/foo swaggerapi/swagger-editor\n```\n\n### Building and running an image locally\n\nTo build and run a docker image with the code checked out on your machine, run the following from the root directory of the project:\n\n```\n# Install npm packages (if needed)\nnpm install\n\n# Build the app\nnpm run build\n\n# Build an image\ndocker build -t swagger-editor .\n\n# Run the container\ndocker run -d -p 80:8080 swagger-editor\n\n```\n\nYou can then view the app by navigating to `http://localhost` in your browser.\n\n## Documentation\n\n* [Importing your OpenAPI document](docs/import.md)\n\n## Security contact\n\nPlease disclose any security-related issues or vulnerabilities by emailing [security@swagger.io](mailto:security@swagger.io), instead of using the public issue tracker.\n"
 apicurio/apicurio-studio: >
   [![CircleCI](https://circleci.com/gh/Apicurio/apicurio-studio.svg?style=svg)](https://circleci.com/gh/Apicurio/apicurio-studio)
 
@@ -7832,7 +7832,7 @@ apiaryio/dredd: >
   - [OpenAPI 2][] (formerly known as Swagger)
 
   - [OpenAPI 3][]
-  ([experimental](https://github.com/apiaryio/api-elements.js/blob/master/packages/openapi-parser/STATUS.md),
+  ([experimental](https://github.com/apiaryio/api-elements.js/blob/master/packages/openapi3-parser/STATUS.md),
   contributions welcome!)
 
 
@@ -11470,9 +11470,9 @@ rantav/flask-restful-swagger: >
   # flask-restful-swagger
 
 
-  ### We have a new project lead!
+  [![flask_restful_swagger-automation](https://github.com/rantav/flask-restful-swagger/workflows/flask_restful_swagger%20Python2.7/badge.svg)](https://github.com/rantav/flask-restful-swagger/actions)<br>
 
-  We have a new project lead, @niall-byrne (Dec 2015), thank you Niall!
+  [![flask_restful_swagger-automation](https://github.com/rantav/flask-restful-swagger/workflows/flask_restful_swagger%20Python3.7/badge.svg)](https://github.com/rantav/flask-restful-swagger/actions)<br>
 
 
 
@@ -11483,11 +11483,11 @@ rantav/flask-restful-swagger: >
   [swagger](https://developers.helloreverb.com/swagger/) support.
 
 
-  In essense, you just need to wrap the Api instance and add a few python
+  In essence, you just need to wrap the Api instance and add a few python
   decorators to get full swagger support.
 
 
-  ## How to:
+  ## Installation:
 
   Install:
 
@@ -11502,8 +11502,39 @@ rantav/flask-restful-swagger: >
 
 
 
-  And in your program, where you'd usually just use flask-restful, add just a
-  little bit of sauce and get a swagger spec out.
+  ## See Some Quick Examples:
+
+
+  ```bash
+
+  PYTHONPATH=. python examples/basic.py
+
+  PYTHONPATH=. python examples/blueprints.py
+
+  PYTHONPATH=. python examples/inheritance.py
+
+  ```
+
+
+  Browse to:
+  [http://localhost:5000/api/spec.html](http://localhost:5000/api/spec.html)
+
+
+  ## Contributing, and Making Improvements:
+
+
+  - [Contribution Guide](./CONTRIBUTING.md)
+
+  - [Code of Conduct](./CODE_OF_CONDUCT.md)
+
+  - [Development Environment](./development/DEVELOPMENT.md)
+
+
+  ## How To:
+
+
+  In your program, where you'd usually just use flask-restful, add just a little
+  bit of sauce and get a swagger spec out.
 
 
 
@@ -36664,32 +36695,6 @@ jfinkhaeuser/prance: >+
       $ pip install prance
       $ prance validate --backend=openapi-spec-validator path/to/spec.yml
 
-
-  *A note on strict mode:* The OpenAPI specs are a little ambiguous. On the one
-  hand, they use JSON
-
-  references and JSON schema a fair bit. But on the other hand, what they
-  specify as examples does
-
-  not always match the JSON specs.
-
-
-  Most notably, JSON only accepts string keys in objects. However, some keys in
-  the specs tend to be
-
-  integer values, most notably the status codes for responses. Strict mode
-  rejects non-string keys;
-
-  the default lenient mode accepts them.
-
-
-  Since the ``flex`` validator is not based on JSON, it does not have this
-  issue. The ``strict`` option
-
-  therefore does not apply here.
-
-
-
   *A note on flex usage:* While flex is the fastest validation backend,
   unfortunately it is no longer
 
@@ -36703,98 +36708,13 @@ jfinkhaeuser/prance: >+
   If you use the flex subpackage, therefore, you do so at your own risk.
 
 
-
-  A Note on JSON References
-
-  -------------------------
+  *Compatibility*
 
 
-  The relevant parts of the RFC for JSON references can be condensed like this:
+  See `COMPATIBILITY.rst
+  <https://github.com/jfinkhaeuser/prance/blob/master/COMPATIBILITY.rst>`__
 
-      A JSON Reference is a JSON object, which contains a member named
-      "$ref", which has a JSON string value.  Example:
-
-      { "$ref": "http://example.com/example.json#/foo/bar" }
-
-      (...)
-
-      Any members other than "$ref" in a JSON Reference object SHALL be
-      ignored.
-
-      (...)
-
-      Resolution of a JSON Reference object SHOULD yield the referenced
-      JSON value.  Implementations MAY choose to replace the reference with
-      the referenced value.
-
-  Prance is strict about ignoring additional keys, and does so by replacing the
-  reference with
-
-  the referenced value.
-
-
-  In practice, that means that given such a reference:
-
-
-  .. code:: yaml
-
-      # main file
-      ---
-      foo: bar
-      $ref: /path/to/ref
-
-      # and at /path/to/ref
-      ---
-      baz: quux
-
-  Then, after resolution, the result is the following:
-
-
-  .. code:: yaml
-
-      # resolved
-      ---
-      baz: quux
-
-  That is, the key ``foo`` is ignored as the specs require. That is the reason
-  the OpenAPI
-
-  specs tend to use JSON references within ``schema`` objects, and place any
-  other parameters
-
-  as siblings of the ``schema`` object.
-
-
-
-  *Recursion Limits*
-
-
-  Since JSON references can reference an object that references the first
-  object,
-
-  we can create recursive references. By default, when a recursion is detected,
-
-  an exception is raised. There are two ways you can modify this behaviour:
-
-
-  1. Increase the `recursion_limit` from it's default value of `1` to some
-  higher
-     number. This doesn't actually help much on its own.
-
-  2. Set the `recursion_limit_handler` parameter to a callable. It accepts the
-     recursion limit, the reference URL of the element being resolved, and the
-     currently known recursions.
-
-  `prance.util.resolver.default_reclimit_handler` is the default handler, and
-
-  will always raise an exception.
-
-
-  If the handler you set does not raise an exception, its return value is used
-
-  as the "resolved" value. To simply ignore recursions, use a handler that
-
-  returns `None` - this will translate to the null value in the specs.
+  for a list of known issues.
 
 
 
@@ -43331,7 +43251,8 @@ OpenAPITools/openapi-generator: >
 
   ```sh
 
-  docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
+  docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate
+  \
       -i https://raw.githubusercontent.com/openapitools/openapi-generator/master/modules/openapi-generator/src/test/resources/2_0/petstore.yaml \
       -g go \
       -o /local/out/go
@@ -45711,7 +45632,11 @@ thomaxxl/safrs: >
   [![Supported Python
   versions](https://img.shields.io/pypi/pyversions/safrs.svg)](https://pypi.python.org/pypi/safrs/)
 
-  [![License](https://img.shields.io/pypi/l/safrs.svg)](https://github.com/thomaxxl/safrs/blob/master/LICENSE)
+  [![License: GPL
+  v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+  ![Python
+  application](https://github.com/thomaxxl/safrs/workflows/Python%20application/badge.svg)
 
   [![Codacy
   Badge](https://api.codacy.com/project/badge/Grade/d121f32b06ee41a7813f5c7650b172c2)](https://app.codacy.com/app/thomaxxl/safrs?utm_source=github.com&utm_medium=referral&utm_content=thomaxxl/safrs&utm_campaign=Badge_Grade_Dashboard)
@@ -45852,7 +45777,7 @@ thomaxxl/safrs: >
   Please check the [JSON:API spec](http://jsonapi.org/format/) for more
   implementation details. 
 
-  You can also check the interface in the [live
+  You can also try out the interface in the [live
   demo](http://thomaxxl.pythonanywhere.com/api).
 
 
@@ -46204,12 +46129,10 @@ thomaxxl/safrs: >
   [https://github.com/thomaxxl/safrs-example](https://github.com/thomaxxl/safrs-example)
 
 
-  <a class="mk-toclify" id="advanced-usage"></a>
-
   ## Advanced Usage
 
 
-  a class="mk-toclify" id="custom-serialization"></a>
+  <a class="mk-toclify" id="custom-serialization"></a>
 
   ### Custom Serialization
 
@@ -49099,23 +49022,23 @@ atlassian/oas3-chow-chow: >
   const chow = new ChowChow(doc);
 
 
-  chow.validateRequest("./books", {
-    method: "post",
-    query: {
-      expand: ["document", "author"]
-    },
-    body: {
-      name: "a nice book",
-      author: "me me me"
+  // For URL: /:pathParam/info?arrParam=x&arrParam=y&other=z
+
+  chow.validateRequestByPath(
+    // url.pathname,
+    "/books/info",
+    "POST", {
+      path: { pathParam: "books" },
+      // query: querystring.parse(url.search.substr(1)),
+      query: { arrParam: ["x", "y"], other: "z" },
+      // header: req.headers,
+      header: { "Content-Type": "application/json" },
+      body: { a: 1, b: 2 },
     }
-  });
+  );
 
-
-  chow.validateResponse("./books", {
-    method: "post",
-    header: {
-      "content-type": "application/json"
-    },
+  chow.validateResponseByPath("/books/info", "POST", {
+    header: { "Content-Type": "application/json" },
     body: {
       name: "a nice book",
       author: "me me me"
@@ -53067,6 +52990,10 @@ nasa9084/go-openapi: >
 
   **This package is still under development, so the API will be changed without
   any notification**
+
+
+  **working progress fully rewriting. See [PR
+  #3](https://github.com/nasa9084/go-openapi/pull/3)**
 
 
   ## Overview
@@ -67545,7 +67472,7 @@ RuntimeTools/chai-openapi-response-validator: >
   [![downloads](https://img.shields.io/npm/dm/jest-openapi)](https://www.npmjs.com/package/jest-openapi)
 
   [![npm](https://img.shields.io/npm/v/jest-openapi.svg)](https://www.npmjs.com/package/jest-openapi)
-ahx/openapi_first: "# OpenapiFirst\n\nOpenapiFirst helps to implement HTTP APIs based on an [OpenApi](https://www.openapis.org/) API description. The idea is that you create an API description first, then add code that returns data and implements your business logic and be done.\n\nStart with writing an OpenAPI file that describes the API, which you are about to write. Use a [validator](https://github.com/stoplightio/spectral/) to make sure the file is valid.\n\n## Rack middlewares\nOpenapiFirst consists of these Rack middlewares:\n\n- `OpenapiFirst::Router` – Finds the operation for the current request or returns 404 if no operation was found. This can be customized.\n- `OpenapiFirst::RequestValidation` – Validates the request against the API description and returns 400 if the request is invalid.\n- `OpenapiFirst::OperationResolver` calls the [handler](#handlers) found for the operation.\n\n## OpenapiFirst::Router\nOptions and their defaults:\n\n| Name | Possible values | Description | Default\n|:---|---|---|---|\n| `not_found:` |`nil`, `:continue`, `Proc`| Specifies what to do if path was not found in the API description. `nil` (default) returns a 404 response. `:continue` does nothing an calls the next app. `Proc` (or something that responds to `call`) to customize the response. | `nil` (return 404)\n| `raise:` |`false`, `true` | If set to true the middleware raises `OpenapiFirst::NotFoundError` when a path or method was not found in the API description. This is useful during testing to spot an incomplete API description. | `false` (don't raise an exception)\n\n\n## Usage within your Rack webframework\nIf you just want to use the request validation part without any handlers you can use the rack middlewares standalone:\n\n```ruby\nuse OpenapiFirst::Router, spec: OpenapiFirst.load('./openapi/openapi.yaml')\nuse OpenapiFirst::RequestValidation\n```\n\n### Rack env variables\nThese variables will available in your rack env:\n\n- `env[OpenapiFirst::OPERATION]` - Holds an Operation object that responsed about `operation_id` and `path`. This is useful for introspection.\n- `env[OpenapiFirst::INBOX]`. Holds the (filtered) path and query parameters and the parsed request body.\n\n\n## Standalone usage\nYou can implement your API in conveniently with just OpenapiFirst.\n\n```ruby\nmodule Pets\n  def self.find_pet(params, res)\n    {\n      id: params['id'],\n      name: 'Oscar'\n    }\n  end\nend\n\n# In config.ru:\nrequire 'openapi_first'\nrun OpenapiFirst.app('./openapi/openapi.yaml', namespace: Pets)\n```\n\nThe above will use the mentioned Rack middlewares to:\n\n- Validate the request and respond with 400 if the request does not match with your API description\n- Map the request to a method call `Pets.find_pet` based on the `operationId` in the API description\n- Set the response content type according to your spec (here with the default status code `200`)\n\nHandler functions (`find_pet`) are called with two arguments:\n\n- `params` - Holds the parsed request body, filtered query params and path parameters\n- `res` - Holds a Rack::Response that you can modify if needed\n  If you want to access to plain Rack env you can call `params.env`.\n\n### Handlers\n\nOpenapiFirst maps the HTTP request to a method call based on the [operationId](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#operation-object) in your API description and calls it via the `OperationResolver` middleware.\n\nIt works like this:\n\n- \"create_pet\" or \"createPet\" or \"create pet\" calls `MyApi.create_pet(params, response)`\n- \"some_things.create\" calls: `MyApi::SomeThings.create(params, response)`\n- \"pets#create\" calls: `MyApi::Pets::Create.new.call(params, response)` If `MyApi::Pets::Create.new` accepts an argument, it will pass the rack `env`.\n\nThese handler methods are called with two arguments:\n\n- `params` - Holds the parsed request body, filtered query params and path parameters\n- `res` - Holds a Rack::Response that you can modify if needed\n\nYou can call `params.env` to access the Rack env (just like in [Hanami actions](https://guides.hanamirb.org/actions/parameters/))\n\nThere are two ways to set the response body:\n\n- Calling `res.write \"things\"` (see [Rack::Response](https://www.rubydoc.info/github/rack/rack/Rack/Response))\n- Returning a value from the function (see example above) (this will always converted to JSON)\n\n### If your API description does not contain all endpoints\n\n```ruby\nrun OpenapiFirst.middleware('./openapi/openapi.yaml', namespace: Pets)\n```\n\nHere all requests that are not part of the API description will be passed to the next app.\n\n### Try it out\n\nSee [examples](examples).\n\n## Installation\n\nAdd this line to your application's Gemfile:\n\n```ruby\ngem 'openapi_first'\n```\n\nOpenapiFirst uses [`multi_json`](https://rubygems.org/gems/multi_json).\n\n## Request validation\n\nIf the request is not valid, these middlewares return a 400 status code with a body that describes the error.\n\nThe error responses conform with [JSON:API](https://jsonapi.org).\n\nHere's an example response body for a missing query parameter \"search\":\n\n```json\nhttp-status: 400\ncontent-type: \"application/vnd.api+json\"\n\n{\n  \"errors\": [\n    {\n      \"title\": \"is missing\",\n      \"source\": {\n        \"parameter\": \"search\"\n      }\n    }\n  ]\n}\n```\n\n### Parameter validation\n\nThe middleware filteres all top-level query parameters and paths parameters and tries to convert numeric values. Meaning, if you have an `:something_id` path with `type: integer`, it will try convert the value to an integer.\nNote that is currently does not convert date, date-time or time formats and that conversion is currently on done for path and query parameters, but not for request bodies.\n\nIf you want to forbid _nested_ query parameters you will need to use [`additionalProperties: false`](https://json-schema.org/understanding-json-schema/reference/object.html#properties) in your query parameter JSON schema.\n\n_OpenapiFirst always treats query parameters like [`style: deepObject`](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#style-values), **but** it just works with nested objects (`filter[foo][bar]=baz`) (see [this discussion](https://github.com/OAI/OpenAPI-Specification/issues/1706))._\n\n### Request body validation\n\nThe middleware will return a `415` if the requests content type does not match or `400` if the request body is invalid.\nThis will add the parsed request body to `env[OpenapiFirst::REQUEST_BODY]`.\n\n### Header, Cookie, Path parameter validation\n\ntbd.\n\n## Response validation\n\nResponse validation is useful to make sure your app responds as described in your API description. You usually do this in your tests using [rack-test](https://github.com/rack-test/rack-test).\n\n```ruby\n# In your test (rspec example):\nrequire 'openapi_first'\nspec = OpenapiFirst.load('petstore.yaml')\nvalidator = OpenapiFirst::ResponseValidator.new(spec)\n\nexpect(validator.validate(last_request, last_response).errors).to be_empty\n```\n\n## Handling only certain paths\n\nYou can filter the URIs that should be handled by passing `only` to `OpenapiFirst.load`:\n\n```ruby\nspec = OpenapiFirst.load './openapi/openapi.yaml', only: '/pets'.method(:==)\nrun OpenapiFirst.app(spec, namespace: Pets)\n```\n\n## Coverage\n\n(This is a bit experimental. Please try it out and give feedback.)\n\n`OpenapiFirst::Coverage` helps you make sure, that you have called all endpoints of your OAS file when running tests via `rack-test`.\n\n```ruby\n# In your test (rspec example):\nrequire 'openapi_first/coverage'\n\ndescribe MyApp do\n  include Rack::Test::Methods\n\n  before(:all) do\n    spec = OpenapiFirst.load('petstore.yaml')\n    @app_wrapper = OpenapiFirst::Coverage.new(MyApp, spec)\n  end\n\n  after(:all) do\n    message = \"The following paths have not been called yet: #{@app_wrapper.to_be_called}\"\n    expect(@app_wrapper.to_be_called).to be_empty\n  end\n\n  # Overwrite `#app` to make rack-test call the wrapped app\n  def app\n    @app_wrapper\n  end\n\n  it 'does things' do\n    get '/i/my/stuff'\n    # …\n  end\nend\n```\n\n## Mocking\n\nOut of scope. Use [Prism](https://github.com/stoplightio/prism) or [fakeit](https://github.com/JustinFeng/fakeit).\n\n## Alternatives\n\nThis gem is inspired by [committee](https://github.com/interagent/committee) (Ruby) and [connexion](https://github.com/zalando/connexion) (Python).\n\n## Development\n\nRun `bin/setup` to install dependencies.\n\nRun `bundle exec rspec` to run the tests.\n\nSee `bundle exec rake -T` for rubygems related tasks.\n\n### Run benchmarks\n\n```sh\ncd benchmarks\nbundle\nbundle exec ruby benchmarks.rb\n```\n\n## Contributing\n\nIf you have a question or an idea or found a bug don't hesitate to [create an issue on GitHub](https://github.com/ahx/openapi_first/issues).\n\nPull requests are very welcome as well, of course. Feel free to create a \"draft\" pull request early on, even if your change is still work in progress. \U0001F917\n"
+ahx/openapi_first: "# OpenapiFirst\n\n[![Join the chat at https://gitter.im/openapi_first/community](https://badges.gitter.im/openapi_first/community.svg)](https://gitter.im/openapi_first/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n\nOpenapiFirst helps to implement HTTP APIs based on an [OpenApi](https://www.openapis.org/) API description. The idea is that you create an API description first, then add code that returns data and implements your business logic and be done.\n\nStart with writing an OpenAPI file that describes the API, which you are about to implement. Use a [validator](https://github.com/stoplightio/spectral/) to make sure the file is valid.\n\nYou can use OpenapiFirst via its [Rack middlewares](#rack-middlewares) or in [standalone mode](#standalone-usage).\n\n## Rack middlewares\nOpenapiFirst consists of these Rack middlewares:\n\n- [`OpenapiFirst::Router`](#OpenapiFirst::Router) – Finds the OpenAPI operation for the current request or returns 404 if no operation was found. This can be customized.\n- [`OpenapiFirst::RequestValidation`](#OpenapiFirst::RequestValidation) – Validates the request against the API description and returns 400 if the request is invalid.\n- [`OpenapiFirst::Responder`](#OpenapiFirst::Responder) calls the [handler](#handlers) found for the operation.\n- [`OpenapiFirst::ResponseValidation`](#OpenapiFirst::ResponseValidation) Validates the response and raises an exception if the response body is invalid.\n\n## OpenapiFirst::Router\nYou always have to add this middleware first in order to make the other middlewares work.\n\n```ruby\nuse OpenapiFirst::Router, spec: OpenapiFirst.load('./openapi/openapi.yaml')\n```\n\nThis middleware adds `env[OpenapiFirst::OPERATION]` which holds an Operation object that responds to `operation_id` and `path`.\n\nOptions and their defaults:\n\n| Name | Possible values | Description | Default\n|:---|---|---|---|\n|`spec:`| | The spec loaded via `OpenapiFirst.load` ||\n| `not_found:` |`nil`, `:continue`, `Proc`| Specifies what to do if the path was not found in the API description. `nil` (default) returns a 404 response. `:continue` does nothing an calls the next app. `Proc` (or something that responds to `call`) to customize the response. | `nil` (return 404)\n| `raise:` |`false`, `true` | If set to true the middleware raises `OpenapiFirst::NotFoundError` when a path or method was not found in the API description. This is useful during testing to spot an incomplete API description. | `false` (don't raise an exception)\n\n## OpenapiFirst::RequestValidation\n\nThis middleware returns a 400 status code with a body that describes the error if the request is not valid.\n\n```ruby\nuse OpenapiFirst::RequestValidation\n```\n\nThe error responses conform with [JSON:API](https://jsonapi.org).\n\nHere's an example response body for a missing query parameter \"search\":\n\n```json\nhttp-status: 400\ncontent-type: \"application/vnd.api+json\"\n\n{\n  \"errors\": [\n    {\n      \"title\": \"is missing\",\n      \"source\": {\n        \"parameter\": \"search\"\n      }\n    }\n  ]\n}\n```\n\nThis middleware adds `env[OpenapiFirst::INBOX]` which holds the (filtered) path and query parameters and the parsed request body.\n\n### Parameter validation\n\nThe middleware filteres all top-level query parameters and paths parameters and tries to convert numeric values. Meaning, if you have an `:something_id` path with `type: integer`, it will try convert the value to an integer.\nNote that is currently does not convert date, date-time or time formats and that conversion is currently done only for path and query parameters, but not for the request body. It just works with a parameter with `name: filter[age]`.\n\nIf you want to forbid _nested_ query parameters you will need to use [`additionalProperties: false`](https://json-schema.org/understanding-json-schema/reference/object.html#properties) in your query parameter JSON schema.\n\n_OpenapiFirst always treats query parameters like [`style: deepObject`](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#style-values), **but** it just works with nested objects (`filter[foo][bar]=baz`) (see [this discussion](https://github.com/OAI/OpenAPI-Specification/issues/1706))._\n\n### Request body validation\n\nThe middleware will return a status `415` if the requests content type does not match or `400` if the request body is invalid.\nThis will also add the parsed request body to `env[OpenapiFirst::REQUEST_BODY]`.\n\n### Header, Cookie, Path parameter validation\n\ntbd.\n\n## OpenapiFirst::Responder\n\nThis Rack endpoint maps the HTTP request to a method call based on the [operationId](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#operation-object) in your API description and calls it. Responder also adds a content-type to the response.\n\nCurrently there are no customization options for this part. Please [share your ideas](#contributing) on how to best meet your needs and preferred style.\n\n```ruby\nrun OpenapiFirst::Responder, spec: OpenapiFirst.load('./openapi/openapi.yaml')\n```\n\n| Name | Description\n|:---|---|\n|`spec:`| The spec loaded via `OpenapiFirst.load` |\n| `namespace:` | A class or module where to find the handler method. |\n\nIt works like this:\n\n- An operationId \"create_pet\" or \"createPet\" or \"create pet\" calls `MyApi.create_pet(params, response)`\n- \"some_things.create\" calls: `MyApi::SomeThings.create(params, response)`\n- \"pets#create\" calls: `MyApi::Pets::Create.new.call(params, response)` If `MyApi::Pets::Create.new` accepts an argument, it will pass the rack `env`.\n\n### Handlers\n\nThese handler methods are called with two arguments:\n\n- `params` - Holds the parsed request body, filtered query params and path parameters (same as `env[OpenapiFirst::INBOX]`)\n- `res` - Holds a Rack::Response that you can modify if needed\n\nYou can call `params.env` to access the Rack env (just like in [Hanami actions](https://guides.hanamirb.org/actions/parameters/))\n\nThere are two ways to set the response body:\n\n- Calling `res.write \"things\"` (see [Rack::Response](https://www.rubydoc.info/github/rack/rack/Rack/Response))\n- Returning a value which will get converted to JSON\n\n## OpenapiFirst::ResponseValidation\nThis middleware is especially useful when testing. It raises an error if the response is not valid.\n\n```ruby\nuse OpenapiFirst::ResponseValidation if ENV['RACK_ENV'] == 'test'\n```\n\n## Standalone usage\nInstead of composing these middlewares yourself you can use `OpenapiFirst.app`.\n\n```ruby\nmodule Pets\n  def self.find_pet(params, res)\n    {\n      id: params['id'],\n      name: 'Oscar'\n    }\n  end\nend\n\n# In config.ru:\nrequire 'openapi_first'\nrun OpenapiFirst.app('./openapi/openapi.yaml', namespace: Pets)\n```\n\nThe above will use the mentioned Rack middlewares to:\n\n- Validate the request and respond with 400 if the request does not match with your API description\n- Map the request to a method call `Pets.find_pet` based on the `operationId` in the API description\n- Set the response content type according to your spec (here with the default status code `200`)\n\nHandler functions (`find_pet`) are called with two arguments:\n\n- `params` - Holds the parsed request body, filtered query params and path parameters\n- `res` - Holds a Rack::Response that you can modify if needed\n  If you want to access to plain Rack env you can call `params.env`.\n\n## If your API description does not contain all endpoints\n\n```ruby\nrun OpenapiFirst.middleware('./openapi/openapi.yaml', namespace: Pets)\n```\n\nHere all requests that are not part of the API description will be passed to the next app.\n\n## Try it out\n\nSee [examples](examples).\n\n## Installation\n\nAdd this line to your application's Gemfile:\n\n```ruby\ngem 'openapi_first'\n```\n\nOpenapiFirst uses [`multi_json`](https://rubygems.org/gems/multi_json).\n\n## Manual response validation\n\nResponse validation is useful to make sure your app responds as described in your API description. You usually do this in your tests using [rack-test](https://github.com/rack-test/rack-test).\n\n```ruby\n# In your test (rspec example):\nrequire 'openapi_first'\nspec = OpenapiFirst.load('petstore.yaml')\nvalidator = OpenapiFirst::ResponseValidator.new(spec)\n\nexpect(validator.validate(last_request, last_response).errors).to be_empty\n```\n\n## Handling only certain paths\n\nYou can filter the URIs that should be handled by passing `only` to `OpenapiFirst.load`:\n\n```ruby\nspec = OpenapiFirst.load './openapi/openapi.yaml', only: '/pets'.method(:==)\nrun OpenapiFirst.app(spec, namespace: Pets)\n```\n\n## Coverage\n\n(This is a bit experimental. Please try it out and give feedback.)\n\n`OpenapiFirst::Coverage` helps you make sure, that you have called all endpoints of your OAS file when running tests via `rack-test`.\n\n```ruby\n# In your test (rspec example):\nrequire 'openapi_first/coverage'\n\ndescribe MyApp do\n  include Rack::Test::Methods\n\n  before(:all) do\n    spec = OpenapiFirst.load('petstore.yaml')\n    @app_wrapper = OpenapiFirst::Coverage.new(MyApp, spec)\n  end\n\n  after(:all) do\n    message = \"The following paths have not been called yet: #{@app_wrapper.to_be_called}\"\n    expect(@app_wrapper.to_be_called).to be_empty\n  end\n\n  # Overwrite `#app` to make rack-test call the wrapped app\n  def app\n    @app_wrapper\n  end\n\n  it 'does things' do\n    get '/i/my/stuff'\n    # …\n  end\nend\n```\n\n## Mocking\n\nOut of scope. Use [Prism](https://github.com/stoplightio/prism) or [fakeit](https://github.com/JustinFeng/fakeit).\n\n## Alternatives\n\nThis gem is inspired by [committee](https://github.com/interagent/committee) (Ruby) and [connexion](https://github.com/zalando/connexion) (Python).\n\n## Development\n\nRun `bin/setup` to install dependencies.\n\nRun `bundle exec rspec` to run the tests.\n\nSee `bundle exec rake -T` for rubygems related tasks.\n\n### Run benchmarks\n\n```sh\ncd benchmarks\nbundle\nbundle exec ruby benchmarks.rb\n```\n\n## Contributing\n\nIf you have a question or an idea or found a bug don't hesitate to [create an issue on GitHub](https://github.com/ahx/openapi_first/issues) or [reach out via chat](https://gitter.im/openapi_first/community).\n\nPull requests are very welcome as well, of course. Feel free to create a \"draft\" pull request early on, even if your change is still work in progress. \U0001F917\n"
 pace/bricks: "# PACE Bricks [![Build Status](https://travis-ci.org/pace/bricks.svg?branch=master)](https://travis-ci.org/pace/bricks)  [![Coverage Status](https://coveralls.io/repos/github/pace/bricks/badge.svg?branch=master)](https://coveralls.io/github/pace/bricks?branch=master)\n\n![](artwork/PACE-Bricks_Header_LightBackground.png)\n\nOpinionated microservice kit to help developers to build microservices with go.\n\n## Opinions\n\nA pace/bricks microservice is:\n\n* built as a **docker container**\n* deployed into a **kubernetes cluster**\n  * support for the **termination log**\n* configured using **environment variables** ([TWELVE-FACTOR APP](https://12factor.net/))\n* monitored using **prometheus**\n* reports errors to **sentry**\n* samples traces to **jaeger**\n* **logs** to stdout using json deployed **kubernetes** otherwise human readable\n* offers **health** endpoints\n* connects to backend services\n  * **postgres** (logging, metrics, tracing, health)\n  * **redis** (logging, metrics, tracing, health)\n  * **s3** (logging, metrics, tracing, health)\n  * **http** (logging, metrics, tracing, retries)\n* provides two commands **control** and **daemon**\n* provides a **RESTful** API\n  * code is generated from the **OpenAPIv3** spec\n  * authenticated via **OAuth2**\n  * encoded using **[json:api](https://jsonapi.org/)**\n  * that supports **logging**, **tracing** and **metrics**\n\n## Install\n\n    go get github.com/pace/bricks/cmd/pb\n\n## Usage\n\n    pb -h\n\n## Contributing\n \nRead our [contributors guide](CONTRIBUTING.md).\n\n## Requirements\n\n* A working go installation\n* A working git installation\n\n## Testing\n\n* Use `make test` to test without dependencies\n* Use `docker-compose run testserver make integration` to test with dependencies\n* Use `make testserver` to start a testserver that will be started with dependencies. In order to update the server one need to `docker-compose restart testserver`\n\n## Environment variables for the pb command\n\n| Variable | Description |\n|-|-|\n| `PACE_BRICKS_EDITOR` |\_ The path to the editor that should be used for opening a project. Defaults to `$EDITOR`. |\n| `PACE_BRICKS_PATH` | The path where new project should be created. Defaults to `$HOME/PACE`. |\n"
 kiwicom/schemathesis: >
   Schemathesis
@@ -69051,7 +68978,7 @@ openapi4j/openapi4j: >
   openapi4j and all the modules are released under the Apache 2.0 license. See
   [LICENSE](https://github.com/openapi4j/openapi4j/blob/master/LICENSE.md) for
   details.
-namuan/http-rider: "<p align=\"center\">\n  <img src=\"https://github.com/namuan/http-rider/raw/master/resources/images/httprider-readme.png\" width=\"128px\"/>\n</p>\n<h1 align=\"center\">HttpRider :: Simple and Powerful Cross-Platform API Client</h1>  \n  \n[![MacOS Release](https://img.shields.io/github/v/release/namuan/http-rider-osx?label=macos)](https://github.com/namuan/http-rider-osx/releases/latest) [![Windows Release](https://img.shields.io/github/v/release/namuan/http-rider-win?label=windows)](https://github.com/namuan/http-rider-win/releases/latest) [![Linux Release](https://img.shields.io/github/v/release/namuan/http-rider?label=Linux)](https://github.com/namuan/http-rider/releases/latest) [![GitHub license](https://img.shields.io/github/license/namuan/http-rider.svg)](https://github.com/namuan/http-rider/blob/master/LICENSE) [![Build Status](https://travis-ci.com/namuan/http-rider.svg?branch=master)](https://travis-ci.org/namuan/http-rider) [![GitHub last commit](https://img.shields.io/github/last-commit/namuan/http-rider)](https://github.com/namuan/http-rider/commits/master) [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/namuan/http-rider)](https://github.com/namuan/http-rider/commits/master) [![Twitter Follow](https://img.shields.io/twitter/follow/deskriders_twt.svg?style=social&label=Follow)](https://twitter.com/deskriders_twt) [![Gitter](https://badges.gitter.im/http-rider/community.svg)](https://gitter.im/http-rider/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)\n   \n[![HttpRider Intro](https://img.youtube.com/vi/rWmvwVuuN6I/0.jpg)](https://www.youtube.com/watch?v=rWmvwVuuN6I)\n \n### Downloads\n\nDownloads are currently available for MacOS and Windows however it is simple to run from source if you prefer that.\n\nSee https://www.httprider.com/docs/getting-started/installation/ for instructions for different operating systems.\n \n### Features  \n  \n\U0001F680 Feature complete | \U0001F648 Experimental | \U0001F4DD In development | ☁️️ Planned  \n  \n---  \n  \n\U0001F680 Making a simple request - [Demo](https://www.youtube.com/watch?v=fw8jMjQpfy8)  \n  \n\U0001F680 Adding query param, header, request body    \n  \n\U0001F680 Running multiple APIs/Rearranging APIs  \n  \n\U0001F680 Tags/Labels and Search and filtering  \n  \n\U0001F680 Http requests history   \n  \n\U0001F680 Projects support  \n  \n\U0001F680 Environments and using environment variables  \n  \n\U0001F680 Importing/Exporting environments  \n  \n\U0001F680 Using Fake or random data generators  \n  \n\U0001F680 Using variables between API requests  \n   \n\U0001F680 Assertions  \n  \n\U0001F680 Mocking responses  \n  \n**Exporters**\n  \n\U0001F680 Export [PlantUML](https://twitter.com/plantuml) Sequence diagram - [Demo](https://www.youtube.com/watch?v=4Asr_4iOxUM)\n  \n\U0001F680 Export [Slow Cooker](https://github.com/buoyantio/slow_cooker) performance tests  \n  \n\U0001F680 Export [Locust.io](https://locust.io) performance tests - [Demo](https://www.youtube.com/watch?v=7zqcYmZIdVs)\n  \n\U0001F680 Export Python code using requests module  \n  \n\U0001F680 Export Markdown for documenting API requests/responses  \n  \n\U0001F680 Export [Apickli](https://github.com/apickli/apickli) functional tests [Demo](https://deskriders.dev/generating-bdd-tests-with-httprider/)\n  \n\U0001F680 Export curl requests  \n  \n\U0001F680 Export [MermaidJS](https://mermaidjs.github.io/) Sequence diagram  \n  \n\U0001F680 Export [Runscope](https://www.runscope.com) monitoring tests [Demo](https://deskriders.dev/generating-runscope-monitoring-tests/)\n\n\U0001F680 Export [OpenApi V3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) document\n\n\U0001F680 Export [RestAssured](http://rest-assured.io) functional tests\n  \n**Importers**\n  \n\U0001F680 Import [OpenApi V3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) document  \n  \n\U0001F680 Import Postman collections\n  \n### Development  \n  \nRun `make` to display list of commands to install required dependencies in a virtual environment.  \n  \n```  \n$ make  \nRun the following commands to install required dependencies  \npython3 -m venv venv  \nsource venv/bin/activate  \npip install -r requirements/dev.txt  \nOnce everything is installed, 'make run' to run the application  \n```  \n  \nThen `make run` should startup the application.  \n  \n```  \n$ make run  \n```\n"
+namuan/http-rider: "<p align=\"center\">\n  <img src=\"https://github.com/namuan/http-rider/raw/master/resources/images/httprider-readme.png\" width=\"128px\"/>\n</p>\n<h1 align=\"center\">HttpRider :: Simple and Powerful Cross-Platform API Client</h1>  \n  \n[![MacOS Release](https://img.shields.io/github/v/release/namuan/http-rider-osx?label=macos)](https://github.com/namuan/http-rider-osx/releases/latest) [![Windows Release](https://img.shields.io/github/v/release/namuan/http-rider-win?label=windows)](https://github.com/namuan/http-rider-win/releases/latest) [![Linux Release](https://img.shields.io/github/v/release/namuan/http-rider?label=Linux)](https://github.com/namuan/http-rider/releases/latest) [![GitHub license](https://img.shields.io/github/license/namuan/http-rider.svg)](https://github.com/namuan/http-rider/blob/master/LICENSE) [![Build Status](https://travis-ci.com/namuan/http-rider.svg?branch=master)](https://travis-ci.org/namuan/http-rider) [![GitHub last commit](https://img.shields.io/github/last-commit/namuan/http-rider)](https://github.com/namuan/http-rider/commits/master) [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/namuan/http-rider)](https://github.com/namuan/http-rider/commits/master) [![Twitter Follow](https://img.shields.io/twitter/follow/deskriders_twt.svg?style=social&label=Follow)](https://twitter.com/deskriders_twt) [![Gitter](https://badges.gitter.im/http-rider/community.svg)](https://gitter.im/http-rider/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)\n   \n[![HttpRider Intro](https://img.youtube.com/vi/rWmvwVuuN6I/0.jpg)](https://www.youtube.com/watch?v=rWmvwVuuN6I)\n \n### Downloads\n\nDownloads are currently available for MacOS and Windows however it is simple to run from source if you prefer that.\n\nSee https://www.httprider.com/docs/getting-started/installation/ for instructions for different operating systems.\n \n### Features  \n  \n\U0001F680 Feature complete | \U0001F648 Experimental | \U0001F4DD In development | ☁️️ Planned  \n  \n---  \n  \n\U0001F680 Making a simple request - [Demo](https://www.youtube.com/watch?v=fw8jMjQpfy8)  \n  \n\U0001F680 Adding query param, header, request body    \n  \n\U0001F680 Running multiple APIs/Rearranging APIs  \n  \n\U0001F680 Tags/Labels and Search and filtering  \n  \n\U0001F680 Http requests history   \n  \n\U0001F680 Projects support  \n  \n\U0001F680 Environments and using environment variables  \n  \n\U0001F680 Importing/Exporting environments  \n  \n\U0001F680 Using Fake or random data generators  \n  \n\U0001F680 Using variables between API requests  \n   \n\U0001F680 Assertions  \n  \n\U0001F680 Mocking responses  \n  \n**Exporters**\n  \n\U0001F680 Export [PlantUML](https://twitter.com/plantuml) Sequence diagram - [Demo](https://www.youtube.com/watch?v=4Asr_4iOxUM)\n  \n\U0001F680 Export [Slow Cooker](https://github.com/buoyantio/slow_cooker) performance tests  \n  \n\U0001F680 Export [Locust.io](https://locust.io) performance tests - [Demo](https://www.youtube.com/watch?v=7zqcYmZIdVs)\n  \n\U0001F680 Export Python code using requests module  \n  \n\U0001F680 Export Markdown for documenting API requests/responses  \n  \n\U0001F680 Export [Apickli](https://github.com/apickli/apickli) functional tests [Demo](https://deskriders.dev/generating-bdd-tests-with-httprider/)\n  \n\U0001F680 Export curl requests  \n  \n\U0001F680 Export [MermaidJS](https://mermaidjs.github.io/) Sequence diagram  \n  \n\U0001F680 Export [Runscope](https://www.runscope.com) monitoring tests [Demo](https://deskriders.dev/generating-runscope-monitoring-tests/)\n\n\U0001F680 Export [OpenApi V3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) document\n\n\U0001F680 Export [RestAssured](http://rest-assured.io) functional tests\n  \n**Importers**\n  \n\U0001F680 Import [OpenApi V3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) document  \n  \n\U0001F680 Import Postman collections\n  \n### Development  \n    \nRun the following command to set-up virtual environment\n\n```  \n$ make setup \n```  \n  \nThen `make run` should startup the application.  \n  \n```  \n$ make run  \n```\n\nYou can just run `make` to display list of available commands."
 p1c2u/openapi-core: >
   ************
 
@@ -80525,6 +80452,14 @@ theoomoregbee/sails-hook-swagger-generator: >
   ```
 
 
+
+  ## Demo
+
+  Copy the content of [generatedSwagger](test/fixtures/generatedSwagger.json)
+  and paste it in [Swagger Online Editor](https://editor.swagger.io/).
+
+
+
   ## Usage
 
   Simply by lifting your sails app `sails lift`, after lifting or starting the
@@ -80534,11 +80469,8 @@ theoomoregbee/sails-hook-swagger-generator: >
   > make sure ./swagger folder is already existing.
 
 
-
-  ## Example
-
   Check the **./swagger/swagger.json** for generated swagger documentation json,
-  then head to [Swagger Editor](http://editor.swagger.io/).
+  then head to [Swagger Editor](https://editor.swagger.io/).
 
 
   ## Generated Output
@@ -80554,22 +80486,27 @@ theoomoregbee/sails-hook-swagger-generator: >
   1. Listing of all routes configured in `config/routes.js` (full details cannot
   be inferred
      for custom routes without additional information being provided - see below).
+  1. Creation of default tags for paths based upon Sails Model and Controller
+  `globalId`'s.
+
 
   ## Adding/Customising Generated Output
 
 
   Documentation detail and customisation of most aspects of the generated
-  Swagger can be achieved by:
+  Swagger can be achieved by adding:
 
   1. Top-level configuration to `config/swaggergenerator.js`. This provides
   direct JSON
      used as the template for the output Swagger/OpenAPI.
-  1. Adding objects with the key `swagger` to custom route configuration,
-  controller files, action
-     functions, model definitions and model attribute definitions. A `swagger` must be of type [SwaggerAttribute](./lib/interfaces.ts#L42)
-  1. Adding JSDoc ([swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc))
-  `@swagger` comments to controller/action files and model files.
-
+  1. Objects with the key `swagger` to custom route configuration, controller
+  files, action
+     functions, model definitions and model attribute definitions. The `swagger` element must be of type
+     [SwaggerActionAttribute](./lib/interfaces.ts#L55) for actions (based on OpenApi.Operation)
+     or [SwaggerModelSchemaAttribute](./lib/interfaces.ts#L66) for model schemas (based on OpenApi.UpdatedSchema).
+  1. JSDoc ([swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc)) `@swagger`
+  comments
+     to controller/action files and model files.
 
   Top-level Swagger/OpenAPI definitions for `tags` and `components` may be added
   in all `swagger` objects
@@ -80661,20 +80598,25 @@ theoomoregbee/sails-hook-swagger-generator: >
   be achieved by:
 
 
-  1. Adding an object with the key `swagger`(must be of type
-  [OpenApi.Operation](./types/openapi.d.ts#L99)) to individual route
-  configurations in `config/routes.js`.
+  1. Adding an object with the key `swagger` (must be of type
+  [SwaggerActionAttribute](./lib/interfaces.ts#L55) for actions, based on
+  OpenApi.Operation) to individual route configurations in `config/routes.js`.
 
-  1. Adding an object with the key `swagger`(must be of type
-  [SwaggerAttribute](./lib/interfaces.ts#L42)) to the exports of a model file,
+  1. Adding an object with the key `swagger` (must be of type
+  [SwaggerControllerAttribute](./lib/interfaces.ts#L76)) to the exports of a
   controller file, standalone action file or actions2 file.
+
+  1. Adding an object with the key `swagger` (must be of type
+  [SwaggerModelAttribute](./lib/interfaces.ts#L87)) to the exports of a model
+  file.
 
   1. Adding JSDoc `@swagger` comments to Sails
     [model files](https://sailsjs.com/documentation/concepts/models-and-orm/models),
     [controller files](https://sailsjs.com/documentation/concepts/actions-and-controllers#?controllers),
     [standalone action files](https://sailsjs.com/documentation/concepts/actions-and-controllers#?standalone-actions) or
     [actions2 files](https://sailsjs.com/documentation/concepts/actions-and-controllers#?actions-2); specifically:
-      - JSDoc `@swagger` documentation under the `/{actionName}` path for the route, or
+      - JSDoc `@swagger` documentation under the `/{actionName}` path for the route (controllers/actions), or
+      - JSDoc `@swagger` documentation under the `/{blueprintAction}` path for the route (models), or
       - JSDoc `@swagger` documentation under `tags` and `components` paths for adding to the top-level Swagger/OpenAPI definitions.
 
 
@@ -80764,14 +80706,45 @@ theoomoregbee/sails-hook-swagger-generator: >
   function.
 
   1. Adding an object with the key `swagger` to the exports of a controller
-  file, standalone action file or actions2 file: 
-     - For controller files, actions are referenced by adding objects keyed on `swagger.actions.{actionName}` name. See [UserController.js](./api/controllers/UserController.js),
-     - For standalone action or actions2 files, placing content in the `swagger.actions.{actionFileName|actions2FileName}` object. See [actions2.js](./api/controllers/subdir/actions2.js) ***Note**: `actionFileName|actions2FileName` must correspond to the filename*
-     - Adding documentation under `tags` and `components` elements for adding to the top-level Swagger/OpenAPI definitions. See example in either [UserController.js](./api/controllers/UserController.js) or [actions2.js](./api/controllers/subdir/actions2.js)  
+  file, standalone
+     action file or actions2 file:
+     - For controller files, actions are referenced by adding objects keyed on `swagger.actions.{actionName}`
+       name. See [UserController.js](./api/controllers/UserController.js);
+     - For standalone action or actions2 files, placing content in the
+       `swagger.actions.{actionFileName|actions2FileName}` object. See
+       [actions2.js](./api/controllers/subdir/actions2.js)
+       ***Note**: `actionFileName|actions2FileName` must correspond to the filename*;
+     - For all controller/action files, adding per-action documentation to be
+       applied to **all** actions using the key `swagger.actions.allActions`
+       e.g. use this to apply common tags to all actions for a controller.
+     - Adding documentation under `tags` and `components` elements for adding to the
+       top-level Swagger/OpenAPI definitions. See example in either
+       [UserController.js](./api/controllers/UserController.js)
+       or [actions2.js](./api/controllers/subdir/actions2.js).
   1. Adding JSDoc `@swagger` comments to controller file, standalone action file
   or actions2 file:
-     - JSDoc `@swagger` documentation under the `/{actionName}` path for the route, or
+     - JSDoc `@swagger` documentation under the `/{actionName}` path for the controller file actions,
+     - JSDoc `@swagger` documentation under the `/{actionFileName|actions2FileName}` path for standalone action or actions2 files,
+     - JSDoc `@swagger` documentation under the `/allActions` path to be applied to **all** actions for the controller, or
      - JSDoc `@swagger` documentation under `tags` and `components` paths for adding to the top-level Swagger/OpenAPI definitions.
+
+  An `exclude` property, set to `true`, may be added to any `swagger` element or
+  `@swagger` JSDoc
+
+  action documentation to exclude that action from the generated Swagger. See
+  example in
+
+  [NomodelController.js](api/controllers/NomodelController.js).
+
+
+  The Swagger definition for each action is merged in the order above to form
+  the final
+
+  definition, with `config/routes.js` taking highest precendence and **earlier**
+  definitions
+
+  above taking precedence over later.
+
 
   #### For actions2 files:
 
@@ -80782,6 +80755,13 @@ theoomoregbee/sails-hook-swagger-generator: >
   3. Both may be customised/overridden by specifying parameters and/or responses
   in the `swagger` object
      in actions2 file.
+  4. Inputs may also add an object with the key `meta.swagger` to document the
+  attributes
+     Swagger/OpenAPI **schema** associated with the input value. See example in
+     [actions2.js](./api/controllers/subdir/actions2.js).
+  5. Inputs may be excluded from the generated Swagger by setting
+  `meta.swagger.exclude` to `true`.
+
 
   For example, for a route configured as:
 
@@ -80868,21 +80848,68 @@ theoomoregbee/sails-hook-swagger-generator: >
 
   1. Adding an object with the key `swagger` to individual models e.g.
   `api/models/modelName.js`:
-     - Documenting the Swagger **schema** associated with the Sails mode by adding general content.
-     - Adding per-action documentation by adding objects keyed on `actions.{blueprintAction}` name.
-     - Adding documentation under `tags` and `components` elements for adding to the top-level Swagger/OpenAPI definitions.
-  1. Adding specific fields to model attributes (supports `description`,
-  `externalDocs` and `example`).
+     - Adding documentation to the model's Swagger **schema** using the key `swagger.modelSchema`
+       e.g. use this to apply detailed documentation via the `description` field;
+     - In additon to the model's schema, the key `swagger.modelSchema` may be used to specify
+       tag names (as a `string[]`) to be assigned all blueprint actions for the model.
+       This is a *non-standard* convenience function i.e. in Swagger/OpenAPI you need to
+       explicitly add tags to **each/every** OpenAPI.Operation;
+     - Adding per-action documentation by adding objects keyed on
+       `swagger.actions.{blueprintAction}` name;
+     - Adding action documentation to **all** actions using the key `swagger.actions.allActions`
+       e.g. use this to apply common `externalDocs` to all blueprint actions for the model; or
+     - Adding documentation under `swagger.tags` and `swagger.components` elements for adding to the top-level Swagger/OpenAPI definitions.
+  1. Adding documentation-specific fields to model attributes (supports
+  `description`, `moreInfoUrl` and `example`).
      Note that applicable Sails [attributes](https://sailsjs.com/documentation/concepts/models-and-orm/attributes),
      [automigrations](https://sailsjs.com/documentation/concepts/models-and-orm/attributes#?automigrations) and
      [validations](https://sailsjs.com/documentation/concepts/models-and-orm/validations) are also parsed.
-  1. JSDoc `@swagger` documentation under the `/{globalId}` path for models.
+  1. Adding an object with the key `meta.swagger` to individual model attributes
+  to document
+     the attributes Swagger/OpenAPI **schema**. See example in [Pet.js](./api/models/Pet.js).
+  1. Adding JSDoc `@swagger` comments to model files:
+     - JSDoc `@swagger` documentation under the `/{globalId}` to add documentation to
+       the model's Swagger **schema** (or tags as noted above),
+     - JSDoc `@swagger` documentation under the `/{blueprintAction}` to add per-action
+       documentation for the
+       [model blueprint actions](https://sailsjs.com/documentation/concepts/blueprints/blueprint-actions),
+     - JSDoc `@swagger` documentation under the `/allActions` path to be applied to **all**
+       blueprint actions for the model, or
+     - JSDoc `@swagger` documentation under `tags` and `components` paths for adding to the
+       top-level Swagger/OpenAPI definitions.
 
-  1. JSDoc `@swagger` per-action documentation under the `/{blueprintAction}`
-  path for the
-    [model blueprint actions](https://sailsjs.com/documentation/concepts/blueprints/blueprint-actions).
-  1. JSDoc `@swagger` documentation under `tags` and `components` paths for
-  adding to the top-level Swagger definitions.
+  An `exclude` property, set to `true`, may be added to any `swagger` element of
+  `@swagger` JSDoc
+
+  action documentation to exclude the model *completely* (exclude the
+  **schema**) or a specific
+
+  blueprint action from the generated Swagger. See example in
+  [OldPet.js](api/models/OldPet.js).
+
+
+  Individual model attributes may be excluded from the generated Swagger by
+  setting
+
+  `meta.swagger.exclude` to `true`. See example in [Pet.js](api/models/Pet.js).
+
+
+  OpenAPI 3 specifies the ***Any Type*** by the absence of the `type` property
+  in a schema;
+
+  this may be achieved by setting a model attribute's `meta.swagger.type` value
+  to `null`.
+
+  See example in [User.js](api/models/User.js).
+
+
+  The Swagger definition for each action is merged in the order above to form
+  the final
+
+  definition, with `config/routes.js` taking highest precendence and **earlier**
+  definitions
+
+  above taking precedence over later.
 
 
   For example, in a model `api/models/User.js`:
@@ -80911,7 +80938,8 @@ theoomoregbee/sails-hook-swagger-generator: >
     swagger: {
       actions: {
         create: { ... },
-      }
+      },
+      modelSchema: { ... },
       tags: [...]
       components: {...}
     }
@@ -81042,6 +81070,12 @@ theoomoregbee/sails-hook-swagger-generator: >
   1. Existing elements are **not** overwritten or merged.
 
 
+  For example, the element `components.schemas.pet` will be added as part of a
+  merge process,
+
+  but the contents of multiple definitions of `pet` **will not** be merged.
+
+
   The following elements (from the OpenAPI 3 specification) are handled:
 
   ```javascript
@@ -81098,51 +81132,37 @@ theoomoregbee/sails-hook-swagger-generator: >
 
   Each route is described by a `SwaggerRouteInfo` object
 
-  (see defintion [here](./lib/interfaces.ts#L126)):
+  (see defintion [here](./lib/interfaces.ts#L184)):
 
 
   ```typescript
 
   export interface SwaggerRouteInfo {
-      middlewareType?: MiddlewareType;
+    middlewareType: MiddlewareType; //< one of action|blueprint
 
-      tags: Array<Tag>;
-      model?: SwaggerSailsModel;
-      swagger?: OpenApi.Operation;
+    verb: HTTPMethodVerb; //< one of all|get|post|put|patch|delete
+    path: string; //< full Sails URL as per sails.getUrlFor() including prefix
+    variables: string[]; //< list of ALL variables extracted from path e.g. `/pet/:id` --> `id`
+    optionalVariables: string[]; //< list of optional variables from path e.g. `/pet/:id?`
 
-      controller?: string;
-      action: string;
+    action: string; //< either blueprint action (e.g. 'find') or action identity (e.g. 'subdir/reporting/run')
+    actionType: ActionType; //< one of blueprint|shortcutBlueprint|controller|standalone|actions2|function
+    actions2Machine?: Sails.Actions2Machine; //< for actionType === 'actions2', details of the action2 machine
 
-      verb: HTTPMethodVerb;
-      path: string;
-      variables: string[];
+    model?: SwaggerSailsModel; //< reference to Sails Model (blueprints only)
+    associationAliases?: string[]; //< association attribute names (relevant blueprint routes only)
 
-      associations: Sails.RouteAssociation[];
-      alias?: string;
-      aliases: string[];
-      associationsPrimaryKeyAttribute: AssociationPrimaryKeyAttribute[];
+    defaultTagName?: string; //< default tag name for route, if any, based on Sails Model or Controller
+
+    swagger?: SwaggerActionAttribute; //< per-route Swagger (OpenApi Operation)
   }
 
   ```
 
 
-  Sails **models** are described by a `SwaggerSailsModel` object
+  Other interfaces for models, `swagger` elements etc may be found in
+  [interfaces.ts](./lib/interfaces.ts).
 
-  (see defintion [here](./lib/interfaces.ts#L48)):
-
-
-  ```typescript
-
-  export interface SwaggerSailsModel extends Omit<Sails.Model, 'attributes'> {
-      attributes: Record<string, Sails.AttributeValue & {
-          description?: string;
-          externalDocs?: OpenApi.ExternalDoc;
-          example?: string;
-      }>;
-      swagger: SwaggerAttribute;
-  }
-
-  ```
 
 
   ### Route Filtering
@@ -81187,6 +81207,7 @@ theoomoregbee/sails-hook-swagger-generator: >
   module.exports['swagger-generator'] = {
     updateBlueprintActionTemplates: function(blueprintActionTemplates) {
       blueprintActionTemplates.search = { ... };
+      return blueprintActionTemplates;
     }
   }
 
@@ -81242,6 +81263,7 @@ theoomoregbee/sails-hook-swagger-generator: >
        - `addSelectQueryParam`
        - `addOmitQueryParam`
        - `addModelBodyParam`
+       - `addModelBodyParamUpdate`
        - `addResultOfArrayOfModels`
        - `addAssociationPathParam`
        - `addAssociationFKPathParam`
@@ -81250,6 +81272,7 @@ theoomoregbee/sails-hook-swagger-generator: >
        - `addResultNotFound`
        - `addResultValidationError`
        - `addFksBodyParam`
+       - `addShortCutBlueprintRouteNote`
      - Functions are called as `func(blueprintActionTemplate, routeInfo, pathEntry, tags, components)`
        where
        - `blueprintActionTemplate` the blueprint action template (see above) to which the modifier relates
@@ -81326,7 +81349,7 @@ theoomoregbee/sails-hook-swagger-generator: >
 
   ```sh
 
-  npm run dev 
+  npm run dev
 
   ```
 
