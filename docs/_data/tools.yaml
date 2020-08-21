@@ -6453,3 +6453,17 @@
   v2: true
   v3: true
   uuid: 5b403211-b15d-40c2-b8e6-c799573d9bde
+- name: Unchase.OpenAPI.ConnectedService
+  category: sdk
+  language: C#
+  link: 'https://marketplace.visualstudio.com/items?itemName=Unchase.unchaseOpenAPIConnectedService'
+  demo: 'https://medium.com/%40unchase/how-to-generate-c-or-typescript-client-code-for-openapi-swagger-specification-d882d59e3b77'
+  description: >-
+    a Visual Studio 2017/2019 extension to generate C# (TypeScript) HttpClient 
+    (or C# Controllers) code for OpenAPI web service with NSwag.
+  v2: true
+  v3: true
+  license: Apache-2.0
+  owner: Unchase
+  logo: 'https://raw.githubusercontent.com/unchase/Unchase.OpenAPI.Connectedservice/master/img/Unchase-OpenAPI-Swagger-Connected-Service-Logo.png'
+  github: https://github.com/unchase/Unchase.OpenAPI.Connectedservice
