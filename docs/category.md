@@ -41,6 +41,7 @@ site:
     return value+' '+word+(value === 1 ? '' : 's');
   }
   $(document).ready(function(){
+    $('table').addClass('table');
     $('a').each(function(i,e){
         if ($(e).data('json')) {
             var d = JSON.parse(decodeURIComponent($(e).data('json')));
