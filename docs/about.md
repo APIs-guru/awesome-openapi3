@@ -18,7 +18,7 @@ title: APIs.guru awesome-openapi3
         APIs.guru Awesome-OpenAPI3
       </h1>
       <h2 class="subtitle">
-Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
+Why not make your project discoverable by using the topic <a href="https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=">openapi3</a> on GitHub and using the hashtags <strong>#openapi3</strong> and <strong>#OASv3</strong> on social media?
       </h2>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://apis-guru/awesome-openapi3">
+    <a class="navbar-item" href="https://apis.guru/awesome-openapi3">
       <img src="https://avatars0.githubusercontent.com/u/10975548?v=4" width="28" height="28">
     </a>
 
