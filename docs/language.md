@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: bulma
 theme: jekyll-theme-cayman
 title: APIs.guru awesome-openapi3
 site:
   show_downloads: false
 ---
+
+{% include header.md }
 
 ## Tools by language
 

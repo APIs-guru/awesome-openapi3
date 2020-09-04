@@ -556,7 +556,7 @@
 - name: fubumvc-swagger
   description: >-
     FubuMVC convention for creating API documentation for your content
-    negotiation enabled actions 
+    negotiation enabled actions
   github: 'https://github.com/KevM/fubumvc-swagger'
   v1: true
   language: 'C#'
@@ -4209,7 +4209,7 @@
   name: json-schema-validator
   description: >-
     A fast Java JSON schema validator that supports draft V4, V6, V7 and
-    V2019-09 
+    V2019-09
   language: Java
   archived: false
   stars: 213
@@ -5224,6 +5224,7 @@
     Turn any OpenAPI2/3 and Postman Collection file into an API server with
     mocking, transformations and validations.
   v2: true
+  v3: true
   archived: false
   stars: 1423
   watch: 41
