@@ -36,6 +36,7 @@ site:
   }
   $(document).ready(function(){
     $('table').addClass('table');
+    $('ul').css('column-count',4);
     $('a').each(function(i,e){
         if ($(e).data('json')) {
             var d = JSON.parse(decodeURIComponent($(e).data('json')));

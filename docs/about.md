@@ -11,11 +11,27 @@ title: APIs.guru awesome-openapi3
 
 {% include header.md %}
 
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        APIs.guru Awesome-OpenAPI3
+      </h1>
+      <h2 class="subtitle">
 Why not make your project discoverable by using the topic [openapi3](https://github.com/search?utf8=%E2%9C%93&q=topic%3Aopenapi3&type=Repositories&ref=advsearch&l=&l=) on GitHub and using the hashtags **#openapi3** and **#OASv3** on social media?
+      </h2>
+    </div>
+  </div>
+</section>
 
-## Last updated
-
-{{ site.time }}
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Last Updated</h1>
+      <h2 class="subtitle">
+        {{ site.time }}
+      </h2>
+    </div>
+  </section>
 
 ## Contributing
 
