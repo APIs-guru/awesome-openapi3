@@ -6509,3 +6509,12 @@
   v2: true
   v3: true
   uuid: 5b403211-b15d-40c2-b8e6-c799573d9bde
+  - name: openapi3-fuzzer
+  category: testing
+  language: Python
+  link: 'https://pypi.org/project/openapi3-fuzzer/'
+  description: Simple fuzzer for OpenAPI 3 specification based APIs. Verifies responses and sends various attack patterns.
+  v3: true
+  license: GPLv3
+  owner: VWT Digital
+  github: https://github.com/vwt-digital/openapi3-fuzzer/tree/master
