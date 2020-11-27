@@ -4852,16 +4852,19 @@ apioo/fusio: >
   Fusio is an API management platform where you can configure routes which
   execute
 
-  a specific action. An action is the equivalent to a serverless function, which
-  can be executed
+  specific actions. An action triggers your business logic, it is like a
+  controller
 
-  on a route call or via RPC. Fusio covers many aspects of the API management
-  life cycle
+  in a classical framework, you can also think of it like a serverless lambda
+  function,
 
-  so that you can concentrate on writing the actual business logic of your API.
-  The following feature
+  which can be executed on a route call or via RPC. Fusio covers many aspects of
+  the API
 
-  list gives your an overview:
+  management life cycle so that you can concentrate on writing the actual
+  business
+
+  logic of your API. The following feature list gives your a first overview:
 
 
   * __OpenAPI generation__  
@@ -4874,22 +4877,24 @@ apioo/fusio: >
     Fusio provides a way to rate limit requests based on the user or app.
   * __Authorization__  
     Fusio uses OAuth2 for API authorization.
+  * __RPC support__  
+    Fusio provides RPC support, every action which you create can be also called via JsonRPC
   * __Monetization__  
     Fusio provides a simple payment system to charge for specific routes.
   * __Versioning__  
     It is possible to define different versions of your endpoint.
   * __Validation__  
-    Fusio uses the standard TypeSchema to automatically validate incoming request data
+    Fusio uses the TypeSchema to automatically validate incoming request data
   * __Analytics__  
     Fusio monitors all API activities and shows them on a dashboard.
   * __User management__
-    Fusio provides an developer app where new users can login or register a new account through GitHub, Google, Facebook or through normal email registration.
+    Fusio provides a developer app where new users can login or register a new account through GitHub, Google, Facebook or through normal email registration.
   * __Logging__  
     All errors which occur in your endpoint are logged and are visible at the backend including all information from the request.
   * __Connection__  
     Fusio provides an adapter system to connect to external services. By default we provide the HTTP and SQL connection type but there are many other types available i.e. MongoDB, Amqp, Cassandra.
   * __Action__  
-    Fusio contains action ecosystem which help you to build APIs based on different sources, i.e. the SQL-Table actions provides an API based on a database table.
+    Fusio contains an action ecosystem which helps to build APIs based on different sources, i.e. the SQL-Table actions provides an API based on a database table.
   * __Migration__  
     Fusio has a migration system which allows you to change the database schema on deployment.
   * __Testing__  
@@ -4901,11 +4906,10 @@ apioo/fusio: >
   Serverless is a great paradigma to build scaleable APIs. The biggest
   disadvantage is that
 
-  your app is locked in at the serverless provider. If the conditions of the
-  provider change
+  your app is locked in at the serverless provider (vendor-lock-in). If you want
+  to switch
 
-  and you want to switch the provider it is difficult to move your app to a
-  different vendor.
+  the provider it is difficult to move your app to a different vendor.
 
 
   Fusio tries to solve this problem by providing a self hosted platform written
@@ -4935,7 +4939,7 @@ apioo/fusio: >
 
   The other way is to use the deploy-mechanism. Through this you can use normal
 
-  PHP files to implement your business logic and thus you can use the complete
+  PHP classes to implement your business logic and thus you can use the complete
   PHP 
 
   ecosystem. Therefor you need to define a `.fusio.yml` 
@@ -16258,7 +16262,7 @@ nelmio/NelmioApiDocBundle: >
 
 
   This bundle is released under the MIT license.
-astaxie/beego: "# Beego [![Build Status](https://travis-ci.org/astaxie/beego.svg?branch=master)](https://travis-ci.org/astaxie/beego) [![GoDoc](http://godoc.org/github.com/astaxie/beego?status.svg)](http://godoc.org/github.com/astaxie/beego) [![Foundation](https://img.shields.io/badge/Golang-Foundation-green.svg)](http://golangfoundation.org) [![Go Report Card](https://goreportcard.com/badge/github.com/astaxie/beego)](https://goreportcard.com/report/github.com/astaxie/beego)\n\n\nbeego is used for rapid development of RESTful APIs, web apps and backend services in Go.\nIt is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.\n\n###### More info at [beego.me](http://beego.me).\n\n## Quick Start\n\n###### Please see [Documentation](http://beego.me/docs) for more.\n\n###### [beego-example](https://github.com/beego-dev/beego-example)\n\n### Web Application\n\n#### Create `hello` directory, cd `hello` directory\n\n    mkdir hello\n    cd hello\n \n#### Init module\n\n    go mod init\n\n#### Download and install\n\n    go get github.com/astaxie/beego\n\n#### Create file `hello.go`\n```go\npackage main\n\nimport \"github.com/astaxie/beego/server/web\"\n\nfunc main(){\n    web.Run()\n}\n```\n#### Build and run\n\n    go build hello.go\n    ./hello\n\n#### Go to [http://localhost:8080](http://localhost:8080)\n\nCongratulations! You've just built your first **beego** app.\n\n### Using ORM module\n\n```go\n\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/client/orm\"\n\t\"github.com/astaxie/beego/core/logs\"\n\t_ \"github.com/go-sql-driver/mysql\"\n)\n\n// User -\ntype User struct {\n\tID   int    `orm:\"column(id)\"`\n\tName string `orm:\"column(name)\"`\n}\n\nfunc init() {\n\t// need to register models in init\n\torm.RegisterModel(new(User))\n\n\t// need to register db driver\n\torm.RegisterDriver(\"mysql\", orm.DRMySQL)\n\n\t// need to register default database\n\torm.RegisterDataBase(\"default\", \"mysql\", \"beego:test@tcp(192.168.0.105:13306)/orm_test?charset=utf8\")\n}\n\nfunc main() {\n\t// automatically build table\n\torm.RunSyncdb(\"default\", false, true)\n\n\t// create orm object, and it will use `default` database\n\to := orm.NewOrm()\n\n\t// data\n\tuser := new(User)\n\tuser.Name = \"mike\"\n\n\t// insert data\n\tid, err := o.Insert(user)\n\tif err != nil {\n\t\tlogs.Info(err)\n\t}\n\t\n\t// ...\n}\n```\n\n### Using httplib as http client\n```go\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/client/httplib\"\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\t// Get, more methods please read docs\n\treq := httplib.Get(\"http://beego.me/\")\n\tstr, err := req.String()\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\tlogs.Info(str)\n}\n\n```\n\n### Using config module\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\n\t\"github.com/astaxie/beego/core/config\"\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nvar (\n\tConfigFile = \"./app.conf\"\n)\n\nfunc main() {\n\tcfg, err := config.NewConfig(\"ini\", ConfigFile)\n\tif err != nil {\n\t\tlogs.Critical(\"An error occurred:\", err)\n\t\tpanic(err)\n\t}\n\tres, _ := cfg.String(context.Background(), \"name\")\n\tlogs.Info(\"load config name is\", res)\n}\n```\n### Using logs module\n```go\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\terr := logs.SetLogger(logs.AdapterFile, `{\"filename\":\"project.log\",\"level\":7,\"maxlines\":0,\"maxsize\":0,\"daily\":true,\"maxdays\":10,\"color\":true}`)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tlogs.Info(\"hello beego\")\n}\n```\n### Using timed task\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\t\"time\"\n\n\t\"github.com/astaxie/beego/core/logs\"\n\t\"github.com/astaxie/beego/task\"\n)\n\nfunc main() {\n\t// create a task\n\ttk1 := task.NewTask(\"tk1\", \"0/3 * * * * *\", func(ctx context.Context) error { logs.Info(\"tk1\"); return nil })\n\n\t// check task\n\terr := tk1.Run(context.Background())\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\n\t// add task to global todolist\n\ttask.AddTask(\"tk1\", tk1)\n\n\t// start tasks\n\ttask.StartTask()\n\n\t// wait 12 second\n\ttime.Sleep(12 * time.Second)\n\tdefer task.StopTask()\n}\n``` \n\n### Using cache module\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\t\"time\"\n\n\t\"github.com/astaxie/beego/client/cache\"\n\n\t// don't forget this\n\t_ \"github.com/astaxie/beego/client/cache/redis\"\n\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\t// create cache\n\tbm, err := cache.NewCache(\"redis\", `{\"key\":\"default\", \"conn\":\":6379\", \"password\":\"123456\", \"dbNum\":\"0\"}`)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\n\t// put\n\tisPut := bm.Put(context.Background(), \"astaxie\", 1, time.Second*10)\n\tlogs.Info(isPut)\n\n\tisPut = bm.Put(context.Background(), \"hello\", \"world\", time.Second*10)\n\tlogs.Info(isPut)\n\n\t// get\n\tresult, _ := bm.Get(context.Background(),\"astaxie\")\n\tlogs.Info(string(result.([]byte)))\n\n\tmultiResult, _ := bm.GetMulti(context.Background(), []string{\"astaxie\", \"hello\"})\n\tfor i := range multiResult {\n\t\tlogs.Info(string(multiResult[i].([]byte)))\n\t}\n\n\t// isExist\n\tisExist, _ := bm.IsExist(context.Background(), \"astaxie\")\n\tlogs.Info(isExist)\n\n\t// delete\n\tisDelete := bm.Delete(context.Background(), \"astaxie\")\n\tlogs.Info(isDelete)\n}\n```\n\n\n## Features\n\n* RESTful support\n* MVC architecture\n* Modularity\n* Auto API documents\n* Annotation router\n* Namespace\n* Powerful development tools\n* Full stack for Web & API\n\n## Documentation\n\n* [English](http://beego.me/docs/intro/)\n* [中文文档](http://beego.me/docs/intro/)\n* [Русский](http://beego.me/docs/intro/)\n\n## Community\n\n* [http://beego.me/community](http://beego.me/community)\n* Welcome to join us in Slack: [https://beego.slack.com](https://beego.slack.com), you can get invited from [here](https://github.com/beego/beedoc/issues/232)\n* QQ Group Group ID:523992905\n\n## License\n\nbeego source code is licensed under the Apache Licence, Version 2.0\n(http://www.apache.org/licenses/LICENSE-2.0.html).\n"
+astaxie/beego: "# Beego [![Build Status](https://travis-ci.org/astaxie/beego.svg?branch=master)](https://travis-ci.org/astaxie/beego) [![GoDoc](http://godoc.org/github.com/astaxie/beego?status.svg)](http://godoc.org/github.com/astaxie/beego) [![Foundation](https://img.shields.io/badge/Golang-Foundation-green.svg)](http://golangfoundation.org) [![Go Report Card](https://goreportcard.com/badge/github.com/astaxie/beego)](https://goreportcard.com/report/github.com/astaxie/beego)\n\n\nbeego is used for rapid development of RESTful APIs, web apps and backend services in Go.\nIt is inspired by Tornado, Sinatra and Flask. beego has some Go-specific features such as interfaces and struct embedding.\n\n###### More info at [beego.me](http://beego.me). \n\n> If you could not open this website, go to [beedoc](https://github.com/beego/beedoc)\n\n## beego 1.x and 2.x\n\nWe recently release beego 2.0.0-beta, and its structure change a lot, so you may get some error\n\n1. If you are working on beego v1.x please try `go get github.com/astaxie/beego@v1.12.3`\n2. If you want to try beego 2.0.0, run `go get github.com/astaxie/beego@develop`\n\nWe are still working on fix bug and documentation of v2.x. And v2.x's doc will be released with v2.0.0.\n\n## Next version\n\nv1.12.4 will be released on Jan 2021 And v2.0.0 will be released next month.\n\n## Quick Start\n\n###### Please see [Documentation](http://beego.me/docs) for more.\n\n###### [beego-example](https://github.com/beego-dev/beego-example)\n\n### Web Application\n\n#### Create `hello` directory, cd `hello` directory\n\n    mkdir hello\n    cd hello\n \n#### Init module\n\n    go mod init\n\n#### Download and install\n\n    go get -u github.com/astaxie/beego@develop\n\nNow we are working on beego v2.0.0, so using `@develop`.\n\n#### Create file `hello.go`\n```go\npackage main\n\nimport \"github.com/astaxie/beego/server/web\"\n\nfunc main(){\n    web.Run()\n}\n```\n#### Build and run\n\n    go build hello.go\n    ./hello\n\n#### Go to [http://localhost:8080](http://localhost:8080)\n\nCongratulations! You've just built your first **beego** app.\n\n### Using ORM module\n\n```go\n\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/client/orm\"\n\t\"github.com/astaxie/beego/core/logs\"\n\t_ \"github.com/go-sql-driver/mysql\"\n)\n\n// User -\ntype User struct {\n\tID   int    `orm:\"column(id)\"`\n\tName string `orm:\"column(name)\"`\n}\n\nfunc init() {\n\t// need to register models in init\n\torm.RegisterModel(new(User))\n\n\t// need to register db driver\n\torm.RegisterDriver(\"mysql\", orm.DRMySQL)\n\n\t// need to register default database\n\torm.RegisterDataBase(\"default\", \"mysql\", \"beego:test@tcp(192.168.0.105:13306)/orm_test?charset=utf8\")\n}\n\nfunc main() {\n\t// automatically build table\n\torm.RunSyncdb(\"default\", false, true)\n\n\t// create orm object, and it will use `default` database\n\to := orm.NewOrm()\n\n\t// data\n\tuser := new(User)\n\tuser.Name = \"mike\"\n\n\t// insert data\n\tid, err := o.Insert(user)\n\tif err != nil {\n\t\tlogs.Info(err)\n\t}\n\t\n\t// ...\n}\n```\n\n### Using httplib as http client\n```go\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/client/httplib\"\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\t// Get, more methods please read docs\n\treq := httplib.Get(\"http://beego.me/\")\n\tstr, err := req.String()\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\tlogs.Info(str)\n}\n\n```\n\n### Using config module\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\n\t\"github.com/astaxie/beego/core/config\"\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nvar (\n\tConfigFile = \"./app.conf\"\n)\n\nfunc main() {\n\tcfg, err := config.NewConfig(\"ini\", ConfigFile)\n\tif err != nil {\n\t\tlogs.Critical(\"An error occurred:\", err)\n\t\tpanic(err)\n\t}\n\tres, _ := cfg.String(context.Background(), \"name\")\n\tlogs.Info(\"load config name is\", res)\n}\n```\n### Using logs module\n```go\npackage main\n\nimport (\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\terr := logs.SetLogger(logs.AdapterFile, `{\"filename\":\"project.log\",\"level\":7,\"maxlines\":0,\"maxsize\":0,\"daily\":true,\"maxdays\":10,\"color\":true}`)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tlogs.Info(\"hello beego\")\n}\n```\n### Using timed task\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\t\"time\"\n\n\t\"github.com/astaxie/beego/core/logs\"\n\t\"github.com/astaxie/beego/task\"\n)\n\nfunc main() {\n\t// create a task\n\ttk1 := task.NewTask(\"tk1\", \"0/3 * * * * *\", func(ctx context.Context) error { logs.Info(\"tk1\"); return nil })\n\n\t// check task\n\terr := tk1.Run(context.Background())\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\n\t// add task to global todolist\n\ttask.AddTask(\"tk1\", tk1)\n\n\t// start tasks\n\ttask.StartTask()\n\n\t// wait 12 second\n\ttime.Sleep(12 * time.Second)\n\tdefer task.StopTask()\n}\n``` \n\n### Using cache module\n\n```go\npackage main\n\nimport (\n\t\"context\"\n\t\"time\"\n\n\t\"github.com/astaxie/beego/client/cache\"\n\n\t// don't forget this\n\t_ \"github.com/astaxie/beego/client/cache/redis\"\n\n\t\"github.com/astaxie/beego/core/logs\"\n)\n\nfunc main() {\n\t// create cache\n\tbm, err := cache.NewCache(\"redis\", `{\"key\":\"default\", \"conn\":\":6379\", \"password\":\"123456\", \"dbNum\":\"0\"}`)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n\n\t// put\n\tisPut := bm.Put(context.Background(), \"astaxie\", 1, time.Second*10)\n\tlogs.Info(isPut)\n\n\tisPut = bm.Put(context.Background(), \"hello\", \"world\", time.Second*10)\n\tlogs.Info(isPut)\n\n\t// get\n\tresult, _ := bm.Get(context.Background(),\"astaxie\")\n\tlogs.Info(string(result.([]byte)))\n\n\tmultiResult, _ := bm.GetMulti(context.Background(), []string{\"astaxie\", \"hello\"})\n\tfor i := range multiResult {\n\t\tlogs.Info(string(multiResult[i].([]byte)))\n\t}\n\n\t// isExist\n\tisExist, _ := bm.IsExist(context.Background(), \"astaxie\")\n\tlogs.Info(isExist)\n\n\t// delete\n\tisDelete := bm.Delete(context.Background(), \"astaxie\")\n\tlogs.Info(isDelete)\n}\n```\n\n\n## Features\n\n* RESTful support\n* MVC architecture\n* Modularity\n* Auto API documents\n* Annotation router\n* Namespace\n* Powerful development tools\n* Full stack for Web & API\n\n## Documentation\n\n* [English](http://beego.me/docs/intro/)\n* [中文文档](http://beego.me/docs/intro/)\n* [Русский](http://beego.me/docs/intro/)\n\n## Community\n\n* [http://beego.me/community](http://beego.me/community)\n* Welcome to join us in Slack: [https://beego.slack.com](https://beego.slack.com), you can get invited from [here](https://github.com/beego/beedoc/issues/232)\n* QQ Group Group ID:523992905\n\n## License\n\nbeego source code is licensed under the Apache Licence, Version 2.0\n(http://www.apache.org/licenses/LICENSE-2.0.html).\n"
 signalfx/swagger-ajax-client: >
   # Swagger Ajax Client
 
@@ -42841,7 +42845,9 @@ OpenAPITools/openapi-generator: >
   please make sure you've reviewed these inputs before using OpenAPI Generator
   to generate the API client, server stub or documentation to avoid potential
   security issues (e.g. [code
-  injection](https://en.wikipedia.org/wiki/Code_injection)) :warning:
+  injection](https://en.wikipedia.org/wiki/Code_injection)). For security
+  vulnerabilities, please contact
+  [team@openapitools.org](mailto:team@openapitools.org). :warning:
 
 
   :bangbang: Both "OpenAPI Tools" (https://OpenAPITools.org - the parent
@@ -43008,18 +43014,9 @@ OpenAPITools/openapi-generator: >
   [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.0.0-SNAPSHOT/)
   | TBD   | Major release with breaking changes (no fallback) |
 
-  | 5.0.0-beta3 (upcoming beta release)
-  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.0.0-SNAPSHOT/)
-  | 01.11.2020 | Major beta release with breaking changes (no fallback) |
-
   |
-  [5.0.0-beta2](https://github.com/OpenAPITools/openapi-generator/releases/tag/v5.0.0-beta2)
-  (latest beta release) | 04.09.2020   | Major beta release with breaking
-  changes (no fallback) |
-
-  |
-  [5.0.0-beta](https://github.com/OpenAPITools/openapi-generator/releases/tag/v5.0.0-beta)
-  (latest beta release) | 30.06.2020   | Major beta release with breaking
+  [5.0.0-beta3](https://github.com/OpenAPITools/openapi-generator/releases/tag/v5.0.0-beta3)
+  (latest beta release) | 20.11.2020   | Major beta release with breaking
   changes (no fallback) |
 
   |
@@ -43126,7 +43123,7 @@ OpenAPITools/openapi-generator: >
 
 
   JAR location:
-  `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta2/openapi-generator-cli-5.0.0-beta2.jar`
+  `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta3/openapi-generator-cli-5.0.0-beta3.jar`
 
 
   For **Mac/Linux** users:
@@ -43134,7 +43131,7 @@ OpenAPITools/openapi-generator: >
   ```sh
 
   wget
-  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta2/openapi-generator-cli-5.0.0-beta2.jar
+  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta3/openapi-generator-cli-5.0.0-beta3.jar
   -O openapi-generator-cli.jar
 
   ```
@@ -43147,7 +43144,7 @@ OpenAPITools/openapi-generator: >
   ```
 
   Invoke-WebRequest -OutFile openapi-generator-cli.jar
-  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta2/openapi-generator-cli-5.0.0-beta2.jar
+  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta3/openapi-generator-cli-5.0.0-beta3.jar
 
   ```
 
@@ -43618,7 +43615,7 @@ OpenAPITools/openapi-generator: >
   <!-- RELEASE_VERSION -->
 
   You can also download the JAR (latest release) directly from
-  [maven.org](https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta2/openapi-generator-cli-5.0.0-beta2.jar)
+  [maven.org](https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0-beta3/openapi-generator-cli-5.0.0-beta3.jar)
 
   <!-- /RELEASE_VERSION -->
 
@@ -46613,6 +46610,9 @@ cebe/php-openapi: >
   -
   [league/openapi-psr7-validator](https://github.com/thephpleague/openapi-psr7-validator)
   validates PSR-7 messages (HTTP request/response) against OpenAPI descriptions.
+
+  - [dsuurlant/response2schema](https://github.com/dsuurlant/response2schema) a
+  quick and easy tool for generating OpenAPI schemas based on example data.
 
   - ... ([add
   yours](https://github.com/cebe/php-openapi/edit/master/README.md#L24))
@@ -65300,9 +65300,6 @@ airtasker/spot: >
   ## `spot checksum SPOT_CONTRACT`
 
 
-  Generate a checksum for a Spot contract
-
-
   ```
 
   USAGE
@@ -65320,14 +65317,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/checksum.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/checksum.js)_
+  [build/cli/src/commands/checksum.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/checksum.js)_
 
 
   ## `spot docs SPOT_CONTRACT`
-
-
-  Preview Spot contract as OpenAPI3 documentation. The documentation server will
-  start on http://localhost:8080.
 
 
   ```
@@ -65348,14 +65341,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/docs.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/docs.js)_
+  [build/cli/src/commands/docs.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/docs.js)_
 
 
   ## `spot generate`
-
-
-  Runs a generator on an API. Used to produce client libraries, server
-  boilerplates and well-known API contract formats such as OpenAPI.
 
 
   ```
@@ -65376,13 +65365,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/generate.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/generate.js)_
+  [build/cli/src/commands/generate.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/generate.js)_
 
 
   ## `spot help [COMMAND]`
-
-
-  display help for spot
 
 
   ```
@@ -65405,9 +65391,6 @@ airtasker/spot: >
   ## `spot init`
 
 
-  Generates the boilerplate for an API.
-
-
   ```
 
   USAGE
@@ -65426,13 +65409,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/init.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/init.js)_
+  [build/cli/src/commands/init.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/init.js)_
 
 
   ## `spot lint SPOT_CONTRACT`
-
-
-  Lint a Spot contract
 
 
   ```
@@ -65452,13 +65432,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/lint.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/lint.js)_
+  [build/cli/src/commands/lint.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/lint.js)_
 
 
   ## `spot mock SPOT_CONTRACT`
-
-
-  Run a mock server based on a Spot contract
 
 
   ```
@@ -65483,13 +65460,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/mock.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/mock.js)_
+  [build/cli/src/commands/mock.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/mock.js)_
 
 
   ## `spot validate SPOT_CONTRACT`
-
-
-  Validate a Spot contract
 
 
   ```
@@ -65509,13 +65483,10 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/validate.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/validate.js)_
+  [build/cli/src/commands/validate.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/validate.js)_
 
 
   ## `spot validation-server SPOT_CONTRACT`
-
-
-  Start the spot contract validation server
 
 
   ```
@@ -65536,7 +65507,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/validation-server.js](https://github.com/airtasker/spot/blob/v1.2.0/build/cli/src/commands/validation-server.js)_
+  [build/cli/src/commands/validation-server.js](https://github.com/airtasker/spot/blob/v1.3.0/build/cli/src/commands/validation-server.js)_
 
   <!-- commandsstop -->
 42Crunch/vscode-openapi: >
@@ -66448,7 +66419,7 @@ playpauseandstop/rororo: >
   Check `examples </examples>`_ folder to see other examples on how to build
 
   aiohttp.web OpenAPI 3 server applications.
-wI2L/fizz: "\n<h1 align=\"center\">Fizz</h1>\n<p align=\"center\"><img src=\"images/lemon.png\" height=\"200px\" width=\"auto\" alt=\"Gin Fizz\"></p><p align=\"center\">Fizz is a wrapper for <strong>Gin</strong> based on <i>gadgeto/tonic</i>.</p>\n<p align=\"center\">It generates wrapping gin-compatible handlers that do all the repetitive work and wrap the call to your handlers. It can also generates an *almost* complete <strong>OpenAPI 3</strong> specification of your API.</p>\n<p align=\"center\">\n   <a href=\"https://godoc.org/github.com/wI2L/fizz\"><img src=\"https://img.shields.io/badge/godoc-reference-blue.svg\"></a>\n   <a href=\"https://goreportcard.com/report/wI2L/fizz\"><img src=\"https://goreportcard.com/badge/github.com/wI2L/fizz\"></a>\n   <a href=\"https://travis-ci.org/wI2L/fizz\"><img src=\"https://travis-ci.org/wI2L/fizz.svg?branch=master\"></a>\n   <a href=\"https://codecov.io/gh/wI2L/fizz\"><img src=\"https://codecov.io/gh/wI2L/fizz/branch/master/graph/badge.svg\"/></a>\n   <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\"></a>\n<br>\n</p>\n\n---\n\n### Getting started\n\nTo create a Fizz instance, you can pass an existing *Gin* engine to `fizz.NewFromEngine`, or use `fizz.New` that will use a new default *Gin* engine.\n\n```go\nengine := gin.Default()\nengine.Use(...) // register global middlewares\n\nf := fizz.NewFromEngine(engine)\n```\n\nA Fizz instance implements the `http.HandlerFunc` interface, which means it can be used as the base handler of your HTTP server.\n```go\nsrv := &http.Server{\n   Addr:    \":4242\",\n   Handler: f,\n}\nsrv.ListenAndServe()\n```\n\n### Handlers\n\nFizz abstracts the `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD` and `TRACE` methods of a *Gin* engine. These functions accept a variadic list of handlers as the last parameter, but since Fizz relies on *tonic* to retrieve the informations required to generate the *OpenAPI* specification of the operation, **only one of the handlers registered MUST be wrapped with Tonic**.\n\nIn the following example, the `BarHandler` is a simple middleware that will be executed before the `FooHandler`, but the generator will use the input/output type of the `FooHandler` to generate the specification of the operation.\n\n```go\nfunc BarHandler(c *gin.Context) { ... }\nfunc FooHandler(*gin.Context, *Foo) (*Bar, error) { ... }\n\nfizz := fizz.New()\nfizz.GET(\"/foo/bar\", nil, BarHandler, tonic.Handler(FooHandler, 200))\n```\n\nHowever, registering only standard handlers that follow the `gin.HandlerFunc` signature is accepted, but the *OpenAPI* generator will ignore the operation and it won't appear in the specification.\n\n### Operation informations\n\nTo enrich an operation, you can pass a list of optional `OperationOption` functions as the second parameters of the `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS` and `HEAD` methods.\n\n```go\n// Set the default response description.\n// A default status text will be created from the code if it is omitted.\nfizz.StatusDescription(desc string)\n\n// Set the summary of the operation.\nfizz.Summary(summary string)\nfizz.Summaryf(format string, a ...interface{})\n\n// Set the description of the operation.\nfizz.Description(desc string)\nfizz.Descriptionf(format string, a ...interface{})\n\n// Override the ID of the operation.\n// Must be a unique string used to identify the operation among\n// all operations described in the API.\nfizz.ID(id string)\n\n// Mark the operation as deprecated.\nfizz.Deprecated(deprecated bool)\n\n// Add an additional response to the operation.\n// model and header may be `nil`.\nfizz.Response(statusCode, desc string, model interface{}, headers []*ResponseHeader)\n\n// Add an additional header to the default response.\n// Model can be of any type, and may also be `nil`,\n// in which case the string type will be used as default.\nfizz.Header(name, desc string, model interface{})\n\n// Override the binding model of the operation.\nfizz.InputModel(model interface{})\n```\n\n**NOTES:**\n* `fizz.InputModel` allows to override the operation input regardless of how the handler implementation really binds the request parameters. It is the developer responsibility to ensure that the binding matches the OpenAPI specification.\n* The fist argument of the `fizz.Reponse` method which represents an HTTP status code is of type *string* because the spec accept the value `default`. See the [Responses Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#responsesObject) documentation for more informations.\n\nTo help you declare additional headers, predefined variables for Go primitives types that you can use as the third argument of the `fizz.Header` method are available.\n```go\nInteger  int32\nLong     int64\nFloat    float32\nDouble   float64\nString   string\nByte     []byte\nBinary   []byte\nBoolean  bool\nDateTime time.Time\n```\n\n### Groups\n\nExactly like you would do with *Gin*, you can create a group of routes using the method `Group`. Unlike *Gin* own method, Fizz's one takes two other optional arguments, `name` and `description`. These parameters will be used to create a tag in the **OpenAPI** specification that will be applied to all the routes added to the group.\n\n```go\ngrp := f.Group(\"/subpath\", \"MyGroup\", \"Group description\", middlewares...)\n```\nIf the `name` parameter is empty, the tag won't be created and it won't be used.\n\nSubgroups of subgroups can be created to an infinite depth, according yo your needs.\n\n```go\nfoo := f.Group(\"/foo\", \"Foo\", \"Foo group\")\n\n// all routes registered on group bar will have\n// a relative path starting with /foo/bar\nbar := f.Group(\"/bar\", \"Bar\", \"Bar group\")\n\n// /foo/bar/{barID}\nbar.GET(\"/:barID\", nil, tonic.Handler(MyBarHandler, 200))\n```\n\nThe `Use` method can be used with groups to register middlewares after their creation.\n```go\ngrp.Use(middleware1, middleware2, ...)\n```\n\n## Tonic\n\nThe subpackage *tonic* handles path/query/header/body parameters binding in a single consolidated input object which allows you to remove all the boilerplate code that retrieves and tests the presence of various parameters. The *OpenAPI* generator make use of the input/output types informations of a tonic-wrapped handler reported by *tonic* to document the operation in the specification.\n\nThe handlers wrapped with *tonic* must follow the following signature.\n```go\nfunc(*gin.Context, [input object ptr]) ([output object], error)\n```\nInput and output objects are both optional, as such, the minimal accepted signature is:\n```go\nfunc(*gin.Context) error\n```\n\nTo wrap a handler with *tonic*, use the `tonic.Handler` method. It takes a function that follow the above signature and a default status code and return a `gin.HandlerFunc` function that can be used when you register a route with Fizz of *Gin*.\n\nOutput objects can be of any type, and will be marshalled to the desired media type.\nNote that the input object **MUST always be a pointer to a struct**, or the tonic wrapping will panic at runtime.\n\nIf you use closures as handlers, please note that they will all have the same name, and the generator will return an error. To overcome this problem, you have to explicitely set the ID of an operation when you register the handler.\n\n```go\nfunc MyHandler() gin.HandlerFunc {\n   return tonic.Handler(func(c *gin.Context) error {}, 200)\n}\n\nfizz.GET(\"/foo\", []fizz.OperationOption{\n   fizz.ID(\"MyOperationID\")\n}, MyHandler())\n```\n\n### Location tags\n\n*tonic* uses three struct tags to recognize the parameters it should bind to the input object of your tonic-wrapped handlers:\n- `path`: bind from the request path\n- `query`: bind from the query string\n- `header`: bind from the request header\n\nThe fields that doesn't use one of these tags will be considered as part of the request body.\n\nThe value of each struct tag represents the name of the field in each location, with options.\n```go\ntype MyHandlerParams struct {\n   ID  int64     `path:\"id\"`\n   Foo string    `query:\"foo\"`\n   Bar time.Time `header:\"x-foo-bar\"`\n}\n```\n\n*tonic* will automatically convert the value extracted from the location described by the tag to the appropriate type before binding.\n\n**NOTE**: A path parameter is always required and will appear required in the spec regardless of the `validate` tag content.\n\n### Additional tags\n\nYou can use additional tags. Some will be interpreted by *tonic*, others will be exclusively used to enrich the *OpenAPI* specification.\n- `default`: *tonic* will bind this value if none was passed with the request. This should not be used if a field is also required. Read the [documentation](https://swagger.io/docs/specification/describing-parameters/) (section _Common Mistakes_) for more informations about this behaviour.\n- `description`: Add a description of the field in the spec.\n- `deprecated`: Indicates if the field is deprecated. Accepted values are _1_, _t_, _T_, _TRUE_, _true_, _True_, _0_, _f_, _F_, _FALSE_. Invalid value are considered to be false.\n- `enum`: A coma separated list of acceptable values for the parameter.\n- `example`: An example value to be used in OpenAPI specification.\n- `format`: Override the format of the field in the specification. Read the [documentation](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#dataTypeFormat) for more informations.\n- `validate`: Field validation rules. Read the [documentation](https://godoc.org/gopkg.in/go-playground/validator.v8) for more informations.\n- `explode`: Specifies whether arrays should generate separate parameters for each array item or object property (limited to query parameters with *form* style). Accepted values are _1_, _t_, _T_, _TRUE_, _true_, _True_, _0_, _f_, _F_, _FALSE_. Invalid value are considered to be false.\n\n### JSON/XML\n\nThe JSON/XML encoders usually omit a field that has the tag `\"-\"`. This behaviour is reproduced by the *OpenAPI* generator ; a field with this tag won't appear in the properties of the schema.\n\nIn the following example, the field `Input` is used only for binding request body parameters and won't appear in the output encoding while `Output` will be marshaled but will not be used for parameters binding.\n```go\ntype Model struct {\n\tInput  string `json:\"-\"`\n\tOutput string `json:\"output\" binding:\"-\"`\n}\n```\n\n### Request body\n\nIf you want to make a request body field mandatory, you can use the tag `validate:\"required\"`. The validator used by *tonic* will ensure that the field is present.\nTo be able to make a difference between a missing value and the zero value of a type, use a pointer.\n\nTo explicitly ignore a parameter from the request body, use the tag `binding:\"-\"`.\n\nNote that the *OpenAPI* generator will ignore request body parameters for the routes with a method that is one of `GET`, `DELETE` or `HEAD`.\n   > GET, DELETE and HEAD are no longer allowed to have request body because it does not have defined semantics as per [RFC 7231](https://tools.ietf.org/html/rfc7231#section-4.3).\n\t[*source*](https://swagger.io/docs/specification/describing-request-body/)\n\n### Schema validation\n\nThe *OpenAPI* generator recognize some tags of the [go-playground/validator.v8](https://gopkg.in/go-playground/validator.v8) package and translate those to the [properties of the schema](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#properties) that are taken from the [JSON Schema definition](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6).\n\nThe supported tags are: [len](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Length), [max](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Maximum), [min](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Mininum), [eq](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Equals), [gt](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Greater_Than), [gte](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Greater_Than_or_Equal), [lt](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Less_Than), [lte](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Less_Than_or_Equal).\n\nBased on the type of the field that carry the tag, the fields `maximum`, `minimum`, `minLength`, `maxLength`, `minIntems`, `maxItems`, `minProperties` and `maxProperties` of its **JSON Schema** will be filled accordingly.\n\n## OpenAPI specification\n\nTo serve the generated OpenAPI specification in either `JSON` or `YAML` format, use the handler returned by the `fizz.OpenAPI` method.\n\nTo enrich the specification, you can provide additional informations. Head to the [OpenAPI 3 spec](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#infoObject) for more informations about the API informations that you can specify, or take a look at the type `openapi.Info` in the file [_openapi/spec.go_](openapi/spec.go#L25).\n\n```go\ninfos := &openapi.Info{\n   Title:       \"Fruits Market\",\n   Description: `This is a sample Fruits market server.`,\n   Version:     \"1.0.0\",\n}\nf.GET(\"/openapi.json\", nil, fizz.OpenAPI(infos, \"json\"))\n```\n**NOTE**: The generator will never panic. However, it is strongly recommended to call `fizz.Errors` to retrieve and handle the errors that may have occured during the generation of the specification before starting your API.\n\n#### Components\n\nThe output types of your handlers are registered as components within the generated specification. By default, the name used for each component is composed of the package and type name concatenated using _CamelCase_ style, and does not contain the full import path. As such, please ensure that you don't use the same type name in two eponym package in your application.\n\nThe names of the components can be customized in two different ways.\n\n##### Global override\n\nOverride the name of a type globally before registering your handlers. This has the highest precedence.\n```go\nf := fizz.New()\nf.Generator().OverrideTypeName(reflect.TypeOf(T{}), \"OverridedName\")\n```\n\n##### Interface\n\nImplements the `openapi.Typer` interface on your types.\n```go\nfunc (*T) TypeName() string { return \"OverridedName\" }\n```\n**WARNING:** You **MUST** not rely on the method receiver to return the name, because the method will be called on a new instance created by the generator with the `reflect` package.\n\n#### Custom schemas\n\nThe spec generator creates OpenAPI schemas for your types based on their [reflection kind](https://golang.org/pkg/reflect/#Kind).\nIf you want to control the output schema of a type manually, you can implement the `DataType` interface for this type.\n\nFor example, given a UUID version 4 type, declared as a struct, that should appear as a string with a custom format.\n```go\ntype UUIDv4 struct { ... }\n\nfunc (*UUIDv4) Format() string { return \"uuid\" }\nfunc (*UUIDv4) Type() string { return \"string\" }\n```\n\nThe schema of the type will look like the following instead of describing all the fields of the struct.\n```json\n{\n   \"type\": \"string\",\n   \"format\": \"uuid\"\n}\n```\n**WARNING:** You **MUST** not rely on the method receivers to return the type and format, because these methods will be called on a new instance created by the generator with the `reflect` package.\n\nYou can also override manually the type and format using `OverrideDataType()`. This has the highest precedence.\n```go\nfizz.Generator().OverrideDataType(reflect.TypeOf(&UUIDv4{}), \"string\", \"uuid\")\n```\n\n##### Native and imported types support\n\nFizz supports some native and imported types. A schema with a proper type and format will be generated automatically, removing the need for creating your own custom schema.\n\n* [time.Time](https://golang.org/pkg/time/#Time)\n* [time.Duration](https://golang.org/pkg/time/#Duration)\n* [net.URL](https://golang.org/pkg/net/url/#URL)\n* [net.IP](https://golang.org/pkg/net/#IP)  \nNote that, according to the doc, the inherent version of the address is a semantic property, and thus cannot be determined by Fizz. Therefore, the format returned is simply `ip`. If you want to specify the version, you can use the tags `format:\"ipv4\"` or `format:\"ipv6\"`.\n* [uuid.UUID](https://godoc.org/github.com/gofrs/uuid#UUID)\n\n#### Markdown\n\n> Throughout the specification description fields are noted as supporting CommonMark markdown formatting. Where OpenAPI tooling renders rich text it MUST support, at a minimum, markdown syntax as described by CommonMark 0.27. Tooling MAY choose to ignore some CommonMark features to address security concerns.\n[*source*](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#rich-text-formatting)\n\nTo help you write markdown descriptions in Go, a simple builder is available in the sub-package `markdown`. This is quite handy to avoid conflicts with backticks that are both used in Go for litteral multi-lines strings and code blocks in markdown.\n\n## Known limitations\n\n- Since *OpenAPI* is based on the *JSON Schema* specification itself, objects (Go maps) with keys that are not of type `string` are not supported and will be ignored during the generation of the specification.\n- Recursive embedding of the same type is not supported, at any level of recursion. The generator will warn and skip the offending fields.\n   ```go\n   type A struct {\n      Foo int\n      *A   // ko, embedded and same type as parent\n      A *A // ok, not embedded\n      *B   // ok, different type\n   }\n\n   type B struct {\n      Bar string\n      *A // ko, type B is embedded in type A\n      *C // ok, type C does not contains an embedded field of type A\n   }\n\n   type C struct {\n      Baz bool\n   }\n   ```\n\n## Examples\n\nA simple runnable API is available in `examples/market`.\n```shell\ngo build\n./market\n# Retrieve the specification marshaled in JSON.\ncurl -i http://localhost:4242/openapi.json\n```\n\n## Credits\n\nFizz is based on [gin-gonic/gin](https://github.com/gin-gonic/gin) and use [gadgeto/tonic](https://github.com/loopfz/gadgeto/tree/master/tonic). :heart:\n\n<p align=\"right\"><img src=\"https://forthebadge.com/images/badges/built-with-swag.svg\"></p>\n"
+wI2L/fizz: "\n<h1 align=\"center\">Fizz</h1>\n<p align=\"center\"><img src=\"images/lemon.png\" height=\"200px\" width=\"auto\" alt=\"Gin Fizz\"></p><p align=\"center\">Fizz is a wrapper for <strong>Gin</strong> based on <i>gadgeto/tonic</i>.</p>\n<p align=\"center\">It generates wrapping gin-compatible handlers that do all the repetitive work and wrap the call to your handlers. It can also generates an *almost* complete <strong>OpenAPI 3</strong> specification of your API.</p>\n<p align=\"center\">\n   <a href=\"https://godoc.org/github.com/wI2L/fizz\"><img src=\"https://img.shields.io/badge/godoc-reference-blue.svg\"></a>\n   <a href=\"https://goreportcard.com/report/wI2L/fizz\"><img src=\"https://goreportcard.com/badge/github.com/wI2L/fizz\"></a>\n   <a href=\"https://travis-ci.org/wI2L/fizz\"><img src=\"https://travis-ci.org/wI2L/fizz.svg?branch=master\"></a>\n   <a href=\"https://codecov.io/gh/wI2L/fizz\"><img src=\"https://codecov.io/gh/wI2L/fizz/branch/master/graph/badge.svg\"/></a>\n   <a href=\"LICENSE\"><img src=\"https://img.shields.io/badge/license-MIT-blue.svg\"></a>\n<br>\n</p>\n\n---\n\n### Getting started\n\nTo create a Fizz instance, you can pass an existing *Gin* engine to `fizz.NewFromEngine`, or use `fizz.New` that will use a new default *Gin* engine.\n\n```go\nengine := gin.Default()\nengine.Use(...) // register global middlewares\n\nf := fizz.NewFromEngine(engine)\n```\n\nA Fizz instance implements the `http.HandlerFunc` interface, which means it can be used as the base handler of your HTTP server.\n```go\nsrv := &http.Server{\n   Addr:    \":4242\",\n   Handler: f,\n}\nsrv.ListenAndServe()\n```\n\n### Handlers\n\nFizz abstracts the `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD` and `TRACE` methods of a *Gin* engine. These functions accept a variadic list of handlers as the last parameter, but since Fizz relies on *tonic* to retrieve the informations required to generate the *OpenAPI* specification of the operation, **only one of the handlers registered MUST be wrapped with Tonic**.\n\nIn the following example, the `BarHandler` is a simple middleware that will be executed before the `FooHandler`, but the generator will use the input/output type of the `FooHandler` to generate the specification of the operation.\n\n```go\nfunc BarHandler(c *gin.Context) { ... }\nfunc FooHandler(*gin.Context, *Foo) (*Bar, error) { ... }\n\nfizz := fizz.New()\nfizz.GET(\"/foo/bar\", nil, BarHandler, tonic.Handler(FooHandler, 200))\n```\n\nHowever, registering only standard handlers that follow the `gin.HandlerFunc` signature is accepted, but the *OpenAPI* generator will ignore the operation and it won't appear in the specification.\n\n### Operation informations\n\nTo enrich an operation, you can pass a list of optional `OperationOption` functions as the second parameters of the `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS` and `HEAD` methods.\n\n```go\n// Set the default response description.\n// A default status text will be created from the code if it is omitted.\nfizz.StatusDescription(desc string)\n\n// Set the summary of the operation.\nfizz.Summary(summary string)\nfizz.Summaryf(format string, a ...interface{})\n\n// Set the description of the operation.\nfizz.Description(desc string)\nfizz.Descriptionf(format string, a ...interface{})\n\n// Override the ID of the operation.\n// Must be a unique string used to identify the operation among\n// all operations described in the API.\nfizz.ID(id string)\n\n// Mark the operation as deprecated.\nfizz.Deprecated(deprecated bool)\n\n// Add an additional response to the operation.\n// The example argument will populate a single example in the response schema.\n// For populating multiple examples, use fizz.ResponseWithExamples.\n// Notice that example and examples fields are mutually exclusive.\n// model, header, and example may be `nil`.\nfizz.Response(statusCode, desc string, model interface{}, headers []*ResponseHeader, example interface{})\n\n// ResponseWithExamples is a variant of Response that supports providing multiple examples.\n// Examples argument will populate multiple examples in the response schema.\n// For populating a single example, use fizz.Response.\n// Notice that example and examples fields are mutually exclusive.\n// model, header, and examples may be `nil`.\nfizz.ResponseWithExamples(statusCode, desc string, model interface{}, headers []*ResponseHeader, examples map[string]interface{})\n\n// Add an additional header to the default response.\n// Model can be of any type, and may also be `nil`,\n// in which case the string type will be used as default.\nfizz.Header(name, desc string, model interface{})\n\n// Override the binding model of the operation.\nfizz.InputModel(model interface{})\n```\n\n**NOTES:**\n* `fizz.InputModel` allows to override the operation input regardless of how the handler implementation really binds the request parameters. It is the developer responsibility to ensure that the binding matches the OpenAPI specification.\n* The fist argument of the `fizz.Reponse` method which represents an HTTP status code is of type *string* because the spec accept the value `default`. See the [Responses Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#responsesObject) documentation for more informations.\n\nTo help you declare additional headers, predefined variables for Go primitives types that you can use as the third argument of the `fizz.Header` method are available.\n```go\nInteger  int32\nLong     int64\nFloat    float32\nDouble   float64\nString   string\nByte     []byte\nBinary   []byte\nBoolean  bool\nDateTime time.Time\n```\n\n### Groups\n\nExactly like you would do with *Gin*, you can create a group of routes using the method `Group`. Unlike *Gin* own method, Fizz's one takes two other optional arguments, `name` and `description`. These parameters will be used to create a tag in the **OpenAPI** specification that will be applied to all the routes added to the group.\n\n```go\ngrp := f.Group(\"/subpath\", \"MyGroup\", \"Group description\", middlewares...)\n```\nIf the `name` parameter is empty, the tag won't be created and it won't be used.\n\nSubgroups of subgroups can be created to an infinite depth, according yo your needs.\n\n```go\nfoo := f.Group(\"/foo\", \"Foo\", \"Foo group\")\n\n// all routes registered on group bar will have\n// a relative path starting with /foo/bar\nbar := f.Group(\"/bar\", \"Bar\", \"Bar group\")\n\n// /foo/bar/{barID}\nbar.GET(\"/:barID\", nil, tonic.Handler(MyBarHandler, 200))\n```\n\nThe `Use` method can be used with groups to register middlewares after their creation.\n```go\ngrp.Use(middleware1, middleware2, ...)\n```\n\n## Tonic\n\nThe subpackage *tonic* handles path/query/header/body parameters binding in a single consolidated input object which allows you to remove all the boilerplate code that retrieves and tests the presence of various parameters. The *OpenAPI* generator make use of the input/output types informations of a tonic-wrapped handler reported by *tonic* to document the operation in the specification.\n\nThe handlers wrapped with *tonic* must follow the following signature.\n```go\nfunc(*gin.Context, [input object ptr]) ([output object], error)\n```\nInput and output objects are both optional, as such, the minimal accepted signature is:\n```go\nfunc(*gin.Context) error\n```\n\nTo wrap a handler with *tonic*, use the `tonic.Handler` method. It takes a function that follow the above signature and a default status code and return a `gin.HandlerFunc` function that can be used when you register a route with Fizz of *Gin*.\n\nOutput objects can be of any type, and will be marshalled to the desired media type.\nNote that the input object **MUST always be a pointer to a struct**, or the tonic wrapping will panic at runtime.\n\nIf you use closures as handlers, please note that they will all have the same name, and the generator will return an error. To overcome this problem, you have to explicitely set the ID of an operation when you register the handler.\n\n```go\nfunc MyHandler() gin.HandlerFunc {\n   return tonic.Handler(func(c *gin.Context) error {}, 200)\n}\n\nfizz.GET(\"/foo\", []fizz.OperationOption{\n   fizz.ID(\"MyOperationID\")\n}, MyHandler())\n```\n\n### Location tags\n\n*tonic* uses three struct tags to recognize the parameters it should bind to the input object of your tonic-wrapped handlers:\n- `path`: bind from the request path\n- `query`: bind from the query string\n- `header`: bind from the request header\n\nThe fields that doesn't use one of these tags will be considered as part of the request body.\n\nThe value of each struct tag represents the name of the field in each location, with options.\n```go\ntype MyHandlerParams struct {\n   ID  int64     `path:\"id\"`\n   Foo string    `query:\"foo\"`\n   Bar time.Time `header:\"x-foo-bar\"`\n}\n```\n\n*tonic* will automatically convert the value extracted from the location described by the tag to the appropriate type before binding.\n\n**NOTE**: A path parameter is always required and will appear required in the spec regardless of the `validate` tag content.\n\n### Additional tags\n\nYou can use additional tags. Some will be interpreted by *tonic*, others will be exclusively used to enrich the *OpenAPI* specification.\n- `default`: *tonic* will bind this value if none was passed with the request. This should not be used if a field is also required. Read the [documentation](https://swagger.io/docs/specification/describing-parameters/) (section _Common Mistakes_) for more informations about this behaviour.\n- `description`: Add a description of the field in the spec.\n- `deprecated`: Indicates if the field is deprecated. Accepted values are _1_, _t_, _T_, _TRUE_, _true_, _True_, _0_, _f_, _F_, _FALSE_. Invalid value are considered to be false.\n- `enum`: A coma separated list of acceptable values for the parameter.\n- `example`: An example value to be used in OpenAPI specification.\n- `format`: Override the format of the field in the specification. Read the [documentation](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#dataTypeFormat) for more informations.\n- `validate`: Field validation rules. Read the [documentation](https://godoc.org/gopkg.in/go-playground/validator.v8) for more informations.\n- `explode`: Specifies whether arrays should generate separate parameters for each array item or object property (limited to query parameters with *form* style). Accepted values are _1_, _t_, _T_, _TRUE_, _true_, _True_, _0_, _f_, _F_, _FALSE_. Invalid value are considered to be false.\n\n### JSON/XML\n\nThe JSON/XML encoders usually omit a field that has the tag `\"-\"`. This behaviour is reproduced by the *OpenAPI* generator ; a field with this tag won't appear in the properties of the schema.\n\nIn the following example, the field `Input` is used only for binding request body parameters and won't appear in the output encoding while `Output` will be marshaled but will not be used for parameters binding.\n```go\ntype Model struct {\n\tInput  string `json:\"-\"`\n\tOutput string `json:\"output\" binding:\"-\"`\n}\n```\n\n### Request body\n\nIf you want to make a request body field mandatory, you can use the tag `validate:\"required\"`. The validator used by *tonic* will ensure that the field is present.\nTo be able to make a difference between a missing value and the zero value of a type, use a pointer.\n\nTo explicitly ignore a parameter from the request body, use the tag `binding:\"-\"`.\n\nNote that the *OpenAPI* generator will ignore request body parameters for the routes with a method that is one of `GET`, `DELETE` or `HEAD`.\n   > GET, DELETE and HEAD are no longer allowed to have request body because it does not have defined semantics as per [RFC 7231](https://tools.ietf.org/html/rfc7231#section-4.3).\n\t[*source*](https://swagger.io/docs/specification/describing-request-body/)\n\n### Schema validation\n\nThe *OpenAPI* generator recognize some tags of the [go-playground/validator.v8](https://gopkg.in/go-playground/validator.v8) package and translate those to the [properties of the schema](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#properties) that are taken from the [JSON Schema definition](http://json-schema.org/latest/json-schema-validation.html#rfc.section.6).\n\nThe supported tags are: [len](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Length), [max](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Maximum), [min](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Mininum), [eq](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Equals), [gt](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Greater_Than), [gte](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Greater_Than_or_Equal), [lt](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Less_Than), [lte](https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Less_Than_or_Equal).\n\nBased on the type of the field that carry the tag, the fields `maximum`, `minimum`, `minLength`, `maxLength`, `minIntems`, `maxItems`, `minProperties` and `maxProperties` of its **JSON Schema** will be filled accordingly.\n\n## OpenAPI specification\n\nTo serve the generated OpenAPI specification in either `JSON` or `YAML` format, use the handler returned by the `fizz.OpenAPI` method.\n\nTo enrich the specification, you can provide additional informations. Head to the [OpenAPI 3 spec](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#infoObject) for more informations about the API informations that you can specify, or take a look at the type `openapi.Info` in the file [_openapi/spec.go_](openapi/spec.go#L25).\n\n```go\ninfos := &openapi.Info{\n   Title:       \"Fruits Market\",\n   Description: `This is a sample Fruits market server.`,\n   Version:     \"1.0.0\",\n}\nf.GET(\"/openapi.json\", nil, fizz.OpenAPI(infos, \"json\"))\n```\n**NOTE**: The generator will never panic. However, it is strongly recommended to call `fizz.Errors` to retrieve and handle the errors that may have occured during the generation of the specification before starting your API.\n\n#### Components\n\nThe output types of your handlers are registered as components within the generated specification. By default, the name used for each component is composed of the package and type name concatenated using _CamelCase_ style, and does not contain the full import path. As such, please ensure that you don't use the same type name in two eponym package in your application.\n\nThe names of the components can be customized in two different ways.\n\n##### Global override\n\nOverride the name of a type globally before registering your handlers. This has the highest precedence.\n```go\nf := fizz.New()\nf.Generator().OverrideTypeName(reflect.TypeOf(T{}), \"OverridedName\")\n```\n\n##### Interface\n\nImplements the `openapi.Typer` interface on your types.\n```go\nfunc (*T) TypeName() string { return \"OverridedName\" }\n```\n**WARNING:** You **MUST** not rely on the method receiver to return the name, because the method will be called on a new instance created by the generator with the `reflect` package.\n\n#### Custom schemas\n\nThe spec generator creates OpenAPI schemas for your types based on their [reflection kind](https://golang.org/pkg/reflect/#Kind).\nIf you want to control the output schema of a type manually, you can implement the `DataType` interface for this type.\n\nFor example, given a UUID version 4 type, declared as a struct, that should appear as a string with a custom format.\n```go\ntype UUIDv4 struct { ... }\n\nfunc (*UUIDv4) Format() string { return \"uuid\" }\nfunc (*UUIDv4) Type() string { return \"string\" }\n```\n\nThe schema of the type will look like the following instead of describing all the fields of the struct.\n```json\n{\n   \"type\": \"string\",\n   \"format\": \"uuid\"\n}\n```\n**WARNING:** You **MUST** not rely on the method receivers to return the type and format, because these methods will be called on a new instance created by the generator with the `reflect` package.\n\nYou can also override manually the type and format using `OverrideDataType()`. This has the highest precedence.\n```go\nfizz.Generator().OverrideDataType(reflect.TypeOf(&UUIDv4{}), \"string\", \"uuid\")\n```\n\n##### Native and imported types support\n\nFizz supports some native and imported types. A schema with a proper type and format will be generated automatically, removing the need for creating your own custom schema.\n\n* [time.Time](https://golang.org/pkg/time/#Time)\n* [time.Duration](https://golang.org/pkg/time/#Duration)\n* [net.URL](https://golang.org/pkg/net/url/#URL)\n* [net.IP](https://golang.org/pkg/net/#IP)  \nNote that, according to the doc, the inherent version of the address is a semantic property, and thus cannot be determined by Fizz. Therefore, the format returned is simply `ip`. If you want to specify the version, you can use the tags `format:\"ipv4\"` or `format:\"ipv6\"`.\n* [uuid.UUID](https://godoc.org/github.com/gofrs/uuid#UUID)\n\n#### Markdown\n\n> Throughout the specification description fields are noted as supporting CommonMark markdown formatting. Where OpenAPI tooling renders rich text it MUST support, at a minimum, markdown syntax as described by CommonMark 0.27. Tooling MAY choose to ignore some CommonMark features to address security concerns.\n[*source*](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#rich-text-formatting)\n\nTo help you write markdown descriptions in Go, a simple builder is available in the sub-package `markdown`. This is quite handy to avoid conflicts with backticks that are both used in Go for litteral multi-lines strings and code blocks in markdown.\n\n## Known limitations\n\n- Since *OpenAPI* is based on the *JSON Schema* specification itself, objects (Go maps) with keys that are not of type `string` are not supported and will be ignored during the generation of the specification.\n- Recursive embedding of the same type is not supported, at any level of recursion. The generator will warn and skip the offending fields.\n   ```go\n   type A struct {\n      Foo int\n      *A   // ko, embedded and same type as parent\n      A *A // ok, not embedded\n      *B   // ok, different type\n   }\n\n   type B struct {\n      Bar string\n      *A // ko, type B is embedded in type A\n      *C // ok, type C does not contains an embedded field of type A\n   }\n\n   type C struct {\n      Baz bool\n   }\n   ```\n\n## Examples\n\nA simple runnable API is available in `examples/market`.\n```shell\ngo build\n./market\n# Retrieve the specification marshaled in JSON.\ncurl -i http://localhost:4242/openapi.json\n```\n\n## Credits\n\nFizz is based on [gin-gonic/gin](https://github.com/gin-gonic/gin) and use [gadgeto/tonic](https://github.com/loopfz/gadgeto/tree/master/tonic). :heart:\n\n<p align=\"right\"><img src=\"https://forthebadge.com/images/badges/built-with-swag.svg\"></p>\n"
 leosussan/fastapi-gino-arq-uvicorn: >
   # fastapi-gino-arq-uvicorn
 
@@ -67350,7 +67321,7 @@ networknt/json-schema-validator: >+
   <dependency>
       <groupId>com.networknt</groupId>
       <artifactId>json-schema-validator</artifactId>
-      <version>1.0.43</version>
+      <version>1.0.45</version>
   </dependency>
 
   ```
@@ -67362,7 +67333,7 @@ networknt/json-schema-validator: >+
   ```
 
   dependencies {
-      compile(group: "com.networknt", name: "json-schema-validator", version: "1.0.43");
+      compile(group: "com.networknt", name: "json-schema-validator", version: "1.0.45");
   }
 
   ```
@@ -80440,8 +80411,9 @@ madkote/fastapi-plugins: >
   FastAPI framework plugins
 
 
-  * [Redis](#redis)
-
+  * [Cache](#cache)
+    * [Memcached](#memcached)
+    * [Redis](#redis)
   * [Scheduler](#scheduler)
 
   * Celery
@@ -80462,16 +80434,88 @@ madkote/fastapi-plugins: >
 
   ## Installation
 
+  * by default contains only [Redis](#redis) and [Scheduler](#scheduler)
+
+  * `memcached` adds [Memcached](#memcached)
+
+  * `all` add everything above
+
+
   ```sh
 
   pip install fastapi-plugins
+
+  pip install fastapi-plugins[memcached]
+
+  pip install fastapi-plugins[all]
 
   ```
 
 
   ## Plugins
 
-  ### Redis
+  ### Cache
+
+  #### Memcached
+
+  Valid variable are
+
+  * `MEMCACHED_HOST` - Memcached server host.
+
+  * `MEMCACHED_PORT` - Memcached server port. Default is `11211`.
+
+  * `MEMCACHED_POOL_MINSIZE` - Minimum number of free connection to create in
+  pool. Default is `1`.
+
+  * `MEMCACHED_POOL_SIZE` -  Maximum number of connection to keep in pool.
+  Default is `10`. Must be greater than `0`. `None` is disallowed.
+
+  * `MEMCACHED_PRESTART_TRIES` - The number tries to connect to the a Memcached
+  instance.
+
+  * `MEMCACHED_PRESTART_WAIT` - The interval in seconds to wait between
+  connection failures on application start.
+
+
+  ##### Example
+
+  ```python
+      # run with `uvicorn demo_app:app`
+      import typing
+      import fastapi
+      import pydantic
+      
+      from fastapi_plugins.memcached import MemcachedSettings
+      from fastapi_plugins.memcached import MemcachedClient
+      from fastapi_plugins.memcached import memcached_plugin
+      from fastapi_plugins.memcached import depends_memcached
+      
+      class AppSettings(OtherSettings, MemcachedSettings):
+          api_name: str = str(__name__)
+      
+      app = fastapi.FastAPI()
+      config = AppSettings()
+      
+      @app.get("/")
+      async def root_get(
+              cache: MemcachedClient=fastapi.Depends(depends_memcached),
+      ) -> typing.Dict:
+          await cache.set(b'Hello', b'World')
+          await cache.get(b'Hello')
+          return dict(ping=await cache.ping())
+      
+      @app.on_event('startup')
+      async def on_startup() -> None:
+          await memcached_plugin.init_app(app, config=config)
+          await memcached_plugin.init()
+      
+      @app.on_event('shutdown')
+      async def on_shutdown() -> None:
+          await memcached_plugin.terminate()
+  ```
+
+
+  #### Redis
 
   Supports
 
@@ -80479,15 +80523,12 @@ madkote/fastapi-plugins: >
 
   * sentinel
 
-  * fake redis **NOT SUPPORTED NOW**
-
 
   Valid variable are
 
   * `REDIS_TYPE`
-    * `redis` - single Redis isntance
+    * `redis` - single Redis instance
     * `sentinel` - Redis cluster
-    * `fake` - by using fake Redis
   * `REDIS_URL` - URL to connect to Redis server. Example
     `redis://user:password@localhost:6379/2`. Supports protocols `redis://`,
     `rediss://` (redis over TLS) and `unix://`.
@@ -80502,7 +80543,7 @@ madkote/fastapi-plugins: >
   * `REDIS_CONNECTION_TIMEOUT` - Redis connection timeout. Default is `2`.
 
   * `REDIS_POOL_MINSIZE` - Minimum number of free connection to create in pool.
-  Default is `0`.
+  Default is `1`.
 
   * `REDIS_POOL_MAXSIZE` -  Maximum number of connection to keep in pool.
   Default is `10`. Must be greater than `0`. `None` is disallowed.
@@ -80519,52 +80560,40 @@ madkote/fastapi-plugins: >
   failures on application start.
 
 
-  #### Example
+  ##### Example
 
   ```python
-
-  # run with `uvicorn demo_app:app`
-
-  import typing
-
-  import aioredis
-
-  import fastapi
-
-  import pydantic
-
-  import fastapi_plugins
-
-
-  class AppSettings(OtherSettings, fastapi_plugins.RedisSettings):
-      api_name: str = str(__name__)
-
-  app = fastapi.FastAPI()
-
-  config = AppSettings()
-
-
-  @app.get("/")
-
-  async def root_get(
-          cache: aioredis.Redis=fastapi.Depends(fastapi_plugins.depends_redis),
-  ) -> typing.Dict:
-      return dict(ping=await cache.ping())
-
-  @app.on_event('startup')
-
-  async def on_startup() -> None:
-      await fastapi_plugins.redis_plugin.init_app(app, config=config)
-      await fastapi_plugins.redis_plugin.init()
-
-  @app.on_event('shutdown')
-
-  async def on_shutdown() -> None:
-      await fastapi_plugins.redis_plugin.terminate()
+      # run with `uvicorn demo_app:app`
+      import typing
+      import aioredis
+      import fastapi
+      import pydantic
+      import fastapi_plugins
+      
+      class AppSettings(OtherSettings, fastapi_plugins.RedisSettings):
+          api_name: str = str(__name__)
+      
+      app = fastapi.FastAPI()
+      config = AppSettings()
+      
+      @app.get("/")
+      async def root_get(
+              cache: aioredis.Redis=fastapi.Depends(fastapi_plugins.depends_redis),
+      ) -> typing.Dict:
+          return dict(ping=await cache.ping())
+      
+      @app.on_event('startup')
+      async def on_startup() -> None:
+          await fastapi_plugins.redis_plugin.init_app(app, config=config)
+          await fastapi_plugins.redis_plugin.init()
+      
+      @app.on_event('shutdown')
+      async def on_shutdown() -> None:
+          await fastapi_plugins.redis_plugin.terminate()
   ```
 
 
-  #### Example with Docker Compose - Redis
+  ##### Example with Docker Compose - Redis
 
   ```YAML
 
@@ -80586,7 +80615,7 @@ madkote/fastapi-plugins: >
   ```
 
 
-  #### Example with Docker Compose - Redis Sentinel
+  ##### Example with Docker Compose - Redis Sentinel
 
   ```YAML
 
