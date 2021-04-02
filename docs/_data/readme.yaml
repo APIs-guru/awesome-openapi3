@@ -36214,7 +36214,8 @@ slanatech/swagger-stats: >
 
   If you haven't added prom-client already, you should do this now. It's a [peer
   dependency](https://nodejs.org/en/blog/npm/peer-dependencies) of swagger-stats
-  as of version x.x.x.
+  as of version
+  [0.95.19](https://github.com/slanatech/swagger-stats/releases/tag/v0.95.19).
 
 
   ```
@@ -51295,6 +51296,9 @@ koumoul-dev/data-fair: >
   (french)](https://koumoul-dev.github.io/data-fair/2/)
 
 
+  ![](doc/static/data-fair.gif)
+
+
   ## Development environment
 
 
@@ -64027,7 +64031,7 @@ Redocly/redoc: >
   - `element` DOM element to put ReDoc into
 
   - `callback` (optional) - callback to be called after Redoc has been fully
-  rendered. It is also called also on errors with error as the first argument
+  rendered. It is also called on errors with error as the first argument
 
 
   ```js
@@ -66600,7 +66604,7 @@ networknt/json-schema-validator: >+
   <dependency>
       <groupId>com.networknt</groupId>
       <artifactId>json-schema-validator</artifactId>
-      <version>1.0.50</version>
+      <version>1.0.51</version>
   </dependency>
 
   ```
@@ -66612,7 +66616,7 @@ networknt/json-schema-validator: >+
   ```
 
   dependencies {
-      compile(group: "com.networknt", name: "json-schema-validator", version: "1.0.50");
+      compile(group: "com.networknt", name: "json-schema-validator", version: "1.0.51");
   }
 
   ```
@@ -79803,23 +79807,31 @@ madkote/fastapi-plugins: >
 
   # fastapi-plugins
 
-  FastAPI framework plugins
+  FastAPI framework plugins - simple way to share `fastapi` code and utilities
+  across applications.
 
 
-  * [Cache](#cache)
-    * [Memcached](#memcached)
-    * [Redis](#redis)
-  * [Scheduler](#scheduler)
+  The concept is `plugin` - plug a functional utility into your application
+  without or with minimal effort.
+
+
+  * [Cache](./docs/cache.md)
+    * [Memcached](./docs/cache.md#memcached)
+    * [Redis](./docs/cache.md#redis)
+  * [Scheduler](./docs/scheduler.md)
+
+  * [Control](./docs/control.md)
+    * [Version](./docs/control.md#version)
+    * [Environment](./docs/control.md#environment)
+    * [Health](./docs/control.md#health)
+    * [Heartbeat](./docs/control.md#heartbeat)
+  * [Application settings/configuration](./docs/settings.md)
 
   * Celery
 
   * MQ
 
-  * Logging
-
-  * Health
-
-  * Common
+  * and much more is already in progress...
 
 
   ## Changes
@@ -79829,8 +79841,10 @@ madkote/fastapi-plugins: >
 
   ## Installation
 
-  * by default contains only [Redis](#redis) and [Scheduler](#scheduler)
-
+  * by default contains
+    * [Redis](./docs/cache.md#redis)
+    * [Scheduler](./docs/scheduler.md)
+    * [Control](./docs/control.md)
   * `memcached` adds [Memcached](#memcached)
 
   * `all` add everything above
@@ -79847,230 +79861,75 @@ madkote/fastapi-plugins: >
   ```
 
 
-  ## Plugins
+  ## Quick start
 
-  ### Cache
+  ### Plugin
 
-  #### Memcached
+  Add information about plugin system.
 
-  Valid variable are
+  ### Application settings
 
-  * `MEMCACHED_HOST` - Memcached server host.
+  Add information about settings.
 
-  * `MEMCACHED_PORT` - Memcached server port. Default is `11211`.
+  ### Application configuration
 
-  * `MEMCACHED_POOL_MINSIZE` - Minimum number of free connection to create in
-  pool. Default is `1`.
+  Add information about configuration of an application
 
-  * `MEMCACHED_POOL_SIZE` -  Maximum number of connection to keep in pool.
-  Default is `10`. Must be greater than `0`. `None` is disallowed.
-
-  * `MEMCACHED_PRESTART_TRIES` - The number tries to connect to the a Memcached
-  instance.
-
-  * `MEMCACHED_PRESTART_WAIT` - The interval in seconds to wait between
-  connection failures on application start.
-
-
-  ##### Example
-
-  ```python
-      # run with `uvicorn demo_app:app`
-      import typing
-      import fastapi
-      import pydantic
-      
-      from fastapi_plugins.memcached import MemcachedSettings
-      from fastapi_plugins.memcached import MemcachedClient
-      from fastapi_plugins.memcached import memcached_plugin
-      from fastapi_plugins.memcached import depends_memcached
-      
-      class AppSettings(OtherSettings, MemcachedSettings):
-          api_name: str = str(__name__)
-      
-      app = fastapi.FastAPI()
-      config = AppSettings()
-      
-      @app.get("/")
-      async def root_get(
-              cache: MemcachedClient=fastapi.Depends(depends_memcached),
-      ) -> typing.Dict:
-          await cache.set(b'Hello', b'World')
-          await cache.get(b'Hello')
-          return dict(ping=await cache.ping())
-      
-      @app.on_event('startup')
-      async def on_startup() -> None:
-          await memcached_plugin.init_app(app, config=config)
-          await memcached_plugin.init()
-      
-      @app.on_event('shutdown')
-      async def on_shutdown() -> None:
-          await memcached_plugin.terminate()
-  ```
-
-
-  #### Redis
-
-  Supports
-
-  * single instance
-
-  * sentinel
-
-
-  Valid variable are
-
-  * `REDIS_TYPE`
-    * `redis` - single Redis instance
-    * `sentinel` - Redis cluster
-  * `REDIS_URL` - URL to connect to Redis server. Example
-    `redis://user:password@localhost:6379/2`. Supports protocols `redis://`,
-    `rediss://` (redis over TLS) and `unix://`.
-  * `REDIS_HOST` - Redis server host.
-
-  * `REDIS_PORT` - Redis server port. Default is `6379`.
-
-  * `REDIS_PASSWORD` - Redis password for server.
-
-  * `REDIS_DB` - Redis db (zero-based number index). Default is `0`.
-
-  * `REDIS_CONNECTION_TIMEOUT` - Redis connection timeout. Default is `2`.
-
-  * `REDIS_POOL_MINSIZE` - Minimum number of free connection to create in pool.
-  Default is `1`.
-
-  * `REDIS_POOL_MAXSIZE` -  Maximum number of connection to keep in pool.
-  Default is `10`. Must be greater than `0`. `None` is disallowed.
-
-  * `REDIS_SENTINELS` - List or a tuple of Redis sentinel addresses.
-
-  * `REDIS_SENTINEL_MASTER` - The name of the master server in a sentinel
-  configuration. Default is `mymaster`.
-
-  * `REDIS_PRESTART_TRIES` - The number tries to connect to the a Redis
-  instance.
-
-  * `REDIS_PRESTART_WAIT` - The interval in seconds to wait between connection
-  failures on application start.
-
-
-  ##### Example
-
-  ```python
-      # run with `uvicorn demo_app:app`
-      import typing
-      import aioredis
-      import fastapi
-      import pydantic
-      import fastapi_plugins
-      
-      class AppSettings(OtherSettings, fastapi_plugins.RedisSettings):
-          api_name: str = str(__name__)
-      
-      app = fastapi.FastAPI()
-      config = AppSettings()
-      
-      @app.get("/")
-      async def root_get(
-              cache: aioredis.Redis=fastapi.Depends(fastapi_plugins.depends_redis),
-      ) -> typing.Dict:
-          return dict(ping=await cache.ping())
-      
-      @app.on_event('startup')
-      async def on_startup() -> None:
-          await fastapi_plugins.redis_plugin.init_app(app, config=config)
-          await fastapi_plugins.redis_plugin.init()
-      
-      @app.on_event('shutdown')
-      async def on_shutdown() -> None:
-          await fastapi_plugins.redis_plugin.terminate()
-  ```
-
-
-  ##### Example with Docker Compose - Redis
-
-  ```YAML
-
-  version: '3.7'
-
-  services:
-    redis:
-      image: redis
-      ports:
-        - "6379:6379"
-    demo_fastapi_plugin:
-      image:    demo_fastapi_plugin
-      environment:
-        - REDIS_TYPE=redis
-        - REDIS_HOST=redis
-        - REDIS_PORT=6379
-      ports:
-        - "8000:8000"
-  ```
-
-
-  ##### Example with Docker Compose - Redis Sentinel
-
-  ```YAML
-
-  version: '3.7'
-
-  services:
-    ...
-    redis-sentinel:
-      ports:
-        - "26379:26379"
-      environment:
-        - ...
-      links:
-        - redis-master
-        - redis-slave
-    demo_fastapi_plugin:
-      image:    demo_fastapi_plugin
-      environment:
-        - REDIS_TYPE=sentinel
-        - REDIS_SENTINELS=redis-sentinel:26379
-      ports:
-        - "8000:8000"
-  ```
-
-
-  ### Scheduler
-
-  Simple schedule an _awaitable_ job as a task. 
-
-  * _long_ running `async` functions (e.g. monitor a file a system or events)
-
-  * gracefully cancel spawned tasks
-
-
-  Valid variable are:
-
-  * `AIOJOBS_CLOSE_TIMEOUT` - The timeout in seconds before canceling a task.
-
-  * `AIOJOBS_LIMIT` - The number of concurrent tasks to be executed.
-
-  * `AIOJOBS_PENDING_LIMIT` - The number of pending jobs (waiting fr execution).
-
-
+  ### Complete example
 
   ```python
 
-  '''run with `uvicorn demo_app:app` '''
-
-  import ...
+  import fastapi
 
   import fastapi_plugins
 
 
-  class AppSettings(OtherSettings, fastapi_plugins.RedisSettings,
-  fastapi_plugins.SchedulerSettings):
+  from fastapi_plugins.memcached import MemcachedSettings
+
+  from fastapi_plugins.memcached import MemcachedClient
+
+  from fastapi_plugins.memcached import depends_memcached
+
+  from fastapi_plugins.memcached import memcached_plugin
+
+
+  import asyncio
+
+  import aiojobs
+
+  import aioredis
+
+
+  @fastapi_plugins.registered_configuration
+
+  class AppSettings(
+          fastapi_plugins.ControlSettings,
+          fastapi_plugins.RedisSettings,
+          fastapi_plugins.SchedulerSettings,
+          MemcachedSettings,
+  ):
       api_name: str = str(__name__)
+
+
+  @fastapi_plugins.registered_configuration(name='sentinel')
+
+  class AppSettingsSentinel(AppSettings):
+      redis_type = fastapi_plugins.RedisType.sentinel
+      redis_sentinels = 'localhost:26379'
+
 
   app = fastapi.FastAPI()
 
-  config = AppSettings()
+  config = fastapi_plugins.get_config()
+
+
+  @app.get("/")
+
+  async def root_get(
+          cache: aioredis.Redis=fastapi.Depends(fastapi_plugins.depends_redis),
+          conf: pydantic.BaseSettings=fastapi.Depends(fastapi_plugins.depends_config) # noqa E501
+  ) -> typing.Dict:
+      return dict(ping=await cache.ping(), api_name=conf.api_name)
 
 
   @app.post("/jobs/schedule/<timeout>")
@@ -80078,7 +79937,7 @@ madkote/fastapi-plugins: >
   async def job_post(
       timeout: int=fastapi.Query(..., title='the job sleep time'),
       cache: aioredis.Redis=fastapi.Depends(fastapi_plugins.depends_redis),
-      scheduler: aiojobs.Scheduler=fastapi.Depends(fastapi_plugins.depends_scheduler),  # @IgnorePep8
+      scheduler: aiojobs.Scheduler=fastapi.Depends(fastapi_plugins.depends_scheduler),  # noqa E501
   ) -> str:
       async def coro(job_id, timeout, cache):
           await cache.set(job_id, 'processing')
@@ -80098,6 +79957,7 @@ madkote/fastapi-plugins: >
       await scheduler.spawn(coro(job_id, timeout, cache))
       return job_id
 
+
   @app.get("/jobs/status/<job_id>")
 
   async def job_get(
@@ -80112,28 +79972,53 @@ madkote/fastapi-plugins: >
           )
       return dict(job_id=job_id, status=status)
 
+
+  @app.post("/memcached/demo/<key>")
+
+  async def memcached_demo_post(
+      key: str=fastapi.Query(..., title='the job id'),
+      cache: MemcachedClient=fastapi.Depends(depends_memcached),
+  ) -> typing.Dict:
+      await cache.set(key.encode(), str(key + '_value').encode())
+      value = await cache.get(key.encode())
+      return dict(ping=(await cache.ping()).decode(), key=key, value=value)
+
+
   @app.on_event('startup')
 
   async def on_startup() -> None:
+      await fastapi_plugins.config_plugin.init_app(app, config)
+      await fastapi_plugins.config_plugin.init()
+      await memcached_plugin.init_app(app, config)
+      await memcached_plugin.init()
       await fastapi_plugins.redis_plugin.init_app(app, config=config)
       await fastapi_plugins.redis_plugin.init()
       await fastapi_plugins.scheduler_plugin.init_app(app=app, config=config)
       await fastapi_plugins.scheduler_plugin.init()
+      await fastapi_plugins.control_plugin.init_app(
+          app,
+          config=config,
+          version=__version__,
+          environ=config.dict()
+      )
+      await fastapi_plugins.control_plugin.init()
+
 
   @app.on_event('shutdown')
 
   async def on_shutdown() -> None:
+      await fastapi_plugins.control_plugin.terminate()
       await fastapi_plugins.scheduler_plugin.terminate()
       await fastapi_plugins.redis_plugin.terminate()
+      await memcached_plugin.terminate()
+      await fastapi_plugins.config_plugin.terminate()
   ```
-
-
-  ### ... more already in progress ...
 
 
   # Development
 
-  Issues and suggestions are welcome through *issues*
+  Issues and suggestions are welcome through
+  [issues](https://github.com/madkote/fastapi-plugins/issues)
 
 
   # License
@@ -81650,6 +81535,12 @@ ccouzens/keycloak-openapi: >
   ## Notable Changes
 
 
+  2021 Early - Renamed master branch to main. Anyone fetching the schema
+  directly
+
+  from the branch should update their reference.
+
+
   2020 May - Added tags to operations. Users of OpenAPI Generator generated
 
   clients will need to swap from using the `DefaultApi` class to multiple
@@ -81719,7 +81610,7 @@ ccouzens/keycloak-openapi: >
   ```bash
 
   openapi-generator generate -i
-  'https://github.com/ccouzens/keycloak-openapi/raw/master/keycloak/12.0-patched.json'
+  'https://github.com/ccouzens/keycloak-openapi/raw/main/keycloak/12.0-patched.json'
   -g 'typescript-axios' -o 'src/keycloak-client'
 
   ```
@@ -82468,6 +82359,10 @@ stoplightio/studio: >
 
   [![Buy us a
   tree](https://img.shields.io/badge/Buy%20us%20a%20tree-%F0%9F%8C%B3-lightgreen)](https://offset.earth/stoplightinc)
+
+
+  To report a bug, please go to
+  https://support.stoplight.io/hc/en-us/requests/new
 
 
   Studio is Stoplight's next generation application for API design, modeling,
@@ -83420,7 +83315,7 @@ danielgtaylor/restish: >
 
   This project started life as a fork of [OpenAPI CLI
   Generator](https://github.com/danielgtaylor/openapi-cli-generator).
-schemathesis/schemathesis: "Schemathesis\n============\n\n|Build| |Coverage| |Version| |Python versions| |Docs| |Chat| |License|\n\nSchemathesis is a modern API testing tool for web applications built with Open API and GraphQL specifications.\n\nIt reads the application schema and generates test cases, which will ensure that your application is compliant with its schema.\n\nThe application under test could be written in any language; the only thing you need is a valid API schema in a supported format.\n\nSimple to use and yet powerful to uncover hard-to-find errors thanks to the property-based testing approach backed by state-of-the-art `Hypothesis <http://hypothesis.works/>`_ library.\n\n\U0001F4E3 **Please fill out our** `quick survey <https://forms.gle/dv4s5SXAYWzvuwFWA>`_ so that we can learn how satisfied you are with Schemathesis, and what improvements we should make. Thank you!\n\nFeatures\n--------\n\n- Content-Type, schema, and status code conformance checks for Open API;\n- Testing of explicit examples from the input schema;\n- Stateful testing via Open API links;\n- Concurrent test execution;\n- Targeted testing;\n- Storing and replaying network requests;\n- Built-in ASGI / WSGI application support;\n- Code samples for easy failure reproduction;\n- Ready-to-go Docker image;\n- Configurable with user-defined checks, string formats, hooks, and targets.\n\nInstallation\n------------\n\nTo install Schemathesis via ``pip`` run the following command:\n\n.. code:: bash\n\n    pip install schemathesis\n\nUsage\n-----\n\nYou can use Schemathesis in the command line:\n\n.. code:: bash\n\n  schemathesis run --stateful=links --checks all http://0.0.0.0:8081/schema.yaml\n\n.. image:: https://raw.githubusercontent.com/schemathesis/schemathesis/master/img/schemathesis.gif\n\nOr in your Python tests:\n\n.. code:: python\n\n    import schemathesis\n\n    schema = schemathesis.from_uri(\"http://0.0.0.0:8081/schema.yaml\")\n\n\n    @schema.parametrize()\n    def test_api(case):\n        case.call_and_validate()\n\nCLI is simple to use and requires no coding; the in-code approach gives more flexibility.\n\nBoth examples above will run hundreds of requests against the API under test and report all found failures and inconsistencies along with instructions to reproduce them.\n\n\U0001F4A1 See a complete working example project in the ``/example`` directory. \U0001F4A1\n\nContributing\n------------\n\nAny contribution to development, testing, or any other area is highly appreciated and useful to the project.\nFor guidance on how to contribute to Schemathesis, see the `contributing guidelines <https://github.com/schemathesis/schemathesis/blob/master/CONTRIBUTING.rst>`_.\n\nSupport this project\n--------------------\n\nHi, my name is Dmitry! I started this project during my work at `Kiwi.com <https://kiwi.com/>`_. I am grateful to them for all the support they\nprovided to this project during its early days and for the opportunity to evolve Schemathesis independently.\n\nIn order to grow the community of contributors and users, and allow me to devote more time to this project, please `donate today <https://github.com/sponsors/Stranger6667>`_.\n\nAlso, I occasionally write posts about Schemathesis in `my blog <https://dygalo.dev/>`_ and offer consulting services for businesses.\n\nCommercial support\n------------------\n\nIf you are interested in the effective integration of Schemathesis to your private project, you can contact me via email or `Twitter <https://twitter.com/Stranger6667>`_ and I will help you do that.\n\nLinks\n-----\n\n- **Documentation**: https://schemathesis.readthedocs.io/en/stable/\n- **Releases**: https://pypi.org/project/schemathesis/\n- **Code**: https://github.com/schemathesis/schemathesis\n- **Issue tracker**: https://github.com/schemathesis/schemathesis/issues\n- **Chat**: https://gitter.im/schemathesis/schemathesis\n\nAdditional content:\n\n- `An article <https://dygalo.dev/blog/schemathesis-property-based-testing-for-api-schemas/>`_ about Schemathesis by **@Stranger6667**\n- `A video <https://www.youtube.com/watch?v=9FHRwrv-xuQ>`_ from EuroPython 2020 by **@hultner**\n- `Schemathesis tutorial <https://appdev.consulting.redhat.com/tracks/contract-first/automated-testing-with-schemathesis.html>`_  with an accompanying `video <https://www.youtube.com/watch?v=4r7OC-lBKMg>`_ by Red Hat\n- `Using Hypothesis and Schemathesis to Test FastAPI <https://testdriven.io/blog/fastapi-hypothesis/>`_ by **@amalshaji**\n\nLicense\n-------\n\nThe code in this project is licensed under `MIT license`_.\nBy contributing to Schemathesis, you agree that your contributions will be licensed under its MIT license.\n\n.. |Build| image:: https://github.com/schemathesis/schemathesis/workflows/build/badge.svg\n   :target: https://github.com/schemathesis/schemathesis/actions\n.. |Coverage| image:: https://codecov.io/gh/schemathesis/schemathesis/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/schemathesis/schemathesis/branch/master\n   :alt: codecov.io status for master branch\n.. |Version| image:: https://img.shields.io/pypi/v/schemathesis.svg\n   :target: https://pypi.org/project/schemathesis/\n.. |Python versions| image:: https://img.shields.io/pypi/pyversions/schemathesis.svg\n   :target: https://pypi.org/project/schemathesis/\n.. |License| image:: https://img.shields.io/pypi/l/schemathesis.svg\n   :target: https://opensource.org/licenses/MIT\n.. |Chat| image:: https://img.shields.io/gitter/room/schemathesis/schemathesis.svg\n   :target: https://gitter.im/schemathesis/schemathesis\n   :alt: Gitter\n.. |Docs| image:: https://readthedocs.org/projects/schemathesis/badge/?version=stable\n   :target: https://schemathesis.readthedocs.io/en/stable/?badge=stable\n   :alt: Documentation Status\n\n.. _MIT license: https://opensource.org/licenses/MIT\n"
+schemathesis/schemathesis: "Schemathesis\n============\n\n|Build| |Coverage| |Version| |Python versions| |Docs| |Chat| |License|\n\nSchemathesis is a modern API testing tool for web applications built with Open API and GraphQL specifications.\n\nIt reads the application schema and generates test cases, which will ensure that your application is compliant with its schema.\n\nThe application under test could be written in any language; the only thing you need is a valid API schema in a supported format.\n\nSimple to use and yet powerful to uncover hard-to-find errors thanks to the property-based testing approach backed by state-of-the-art `Hypothesis <http://hypothesis.works/>`_ library.\n\n\U0001F4E3 **Please fill out our** `quick survey <https://forms.gle/dv4s5SXAYWzvuwFWA>`_ so that we can learn how satisfied you are with Schemathesis, and what improvements we should make. Thank you!\n\nFeatures\n--------\n\n- Content-Type, schema, and status code conformance checks for Open API;\n- Testing of explicit examples from the input schema;\n- Stateful testing via Open API links;\n- Concurrent test execution;\n- Targeted testing;\n- Storing and replaying network requests;\n- Built-in ASGI / WSGI application support;\n- Code samples for easy failure reproduction;\n- Ready-to-go Docker image;\n- Configurable with user-defined checks, string formats, hooks, and targets.\n\nInstallation\n------------\n\nTo install Schemathesis via ``pip`` run the following command:\n\n.. code:: bash\n\n    pip install schemathesis\n\nUsage\n-----\n\nYou can use Schemathesis in the command line:\n\n.. code:: bash\n\n  schemathesis run --stateful=links --checks all http://0.0.0.0:8081/schema.yaml\n\n.. image:: https://raw.githubusercontent.com/schemathesis/schemathesis/master/img/schemathesis.gif\n\nOr in your Python tests:\n\n.. code:: python\n\n    import schemathesis\n\n    schema = schemathesis.from_uri(\"http://0.0.0.0:8081/schema.yaml\")\n\n\n    @schema.parametrize()\n    def test_api(case):\n        case.call_and_validate()\n\nCLI is simple to use and requires no coding; the in-code approach gives more flexibility.\n\nBoth examples above will run hundreds of requests against the API under test and report all found failures and inconsistencies along with instructions to reproduce them.\n\n\U0001F4A1 See a complete working example project in the ``/example`` directory. \U0001F4A1\n\nContributing\n------------\n\nAny contribution to development, testing, or any other area is highly appreciated and useful to the project.\nFor guidance on how to contribute to Schemathesis, see the `contributing guidelines <https://github.com/schemathesis/schemathesis/blob/master/CONTRIBUTING.rst>`_.\n\nSupport this project\n--------------------\n\nHi, my name is Dmitry! I started this project during my work at `Kiwi.com <https://kiwi.com/>`_. I am grateful to them for all the support they\nprovided to this project during its early days and for the opportunity to evolve Schemathesis independently.\n\nIn order to grow the community of contributors and users, and allow me to devote more time to this project, please `donate today <https://github.com/sponsors/Stranger6667>`_.\n\nAlso, I occasionally write posts about Schemathesis in `my blog <https://dygalo.dev/>`_ and offer consulting services for businesses.\n\nCommercial support\n------------------\n\nIf you are interested in the effective integration of Schemathesis to your private project, you can contact me via email or `Twitter <https://twitter.com/Stranger6667>`_ and I will help you do that.\n\nLinks\n-----\n\n- **Documentation**: https://schemathesis.readthedocs.io/en/stable/\n- **Releases**: https://pypi.org/project/schemathesis/\n- **Code**: https://github.com/schemathesis/schemathesis\n- **Issue tracker**: https://github.com/schemathesis/schemathesis/issues\n- **Chat**: https://gitter.im/schemathesis/schemathesis\n\nAdditional content:\n\n- `An article <https://dygalo.dev/blog/schemathesis-property-based-testing-for-api-schemas/>`_ about Schemathesis by **@Stranger6667**\n- `Effective API schemas testing <https://youtu.be/VVLZ25JgjD4>`_ from DevConf.cz by **@Stranger6667**\n- `A video <https://www.youtube.com/watch?v=9FHRwrv-xuQ>`_ from EuroPython 2020 by **@hultner**\n- `Schemathesis tutorial <https://appdev.consulting.redhat.com/tracks/contract-first/automated-testing-with-schemathesis.html>`_  with an accompanying `video <https://www.youtube.com/watch?v=4r7OC-lBKMg>`_ by Red Hat\n- `Using Hypothesis and Schemathesis to Test FastAPI <https://testdriven.io/blog/fastapi-hypothesis/>`_ by **@amalshaji**\n\nLicense\n-------\n\nThe code in this project is licensed under `MIT license`_.\nBy contributing to Schemathesis, you agree that your contributions will be licensed under its MIT license.\n\n.. |Build| image:: https://github.com/schemathesis/schemathesis/workflows/build/badge.svg\n   :target: https://github.com/schemathesis/schemathesis/actions\n.. |Coverage| image:: https://codecov.io/gh/schemathesis/schemathesis/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/schemathesis/schemathesis/branch/master\n   :alt: codecov.io status for master branch\n.. |Version| image:: https://img.shields.io/pypi/v/schemathesis.svg\n   :target: https://pypi.org/project/schemathesis/\n.. |Python versions| image:: https://img.shields.io/pypi/pyversions/schemathesis.svg\n   :target: https://pypi.org/project/schemathesis/\n.. |License| image:: https://img.shields.io/pypi/l/schemathesis.svg\n   :target: https://opensource.org/licenses/MIT\n.. |Chat| image:: https://img.shields.io/gitter/room/schemathesis/schemathesis.svg\n   :target: https://gitter.im/schemathesis/schemathesis\n   :alt: Gitter\n.. |Docs| image:: https://readthedocs.org/projects/schemathesis/badge/?version=stable\n   :target: https://schemathesis.readthedocs.io/en/stable/?badge=stable\n   :alt: Documentation Status\n\n.. _MIT license: https://opensource.org/licenses/MIT\n"
 BRIKEV/express-jsdoc-swagger: "![npm](https://img.shields.io/npm/v/express-jsdoc-swagger)\n![Node.js Package](https://github.com/BRIKEV/express-jsdoc-swagger/workflows/Build/badge.svg)\n[![Known Vulnerabilities](https://snyk.io/test/github/BRIKEV/express-jsdoc-swagger/badge.svg)](https://snyk.io/test/github/BRIKEV/express-jsdoc-swagger)\n[![Maintainability](https://api.codeclimate.com/v1/badges/6d5565df0c9c10e75b59/maintainability)](https://codeclimate.com/github/BRIKEV/express-jsdoc-swagger/maintainability)\n[![Test Coverage](https://api.codeclimate.com/v1/badges/6d5565df0c9c10e75b59/test_coverage)](https://codeclimate.com/github/BRIKEV/express-jsdoc-swagger/test_coverage)\n![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)\n![npm](https://img.shields.io/npm/dm/express-jsdoc-swagger)\n\n# express-jsdoc-swagger\n\nWith this library, you can document your express endpoints using swagger [OpenAPI 3 Specification](https://swagger.io/specification/) without writing YAML or JSON. You can write jsdoc comments on each endpoint, and the library is going to create the swagger UI.\n\n## Prerequisites\nThis library assumes you are using:\n1. [NodeJS](https://nodejs.org)\n2. [Express.js](http://www.expressjs.com)\n\n## Installation\n```\nnpm i express-jsdoc-swagger\n```\n\n## Usage\n```javascript\nconst express = require('express');\nconst expressJSDocSwagger = require('express-jsdoc-swagger');\n\nconst options = {\n  info: {\n    version: '1.0.0',\n    title: 'Albums store',\n    license: {\n      name: 'MIT',\n    },\n  },\n  security: {\n    BasicAuth: {\n      type: 'http',\n      scheme: 'basic',\n    },\n  },\n  filesPattern: './**/*.js', // Glob pattern to find your jsdoc files (it supports arrays too ['./**/*.controller.js', './**/*.route.js'])\n  swaggerUIPath: '/your-url', // SwaggerUI will be render in this url. Default: '/api-docs'\n  baseDir: __dirname,\n  exposeSwaggerUI: true, // Expose OpenAPI UI. Default true\n  exposeApiDocs: false, // Expose Open API JSON Docs documentation in `apiDocsPath` path. Default false.\n  apiDocsPath: '/v3/api-docs', // Open API JSON Docs endpoint. Default value '/v3/api-docs'.\n};\n\nconst app = express();\nconst PORT = 3000;\n\nexpressJSDocSwagger(app)(options);\n\n/**\n * GET /api/v1\n * @summary This is the summary or description of the endpoint\n * @return {object} 200 - success response\n */\napp.get('/api/v1', (req, res) => res.json({\n  success: true,\n}));\n\napp.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`));\n\n```\n\n## Examples\n1. Basic configuration\n```javascript\nconst options = {\n  info: {\n    version: '1.0.0',\n    title: 'Albums store',\n    license: {\n      name: 'MIT',\n    },\n  },\n  security: {\n    BasicAuth: {\n      type: 'http',\n      scheme: 'basic',\n    },\n  },\n  filesPattern: './**/*.js', // Glob pattern to find your jsdoc files\n  baseDir: __dirname,\n};\n```\n\n2. Components definition\n```javascript\n/**\n * A song type\n * @typedef {object} Song\n * @property {string} title.required - The title\n * @property {string} artist - The artist\n * @property {number} year - The year - double\n */\n```\n\n3. Endpoint that returns a `Songs` model array\n```javascript\n/**\n * GET /api/v1/albums\n * @summary This is the summary or description of the endpoint\n * @tags album\n * @return {array<Song>} 200 - success response - application/json\n */\napp.get('/api/v1/albums', (req, res) => (\n  res.json([{\n    title: 'abum 1',\n  }])\n));\n```\n\n4. Basic endpoint definition with tags, params and basic authentication\n```javascript\n/**\n * GET /api/v1/album\n * @summary This is the summary or description of the endpoint\n * @security BasicAuth\n * @tags album\n * @param {string} name.query.required - name param description\n * @return {object} 200 - success response - application/json\n * @return {object} 400 - Bad request response\n */\napp.get('/api/v1/album', (req, res) => (\n  res.json({\n    title: 'abum 1',\n  })\n));\n```\n\n5. Basic endpoint definition with code example for response body\n```javascript\n/**\n * GET /api/v1/albums\n * @summary This is the summary or description of the endpoint\n * @tags album\n * @return {array<Song>} 200 - success response - application/json\n * @example response - 200 - success response example\n * [\n *   {\n *     \"title\": \"Bury the light\",\n *     \"artist\": \"Casey Edwards ft. Victor Borba\",\n *     \"year\": 2020\n *   }\n * ]\n */\napp.get('/api/v1/albums', (req, res) => (\n  res.json([{\n    title: 'track 1',\n  }])\n));\n```\n\nYou can find more examples [here](https://github.com/BRIKEV/express-jsdoc-swagger/tree/master/examples), or visit our [documentation](https://brikev.github.io/express-jsdoc-swagger-docs/#/).\n\n## Contributors ✨\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore-start -->\n<!-- markdownlint-disable -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"https://github.com/bri06\"><img src=\"https://avatars0.githubusercontent.com/u/24435223?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Briam Martinez Escobar</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=bri06\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://twitter.com/kjmesc\"><img src=\"https://avatars2.githubusercontent.com/u/12685053?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Kevin Julián Martínez Escobar</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=kevinccbsg\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/hoonga\"><img src=\"https://avatars3.githubusercontent.com/u/10708927?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Heung-yeon Oh</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=hoonga\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/LonelyPrincess\"><img src=\"https://avatars1.githubusercontent.com/u/17673317?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Sara Hernández</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=LonelyPrincess\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"http://servatj.me\"><img src=\"https://avatars0.githubusercontent.com/u/3521485?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Josep Servat</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=servatj\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/thuydx55\"><img src=\"https://avatars2.githubusercontent.com/u/1469984?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Nick Dong</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=thuydx55\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/Stosiu\"><img src=\"https://avatars1.githubusercontent.com/u/10252063?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Aleksander Stós</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=Stosiu\" title=\"Code\">\U0001F4BB</a></td>\n  </tr>\n  <tr>\n    <td align=\"center\"><a href=\"https://github.com/kdankert\"><img src=\"https://avatars0.githubusercontent.com/u/46489624?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Kjell Dankert</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=kdankert\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/juliendu11\"><img src=\"https://avatars0.githubusercontent.com/u/18739442?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>juliendu11</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=juliendu11\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://me.io\"><img src=\"https://avatars.githubusercontent.com/u/45731?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Mohamed Meabed</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=meabed\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/ofarukaydin\"><img src=\"https://avatars.githubusercontent.com/u/32788963?v=4?s=100\" width=\"100px;\" alt=\"\"/><br /><sub><b>Faruk Aydın</b></sub></a><br /><a href=\"https://github.com/BRIKEV/express-jsdoc-swagger/commits?author=ofarukaydin\" title=\"Code\">\U0001F4BB</a></td>\n  </tr>\n</table>\n\n<!-- markdownlint-restore -->\n<!-- prettier-ignore-end -->\n\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n"
 domaindrivendev/Swashbuckle.WebApi: >
   | :mega: Calling for Maintainers |
@@ -86543,3 +86438,616 @@ mockoon/cli: >
   New releases will be announced on Mockoon's [Twitter account
   @GetMockoon](https://twitter.com/GetMockoon) and through the newsletter to
   which you can subscribe [here](http://eepurl.com/dskB2X).
+RonnyPfannschmidt/prance: >+
+  |Posix Build Status| |Windows Build Status| |Docs| |License|
+
+  |PyPI| |Python Versions| |Package Format| |Package Status| |FOSSA Status|
+  |Liberapay|
+
+
+  |Logo|
+
+
+  Prance provides parsers for `Swagger/OpenAPI
+
+  2.0 and 3.0 <http://swagger.io/specification/>`__ API specifications in
+  Python.
+
+  It uses `openapi\_spec\_validator
+  <https://github.com/p1c2u/openapi-spec-validator>`__,
+
+  `swagger\_spec\_validator <https://github.com/Yelp/swagger_spec_validator>`__
+  or
+
+  `flex <https://github.com/pipermerriam/flex>`__
+
+  to validate specifications, but additionally resolves `JSON
+
+  references <https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03>`__
+
+  in accordance with the OpenAPI spec.
+
+
+  Mostly the latter involves handling non-URI references; OpenAPI is fine
+
+  with providing relative file paths, whereas JSON references require URIs
+
+  at this point in time.
+
+
+  Prance is `up for adoption
+  <https://github.com/jfinkhaeuser/prance/issues/91>`__.
+
+
+  Usage
+
+  =====
+
+
+  Installation
+
+  ------------
+
+
+  Prance is available from PyPI, and can be installed via pip:
+
+
+  .. code:: bash
+
+      $ pip install prance
+
+  Note that this will install the code, but additional subpackages must be
+  specified
+
+  to unlock various pieces of functionality. At minimum, a parsing backend must
+  be
+
+  installed. For the CLI functionality, you need further dependencies.
+
+
+  The recommended installation installs the CLI, uses ICU and installs one
+  validation
+
+  backend:
+
+
+  .. code:: bash
+
+      $ pip install prance[osv,icu,cli]
+
+  Make sure you have `ICU Unicode Library <http://site.icu-project.org/home>`__
+  installed,
+
+  as well as Python dev library before running the commands above. If not, use
+  the
+
+  following commands:
+
+
+  **Ubuntu**
+
+
+  .. code:: bash
+
+      $ sudo apt-get install libicu-dev
+      $ sudo apt-get install python3-dev
+
+
+  Command Line Interface
+
+  ----------------------
+
+
+  After installing prance, a CLI is available for validating (and resolving
+
+  external references in) specs:
+
+
+  .. code:: bash
+
+      # Validates with resolving
+      $ prance validate path/to/swagger.yml
+
+      # Validates without resolving
+      $ prance validate --no-resolve path/to/swagger.yml
+
+      # Fetch URL, validate and resolve.
+      $ prance validate http://petstore.swagger.io/v2/swagger.json
+      Processing "http://petstore.swagger.io/v2/swagger.json"...
+       -> Resolving external references.
+      Validates OK as Swagger/OpenAPI 2.0!
+
+  Validation is not the only feature of prance. One of the side effects of
+
+  resolving is that from a spec with references, one can create a fully resolved
+
+  output spec. In the past, this was done via options to the ``validate``
+  command,
+
+  but now there's a specific command just for this purpose:
+
+
+  .. code:: bash
+
+      # Compile spec
+      $ prance compile path/to/input.yml path/to/output.yml
+
+
+  Lastly, with the arrival of OpenAPI 3.0.0, it becomes useful for tooling to
+
+  convert older specs to the new standard. Instead of re-inventing the wheel,
+
+  prance just provides a CLI command for passing specs to the web API of
+
+  `swagger2openapi <https://github.com/Mermade/swagger2openapi>`__ - a working
+
+  internet connection is therefore required for this command:
+
+
+  .. code:: bash
+
+      # Convert spec
+      $ prance convert path/to/swagger.yml path/to/openapi.yml
+
+
+  Code
+
+  ----
+
+
+  Most likely you have spec file and want to parse it:
+
+
+  .. code:: python
+
+      from prance import ResolvingParser
+      parser = ResolvingParser('path/to/my/swagger.yaml')
+      parser.specification  # contains fully resolved specs as a dict
+
+  Prance also includes a non-resolving parser that does not follow JSON
+
+  references, in case you prefer that.
+
+
+  .. code:: python
+
+      from prance import BaseParser
+      parser = BaseParser('path/to/my/swagger.yaml')
+      parser.specification  # contains specs as a dict still containing JSON references
+
+  On Windows, the code reacts correctly if you pass posix-like paths
+
+  (``/c:/swagger``) or if the path is relative.  If you pass absolute
+
+  windows path (like ``c:\swagger.yaml``), you can use
+
+  ``prance.util.fs.abspath`` to convert them.
+
+
+  URLs can also be parsed:
+
+
+  .. code:: python
+
+      parser = ResolvingParser('http://petstore.swagger.io/v2/swagger.json')
+
+  Largely, that's it. There is a whole slew of utility code that you may
+
+  or may not find useful, too. Look at the `full documentation
+
+  <https://jfinkhaeuser.github.io/prance/#api-modules>`__ for details.
+
+
+
+  Compatibility
+
+  -------------
+
+
+  *Python Versions*
+
+
+  Version 0.16.2 is the last version supporting Python 2. It was released on
+
+  Nov 12th, 2019. Python 2 reaches end of life at the end of 2019. If you wish
+
+  for updates to the Python 2 supported packages, please contact the maintainer
+
+  directly.
+
+
+  Until fairly recently, we also tested with `PyPy <https://www.pypy.org/>`__.
+
+  Unfortunately, Travis isn't very good at supporting this. So in the absence
+
+  of spare time, they're disabled. `Issue 50
+  <https://github.com/jfinkhaeuser/prance/issues/50>`__
+
+  tracks progress on that.
+
+
+  Similarly, but less critically, Python 3.4 is no longer receiving a lot of
+
+  love from CI vendors, so automated builds on that version are no longer
+
+  supported.
+
+
+  *Backends*
+
+
+  Different validation backends support different features.
+
+
+  +------------------------+----------------+-----------------+-------------+-------------------------------------------------------+----------------+-----------------------------------------------------------------------------------+
+
+  | Backend                | Python Version | OpenAPI Version | Strict Mode |
+  Notes                                                 | Available From |
+  Link                                                                             
+  |
+
+  +========================+================+=================+=============+=======================================================+================+===================================================================================+
+
+  | swagger-spec-validator | 2 and 3        | 2.0 only        | yes         |
+  Slow; does not accept integer keys (see strict mode). | prance 0.1     |
+  `swagger\_spec\_validator
+  <https://github.com/Yelp/swagger_spec_validator>`__     |
+
+  +------------------------+----------------+-----------------+-------------+-------------------------------------------------------+----------------+-----------------------------------------------------------------------------------+
+
+  | flex                   | 2 and 3        | 2.0 only        | n/a         |
+  Fastest; unfortunately deprecated.                    | prance 0.8     | `flex
+  <https://github.com/pipermerriam/flex>`__                                   |
+
+  +------------------------+----------------+-----------------+-------------+-------------------------------------------------------+----------------+-----------------------------------------------------------------------------------+
+
+  | openapi-spec-validator | 2 and 3        | 2.0 and 3.0     | yes         |
+  Slow; does not accept integer keys (see strict mode). | prance 0.11    |
+  `openapi\_spec\_validator
+  <https://github.com/p1c2u/openapi-spec-validator>`__    |
+
+  +------------------------+----------------+-----------------+-------------+-------------------------------------------------------+----------------+-----------------------------------------------------------------------------------+
+
+
+  You can select the backend in the constructor of the parser(s):
+
+
+  .. code:: python
+
+      parser = ResolvingParser('http://petstore.swagger.io/v2/swagger.json', backend = 'openapi-spec-validator')
+
+
+  No backend is included in the dependencies; they are detected at run-time. If
+  you install them,
+
+  they can be used:
+
+
+  .. code:: bash
+
+      $ pip install openapi-spec-validator
+      $ pip install prance
+      $ prance validate --backend=openapi-spec-validator path/to/spec.yml
+
+  *A note on flex usage:* While flex is the fastest validation backend,
+  unfortunately it is no longer
+
+  maintained and there are issues with its dependencies. For one thing, it
+  depends on a version of `PyYAML`
+
+  that contains security flaws. For another, it depends explicitly on older
+  versions of `click`.
+
+
+  If you use the flex subpackage, therefore, you do so at your own risk.
+
+
+  *Compatibility*
+
+
+  See `COMPATIBILITY.rst
+  <https://github.com/jfinkhaeuser/prance/blob/master/COMPATIBILITY.rst>`__
+
+  for a list of known issues.
+
+
+
+  Partial Reference Resolution
+
+  ----------------------------
+
+
+  It's possible to instruct the parser to only resolve some kinds of references.
+
+  This allows e.g. resolving references from external URLs, whilst keeping local
+
+  references (i.e. to local files, or file internal) intact.
+
+
+  .. code:: python
+
+      from prance import ResolvingParser
+      from prance.util.resolver import RESOLVE_HTTP
+
+      parser = ResolvingParser('/path/to/spec', resolve_types = RESOLVE_HTTP)
+
+
+  Multiple types can be specified by OR-ing constants together:
+
+
+  .. code:: python
+
+      from prance import ResolvingParser
+      from prance.util.resolver import RESOLVE_HTTP, RESOLVE_FILES
+
+      parser = ResolvingParser('/path/to/spec', resolve_types = RESOLVE_HTTP | RESOLVE_FILES)
+
+
+  Extensions
+
+  ----------
+
+
+  Prance includes the ability to reference outside swagger definitions
+
+  in outside Python packages. Such a package must already be importable
+
+  (i.e. installed), and be accessible via the
+
+  `ResourceManager API
+  <https://setuptools.readthedocs.io/en/latest/pkg_resources.html#resourcemanager-api>`__
+
+  (some more info `here
+  <https://setuptools.readthedocs.io/en/latest/setuptools.html#including-data-files>`__).
+
+
+  For example, you might create a package ``common_swag`` with the file
+
+  ``base.yaml`` containing the definition
+
+
+  .. code:: yaml
+
+      definitions:
+        Severity:
+          type: string
+          enum:
+          - INFO
+          - WARN
+          - ERROR
+          - FATAL
+
+  In the ``setup.py`` for ``common_swag`` you would add lines such as
+
+
+  .. code:: python
+
+      packages=find_packages('src'),
+      package_dir={'': 'src'},
+      package_data={
+          '': '*.yaml'
+      }
+
+  Then, having installed ``common_swag`` into some application, you could
+
+  now write
+
+
+  .. code:: yaml
+
+      definitions:
+        Message:
+          type: object
+          properties:
+            severity:
+              $ref: 'python://common_swag/base.yaml#/definitions/Severity'
+            code:
+              type: string
+            summary:
+              type: string
+            description:
+              type: string
+          required:
+          - severity
+          - summary
+
+  Contributing
+
+  ============
+
+
+  See `CONTRIBUTING.md
+  <https://github.com/jfinkhaeuser/prance/blob/master/CONTRIBUTING.md>`__ for
+  details.
+
+
+  Professional support is available through `finkhaeuser consulting
+  <https://finkhaeuser.de>`__.
+
+
+  License
+
+  =======
+
+
+  Licensed under MITNFA (MIT +no-false-attribs) License. See the
+
+  `LICENSE.txt
+  <https://github.com/jfinkhaeuser/prance/blob/master/LICENSE.txt>`__ file for
+  details.
+
+
+  "Prancing unicorn" logo image Copyright (c) Jens Finkhaeuser.
+
+  Made by `Moreven B <http://morevenb.com/>`__. Use of the logo is permitted
+  under
+
+  the `Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+  license <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__.
+
+
+  .. |Posix Build Status| image::
+  https://travis-ci.org/jfinkhaeuser/prance.svg?branch=master
+     :target: https://travis-ci.org/jfinkhaeuser/prance
+  .. |Windows Build Status| image::
+  https://ci.appveyor.com/api/projects/status/ic7lo8r95mkee7di/branch/master?svg=true
+     :target: https://ci.appveyor.com/project/jfinkhaeuser/prance
+  .. |Docs| image:: https://img.shields.io/badge/docs-passing-brightgreen.svg
+     :target: https://jfinkhaeuser.github.io/prance/
+  .. |License| image:: https://img.shields.io/pypi/l/prance.svg
+     :target: https://pypi.python.org/pypi/prance/
+  .. |PyPI| image:: https://img.shields.io/pypi/v/prance.svg
+     :target: https://pypi.python.org/pypi/prance/
+  .. |Package Format| image:: https://img.shields.io/pypi/format/prance.svg
+     :target: https://pypi.python.org/pypi/prance/
+  .. |Python Versions| image:: https://img.shields.io/pypi/pyversions/prance.svg
+     :target: https://pypi.python.org/pypi/prance/
+  .. |Package Status| image:: https://img.shields.io/pypi/status/prance.svg
+     :target: https://pypi.python.org/pypi/prance/
+  .. |FOSSA Status| image::
+  https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance.svg?type=shield
+     :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fjfinkhaeuser%2Fprance?ref=badge_shield
+  .. |Liberapay| image::
+  http://img.shields.io/liberapay/receives/jfinkhaeuser.svg?logo=liberapay
+     :target: https://liberapay.com/jfinkhaeuser/donate
+  .. |Logo| image::
+  https://raw.githubusercontent.com/jfinkhaeuser/prance/master/docs/images/prance_logo_256.png
+
+ethereum/eth2.0-APIs: >
+  # Ethereum 2.0 APIs
+
+
+  ![CI](https://github.com/ethereum/eth2.0-APIs/workflows/CI/badge.svg)
+
+
+  Collection of RESTful APIs provided by Ethereum 2.0 clients
+
+
+  API browser:
+  [https://ethereum.github.io/eth2.0-APIs/](https://ethereum.github.io/eth2.0-APIs/)
+
+
+  ## Outline
+
+
+  This document outlines an application programming interface (API) which is
+  exposed by a beacon node implementation
+   which aims to facilitate [Phase 0](https://github.com/ethereum/eth2.0-specs#phase-0) of Ethereum 2.0.
+
+  The API is a REST interface, accessed via HTTP, designed for use as a public
+  communications protocol.
+   Currently, the only supported return data type is JSON.
+
+  The beacon node (BN) maintains the state of the beacon chain by communicating
+  with other beacon nodes in the Ethereum 2.0 network.
+
+  Conceptually, it does not maintain keypairs that participate with the beacon
+  chain.
+
+
+  The validator client (VC) is a conceptually separate entity which utilizes
+  private keys 
+
+  to perform validator related tasks, called "duties", on the beacon chain.
+   These duties include the production of beacon blocks and signing of attestations.
+
+  The goal of this specification is to promote interoperability between various
+  beacon node implementations.
+
+
+  ## Render 
+
+  To render spec in browser you will need any http server to load `index.html`
+  file
+
+  in root of the repo.
+
+
+  ##### Python
+
+  ```
+
+  python -m SimpleHTTPServer 8080
+
+  ```
+
+  And api spec will render on [http://localhost:8080](http://localhost:8080).
+
+
+  ##### NodeJs
+
+  ```
+
+  npm install simplehttpserver -g
+
+
+  # OR
+
+
+  yarn global add simplehttpserver
+
+
+  simplehttpserver
+
+  ```
+
+  And api spec will render on [http://localhost:8000](http://localhost:8000).
+
+
+  ## Contributing
+
+  Api spec is checked for lint errors before merge. 
+
+
+  To run lint locally, install linter with
+
+  ```
+
+  npm install -g @stoplight/spectral
+
+
+  # OR
+
+
+  yarn global add @stoplight/spectral
+
+  ```
+
+  and run lint with
+
+  ```
+
+  spectral lint beacon-node-oapi.yaml 
+
+  ```
+
+
+  ## Implementations
+
+
+  - [TypeScript
+  Wrapper](https://www.npmjs.com/package/@chainsafe/eth2.0-api-wrapper)
+
+
+  https://www.npmjs.com/package/@chainsafe/eth2.0-api-wrapper
+
+  ## Releasing
+
+
+  1. Create and push tag
+
+     - Make sure info.version in beacon-node-oapi.yaml file is updated before tagging.
+     - CD will create github release and upload bundled spec file
+     
+  2. Add release entrypoint in index.html
+
+
+  In SwaggerUIBundle configuration (inside index.html file), add another entry
+  in "urls" field (SwaggerUI will load first item as default).
+
+  Entry should be in following format(replace `<tag>` with real tag name from
+  step 1.):
+
+  ```javascript
+           {url: "https://github.com/ethereum/eth2.0-APIs/releases/download/<tag>/beacon-node-oapi.yaml", name: "<tag>"},
+  ```
