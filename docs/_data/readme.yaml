@@ -6052,7 +6052,7 @@ swagger-api/swagger-parser: >
   <dependency>
     <groupId>io.swagger.parser.v3</groupId>
     <artifactId>swagger-parser</artifactId>
-    <version>2.0.24</version>
+    <version>2.0.25</version>
   </dependency>
 
   ```
@@ -18509,14 +18509,6 @@ senchalabs/connect: >
   contributors](https://github.com/senchalabs/connect/graphs/contributors)
 
 
-  ## Node Compatibility
-
-    - Connect `< 1.x` - node `0.2`
-    - Connect `1.x` - node `0.4`
-    - Connect `< 2.8` - node `0.6`
-    - Connect `>= 2.8 < 3` - node `0.8`
-    - Connect `>= 3` - node `0.10`, `0.12`, `4.x`, `5.x`, `6.x`, `7.x`, `8.x`, `9.x`, `10.x`, `11.x`, `12.x`, `13.x`; io.js `1.x`, `2.x`, `3.x`
-
   ## License
 
 
@@ -18538,8 +18530,9 @@ senchalabs/connect: >
 
   [travis-url]: https://travis-ci.org/senchalabs/connect
 Yelp/bravado: >
-  .. image:: https://img.shields.io/travis/Yelp/bravado.svg
-    :target: https://travis-ci.org/Yelp/bravado?branch=master
+  .. image::
+  https://github.com/Yelp/bravado/workflows/build/badge.svg?branch=master
+    :target: https://github.com/Yelp/bravado/actions?query=workflow%3Abuild
 
   .. image:: https://img.shields.io/coveralls/Yelp/bravado.svg
     :target: https://coveralls.io/r/Yelp/bravado
@@ -25281,7 +25274,7 @@ Yelp/swagger_spec_validator: >
   # swagger_spec_validator
 
   [![Build
-  Status](https://travis-ci.org/Yelp/swagger_spec_validator.svg?branch=master)](https://travis-ci.org/Yelp/swagger_spec_validator)
+  Status](https://github.com/Yelp/swagger_spec_validator/workflows/build/badge.svg?branch=master)](https://github.com/Yelp/swagger_spec_validator/actions?query=workflow%3Abuild)
 
   [![Coverage
   Status](https://coveralls.io/repos/Yelp/swagger_spec_validator/badge.svg)](https://coveralls.io/r/Yelp/swagger_spec_validator)
@@ -36092,7 +36085,7 @@ slanatech/swagger-stats: >
   **swagger-stats** in your app, and start monitoring immediately, with no
   infrastructure requirements.
 
-  > Navigate to `http://<your app host:port>/swagger-stats/ux`   
+  > Navigate to `http://<your app host:port>/swagger-stats/`   
 
 
 
@@ -36257,7 +36250,12 @@ slanatech/swagger-stats: >
   });
 
 
-  fastify.register(swStats.getFastifyPlugin, {swaggerSpec:apiSpec});
+  // Enable swagger-stats
+
+  fastify.register(require('fastify-express')).then(()=>{
+      fastify.register(swStats.getFastifyPlugin, {swaggerSpec:apiSpec});
+  });
+
 
   ```
 
@@ -45116,6 +45114,33 @@ OpenAPITools/openapi-generator: >
   - 2021-02-17 - [REST-API-Roundtrip with SpringDoc and OpenAPI
   Generator](https://medium.com/nerd-for-tech/rest-api-roundtrip-with-springdoc-and-openapi-generator-30bd27ccf698)
   by [cloud @viadee](https://cloud-viadee.medium.com/)
+
+  - 2021-03-08 - [OpenAPI Generator
+  工具的躺坑尝试](https://blog.csdn.net/u013019701/article/details/114531975) by
+  [独家雨天](https://blog.csdn.net/u013019701) at
+  [CSDN官方博客](https://blog.csdn.net/) 
+
+  - 2021-03-16 - [如何基于 Swagger 使用 OpenAPI Generator 生成 JMeter
+  脚本？](https://cloud.tencent.com/developer/article/1802704) by
+  [高楼Zee](https://cloud.tencent.com/developer/user/5836255) at
+  [腾讯云专栏](https://cloud.tencent.com/developer/column)
+
+  - 2021-03-24 - [openapi-generator-cli による TypeScript
+  型定義](https://zenn.dev/takepepe/articles/openapi-generator-cli-ts) by [Takefumi
+  Yoshii](https://zenn.dev/takepepe)
+
+  - 2021-03-28 - [Trying out NestJS part 4: Generate Typescript clients from
+  OpenAPI
+  documents](https://dev.to/arnaudcortisse/trying-out-nestjs-part-4-generate-typescript-clients-from-openapi-documents-28mk)
+  by [Arnaud Cortisse](https://dev.to/arnaudcortisse) 
+
+  - 2021-03-31 - [Open API Server Implementation Using OpenAPI
+  Generator](https://www.baeldung.com/java-openapi-generator-server) at
+  [Baeldung](https://www.baeldung.com/)
+
+  - 2021-03-31 - [使用OpenAPI Generator實現Open API
+  Server](https://www.1ju.org/article/java-openapi-generator-server) at
+  [億聚網](https://www.1ju.org/)
 
 
   ## [6 - About Us](#table-of-contents)
@@ -81836,7 +81861,7 @@ muonsoft/openapi-mock: >
 mockoon/mockoon: >
   <div align="center">
     <a href="https://mockoon.com" alt="mockoon logo">
-      <img width="200" height="200" src="https://mockoon.com/images/logo-square.png">
+      <img width="200" height="200" src="https://mockoon.com/images/logo-square-app.png">
     </a>
     <br>
     <a href="https://mockoon.com/#download"><img src="https://img.shields.io/badge/Download%20app-Go-green.svg?style=flat-square&colorB=1997c6"/></a>
