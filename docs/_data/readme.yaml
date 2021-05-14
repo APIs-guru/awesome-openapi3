@@ -43228,16 +43228,13 @@ OpenAPITools/openapi-generator: >
 
 
   [Master](https://github.com/OpenAPITools/openapi-generator/tree/master)
-  (`5.1.1`):
+  (`5.2.0`):
 
   [![Build
   Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/master.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
 
   [![Integration
   Test2](https://circleci.com/gh/OpenAPITools/openapi-generator.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
-
-  [![Run
-  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=master)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
 
   [![Windows
   Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=master&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
@@ -43251,27 +43248,6 @@ OpenAPITools/openapi-generator: >
   (branch)](https://img.shields.io/github/workflow/status/openapitools/openapi-generator/Check%20Supported%20Java%20Versions/master?label=Check%20Supported%20Java%20Versions&logo=github&logoColor=green)](https://github.com/OpenAPITools/openapi-generator/actions?query=workflow%3A%22Check+Supported+Java+Versions%22)
 
 
-  [5.2.x](https://github.com/OpenAPITools/openapi-generator/tree/5.2.x)
-  (`5.2.x`):
-
-  [![Build
-  Status](https://img.shields.io/travis/OpenAPITools/openapi-generator/5.2.x.svg?label=Integration%20Test)](https://travis-ci.org/OpenAPITools/openapi-generator)
-
-  [![Integration
-  Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/5.2.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
-
-  [![Run
-  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=5.2.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
-
-  [![Windows
-  Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=5.2.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
-
-  [![JDK11
-  Build](https://cloud.drone.io/api/badges/OpenAPITools/openapi-generator/status.svg?ref=refs/heads/5.2.x)](https://cloud.drone.io/OpenAPITools/openapi-generator)
-
-  [![Bitrise](https://img.shields.io/bitrise/4a2b10a819d12b67/5.2.x?label=bitrise%3A%20Swift+4,5&token=859FMDR8QHwabCzwvZK6vQ)](https://app.bitrise.io/app/4a2b10a819d12b67)
-
-
   [6.0.x](https://github.com/OpenAPITools/openapi-generator/tree/6.0.x)
   (`6.0.x`):
 
@@ -43280,9 +43256,6 @@ OpenAPITools/openapi-generator: >
 
   [![Integration
   Test2](https://circleci.com/gh/OpenAPITools/openapi-generator/tree/6.0.x.svg?style=shield)](https://circleci.com/gh/OpenAPITools/openapi-generator)
-
-  [![Run
-  Status](https://api.shippable.com/projects/5af6bf74e790f4070084a115/badge?branch=6.0.x)](https://app.shippable.com/github/OpenAPITools/openapi-generator)
 
   [![Windows
   Test](https://ci.appveyor.com/api/projects/status/github/openapitools/openapi-generator?branch=6.0.x&svg=true&passingText=Windows%20Test%20-%20OK&failingText=Windows%20Test%20-%20Fails)](https://ci.appveyor.com/project/WilliamCheng/openapi-generator-wh2wu)
@@ -43501,16 +43474,12 @@ OpenAPITools/openapi-generator: >
 
   | 5.2.0 (upcoming minor release)
   [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.2.0-SNAPSHOT/)
-  | May/Jun 2021   | Minor release with breaking changes (with fallback) |
-
-  | 5.1.1 (upcoming patch release)
-  [SNAPSHOT](https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-cli/5.1.1-SNAPSHOT/)
-  | Apr/May 2021   | Patch release (enhancements, bug fixes, etc) |
+  | Jun/Jul 2021   | Minor release with breaking changes (with fallback) |
 
   |
-  [5.1.0](https://github.com/OpenAPITools/openapi-generator/releases/tag/v5.1.0)
+  [5.1.1](https://github.com/OpenAPITools/openapi-generator/releases/tag/v5.1.1)
   (latest stable release)                                                    |
-  20.03.2021   | Minor release with breaking changes (with fallback) |
+  07.05.2021   | Patch release (enhancements, bug fixes, etc) |
 
   |
   [4.3.1](https://github.com/OpenAPITools/openapi-generator/releases/tag/v4.3.1)                                                   
@@ -43615,7 +43584,7 @@ OpenAPITools/openapi-generator: >
 
 
   JAR location:
-  `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar`
+  `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.1/openapi-generator-cli-5.1.1.jar`
 
 
   For **Mac/Linux** users:
@@ -43623,7 +43592,7 @@ OpenAPITools/openapi-generator: >
   ```sh
 
   wget
-  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar
+  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.1/openapi-generator-cli-5.1.1.jar
   -O openapi-generator-cli.jar
 
   ```
@@ -43636,7 +43605,7 @@ OpenAPITools/openapi-generator: >
   ```
 
   Invoke-WebRequest -OutFile openapi-generator-cli.jar
-  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar
+  https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.1/openapi-generator-cli-5.1.1.jar
 
   ```
 
@@ -44060,7 +44029,7 @@ OpenAPITools/openapi-generator: >
 
   ```sh
 
-  openapi-generator-cli version-manager set 5.1.0
+  openapi-generator-cli version-manager set 5.1.1
 
   ```
 
@@ -44107,7 +44076,7 @@ OpenAPITools/openapi-generator: >
   <!-- RELEASE_VERSION -->
 
   You can also download the JAR (latest release) directly from
-  [maven.org](https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.0/openapi-generator-cli-5.1.0.jar)
+  [maven.org](https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.1.1/openapi-generator-cli-5.1.1.jar)
 
   <!-- /RELEASE_VERSION -->
 
@@ -45168,12 +45137,12 @@ OpenAPITools/openapi-generator: >
   Server](https://www.1ju.org/article/java-openapi-generator-server) at
   [億聚網](https://www.1ju.org/)
 
-  - 2022-04-19 - [Introducing Twilio’s OpenAPI Specification
+  - 2021-04-19 - [Introducing Twilio’s OpenAPI Specification
   Beta](https://www.twilio.com/blog/introducing-twilio-open-api-specification-beta)
   by [GARETH PAUL JONES](https://www.twilio.com/blog/author/gpj) at [Twilio
   Blog](https://www.twilio.com/blog)
 
-  - 2022-04-22 - [Leveraging OpenApi strengths in a Micro-Service
+  - 2021-04-22 - [Leveraging OpenApi strengths in a Micro-Service
   environment](https://medium.com/unibuddy-technology-blog/leveraging-openapi-strengths-in-a-micro-service-environment-3d7f9e7c26ff)
   by Nicolas Jellab at [Unibuddy Technology
   Blog](https://medium.com/unibuddy-technology-blog)
@@ -57647,7 +57616,7 @@ mrin9/OpenAPI-Viewer: >+
       <img src="/screenshots/authentication2.png?raw=true">
   </kbd>
 
-tiangolo/fastapi: "<p align=\"center\">\n  <a href=\"https://fastapi.tiangolo.com\"><img src=\"https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png\" alt=\"FastAPI\"></a>\n</p>\n<p align=\"center\">\n    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>\n</p>\n<p align=\"center\">\n<a href=\"https://github.com/tiangolo/fastapi/actions?query=workflow%3ATest\" target=\"_blank\">\n    <img src=\"https://github.com/tiangolo/fastapi/workflows/Test/badge.svg\" alt=\"Test\">\n</a>\n<a href=\"https://codecov.io/gh/tiangolo/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/codecov/c/github/tiangolo/fastapi?color=%2334D058\" alt=\"Coverage\">\n</a>\n<a href=\"https://pypi.org/project/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/pypi/v/fastapi?color=%2334D058&label=pypi%20package\" alt=\"Package version\">\n</a>\n</p>\n\n---\n\n**Documentation**: <a href=\"https://fastapi.tiangolo.com\" target=\"_blank\">https://fastapi.tiangolo.com</a>\n\n**Source Code**: <a href=\"https://github.com/tiangolo/fastapi\" target=\"_blank\">https://github.com/tiangolo/fastapi</a>\n\n---\n\nFastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.\n\nThe key features are:\n\n* **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic). [One of the fastest Python frameworks available](#performance).\n\n* **Fast to code**: Increase the speed to develop features by about 200% to 300%. *\n* **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *\n* **Intuitive**: Great editor support. <abbr title=\"also known as auto-complete, autocompletion, IntelliSense\">Completion</abbr> everywhere. Less time debugging.\n* **Easy**: Designed to be easy to use and learn. Less time reading docs.\n* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* **Robust**: Get production-ready code. With automatic interactive documentation.\n* **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href=\"https://github.com/OAI/OpenAPI-Specification\" class=\"external-link\" target=\"_blank\">OpenAPI</a> (previously known as Swagger) and <a href=\"https://json-schema.org/\" class=\"external-link\" target=\"_blank\">JSON Schema</a>.\n\n<small>* estimation based on tests on an internal development team, building production applications.</small>\n\n## Gold Sponsors\n\n<!-- sponsors -->\n\n<a href=\"https://www.deta.sh/?ref=fastapi\" target=\"_blank\" title=\"The launchpad for all your (team's) ideas\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/deta.svg\"></a>\n<a href=\"https://www.investsuite.com/jobs\" target=\"_blank\" title=\"Wealthtech jobs with FastAPI\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/investsuite.svg\"></a>\n<a href=\"https://www.vim.so/?utm_source=FastAPI\" target=\"_blank\" title=\"We help you master vim with interactive exercises\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/vimso.png\"></a>\n<a href=\"https://talkpython.fm/fastapi-sponsor\" target=\"_blank\" title=\"FastAPI video courses on demand from people you trust\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/talkpython.png\"></a>\n\n<!-- /sponsors -->\n\n<a href=\"https://fastapi.tiangolo.com/fastapi-people/#sponsors\" class=\"external-link\" target=\"_blank\">Other sponsors</a>\n\n## Opinions\n\n\"_[...] I'm using **FastAPI** a ton these days. [...] I'm actually planning to use it for all of my team's **ML services at Microsoft**. Some of them are getting integrated into the core **Windows** product and some **Office** products._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kabir Khan - <strong>Microsoft</strong> <a href=\"https://github.com/tiangolo/fastapi/pull/26\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_We adopted the **FastAPI** library to spawn a **REST** server that can be queried to obtain **predictions**. [for Ludwig]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Piero Molino, Yaroslav Dudin, and Sai Sumanth Miryala - <strong>Uber</strong> <a href=\"https://eng.uber.com/ludwig-v0-2/\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_**Netflix** is pleased to announce the open-source release of our **crisis management** orchestration framework: **Dispatch**! [built with **FastAPI**]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kevin Glisson, Marc Vilanova, Forest Monsen - <strong>Netflix</strong> <a href=\"https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_I’m over the moon excited about **FastAPI**. It’s so fun!_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Brian Okken - <strong><a href=\"https://pythonbytes.fm/episodes/show/123/time-to-right-the-py-wrongs?time_in_sec=855\" target=\"_blank\">Python Bytes</a> podcast host</strong> <a href=\"https://twitter.com/brianokken/status/1112220079972728832\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_Honestly, what you've built looks super solid and polished. In many ways, it's what I wanted **Hug** to be - it's really inspiring to see someone build that._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Timothy Crosley - <strong><a href=\"https://www.hug.rest/\" target=\"_blank\">Hug</a> creator</strong> <a href=\"https://news.ycombinator.com/item?id=19455465\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_If you're looking to learn one **modern framework** for building REST APIs, check out **FastAPI** [...] It's fast, easy to use and easy to learn [...]_\"\n\n\"_We've switched over to **FastAPI** for our **APIs** [...] I think you'll like it [...]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Ines Montani - Matthew Honnibal - <strong><a href=\"https://explosion.ai\" target=\"_blank\">Explosion AI</a> founders - <a href=\"https://spacy.io\" target=\"_blank\">spaCy</a> creators</strong> <a href=\"https://twitter.com/_inesmontani/status/1144173225322143744\" target=\"_blank\"><small>(ref)</small></a> - <a href=\"https://twitter.com/honnibal/status/1144031421859655680\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n## **Typer**, the FastAPI of CLIs\n\n<a href=\"https://typer.tiangolo.com\" target=\"_blank\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>\n\nIf you are building a <abbr title=\"Command Line Interface\">CLI</abbr> app to be used in the terminal instead of a web API, check out <a href=\"https://typer.tiangolo.com/\" class=\"external-link\" target=\"_blank\">**Typer**</a>.\n\n**Typer** is FastAPI's little sibling. And it's intended to be the **FastAPI of CLIs**. ⌨️ \U0001F680\n\n## Requirements\n\nPython 3.6+\n\nFastAPI stands on the shoulders of giants:\n\n* <a href=\"https://www.starlette.io/\" class=\"external-link\" target=\"_blank\">Starlette</a> for the web parts.\n* <a href=\"https://pydantic-docs.helpmanual.io/\" class=\"external-link\" target=\"_blank\">Pydantic</a> for the data parts.\n\n## Installation\n\n<div class=\"termy\">\n\n```console\n$ pip install fastapi\n\n---> 100%\n```\n\n</div>\n\nYou will also need an ASGI server, for production such as <a href=\"https://www.uvicorn.org\" class=\"external-link\" target=\"_blank\">Uvicorn</a> or <a href=\"https://gitlab.com/pgjones/hypercorn\" class=\"external-link\" target=\"_blank\">Hypercorn</a>.\n\n<div class=\"termy\">\n\n```console\n$ pip install uvicorn[standard]\n\n---> 100%\n```\n\n</div>\n\n## Example\n\n### Create it\n\n* Create a file `main.py` with:\n\n```Python\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n<details markdown=\"1\">\n<summary>Or use <code>async def</code>...</summary>\n\nIf your code uses `async` / `await`, use `async def`:\n\n```Python hl_lines=\"9  14\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n**Note**:\n\nIf you don't know, check the _\"In a hurry?\"_ section about <a href=\"https://fastapi.tiangolo.com/async/#in-a-hurry\" target=\"_blank\">`async` and `await` in the docs</a>.\n\n</details>\n\n### Run it\n\nRun the server with:\n\n<div class=\"termy\">\n\n```console\n$ uvicorn main:app --reload\n\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [28720]\nINFO:     Started server process [28722]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n```\n\n</div>\n\n<details markdown=\"1\">\n<summary>About the command <code>uvicorn main:app --reload</code>...</summary>\n\nThe command `uvicorn main:app` refers to:\n\n* `main`: the file `main.py` (the Python \"module\").\n* `app`: the object created inside of `main.py` with the line `app = FastAPI()`.\n* `--reload`: make the server restart after code changes. Only do this for development.\n\n</details>\n\n### Check it\n\nOpen your browser at <a href=\"http://127.0.0.1:8000/items/5?q=somequery\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/items/5?q=somequery</a>.\n\nYou will see the JSON response as:\n\n```JSON\n{\"item_id\": 5, \"q\": \"somequery\"}\n```\n\nYou already created an API that:\n\n* Receives HTTP requests in the _paths_ `/` and `/items/{item_id}`.\n* Both _paths_ take `GET` <em>operations</em> (also known as HTTP _methods_).\n* The _path_ `/items/{item_id}` has a _path parameter_ `item_id` that should be an `int`.\n* The _path_ `/items/{item_id}` has an optional `str` _query parameter_ `q`.\n\n### Interactive API docs\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\nYou will see the automatic interactive API documentation (provided by <a href=\"https://github.com/swagger-api/swagger-ui\" class=\"external-link\" target=\"_blank\">Swagger UI</a>):\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)\n\n### Alternative API docs\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\nYou will see the alternative automatic documentation (provided by <a href=\"https://github.com/Rebilly/ReDoc\" class=\"external-link\" target=\"_blank\">ReDoc</a>):\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)\n\n## Example upgrade\n\nNow modify the file `main.py` to receive a body from a `PUT` request.\n\nDeclare the body using standard Python types, thanks to Pydantic.\n\n```Python hl_lines=\"4  9-12  25-27\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: Optional[bool] = None\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n\n\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\nThe server should reload automatically (because you added `--reload` to the `uvicorn` command above).\n\n### Interactive API docs upgrade\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\n* The interactive API documentation will be automatically updated, including the new body:\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)\n\n* Click on the button \"Try it out\", it allows you to fill the parameters and directly interact with the API:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)\n\n* Then click on the \"Execute\" button, the user interface will communicate with your API, send the parameters, get the results and show them on the screen:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)\n\n### Alternative API docs upgrade\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\n* The alternative documentation will also reflect the new query parameter and body:\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)\n\n### Recap\n\nIn summary, you declare **once** the types of parameters, body, etc. as function parameters. \n\nYou do that with standard modern Python types.\n\nYou don't have to learn a new syntax, the methods or classes of a specific library, etc.\n\nJust standard **Python 3.6+**.\n\nFor example, for an `int`:\n\n```Python\nitem_id: int\n```\n\nor for a more complex `Item` model:\n\n```Python\nitem: Item\n```\n\n...and with that single declaration you get:\n\n* Editor support, including:\n    * Completion.\n    * Type checks.\n* Validation of data:\n    * Automatic and clear errors when the data is invalid.\n    * Validation even for deeply nested JSON objects.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of input data: coming from the network to Python data and types. Reading from:\n    * JSON.\n    * Path parameters.\n    * Query parameters.\n    * Cookies.\n    * Headers.\n    * Forms.\n    * Files.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of output data: converting from Python data and types to network data (as JSON):\n    * Convert Python types (`str`, `int`, `float`, `bool`, `list`, etc).\n    * `datetime` objects.\n    * `UUID` objects.\n    * Database models.\n    * ...and many more.\n* Automatic interactive API documentation, including 2 alternative user interfaces:\n    * Swagger UI.\n    * ReDoc.\n\n---\n\nComing back to the previous code example, **FastAPI** will:\n\n* Validate that there is an `item_id` in the path for `GET` and `PUT` requests.\n* Validate that the `item_id` is of type `int` for `GET` and `PUT` requests.\n    * If it is not, the client will see a useful, clear error.\n* Check if there is an optional query parameter named `q` (as in `http://127.0.0.1:8000/items/foo?q=somequery`) for `GET` requests.\n    * As the `q` parameter is declared with `= None`, it is optional.\n    * Without the `None` it would be required (as is the body in the case with `PUT`).\n* For `PUT` requests to `/items/{item_id}`, Read the body as JSON:\n    * Check that it has a required attribute `name` that should be a `str`. \n    * Check that it has a required attribute `price` that has to be a `float`.\n    * Check that it has an optional attribute `is_offer`, that should be a `bool`, if present.\n    * All this would also work for deeply nested JSON objects.\n* Convert from and to JSON automatically.\n* Document everything with OpenAPI, that can be used by:\n    * Interactive documentation systems.\n    * Automatic client code generation systems, for many languages.\n* Provide 2 interactive documentation web interfaces directly.\n\n---\n\nWe just scratched the surface, but you already get the idea of how it all works.\n\nTry changing the line with:\n\n```Python\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\n...from:\n\n```Python\n        ... \"item_name\": item.name ...\n```\n\n...to:\n\n```Python\n        ... \"item_price\": item.price ...\n```\n\n...and see how your editor will auto-complete the attributes and know their types:\n\n![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)\n\nFor a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>.\n\n**Spoiler alert**: the tutorial - user guide includes:\n\n* Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**.\n* How to set **validation constraints** as `maximum_length` or `regex`.\n* A very powerful and easy to use **<abbr title=\"also known as components, resources, providers, services, injectables\">Dependency Injection</abbr>** system.\n* Security and authentication, including support for **OAuth2** with **JWT tokens** and **HTTP Basic** auth.\n* More advanced (but equally easy) techniques for declaring **deeply nested JSON models** (thanks to Pydantic).\n* Many extra features (thanks to Starlette) as:\n    * **WebSockets**\n    * **GraphQL**\n    * extremely easy tests based on `requests` and `pytest`\n    * **CORS**\n    * **Cookie Sessions**\n    * ...and more.\n\n## Performance\n\nIndependent TechEmpower benchmarks show **FastAPI** applications running under Uvicorn as <a href=\"https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7\" class=\"external-link\" target=\"_blank\">one of the fastest Python frameworks available</a>, only below Starlette and Uvicorn themselves (used internally by FastAPI). (*)\n\nTo understand more about it, see the section <a href=\"https://fastapi.tiangolo.com/benchmarks/\" class=\"internal-link\" target=\"_blank\">Benchmarks</a>.\n\n## Optional Dependencies\n\nUsed by Pydantic:\n\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - for faster JSON <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>.\n* <a href=\"https://github.com/JoshData/python-email-validator\" target=\"_blank\"><code>email_validator</code></a> - for email validation.\n\nUsed by Starlette:\n\n* <a href=\"https://requests.readthedocs.io\" target=\"_blank\"><code>requests</code></a> - Required if you want to use the `TestClient`.\n* <a href=\"https://github.com/Tinche/aiofiles\" target=\"_blank\"><code>aiofiles</code></a> - Required if you want to use `FileResponse` or `StaticFiles`.\n* <a href=\"https://jinja.palletsprojects.com\" target=\"_blank\"><code>jinja2</code></a> - Required if you want to use the default template configuration.\n* <a href=\"https://andrew-d.github.io/python-multipart/\" target=\"_blank\"><code>python-multipart</code></a> - Required if you want to support form <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>, with `request.form()`.\n* <a href=\"https://pythonhosted.org/itsdangerous/\" target=\"_blank\"><code>itsdangerous</code></a> - Required for `SessionMiddleware` support.\n* <a href=\"https://pyyaml.org/wiki/PyYAMLDocumentation\" target=\"_blank\"><code>pyyaml</code></a> - Required for Starlette's `SchemaGenerator` support (you probably don't need it with FastAPI).\n* <a href=\"https://graphene-python.org/\" target=\"_blank\"><code>graphene</code></a> - Required for `GraphQLApp` support.\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.\n\nUsed by FastAPI / Starlette:\n\n* <a href=\"https://www.uvicorn.org\" target=\"_blank\"><code>uvicorn</code></a> - for the server that loads and serves your application.\n* <a href=\"https://github.com/ijl/orjson\" target=\"_blank\"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.\n\nYou can install all of these with `pip install fastapi[all]`.\n\n## License\n\nThis project is licensed under the terms of the MIT license.\n"
+tiangolo/fastapi: "<p align=\"center\">\n  <a href=\"https://fastapi.tiangolo.com\"><img src=\"https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png\" alt=\"FastAPI\"></a>\n</p>\n<p align=\"center\">\n    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>\n</p>\n<p align=\"center\">\n<a href=\"https://github.com/tiangolo/fastapi/actions?query=workflow%3ATest\" target=\"_blank\">\n    <img src=\"https://github.com/tiangolo/fastapi/workflows/Test/badge.svg\" alt=\"Test\">\n</a>\n<a href=\"https://codecov.io/gh/tiangolo/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/codecov/c/github/tiangolo/fastapi?color=%2334D058\" alt=\"Coverage\">\n</a>\n<a href=\"https://pypi.org/project/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/pypi/v/fastapi?color=%2334D058&label=pypi%20package\" alt=\"Package version\">\n</a>\n</p>\n\n---\n\n**Documentation**: <a href=\"https://fastapi.tiangolo.com\" target=\"_blank\">https://fastapi.tiangolo.com</a>\n\n**Source Code**: <a href=\"https://github.com/tiangolo/fastapi\" target=\"_blank\">https://github.com/tiangolo/fastapi</a>\n\n---\n\nFastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.\n\nThe key features are:\n\n* **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic). [One of the fastest Python frameworks available](#performance).\n\n* **Fast to code**: Increase the speed to develop features by about 200% to 300%. *\n* **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *\n* **Intuitive**: Great editor support. <abbr title=\"also known as auto-complete, autocompletion, IntelliSense\">Completion</abbr> everywhere. Less time debugging.\n* **Easy**: Designed to be easy to use and learn. Less time reading docs.\n* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* **Robust**: Get production-ready code. With automatic interactive documentation.\n* **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href=\"https://github.com/OAI/OpenAPI-Specification\" class=\"external-link\" target=\"_blank\">OpenAPI</a> (previously known as Swagger) and <a href=\"https://json-schema.org/\" class=\"external-link\" target=\"_blank\">JSON Schema</a>.\n\n<small>* estimation based on tests on an internal development team, building production applications.</small>\n\n## Sponsors\n\n<!-- sponsors -->\n\n<a href=\"https://www.deta.sh/?ref=fastapi\" target=\"_blank\" title=\"The launchpad for all your (team's) ideas\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/deta.svg\"></a>\n<a href=\"https://www.investsuite.com/jobs\" target=\"_blank\" title=\"Wealthtech jobs with FastAPI\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/investsuite.svg\"></a>\n<a href=\"https://www.vim.so/?utm_source=FastAPI\" target=\"_blank\" title=\"We help you master vim with interactive exercises\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/vimso.png\"></a>\n<a href=\"https://talkpython.fm/fastapi-sponsor\" target=\"_blank\" title=\"FastAPI video courses on demand from people you trust\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/talkpython.png\"></a>\n\n<!-- /sponsors -->\n\n<a href=\"https://fastapi.tiangolo.com/fastapi-people/#sponsors\" class=\"external-link\" target=\"_blank\">Other sponsors</a>\n\n## Opinions\n\n\"_[...] I'm using **FastAPI** a ton these days. [...] I'm actually planning to use it for all of my team's **ML services at Microsoft**. Some of them are getting integrated into the core **Windows** product and some **Office** products._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kabir Khan - <strong>Microsoft</strong> <a href=\"https://github.com/tiangolo/fastapi/pull/26\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_We adopted the **FastAPI** library to spawn a **REST** server that can be queried to obtain **predictions**. [for Ludwig]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Piero Molino, Yaroslav Dudin, and Sai Sumanth Miryala - <strong>Uber</strong> <a href=\"https://eng.uber.com/ludwig-v0-2/\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_**Netflix** is pleased to announce the open-source release of our **crisis management** orchestration framework: **Dispatch**! [built with **FastAPI**]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kevin Glisson, Marc Vilanova, Forest Monsen - <strong>Netflix</strong> <a href=\"https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_I’m over the moon excited about **FastAPI**. It’s so fun!_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Brian Okken - <strong><a href=\"https://pythonbytes.fm/episodes/show/123/time-to-right-the-py-wrongs?time_in_sec=855\" target=\"_blank\">Python Bytes</a> podcast host</strong> <a href=\"https://twitter.com/brianokken/status/1112220079972728832\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_Honestly, what you've built looks super solid and polished. In many ways, it's what I wanted **Hug** to be - it's really inspiring to see someone build that._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Timothy Crosley - <strong><a href=\"https://www.hug.rest/\" target=\"_blank\">Hug</a> creator</strong> <a href=\"https://news.ycombinator.com/item?id=19455465\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_If you're looking to learn one **modern framework** for building REST APIs, check out **FastAPI** [...] It's fast, easy to use and easy to learn [...]_\"\n\n\"_We've switched over to **FastAPI** for our **APIs** [...] I think you'll like it [...]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Ines Montani - Matthew Honnibal - <strong><a href=\"https://explosion.ai\" target=\"_blank\">Explosion AI</a> founders - <a href=\"https://spacy.io\" target=\"_blank\">spaCy</a> creators</strong> <a href=\"https://twitter.com/_inesmontani/status/1144173225322143744\" target=\"_blank\"><small>(ref)</small></a> - <a href=\"https://twitter.com/honnibal/status/1144031421859655680\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n## **Typer**, the FastAPI of CLIs\n\n<a href=\"https://typer.tiangolo.com\" target=\"_blank\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>\n\nIf you are building a <abbr title=\"Command Line Interface\">CLI</abbr> app to be used in the terminal instead of a web API, check out <a href=\"https://typer.tiangolo.com/\" class=\"external-link\" target=\"_blank\">**Typer**</a>.\n\n**Typer** is FastAPI's little sibling. And it's intended to be the **FastAPI of CLIs**. ⌨️ \U0001F680\n\n## Requirements\n\nPython 3.6+\n\nFastAPI stands on the shoulders of giants:\n\n* <a href=\"https://www.starlette.io/\" class=\"external-link\" target=\"_blank\">Starlette</a> for the web parts.\n* <a href=\"https://pydantic-docs.helpmanual.io/\" class=\"external-link\" target=\"_blank\">Pydantic</a> for the data parts.\n\n## Installation\n\n<div class=\"termy\">\n\n```console\n$ pip install fastapi\n\n---> 100%\n```\n\n</div>\n\nYou will also need an ASGI server, for production such as <a href=\"https://www.uvicorn.org\" class=\"external-link\" target=\"_blank\">Uvicorn</a> or <a href=\"https://gitlab.com/pgjones/hypercorn\" class=\"external-link\" target=\"_blank\">Hypercorn</a>.\n\n<div class=\"termy\">\n\n```console\n$ pip install uvicorn[standard]\n\n---> 100%\n```\n\n</div>\n\n## Example\n\n### Create it\n\n* Create a file `main.py` with:\n\n```Python\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n<details markdown=\"1\">\n<summary>Or use <code>async def</code>...</summary>\n\nIf your code uses `async` / `await`, use `async def`:\n\n```Python hl_lines=\"9  14\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n**Note**:\n\nIf you don't know, check the _\"In a hurry?\"_ section about <a href=\"https://fastapi.tiangolo.com/async/#in-a-hurry\" target=\"_blank\">`async` and `await` in the docs</a>.\n\n</details>\n\n### Run it\n\nRun the server with:\n\n<div class=\"termy\">\n\n```console\n$ uvicorn main:app --reload\n\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [28720]\nINFO:     Started server process [28722]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n```\n\n</div>\n\n<details markdown=\"1\">\n<summary>About the command <code>uvicorn main:app --reload</code>...</summary>\n\nThe command `uvicorn main:app` refers to:\n\n* `main`: the file `main.py` (the Python \"module\").\n* `app`: the object created inside of `main.py` with the line `app = FastAPI()`.\n* `--reload`: make the server restart after code changes. Only do this for development.\n\n</details>\n\n### Check it\n\nOpen your browser at <a href=\"http://127.0.0.1:8000/items/5?q=somequery\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/items/5?q=somequery</a>.\n\nYou will see the JSON response as:\n\n```JSON\n{\"item_id\": 5, \"q\": \"somequery\"}\n```\n\nYou already created an API that:\n\n* Receives HTTP requests in the _paths_ `/` and `/items/{item_id}`.\n* Both _paths_ take `GET` <em>operations</em> (also known as HTTP _methods_).\n* The _path_ `/items/{item_id}` has a _path parameter_ `item_id` that should be an `int`.\n* The _path_ `/items/{item_id}` has an optional `str` _query parameter_ `q`.\n\n### Interactive API docs\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\nYou will see the automatic interactive API documentation (provided by <a href=\"https://github.com/swagger-api/swagger-ui\" class=\"external-link\" target=\"_blank\">Swagger UI</a>):\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)\n\n### Alternative API docs\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\nYou will see the alternative automatic documentation (provided by <a href=\"https://github.com/Rebilly/ReDoc\" class=\"external-link\" target=\"_blank\">ReDoc</a>):\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)\n\n## Example upgrade\n\nNow modify the file `main.py` to receive a body from a `PUT` request.\n\nDeclare the body using standard Python types, thanks to Pydantic.\n\n```Python hl_lines=\"4  9-12  25-27\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: Optional[bool] = None\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n\n\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\nThe server should reload automatically (because you added `--reload` to the `uvicorn` command above).\n\n### Interactive API docs upgrade\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\n* The interactive API documentation will be automatically updated, including the new body:\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)\n\n* Click on the button \"Try it out\", it allows you to fill the parameters and directly interact with the API:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)\n\n* Then click on the \"Execute\" button, the user interface will communicate with your API, send the parameters, get the results and show them on the screen:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)\n\n### Alternative API docs upgrade\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\n* The alternative documentation will also reflect the new query parameter and body:\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)\n\n### Recap\n\nIn summary, you declare **once** the types of parameters, body, etc. as function parameters. \n\nYou do that with standard modern Python types.\n\nYou don't have to learn a new syntax, the methods or classes of a specific library, etc.\n\nJust standard **Python 3.6+**.\n\nFor example, for an `int`:\n\n```Python\nitem_id: int\n```\n\nor for a more complex `Item` model:\n\n```Python\nitem: Item\n```\n\n...and with that single declaration you get:\n\n* Editor support, including:\n    * Completion.\n    * Type checks.\n* Validation of data:\n    * Automatic and clear errors when the data is invalid.\n    * Validation even for deeply nested JSON objects.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of input data: coming from the network to Python data and types. Reading from:\n    * JSON.\n    * Path parameters.\n    * Query parameters.\n    * Cookies.\n    * Headers.\n    * Forms.\n    * Files.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of output data: converting from Python data and types to network data (as JSON):\n    * Convert Python types (`str`, `int`, `float`, `bool`, `list`, etc).\n    * `datetime` objects.\n    * `UUID` objects.\n    * Database models.\n    * ...and many more.\n* Automatic interactive API documentation, including 2 alternative user interfaces:\n    * Swagger UI.\n    * ReDoc.\n\n---\n\nComing back to the previous code example, **FastAPI** will:\n\n* Validate that there is an `item_id` in the path for `GET` and `PUT` requests.\n* Validate that the `item_id` is of type `int` for `GET` and `PUT` requests.\n    * If it is not, the client will see a useful, clear error.\n* Check if there is an optional query parameter named `q` (as in `http://127.0.0.1:8000/items/foo?q=somequery`) for `GET` requests.\n    * As the `q` parameter is declared with `= None`, it is optional.\n    * Without the `None` it would be required (as is the body in the case with `PUT`).\n* For `PUT` requests to `/items/{item_id}`, Read the body as JSON:\n    * Check that it has a required attribute `name` that should be a `str`. \n    * Check that it has a required attribute `price` that has to be a `float`.\n    * Check that it has an optional attribute `is_offer`, that should be a `bool`, if present.\n    * All this would also work for deeply nested JSON objects.\n* Convert from and to JSON automatically.\n* Document everything with OpenAPI, that can be used by:\n    * Interactive documentation systems.\n    * Automatic client code generation systems, for many languages.\n* Provide 2 interactive documentation web interfaces directly.\n\n---\n\nWe just scratched the surface, but you already get the idea of how it all works.\n\nTry changing the line with:\n\n```Python\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\n...from:\n\n```Python\n        ... \"item_name\": item.name ...\n```\n\n...to:\n\n```Python\n        ... \"item_price\": item.price ...\n```\n\n...and see how your editor will auto-complete the attributes and know their types:\n\n![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)\n\nFor a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>.\n\n**Spoiler alert**: the tutorial - user guide includes:\n\n* Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**.\n* How to set **validation constraints** as `maximum_length` or `regex`.\n* A very powerful and easy to use **<abbr title=\"also known as components, resources, providers, services, injectables\">Dependency Injection</abbr>** system.\n* Security and authentication, including support for **OAuth2** with **JWT tokens** and **HTTP Basic** auth.\n* More advanced (but equally easy) techniques for declaring **deeply nested JSON models** (thanks to Pydantic).\n* Many extra features (thanks to Starlette) as:\n    * **WebSockets**\n    * **GraphQL**\n    * extremely easy tests based on `requests` and `pytest`\n    * **CORS**\n    * **Cookie Sessions**\n    * ...and more.\n\n## Performance\n\nIndependent TechEmpower benchmarks show **FastAPI** applications running under Uvicorn as <a href=\"https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7\" class=\"external-link\" target=\"_blank\">one of the fastest Python frameworks available</a>, only below Starlette and Uvicorn themselves (used internally by FastAPI). (*)\n\nTo understand more about it, see the section <a href=\"https://fastapi.tiangolo.com/benchmarks/\" class=\"internal-link\" target=\"_blank\">Benchmarks</a>.\n\n## Optional Dependencies\n\nUsed by Pydantic:\n\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - for faster JSON <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>.\n* <a href=\"https://github.com/JoshData/python-email-validator\" target=\"_blank\"><code>email_validator</code></a> - for email validation.\n\nUsed by Starlette:\n\n* <a href=\"https://requests.readthedocs.io\" target=\"_blank\"><code>requests</code></a> - Required if you want to use the `TestClient`.\n* <a href=\"https://github.com/Tinche/aiofiles\" target=\"_blank\"><code>aiofiles</code></a> - Required if you want to use `FileResponse` or `StaticFiles`.\n* <a href=\"https://jinja.palletsprojects.com\" target=\"_blank\"><code>jinja2</code></a> - Required if you want to use the default template configuration.\n* <a href=\"https://andrew-d.github.io/python-multipart/\" target=\"_blank\"><code>python-multipart</code></a> - Required if you want to support form <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>, with `request.form()`.\n* <a href=\"https://pythonhosted.org/itsdangerous/\" target=\"_blank\"><code>itsdangerous</code></a> - Required for `SessionMiddleware` support.\n* <a href=\"https://pyyaml.org/wiki/PyYAMLDocumentation\" target=\"_blank\"><code>pyyaml</code></a> - Required for Starlette's `SchemaGenerator` support (you probably don't need it with FastAPI).\n* <a href=\"https://graphene-python.org/\" target=\"_blank\"><code>graphene</code></a> - Required for `GraphQLApp` support.\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.\n\nUsed by FastAPI / Starlette:\n\n* <a href=\"https://www.uvicorn.org\" target=\"_blank\"><code>uvicorn</code></a> - for the server that loads and serves your application.\n* <a href=\"https://github.com/ijl/orjson\" target=\"_blank\"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.\n\nYou can install all of these with `pip install fastapi[all]`.\n\n## License\n\nThis project is licensed under the terms of the MIT license.\n"
 ReDoc-ly/create-openapi-repo: "# create-openapi-repo\n\n[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]\n\n> Generate an organized multi-file OpenAPI repository.\n\n<center>\n\n<img src=\"./logo.png\" width=\"500px\"/>\n\n</center>\n\n## Who?\nYou! Hello.  Do you need to write or contribute to an OpenAPI definition?  If so, read on...\n\n## What?\nWe recommend a docs-like-code approach to OpenAPI definitions:\n- Write it using your favorite text-editor or IDE (we love VSCode).\n- Organize it into multiple files and folders to make it easy to navigate.\n- Store it using source control (such as GitHub).\n- Continuously validate it using our free [openapi-cli tool](https://github.com/redocly/openapi-cli) or our free continuous validation service (coming soon).\n- Bundle it (for a smaller footprint to use in other tools or for tools that do not support a multi-file format).\n\n## Why?\nThere are a few advantages in hosting your API definition on GitHub:\n - Community engagement (PR's and issues -- if you have a public repo)\n - Advertisment in the GitHub community\n - Hosting on GitHub pages (perfect uptime, CDN, Jekyll, custom domains with CNAME)\n - Revision history, branching, CI\n - Review and approval workflows using Pull Requests\n - Fast on-boarding time (developers and tech writers know how to use GitHub :smile:)\n - Fully compatible with Redocly API Reference too\n\n There are also some advantages to a multi-file YAML format OpenAPI definition:\n - Reuse schema objects to keep things DRY (don't repeat yourself) \n - Smaller diffs compared to JSON (especially for markdown descriptions)\n - Easier to navigate\n - Easier to edit with confidence\n\n## Features\nThis generator helps to create a GitHub repo with the following features:\n - Split a big (or small) OpenAPI definition into smaller files organized into folders\n - Bundle it into a single file for deployment\n - Continuous integration/deployment on Travis or Redocly Workflows\n - Code samples as separate files\n - Automate deployment of your OpenAPI definition and docs\n - OpenAPI definition is validated after each commit\n - Live editing in your editor of choice :heart_eyes:\n\n## Structure\n\nYou will have a structure similar to this:\n```\n    ├── .redocly.yaml\n    ├── LICENSE\n    ├── README.md\n    ├── docs\n    │\_\_ ├── favicon.png\n    │\_\_ └── index.html\n    ├── openapi\n    │\_\_ ├── README.md\n    │\_\_ ├── code_samples\n    │\_\_ │\_\_ ├── C#\n    │\_\_ │\_\_ │\_\_ └── echo\n    │\_\_ │\_\_ │\_\_     └── post.cs\n    │\_\_ │\_\_ ├── PHP\n    │\_\_ │\_\_ │\_\_ └── echo\n    │\_\_ │\_\_ │\_\_     └── post.php\n    │\_\_ │\_\_ └── README.md\n    │\_\_ ├── components\n    │\_\_ │\_\_ └── README.md\n    │\_\_ └── paths\n    │\_\_     └── README.md\n    └── package.json\n```\n\nHowever, you can adjust it to any structure you prefer.\n\nThe `openapi` folder is where your OpenAPI definition will live.  Inside there, and the sub-folders, there are `README.md` files to help guide you further. This is also where your entrypoint `openapi.yaml` will live.\n\nThe `components` folder is where you will organize sub-folders such as `schema` to define your schema.\n\nThe `paths` folder is where you will organize your paths. There will be a 'README.md' file in there with suggestions for how to organize it into specially named files (or folders) that use an `@` in place of a `/` (because files cannot have a `/` character in them).  You will also be able to use path parameters by wrapping them in curly braces `{example}`.\n\nThe `.redocly.yaml` file is a universal configuration for various Redocly tools including the lint tool and reference doc engine.\n\n## Commands\n\nThe generated repository includes installing a dependency for our `openapi-cli` tool which supports commands such as `validate`, `bundle`, and more.  There are scripted shortcuts defined in the repository's `package.json`.  \n\n\n## Examples of generated repositories\n- https://github.com/Rebilly/RebillyAPI\n- https://github.com/thingful/openapi-spec\n- https://github.com/TwineHealth/TwineDeveloperDocs\n\n## How to generate your repository\n\nWe assume you already have [node.js](https://nodejs.org/) installed.\n\n- Install `create-openapi-repo` globally:\n```bash\nnpm install -g create-openapi-repo\n```\nor use [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):\n\nWe'll use `npx` in this example.  However, remove `npx` if you installed it globally.\n\n```bash\nnpx create-openapi-repo\n```\n\nYou will be presented with some questions. You can create a new definition or use an existing definition to initialize your project.\n\nPlease note, if you do start a new one, remember to [create a GitHub repo](https://help.github.com/articles/create-a-repo/#create-a-new-repository-on-github) where your OpenAPI definition will live.\n\nIf you use the prior version of this generated repository, please read the following upgrade instructions.\n\n#### Upgrading from a prior version\n\nMigrate your repository from a previous structure of OpenAPI repo to this newer structure with our migration tool. \n\nRun this in the root folder of your repo.\n\n```bash\nnpx create-openapi-repo --migrate-2-3\n```\n\nNote: the migration tool does not migrate plugins automatically. You would need to manually add them to the `transformers` folder. \n\n## Support\n\nThank you for wanting to support us. Here are some ideas how to support us:\n\n* Star us\n* Tell a friend or colleague about us (or Tweet about us)\n* Write an article about it (and let us know) -- open an issue to let us know, with the link.\n* Consider our commercial products if are looking for automation to ease the docs-like code workflow, hosting along with conveniences like custom domains, access controls and previews, API reference documentation, or a full developer portal:  https://redoc.ly\n\n[npm-image]: https://badge.fury.io/js/generator-openapi-repo.svg\n[npm-url]: https://npmjs.org/package/generator-openapi-repo\n[daviddm-image]: https://david-dm.org/Rebilly/generator-openapi-repo.svg?theme=shields.io\n[daviddm-url]: https://david-dm.org/Rebilly/generator-openapi-repo\n"
 postmanlabs/openapi-to-postman: >
 
@@ -57702,6 +57671,15 @@ postmanlabs/openapi-to-postman: >
 
   ```
 
+
+  If you want to use the converter in the CLI, install it globally with NPM:
+
+
+  ```terminal
+
+  $ npm i -g openapi-to-postmanv2
+
+  ```
 
 
   ## Using the converter as a NodeJS module
@@ -64589,7 +64567,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/checksum.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/checksum.js)_
+  [build/cli/src/commands/checksum.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/checksum.js)_
 
 
   ## `spot docs SPOT_CONTRACT`
@@ -64617,7 +64595,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/docs.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/docs.js)_
+  [build/cli/src/commands/docs.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/docs.js)_
 
 
   ## `spot generate`
@@ -64645,7 +64623,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/generate.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/generate.js)_
+  [build/cli/src/commands/generate.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/generate.js)_
 
 
   ## `spot help [COMMAND]`
@@ -64695,7 +64673,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/init.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/init.js)_
+  [build/cli/src/commands/init.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/init.js)_
 
 
   ## `spot lint SPOT_CONTRACT`
@@ -64721,7 +64699,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/lint.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/lint.js)_
+  [build/cli/src/commands/lint.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/lint.js)_
 
 
   ## `spot mock SPOT_CONTRACT`
@@ -64752,7 +64730,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/mock.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/mock.js)_
+  [build/cli/src/commands/mock.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/mock.js)_
 
 
   ## `spot validate SPOT_CONTRACT`
@@ -64778,7 +64756,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/validate.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/validate.js)_
+  [build/cli/src/commands/validate.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/validate.js)_
 
 
   ## `spot validation-server SPOT_CONTRACT`
@@ -64805,7 +64783,7 @@ airtasker/spot: >
 
 
   _See code:
-  [build/cli/src/commands/validation-server.js](https://github.com/airtasker/spot/blob/v1.8.0/build/cli/src/commands/validation-server.js)_
+  [build/cli/src/commands/validation-server.js](https://github.com/airtasker/spot/blob/v1.8.1/build/cli/src/commands/validation-server.js)_
 
   <!-- commandsstop -->
 42Crunch/vscode-openapi: >
@@ -69225,12 +69203,17 @@ p1c2u/openapi-core: >
 
   ################
 
+  * `bottle-openapi-3 <https://github.com/cope-systems/bottle-openapi-3>`__
+     OpenAPI 3.0 Support for the Bottle Web Framework
   * `openapi-spec-validator <https://github.com/p1c2u/openapi-spec-validator>`__
-
+     Python library that validates OpenAPI Specs against the OpenAPI 2.0 (aka Swagger) and OpenAPI 3.0 specification
   * `openapi-schema-validator
   <https://github.com/p1c2u/openapi-schema-validator>`__
-
+     Python library that validates schema against the OpenAPI Schema Specification v3.0.
   * `pyramid_openapi3 <https://github.com/niteoweb/pyramid_openapi3>`__
+     Pyramid addon for OpenAPI3 validation of requests and responses.
+  * `tornado-openapi3 <https://github.com/correl/tornado-openapi3>`__
+     Tornado OpenAPI 3 request and response validation library.
 APIs-guru/aws2openapi: >
   # aws2openapi
 
@@ -79570,7 +79553,7 @@ tfranzel/drf-spectacular: >
           - ... and more customization options
       - Authentication support (DRF natives included, easily extendable)
       - Custom serializer class support (easily extendable)
-      - ``MethodSerializerField()`` type via type hinting or ``@extend_schema_field``
+      - ``SerializerMethodField()`` type via type hinting or ``@extend_schema_field``
       - i18n support
       - Tags extraction
       - Request/response/parameter examples
@@ -81574,10 +81557,10 @@ ccouzens/keycloak-openapi: >
   specifications.
 
 
-  [Keycloak 12.0 Admin API](./keycloak/12.0.json)
+  [Keycloak 13.0 Admin API](./keycloak/13.0.json)
 
 
-  [Keycloak 12.0 Admin API with patches](./keycloak/12.0-patched.json)
+  [Keycloak 13.0 Admin API with patches](./keycloak/13.0-patched.json)
 
 
   [Other versions](./keycloak/)
@@ -81676,7 +81659,7 @@ ccouzens/keycloak-openapi: >
   # Create a keycloak instance to run against
 
   docker container run --rm -e KEYCLOAK_USER=admin-user -e
-  KEYCLOAK_PASSWORD=admin-password -p 8080:8080 docker.io/jboss/keycloak:12.0.0
+  KEYCLOAK_PASSWORD=admin-password -p 8080:8080 docker.io/jboss/keycloak:13.0.0
 
   # Open http://localhost:8080/ and wait for keycloak to start up
 
@@ -81718,7 +81701,7 @@ ccouzens/keycloak-openapi: >
   ```bash
 
   openapi-generator generate -i
-  'https://github.com/ccouzens/keycloak-openapi/raw/main/keycloak/12.0-patched.json'
+  'https://github.com/ccouzens/keycloak-openapi/raw/main/keycloak/13.0-patched.json'
   -g 'typescript-axios' -o 'src/keycloak-client'
 
   ```
@@ -87325,4 +87308,527 @@ getsling/flask-swagger: >
 
 
   [Flasgger](https://github.com/rochacbruno/flasgger)
-stoplightio/elements: "[![Elements - OpenAPI Powered API Documentation](docs/images/readme-header.svg)][elements_landing_page]\n\n[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://stoplight-elements.netlify.app)\n[![CircleCI][circle_ci_image]][circle_ci]\n[![NPM Downloads][circle_ci_image]][npm]\n[![Buy us a tree][ecologi_image]][ecologi]\n\nBeautiful API documentation powered by OpenAPI and Markdown. Use these UI components to create API reference documentation, or more complete documentation with Markdown articles covering tutorials, how-to guides, etc. \n\nAvailable as React Components, or Web Components, you can use Elements all together to build beautiful three-column \"Stripe-esque\" documentation, or stacked documentation thats easier for integrating into existing Content Management Systems with their own navigation.\n\n# Overview\n\n- [Overview](#overview)\n  - [\U0001F4D6 Community](#-community)\n  - [\U0001F441️\U0001F5E8 ️️Examples](#️-️️examples)\n  - [\U0001F3C1 Usage](#-usage)\n    - [React Component](#react-component)\n    - [Web Component](#web-component)\n  - [\U0001FA9B Configuration](#-configuration)\n  - [\U0001F6A7 Roadmap](#-roadmap)\n  - [⚙️ Integrations](#️-integrations)\n  - [\U0001F3C1 Help Others Utilize Elements](#-help-others-utilize-elements)\n  - [\U0001F44F Contributing](#-contributing)\n  - [\U0001F389 Thanks](#-thanks)\n\n## \U0001F4D6 Community\n\nLet's chat about features, ideas, what you're doing with Elements, on [GitHub Discussions](https://github.com/stoplightio/elements/discussions).\n\n## \U0001F441️\U0001F5E8 ️️Examples\n\nStoplight Elements comes with a few example integration projects, showing you how to utilize Elements with different frameworks.\n- **[react-cra](./examples/react-cra)** - An example app built Create React App utilizing Stoplight Elements.\n- **[react-gatsby](./examples/react-gatsby)** - An example Gatsby site utilizing Stoplight Elements.\n- **[angular](./examples/angular)** - An angular app utilizing the Web Components distribution of Elements.\n- **[bootstrap](./examples/bootstrap)** - A single HTML page utilizing the Web Components distribution via a global script tag.\n\nTo run these examples yourself:\n1. Clone this repo and open a command line in the repo's directory.\n2. Run `yarn` to install all dependencies.\n3. Run `yarn build` to build Elements itself.\n4. Run `yarn build:react-cra` to build the *react-cra* example site. An analogous command is available for *react-gatsby* and *angular*, but is not required for **bootstrap**.\n5. Run `yarn serve:react-cra` (or equivalent) to serve the example project on `http://localhost:4200`.\n\n## \U0001F3C1 Usage\n\nThe examples will hopefully help show Elements working in close to real world situations, but the most bare bones examples of Elements can be found below. \n\n### React Component\n\n```bash\n$ npm install @stoplight/elements@beta\n```\n\n```js\nimport { API } from \"@stoplight/elements\";\n\n<API\n  apiDescriptionUrl=\"https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml\"\n  layout=\"traditional\"\n  router=\"history\"\n/>\n```\n\n### Web Component\n\n```html\n<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>Elements in HTML</title>\n    <!-- Embed elements Elements via Web Component -->\n    <script src=\"https://unpkg.com/@stoplight/elements@beta/web-components.min.js\"></script>\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/@stoplight/elements@beta/styles/elements.min.css\">\n  </head>\n  <body>\n\n    <elements-api\n      apiDescriptionUrl=\"https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml\"\n      router=\"hash\"\n      layout=\"sidebar\"\n    />\n\n  </body>\n</html>\n```\n\nLoad this page up in your browser and you should see the [GitHub REST API](https://docs.github.com/en/rest) documented in Stoplight Elements.\n\n## \U0001FA9B Configuration\n\nThe React and Web Components both have the following configuration options.\n\n- `apiDescriptionUrl` - OpenAPI document URL, supporting `http://`, `https://`, and documents containing `$ref` to other http(s) documents.\n- `apiDescriptionDocument` - OpenAPI document, provided as YAML string, JSON string or JavaScript object.\n- `basePath` - Helps when using `router: 'history'` but docs are in a subdirectory like `https://example.com/docs/api`.\n- `layout` - There are two layouts for Elements:\n  - `sidebar` - (default) Three-column design.\n  - `stacked` - Everything in a single column, making integrations with existing websites that have their own sidebar or other columns already.\n- `router` -  Determines how navigation should work:\n  - `history` - (default) uses the HTML5 history API to keep the UI in sync with the URL.\n  - `hash` - uses the hash portion of the URL (i.e. window.location.hash) to keep the UI in sync with the URL.\n  - `memory` - keeps the history of your “URL” in memory (does not read or write to the address bar)\n\n## \U0001F6A7 Roadmap\n\n- [x] API Console (a.k.a \"Try it!\")\n- [x] Automatic Code Samples\n- [x] Automatic Examples! \U0001F973\n- [x] React & Web Component Support\n- [ ] OpenAPI Support\n  - [x] OpenAPI v2.0\n  - [x] OpenAPI v3.0\n  - [ ] OpenAPI v3.1\n  - [ ] Callbacks\n  - [ ] Webhooks\n- [ ] Multiple APIs (a.k.a \"Dev Portal\")\n\n## ⚙️ Integrations\n\n- [Stoplight Studio](https://stoplight.io/studio/?utm_source=github&utm_medium=elements&utm_campaign=readme): Free visual OpenAPI designer that uses Elements to preview your API descriptions on the fly.\n- [Stoplight Platform](https://stoplight.io/?utm_source=github&utm_medium=elements&utm_campaign=readme): Collaborative API Design Platform for designing, developing and documenting APIs with hosted documentation powered by Elements. \n\n## \U0001F3C1 Help Others Utilize Elements \n\nIf you're using Elements for an interesting use case, [contact us](mailto:growth@stoplight.io) for a case study. We'll add it to a list here. Spread the goodness \U0001F389\n\n## \U0001F44F Contributing\n\nIf you are interested in contributing to Elements itself, check out our [contributing docs ⇗][contributing] and [code of conduct ⇗][code_of_conduct] to get started.\n\n## \U0001F389 Thanks\n\nElements is built on top of lots of excellent packages, and here are a few we'd like to say a special thanks to.\n\n- [httpsnippet](https://www.npmjs.com/package/httpsnippet) by [Kong](https://github.com/Kong).\n- [openapi-sampler](https://www.npmjs.com/package/openapi-sampler) by [ReDocly](https://redoc.ly/).\n\nCheck these projects out!\n\n[code_of_conduct]: CODE_OF_CONDUCT.md\n[contributing]: CONTRIBUTING.md\n[download-release]: https://github.com/stoplightio/elements/releases/latest\n[elements_landing_page]: https://elements-demo.stoplight.io?utm_source=github&utm_medium=elements&utm_campaign=readme\n[circle_ci]: https://circleci.com/gh/stoplightio/elements\n[circle_ci_image]: https://img.shields.io/circleci/build/github/stoplightio/elements/main\n[npm]: https://www.npmjs.com/package/@stoplight/elements\n[npm_image]: https://img.shields.io/npm/dw/@stoplight/elements?color=blue\n[ecologi]: https://ecologi.com/stoplightinc\n[ecologi_image]: https://img.shields.io/badge/Buy%20us%20a%20tree-%F0%9F%8C%B3-lightgreen\n"
+stoplightio/elements: "[![Elements - OpenAPI Powered API Documentation](docs/images/readme-header.svg)][elements_landing_page]\n\n[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://stoplight-elements.netlify.app)\n[![CircleCI][circle_ci_image]][circle_ci]\n[![NPM Downloads][circle_ci_image]][npm]\n[![Buy us a tree][ecologi_image]][ecologi]\n\nBeautiful API documentation powered by OpenAPI and Markdown. Use these UI components to create API reference documentation, or more complete documentation with Markdown articles covering tutorials, how-to guides, etc.\n\nAvailable as React Components, or Web Components, you can use Elements all together to build beautiful three-column \"Stripe-esque\" documentation, or stacked documentation thats easier for integrating into existing Content Management Systems with their own navigation.\n\n# Overview\n\n- [Overview](#overview)\n  - [\U0001F4D6 Community](#-community)\n  - [\U0001F441️\U0001F5E8 ️️Examples](#️-️️examples)\n  - [\U0001F3C1 Usage](#-usage)\n    - [React Component](#react-component)\n    - [Web Component](#web-component)\n  - [\U0001FA9B Configuration](#-configuration)\n  - [\U0001F6A7 Roadmap](#-roadmap)\n  - [⚙️ Integrations](#️-integrations)\n  - [\U0001F3C1 Help Others Utilize Elements](#-help-others-utilize-elements)\n  - [\U0001F44F Contributing](#-contributing)\n  - [\U0001F389 Thanks](#-thanks)\n\n## \U0001F4D6 Community\n\nLet's chat about features, ideas, what you're doing with Elements, on [GitHub Discussions](https://github.com/stoplightio/elements/discussions).\n\n## \U0001F441️\U0001F5E8 ️️Examples\n\nStoplight Elements comes with a few example integration projects, showing you how to utilize Elements with different frameworks.\n- **[react-cra](./examples/react-cra)** - An example app built Create React App utilizing Stoplight Elements.\n- **[react-gatsby](./examples/react-gatsby)** - An example Gatsby site utilizing Stoplight Elements.\n- **[angular](./examples/angular)** - An angular app utilizing the Web Components distribution of Elements.\n- **[bootstrap](./examples/bootstrap)** - A single HTML page utilizing the Web Components distribution via a global script tag.\n\nTo run these examples yourself:\n1. Clone this repo and open a command line in the repo's directory.\n2. Run `yarn` to install all dependencies.\n3. Run `yarn build` to build Elements itself.\n4. Run `yarn build:react-cra` to build the *react-cra* example site. An analogous command is available for *react-gatsby* and *angular*, but is not required for **bootstrap**.\n5. Run `yarn serve:react-cra` (or equivalent) to serve the example project on `http://localhost:4200`.\n\n## \U0001F3C1 Usage\n\nThe examples will hopefully help show Elements working in close to real world situations, but the most bare bones examples of Elements can be found below.\n\n### React Component\n\n```bash\n$ npm install @stoplight/elements@beta\n```\n\n```js\nimport { API } from \"@stoplight/elements\";\n\n<API\n  apiDescriptionUrl=\"https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml\"\n  layout=\"traditional\"\n  router=\"history\"\n/>\n```\n\n### Web Component\n\n```html\n<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>Elements in HTML</title>\n    <!-- Embed elements Elements via Web Component -->\n    <script src=\"https://unpkg.com/@stoplight/elements@beta/web-components.min.js\"></script>\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/@stoplight/elements@beta/styles.min.css\">\n  </head>\n  <body>\n\n    <elements-api\n      apiDescriptionUrl=\"https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml\"\n      router=\"hash\"\n      layout=\"sidebar\"\n    />\n\n  </body>\n</html>\n```\n\nLoad this page up in your browser and you should see the [GitHub REST API](https://docs.github.com/en/rest) documented in Stoplight Elements.\n\n## \U0001FA9B Configuration\n\nThe React and Web Components both have the following configuration options.\n\n- `apiDescriptionUrl` - OpenAPI document URL, supporting `http://`, `https://`, and documents containing `$ref` to other http(s) documents.\n- `apiDescriptionDocument` - OpenAPI document, provided as YAML string, JSON string or JavaScript object.\n- `basePath` - Helps when using `router: 'history'` but docs are in a subdirectory like `https://example.com/docs/api`.\n- `layout` - There are two layouts for Elements:\n  - `sidebar` - (default) Three-column design.\n  - `stacked` - Everything in a single column, making integrations with existing websites that have their own sidebar or other columns already.\n- `router` -  Determines how navigation should work:\n  - `history` - (default) uses the HTML5 history API to keep the UI in sync with the URL.\n  - `hash` - uses the hash portion of the URL (i.e. window.location.hash) to keep the UI in sync with the URL.\n  - `memory` - keeps the history of your “URL” in memory (does not read or write to the address bar)\n\n## \U0001F6A7 Roadmap\n\n- [x] API Console (a.k.a \"Try it!\")\n- [x] Automatic Code Samples\n- [x] Automatic Examples! \U0001F973\n- [x] React & Web Component Support\n- [ ] OpenAPI Support\n  - [x] OpenAPI v2.0\n  - [x] OpenAPI v3.0\n  - [ ] OpenAPI v3.1\n  - [ ] Callbacks\n  - [ ] Webhooks\n- [ ] Multiple APIs (a.k.a \"Dev Portal\")\n\n## ⚙️ Integrations\n\n- [Stoplight Studio](https://stoplight.io/studio/?utm_source=github&utm_medium=elements&utm_campaign=readme): Free visual OpenAPI designer that uses Elements to preview your API descriptions on the fly.\n- [Stoplight Platform](https://stoplight.io/?utm_source=github&utm_medium=elements&utm_campaign=readme): Collaborative API Design Platform for designing, developing and documenting APIs with hosted documentation powered by Elements.\n\n## \U0001F3C1 Help Others Utilize Elements\n\nIf you're using Elements for an interesting use case, [contact us](mailto:growth@stoplight.io) for a case study. We'll add it to a list here. Spread the goodness \U0001F389\n\n## \U0001F44F Contributing\n\nIf you are interested in contributing to Elements itself, check out our [contributing docs ⇗][contributing] and [code of conduct ⇗][code_of_conduct] to get started.\n\n## \U0001F389 Thanks\n\nElements is built on top of lots of excellent packages, and here are a few we'd like to say a special thanks to.\n\n- [httpsnippet](https://www.npmjs.com/package/httpsnippet) by [Kong](https://github.com/Kong).\n- [openapi-sampler](https://www.npmjs.com/package/openapi-sampler) by [ReDocly](https://redoc.ly/).\n\nCheck these projects out!\n\n[code_of_conduct]: CODE_OF_CONDUCT.md\n[contributing]: CONTRIBUTING.md\n[download-release]: https://github.com/stoplightio/elements/releases/latest\n[elements_landing_page]: https://elements-demo.stoplight.io?utm_source=github&utm_medium=elements&utm_campaign=readme\n[circle_ci]: https://circleci.com/gh/stoplightio/elements\n[circle_ci_image]: https://img.shields.io/circleci/build/github/stoplightio/elements/main\n[npm]: https://www.npmjs.com/package/@stoplight/elements\n[npm_image]: https://img.shields.io/npm/dw/@stoplight/elements?color=blue\n[ecologi]: https://ecologi.com/stoplightinc\n[ecologi_image]: https://img.shields.io/badge/Buy%20us%20a%20tree-%F0%9F%8C%B3-lightgreen\n"
+Himenon/openapi-typescript-code-generator: >
+  # @himenon/openapi-typescript-code-generator
+
+
+  [日本語](./docs/ja/README-ja.md)
+
+
+  This library provides TypeScript type definitions and extracted parameters
+  from OpenAPI v3.0.x compliant specifications.
+
+  TypeScript AST is used to generate the code, which is accurately converted to
+  TypeScript code.
+
+  Since the parameters extracted from OpenAPI can be used freely, it can be used
+  for automatic generation of API Client and Server Side code, load balancer
+  configuration files, etc.
+
+
+  ## Playground
+
+
+  -
+  [Playground](https://openapi-typescript-code-generator-playground.netlify.app)
+
+
+  ## Installation
+
+
+  ```bash
+
+  yarn add -D @himenon/openapi-typescript-code-generator
+
+  ```
+
+
+  ## DEMO
+
+
+  - [Short
+  DEMO](https://github.com/Himenon/openapi-typescript-code-generator-demo-project)
+
+  - [DEMO: github/rest-api-client code
+  generate](https://github.com/Himenon/github-rest-api-client/tree/master/source)
+    - https://github.com/github/rest-api-description
+
+  ## Usage
+
+
+  The example shown here can be cloned from the [DEMO
+  repository](https://github.com/Himenon/openapi-typescript-code-generator-demo-project)
+  to see how it works.
+
+
+  ### Generate typedef-only code
+
+
+  ```ts
+
+  import * as fs from "fs";
+
+
+  import { CodeGenerator } from "@himenon/openapi-typescript-code-generator";
+
+
+  const main = () => {
+    const codeGenerator = new CodeGenerator("your/openapi/spec.yml");
+    const code = codeGenerator.generateTypeDefinition();
+    fs.writeFileSync("client.ts", code, { encoding: "utf-8" });
+  };
+
+
+  main();
+
+  ```
+
+
+  ### Generate code containing the API Client
+
+
+  ```ts
+
+  import * as fs from "fs";
+
+
+  import { CodeGenerator } from "@himenon/openapi-typescript-code-generator";
+
+  import * as Templates from
+  "@himenon/openapi-typescript-code-generator/templates";
+
+  import type * as Types from
+  "@himenon/openapi-typescript-code-generator/types";
+
+
+  const main = () => {
+    const codeGenerator = new CodeGenerator("your/openapi/spec.yml");
+
+    const apiClientGeneratorTemplate: Types.CodeGenerator.CustomGenerator<Templates.ApiClient.Option> = {
+      generator: Templates.ApiClient.generator,
+      option: {},
+    };
+
+    const code = codeGenerator.generateTypeDefinition([
+      codeGenerator.getAdditionalTypeDefinitionCustomCodeGenerator(),
+      apiClientGeneratorTemplate,
+    ]);
+
+    fs.writeFileSync("client.ts", code, { encoding: "utf-8" });
+  };
+
+
+  main();
+
+  ```
+
+
+  ### Split the type definition file and the API Client implementation
+
+
+  ```ts
+
+  import * as fs from "fs";
+
+
+  import { CodeGenerator } from "@himenon/openapi-typescript-code-generator";
+
+  import * as Templates from
+  "@himenon/openapi-typescript-code-generator/templates";
+
+  import type * as Types from
+  "@himenon/openapi-typescript-code-generator/types";
+
+
+  const main = () => {
+    const codeGenerator = new CodeGenerator("your/openapi/spec.yml");
+
+    const apiClientGeneratorTemplate: Types.CodeGenerator.CustomGenerator<Templates.ApiClient.Option> = {
+      generator: Templates.ApiClient.generator,
+      option: {},
+    };
+
+    const typeDefCode = codeGenerator.generateTypeDefinition();
+    const apiClientCode = codeGenerator.generateCode([
+      {
+        generator: () => {
+          return [`import { Schemas, Responses } from "./types";`];
+        },
+      },
+      codeGenerator.getAdditionalTypeDefinitionCustomCodeGenerator(),
+      apiClientGeneratorTemplate,
+    ]);
+
+    fs.writeFileSync("types.ts", typeDefCode, { encoding: "utf-8" });
+    fs.writeFileSync("apiClient.ts", apiClientCode, { encoding: "utf-8" });
+  };
+
+
+  main();
+
+  ```
+
+
+  ## Create a Code Template
+
+
+  The examples in this section can be used in the following ways
+
+
+  ```ts
+
+  import * as fs from "fs";
+
+
+  import { CodeGenerator } from "@himenon/openapi-typescript-code-generator";
+
+  import type * as Types from
+  "@himenon/openapi-typescript-code-generator/types";
+
+
+  /** Write the definition of the Code Template here. */
+
+  const customGenerator: Types.CodeGenerator.CustomGenerator<{}> = {
+    /** .... */
+  }
+
+
+  const codeGenerator = new CodeGenerator("your/openapi/spec.yml");
+
+
+  const code = codeGenerator.generateCode([
+    customGenerator,
+  ]);
+
+
+  fs.writeFileSync("output/file/name", code, { encoding: "utf-8" });
+
+  ```
+
+
+  ### Define a text-based code template
+
+
+  A self-defined code generator can return an array of `string`.
+
+
+  ```ts
+
+  import * as Types from "@himenon/openapi-typescript-code-generator/types";
+
+
+  interface Option {
+    showLog?: boolean;
+  }
+
+
+  const generator: Types.CodeGenerator.GenerateFunction<Option> = (payload:
+  Types.CodeGenerator.Params[], option): string[] => {
+    if (option && option.showLog) {
+      console.log("show log message");
+    }
+    return ["Hello world"];
+  };
+
+
+  const customGenerator: Types.CodeGenerator.CustomGenerator<Option> = {
+    generator: generator,
+    option: {},
+  }
+
+  ```
+
+
+  ### Define using the information extracted from OpenAPI Schema
+
+
+  The self-defined code generator can accept parameters extracted from OpenAPI
+  Schema.
+
+  See Type definitions for available parameters.
+
+
+  ```ts
+
+  import * as Types from "@himenon/openapi-typescript-code-generator/types";
+
+
+  interface Option {
+
+  }
+
+
+  const generator: Types.CodeGenerator.GenerateFunction<Option> = (payload:
+  Types.CodeGenerator.Params[], option): string[] => {
+    return payload.map((params) => {
+      return `function ${params.operationId}() { console.log("${params.comment}") }`;
+    })
+  };
+
+
+  const customGenerator: Types.CodeGenerator.CustomGenerator<Option> = {
+    generator: generator,
+    option: {},
+  }
+
+  ```
+
+
+  ### Define a code template with TypeScript AST
+
+
+  You can extend your code using the API of TypeScript AST.
+
+  You can directly use the API of TypeScript AST or use the wrapper API of
+  TypeScript AST provided by this library.
+
+
+  ```ts
+
+  import * as Types from "@himenon/openapi-typescript-code-generator/types";
+
+  import { TsGenerator } from "@himenon/openapi-typescript-code-generator/api";
+
+
+  interface Option {
+
+  }
+
+
+  const factory = TsGenerator.Factory.create();
+
+
+  const generator: Types.CodeGenerator.GenerateFunction<Option> = (payload:
+  Types.CodeGenerator.Params[], option): Types.CodeGenerator.IntermediateCode[]
+  => {
+    return payload.map((params) => {
+      return factory.InterfaceDeclaration.create({
+        export: true,
+        name: params.functionName,
+        members: [],
+      })
+    })
+  };
+
+
+  const customGenerator: Types.CodeGenerator.CustomGenerator<Option> = {
+    generator: generator,
+    option: {},
+  }
+
+  ```
+
+
+  ## API
+
+
+  ### CodeGenerator
+
+
+  ```ts
+
+  import { CodeGenerator } from "@himenon/openapi-typescript-code-generator";
+
+  ```
+
+
+  #### validateOpenApiSchema
+
+
+  Performs validation of the input OpenAPI Schema.
+
+
+  #### generateTypeDefinition
+
+
+  Generates code that converts OpenAPI Schema to TypeScript type definitions.
+
+
+  #### generateCode
+
+
+  You can specify several of your own code generators, and the generators can
+  use parameters extracted from OpenAPI Schema.
+
+  It internally performs the conversion of an array of `string` or
+  `ts.Statement` as a string.
+
+
+  For example, creating a generator in units of file divisions increases the
+  reusability of the generator.
+
+
+  #### getCodeGeneratorParamsArray
+
+
+  It provides parameters extracted from OpenAPI Schema.
+
+
+  #### getAdditionalTypeDefinitionCustomCodeGenerator
+
+
+  This is a type definition file for `Templates.ApiClient`. The reason it is not
+  included in `generateTypeDefinition` is that you may not use the type
+  definition generated by this function depending on your usage.
+
+
+  ※ The reason it is not included in `generateTypeDefinition` is that you may
+  not use the type definitions generated by this function depending on your
+  application.
+
+
+  ### TsGenerator
+
+
+  ```ts
+
+  import { TsGenerator } from "@himenon/openapi-typescript-code-generator/api";
+
+  ```
+
+
+  This is a wrapper API for the TypeScript AST used internally.
+
+  It is subject to change without notice.
+
+
+  ### OpenApiTools
+
+
+  ```ts
+
+  import { OpenApiTools } from "@himenon/openapi-typescript-code-generator/api";
+
+  ```
+
+
+  #### Parser
+
+
+  - `OpenApiTools.Parser`
+
+
+  This is the API for parsing OpenAPI Schema.
+
+  It is subject to change without notice.
+
+
+  ## Restrictions
+
+
+  ### Directory Restrictions for Remote Reference
+
+
+  There is a limitation on the directory structure supported.
+
+  To simplify implementation when converting directory structures to TypeScript
+  namespaces, Remote References using `$ref` should only be defined in the
+  following directory structures.
+
+  If you want to extend it, please fork this repository and do it yourself.
+
+
+  ```
+
+  spec.yml // entry file
+
+  components/
+    headers/
+    parameters/
+    pathItems/
+    requestBodies/
+    responses/
+    schemas/
+    paths/
+  ```
+
+
+  ### HTTP communication restrictions for Remote Reference
+
+
+  `$ref: http://....` Currently not supported. We hope to support it in the
+  future.
+
+
+  ## Contributions
+
+
+  First of all, thank you for your interest.
+
+  When converting from the API specification to TypeScript code, resolving
+  reference relationships can be particularly challenging, and there may not be
+  enough test cases.
+
+  Adding test cases is a very powerful support for stabilizing the behavior, so
+  please report any bugs you find that are behaving strangely.
+
+  Also, the basic design concepts of this repository can be found below. If you
+  want to make changes that do not follow these concepts, please fork and extend
+  them.
+
+  If your changes are in line with the design concept, please submit a pull
+  request or issue!
+
+
+  ## Design Concept
+
+
+  - Be typedef first.
+
+  - Typedefs should not contain any entities (file size should be 0 when
+  typedefs are converted to `.js`)
+
+  - The directory structure should be mapped to the typedef structure.
+
+  - No dependency on any API client library.
+
+  - Can be extended by TypeScript AST.
+
+  - Conform to the OpenAPI specification.
+
+  - It should be a single file to maintain portability.
+
+
+  ## Development
+
+
+  ```bash
+
+  git clone https://github.com/Himenon/openapi-typescript-code-generator.git
+
+  cd openapi-typescript-code-generator
+
+  yarn
+
+  #### your change
+
+  yarn build && yarn test
+
+  ```
+
+
+  ## Useful development tools
+
+
+  TypeScript AST
+
+
+  - https://ts-ast-viewer.com
+
+
+  ## LICENCE
+
+
+  [@himenon/openapi-typescript-code-generator](https://github.com/Himenon/typescript-codegen),
+  MIT
+
+
+  ### Reference implementation
+
+
+  Validation Design
+
+
+  - Copyright (c) 2018 Kogo Software LLC -
+  [https://github.com/kogosoftwarellc/open-api/tree/master/packages/openapi-schema-validator#readme](openapi-schema-validator)
