@@ -13370,21 +13370,21 @@ Luracast/Restler: >
   [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Luracast/Restler)
 
   [![Latest Stable
-  Version](https://poser.pugx.org/luracast/restler/v/stable.png)](https://packagist.org/packages/luracast/restler) 
+  Version](https://poser.pugx.org/luracast/restler/v/stable.png)](https://packagist.org/packages/luracast/restler)
 
   [![Total
-  Downloads](https://poser.pugx.org/luracast/restler/downloads.png)](https://packagist.org/packages/luracast/restler) 
+  Downloads](https://poser.pugx.org/luracast/restler/downloads.png)](https://packagist.org/packages/luracast/restler)
 
   [![Latest Unstable
-  Version](https://poser.pugx.org/luracast/restler/v/unstable.png)](https://packagist.org/packages/luracast/restler) 
+  Version](https://poser.pugx.org/luracast/restler/v/unstable.png)](https://packagist.org/packages/luracast/restler)
 
   [![License](https://poser.pugx.org/luracast/restler/license.png)](https://packagist.org/packages/luracast/restler)
 
 
-  ### Version 4
+  ### Version 5
 
 
-  > upgraded from version 3 RC5 for latest PHP support
+  > upgraded from version 3 RC6 for latest PHP support
 
 
   Restler is a simple and effective multi-format Web API Server written in PHP.
@@ -13393,21 +13393,15 @@ Luracast/Restler: >
   Just deal with your business logic in php, restler will take care of the REST!
 
 
-  > if you do not have PHP >= 5.3.2 on your server and wont be able to upgrade
-  you may
-
-  > use [Restler 2](https://github.com/Luracast/Restler/tree/v2) instead
+  ### Restler - *Better APIs by Design*
 
 
-  ### Restler 3 - *Better APIs by Design*
+  * [Developer Home](https://luracast.com/products/restler/)
 
-
-  * [Developer Home](http://luracast.com/products/restler/)
-
-  * [Live Examples](https://restler4.luracast.com/)
+  * [Documentation](https://restler5.luracast.com/) with live examples
 
   * Updates on [Facebook](https://www.facebook.com/Luracast) and
-  [Twitter](http://twitter.com/Luracast)
+  [Twitter](https://twitter.com/Luracast)
 
   * [Features](#features)
 
@@ -13434,17 +13428,16 @@ Luracast/Restler: >
   * Many Examples that can be tried on your localhost to get started
 
   * Supports HTTP request methods HEAD, GET, POST, PUT, DELETE, OPTIONS and
-  PATCH
-    via header or request parameter (method)
+  PATCH via header or request parameter (method)
+
   * Supports both RESTful and Pragmatic REST API Design
 
   * Clients can use X-HTTP-Method-Override header, supports Cross Origin
-  Resource
-    Sharing and JSONP
+  Resource Sharing and JSONP
+
   * Two-way format(media type) conversion both send and receive
       * Pluggable content Formatter framework and api
-      * Comes with JSON, XML, Yaml, Amf, and Plist(both XML and Binary) format
-        support
+      * Comes with JSON, XML, Yaml, Amf, and Plist(both XML and Binary) format support
   * Pluggable Authentication schemes
       * OAuth 2 Server
   * Pluggable Filters to effectively manage API usage
@@ -13472,47 +13465,45 @@ Luracast/Restler: >
       * Dependency Management using [Composer](http://getcomposer.org/)
       * Source code distributed under LGPL
 
-
   Git Repository and the Branches
 
   -------------------------------
 
 
-  1. Most stable and recent version is maintained at the `master` branch,
-  previous
-     versions are kept in the branches such as `v1` and `v2`
+  1. Most stable and recent version is at the `master` branch, previous versions
+  are in the version branches such
+     as `v4`, `v3`, `v2`, and `v1`.
 
-  2. Version branch with the current version such as `v3` is used for building
-  up
-     the next release. It's documentation may not be updated frequently and thus
-     reserved for the daring ones.
+  2. Version branch with the current version such as `v5` is used for building
+  up the next release. It's documentation may
+     not be updated frequently and thus reserved for the daring ones.
 
   3. Feature branches such as `features/html` and `features/router` are purely
-     for experimentation purpose to try out a feature
+  for experimentation purpose to try out a
+     feature. They may be merged when ready.
+
+  Test Drive
+
+  ----------
 
 
-  Installation
-
-  ------------
+  Install this repository to try out the examples.
 
 
-  Make sure PHP 5.3.2 or above (at least 5.3.4 recommended avoiding potential
-  bugs)
-
-  is available on your server
+  > Make sure PHP 5.4 or above is available on your server. We recommended using
+  the latest version for better performance.
 
 
   ### 1. Install Composer
 
 
   Restler uses [Composer](http://getcomposer.org/) to manage its dependencies.
+  First, download a copy of `composer.phar`.
 
-  First, download a copy of `composer.phar`. It can be kept in your project
-  folder
+  It can be kept in your project folder or ideally in `usr/local/bin` to use it
+  globally for all your projects. If you are
 
-  or ideally in `usr/local/bin` to use it globally for all your projects. If you
-
-  are on Windows, you can use the composer
+  on Windows, you can use the composer
 
   [windows installer](https://getcomposer.org/Composer-Setup.exe) instead.
 
@@ -13524,11 +13515,9 @@ Luracast/Restler: >
 
 
   You may install Restler by running the create project command in your
-  terminal.
+  terminal. Replace {projectName} with your actual
 
-  Replace {projectName} with your actual project name. It will create a folder
-
-  with that name and install Restler.
+  project name. It will create a folder with that name and install Restler.
 
 
   ```console
@@ -13537,37 +13526,31 @@ Luracast/Restler: >
 
   ```
 
+
   > **Note:-**
 
   >
 
   > 1. If you do not want the additional formats and BDD tools you can include
-
-  >    `--no-dev` to enforce exclusion of dev packages.
-
+       >    `--no-dev` to enforce exclusion of dev packages.
   >
 
   > 2. If you want to try the bleading edge v3 branch or any of the feature
+       >    branches include `3.x-dev` or `dev-features/html` in the above command
 
-  >    branches include `3.x-dev` or `dev-features/html` in the above command
-
-
-  #### Option 2. Downloading from github
+  #### Option 2. Downloading from GitHub
 
 
-  Once Composer is installed, download the [latest version]() of the Restler
+  After installing Composer, download the [latest version]() of the Restler
+  framework and extract its contents into a
 
-  framework and extract its contents into a directory on your server. Next, in
-  the
-
-  root of your Restler project, run the `php composer.phar install`
+  directory on your server. Next, in the root of your Restler project, run the
+  `php composer.phar install`
 
   (or `composer install`) command to install all the framework's dependencies.
+  This process requires Git to be installed
 
-  This process requires Git to be installed on the server to successfully
-  complete
-
-  the installation.
+  on the server to successfully complete the installation.
 
 
   If you want to update the Restler framework, you may issue the
@@ -13575,8 +13558,8 @@ Luracast/Restler: >
   `php composer.phar update` command.
 
 
-  > **Note:-** If are not allowed to install composer and git on your server,
-  you
+  > **Note:-** If you are not allowed to install composer and git on your
+  server, you
 
   > can install and run them on your development machine. The resulting files
   and
@@ -13584,19 +13567,21 @@ Luracast/Restler: >
   > folders can be uploaded and used on the server.
 
 
-
   ### 3. Configure
 
 
   Ideally public folder should be mapped as your web root, It is optional, but
+  recommended avoiding exposing unneeded
 
-  recommended avoiding exposing unneeded files and folders.
+  files and folders.
 
 
   ### 4. Try it out
 
 
-  Try the live examples in your localhost
+  Try the live examples in your localhost. 
+
+  > You may launch the PHP's built-in server with `composer serve` command.
 
 
   ### 5. Run some test
@@ -13614,6 +13599,8 @@ Luracast/Restler: >
 
   ```
 
+  > alternatively you can run `composer test`
+
 
   This will test the examples against the behaviors expected, for example
 
@@ -13622,15 +13609,16 @@ Luracast/Restler: >
 
 
   Feature: Testing CRUD Example
-      Scenario: Creating new Author with JSON
-          Given that I want to make a new "Author"
-          And his "name" is "Chris"
-          And his "email" is "chris@world.com"
-          And the request is sent as JSON
-          When I request "/examples/_007_crud/authors"
-          Then the response status code should be 200
-          And the response should be JSON
-          And the response has a "id" property
+
+    Scenario: Creating new Author with JSON
+      Given that I want to make a new "Author"
+      And his "name" is "Chris"
+      And his "email" is "chris@world.com"
+      And the request is sent as JSON
+      When I request "/examples/_007_crud/authors"
+      Then the response status code should be 200
+      And the response should be JSON
+      And the response has a "id" property
 
   ```
 
@@ -13643,10 +13631,30 @@ Luracast/Restler: >
   -----------------
 
 
-  Once you have got restler installed with the above steps, you can quickly
-  create
+  We have two options to create your own restler api server
 
-  your application by following these steps
+   1. Most convenient option is using application templates such as [Restler Application](https://github.com/Luracast/Restler-Framework) 
+      which has integrations with many packages to help us with the business logic as well. 
+      If you choose this option, select a branch in that repository and proceed with 
+      the instructions available there.
+      
+   2. Create a project from scratch so that you have full control over every aspect of your application. 
+      If you choose this option, follow along with the steps below.
+      - create a folder to hold your project and open it in the terminal.
+      - run `composer init` and follow along to create `composer.json`
+      - when it is asking for dependencies, type `restler/framework` and `^5` for the version constraint.
+      - alternatively, you can leave it blank and create the composer.json first and then run `composer require restler/framework:^5`
+      
+  > we are using `restler/framework` instead of `luracast/restler` to reduce the
+  space required for the package. 
+
+  > It is coming from https://github.com/Luracast/Restler-Framework it contains
+  only the contents of src folder here.
+      
+  > Even when you are building from scratch, checking out the application
+  templates will help with folder structure 
+
+  > decisions and finding other useful packages.
 
 
   ### 1. Write API
@@ -13655,18 +13663,18 @@ Luracast/Restler: >
   Create your **API classes** with all needed public and protected methods
 
 
-
   ### 2. Open the Gateway
 
 
-  Create the **gateway (index.php)** as follows
+  Create the **gateway (public/index.php)** as follows
 
 
   ```php
 
   <?php
 
-  require_once '../restler.php';
+  require_once __DIR__.'/../vendor/autoload.php';
+
 
   use Luracast\Restler\Restler;
 
@@ -13686,10 +13694,8 @@ Luracast/Restler: >
   **Enable URL Rewriting**
 
 
-  Make sure all the requests are routed to index.php by enabling URL Rewriting
-  for
-
-  your website
+  Make sure all the requests go to index.php by enabling URL Rewriting for your
+  website
 
 
   For example:-
@@ -13729,27 +13735,32 @@ Luracast/Restler: >
 
 
   If you are on Nginx, you have to make sure you set the `server_name` and pass
-  the
+  the PHP scripts to fast cgi (PHP-FPM)
 
-  PHP scripts to fast cgi (PHP-FPM) listening on 127.0.0.1:9000
+  listening on 127.0.0.1:9000
 
-      server {
-              listen        80;
-              server_name   api.luracast.com; //change it to match your server name
 
-              //... other stuff
+  ```
 
-              location ~ \.php$ {
-                  root           /var/www/html;
-                  fastcgi_pass   127.0.0.1:9000;
-                  fastcgi_index  index.php;
-                  fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
-                  include        fastcgi_params;
-              }
+  server {
+      listen        80;
+      server_name   api.luracast.com; //change it to match your server name
 
-              //... other stuff
+      //... other stuff
 
+      location ~ \.php$ {
+          root           /var/www/html;
+          fastcgi_pass   127.0.0.1:9000;
+          fastcgi_index  index.php;
+          fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
+          include        fastcgi_params;
       }
+
+      //... other stuff
+  }
+
+  ```
+
 
   > **Note:-** This requires PHP, PHP-FPM to be properly installed and
   configured.
@@ -13760,19 +13771,17 @@ Luracast/Restler: >
   > info.
 
 
-
   ### 4. Customise
 
 
   **Fine tune to suit your needs**
 
 
-
   ```php
 
   <?php
 
-  require_once '../restler.php';
+  require_once __DIR__.'/../vendor/autoload.php';
 
   use Luracast\Restler\Restler;
 
@@ -13788,7 +13797,7 @@ Luracast/Restler: >
 
   $r->addAPIClass('YourApiClassNameHere'); // repeat for more
 
-  $r->addAPIClass('Resources'); //from restler framework for API Explorer
+  $r->addAPIClass('Explorer'); //from restler framework for API Explorer
 
   $r->addFilterClass('RateLimit'); //Add Filters as needed
 
@@ -13797,21 +13806,7 @@ Luracast/Restler: >
   ```
 
 
-  If you have successfully completed Installation Step 2, you should have
-
-  [Restler API Explorer](https://github.com/Luracast/Restler-API-Explorer)
-  installed
-
-  in `vendor/Luracast/explorer` folder. Create a symbolic link of
-
-  `vendor/Luracast/explorer/dist` or copy the folder and name it as `explorer`
-
-
-  Place the explorer in the same folder as the `index.php`
-
-
   Explore the api and try it out by openings `explorer/index.html` from the web
-
   root on your browser
 
 
@@ -13864,19 +13859,16 @@ Luracast/Restler: >
 
 
   By default Restler runs in debug mode more fine tuned for API developer, by
+  showing detailed error messages and
 
-  showing detailed error messages and prettifying the api result to human
-  readbale
-
-  form
+  prettifying the api result to human readbale form
 
 
   By turning on production mode you will gain some performance boost as it will
+  cache the routes (comment parsing happens
 
-  cache the routes (comment parsing happens only once instead of every api
-  call),
-
-  few other files and avoid giving out debug information
+  only once instead of every api call), few other files and avoid giving out
+  debug information
 
 
   ```php
@@ -13904,203 +13896,127 @@ Luracast/Restler: >
   ```
 
 
-
   Change Log
 
   ----------
 
-  ### Restler 4
 
-   * Semantic versioning to move forward
-   * Support for PHP 8
-   * Corrects the source path to be outside the vendor directory
-
-  ### Restler 3.0 RC5
-
-   * Support for PHP 7.4 added
-   * Scope (a dependency injection container) is added. It's register method allows adding api classes that has some dependencies.
-   * Improves HtmlFormat to support blade templates and makes it easily extendable to add your own templates.
-   * HtmlFormat::$format has been renamed as HtmlFormat::$template for better clarity
-   * HtmlFormat now supports auto templating to load relevant template for an API method based on the mapped url.
-   * Tag, a utility class for generating html tags in object-oriented way.
-   * Emmet class that extends a subset of emmet to create a template engine.
-   * Forms class to auto generate forms for any API method prebuilt in HTML5, Twitter Bootstrap 3, Zurb Foundation formats.
-   * Validator improved to allow suppressing validation errors from throwing exceptions immediately, so that API call can reach the API method
-   * Validator improved to be form validation friendly.
-   * Nav class creating html navigation interface.
-   * OAuth examples upgraded to use version 1.0 of OAuth2 library.
-   * Many bug fixes and improvements.
+  ### Restler 5
 
 
-  ### Restler 3.0 RC4
+  * Semantic versioning to move forward
 
-   * `$reques_data` in api method parameters and `getRequestData()` on restler
-     instance now excludes `$_GET` parameters.
-   * Returning null from api method now excludes the response body. This behaviour
-     can be changed by setting `Defaults::$emptyBodyForNullResponse` to false.
-   * Added many api examples under tests folder for testing feature by feature
-     using BDD
-   * Support for custom class parameters and array of custom class parameters
-   * Ability to pass the parameter directly as the body of the request when it is
-     the only parameter
-   * Fixes to composer.json and publish stable release as composer package on
-     packagist.
-   * New Routes class with improved routing, including wild card routes and smart
-     routing based on paramter type.
-   * Possibility to use any autoloader including composer's autoloader for maximum
-     interoperability
-   * Moved to using the [rodneyrehm/plist](https://packagist.org/packages/rodneyrehm/plist)
-     package for CFPropertyList.
-   * Removed required packages as they are not technically "required" per se,
-     Restler works out of the box.
-   * Created supported packages as require-dev instead which will be installed via
-     `composer install --dev`
-   * Added suggested section for all the supported packages.
-   * Added keywords to package descriptor
-   * Added branch alias to indicate that v3 is the snapshot for v3.0.x-dev
-   * Released Restler as package on packagist.
+  * Support for PHP 8
 
-  ### Restler 3.0 RC3
+  * Corrects the source path to be outside the vendor directory
+
+  * Adds php development server support with `composer serve` command.
+
+  * Ability to run the tests with `composer test` command after running the
+  server 
+    with `composer serve` in another window.
+
+  ### Restler 3.0 RC6
 
 
-  * Added Defaults::$cacheDirectory to set cache directory in one central place
-
-  * Added JSONP support with JsFormat class by extending JsonFormat.
-
-  * Fixes fatal error when the JSON sent in the request body is not an object or
-    array
-  * Improves inline comment parsing by array conversion when delimiter is found
-    and tag is not @pattern
-  * RateLimit class re-written to support all range of time units
-    second|minute|hour|day|week|month to have fine grained control
-  * Resources class improved to include description for body parameters
-
-  * Fixes Resources not to include namespace when the return type is array of
-    custom class
-  * Fixed Resource not to include the API of another class when the current api
-    name is a begins with part of the other API
-  * Added two more ways to exclude API's from explorer/documentation
-      * `Resources::$excludedHttpMethods` (array)
-      * `Resources::$excludedPaths` (array)
-  * Fixes unescaped unicode bug in PHP < 5.4
-
-  * Fixes a bug with ValidationInfo parsing @choice inline comment
-
-  * Added Charset support
-
-  * Added Language (basic) support
-
-  * Updated the BDD tests to include new features
-
-  * Fixes a bug in Restler class which affects $_GET overriding `Defaults`
-
-  * Fixes a bug in XmlFormat parsing XML content to array
-
-  * Added support for JSONP via jsFormat extension of JsonFormat
-
-  * Fixes a bug in unicode un-escaping for JsonFormat in PHP < 5.4
-
-  * Fixes the order so that responseFormat->setCharset is called before encoding
-    the response
-  * Documentation improvements and minor bug fixes
+  #### What's new
 
 
-  ### Restler 3.0 RC2
+  * Adds PassThrough class to serve files outside your web root, including
+  secure downloads
+
+  * Adds Explorer class (v1 swagger 1.2 spec, and v2 swagger 2.0 spec) as a
+  potential 
+    replacement to Resources class (swagger 1.1 spec)
+      * Explorer comes bundled with the html, css, and assets. So that you need not manually download and configure it
+      * Explorer combines the parameters that are expected in the request body to create a unique model for swagger
+      * Since Restler Explorer comes bundled, you can map to it to your url of choice. 
+        For example `$restler->addAPIClass("Luracast/Restler/Explorer", 'swagger')` maps it to `/swagger`.
+      * Explorer metadata can be easily customized with ExplorerInfo class
+
+  #### Improvements
 
 
-  * Filter classes can use authentication status and respond differently for
-    authenticated users by implementing iUseAuthentication interface
-  * `RateLimit` class added to rate limit the api usage
+  * Routes class improved to provide a findAll method to list all the routes for
+  a specific version of the API excluding
+    the specified paths and http methods.
+  * The magic properties utilized by routes when found, ignoring actual
+  properties. 
+    This is useful for Dynamic Model classes such as Eloquent.
+  * Routes now allow `@required` and `@properties` to be arrays when the
+  parameter is an object. 
+    This helps us to pick and choose the properties for each api method differently.
+    Example `{@properties property1,property2,property3}` `{@required property1,property2}` makes an api to only look for
+    3 properties and 2 of them are required.
 
-  * Fixed a bug with setCompatibilityMode
+  * Optimized the Nav class. It now makes use of `Routes::findAll()`, along with
+  Explorer class
 
-  * Resources updated to use only paths for resource identification instead of
-    class name
-      * Enabled Access Control for Documentation
-  * Fixed CommentParser to ignore repeated white space so that it parses
-  comments
-    correctly
-  * Fixed comment parsing for @status and @expires tags
+  * Restler class has setBaseUrls method to set acceptable base urls that can be
+  set using `$_SERVER['HTTP_HOST']`.
+    Read [this article](http://shiflett.org/blog/2006/mar/server-name-versus-http-host) to understand why. This is useful
+    in the following cases when
+      * PHP has trouble detecting the port correctly
+      * multiple domains are pointing to the same server
 
-  * Added the following Examples
-      * Documentation
-      * Rate Limit
-      * Access Control
-  * CRUD example updated to include PATCH support
+  * Restler class now allows overriding the status code by setting
+  `$this->restler->responseCode` from the api method.
 
-
-
-
-  ### Restler 3.0
-
-
-  **Restler 3.0** is completely rewritten from Restler 2.0 with best practices
-  in
-
-  mind for
+  * Improved Forms class to send the embedded properties to emmet template. For
+  example
 
 
-  * PHP Coding
+  ```
 
-  * RESTfulness and/or Pragmatic REST
+  /**
+   * {@id form1}
+   *
+   * @param string $name
+   * @param int $age
+  */
 
-  * API Design
+  ```
 
+    Generates the following form
 
-  **Restler 3.0**
+      <form role="form" id="form1" method="POST" ...
 
+    because the emmet template has id in it (see below)
 
-  * uses namespaces, Late Static Bindings, and Closures and thus it is **PHP
-  5.3+**
-    only (if you need **PHP 5.0+** support use [Restler 2](https://github.com/Luracast/Restler/tree/v2))
-  * provides backward compatibility for Restler 1 and 2.
-    Use `$r->setCompatibilityMode($version);`
-  * supports hybrid api which provides extended data to authenticated users
-    Use `@access hybrid` PHPDoc comment
-  * uses smart auto routing by default where API method parameters that
-    have default values are no longer mapped to the URL, instead they are
-    mapped to query strings to reduce ambiguity in the url.
-  * supports `suppress_response_codes` as query string, when set to true;
-    all http responses will be returned with HTTP OK with the errors in the
-    body to accommodate mobile and less privileged clients.
-  * has improved `CommentParser` which adds support for embedded data in
-  multiple
-    formats
-      * inline doc comments `{@name value}`
-      * query string params \`\`\` param1=value&param2=value2\`\`\`
-      * json \`\`\` {"param1": value, "param2": value2}\`\`\` which can be placed
-        in multi-lines
-  * has `Defaults` class with static properties that can be changed to suit the
-    needs
-  * iAuthenticate is now using `__isAllowed` method instead of
-  `__isAuthenticated`
-    so that same
-    class can be used for Authentication or Filtering
-  * iUseAuthentication interface added to help hybrid access api methods and
-    filters to find out about user authentication status
-  * iFilter interface updated to provide charset support
+      form[role=form id=$id# name=$name# method=$method# action=$action# enctype=$enctype#]
 
-  * ...(more to follow)
+  * Forms class uses embedded properties with `@param` comments to set html
+  attributes (for example id, accept etc) easily
 
+  * FormStyles improved.
 
-  ### Restler 2.0
+  * Validator is now initialized by scope so that we can set its properties with
+  `@class` comment. **Example:
+    -**  `@class Validator {@holdException}` makes the validator to hold the exceptions instead of throwing
+  * Improved Form validation with error messages for individual fields.
 
+  * Forms example updated to show validation errors with bootstrap based themes.
 
-  Restler 2.0 is a major rewrite to use convention over configuration, and it is
+  * CommentParser is now able to parse `@property`, `@property-read`,
+  `@property-write` to support documenting the dynamic
+    properties.
+  * CommentParser supports short array syntax such as `string[]`, `DateTime[]`
 
-  optimized for performance. Here are some of the major changes and improvements
+  * Scope adds support for external DI Container of your choice with
+  `Scope::$resolver` property.
 
+  * Renamed `String` class to `Text` for PHP 7 support (String is a reserved
+  keyword in php7)
 
-  * PHPDoc comments to map a method to URI are now optional.
+  * Flash now implements ArrayAccess so that we can access flash variables just
+  like an array
 
-  * All public methods that does not begin with an underscore are mapped
-    automatically to the method name (`gateway\classname\methodname\param1\...`)
-  * If we do not specify the second parameter for
-    `$restler->addAPIClass` it will be mapped to the class name instead of mapping
-     it to the root
-  * Restler 2 is written for PHP 5.3 and above, but it makes use of compat.php
-  and
-    work on any version of PHP starting from PHP 5.0
+  * **composer.json**: removed many dependencies from require-dev. Will prompt
+  the developers to install them individually
+    when they need them.
+  * newrelic support added.
+
+  * Memcache support added.
 signalfx/swagger-cli-client: >
   # Swagger CLI Client
 
@@ -43384,19 +43300,19 @@ OpenAPITools/openapi-generator: >
 
   | **API clients**                  | **ActionScript**, **Ada**, **Apex**,
   **Bash**, **C**, **C#** (.net 2.0, 3.5 or later, .NET Standard 1.3 - 2.0, .NET
-  Core 2.0, .NET 5.0. Libraries: RestSharp, HttpClient), **C++** (cpp-restsdk,
-  Qt5, Tizen, Unreal Engine 4), **Clojure**, **Crystal**, **Dart**, **Elixir**,
-  **Elm**, **Eiffel**, **Erlang**, **Go**, **Groovy**, **Haskell** (http-client,
-  Servant), **Java** (Jersey1.x, Jersey2.x, OkHttp, Retrofit1.x, Retrofit2.x,
-  Feign, RestTemplate, RESTEasy, Vertx, Google API Client Library for Java,
-  Rest-assured, Spring 5 Web Client, MicroProfile Rest Client), **k6**,
-  **Kotlin**, **Lua**, **Nim**, **Node.js/JavaScript** (ES5, ES6, AngularJS with
-  Google Closure Compiler annotations, Flow types, Apollo GraphQL DataStore),
-  **Objective-C**, **OCaml**, **Perl**, **PHP**, **PowerShell**, **Python**,
-  **R**, **Ruby**, **Rust** (hyper, reqwest, rust-server), **Scala** (akka,
-  http4s, scalaz, sttp, swagger-async-httpclient), **Swift** (2.x, 3.x, 4.x,
-  5.x), **Typescript** (AngularJS, Angular (2.x - 11.x), Aurelia, Axios, Fetch,
-  Inversify, jQuery, Nestjs, Node, redux-query, Rxjs) |
+  Core 2.0, .NET 5.0. Libraries: RestSharp, HttpClient), **C++** (Arduino,
+  cpp-restsdk, Qt5, Tizen, Unreal Engine 4), **Clojure**, **Crystal**, **Dart**,
+  **Elixir**, **Elm**, **Eiffel**, **Erlang**, **Go**, **Groovy**, **Haskell**
+  (http-client, Servant), **Java** (Jersey1.x, Jersey2.x, OkHttp, Retrofit1.x,
+  Retrofit2.x, Feign, RestTemplate, RESTEasy, Vertx, Google API Client Library
+  for Java, Rest-assured, Spring 5 Web Client, MicroProfile Rest Client),
+  **k6**, **Kotlin**, **Lua**, **Nim**, **Node.js/JavaScript** (ES5, ES6,
+  AngularJS with Google Closure Compiler annotations, Flow types, Apollo GraphQL
+  DataStore), **Objective-C**, **OCaml**, **Perl**, **PHP**, **PowerShell**,
+  **Python**, **R**, **Ruby**, **Rust** (hyper, reqwest, rust-server), **Scala**
+  (akka, http4s, scalaz, sttp, swagger-async-httpclient), **Swift** (2.x, 3.x,
+  4.x, 5.x), **Typescript** (AngularJS, Angular (2.x - 11.x), Aurelia, Axios,
+  Fetch, Inversify, jQuery, Nestjs, Node, redux-query, Rxjs) |
 
   | **Server stubs**                 | **Ada**, **C#** (ASP.NET Core, NancyFx),
   **C++** (Pistache, Restbed, Qt5 QHTTPEngine), **Erlang**, **F#** (Giraffe),
@@ -44310,6 +44226,8 @@ OpenAPITools/openapi-generator: >
   [README.md](README.md) and click on the icon to edit the page.
 
 
+  - [Aalborg University](https://www.aau.dk)
+
   - [Adaptant Solutions AG](https://www.adaptant.io/)
 
   - [adesso SE](https://www.adesso.de/)
@@ -45211,6 +45129,7 @@ OpenAPITools/openapi-generator: >
      * Bash: @bkryza
      * C: @PowerOfCreation @zhemant [:heart:](https://www.patreon.com/zhemant)
      * C++ REST: @Danielku15
+     * C++ Tiny: @AndersSpringborg
      * C++ UE4: @Kahncode
      * C# (.NET 2.0): @who
      * C# (.NET Standard 1.3 ): @Gronsak
@@ -48407,7 +48326,7 @@ epiphone/routing-controllers-openapi: >
             '$ref': '#/components/schemas/Pet'
           }
         }
-      ]
+      }
     }
   }})
 
@@ -49601,7 +49520,7 @@ outofcoffee/vertx-oas: >
 
 
   Pete Cornish (outofcoffee@gmail.com)
-cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/openapi-spring-webflux-validator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.cdimascio%22%20AND%20a:%22openapi-spring-webflux-validator%22) [ ![Download](https://api.bintray.com/packages/cdimascio/maven/openapi-spring-webflux-validator/images/download.svg) ](https://bintray.com/cdimascio/maven/openapi-spring-webflux-validator/_latestVersion)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->\n[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)\n<!-- ALL-CONTRIBUTORS-BADGE:END --> \n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3_ or _Swagger 2_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>3.3.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:3.3.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin + Reactor)\n\nYou can now validate a request in a coroutine style,\nusing the `validate` instance created [above](#configure-kotlin):\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\n### Validate a request (Kotlin + coroutines)\n\nOr you can validate a request in a coroutine style,\nusing the `validate` instance created [above](#configure-kotlin):\n\n\nwithout a body\n\n```kotlin\nvalidate.requestAndAwait(req) {\n    // Do stuff e.g. return a list of names \n    ok().bodyValueAndAwait(listOf(\"carmine\", \"alex\", \"eliana\"))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).awaitBody(User::class.java) { body: User ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().bodyValueAndAwait(body)\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.openapi.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(null, () -> {\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().body(fromObject(users));\n});\n```\n\nwith body\n\n```java\nvalidate\n    .request(null)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        return ServerResponse.ok().body(fromObject(user))\n    );\n```\n\n## Example Valiation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes in a reactive or coroutine style:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.coRouter\nimport org.springframework.web.reactive.function.server.plus\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n    fun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    } + coRouter { \n        \"/coApi\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::coCreate)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::coFindAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.bodyValueAndAwait\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().bodyValue(listOf(\"carmine\", \"alex\", \"eliana\"))\n        }\n    }\n\n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().bodyValue(it)\n        }\n    }\n\n    suspend fun coFindAll(req: ServerRequest): ServerResponse {\n        return validate.requestAndAwait(req) {\n            ok().bodyValueAndAwait(listOf(\"carmine\", \"alex\", \"eliana\"))\n        }\n    }\n\n    suspend fun coCreate(req: ServerRequest): ServerResponse {\n        return validate.request(req).awaitBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().bodyValueAndAwait(it)\n        }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n\n## Contributors ✨\n\nThanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore-start -->\n<!-- markdownlint-disable -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"https://github.com/cdimascio\"><img src=\"https://avatars1.githubusercontent.com/u/4706618?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Carmine DiMascio</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Tests\">⚠️</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Documentation\">\U0001F4D6</a></td>\n    <td align=\"center\"><a href=\"https://github.com/krzykrucz\"><img src=\"https://avatars1.githubusercontent.com/u/18364177?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Krzysiek Kruczyński</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Tests\">⚠️</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Documentation\">\U0001F4D6</a></td>\n    <td align=\"center\"><a href=\"https://github.com/chejerlakarthik\"><img src=\"https://avatars0.githubusercontent.com/u/12871079?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Chejerla Karthik</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=chejerlakarthik\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"http://www.katielevy.com\"><img src=\"https://avatars0.githubusercontent.com/u/8975181?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Katie Levy</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=katielevy1\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/reinterpretcat\"><img src=\"https://avatars1.githubusercontent.com/u/1611077?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Ilya Builuk</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=reinterpretcat\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"http://simon.zambrovski.org/\"><img src=\"https://avatars0.githubusercontent.com/u/673128?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Simon Zambrovski</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=zambrovski\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=zambrovski\" title=\"Tests\">⚠️</a></td>\n  </tr>\n</table>\n\n<!-- markdownlint-enable -->\n<!-- prettier-ignore-end -->\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n"
+cdimascio/openapi-spring-webflux-validator: "# openapi-spring-webflux-validator\n![](https://travis-ci.org/cdimascio/openapi-spring-webflux-validator.svg?branch=master)[![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/openapi-spring-webflux-validator.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.cdimascio%22%20AND%20a:%22openapi-spring-webflux-validator%22) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f78b72ca90104e42b111723a7720adf3)](https://www.codacy.com/app/cdimascio/openapi-spring-webflux-validator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/openapi-spring-webflux-validator&amp;utm_campaign=Badge_Grade) ![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->\n[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)\n<!-- ALL-CONTRIBUTORS-BADGE:END --> \n\nA friendly kotlin library to validate API endpoints using an _OpenApi 3_ or _Swagger 2_ specification. Great with webflux functional. \nIt **works happily with any JVM language including Java >=8**. \n<p align=\"center\">\n\t<img src=\"https://raw.githubusercontent.com/cdimascio/openapi-spring-webflux-validator/master/assets/openapi-spring5-webflux-validator.png\" width=\"600\"/>\n</p>\n\nSupports specifications in _YAML_ and _JSON_\n\nSee this [complete Spring 5 Webflux example that uses openapi-spring-webflux-validator](https://github.com/cdimascio/kotlin-swagger-spring-functional-template).\n\n## Prequisites\n\nJava 8 or greater\n\n## Install\n\n### Maven\n\n```xml\n<dependency>\n    <groupId>io.github.cdimascio</groupId>\n    <artifactId>openapi-spring-webflux-validator</artifactId>\n    <version>3.4.0</version>\n</dependency>\n```\n\n### Gradle\n\n```groovy\ncompile 'io.github.cdimascio:openapi-spring-webflux-validator:3.4.0'\n```\n\nFor sbt, grape, ivy and more, see [here](https://search.maven.org/#artifactdetails%7Cio.github.cdimascio%7Copenapi-spring-webflux-validator%7C2.0.0%7Cjar)\n\n## Usage (Kotlin)\n\nThis section and the next describe usage with Kotlin and Java respectively.\n\n### Configure (Kotlin)\n\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\nSupports `JSON` and `YAML`\n\n```kotlin\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\nwith custom error handler\n\n```kotlin\ndata class MyError(val id: String, val messages: List<String>)\nval validate = Validate.configure(\"static/api.json\") { status, messages ->\n   Error(status.name, messages)\n}\n```\n\nwith custom ObjectMapper factory:\n\n```kotlin\nval validate = Validate.configure(\n   openApiSwaggerPath = \"api.yaml\",\n   errorHandler = { status, message -> ValidationError(status.value(), message[0]) },\n   objectMapperFactory = { ObjectMapper()\n       .registerKotlinModule()\n       .registerModule(JavaTimeModule())\n       .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false) }\n)\n```\n\n### Validate a request (Kotlin + Reactor)\n\nYou can now validate a request in a coroutine style,\nusing the `validate` instance created [above](#configure-kotlin):\n\nwithout a body\n\n```kotlin\nvalidate.request(req) {\n    // Do stuff e.g. return a list of names \n    ok().body(Mono.just(listOf(\"carmine\", \"alex\", \"eliana\")))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).withBody(User::class.java) { body ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().body(Mono.just(body))\n}\n```\n\nwith body you want to process as string (e.g. for computing a request signature), or that you want to deserialize somehow specifically\n\n```kotlin\nval identity: (String) -> String = { it }\nvalidate.request(req).withBody(String::class.java, readValue = identity) { body ->\n    ok().body(Mono.just(\"content length is ${body.length}\"))\n}\n```\n\n### Validate a request (Kotlin + coroutines)\n\nOr you can validate a request in a coroutine style,\nusing the `validate` instance created [above](#configure-kotlin):\n\n\nwithout a body\n\n```kotlin\nvalidate.requestAndAwait(req) {\n    // Do stuff e.g. return a list of names \n    ok().bodyValueAndAwait(listOf(\"carmine\", \"alex\", \"eliana\"))\n}\n```\n\nwith body\n\n```kotlin\nvalidate.request(req).awaitBody(User::class.java) { body: User ->\n    // Note that body is deserialized as User!\n    // Now you can do stuff. \n    // For example, lets echo the request as the response \n    ok().bodyValueAndAwait(body)\n}\n```\n\nwith body you want to process as string (e.g. for computing a request signature), or that you want to deserialize somehow specifically\n\n```kotlin\nval identity: (String) -> String = { it }\nvalidate.request(req).awaitBody(String::class.java, identity) { body: String ->\n    ok().bodyValueAndAwait(\"content length is ${body.length}\")\n}\n```\n\n## Usage (Java 8 _or greater_)\n\n### Configure (Java)\nThis one-time configuration requires you to provide the _location of the openapi/swagger specification_ and an optional _custom error handler_.\n\n```java\nimport io.github.cdimascio.openapi.Validate;\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\")\n```\n\nwith custom error handler\n\n```java\nclass MyError {\n    private String id;\n    private  String messages;\n    public MyError(String id, List<String> messages) {\n        this.id = id;\n        this.messages = messages;\n    }\n    public String getId() {\n        return id;\n    }\n    public void setId(String id) {\n        this.id = id;\n    }\n    public List<String> getMessages() {\n        return messages;\n    }\n    public void setMessages(List<String> messages) {\n        this.messages = messages;\n    }     \n}\n```\n\n```java\nValidate<ValidationError> validate = Validate.configure(\"static/api.json\", (status, messages) ->\n    new MyError(status.getName(), messages)\n);\n```\n\n### Validate a request (Java)\n\nUsing the `validate` instance created above, you can now validate a request:\n\nwithout a body\n\n```java\nArrayList<String> users = new ArrayList<String>() {{\n    add(\"carmine\");\n    add(\"alex\");\n    add(\"eliana\");\n}};\n\nvalidate.request(req, () ->\n    // Do stuff e.g. return a list of user names\n    ServerResponse.ok().bodyValue(users)\n);\n```\n\nwith body\n\n```java\nvalidate\n    .request(req)\n    .withBody(User.class, user -> \n        // Note that body is deserialized as User!\n        // Now you can do stuff. \n        // For example, lets echo the request as the response\n        ServerResponse.ok().bodyValue(user)\n    );\n```\n\nwith body you want to process as string (e.g. for computing a request signature)\n\n```java\nvalidate\n    .request(req)\n    .withBody(String.class, s -> s, body ->\n        ServerResponse.ok().bodyValue(\"content length is \" + body.length())\n    );\n```\n\n## Example Validation Output\n\nLet's assume a `POST` request to create a user requires the following request body:\n\n```json\n{\n  \"firstname\": \"carmine\",\n  \"lastname\": \"dimasico\"\n}\n```\n\nLet's now assume an API user misspells `lastname` as `lastnam`\n\n```shell\ncurl -X POST http://localhost:8080/api/users -H \"Content-Type: application/json\" -d'{ \n  \"firstname\": \"c\", \n  \"lastnam\": \"d\" \n}'\n```\n\n`openapi-spring-webflux-validator` automatically validates the request against a Swagger spect and returns:\n\n```json\n{\n  \"code\": 400,\n  \"messages\":[\n\t  \"Object instance has properties which are not allowed by the schema: [\\\"lastnam\\\"]\",\n\t  \"Object has missing required properties ([\\\"lastname\\\"])\"\n  ]\n} \n```\n\n**Woah! Cool!!** :-D \n\n## Example\n\nLet's say you have an endpoint `/users` that supports both `GET` and `POST` operations.\n\nYou can create those routes and validate them like so:\n\n**Create the routes in a reactive or coroutine style:**\n\n```kotlin\npackage myproject.controllers\n\nimport org.springframework.core.io.ClassPathResource\nimport org.springframework.http.MediaType.*\nimport org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect\nimport org.springframework.web.reactive.function.server.coRouter\nimport org.springframework.web.reactive.function.server.plus\nimport org.springframework.web.reactive.function.server.router\nimport java.net.URI\n\nclass Routes(private val userHandler: UserHandler) {\n    fun router() = router {\n        \"/api\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::create)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::findAll)\n            }\n        }\n    } + coRouter { \n        \"/coApi\".nest {\n            accept(APPLICATION_JSON).nest {\n                POST(\"/users\", userHandler::coCreate)\n            }\n            accept(TEXT_EVENT_STREAM).nest {\n                GET(\"/users\", userHandler::coFindAll)\n            }\n        }\n    }\n}\n```\n\n```kotlin\npackage myproject\n\nimport io.github.cdimascio.openapi.Validate\nval validate = Validate.configure(\"static/api.yaml\")\n```\n\n**Validate with openapi-spring-webflux-validator**\n\n```kotlin\npackage myproject.controllers\n\nimport myproject.models.User\nimport myproject.validate\nimport org.springframework.web.reactive.function.server.ServerRequest\nimport org.springframework.web.reactive.function.server.ServerResponse\nimport org.springframework.web.reactive.function.server.ServerResponse.ok\nimport org.springframework.web.reactive.function.server.bodyValueAndAwait\nimport reactor.core.publisher.Flux\nimport reactor.core.publisher.Mono\n\nclass UserHandler {\n\n    fun findAll(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req) {\n            ok().bodyValue(listOf(\"carmine\", \"alex\", \"eliana\"))\n        }\n    }\n\n    fun create(req: ServerRequest): Mono<ServerResponse> {\n        return validate.request(req).withBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().bodyValue(it)\n        }\n    }\n\n    suspend fun coFindAll(req: ServerRequest): ServerResponse {\n        return validate.requestAndAwait(req) {\n            ok().bodyValueAndAwait(listOf(\"carmine\", \"alex\", \"eliana\"))\n        }\n    }\n\n    suspend fun coCreate(req: ServerRequest): ServerResponse {\n        return validate.request(req).awaitBody(User::class.java) {\n            // it is the request body deserialized as User\n            ok().bodyValueAndAwait(it)\n        }\n    }\n}\n```\n\n## License\n\n[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n<a href=\"https://www.buymeacoffee.com/m97tA5c\" target=\"_blank\"><img src=\"https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png\" alt=\"Buy Me A Coffee\" style=\"height: auto !important;width: auto !important;\" ></a>\n\n## Contributors ✨\n\nThanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):\n\n<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->\n<!-- prettier-ignore-start -->\n<!-- markdownlint-disable -->\n<table>\n  <tr>\n    <td align=\"center\"><a href=\"https://github.com/cdimascio\"><img src=\"https://avatars1.githubusercontent.com/u/4706618?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Carmine DiMascio</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Tests\">⚠️</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=cdimascio\" title=\"Documentation\">\U0001F4D6</a></td>\n    <td align=\"center\"><a href=\"https://github.com/krzykrucz\"><img src=\"https://avatars1.githubusercontent.com/u/18364177?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Krzysiek Kruczyński</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Tests\">⚠️</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=krzykrucz\" title=\"Documentation\">\U0001F4D6</a></td>\n    <td align=\"center\"><a href=\"https://github.com/chejerlakarthik\"><img src=\"https://avatars0.githubusercontent.com/u/12871079?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Chejerla Karthik</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=chejerlakarthik\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"http://www.katielevy.com\"><img src=\"https://avatars0.githubusercontent.com/u/8975181?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Katie Levy</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=katielevy1\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"https://github.com/reinterpretcat\"><img src=\"https://avatars1.githubusercontent.com/u/1611077?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Ilya Builuk</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=reinterpretcat\" title=\"Code\">\U0001F4BB</a></td>\n    <td align=\"center\"><a href=\"http://simon.zambrovski.org/\"><img src=\"https://avatars0.githubusercontent.com/u/673128?v=4\" width=\"100px;\" alt=\"\"/><br /><sub><b>Simon Zambrovski</b></sub></a><br /><a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=zambrovski\" title=\"Code\">\U0001F4BB</a> <a href=\"https://github.com/cdimascio/openapi-spring-webflux-validator/commits?author=zambrovski\" title=\"Tests\">⚠️</a></td>\n  </tr>\n</table>\n\n<!-- markdownlint-enable -->\n<!-- prettier-ignore-end -->\n<!-- ALL-CONTRIBUTORS-LIST:END -->\n\nThis project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!\n"
 fmvilas/openapi3-generator: >
   <h1 align="center">OpenAPI 3 Generator</h1>
 
@@ -53902,10 +53821,6 @@ nasa9084/go-openapi: >
   any notification**
 
 
-  **working progress fully rewriting. See [PR
-  #3](https://github.com/nasa9084/go-openapi/pull/3)**
-
-
   ## Overview
 
 
@@ -57630,7 +57545,7 @@ mrin9/OpenAPI-Viewer: >+
       <img src="/screenshots/authentication2.png?raw=true">
   </kbd>
 
-tiangolo/fastapi: "<p align=\"center\">\n  <a href=\"https://fastapi.tiangolo.com\"><img src=\"https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png\" alt=\"FastAPI\"></a>\n</p>\n<p align=\"center\">\n    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>\n</p>\n<p align=\"center\">\n<a href=\"https://github.com/tiangolo/fastapi/actions?query=workflow%3ATest\" target=\"_blank\">\n    <img src=\"https://github.com/tiangolo/fastapi/workflows/Test/badge.svg\" alt=\"Test\">\n</a>\n<a href=\"https://codecov.io/gh/tiangolo/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/codecov/c/github/tiangolo/fastapi?color=%2334D058\" alt=\"Coverage\">\n</a>\n<a href=\"https://pypi.org/project/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/pypi/v/fastapi?color=%2334D058&label=pypi%20package\" alt=\"Package version\">\n</a>\n</p>\n\n---\n\n**Documentation**: <a href=\"https://fastapi.tiangolo.com\" target=\"_blank\">https://fastapi.tiangolo.com</a>\n\n**Source Code**: <a href=\"https://github.com/tiangolo/fastapi\" target=\"_blank\">https://github.com/tiangolo/fastapi</a>\n\n---\n\nFastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.\n\nThe key features are:\n\n* **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic). [One of the fastest Python frameworks available](#performance).\n\n* **Fast to code**: Increase the speed to develop features by about 200% to 300%. *\n* **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *\n* **Intuitive**: Great editor support. <abbr title=\"also known as auto-complete, autocompletion, IntelliSense\">Completion</abbr> everywhere. Less time debugging.\n* **Easy**: Designed to be easy to use and learn. Less time reading docs.\n* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* **Robust**: Get production-ready code. With automatic interactive documentation.\n* **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href=\"https://github.com/OAI/OpenAPI-Specification\" class=\"external-link\" target=\"_blank\">OpenAPI</a> (previously known as Swagger) and <a href=\"https://json-schema.org/\" class=\"external-link\" target=\"_blank\">JSON Schema</a>.\n\n<small>* estimation based on tests on an internal development team, building production applications.</small>\n\n## Sponsors\n\n<!-- sponsors -->\n\n<a href=\"https://www.deta.sh/?ref=fastapi\" target=\"_blank\" title=\"The launchpad for all your (team's) ideas\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/deta.svg\"></a>\n<a href=\"https://www.investsuite.com/jobs\" target=\"_blank\" title=\"Wealthtech jobs with FastAPI\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/investsuite.svg\"></a>\n<a href=\"https://www.vim.so/?utm_source=FastAPI\" target=\"_blank\" title=\"We help you master vim with interactive exercises\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/vimso.png\"></a>\n<a href=\"https://talkpython.fm/fastapi-sponsor\" target=\"_blank\" title=\"FastAPI video courses on demand from people you trust\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/talkpython.png\"></a>\n\n<!-- /sponsors -->\n\n<a href=\"https://fastapi.tiangolo.com/fastapi-people/#sponsors\" class=\"external-link\" target=\"_blank\">Other sponsors</a>\n\n## Opinions\n\n\"_[...] I'm using **FastAPI** a ton these days. [...] I'm actually planning to use it for all of my team's **ML services at Microsoft**. Some of them are getting integrated into the core **Windows** product and some **Office** products._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kabir Khan - <strong>Microsoft</strong> <a href=\"https://github.com/tiangolo/fastapi/pull/26\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_We adopted the **FastAPI** library to spawn a **REST** server that can be queried to obtain **predictions**. [for Ludwig]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Piero Molino, Yaroslav Dudin, and Sai Sumanth Miryala - <strong>Uber</strong> <a href=\"https://eng.uber.com/ludwig-v0-2/\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_**Netflix** is pleased to announce the open-source release of our **crisis management** orchestration framework: **Dispatch**! [built with **FastAPI**]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kevin Glisson, Marc Vilanova, Forest Monsen - <strong>Netflix</strong> <a href=\"https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_I’m over the moon excited about **FastAPI**. It’s so fun!_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Brian Okken - <strong><a href=\"https://pythonbytes.fm/episodes/show/123/time-to-right-the-py-wrongs?time_in_sec=855\" target=\"_blank\">Python Bytes</a> podcast host</strong> <a href=\"https://twitter.com/brianokken/status/1112220079972728832\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_Honestly, what you've built looks super solid and polished. In many ways, it's what I wanted **Hug** to be - it's really inspiring to see someone build that._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Timothy Crosley - <strong><a href=\"https://www.hug.rest/\" target=\"_blank\">Hug</a> creator</strong> <a href=\"https://news.ycombinator.com/item?id=19455465\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_If you're looking to learn one **modern framework** for building REST APIs, check out **FastAPI** [...] It's fast, easy to use and easy to learn [...]_\"\n\n\"_We've switched over to **FastAPI** for our **APIs** [...] I think you'll like it [...]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Ines Montani - Matthew Honnibal - <strong><a href=\"https://explosion.ai\" target=\"_blank\">Explosion AI</a> founders - <a href=\"https://spacy.io\" target=\"_blank\">spaCy</a> creators</strong> <a href=\"https://twitter.com/_inesmontani/status/1144173225322143744\" target=\"_blank\"><small>(ref)</small></a> - <a href=\"https://twitter.com/honnibal/status/1144031421859655680\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n## **Typer**, the FastAPI of CLIs\n\n<a href=\"https://typer.tiangolo.com\" target=\"_blank\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>\n\nIf you are building a <abbr title=\"Command Line Interface\">CLI</abbr> app to be used in the terminal instead of a web API, check out <a href=\"https://typer.tiangolo.com/\" class=\"external-link\" target=\"_blank\">**Typer**</a>.\n\n**Typer** is FastAPI's little sibling. And it's intended to be the **FastAPI of CLIs**. ⌨️ \U0001F680\n\n## Requirements\n\nPython 3.6+\n\nFastAPI stands on the shoulders of giants:\n\n* <a href=\"https://www.starlette.io/\" class=\"external-link\" target=\"_blank\">Starlette</a> for the web parts.\n* <a href=\"https://pydantic-docs.helpmanual.io/\" class=\"external-link\" target=\"_blank\">Pydantic</a> for the data parts.\n\n## Installation\n\n<div class=\"termy\">\n\n```console\n$ pip install fastapi\n\n---> 100%\n```\n\n</div>\n\nYou will also need an ASGI server, for production such as <a href=\"https://www.uvicorn.org\" class=\"external-link\" target=\"_blank\">Uvicorn</a> or <a href=\"https://gitlab.com/pgjones/hypercorn\" class=\"external-link\" target=\"_blank\">Hypercorn</a>.\n\n<div class=\"termy\">\n\n```console\n$ pip install uvicorn[standard]\n\n---> 100%\n```\n\n</div>\n\n## Example\n\n### Create it\n\n* Create a file `main.py` with:\n\n```Python\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n<details markdown=\"1\">\n<summary>Or use <code>async def</code>...</summary>\n\nIf your code uses `async` / `await`, use `async def`:\n\n```Python hl_lines=\"9  14\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n**Note**:\n\nIf you don't know, check the _\"In a hurry?\"_ section about <a href=\"https://fastapi.tiangolo.com/async/#in-a-hurry\" target=\"_blank\">`async` and `await` in the docs</a>.\n\n</details>\n\n### Run it\n\nRun the server with:\n\n<div class=\"termy\">\n\n```console\n$ uvicorn main:app --reload\n\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [28720]\nINFO:     Started server process [28722]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n```\n\n</div>\n\n<details markdown=\"1\">\n<summary>About the command <code>uvicorn main:app --reload</code>...</summary>\n\nThe command `uvicorn main:app` refers to:\n\n* `main`: the file `main.py` (the Python \"module\").\n* `app`: the object created inside of `main.py` with the line `app = FastAPI()`.\n* `--reload`: make the server restart after code changes. Only do this for development.\n\n</details>\n\n### Check it\n\nOpen your browser at <a href=\"http://127.0.0.1:8000/items/5?q=somequery\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/items/5?q=somequery</a>.\n\nYou will see the JSON response as:\n\n```JSON\n{\"item_id\": 5, \"q\": \"somequery\"}\n```\n\nYou already created an API that:\n\n* Receives HTTP requests in the _paths_ `/` and `/items/{item_id}`.\n* Both _paths_ take `GET` <em>operations</em> (also known as HTTP _methods_).\n* The _path_ `/items/{item_id}` has a _path parameter_ `item_id` that should be an `int`.\n* The _path_ `/items/{item_id}` has an optional `str` _query parameter_ `q`.\n\n### Interactive API docs\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\nYou will see the automatic interactive API documentation (provided by <a href=\"https://github.com/swagger-api/swagger-ui\" class=\"external-link\" target=\"_blank\">Swagger UI</a>):\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)\n\n### Alternative API docs\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\nYou will see the alternative automatic documentation (provided by <a href=\"https://github.com/Rebilly/ReDoc\" class=\"external-link\" target=\"_blank\">ReDoc</a>):\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)\n\n## Example upgrade\n\nNow modify the file `main.py` to receive a body from a `PUT` request.\n\nDeclare the body using standard Python types, thanks to Pydantic.\n\n```Python hl_lines=\"4  9-12  25-27\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: Optional[bool] = None\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n\n\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\nThe server should reload automatically (because you added `--reload` to the `uvicorn` command above).\n\n### Interactive API docs upgrade\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\n* The interactive API documentation will be automatically updated, including the new body:\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)\n\n* Click on the button \"Try it out\", it allows you to fill the parameters and directly interact with the API:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)\n\n* Then click on the \"Execute\" button, the user interface will communicate with your API, send the parameters, get the results and show them on the screen:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)\n\n### Alternative API docs upgrade\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\n* The alternative documentation will also reflect the new query parameter and body:\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)\n\n### Recap\n\nIn summary, you declare **once** the types of parameters, body, etc. as function parameters. \n\nYou do that with standard modern Python types.\n\nYou don't have to learn a new syntax, the methods or classes of a specific library, etc.\n\nJust standard **Python 3.6+**.\n\nFor example, for an `int`:\n\n```Python\nitem_id: int\n```\n\nor for a more complex `Item` model:\n\n```Python\nitem: Item\n```\n\n...and with that single declaration you get:\n\n* Editor support, including:\n    * Completion.\n    * Type checks.\n* Validation of data:\n    * Automatic and clear errors when the data is invalid.\n    * Validation even for deeply nested JSON objects.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of input data: coming from the network to Python data and types. Reading from:\n    * JSON.\n    * Path parameters.\n    * Query parameters.\n    * Cookies.\n    * Headers.\n    * Forms.\n    * Files.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of output data: converting from Python data and types to network data (as JSON):\n    * Convert Python types (`str`, `int`, `float`, `bool`, `list`, etc).\n    * `datetime` objects.\n    * `UUID` objects.\n    * Database models.\n    * ...and many more.\n* Automatic interactive API documentation, including 2 alternative user interfaces:\n    * Swagger UI.\n    * ReDoc.\n\n---\n\nComing back to the previous code example, **FastAPI** will:\n\n* Validate that there is an `item_id` in the path for `GET` and `PUT` requests.\n* Validate that the `item_id` is of type `int` for `GET` and `PUT` requests.\n    * If it is not, the client will see a useful, clear error.\n* Check if there is an optional query parameter named `q` (as in `http://127.0.0.1:8000/items/foo?q=somequery`) for `GET` requests.\n    * As the `q` parameter is declared with `= None`, it is optional.\n    * Without the `None` it would be required (as is the body in the case with `PUT`).\n* For `PUT` requests to `/items/{item_id}`, Read the body as JSON:\n    * Check that it has a required attribute `name` that should be a `str`. \n    * Check that it has a required attribute `price` that has to be a `float`.\n    * Check that it has an optional attribute `is_offer`, that should be a `bool`, if present.\n    * All this would also work for deeply nested JSON objects.\n* Convert from and to JSON automatically.\n* Document everything with OpenAPI, that can be used by:\n    * Interactive documentation systems.\n    * Automatic client code generation systems, for many languages.\n* Provide 2 interactive documentation web interfaces directly.\n\n---\n\nWe just scratched the surface, but you already get the idea of how it all works.\n\nTry changing the line with:\n\n```Python\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\n...from:\n\n```Python\n        ... \"item_name\": item.name ...\n```\n\n...to:\n\n```Python\n        ... \"item_price\": item.price ...\n```\n\n...and see how your editor will auto-complete the attributes and know their types:\n\n![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)\n\nFor a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>.\n\n**Spoiler alert**: the tutorial - user guide includes:\n\n* Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**.\n* How to set **validation constraints** as `maximum_length` or `regex`.\n* A very powerful and easy to use **<abbr title=\"also known as components, resources, providers, services, injectables\">Dependency Injection</abbr>** system.\n* Security and authentication, including support for **OAuth2** with **JWT tokens** and **HTTP Basic** auth.\n* More advanced (but equally easy) techniques for declaring **deeply nested JSON models** (thanks to Pydantic).\n* Many extra features (thanks to Starlette) as:\n    * **WebSockets**\n    * **GraphQL**\n    * extremely easy tests based on `requests` and `pytest`\n    * **CORS**\n    * **Cookie Sessions**\n    * ...and more.\n\n## Performance\n\nIndependent TechEmpower benchmarks show **FastAPI** applications running under Uvicorn as <a href=\"https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7\" class=\"external-link\" target=\"_blank\">one of the fastest Python frameworks available</a>, only below Starlette and Uvicorn themselves (used internally by FastAPI). (*)\n\nTo understand more about it, see the section <a href=\"https://fastapi.tiangolo.com/benchmarks/\" class=\"internal-link\" target=\"_blank\">Benchmarks</a>.\n\n## Optional Dependencies\n\nUsed by Pydantic:\n\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - for faster JSON <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>.\n* <a href=\"https://github.com/JoshData/python-email-validator\" target=\"_blank\"><code>email_validator</code></a> - for email validation.\n\nUsed by Starlette:\n\n* <a href=\"https://requests.readthedocs.io\" target=\"_blank\"><code>requests</code></a> - Required if you want to use the `TestClient`.\n* <a href=\"https://github.com/Tinche/aiofiles\" target=\"_blank\"><code>aiofiles</code></a> - Required if you want to use `FileResponse` or `StaticFiles`.\n* <a href=\"https://jinja.palletsprojects.com\" target=\"_blank\"><code>jinja2</code></a> - Required if you want to use the default template configuration.\n* <a href=\"https://andrew-d.github.io/python-multipart/\" target=\"_blank\"><code>python-multipart</code></a> - Required if you want to support form <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>, with `request.form()`.\n* <a href=\"https://pythonhosted.org/itsdangerous/\" target=\"_blank\"><code>itsdangerous</code></a> - Required for `SessionMiddleware` support.\n* <a href=\"https://pyyaml.org/wiki/PyYAMLDocumentation\" target=\"_blank\"><code>pyyaml</code></a> - Required for Starlette's `SchemaGenerator` support (you probably don't need it with FastAPI).\n* <a href=\"https://graphene-python.org/\" target=\"_blank\"><code>graphene</code></a> - Required for `GraphQLApp` support.\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.\n\nUsed by FastAPI / Starlette:\n\n* <a href=\"https://www.uvicorn.org\" target=\"_blank\"><code>uvicorn</code></a> - for the server that loads and serves your application.\n* <a href=\"https://github.com/ijl/orjson\" target=\"_blank\"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.\n\nYou can install all of these with `pip install fastapi[all]`.\n\n## License\n\nThis project is licensed under the terms of the MIT license.\n"
+tiangolo/fastapi: "<p align=\"center\">\n  <a href=\"https://fastapi.tiangolo.com\"><img src=\"https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png\" alt=\"FastAPI\"></a>\n</p>\n<p align=\"center\">\n    <em>FastAPI framework, high performance, easy to learn, fast to code, ready for production</em>\n</p>\n<p align=\"center\">\n<a href=\"https://github.com/tiangolo/fastapi/actions?query=workflow%3ATest\" target=\"_blank\">\n    <img src=\"https://github.com/tiangolo/fastapi/workflows/Test/badge.svg\" alt=\"Test\">\n</a>\n<a href=\"https://codecov.io/gh/tiangolo/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/codecov/c/github/tiangolo/fastapi?color=%2334D058\" alt=\"Coverage\">\n</a>\n<a href=\"https://pypi.org/project/fastapi\" target=\"_blank\">\n    <img src=\"https://img.shields.io/pypi/v/fastapi?color=%2334D058&label=pypi%20package\" alt=\"Package version\">\n</a>\n</p>\n\n---\n\n**Documentation**: <a href=\"https://fastapi.tiangolo.com\" target=\"_blank\">https://fastapi.tiangolo.com</a>\n\n**Source Code**: <a href=\"https://github.com/tiangolo/fastapi\" target=\"_blank\">https://github.com/tiangolo/fastapi</a>\n\n---\n\nFastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.\n\nThe key features are:\n\n* **Fast**: Very high performance, on par with **NodeJS** and **Go** (thanks to Starlette and Pydantic). [One of the fastest Python frameworks available](#performance).\n\n* **Fast to code**: Increase the speed to develop features by about 200% to 300%. *\n* **Fewer bugs**: Reduce about 40% of human (developer) induced errors. *\n* **Intuitive**: Great editor support. <abbr title=\"also known as auto-complete, autocompletion, IntelliSense\">Completion</abbr> everywhere. Less time debugging.\n* **Easy**: Designed to be easy to use and learn. Less time reading docs.\n* **Short**: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* **Robust**: Get production-ready code. With automatic interactive documentation.\n* **Standards-based**: Based on (and fully compatible with) the open standards for APIs: <a href=\"https://github.com/OAI/OpenAPI-Specification\" class=\"external-link\" target=\"_blank\">OpenAPI</a> (previously known as Swagger) and <a href=\"https://json-schema.org/\" class=\"external-link\" target=\"_blank\">JSON Schema</a>.\n\n<small>* estimation based on tests on an internal development team, building production applications.</small>\n\n## Sponsors\n\n<!-- sponsors -->\n\n<a href=\"https://www.deta.sh/?ref=fastapi\" target=\"_blank\" title=\"The launchpad for all your (team's) ideas\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/deta.svg\"></a>\n<a href=\"https://bit.ly/2QSouzH\" target=\"_blank\" title=\"Jina: build neural search-as-a-service for any kind of data in just minutes.\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/jina.svg\"></a>\n<a href=\"https://www.investsuite.com/jobs\" target=\"_blank\" title=\"Wealthtech jobs with FastAPI\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/investsuite.svg\"></a>\n<a href=\"https://www.vim.so/?utm_source=FastAPI\" target=\"_blank\" title=\"We help you master vim with interactive exercises\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/vimso.png\"></a>\n<a href=\"https://talkpython.fm/fastapi-sponsor\" target=\"_blank\" title=\"FastAPI video courses on demand from people you trust\"><img src=\"https://fastapi.tiangolo.com/img/sponsors/talkpython.png\"></a>\n\n<!-- /sponsors -->\n\n<a href=\"https://fastapi.tiangolo.com/fastapi-people/#sponsors\" class=\"external-link\" target=\"_blank\">Other sponsors</a>\n\n## Opinions\n\n\"_[...] I'm using **FastAPI** a ton these days. [...] I'm actually planning to use it for all of my team's **ML services at Microsoft**. Some of them are getting integrated into the core **Windows** product and some **Office** products._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kabir Khan - <strong>Microsoft</strong> <a href=\"https://github.com/tiangolo/fastapi/pull/26\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_We adopted the **FastAPI** library to spawn a **REST** server that can be queried to obtain **predictions**. [for Ludwig]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Piero Molino, Yaroslav Dudin, and Sai Sumanth Miryala - <strong>Uber</strong> <a href=\"https://eng.uber.com/ludwig-v0-2/\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_**Netflix** is pleased to announce the open-source release of our **crisis management** orchestration framework: **Dispatch**! [built with **FastAPI**]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Kevin Glisson, Marc Vilanova, Forest Monsen - <strong>Netflix</strong> <a href=\"https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_I’m over the moon excited about **FastAPI**. It’s so fun!_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Brian Okken - <strong><a href=\"https://pythonbytes.fm/episodes/show/123/time-to-right-the-py-wrongs?time_in_sec=855\" target=\"_blank\">Python Bytes</a> podcast host</strong> <a href=\"https://twitter.com/brianokken/status/1112220079972728832\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_Honestly, what you've built looks super solid and polished. In many ways, it's what I wanted **Hug** to be - it's really inspiring to see someone build that._\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Timothy Crosley - <strong><a href=\"https://www.hug.rest/\" target=\"_blank\">Hug</a> creator</strong> <a href=\"https://news.ycombinator.com/item?id=19455465\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n\"_If you're looking to learn one **modern framework** for building REST APIs, check out **FastAPI** [...] It's fast, easy to use and easy to learn [...]_\"\n\n\"_We've switched over to **FastAPI** for our **APIs** [...] I think you'll like it [...]_\"\n\n<div style=\"text-align: right; margin-right: 10%;\">Ines Montani - Matthew Honnibal - <strong><a href=\"https://explosion.ai\" target=\"_blank\">Explosion AI</a> founders - <a href=\"https://spacy.io\" target=\"_blank\">spaCy</a> creators</strong> <a href=\"https://twitter.com/_inesmontani/status/1144173225322143744\" target=\"_blank\"><small>(ref)</small></a> - <a href=\"https://twitter.com/honnibal/status/1144031421859655680\" target=\"_blank\"><small>(ref)</small></a></div>\n\n---\n\n## **Typer**, the FastAPI of CLIs\n\n<a href=\"https://typer.tiangolo.com\" target=\"_blank\"><img src=\"https://typer.tiangolo.com/img/logo-margin/logo-margin-vector.svg\" style=\"width: 20%;\"></a>\n\nIf you are building a <abbr title=\"Command Line Interface\">CLI</abbr> app to be used in the terminal instead of a web API, check out <a href=\"https://typer.tiangolo.com/\" class=\"external-link\" target=\"_blank\">**Typer**</a>.\n\n**Typer** is FastAPI's little sibling. And it's intended to be the **FastAPI of CLIs**. ⌨️ \U0001F680\n\n## Requirements\n\nPython 3.6+\n\nFastAPI stands on the shoulders of giants:\n\n* <a href=\"https://www.starlette.io/\" class=\"external-link\" target=\"_blank\">Starlette</a> for the web parts.\n* <a href=\"https://pydantic-docs.helpmanual.io/\" class=\"external-link\" target=\"_blank\">Pydantic</a> for the data parts.\n\n## Installation\n\n<div class=\"termy\">\n\n```console\n$ pip install fastapi\n\n---> 100%\n```\n\n</div>\n\nYou will also need an ASGI server, for production such as <a href=\"https://www.uvicorn.org\" class=\"external-link\" target=\"_blank\">Uvicorn</a> or <a href=\"https://gitlab.com/pgjones/hypercorn\" class=\"external-link\" target=\"_blank\">Hypercorn</a>.\n\n<div class=\"termy\">\n\n```console\n$ pip install uvicorn[standard]\n\n---> 100%\n```\n\n</div>\n\n## Example\n\n### Create it\n\n* Create a file `main.py` with:\n\n```Python\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n<details markdown=\"1\">\n<summary>Or use <code>async def</code>...</summary>\n\nIf your code uses `async` / `await`, use `async def`:\n\n```Python hl_lines=\"9  14\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n**Note**:\n\nIf you don't know, check the _\"In a hurry?\"_ section about <a href=\"https://fastapi.tiangolo.com/async/#in-a-hurry\" target=\"_blank\">`async` and `await` in the docs</a>.\n\n</details>\n\n### Run it\n\nRun the server with:\n\n<div class=\"termy\">\n\n```console\n$ uvicorn main:app --reload\n\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\nINFO:     Started reloader process [28720]\nINFO:     Started server process [28722]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\n```\n\n</div>\n\n<details markdown=\"1\">\n<summary>About the command <code>uvicorn main:app --reload</code>...</summary>\n\nThe command `uvicorn main:app` refers to:\n\n* `main`: the file `main.py` (the Python \"module\").\n* `app`: the object created inside of `main.py` with the line `app = FastAPI()`.\n* `--reload`: make the server restart after code changes. Only do this for development.\n\n</details>\n\n### Check it\n\nOpen your browser at <a href=\"http://127.0.0.1:8000/items/5?q=somequery\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/items/5?q=somequery</a>.\n\nYou will see the JSON response as:\n\n```JSON\n{\"item_id\": 5, \"q\": \"somequery\"}\n```\n\nYou already created an API that:\n\n* Receives HTTP requests in the _paths_ `/` and `/items/{item_id}`.\n* Both _paths_ take `GET` <em>operations</em> (also known as HTTP _methods_).\n* The _path_ `/items/{item_id}` has a _path parameter_ `item_id` that should be an `int`.\n* The _path_ `/items/{item_id}` has an optional `str` _query parameter_ `q`.\n\n### Interactive API docs\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\nYou will see the automatic interactive API documentation (provided by <a href=\"https://github.com/swagger-api/swagger-ui\" class=\"external-link\" target=\"_blank\">Swagger UI</a>):\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-01-swagger-ui-simple.png)\n\n### Alternative API docs\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\nYou will see the alternative automatic documentation (provided by <a href=\"https://github.com/Rebilly/ReDoc\" class=\"external-link\" target=\"_blank\">ReDoc</a>):\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-02-redoc-simple.png)\n\n## Example upgrade\n\nNow modify the file `main.py` to receive a body from a `PUT` request.\n\nDeclare the body using standard Python types, thanks to Pydantic.\n\n```Python hl_lines=\"4  9-12  25-27\"\nfrom typing import Optional\n\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: Optional[bool] = None\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: Optional[str] = None):\n    return {\"item_id\": item_id, \"q\": q}\n\n\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\nThe server should reload automatically (because you added `--reload` to the `uvicorn` command above).\n\n### Interactive API docs upgrade\n\nNow go to <a href=\"http://127.0.0.1:8000/docs\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/docs</a>.\n\n* The interactive API documentation will be automatically updated, including the new body:\n\n![Swagger UI](https://fastapi.tiangolo.com/img/index/index-03-swagger-02.png)\n\n* Click on the button \"Try it out\", it allows you to fill the parameters and directly interact with the API:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-04-swagger-03.png)\n\n* Then click on the \"Execute\" button, the user interface will communicate with your API, send the parameters, get the results and show them on the screen:\n\n![Swagger UI interaction](https://fastapi.tiangolo.com/img/index/index-05-swagger-04.png)\n\n### Alternative API docs upgrade\n\nAnd now, go to <a href=\"http://127.0.0.1:8000/redoc\" class=\"external-link\" target=\"_blank\">http://127.0.0.1:8000/redoc</a>.\n\n* The alternative documentation will also reflect the new query parameter and body:\n\n![ReDoc](https://fastapi.tiangolo.com/img/index/index-06-redoc-02.png)\n\n### Recap\n\nIn summary, you declare **once** the types of parameters, body, etc. as function parameters. \n\nYou do that with standard modern Python types.\n\nYou don't have to learn a new syntax, the methods or classes of a specific library, etc.\n\nJust standard **Python 3.6+**.\n\nFor example, for an `int`:\n\n```Python\nitem_id: int\n```\n\nor for a more complex `Item` model:\n\n```Python\nitem: Item\n```\n\n...and with that single declaration you get:\n\n* Editor support, including:\n    * Completion.\n    * Type checks.\n* Validation of data:\n    * Automatic and clear errors when the data is invalid.\n    * Validation even for deeply nested JSON objects.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of input data: coming from the network to Python data and types. Reading from:\n    * JSON.\n    * Path parameters.\n    * Query parameters.\n    * Cookies.\n    * Headers.\n    * Forms.\n    * Files.\n* <abbr title=\"also known as: serialization, parsing, marshalling\">Conversion</abbr> of output data: converting from Python data and types to network data (as JSON):\n    * Convert Python types (`str`, `int`, `float`, `bool`, `list`, etc).\n    * `datetime` objects.\n    * `UUID` objects.\n    * Database models.\n    * ...and many more.\n* Automatic interactive API documentation, including 2 alternative user interfaces:\n    * Swagger UI.\n    * ReDoc.\n\n---\n\nComing back to the previous code example, **FastAPI** will:\n\n* Validate that there is an `item_id` in the path for `GET` and `PUT` requests.\n* Validate that the `item_id` is of type `int` for `GET` and `PUT` requests.\n    * If it is not, the client will see a useful, clear error.\n* Check if there is an optional query parameter named `q` (as in `http://127.0.0.1:8000/items/foo?q=somequery`) for `GET` requests.\n    * As the `q` parameter is declared with `= None`, it is optional.\n    * Without the `None` it would be required (as is the body in the case with `PUT`).\n* For `PUT` requests to `/items/{item_id}`, Read the body as JSON:\n    * Check that it has a required attribute `name` that should be a `str`. \n    * Check that it has a required attribute `price` that has to be a `float`.\n    * Check that it has an optional attribute `is_offer`, that should be a `bool`, if present.\n    * All this would also work for deeply nested JSON objects.\n* Convert from and to JSON automatically.\n* Document everything with OpenAPI, that can be used by:\n    * Interactive documentation systems.\n    * Automatic client code generation systems, for many languages.\n* Provide 2 interactive documentation web interfaces directly.\n\n---\n\nWe just scratched the surface, but you already get the idea of how it all works.\n\nTry changing the line with:\n\n```Python\n    return {\"item_name\": item.name, \"item_id\": item_id}\n```\n\n...from:\n\n```Python\n        ... \"item_name\": item.name ...\n```\n\n...to:\n\n```Python\n        ... \"item_price\": item.price ...\n```\n\n...and see how your editor will auto-complete the attributes and know their types:\n\n![editor support](https://fastapi.tiangolo.com/img/vscode-completion.png)\n\nFor a more complete example including more features, see the <a href=\"https://fastapi.tiangolo.com/tutorial/\">Tutorial - User Guide</a>.\n\n**Spoiler alert**: the tutorial - user guide includes:\n\n* Declaration of **parameters** from other different places as: **headers**, **cookies**, **form fields** and **files**.\n* How to set **validation constraints** as `maximum_length` or `regex`.\n* A very powerful and easy to use **<abbr title=\"also known as components, resources, providers, services, injectables\">Dependency Injection</abbr>** system.\n* Security and authentication, including support for **OAuth2** with **JWT tokens** and **HTTP Basic** auth.\n* More advanced (but equally easy) techniques for declaring **deeply nested JSON models** (thanks to Pydantic).\n* Many extra features (thanks to Starlette) as:\n    * **WebSockets**\n    * **GraphQL**\n    * extremely easy tests based on `requests` and `pytest`\n    * **CORS**\n    * **Cookie Sessions**\n    * ...and more.\n\n## Performance\n\nIndependent TechEmpower benchmarks show **FastAPI** applications running under Uvicorn as <a href=\"https://www.techempower.com/benchmarks/#section=test&runid=7464e520-0dc2-473d-bd34-dbdfd7e85911&hw=ph&test=query&l=zijzen-7\" class=\"external-link\" target=\"_blank\">one of the fastest Python frameworks available</a>, only below Starlette and Uvicorn themselves (used internally by FastAPI). (*)\n\nTo understand more about it, see the section <a href=\"https://fastapi.tiangolo.com/benchmarks/\" class=\"internal-link\" target=\"_blank\">Benchmarks</a>.\n\n## Optional Dependencies\n\nUsed by Pydantic:\n\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - for faster JSON <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>.\n* <a href=\"https://github.com/JoshData/python-email-validator\" target=\"_blank\"><code>email_validator</code></a> - for email validation.\n\nUsed by Starlette:\n\n* <a href=\"https://requests.readthedocs.io\" target=\"_blank\"><code>requests</code></a> - Required if you want to use the `TestClient`.\n* <a href=\"https://github.com/Tinche/aiofiles\" target=\"_blank\"><code>aiofiles</code></a> - Required if you want to use `FileResponse` or `StaticFiles`.\n* <a href=\"https://jinja.palletsprojects.com\" target=\"_blank\"><code>jinja2</code></a> - Required if you want to use the default template configuration.\n* <a href=\"https://andrew-d.github.io/python-multipart/\" target=\"_blank\"><code>python-multipart</code></a> - Required if you want to support form <abbr title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</abbr>, with `request.form()`.\n* <a href=\"https://pythonhosted.org/itsdangerous/\" target=\"_blank\"><code>itsdangerous</code></a> - Required for `SessionMiddleware` support.\n* <a href=\"https://pyyaml.org/wiki/PyYAMLDocumentation\" target=\"_blank\"><code>pyyaml</code></a> - Required for Starlette's `SchemaGenerator` support (you probably don't need it with FastAPI).\n* <a href=\"https://graphene-python.org/\" target=\"_blank\"><code>graphene</code></a> - Required for `GraphQLApp` support.\n* <a href=\"https://github.com/esnme/ultrajson\" target=\"_blank\"><code>ujson</code></a> - Required if you want to use `UJSONResponse`.\n\nUsed by FastAPI / Starlette:\n\n* <a href=\"https://www.uvicorn.org\" target=\"_blank\"><code>uvicorn</code></a> - for the server that loads and serves your application.\n* <a href=\"https://github.com/ijl/orjson\" target=\"_blank\"><code>orjson</code></a> - Required if you want to use `ORJSONResponse`.\n\nYou can install all of these with `pip install fastapi[all]`.\n\n## License\n\nThis project is licensed under the terms of the MIT license.\n"
 ReDoc-ly/create-openapi-repo: "# create-openapi-repo\n\n[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]\n\n> Generate an organized multi-file OpenAPI repository.\n\n<center>\n\n<img src=\"./logo.png\" width=\"500px\"/>\n\n</center>\n\n## Who?\nYou! Hello.  Do you need to write or contribute to an OpenAPI definition?  If so, read on...\n\n## What?\nWe recommend a docs-like-code approach to OpenAPI definitions:\n- Write it using your favorite text-editor or IDE (we love VSCode).\n- Organize it into multiple files and folders to make it easy to navigate.\n- Store it using source control (such as GitHub).\n- Continuously validate it using our free [openapi-cli tool](https://github.com/redocly/openapi-cli) or our free continuous validation service (coming soon).\n- Bundle it (for a smaller footprint to use in other tools or for tools that do not support a multi-file format).\n\n## Why?\nThere are a few advantages in hosting your API definition on GitHub:\n - Community engagement (PR's and issues -- if you have a public repo)\n - Advertisment in the GitHub community\n - Hosting on GitHub pages (perfect uptime, CDN, Jekyll, custom domains with CNAME)\n - Revision history, branching, CI\n - Review and approval workflows using Pull Requests\n - Fast on-boarding time (developers and tech writers know how to use GitHub :smile:)\n - Fully compatible with Redocly API Reference too\n\n There are also some advantages to a multi-file YAML format OpenAPI definition:\n - Reuse schema objects to keep things DRY (don't repeat yourself) \n - Smaller diffs compared to JSON (especially for markdown descriptions)\n - Easier to navigate\n - Easier to edit with confidence\n\n## Features\nThis generator helps to create a GitHub repo with the following features:\n - Split a big (or small) OpenAPI definition into smaller files organized into folders\n - Bundle it into a single file for deployment\n - Continuous integration/deployment on Travis or Redocly Workflows\n - Code samples as separate files\n - Automate deployment of your OpenAPI definition and docs\n - OpenAPI definition is validated after each commit\n - Live editing in your editor of choice :heart_eyes:\n\n## Structure\n\nYou will have a structure similar to this:\n```\n    ├── .redocly.yaml\n    ├── LICENSE\n    ├── README.md\n    ├── docs\n    │\_\_ ├── favicon.png\n    │\_\_ └── index.html\n    ├── openapi\n    │\_\_ ├── README.md\n    │\_\_ ├── code_samples\n    │\_\_ │\_\_ ├── C#\n    │\_\_ │\_\_ │\_\_ └── echo\n    │\_\_ │\_\_ │\_\_     └── post.cs\n    │\_\_ │\_\_ ├── PHP\n    │\_\_ │\_\_ │\_\_ └── echo\n    │\_\_ │\_\_ │\_\_     └── post.php\n    │\_\_ │\_\_ └── README.md\n    │\_\_ ├── components\n    │\_\_ │\_\_ └── README.md\n    │\_\_ └── paths\n    │\_\_     └── README.md\n    └── package.json\n```\n\nHowever, you can adjust it to any structure you prefer.\n\nThe `openapi` folder is where your OpenAPI definition will live.  Inside there, and the sub-folders, there are `README.md` files to help guide you further. This is also where your entrypoint `openapi.yaml` will live.\n\nThe `components` folder is where you will organize sub-folders such as `schema` to define your schema.\n\nThe `paths` folder is where you will organize your paths. There will be a 'README.md' file in there with suggestions for how to organize it into specially named files (or folders) that use an `@` in place of a `/` (because files cannot have a `/` character in them).  You will also be able to use path parameters by wrapping them in curly braces `{example}`.\n\nThe `.redocly.yaml` file is a universal configuration for various Redocly tools including the lint tool and reference doc engine.\n\n## Commands\n\nThe generated repository includes installing a dependency for our `openapi-cli` tool which supports commands such as `validate`, `bundle`, and more.  There are scripted shortcuts defined in the repository's `package.json`.  \n\n\n## Examples of generated repositories\n- https://github.com/Rebilly/RebillyAPI\n- https://github.com/thingful/openapi-spec\n- https://github.com/TwineHealth/TwineDeveloperDocs\n\n## How to generate your repository\n\nWe assume you already have [node.js](https://nodejs.org/) installed.\n\n- Install `create-openapi-repo` globally:\n```bash\nnpm install -g create-openapi-repo\n```\nor use [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):\n\nWe'll use `npx` in this example.  However, remove `npx` if you installed it globally.\n\n```bash\nnpx create-openapi-repo\n```\n\nYou will be presented with some questions. You can create a new definition or use an existing definition to initialize your project.\n\nPlease note, if you do start a new one, remember to [create a GitHub repo](https://help.github.com/articles/create-a-repo/#create-a-new-repository-on-github) where your OpenAPI definition will live.\n\nIf you use the prior version of this generated repository, please read the following upgrade instructions.\n\n#### Upgrading from a prior version\n\nMigrate your repository from a previous structure of OpenAPI repo to this newer structure with our migration tool. \n\nRun this in the root folder of your repo.\n\n```bash\nnpx create-openapi-repo --migrate-2-3\n```\n\nNote: the migration tool does not migrate plugins automatically. You would need to manually add them to the `transformers` folder. \n\n## Support\n\nThank you for wanting to support us. Here are some ideas how to support us:\n\n* Star us\n* Tell a friend or colleague about us (or Tweet about us)\n* Write an article about it (and let us know) -- open an issue to let us know, with the link.\n* Consider our commercial products if are looking for automation to ease the docs-like code workflow, hosting along with conveniences like custom domains, access controls and previews, API reference documentation, or a full developer portal:  https://redoc.ly\n\n[npm-image]: https://badge.fury.io/js/generator-openapi-repo.svg\n[npm-url]: https://npmjs.org/package/generator-openapi-repo\n[daviddm-image]: https://david-dm.org/Rebilly/generator-openapi-repo.svg?theme=shields.io\n[daviddm-url]: https://david-dm.org/Rebilly/generator-openapi-repo\n"
 postmanlabs/openapi-to-postman: >
 
@@ -64106,7 +64021,7 @@ Redocly/redoc: >
   ## Development
 
   see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with services, it's important to have an API\ncontract which servers and clients both implement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour default HTTP routing engine, due to its speed and simplicity for the generated\nstubs, and [Chi](https://github.com/go-chi/chi) is also supported as an alternative.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```go\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nEcho server.\n\n```go\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```go\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```go\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\n### Registering handlers\nThere are a few ways of registering your http handler based on the type of server generated i.e. `-generate server` or `-generate chi-server`\n\n<details><summary><code>Echo</code></summary>\n\nCode generated using `-generate server`.\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```go\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```go\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n</summary></details>\n\n<details><summary><code>Chi</code></summary>\n\nCode generated using `-generate chi-server`.\n\n```go\ntype PetStoreImpl struct {}\nfunc (*PetStoreImpl) GetPets(r *http.Request, w *http.ResponseWriter) {\n    // Implement me\n}\n\nfunc SetupHandler() {\n    var myApi PetStoreImpl\n\n    r := chi.Router()\n    r.Mount(\"/\", Handler(&myApi))\n}\n```\n</summary></details>\n\n<details><summary><code>net/http</code></summary>\n\n[Chi](https://github.com/go-chi/chi) is 100% compatible with `net/http` allowing the following with code generated using `-generate chi-server`.\n\n```go\ntype PetStoreImpl struct {}\nfunc (*PetStoreImpl) GetPets(r *http.Request, w *http.ResponseWriter) {\n    // Implement me\n}\n\nfunc SetupHandler() {\n    var myApi PetStoreImpl\n\n    http.Handle(\"/\", Handler(&myApi))\n}\n```\n</summary></details>\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tAdditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema.\n```go\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}w\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples.\n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```go\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```go\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditors []func(ctx context.Context, req *http.Request) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper\nfunctions which create requests. In the case of the pet store, we have:\n\n```go\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n\n## Using SecurityProviders\n\nIf you generate client-code, you can use some default-provided security providers\nwhich help you to use the various OpenAPI 3 Authentication mechanism.\n\n\n```\n    import (\n        \"github.com/deepmap/oapi-codegen/pkg/securityprovider\"\n    )\n\n    func CreateSampleProviders() error {\n        // Example BasicAuth\n        // See: https://swagger.io/docs/specification/authentication/basic-authentication/\n        basicAuthProvider, basicAuthProviderErr := securityprovider.NewSecurityProviderBasicAuth(\"MY_USER\", \"MY_PASS\")\n        if basicAuthProviderErr != nil {\n            panic(basicAuthProviderErr)\n        }\n\n        // Example BearerToken\n        // See: https://swagger.io/docs/specification/authentication/bearer-authentication/\n        bearerTokenProvider, bearerTokenProviderErr := securityprovider.NewSecurityProviderBearerToken(\"MY_TOKEN\")\n        if bearerTokenProviderErr != nil {\n            panic(bearerTokenProviderErr)\n        }\n\n        // Example ApiKey provider\n        // See: https://swagger.io/docs/specification/authentication/api-keys/\n        apiKeyProvider, apiKeyProviderErr := securityprovider.NewSecurityProviderApiKey(\"query\", \"myApiKeyParam\", \"MY_API_KEY\")\n        if apiKeyProviderErr != nil {\n            panic(apiKeyProviderErr)\n        }\n\n        // Example providing your own provider using an anonymous function wrapping in the\n        // InterceptoFn adapter. The behaviour between the InterceptorFn and the Interceptor interface\n        // are the same as http.HandlerFunc and http.Handler.\n        customProvider := func(req *http.Request, ctx context.Context) error {\n            // Just log the request header, nothing else.\n            log.Println(req.Header)\n            return nil\n        }\n\n        // Exhaustive list of some defaults you can use to initialize a Client.\n        // If you need to override the underlying httpClient, you can use the option\n        //\n        // WithHTTPClient(httpClient *http.Client)\n        //\n        client, clientErr := NewClient(\"https://api.deepmap.com\", []ClientOption{\n            WithBaseURL(\"https://api.deepmap.com\"),\n            WithRequestEditorFn(apiKeyProvider.Edit),\n        }...,\n        )\n\n        return nil\n    }\n```\n\n## Extensions\n\n`oapi-codegen` supports the following extended properties:\n\n- `x-go-type`: specifies Go type name. It allows you to specify the type name for a schema, and\n will override any default value. This extended property isn't supported in all parts of\n OpenAPI, so please refer to the spec as to where it's allowed. Swagger validation tools will\n flag incorrect usage of this property.\n\n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the Echo server boilerplate. `server` requires the types in the\n same package to compile.\n- `chi-server`: generate the Chi server boilerplate. This code is dependent on\n that produced by the `types` target.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n- `skip-fmt`: skip running `goimports` on the generated code. This is useful for debugging\n the generated file in case the spec contains weird strings.\n- `skip-prune`: skip pruning unused components from the spec prior to generating\n the code.\n- `import-mapping`: specifies a map of references external OpenAPI specs to go\n Go include paths. Please see below.\n\nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate -generate types,server`. You could generate `types` and\n`server` into separate files, but both are required for the server code.\n\n`oapi-codegen` can filter paths base on their tags in the openapi definition.\nUse either `-include-tags` or `-exclude-tags` followed by a comma-separated list\nof tags. For instance, to generate a server that serves all paths except those\ntagged with `auth` or `admin`, use the argument, `-exclude-tags=\"auth,admin\"`.\nTo generate a server that only handles `admin` paths, use the argument\n`-include-tags=\"admin\"`. When neither of these arguments is present, all paths\nare generated.\n\n`oapi-codegen` can filter schemas based on the option `--exclude-schemas`, which is\na comma separated list of schema names. For instance, `--exclude-schemas=Pet,NewPet`\nwill exclude from generation schemas `Pet` and `NewPet`. This allow to have a\nin the same package a manually defined structure or interface and refer to it\nin the openapi spec.\n\nSince `go generate` commands must be a single line, all the options above can make\nthem pretty unwieldy, so you can specify all of the options in a configuration\nfile via the `--config` option. Please see the test under\n[`/internal/test/externalref/`](https://github.com/deepmap/oapi-codegen/blob/master/internal/test/externalref/externalref.cfg.yaml)\nfor an example. The structure of the file is as follows:\n    \n```yaml\noutput:\n  externalref.gen.go\npackage: externalref\ngenerate:\n  - types\n  - skip-prune\nimport-mapping:\n  ./packageA/spec.yaml: github.com/deepmap/oapi-codegen/internal/test/externalref/packageA\n  ./packageB/spec.yaml: github.com/deepmap/oapi-codegen/internal/test/externalref/packageB\n```\n\nHave a look at [`cmd/oapi-codegen/oapi-codegen.go`](https://github.com/deepmap/oapi-codegen/blob/master/cmd/oapi-codegen/oapi-codegen.go#L48) \nto see all the fields on the configuration structure.\n\n### Import Mappings\n\nOpenAPI specifications may contain references to other OpenAPI specifications,\nand we need some additional information in order to be able to generate correct\nGo code.\n\nAn external reference looks like this:\n\n    $ref: ./some_spec.yaml#/components/schemas/Type\n\nWe assume that you have already generated the boilerplate code for `./some_spec.yaml`\nusing `oapi-codegen`, and you have a package which contains the generated code,\nlet's call it `github.com/deepmap/some-package`. You need to tell `oapi-codegen` that\n`some_spec.yaml` corresponds to this package, and you would do it by specifying\nthis command line argument:\n\n    -import-mapping=./some_spec.yaml:github.com/deepmap/some-package\n\nThis tells us that in order to resolve references generated from `some_spec.yaml` we\nneed to import `github.com/deepmap/some-package`. You may specify multiple mappings\nby comma separating them in the form `key1:value1,key2:value2`.\n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\nAlternatively, you can provide custom templates to override built-in ones using\nthe `-templates` flag specifying a path to a directory containing templates\nfiles. These files **must** be named identically to built-in template files\n(see `pkg/codegen/templates/*.tmpl` in the source code), and will be interpreted\non-the-fly at run time. Example:\n\n    $ ls -1 my-templates/\n    client.tmpl\n    typedef.tmpl\n    $ oapi-codegen \\\n        -templates my-templates/ \\\n        -generate types,client \\\n        petstore-expanded.yaml\n"
+deepmap/oapi-codegen: "OpenAPI Client and Server Code Generator\n----------------------------------------\n\nThis package contains a set of utilities for generating Go boilerplate code for\nservices based on\n[OpenAPI 3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md)\nAPI definitions. When working with services, it's important to have an API\ncontract which servers and clients both implement to minimize the chances of\nincompatibilities. It's tedious to generate Go models which precisely correspond to\nOpenAPI specifications, so let our code generator do that work for you, so that\nyou can focus on implementing the business logic for your service.\n\nWe have chosen to use [Echo](https://github.com/labstack/echo) as\nour default HTTP routing engine, due to its speed and simplicity for the generated\nstubs, and [Chi](https://github.com/go-chi/chi) is also supported as an alternative.\n\nThis package tries to be too simple rather than too generic, so we've made some\ndesign decisions in favor of simplicity, knowing that we can't generate strongly\ntyped Go code for all possible OpenAPI Schemas.\n\n## Overview\n\nWe're going to use the OpenAPI example of the\n[Expanded Petstore](https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v3.0/petstore-expanded.yaml)\nin the descriptions below, please have a look at it.\n\nIn order to create a Go server to serve this exact schema, you would have to\nwrite a lot of boilerplate code to perform all the marshalling and unmarshalling\ninto objects which match the OpenAPI 3.0 definition. The code generator in this\ndirectory does a lot of that for you. You would run it like so:\n\n    go get github.com/deepmap/oapi-codegen/cmd/oapi-codegen\n    oapi-codegen petstore-expanded.yaml  > petstore.gen.go\n\nLet's go through that `petstore.gen.go` file to show you everything which was\ngenerated.\n\n\n## Generated Server Boilerplate\n\nThe `/components/schemas` section in OpenAPI defines reusable objects, so Go\ntypes are generated for these. The Pet Store example defines `Error`, `Pet`,\n`Pets` and `NewPet`, so we do the same in Go:\n```go\n// Type definition for component schema \"Error\"\ntype Error struct {\n    Code    int32  `json:\"code\"`\n    Message string `json:\"message\"`\n}\n\n// Type definition for component schema \"NewPet\"\ntype NewPet struct {\n    Name string  `json:\"name\"`\n    Tag  *string `json:\"tag,omitempty\"`\n}\n\n// Type definition for component schema \"Pet\"\ntype Pet struct {\n    // Embedded struct due to allOf(#/components/schemas/NewPet)\n    NewPet\n    // Embedded fields due to inline allOf schema\n    Id int64 `json:\"id\"`\n}\n\n// Type definition for component schema \"Pets\"\ntype Pets []Pet\n```\n\nIt's best to define objects under `/components` field in the schema, since\nthose will be turned into named Go types. If you use inline types in your\nhandler definitions, we will generate inline, anonymous Go types, but those\nare more tedious to deal with since you will have to redeclare them at every\npoint of use.\n\nFor each element in the `paths` map in OpenAPI, we will generate a Go handler\nfunction in an interface object. Here is the generated Go interface for our\nEcho server.\n\n```go\ntype ServerInterface interface {\n    //  (GET /pets)\n    FindPets(ctx echo.Context, params FindPetsParams) error\n    //  (POST /pets)\n    AddPet(ctx echo.Context) error\n    //  (DELETE /pets/{id})\n    DeletePet(ctx echo.Context, id int64) error\n    //  (GET /pets/{id})\n    FindPetById(ctx echo.Context, id int64) error\n}\n```\n\nThese are the functions which you will implement yourself in order to create\na server conforming to the API specification. Normally, all the arguments and\nparameters are stored on the `echo.Context` in handlers, so we do the tedious\nwork of of unmarshaling the JSON automatically, simply passing values into\nyour handlers.\n\nNotice that `FindPetById` takes a parameter `id int64`. All path arguments\nwill be passed as arguments to your function, since they are mandatory.\n\nRemaining arguments can be passed in headers, query arguments or cookies. Those\nwill be written to a `params` object. Look at the `FindPets` function above, it\ntakes as input `FindPetsParams`, which is defined as follows:\n ```go\n// Parameters object for FindPets\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit *int32   `json:\"limit,omitempty\"`\n}\n```\n\nThe HTTP query parameter `limit` turns into a Go field named `Limit`. It is\npassed by pointer, since it is an optional parameter. If the parameter is\nspecified, the pointer will be non-`nil`, and you can read its value.\n\nIf you changed the OpenAPI specification to make the parameter required, the\n`FindPetsParams` structure will contain the type by value:\n```go\ntype FindPetsParams struct {\n    Tags  *[]string `json:\"tags,omitempty\"`\n    Limit int32     `json:\"limit\"`\n}\n```\n\n### Registering handlers\nThere are a few ways of registering your http handler based on the type of server generated i.e. `-generate server` or `-generate chi-server`\n\n<details><summary><code>Echo</code></summary>\n\nCode generated using `-generate server`.\n\nThe usage of `Echo` is out of scope of this doc, but once you have an\necho instance, we generate a utility function to help you associate your handlers\nwith this autogenerated code. For the pet store, it looks like this:\n```go\nfunc RegisterHandlers(router codegen.EchoRouter, si ServerInterface) {\n    wrapper := ServerInterfaceWrapper{\n        Handler: si,\n    }\n    router.GET(\"/pets\", wrapper.FindPets)\n    router.POST(\"/pets\", wrapper.AddPet)\n    router.DELETE(\"/pets/:id\", wrapper.DeletePet)\n    router.GET(\"/pets/:id\", wrapper.FindPetById)\n}\n```\n\nThe wrapper functions referenced above contain generated code which pulls\nparameters off the `Echo` request context, and unmarshals them into Go objects.\n\nYou would register the generated handlers as follows:\n```go\nfunc SetupHandler() {\n    var myApi PetStoreImpl  // This implements the pet store interface\n    e := echo.New()\n    petstore.RegisterHandlers(e, &myApi)\n    ...\n}\n```\n\n</summary></details>\n\n<details><summary><code>Chi</code></summary>\n\nCode generated using `-generate chi-server`.\n\n```go\ntype PetStoreImpl struct {}\nfunc (*PetStoreImpl) GetPets(w http.ResponseWriter, r *http.Request) {\n    // Implement me\n}\n\nfunc SetupHandler() {\n    var myApi PetStoreImpl\n\n    r := chi.NewRouter()\n    r.Mount(\"/\", Handler(&myApi))\n}\n```\n</summary></details>\n\n<details><summary><code>net/http</code></summary>\n\n[Chi](https://github.com/go-chi/chi) is 100% compatible with `net/http` allowing the following with code generated using `-generate chi-server`.\n\n```go\ntype PetStoreImpl struct {}\nfunc (*PetStoreImpl) GetPets(r *http.Request, w *http.ResponseWriter) {\n    // Implement me\n}\n\nfunc SetupHandler() {\n    var myApi PetStoreImpl\n\n    http.Handle(\"/\", Handler(&myApi))\n}\n```\n</summary></details>\n\n#### Additional Properties in type definitions\n\n[OpenAPI Schemas](https://swagger.io/specification/#schemaObject) implicitly\naccept `additionalProperties`, meaning that any fields provided, but not explicitly\ndefined via properties on the schema are accepted as input, and propagated. When\nunspecified, the `additionalProperties` field is assumed to be `true`.\n\nAdditional properties are tricky to support in Go with typing, and require\nlots of boilerplate code, so in this library, we assume that `additionalProperties`\ndefaults to `false` and we don't generate this boilerplate. If you would like\nan object to accept `additionalProperties`, specify a schema for `additionalProperties`.\n\nSay we declared `NewPet` above like so:\n```yaml\n    NewPet:\n      required:\n        - name\n      properties:\n        name:\n          type: string\n        tag:\n          type: string\n      additionalProperties:\n        type: string\n```\n\nThe Go code for `NewPet` would now look like this:\n```go\n// NewPet defines model for NewPet.\ntype NewPet struct {\n\tName                 string            `json:\"name\"`\n\tTag                  *string           `json:\"tag,omitempty\"`\n\tAdditionalProperties map[string]string `json:\"-\"`\n}\n```\n\nThe additionalProperties, of type `string` become `map[string]string`, which maps\nfield names to instances of the `additionalProperties` schema.\n```go\n// Getter for additional properties for NewPet. Returns the specified\n// element and whether it was found\nfunc (a NewPet) Get(fieldName string) (value string, found bool) {...}\n\n// Setter for additional properties for NewPet\nfunc (a *NewPet) Set(fieldName string, value string) {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a *NewPet) UnmarshalJSON(b []byte) error {...}\n\n// Override default JSON handling for NewPet to handle additionalProperties\nfunc (a NewPet) MarshalJSON() ([]byte, error) {...}w\n```\n\nThere are many special cases for `additionalProperties`, such as having to\ndefine types for inner fields which themselves support additionalProperties, and\nall of them are tested via the `internal/test/components` schemas and tests. Please\nlook through those tests for more usage examples.\n\n## Generated Client Boilerplate\n\nOnce your server is up and running, you probably want to make requests to it. If\nyou're going to do those requests from your Go code, we also generate a client\nwhich is conformant with your schema to help in marshaling objects to JSON. It\nuses the same types and similar function signatures to your request handlers.\n\nThe interface for the pet store looks like this:\n\n```go\n// The interface specification for the client above.\ntype ClientInterface interface {\n\n\t// FindPets request\n\tFindPets(ctx context.Context, params *FindPetsParams, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// AddPet request with JSON body\n\tAddPet(ctx context.Context, body NewPet, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// DeletePet request\n\tDeletePet(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)\n\n\t// FindPetById request\n\tFindPetById(ctx context.Context, id int64, reqEditors ...RequestEditorFn) (*http.Response, error)\n}\n```\n\nA Client object which implements the above interface is also generated:\n\n```go\n// Client which conforms to the OpenAPI3 specification for this service.\ntype Client struct {\n    // The endpoint of the server conforming to this interface, with scheme,\n    // https://api.deepmap.com for example.\n    Server string\n\n    // HTTP client with any customized settings, such as certificate chains.\n    Client http.Client\n\n    // A callback for modifying requests which are generated before sending over\n    // the network.\n    RequestEditors []func(ctx context.Context, req *http.Request) error\n}\n```\n\nEach operation in your OpenAPI spec will result in a client function which\ntakes the same arguments. It's difficult to handle any arbitrary body that\nSwagger supports, so we've done some special casing for bodies, and you may get\nmore than one function for an operation with a request body.\n\n1) If you have more than one request body type, meaning more than one media\n type, you will have a generic handler of this form:\n\n        AddPet(ctx context.Context, contentType string, body io.Reader)\n\n2) If you have only a JSON request body, you will get:\n\n        AddPet(ctx context.Context, body NewPet)\n\n3) If you have multiple request body types, which include a JSON type you will\n get two functions. We've chosen to give the JSON version a shorter name, as\n we work with JSON and don't want to wear out our keyboards.\n\n        AddPet(ctx context.Context, body NewPet)\n        AddPetWithBody(ctx context.Context, contentType string, body io.Reader)\n\nThe Client object above is fairly flexible, since you can pass in your own\n`http.Client` and a request editing callback. You can use that callback to add\nheaders. In our middleware stack, we annotate the context with additional\ninformation such as the request ID and function tracing information, and we\nuse the callback to propagate that information into the request headers. Still, we\ncan't foresee all possible usages, so those functions call through to helper\nfunctions which create requests. In the case of the pet store, we have:\n\n```go\n// Request generator for FindPets\nfunc NewFindPetsRequest(server string, params *FindPetsParams) (*http.Request, error) {...}\n\n// Request generator for AddPet with JSON body\nfunc NewAddPetRequest(server string, body NewPet) (*http.Request, error) {...}\n\n// Request generator for AddPet with non-JSON body\nfunc NewAddPetRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {...}\n\n// Request generator for DeletePet\nfunc NewDeletePetRequest(server string, id int64) (*http.Request, error) {...}\n\n// Request generator for FindPetById\nfunc NewFindPetByIdRequest(server string, id int64) (*http.Request, error) {...}\n```\n\nYou can call these functions to build an `http.Request` from Go objects, which\nwill correspond to your request schema. They map one-to-one to the functions on\nthe client, except that we always generate the generic non-JSON body handler.\n\nThere are some caveats to using this code.\n- exploded, form style query arguments, which are the default argument format\n in OpenAPI 3.0 are undecidable. Say that I have two objects, one composed of\n the fields `(name=bob, id=5)` and another which has `(name=shoe, color=brown)`.\n The first parameter is named `person` and the second is named `item`. The\n default marshaling style for query args would result in\n `/path/?name=bob,id=5&name=shoe,color=brown`. In order to tell what belongs\n to which object, we'd have to look at all the parameters and try to deduce it,\n but we're lazy, so we didn't. Don't use exploded form style arguments if\n you're passing around objects which have similar field names. If you\n used unexploded form parameters, you'd have\n `/path/?person=name,bob,id,5&item=name,shoe,color,brown`, which an be\n parsed unambiguously.\n\n- Parameters can be defined via `schema` or via `content`. Use the `content` form\n for anything other than trivial objects, they can marshal to arbitrary JSON\n structures. When you send them as cookie (`in: cookie`) arguments, we will\n URL encode them, since JSON delimiters aren't allowed in cookies.\n\n## Using SecurityProviders\n\nIf you generate client-code, you can use some default-provided security providers\nwhich help you to use the various OpenAPI 3 Authentication mechanism.\n\n\n```\n    import (\n        \"github.com/deepmap/oapi-codegen/pkg/securityprovider\"\n    )\n\n    func CreateSampleProviders() error {\n        // Example BasicAuth\n        // See: https://swagger.io/docs/specification/authentication/basic-authentication/\n        basicAuthProvider, basicAuthProviderErr := securityprovider.NewSecurityProviderBasicAuth(\"MY_USER\", \"MY_PASS\")\n        if basicAuthProviderErr != nil {\n            panic(basicAuthProviderErr)\n        }\n\n        // Example BearerToken\n        // See: https://swagger.io/docs/specification/authentication/bearer-authentication/\n        bearerTokenProvider, bearerTokenProviderErr := securityprovider.NewSecurityProviderBearerToken(\"MY_TOKEN\")\n        if bearerTokenProviderErr != nil {\n            panic(bearerTokenProviderErr)\n        }\n\n        // Example ApiKey provider\n        // See: https://swagger.io/docs/specification/authentication/api-keys/\n        apiKeyProvider, apiKeyProviderErr := securityprovider.NewSecurityProviderApiKey(\"query\", \"myApiKeyParam\", \"MY_API_KEY\")\n        if apiKeyProviderErr != nil {\n            panic(apiKeyProviderErr)\n        }\n\n        // Example providing your own provider using an anonymous function wrapping in the\n        // InterceptoFn adapter. The behaviour between the InterceptorFn and the Interceptor interface\n        // are the same as http.HandlerFunc and http.Handler.\n        customProvider := func(req *http.Request, ctx context.Context) error {\n            // Just log the request header, nothing else.\n            log.Println(req.Header)\n            return nil\n        }\n\n        // Exhaustive list of some defaults you can use to initialize a Client.\n        // If you need to override the underlying httpClient, you can use the option\n        //\n        // WithHTTPClient(httpClient *http.Client)\n        //\n        client, clientErr := NewClient(\"https://api.deepmap.com\", []ClientOption{\n            WithBaseURL(\"https://api.deepmap.com\"),\n            WithRequestEditorFn(apiKeyProvider.Edit),\n        }...,\n        )\n\n        return nil\n    }\n```\n\n## Extensions\n\n`oapi-codegen` supports the following extended properties:\n\n- `x-go-type`: specifies Go type name. It allows you to specify the type name for a schema, and\n will override any default value. This extended property isn't supported in all parts of\n OpenAPI, so please refer to the spec as to where it's allowed. Swagger validation tools will\n flag incorrect usage of this property.\n\n## Using `oapi-codegen`\n\nThe default options for `oapi-codegen` will generate everything; client, server,\ntype definitions and embedded swagger spec, but you can generate subsets of\nthose via the `-generate` flag. It defaults to `types,client,server,spec`, but\nyou can specify any combination of those.\n\n- `types`: generate all type definitions for all types in the OpenAPI spec. This\n will be everything under `#components`, as well as request parameter, request\n body, and response type objects.\n- `server`: generate the Echo server boilerplate. `server` requires the types in the\n same package to compile.\n- `chi-server`: generate the Chi server boilerplate. This code is dependent on\n that produced by the `types` target.\n- `client`: generate the client boilerplate. It, too, requires the types to be\n present in its package.\n- `spec`: embed the OpenAPI spec into the generated code as a gzipped blob. This\n- `skip-fmt`: skip running `goimports` on the generated code. This is useful for debugging\n the generated file in case the spec contains weird strings.\n- `skip-prune`: skip pruning unused components from the spec prior to generating\n the code.\n- `import-mapping`: specifies a map of references external OpenAPI specs to go\n Go include paths. Please see below.\n\nSo, for example, if you would like to produce only the server code, you could\nrun `oapi-generate -generate types,server`. You could generate `types` and\n`server` into separate files, but both are required for the server code.\n\n`oapi-codegen` can filter paths base on their tags in the openapi definition.\nUse either `-include-tags` or `-exclude-tags` followed by a comma-separated list\nof tags. For instance, to generate a server that serves all paths except those\ntagged with `auth` or `admin`, use the argument, `-exclude-tags=\"auth,admin\"`.\nTo generate a server that only handles `admin` paths, use the argument\n`-include-tags=\"admin\"`. When neither of these arguments is present, all paths\nare generated.\n\n`oapi-codegen` can filter schemas based on the option `--exclude-schemas`, which is\na comma separated list of schema names. For instance, `--exclude-schemas=Pet,NewPet`\nwill exclude from generation schemas `Pet` and `NewPet`. This allow to have a\nin the same package a manually defined structure or interface and refer to it\nin the openapi spec.\n\nSince `go generate` commands must be a single line, all the options above can make\nthem pretty unwieldy, so you can specify all of the options in a configuration\nfile via the `--config` option. Please see the test under\n[`/internal/test/externalref/`](https://github.com/deepmap/oapi-codegen/blob/master/internal/test/externalref/externalref.cfg.yaml)\nfor an example. The structure of the file is as follows:\n    \n```yaml\noutput:\n  externalref.gen.go\npackage: externalref\ngenerate:\n  - types\n  - skip-prune\nimport-mapping:\n  ./packageA/spec.yaml: github.com/deepmap/oapi-codegen/internal/test/externalref/packageA\n  ./packageB/spec.yaml: github.com/deepmap/oapi-codegen/internal/test/externalref/packageB\n```\n\nHave a look at [`cmd/oapi-codegen/oapi-codegen.go`](https://github.com/deepmap/oapi-codegen/blob/master/cmd/oapi-codegen/oapi-codegen.go#L48) \nto see all the fields on the configuration structure.\n\n### Import Mappings\n\nOpenAPI specifications may contain references to other OpenAPI specifications,\nand we need some additional information in order to be able to generate correct\nGo code.\n\nAn external reference looks like this:\n\n    $ref: ./some_spec.yaml#/components/schemas/Type\n\nWe assume that you have already generated the boilerplate code for `./some_spec.yaml`\nusing `oapi-codegen`, and you have a package which contains the generated code,\nlet's call it `github.com/deepmap/some-package`. You need to tell `oapi-codegen` that\n`some_spec.yaml` corresponds to this package, and you would do it by specifying\nthis command line argument:\n\n    -import-mapping=./some_spec.yaml:github.com/deepmap/some-package\n\nThis tells us that in order to resolve references generated from `some_spec.yaml` we\nneed to import `github.com/deepmap/some-package`. You may specify multiple mappings\nby comma separating them in the form `key1:value1,key2:value2`.\n\n## What's missing or incomplete\n\nThis code is still young, and not complete, since we're filling it in as we\nneed it. We've not yet implemented several things:\n\n- `oneOf`, `anyOf` are not supported with strong Go typing. This schema:\n\n        schema:\n          oneOf:\n            - $ref: '#/components/schemas/Cat'\n            - $ref: '#/components/schemas/Dog'\n\n    will result in a Go type of `interface{}`. It will be up to you\n    to validate whether it conforms to `Cat` and/or `Dog`, depending on the\n    keyword. It's not clear if we can do anything much better here given the\n    limits of Go typing.\n\n    `allOf` is supported, by taking the union of all the fields in all the\n    component schemas. This is the most useful of these operations, and is\n    commonly used to merge objects with an identifier, as in the\n    `petstore-expanded` example.\n\n- `patternProperties` isn't yet supported and will exit with an error. Pattern\n properties were defined in JSONSchema, and the `kin-openapi` Swagger object\n knows how to parse them, but they're not part of OpenAPI 3.0, so we've left\n them out, as support is very complicated.\n\n\n## Making changes to code generation\n\nThe code generator uses a tool to inline all the template definitions into\ncode, so that we don't have to deal with the location of the template files.\nWhen you update any of the files under the `templates/` directory, you will\nneed to regenerate the template inlines:\n\n    go generate ./pkg/codegen/templates\n\nAll this command does is inline the files ending in `.tmpl` into the specified\nGo file.\n\nAfterwards you should run `go generate ./...`, and the templates will be updated\n accordingly.\n\nAlternatively, you can provide custom templates to override built-in ones using\nthe `-templates` flag specifying a path to a directory containing templates\nfiles. These files **must** be named identically to built-in template files\n(see `pkg/codegen/templates/*.tmpl` in the source code), and will be interpreted\non-the-fly at run time. Example:\n\n    $ ls -1 my-templates/\n    client.tmpl\n    typedef.tmpl\n    $ oapi-codegen \\\n        -templates my-templates/ \\\n        -generate types,client \\\n        petstore-expanded.yaml\n"
 sugarkubes/generators: "# Rest/GraphQL APIs + React Components Generator \U0001F525\n\n[![Buy Ligit License](https://s3.us-west-1.wasabisys.com/public.sugarkubes/ligit_embed.svg)](https://ligit.dev)\n[![Follow on Twitter](https://img.shields.io/twitter/follow/andrewpierno.svg?label=follow)](https://twitter.com/andrewpierno)\n[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Average time to resolve an issue\")\n[![Percentage of issues still open](http://isitmaintained.com/badge/open/sugarkubes/generators.svg)](http://isitmaintained.com/project/sugarkubes/generators \"Percentage of issues still open\")\n[![npm package](https://img.shields.io/npm/v/sugar-generate/latest.svg)](https://www.npmjs.com/package/sugar-generate)\n[![NPM Downloads](https://img.shields.io/npm/dt/sugar-generate.svg?style=flat)](https://npmcharts.com/compare/sugar-generate?minimal=true)\n\n\n![Sugar Generator - API Edition](https://github.com/sugarkubes/generators/blob/master/logo.png?raw=true)\n\n[![App Demo](https://img.youtube.com/vi/E7_ABK7nZT8/0.jpg)](https://www.youtube.com/watch?v=E7_ABK7nZT8)\n\n\nThis project is sponsored by\n\n[![SponsoredBy.dev](https://api.sponsoredby.dev/img/d8c4307b-ba42-400e-b475-9487c76d15c8.png)](https://api.sponsoredby.dev/link/d8c4307b-ba42-400e-b475-9487c76d15c8)\n\n# Quick Start\n\n\n1. Install the npm module\n\n```sh\n# install\nnpm i -g sugar-generate\n```\n\n2. Create a json schema save, this to **monkey.json**\n\n\n```json\n{\n  \"name\": \"monkey\",\n  \"schema\": {\n    \"name\": {\n      \"type\": \"String\",\n      \"default\": \"\"\n    },\n    \"alive\": {\n      \"type\": \"Boolean\",\n      \"default\": false\n    },\n    \"age\": {\n      \"type\": \"Number\",\n      \"default\": false\n    }\n  }\n}\n```\n\n3. Generate your api and app\n\n```sh\nsugar-generate \\\n--schema monkey.json \\\n--destination ./my-monkeys\n```\n\nBoom, you now have:\n\nAPI:\n- GraphQL API\n- REST API\n- Working Tests\n\nAPP:\n- React create item form\n- React table that supports\n  - search\n  - sort\n  - filter\n  - pagination\n  - edit item\n  - create item\n\n\n### Start the API\n\n```sh\ncd ./my-monkeys/api\nnpm i\nnpm run start\n\n# http://localhost:7777\n```\n\n### Start the APP\n\n```sh\ncd ./my-monkeys/app\nnpm i\nnpm run dev\n\n# http://localhost:3000\n```\n\n### Behold Magic\n\nA fully functioning react table and form with searching sorting filtering, editing, adding, global search, download, and refresh.\n\n![SugarKubes Generated App](https://github.com/sugarkubes/generators/blob/master/table-component.png?raw=true)\n\n# Links\n\n[GraphQL is on localhost:7777/graphql](http://localhost:7777/graphql)\n\n[Swagger is on localhost:7777](http://localhost:7777)\n\n[APP is on localhost:3000](http://localhost:3000)\n\n[API is on localhost:7777](http://localhost:3000)\n\n# Documentation\n\n[API Documentation (generated back end)](https://github.com/sugarkubes/generators/wiki/API)\n\n\n[App Documentation (generated front end)](https://github.com/sugarkubes/generators/wiki/APP)\n\n## Experimental Embeddable Components\n\n**What if you could remotely update your components without having to push new code?**\n\nThats one question we're exploring with the experimental embeddable react components. There are of course cool ways to serve single pages as serverless functions but what's cooler would be a way for even non-technical people to update a database schema and a form or table in real time without writing any code.\n\n\n- Each component comes out in an embeddable format under */embed*\n- TBD - How to easily deploy these and use them.\n-\n\n\n## Updates\n\n- 8/5/19 support for mongo arrays in documents\n"
 ErikWittern/swagger-snippet: >
   # OpenAPI Snippet
@@ -65229,10 +65144,10 @@ Cornutum/tcases: >
 
   ## What's New? ##
 
-    * The latest version ([Tcases 3.5.1](ReleaseNotes.md#351)) is now available at the Maven Central Repository.
+    * The latest version ([Tcases 3.6.0](ReleaseNotes.md#360)) is now available at the Maven Central Repository.
       See [*How To Download Tcases*](HowToDownload.md) for download instructions.
 
-    * Tcases 3.5.1 provides improvements to Tcases for OpenAPI. See the [release notes](ReleaseNotes.md#351) for details.
+    * Tcases 3.6.0 provides improvements to Tcases for OpenAPI. See the [release notes](ReleaseNotes.md#360) for details.
 
     * Having trouble with Tcases? Check out [these tips](./Troubleshooting-FAQs.md).
 
@@ -68411,8 +68326,8 @@ springdoc/springdoc-openapi: >
   [![Known
   Vulnerabilities](https://snyk.io/test/github/springdoc/springdoc-openapi.git/badge.svg)](https://snyk.io/test/github/springdoc/springdoc-openapi.git)
 
-  ![Stack Exchange
-  questions](https://img.shields.io/stackexchange/stackoverflow/t/springdoc)
+  [![Stack Exchange
+  questions](https://img.shields.io/stackexchange/stackoverflow/t/springdoc)](https://stackoverflow.com/questions/tagged/springdoc?tab=Votes)
 
 
   # Table of Contents
@@ -70716,12 +70631,12 @@ Apicurio/apicurio-studio: >
   You should be able to import that guy straight into Eclipse by going to
 
   *Window->Preferences :: Java/Code Style/Formatter*
-Azure/autorest: >+
+Azure/autorest: >
   # <img align="center" src="./docs/images/logo.png"> AutoRest
 
 
   The **AutoRest** tool generates client libraries for accessing RESTful web
-  services. Input to *AutoRest* is a spec that describes the REST API using the
+  services. Input to _AutoRest_ is a spec that describes the REST API using the
   [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) format.
 
 
@@ -70770,6 +70685,11 @@ Azure/autorest: >+
   | [@autorest/java][java_src]                      |
   [Changelog][java_chg]           |
   ![](https://img.shields.io/npm/v/@autorest/java)            
+  |                                                                   |
+
+  | [@autorest/powershell][powershell_src]          |
+  [Changelog][powershell_chg]     |
+  ![](https://img.shields.io/npm/v/@autorest/powershell)      
   |                                                                   |
 
   | [@autorest/python][python_src]                  |
@@ -70863,6 +70783,8 @@ Azure/autorest: >+
 
   [typescript_src]: https://github.com/Azure/autorest.typescript
 
+  [powershell_src]: https://github.com/Azure/autorest.powershell
+
   [codemodel_src]: packages/libs/codemodel
 
   [common_src]: packages/libs/common
@@ -70870,6 +70792,8 @@ Azure/autorest: >+
   [configuration_src]: packages/libs/configuration
 
   [extension_base_src]: packages/libs/extension-base
+
+  [oai2-to-oai3_src]: packages/libs/oai2-to-oai3_src
 
   [extension_src]: packages/libs/extension
 
@@ -70901,6 +70825,8 @@ Azure/autorest: >+
   [swift_chg]: https://github.com/Azure/autorest.swift
 
   [typescript_chg]: https://github.com/Azure/autorest.typescript
+
+  [powershell_chg]: https://github.com/Azure/autorest.powershell/releases
 
   [codemodel_chg]: packages/libs/codemodel/CHANGELOG.md
 
@@ -70964,8 +70890,8 @@ Azure/autorest: >+
 
   <!--LINKS-->
 
-  [docs_readme]: docs/readme.md
 
+  [docs_readme]: docs/readme.md
 CacheControl/hippie-swagger: >
   ![hippie-swagger](http://i.imgur.com/icjd94P.png)
 
@@ -86555,7 +86481,7 @@ RonnyPfannschmidt/prance: >
 
   or may not find useful, too. Look at the `full documentation
 
-  <https://jfinkhaeuser.github.io/prance/#api-modules>`__ for details.
+  <https://prance.readthedocs.io/en/latest/#api-modules>`__ for details.
 
 
 
@@ -87828,3 +87754,329 @@ Himenon/openapi-typescript-code-generator: >
 
   - Copyright (c) 2018 Kogo Software LLC -
   [https://github.com/kogosoftwarellc/open-api/tree/master/packages/openapi-schema-validator#readme](openapi-schema-validator)
+subeeshcbabu-zz/swagmock: >
+  # swagmock
+
+  Mock data generator for swagger api
+
+
+  *Note: Swagmock version `1.0.0` onwards requires `Node.js v6+` (`"engines":
+  {"node": ">=6.x"}`). Please use `v0.0.x` (say `0.0.5`), if you want to run
+  this module on any previous node.js versions.*
+
+
+  ## Install
+
+
+  ```
+
+  npm install swagmock
+
+  ```
+
+
+  ## Usage
+
+
+  ```javascript
+      let Swagmock = require('swagmock');
+      let Mockgen = Swagmock(api, options);
+      // api Can be one of the following.
+      // 1) A relative or absolute path to the Swagger api document.
+      // 2) A swagger api Object.
+      // 3) A promise (or a `thenable`) that resolves to the swagger api Object.
+      // Set the `validated` : `true`  in `options`, if the api Object is already validated
+      // and dereferenced ($ref are resolved ).
+  ```
+
+
+  Promise response:
+
+
+  ```javascript
+      let responseMock = Mockgen.responses({}); //returns a promise that resolves to response mock
+      responseMock.then(mock => {
+          //Use mock here
+      }).catch(error => {
+          Assert.ifError(error);
+      });
+  ```
+
+
+  Callback style:
+
+
+  ```javascript
+
+      Mockgen.responses({ path: '/somepath'}, (error, mock) => {
+          Assert.ifError(error);
+          //Use mock here
+      });
+  ```
+
+
+  Check the [API](README.md#api) for more details.
+
+
+  ## Example
+
+
+  Initialize the mock generator
+
+
+  ```javascript
+      const apiPath = 'http://petstore.swagger.io/v2/swagger.json';
+      let Assert = require('assert');
+      let Swagmock = require('swagmock');
+      let Mockgen = Swagmock(apiPath);
+  ```
+
+
+  Response mock generation:
+
+
+  ```javascript
+      mockgen.responses({
+          path: '/pet/findByStatus',
+          operation: 'get',
+          response: 200
+      }).then(mock => {
+          console.log(mock); // This would print:
+          // {
+          //     "responses": [{
+          //         "id": 2530624032210944,
+          //         "category": {
+          //             "id": 8200505595527168,
+          //             "name": "r($vA&"
+          //         },
+          //         "name": "doggie",
+          //         "photoUrls": ["p0x1", "6O)3*kO"],
+          //         "tags": [{
+          //             "id": 4590764340281344,
+          //             "name": "WCTA6f!"
+          //         }, {
+          //             "id": -4614156653166592,
+          //             "name": "e"
+          //         }],
+          //         "status": "pending"
+          //     }]
+          // }
+      }).catch(error => {
+          Assert.ifError(error);
+      });
+  ```
+
+
+  Parameters mock generation:
+
+
+  ```javascript
+
+      mockgen.parameters({
+          path: '/pet/findByStatus',
+          operation: 'get'
+      }).then(mock => {
+          console.log(mock);//This would print:
+          // {
+          //     "parameters": {
+          //         "query": [{
+          //             "name": "status",
+          //             "value": [ 'available', 'pending' ],
+          //             "separator": "multi"
+          //         }]
+          //     }
+          // }
+      }).catch(error => {
+          Assert.ifError(error);
+      })
+
+  ```
+
+
+  Check [Examples](docs/EXAMPLES.md) for more details on mock generators.
+
+
+  ## API
+
+
+  `Swagmock(api, [options])`
+
+
+  * `api` - (*Object*) or (*String*) or (*Promise*) - (required) - api can be
+  one of the following.
+      - A relative or absolute path to the Swagger api document.
+      - A URL of the Swagger api document.
+      - The swagger api Object
+      - A promise (or a `thenable`) that resolves to the swagger api Object
+
+  * `options` - (*Object*) - (optional) - Additional options to create the mock
+  generator.
+      - `validated` -  Set this property to `true` if the api is already validated against swagger schema and already dereferenced all the `$ref`. This is really useful to generate mocks for parsed api specs. Default value for this is `false` and the api will be validated using [swagger-parser validate](https://github.com/BigstickCarpet/swagger-parser/blob/master/docs/swagger-parser.md#validateapi-options-callback).
+
+  ## responses
+
+
+  `mockgen.responses(options, [callback])`
+
+
+  This generates the mock response objects based on the `options`
+
+
+  * `options` - (*Object*) - (required) - Options to control the mock
+  generation.
+
+
+  * `callback` -  (*Function*) - (optional) - `function (error, mock)`. If a
+  callback is not provided a `Promise` will be returned.
+
+
+  ### options
+
+
+  * `path` - (*String*) - (optional) - The path for which the response mock need
+  to be generated. For example `/pet/findByStatus`, `/pet` etc. If a `path` is
+  not specified, mock response will be generated for all the paths defined by
+  the swagger api.
+
+
+  * `operation` - (*String*) - (optional) - The operation for which the response
+  mock need to be generated. For example `get`, `post` etc. If `operation` is
+  not specified, mock response will be generated for all the operations defined
+  by the swagger api.
+
+
+  * `response` - (*String*) - (optional) - The response for which the response
+  mock need to be generated. For example `200`, `400`, `default` etc. If
+  `response` is not specified, mock response will be generated for all the
+  responses defined by the swagger api.
+
+
+  * `useExamples` - (*Boolean*)- (optional) - Should the generated mock make use
+  of example values defined in your swagger.json. Note: invalid example values
+  will create invalid mockdata!
+
+
+  ## parameters
+
+
+  `mockgen.parameters(options, [callback])`
+
+
+  This generates the mock parameters objects based on the `options`
+
+
+  * `options` - (*Object*) - (required) - Options to control the mock
+  generation.
+
+
+  * `callback` -  (*Function*) - (optional) - `function (error, mock)`. If a
+  callback is not provided a `Promise` will be returned.
+
+
+  ### options
+
+
+  * `path` - (*String*) - (optional) - The path for which the parameters mock
+  need to be generated. For example `/pet/findByStatus`, `/pet` etc. If a `path`
+  is not specified, mock parameters will be generated for all the paths defined
+  by the swagger api.
+
+
+  * `operation` - (*String*) - (optional) - The operation for which the
+  parameters mock need to be generated. For example `get`, `post` etc. If
+  `operation` is not specified, mock parameters will be generated for all the
+  operations defined by the swagger api.
+
+
+
+  ## requests
+
+
+  `mockgen.requests(options, [callback])`
+
+
+  This generates the mock request object based on the `options`. `requests` API
+  resolves the `parameters` mock data to generate the `request` mock object
+  useful for unit tests.
+
+
+  * `options` - (*Object*) - (required) - Options to control the mock
+  generation.
+
+
+  * `callback` -  (*Function*) - (optional) - `function (error, mock)`. If a
+  callback is not provided a `Promise` will be returned.
+
+
+  ### options
+
+
+  * `path` - (*String*) - (optional) - The path for which the parameters mock
+  need to be generated. For example `/pet/findByStatus`, `/pet` etc. If a `path`
+  is not specified, mock parameters will be generated for all the paths defined
+  by the swagger api.
+
+
+  * `operation` - (*String*) - (optional) - The operation for which the
+  parameters mock need to be generated. For example `get`, `post` etc. If
+  `operation` is not specified, mock parameters will be generated for all the
+  operations defined by the swagger api.
+
+
+  ### data
+
+
+  `request` Object will have following possible properties `query`, `header`,
+  `pathname`, `path`, `formData` or `body` based on the `parameters` defined for
+  the path and operation.
+
+
+  Mock request [Path templates](http://swagger.io/specification/#pathTemplating)
+  are resolved using path parameters.
+
+
+  ```javascript
+      mockgen.requests({
+          path: '/pet/findByStatus',
+          operation: 'get'
+      }, function (error, mock) {
+          assert.ifError(error);
+
+          console.log(mock);
+          //This would print:
+          // {
+          //     "request": {
+          //         "query": "status=available&status=pending"
+          //     }
+          // }
+      });
+  ```
+
+  ## Examples
+
+
+  ### API
+
+  [Usage](docs/EXAMPLES.md)
+
+
+  ### Unit test request mocks
+
+
+  [github api express
+  app](https://github.com/subeeshcbabu/swaggerize-examples/tree/master/express/github-express/tests)
+
+
+  [slack api hapi
+  app](https://github.com/subeeshcbabu/swaggerize-examples/tree/master/hapi/slack/tests)
+
+
+  ### Mock response data providers
+
+
+  [spotify api hapi
+  app](https://github.com/subeeshcbabu/swaggerize-examples/tree/master/hapi/spotify/data)
+
+
+  [glugbot api express
+  app](https://github.com/subeeshcbabu/swaggerize-examples/tree/master/express/glugbot-express/tests/api)
