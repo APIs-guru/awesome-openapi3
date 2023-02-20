@@ -34,7 +34,7 @@ jobs:
       - run: gem install bundler -v '2.0.1'
       - run: bundle install
       - run: cd docs
-      - run: bundle exec jekyll doctor
+      - run: bundle exec jekyll doctor --config ./_config.yml
       - run: cd ..
       - run: bundle exec jekyll build --source docs --destination docs/_site
 
