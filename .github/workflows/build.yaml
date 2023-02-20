@@ -33,10 +33,10 @@ jobs:
 
       - run: gem install bundler -v '2.0.1'
       - run: bundle install
-      - run: cd docs
-      - run: bundle exec jekyll doctor --config ./_config.yml
-      - run: cd ..
-      - run: bundle exec jekyll build --source docs --destination docs/_site
+      - run: |
+         cd docs
+         bundle exec jekyll doctor
+         bundle exec jekyll build --source docs --destination docs/_site
 
       - run: git add docs
       - run: git config user.email "mike.ralphson@gmail.com"
