@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  schedule:
+    - cron: '55 23 * * 1-5'
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-18.04
+        node-version:
+          - 18.x
+    steps:
+      - name: 'Set up Node.js ${{ matrix.node-version }}'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ matrix.node-version }}'
+      - uses: actions/checkout@v3
+
+      - run: node add.js
+      - run: node index.js
+
+      - run: rvm install 2.3
+      - run: rvm use 2.3
+      - run: gem install bundler -v '2.0.1'
+      - run: bundle install
+      - run: cd docs
+      - run: bundle exec jekyll doctor
+      - run: cd ..
+      - run: bundle exec jekyll build --source docs --destination docs/_site
+
+      - run: git add docs
+      - run: git config user.email "mike.ralphson@gmail.com"
+      - run: git config user.name "Mike Ralphson"
+      - run: 'git commit -m "build: deploy docs"'
+      - run: git push
+
