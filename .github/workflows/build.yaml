@@ -21,7 +21,7 @@ jobs:
           node-version: '${{ matrix.node-version }}'
       - uses: actions/checkout@v3
 
-      - run: npm ci
+      - run: npm i
 
       - run: node add.js
       - run: node index.js
