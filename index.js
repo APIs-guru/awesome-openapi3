@@ -43,10 +43,16 @@ for (let entry of entries) {
         const repo = components[2];
         let apicall = 'https://api.github.com/repos/'+user+'/'+repo;
         console.log(apicall);
-        const res = await fetch(apicall,options);
-        const json = await res.text();
-        const obj = JSON.parse(json);
-        if (obj.id) {
+        let obj;
+        try {
+            const res = await fetch(apicall,options);
+            const json = await res.text();
+            obj = JSON.parse(json);
+        }
+        catch (ex) {
+            console.warn(ex.message);
+        }
+        if (obj && obj.id) {
             entry.name = obj.name||entry.name;
             entry.github = obj.html_url;
             entry.description = obj.description||entry.description||'';
