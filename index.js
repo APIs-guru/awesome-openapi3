@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const yaml = require('js-yaml');
+const yaml = require('yaml');
 const fetch = require('node-fetch');
 const humanUnit = require('human-unit').default;
 const uuidv4 = require('uuid').v4;
@@ -9,10 +9,10 @@ const uuidv4 = require('uuid').v4;
 const stats = require('./stats.js');
 
 const str = fs.readFileSync('./docs/_data/tools.yaml','utf8');
-let entries = yaml.load(str);
+let entries = yaml.parse(str);
 
 const rms = fs.readFileSync('./docs/_data/readme.yaml','utf8');
-const readmes = yaml.load(rms);
+const readmes = yaml.parse(rms);
 
 const username = process.env.github_user;
 const password = process.env.github_pwd;
@@ -105,7 +105,7 @@ entries = entries.filter((e,i,a)=>a.findIndex(t=>((t.github||t.uuid) === (e.gith
 main();
 
 process.on('exit',function(){
-    fs.writeFileSync('./docs/_data/tools.yaml',yaml.dump(entries),'utf8');
-    fs.writeFileSync('./docs/_data/readme.yaml',yaml.dump(readmes),'utf8');
+    fs.writeFileSync('./docs/_data/tools.yaml',yaml.stringify(entries),'utf8');
+    fs.writeFileSync('./docs/_data/readme.yaml',yaml.stringify(readmes),'utf8');
 });
 
