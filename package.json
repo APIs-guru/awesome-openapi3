@@ -20,11 +20,10 @@
   },
   "homepage": "https://github.com/apis-guru/awesome-openapi3#readme",
   "dependencies": {
-    "bayes": "0.0.7",
-    "graphql-request": "^5.1.0",
+    "bayes": "^1.0.0",
     "human-unit": "^1.0.6",
-    "uuid": "^7.0.3",
-    "js-yaml": "^3.13.1",
-    "node-fetch": "^2.6.9"
+    "node-fetch": "^2.6.9",
+    "uuid": "^9.0.0",
+    "yaml": "^2.2.1"
   }
 }
