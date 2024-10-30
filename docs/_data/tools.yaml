@@ -281,10 +281,10 @@
     the community
   language: JavaScript
   archived: false
-  stars: 627
+  stars: 628
   watch: 35
   forks: 53
-  updated: 2024-10-26T00:03:37Z
+  updated: 2024-10-29T08:08:42Z
   issues: 8
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,10 +316,10 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 3862
+  stars: 3865
   watch: 114
-  forks: 578
-  updated: 2024-10-28T13:08:22Z
+  forks: 579
+  updated: 2024-10-29T19:20:57Z
   issues: 147
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -340,7 +340,7 @@
   stars: 988
   watch: 42
   forks: 496
-  updated: 2024-10-28T18:30:43Z
+  updated: 2024-10-29T20:52:48Z
   issues: 353
   license: Apache-2.0
   owner: Apicurio
@@ -374,9 +374,9 @@
   language: TypeScript
   category: "?"
   archived: false
-  stars: 4609
+  stars: 4610
   watch: 906
-  updated: 2024-10-27T23:39:03Z
+  updated: 2024-10-29T08:57:39Z
   issues: 130
   forks: 737
   license: MIT
@@ -393,10 +393,10 @@
   description: Swagger OpenAPI 3.x generator
   language: JavaScript
   archived: false
-  stars: 217
+  stars: 218
   watch: 4
   forks: 30
-  updated: 2024-09-29T04:19:30Z
+  updated: 2024-10-29T13:20:22Z
   issues: 43
   owner: BRIKEV
   logo: https://avatars.githubusercontent.com/u/59850028?v=4
@@ -3102,6 +3102,11 @@
   downloads: 4582691
   downloadStr: 4.58M
   uuid: c643212e-c45f-43de-9fd9-8b6aabcb9c71
+- github: https://github.com/hey-api/openapi-ts
+  v3: true
+  category: unclassified
+  uuid: 1af52947-931f-4cc5-89d6-8d7e219b0179
+  downloads: 0
 - github: https://github.com/hh-h/aiohttp-swagger3
   v3: true
   category: unclassified
