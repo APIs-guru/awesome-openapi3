@@ -209,10 +209,10 @@
   v3: true
   github: https://github.com/42Crunch/vscode-openapi
   archived: false
-  stars: 346
+  stars: 347
   watch: 11
   forks: 40
-  updated: 2025-04-09T12:28:58Z
+  updated: 2025-04-10T09:30:36Z
   issues: 47
   owner: 42Crunch
   logo: https://avatars.githubusercontent.com/u/25365245?v=4
@@ -262,9 +262,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1130
+  stars: 1131
   watch: 19
-  updated: 2025-04-08T16:03:07Z
+  updated: 2025-04-10T09:24:46Z
   issues: 62
   forks: 160
   license: MIT
@@ -284,7 +284,7 @@
   stars: 661
   watch: 33
   forks: 55
-  updated: 2025-04-09T00:01:21Z
+  updated: 2025-04-10T00:02:49Z
   issues: 11
   license: BSD-3-Clause
   owner: APIs-guru
@@ -320,7 +320,7 @@
   watch: 112
   forks: 598
   updated: 2025-04-09T14:05:36Z
-  issues: 205
+  issues: 207
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -337,10 +337,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 1024
+  stars: 1026
   watch: 40
   forks: 509
-  updated: 2025-04-03T17:28:24Z
+  updated: 2025-04-10T12:52:26Z
   issues: 362
   license: Apache-2.0
   owner: Apicurio
@@ -374,10 +374,10 @@
   language: TypeSpec
   category: "?"
   archived: false
-  stars: 4718
-  watch: 961
-  updated: 2025-04-08T04:54:56Z
-  issues: 145
+  stars: 4720
+  watch: 962
+  updated: 2025-04-10T11:53:40Z
+  issues: 146
   forks: 741
   license: MIT
   owner: Azure
@@ -621,9 +621,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1137
+  stars: 1138
   watch: 21
-  updated: 2025-04-09T02:43:37Z
+  updated: 2025-04-10T10:29:36Z
   issues: 105
   forks: 184
   license: MIT
@@ -733,10 +733,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 160
+  stars: 161
   watch: 4
   forks: 33
-  updated: 2025-02-25T22:33:51Z
+  updated: 2025-04-10T07:41:28Z
   issues: 9
   license: BSD-3-Clause
   owner: Mermade
@@ -6036,6 +6036,11 @@
   downloads: 992
   downloadStr: "992"
   uuid: ff914d4f-e535-4a4c-a378-ce41a03dc626
+- github: https://github.com/usebruno/bruno
+  v3: true
+  category: unclassified
+  uuid: 7685b487-8632-4f98-909b-204976192ce2
+  downloads: 0
 - name: octohipster
   description: "[UNMAINTAINED] A hypermedia REST HTTP API library for Clojure"
   github: https://github.com/valpackett/octohipster
