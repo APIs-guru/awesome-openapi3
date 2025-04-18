@@ -281,10 +281,10 @@
     the community
   language: JavaScript
   archived: false
-  stars: 664
+  stars: 665
   watch: 33
   forks: 55
-  updated: 2025-04-16T14:02:32Z
+  updated: 2025-04-17T20:29:40Z
   issues: 11
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,10 +316,10 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4035
+  stars: 4037
   watch: 112
   forks: 598
-  updated: 2025-04-16T17:18:38Z
+  updated: 2025-04-17T13:07:56Z
   issues: 208
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -339,7 +339,7 @@
   archived: false
   stars: 1026
   watch: 39
-  forks: 509
+  forks: 508
   updated: 2025-04-10T12:52:26Z
   issues: 362
   license: Apache-2.0
@@ -374,11 +374,11 @@
   language: TypeSpec
   category: "?"
   archived: false
-  stars: 4720
+  stars: 4721
   watch: 965
-  updated: 2025-04-11T05:58:14Z
+  updated: 2025-04-17T10:57:48Z
   issues: 145
-  forks: 741
+  forks: 740
   license: MIT
   owner: Azure
   logo: https://avatars.githubusercontent.com/u/6844498?v=4
@@ -644,7 +644,7 @@
   watch: 86
   updated: 2025-02-03T19:26:33Z
   issues: 40
-  forks: 314
+  forks: 313
   owner: Luracast
   logo: https://avatars.githubusercontent.com/u/236217?v=4
   downloads: 1925427
@@ -4783,6 +4783,11 @@
   downloadStr: 349.44K
   license: MIT
   uuid: 054cd178-8482-4eb0-825c-4948675297a0
+- github: https://github.com/rest-sh/restish
+  v3: true
+  category: unclassified
+  uuid: d486de86-9475-4975-abbc-d3edbf6ab499
+  downloads: 0
 - name: swagger-docs
   description: Generates swagger-ui json files for Rails APIs with a simple DSL.
   github: https://github.com/richhollis/swagger-docs
