@@ -284,7 +284,7 @@
   stars: 673
   watch: 33
   forks: 56
-  updated: 2025-05-22T00:02:48Z
+  updated: 2025-05-23T00:01:11Z
   issues: 12
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4064
+  stars: 4066
   watch: 112
-  forks: 599
-  updated: 2025-05-22T13:14:14Z
-  issues: 223
+  forks: 600
+  updated: 2025-05-23T21:19:43Z
+  issues: 225
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -337,11 +337,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 1034
+  stars: 1035
   watch: 39
   forks: 511
-  updated: 2025-05-21T19:50:31Z
-  issues: 357
+  updated: 2025-05-23T13:36:13Z
+  issues: 358
   license: Apache-2.0
   owner: Apicurio
   logo: https://avatars.githubusercontent.com/u/28107283?v=4
@@ -375,10 +375,10 @@
   category: "?"
   archived: false
   stars: 4734
-  watch: 976
+  watch: 977
   updated: 2025-05-22T11:02:23Z
   issues: 150
-  forks: 740
+  forks: 741
   license: MIT
   owner: Azure
   logo: https://avatars.githubusercontent.com/u/6844498?v=4
@@ -1743,11 +1743,11 @@
     Generators,  Documentation, Testing
   language: HTML
   archived: false
-  stars: 719
-  watch: 30
-  forks: 333
-  updated: 2025-02-01T07:07:33Z
-  issues: 24
+  stars: 747
+  watch: 29
+  forks: 349
+  updated: 2025-05-20T13:17:37Z
+  issues: 33
   license: MIT
   owner: apisyouwonthate
   logo: https://avatars.githubusercontent.com/u/35378327?v=4
@@ -1780,9 +1780,9 @@
   language: Unknown
   category: "?"
   archived: false
-  stars: 732
-  watch: 17
-  updated: 2025-01-16T11:10:15Z
+  stars: 740
+  watch: 16
+  updated: 2025-05-21T09:50:49Z
   issues: 0
   forks: 183
   license: ""
@@ -2116,10 +2116,10 @@
     https://tus.io/protocols/resumable-upload.html protocol with vertx-web.
   language: Java
   archived: false
-  stars: 10
+  stars: 13
   watch: 2
   forks: 1
-  updated: 2022-06-30T02:39:34Z
+  updated: 2024-03-22T12:02:19Z
   issues: 2
   license: MIT
   owner: ckaratzas
@@ -2436,7 +2436,7 @@
   language: Scala
   archived: false
   stars: 16
-  watch: 4
+  watch: 3
   forks: 0
   updated: 2022-07-07T15:57:50Z
   issues: 1
@@ -2556,11 +2556,11 @@
   language: Go
   category: "?"
   archived: false
-  stars: 4773
-  watch: 156
-  updated: 2023-04-14T18:12:25Z
+  stars: 5084
+  watch: 149
+  updated: 2025-05-22T01:46:27Z
   issues: 4
-  forks: 692
+  forks: 687
   license: MIT
   owner: emicklei
   logo: https://avatars.githubusercontent.com/u/686220?v=4
@@ -2668,11 +2668,11 @@
   language: Python
   category: "?"
   archived: false
-  stars: 3229
-  watch: 56
-  updated: 2023-04-16T03:05:22Z
-  issues: 230
-  forks: 460
+  stars: 3679
+  watch: 52
+  updated: 2025-05-19T11:02:40Z
+  issues: 284
+  forks: 525
   license: MIT
   owner: flasgger
   logo: https://avatars.githubusercontent.com/u/54032826?v=4
@@ -2794,11 +2794,11 @@
   language: Ruby
   category: "?"
   archived: false
-  stars: 614
-  watch: 20
-  updated: 2023-03-30T09:56:51Z
-  issues: 38
-  forks: 93
+  stars: 622
+  watch: 19
+  updated: 2025-03-24T12:11:20Z
+  issues: 35
+  forks: 97
   license: MIT
   owner: fotinakis
   logo: https://avatars.githubusercontent.com/u/75300?v=4
@@ -2846,11 +2846,11 @@
   language: Clojure
   category: "?"
   archived: false
-  stars: 59
+  stars: 58
   watch: 3
-  updated: 2023-04-02T07:58:55Z
-  issues: 4
-  forks: 19
+  updated: 2023-10-28T21:17:04Z
+  issues: 5
+  forks: 17
   license: EPL-1.0
   owner: frankiesardo
   logo: https://avatars.githubusercontent.com/u/1476561?v=4
@@ -3060,6 +3060,11 @@
   logo: https://avatars.githubusercontent.com/u/1342004?v=4
   downloads: 0
   uuid: 98b66d8a-07d2-4542-b2af-6cac4e0df77f
+- github: https://github.com/gopher-fleece/gleece
+  v3: true
+  category: unclassified
+  uuid: 12bf91b6-5b6e-4ae8-ac19-5d5a889ae1c6
+  downloads: 0
 - name: grpc-gateway
   description: gRPC to JSON proxy generator following the gRPC HTTP spec
   github: https://github.com/grpc-ecosystem/grpc-gateway
@@ -3094,17 +3099,17 @@
   downloads: 0
   uuid: 8f0406a1-5ed4-40ba-bdaa-3428f3d2603b
 - name: hapi-swagger
-  description: A Swagger interface for HAPI
+  description: A Swagger interface for hapi
   github: https://github.com/hapi-swagger/hapi-swagger
   v1: true
   language: JavaScript
   category: "?"
   archived: false
-  stars: 901
-  watch: 27
-  updated: 2023-04-13T02:52:08Z
-  issues: 64
-  forks: 427
+  stars: 913
+  watch: 26
+  updated: 2025-04-28T17:38:36Z
+  issues: 93
+  forks: 424
   license: MIT
   owner: hapi-swagger
   logo: https://avatars.githubusercontent.com/u/105804019?v=4
@@ -3142,10 +3147,10 @@
     for easy use from JS
   language: TypeScript
   archived: false
-  stars: 16
-  watch: 4
+  stars: 22
+  watch: 3
   forks: 5
-  updated: 2023-04-03T20:59:36Z
+  updated: 2025-05-15T13:49:24Z
   issues: 1
   owner: httptoolkit
   logo: https://avatars.githubusercontent.com/u/39777515?v=4
@@ -3175,11 +3180,11 @@
   language: Erlang
   category: "?"
   archived: false
-  stars: 111
-  watch: 45
-  updated: 2023-03-30T13:44:09Z
-  issues: 8
-  forks: 53
+  stars: 122
+  watch: 40
+  updated: 2025-04-28T08:48:23Z
+  issues: 13
+  forks: 59
   license: Apache-2.0
   owner: inaka
   logo: https://avatars.githubusercontent.com/u/867053?v=4
@@ -3210,11 +3215,11 @@
   description: Intellij Plugin for openapi-generator
   language: Kotlin
   archived: false
-  stars: 76
-  watch: 5
-  forks: 11
-  updated: 2023-04-14T08:54:37Z
-  issues: 19
+  stars: 77
+  watch: 4
+  forks: 10
+  updated: 2025-05-09T01:04:54Z
+  issues: 22
   owner: jimschubert
   logo: https://avatars.githubusercontent.com/u/109659?v=4
   license: Apache-2.0
@@ -3244,11 +3249,11 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 2
-  watch: 2
-  updated: 2018-04-08T16:56:01Z
+  stars: 3
+  watch: 3
+  updated: 2024-10-20T18:48:53Z
   issues: 0
-  forks: 1
+  forks: 2
   license: MIT
   owner: jolie
   logo: https://avatars.githubusercontent.com/u/10729718?v=4
@@ -3672,11 +3677,11 @@
   language: Ruby
   category: "?"
   archived: false
-  stars: 1639
-  watch: 27
-  updated: 2023-04-15T19:22:24Z
-  issues: 71
-  forks: 373
+  stars: 2092
+  watch: 28
+  updated: 2025-05-23T12:23:52Z
+  issues: 78
+  forks: 444
   owner: rswag
   logo: https://avatars.githubusercontent.com/u/55741034?v=4
   downloads: 0
@@ -3777,10 +3782,10 @@
   v2: true
   v3_progress_link: https://github.com/JonathanMontane/API-Flow/pull/4
   archived: false
-  stars: 191
-  watch: 12
-  forks: 23
-  updated: 2023-01-13T10:35:17Z
+  stars: 193
+  watch: 11
+  forks: 18
+  updated: 2025-02-28T22:41:51Z
   issues: 26
   license: MIT
   owner: luckymarmot
@@ -4338,11 +4343,11 @@
   language: Erlang
   category: "?"
   archived: false
-  stars: 6914
-  watch: 303
-  updated: 2023-04-16T03:56:41Z
-  issues: 108
-  forks: 1173
+  stars: 7383
+  watch: 294
+  updated: 2025-05-22T00:04:14Z
+  issues: 52
+  forks: 1174
   license: ISC
   owner: ninenines
   logo: https://avatars.githubusercontent.com/u/1166740?v=4
@@ -4409,11 +4414,11 @@
   language: C++
   category: "?"
   archived: false
-  stars: 63
-  watch: 7
-  updated: 2023-03-25T02:57:33Z
-  issues: 20
-  forks: 40
+  stars: 100
+  watch: 8
+  updated: 2025-04-16T10:00:07Z
+  issues: 40
+  forks: 58
   license: Apache-2.0
   owner: oatpp
   logo: https://avatars.githubusercontent.com/u/37167448?v=4
@@ -4427,11 +4432,11 @@
   description: Generate TypeScript clients to tap into OpenAPI servers
   language: TypeScript
   archived: false
-  stars: 369
-  watch: 7
-  forks: 59
-  updated: 2023-04-16T12:12:35Z
-  issues: 19
+  stars: 534
+  watch: 5
+  forks: 86
+  updated: 2025-05-23T10:13:30Z
+  issues: 45
   owner: oazapfts
   logo: https://avatars.githubusercontent.com/u/119607625?v=4
   downloads: 704713
@@ -4885,7 +4890,7 @@
   watch: 20
   updated: 2023-01-28T21:31:15Z
   issues: 33
-  forks: 136
+  forks: 135
   license: Apache-2.0
   owner: ryankennedy
   logo: https://avatars.githubusercontent.com/u/37302?v=4
@@ -5055,10 +5060,10 @@
   v1: true
   language: JavaScript
   category: "?"
-  archived: false
+  archived: true
   stars: 10
-  watch: 95
-  updated: 2019-12-06T21:16:17Z
+  watch: 90
+  updated: 2024-10-17T00:13:46Z
   issues: 2
   forks: 1
   license: ""
@@ -5129,11 +5134,11 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 803
-  watch: 18
-  updated: 2023-04-13T09:37:00Z
-  issues: 54
-  forks: 123
+  stars: 919
+  watch: 20
+  updated: 2025-05-18T20:05:08Z
+  issues: 73
+  forks: 141
   license: MIT
   owner: slanatech
   logo: https://avatars.githubusercontent.com/u/28799285?v=4
@@ -5416,10 +5421,10 @@
   description: The modern editor for API Design and Technical Writing.
   language: Unknown
   archived: false
-  stars: 718
+  stars: 838
   watch: 29
-  forks: 45
-  updated: 2023-04-13T06:39:13Z
+  forks: 51
+  updated: 2025-05-20T18:17:25Z
   issues: 48
   owner: stoplightio
   logo: https://avatars.githubusercontent.com/u/10767217?v=4
@@ -5794,10 +5799,10 @@
     on OAS 3.0 for Sails APIs
   language: TypeScript
   archived: false
-  stars: 71
+  stars: 80
   watch: 7
-  forks: 36
-  updated: 2022-08-17T20:58:20Z
+  forks: 33
+  updated: 2025-04-01T01:14:06Z
   issues: 13
   owner: theoomoregbee
   logo: https://avatars.githubusercontent.com/u/10440327?v=4
@@ -5811,10 +5816,10 @@
   description: SqlAlchemy Flask-Restful Swagger Json:API OpenAPI
   language: Python
   archived: false
-  stars: 370
+  stars: 410
   watch: 13
-  forks: 66
-  updated: 2023-04-08T19:39:59Z
+  forks: 72
+  updated: 2025-05-23T09:32:14Z
   issues: 5
   license: GPL-3.0
   owner: thomaxxl
@@ -6212,10 +6217,10 @@
   v1: true
   language: CoffeeScript
   category: "?"
-  archived: false
+  archived: true
   stars: 46
   watch: 12
-  updated: 2021-06-13T03:54:21Z
+  updated: 2024-12-02T11:20:23Z
   issues: 9
   forks: 16
   license: MIT
@@ -6253,7 +6258,7 @@
   stars: 50
   watch: 6
   forks: 6
-  updated: 2023-02-25T15:24:42Z
+  updated: 2024-11-15T22:55:13Z
   issues: 0
   license: MIT
   owner: wzshiming
@@ -6856,6 +6861,18 @@
   category: unclassified
   uuid: f7c01392-bafa-4041-ba22-f0d3c73d7db9
   downloads: 0
+  name: huma
+  description: Huma REST/HTTP API Framework for Golang with OpenAPI 3.1
+  language: Go
+  archived: false
+  stars: 3090
+  watch: 26
+  forks: 202
+  updated: 2025-05-23T19:28:13Z
+  issues: 112
+  owner: danielgtaylor
+  logo: https://avatars.githubusercontent.com/u/106826?v=4
+  license: MIT
 - github: https://github.com/daveshanley/vacuum
   v3: true
   category: unclassified
