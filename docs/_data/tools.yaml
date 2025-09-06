@@ -210,7 +210,7 @@
   github: https://github.com/42Crunch/vscode-openapi
   archived: false
   stars: 355
-  watch: 11
+  watch: 12
   forks: 39
   updated: 2025-09-03T21:30:35Z
   issues: 50
@@ -262,9 +262,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1156
+  stars: 1157
   watch: 19
-  updated: 2025-09-04T01:18:38Z
+  updated: 2025-09-05T21:20:12Z
   issues: 56
   forks: 166
   license: MIT
@@ -284,7 +284,7 @@
   stars: 679
   watch: 33
   forks: 60
-  updated: 2025-09-04T00:01:05Z
+  updated: 2025-09-05T00:01:14Z
   issues: 12
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,10 +316,10 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4166
+  stars: 4168
   watch: 111
   forks: 625
-  updated: 2025-09-04T19:37:05Z
+  updated: 2025-09-05T15:54:38Z
   issues: 273
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -339,7 +339,7 @@
   archived: false
   stars: 1053
   watch: 39
-  forks: 518
+  forks: 519
   updated: 2025-08-26T14:49:54Z
   issues: 361
   license: Apache-2.0
@@ -374,9 +374,9 @@
   language: TypeSpec
   category: "?"
   archived: false
-  stars: 4765
+  stars: 4764
   watch: 973
-  updated: 2025-09-04T06:23:16Z
+  updated: 2025-09-05T09:19:04Z
   issues: 154
   forks: 740
   license: MIT
@@ -625,7 +625,7 @@
   watch: 21
   updated: 2025-08-29T15:01:03Z
   issues: 105
-  forks: 188
+  forks: 189
   license: MIT
   owner: LucyBot-Inc
   logo: https://avatars.githubusercontent.com/u/26313641?v=4
@@ -3212,6 +3212,11 @@
   logo: https://avatars.githubusercontent.com/u/21155132?v=4
   downloads: 0
   uuid: d49116d9-cb2f-47da-b0d7-6d071c1ec105
+- github: https://github.com/jentic/jentic-public-apis
+  v3: true
+  category: unclassified
+  uuid: 690ba704-8f28-4d11-b73a-b54ac2ac8e45
+  downloads: 0
 - github: https://github.com/jimschubert/intellij-openapi-generator
   v3: true
   category: unclassified
