@@ -3338,6 +3338,7 @@ quen2404/openapi-diff: >
 
 
 
+
       
   } catch (IOException e) {
       e.printStackTrace();
@@ -8138,12 +8139,16 @@ apigee-127/swagger-tools: >
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
-metosin/fnhouse-swagger: >
-  {
-  	"message": "Rate limit exceeded",
-  	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
-  	"status": "403"
-  }
+metosin/fnhouse-swagger: "{\"message\":\"API rate limit exceeded for
+  52.160.164.115. (But here's the good news: Authenticated requests get a higher
+  rate limit. Check out the documentation for more details.) If you reach out to
+  GitHub Support for help, please include the request ID
+  D7E0:37A33F:5C4CA0:5E9AE1:690BE524 and timestamp 2025-11-06 00:00:36 UTC. For
+  more on scraping GitHub and how it may affect your rights, please review our
+  Terms of Service
+  (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)\
+  \",\"documentation_url\":\"https://docs.github.com/rest/overview/rate-limits-\
+  for-the-rest-api\",\"status\":\"403\"}"
 yonaskolb/SwagGen: >
   {
   	"message": "Rate limit exceeded",
