@@ -628,7 +628,7 @@ koumoul-dev/openapi-viewer: >
    * **hide-toolbar** : true or false of you want to hide toolbar. This can be usefull for iframe integration. Defaults to false.
 contentjet/openapi-ui: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601A:10138:DB485D:E1C24B:6928E5FE and timestamp 2025-11-27 23:59:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -1730,7 +1730,7 @@ temando/open-api-renderer: >
   }
 RepreZen/KaiZen-OpenAPI-Editor: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6025:27ED17:AB6294:B119AA:6928E5E5 and timestamp 2025-11-27 23:59:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -2089,7 +2089,7 @@ Szasza/express-gateway-plugin-openapi3-mock-server: >
   }
 swagger-api/swagger-node: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B005:1E612E:FA4095:453A1BD:692794A2 and timestamp 2025-11-27 00:00:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -2113,7 +2113,7 @@ swagger-api/swagger-inflector: >
   }
 networknt/light-rest-4j: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6033:1B5CB9:B55743:BB1A88:6928E630 and timestamp 2025-11-28 00:00:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -2410,7 +2410,7 @@ wework/speccy: >
   }
 apioo/psx-api: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B001:1D263:FCF305:45E1EEB:6927946E and timestamp 2025-11-26 23:59:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -2848,13 +2848,13 @@ janephp/open-api: >
   }
 dtzar/openapi-auto-test: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6024:17C426:AF6FB3:B52FD6:6928E605 and timestamp 2025-11-28 00:00:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 apiaryio/dredd: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601F:171FD3:B18E01:B74E6A:6928E5F0 and timestamp 2025-11-27 23:59:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -3068,6 +3068,7 @@ quen2404/openapi-diff: >
               "testDiff.md");
       fw.write(render);
       fw.close();
+
 
 
 
@@ -3602,7 +3603,7 @@ quen2404/openapi-diff: >
     which was a source of inspiration for this tool
 Mermade/openapi-filter: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00D:1CD6F1:F921B1:44A7CB6:6927945F and timestamp 2025-11-26 23:59:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -3716,7 +3717,7 @@ batdevis/swagger_engine: >
   }
 signalfx/swagger-angular-client: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601D:1EA511:AF3837:B500A6:6928E640 and timestamp 2025-11-28 00:01:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -4922,13 +4923,13 @@ glennjones/hapi-swagger: >
   I would like to thank all that have contributed to the project over the last couple of years. This is a hard project to maintain, getting Hapi to work with Swagger is like putting a round plug in a square hole. Without the help of others it would not be possible.
 stemey/gform-admin: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B01E:175574:F47074:43C42AB:6927949F and timestamp 2025-11-27 00:00:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 mac-/ratify: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6022:1C4CA4:B3F877:B9BF97:6928E626 and timestamp 2025-11-28 00:00:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -4946,7 +4947,7 @@ signalfx/swagger-client-generator: >
   }
 solso/source2swagger: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6023:10138:DC70F6:E2F2AB:6928E645 and timestamp 2025-11-28 00:01:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -5315,7 +5316,7 @@ abelsilva/swaggerwcf: >
   }
 fleekjs/fleek-parser: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601D:1EA511:AE8138:B443C1:6928E60A and timestamp 2025-11-28 00:00:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -5622,7 +5623,7 @@ metosin/ring-swagger: >
   }
 byjg/php-swagger-test: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B020:FD078:F176C6:42C8C68:6927946F and timestamp 2025-11-26 23:59:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -6735,7 +6736,7 @@ Maks3w/SwaggerAssertions: >
     See [LICENSE.txt](LICENSE.txt) for more information.
 metosin/compojure-api: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6041:171FD3:B2566F:B81D26:6928E629 and timestamp 2025-11-28 00:00:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -7484,7 +7485,7 @@ Trax-air/swagger-aggregator: >
   }
 Reckon-Limited/serverless_swagger: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B025:36E947:F2622C:432207A:69279464 and timestamp 2025-11-26 23:59:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601F:171FD3:B16859:B72778:6928E5E3 and timestamp 2025-11-27 23:59:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -7820,7 +7821,7 @@ Yelp/swagger_spec_validator: >
   }
 tminglei/binder-swagger-java: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFCF:1DE00A:EC6E82:41542DD:692794A7 and timestamp 2025-11-27 00:00:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -7933,7 +7934,7 @@ krakenjs/swaggerize-express: >
   }
 khrt/Raisin: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B014:27E420:F9D9CB:453545E:69279484 and timestamp 2025-11-27 00:00:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -8156,13 +8157,13 @@ apigee-127/swagger-tools: >
   }
 metosin/fnhouse-swagger: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC6:2BBC7:F59ED2:43C148B:6927948D and timestamp 2025-11-27 00:00:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 yonaskolb/SwagGen: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6059:2768E9:AF1F78:B4E74B:6928E662 and timestamp 2025-11-28 00:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -8174,7 +8175,7 @@ jolie/jester: >
   }
 Yelp/bravado-core: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 602A:1B5CB9:B466BA:BA2284:6928E5EC and timestamp 2025-11-27 23:59:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -8342,7 +8343,7 @@ unicredit/sbt-swagger-codegen: >
   *** This is a work in progress and we are not done with it! ***
 MicroarrayTecnologia/spec-synthase: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6030:1B5CB9:B441E8:B9FC43:6928E5DF and timestamp 2025-11-27 23:59:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -8354,7 +8355,7 @@ fleekjs/fleek-router: >
   }
 Trax-air/swagger-stub: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B020:FD078:F16175:42C2D10:69279469 and timestamp 2025-11-26 23:59:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -8486,7 +8487,7 @@ elmiko/pecan-swagger: >
   }
 smoketurner/dropwizard-swagger: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6042:1B5CB9:B5A8F9:BB6E9D:6928E645 and timestamp 2025-11-28 00:01:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -12116,7 +12117,7 @@ rochacbruno/flasgger: >+
 
 fotinakis/swagger-blocks: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00C:3D9D9:F3275B:436C0E5:6927947D and timestamp 2025-11-26 23:59:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -12134,7 +12135,7 @@ slanatech/swagger-stats: >
   }
 notonthehighstreet/svelte: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B017:2E5D53:F892DC:4481979:69279491 and timestamp 2025-11-27 00:00:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -17527,7 +17528,7 @@ OpenAPITools/openapi-generator: >
   }
 marshmallow-code/apispec: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6021:301D6F:B55ACF:BB1F75:6928E627 and timestamp 2025-11-28 00:00:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -18054,13 +18055,13 @@ danielgtaylor/apisprout: >
   }
 tobilg/api2html: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B003:1FFC99:FF6641:46F57DA:692794A7 and timestamp 2025-11-27 00:00:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 epiphone/routing-controllers-openapi: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFCD:FD078:F199E8:42D2A19:6927947A and timestamp 2025-11-26 23:59:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -18072,13 +18073,13 @@ koumoul-dev/vue-openapi: >
   }
 sanjayvacharya/sleeplessinslc: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B002:38F848:F77900:44AC92F:69279498 and timestamp 2025-11-27 00:00:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6027:1BEFB1:A85661:AE1CC9:6928E63D and timestamp 2025-11-28 00:01:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 epiphone/class-validator-jsonschema: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B018:2E5D53:F82D6C:4464D3C:6927947A and timestamp 2025-11-26 23:59:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -18102,7 +18103,7 @@ outofcoffee/vertx-oas: >
   }
 cdimascio/openapi-spring-webflux-validator: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC3:269767:F68268:4446317:69279472 and timestamp 2025-11-26 23:59:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -18350,7 +18351,7 @@ fmvilas/openapi3-generator: >
   * Richard Klose ([@richardklose](http://github.com/richardklose))
 atlassian/oas3-chow-chow: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFCE:2E2CBB:FE3EFE:45FCB23:6927946F and timestamp 2025-11-26 23:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -18719,7 +18720,7 @@ ckaratzas/vertx-openapi-spec-generator: >
   }
 OpenAPITools/openapi-petstore: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B003:1FFC99:FE4D75:46A5011:69279463 and timestamp 2025-11-26 23:59:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19479,7 +19480,7 @@ niteoweb/pyramid_openapi3: >
   - [Kafkai API](https://app.kafkai.com/api/v1) - User control panel for Kafkai text generation service.
 OverSpeedIO/koa2-oas3: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6018:27ED17:AB5A52:B11132:6928E5E2 and timestamp 2025-11-27 23:59:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19497,7 +19498,7 @@ zweidenker/OpenAPI: >
   }
 denismakogon/fn-openapi-v3: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 602D:27ED17:ABB849:B17329:6928E603 and timestamp 2025-11-28 00:00:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19641,13 +19642,13 @@ entrepreneur-interet-general/open_api_schemas_to_markdown: >
   }
 brreg/openAPI: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B008:175574:F3A997:438C8C4:6927946F and timestamp 2025-11-26 23:59:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 funa1g/multi-file-oas-example: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6031:2768E9:ADEFFA:B3AF73:6928E610 and timestamp 2025-11-28 00:00:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19659,7 +19660,7 @@ koshevy/oapi3codegen: >
   }
 acme-software/typeswagger: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00B:9F627:FE5D44:46B3578:6927946B and timestamp 2025-11-26 23:59:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19814,7 +19815,7 @@ Mermade/oas-kit: >
   * [Linode VPS referral link](https://www.linode.com/?r=5734be467cc501b23267cf66d451bc339042ddfa)
 OpenAPITools/openapi-generator-cli: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6029:12BF5E:51F2764:5612A34:6928E5E0 and timestamp 2025-11-27 23:59:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -19838,7 +19839,7 @@ anupsaund/vertx-auto-swagger: >
   }
 mrin9/OpenAPI-Viewer: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601A:10138:DC14D1:E293CE:6928E62D and timestamp 2025-11-28 00:00:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -20055,7 +20056,7 @@ ReDoc-ly/create-openapi-repo: >
   [daviddm-url]: https://david-dm.org/Rebilly/generator-openapi-repo
 postmanlabs/openapi-to-postman: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6042:1B5CB9:B570A8:BB348B:6928E637 and timestamp 2025-11-28 00:00:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -20067,7 +20068,7 @@ hh-h/aiohttp-swagger3: >
   }
 dolmen-go/openapi-preprocessor: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFCA:1E612E:F99734:450A264:69279478 and timestamp 2025-11-26 23:59:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 602F:1B5CB9:B4AF94:BA6E49:6928E604 and timestamp 2025-11-28 00:00:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -20460,7 +20461,7 @@ tiangolo/uvicorn-gunicorn-fastapi-docker: >
   }
 httptoolkit/openapi-directory-js: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B005:1E612E:F9B782:4512D50:69279481 and timestamp 2025-11-27 00:00:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -20689,7 +20690,7 @@ cebe/yii2-app-api: >
   }
 cdimascio/express-openapi-validator: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00B:9F627:FE7330:46B9897:69279470 and timestamp 2025-11-26 23:59:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6021:301D6F:B4ADF2:BA6D74:6928E5F7 and timestamp 2025-11-27 23:59:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -20725,7 +20726,7 @@ namsor/namsor-r-sdk2: >
   }
 lezhnev74/openapi-psr7-validator: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601E:10138:DBE663:E2640E:6928E620 and timestamp 2025-11-28 00:00:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -21724,13 +21725,13 @@ Cornutum/tcases: >
   # Tcases: A Model-Based Test Case Generator #
 
 
-  [![Maven](https://img.shields.io/badge/maven-4.1.0-green.svg)](https://search.maven.org/search?q=tcases-shell)
+  [![Maven](https://img.shields.io/badge/maven-4.1.1-green.svg)](https://search.maven.org/search?q=tcases-shell)
 
-  [![Javadoc](https://img.shields.io/badge/javadoc-4.1.0-green.svg)](https://javadoc.io/doc/org.cornutum.tcases/tcases-shell)
+  [![Javadoc](https://img.shields.io/badge/javadoc-4.1.1-green.svg)](https://javadoc.io/doc/org.cornutum.tcases/tcases-shell)
 
 
   ## What's New? ##
-    * The latest version ([Tcases 4.1.0](ReleaseNotes.md#410)) is now available at the Maven Central Repository.
+    * The latest version ([Tcases 4.1.1](ReleaseNotes.md#411)) is now available at the Maven Central Repository.
       See [*How To Download Tcases*](HowToDownload.md) for download instructions.
 
     * Having trouble with Tcases? Check out [these tips](./Troubleshooting-FAQs.md).
@@ -22027,7 +22028,7 @@ fukamachi/apispec: >
   Licensed under the BSD 3-Clause License.
 sphinx-contrib/openapi: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B019:27E420:FA4A17:4555A1E:6927949D and timestamp 2025-11-27 00:00:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -22045,7 +22046,7 @@ playpauseandstop/rororo: >
   }
 wI2L/fizz: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFD1:2BBC7:F615C6:43E359B:692794AA and timestamp 2025-11-27 00:00:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -25363,7 +25364,7 @@ Swagger2Markup/swagger2markup: >
   }
 Swagger2Markup/swagger2markup-gradle-plugin: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 601C:1EA511:AE21F3:B3E0A6:6928E5EA and timestamp 2025-11-27 23:59:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -25958,7 +25959,7 @@ zalando-stups/swagger1st: >
   }
 tfranzel/drf-spectacular: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6056:2768E9:AEE538:B4ABA0:6928E652 and timestamp 2025-11-28 00:01:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -26056,7 +26057,7 @@ theoomoregbee/sails-hook-swagger-generator: >
   }
 ccouzens/keycloak-openapi: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00A:395FD3:EE2D3C:41D28A8:69279470 and timestamp 2025-11-26 23:59:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -26074,7 +26075,7 @@ mockoon/mockoon: >
   }
 canvural/php-openapi-faker: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6039:27ED17:AB937F:B14C8A:6928E5F6 and timestamp 2025-11-27 23:59:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -26112,7 +26113,7 @@ abersheeran/index.py: >
   ```
 stoplightio/studio: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 604B:171FD3:B2D372:B89DCC:6928E64A and timestamp 2025-11-28 00:01:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -26629,7 +26630,7 @@ domaindrivendev/Swashbuckle.WebApi: >
   }
 contiamo/restful-react: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B000:1D79EF:F6C37E:44393C7:69279475 and timestamp 2025-11-26 23:59:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -27001,7 +27002,7 @@ cyprieng/swagger-parser: >
   }
 fralken/sbt-swagger-codegen: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00F:395FD3:EE5ACA:41DF22F:6927947E and timestamp 2025-11-26 23:59:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -27210,7 +27211,7 @@ mockoon/cli: >
   }
 RonnyPfannschmidt/prance: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC1:178678:103A806:47EFF13:69279466 and timestamp 2025-11-26 23:59:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28199,19 +28200,19 @@ Redocly/openapi-starter: >
   }
 Redocly/redocly-cli: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC1:178678:104D6A1:484525D:692794B1 and timestamp 2025-11-27 00:00:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 Teyras/payload-oapi: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC8:1D79EF:F7C560:4484034:692794B2 and timestamp 2025-11-27 00:00:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
 apiaddicts/apigen.springboot: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFC0:1E602D:F2EB67:42CDA6A:692794B2 and timestamp 2025-11-27 00:00:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28229,7 +28230,7 @@ apiaddicts/openapi2postman: >
   }
 apiaddicts/openapi2soapui: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID AFCF:1DE00A:EC9C0C:41612A7:692794B3 and timestamp 2025-11-27 00:00:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28271,7 +28272,7 @@ rapi-doc/RapiDoc: >
   }
 stoplightio/spectral-owasp-ruleset: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6058:1B5CB9:B65AC4:BC2514:6928E673 and timestamp 2025-11-28 00:01:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28394,7 +28395,7 @@ GeniusesGroup/libgo: >
   - [Referencing issues](https://go.dev/doc/contribute#ref_issues)
 abersheeran/kui: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 602C:1BEFB1:A7442F:AD0203:6928E5ED and timestamp 2025-11-27 23:59:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28406,7 +28407,7 @@ danielpops/pyramid_swagger: >
   }
 data-fair/data-fair: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B00A:395FD3:EE4153:41D8255:69279476 and timestamp 2025-11-26 23:59:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28436,7 +28437,7 @@ oas-tools/oas-generator: >
   }
 oas-tools/oas-tools: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6024:17C426:AFDFE6:B5A2C8:6928E622 and timestamp 2025-11-28 00:00:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28514,7 +28515,7 @@ bump-sh-examples/train-travel-api: >
   }
 danielgtaylor/huma: >
   {
-  	"message": "API rate limit exceeded for 132.196.80.132. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID B003:1FFC99:FF9A33:470469C:692794B3 and timestamp 2025-11-27 00:00:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
+  	"message": "Rate limit exceeded",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28562,7 +28563,7 @@ oapi-codegen/oapi-codegen: >
   }
 openapi-generators/openapi-python-client: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 604C:1BEFB1:A91085:AEDC65:6928E670 and timestamp 2025-11-28 00:01:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28604,7 +28605,7 @@ rookie-luochao/openapi-ui: >
   }
 scalar/scalar: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6041:171FD3:B367B3:B935F0:6928E673 and timestamp 2025-11-28 00:01:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28721,7 +28722,7 @@ enzonotario/vitepress-openapi: >
   }
 aress31/openapi-parser: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 602A:1B5CB9:B47C5A:BA390E:6928E5F4 and timestamp 2025-11-27 23:59:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28733,7 +28734,7 @@ usebruno/bruno: >
   }
 rest-sh/restish: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6049:1BEFB1:A84D4E:AE1379:6928E63A and timestamp 2025-11-28 00:00:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
@@ -28751,7 +28752,7 @@ janbuchar/payload-oapi: >
   }
 jentic/jentic-public-apis: >
   {
-  	"message": "Rate limit exceeded",
+  	"message": "API rate limit exceeded for 172.215.208.198. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.) If you reach out to GitHub Support for help, please include the request ID 6032:301D6F:B52449:BAE760:6928E618 and timestamp 2025-11-28 00:00:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https:\/\/docs.github.com\/en\/site-policy\/github-terms\/github-terms-of-service)",
   	"documentation_url": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api#rate-limiting",
   	"status": "403"
   }
