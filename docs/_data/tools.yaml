@@ -284,7 +284,7 @@
   stars: 690
   watch: 32
   forks: 59
-  updated: 2025-12-09T00:00:49Z
+  updated: 2025-12-10T00:01:46Z
   issues: 12
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,10 +316,10 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4311
+  stars: 4312
   watch: 111
   forks: 646
-  updated: 2025-12-08T10:59:13Z
+  updated: 2025-12-10T07:37:18Z
   issues: 317
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -564,13 +564,13 @@
   v3: true
   category: frameworks
   name: memar-go
-  description: Developing software framework for the GO programming language
+  description: Memar framework (to developing software) port in the GO programming language
   language: Go
   archived: false
   stars: 44
   watch: 3
   forks: 5
-  updated: 2025-12-08T16:07:48Z
+  updated: 2025-12-10T07:11:50Z
   issues: 8
   license: Apache-2.0
   owner: GeniusesGroup
@@ -643,7 +643,7 @@
   stars: 1370
   watch: 82
   updated: 2025-12-05T12:05:59Z
-  issues: 34
+  issues: 35
   forks: 311
   owner: Luracast
   logo: https://avatars.githubusercontent.com/u/236217?v=4
@@ -677,10 +677,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 736
+  stars: 737
   watch: 13
   forks: 119
-  updated: 2025-11-23T04:21:45Z
+  updated: 2025-12-10T08:41:58Z
   issues: 44
   license: BSD-3-Clause
   owner: Mermade
@@ -5245,6 +5245,11 @@
   logo: https://avatars.githubusercontent.com/u/7104704?v=4
   downloads: 0
   uuid: d6936a55-9ca9-4a06-b86d-087ac2fac978
+- github: https://github.com/speakeasy-api/openapi
+  v3: true
+  category: unclassified
+  uuid: f7603565-0003-449c-9818-74853fa60f59
+  downloads: 0
 - name: connexion
   description: Swagger/OpenAPI First framework for Python on top of Flask with
     automatic endpoint validation & OAuth2 support
