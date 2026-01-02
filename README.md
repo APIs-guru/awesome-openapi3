@@ -12,6 +12,10 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 
 * Please see [APIs.guru Awesome-OpenAPI3](https://apis.guru/awesome-openapi3/)
 
+### APIs with OpenAPI 3.0 Specs
+
+* [Vedika](https://vedika.io) - AI-powered Vedic astrology API with complete OpenAPI 3.0 specification. 108+ endpoints, GraphQL support, 22 languages. [API Explorer](https://vedika.io/api-explorer)
+
 ## Contributing
 
 The best way to get your project added to the list is to tag it with the github topic `openapi3`. 
