@@ -6754,7 +6754,12 @@
   v3: true
   category: unclassified
   uuid: 2e507dcb-afa3-4a30-b3b2-a32a3ac7c672
+  name: OasRails
+  description: OasRails is a Rails engine for generating automatic interactive 
+    documentation for your Rails APIs. It generates an OAS 3.1 document and displays it using RapiDoc.
   downloads: 0
+  license: GPL-3.0
+  logo: https://avatars.githubusercontent.com/u/39093711?v=4
 - github: https://github.com/apiaddicts/apigen.springboot
   v3: true
   category: unclassified
