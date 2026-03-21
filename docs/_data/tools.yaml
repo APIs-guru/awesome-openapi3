@@ -5956,6 +5956,12 @@
   downloads: 67008
   downloadStr: 67.01K
   uuid: 297894ef-57ec-43b0-b615-2c60e87c3e6a
+- name: specway
+  category: documentation
+  github: https://specway.com
+  language: TypeScript
+  description: API documentation platform with live OpenAPI spec sync, AI chatbot, breaking change detection, and interactive playground
+  v3: true
 - name: sails-swagger
   description: Swagger integration for sails.js
   github: https://github.com/trailsjs/sails-swagger
