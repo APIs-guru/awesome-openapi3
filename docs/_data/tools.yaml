@@ -5232,13 +5232,14 @@
   logo: https://avatars.githubusercontent.com/u/534518?v=4
   downloads: 0
   uuid: 98b98dd5-be69-42c4-906b-4037f8b1d7a3
-- name: spectacle
+- name: Sourcey
   category: documentation
-  language: HTML
-  description: Beautiful static documentation generator for OpenAPI/Swagger 2.0
-  demo: https://sourcey.com/spectacle/
-  github: https://github.com/sourcey/spectacle
+  language: TypeScript
+  description: Static documentation generator for OpenAPI specs and markdown guides.
+  link: https://sourcey.com
+  github: https://github.com/sourcey/sourcey
   v2: true
+  v3: true
   archived: false
   stars: 1258
   watch: 19
