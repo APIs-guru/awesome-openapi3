@@ -226,10 +226,10 @@
   description: Swagger 2.0 and OpenAPI 3.0 command-line tool
   v2: true
   archived: true
-  stars: 518
+  stars: 517
   watch: 11
   forks: 68
-  updated: 2026-03-31T01:48:06Z
+  updated: 2026-04-08T19:05:46Z
   issues: 51
   license: MIT
   owner: APIDevTools
@@ -281,10 +281,10 @@
     the community
   language: JavaScript
   archived: false
-  stars: 697
+  stars: 696
   watch: 31
   forks: 65
-  updated: 2026-04-07T00:07:09Z
+  updated: 2026-04-08T16:41:52Z
   issues: 16
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4415
+  stars: 4416
   watch: 107
-  forks: 679
-  updated: 2026-04-07T10:34:57Z
-  issues: 1179
+  forks: 680
+  updated: 2026-04-08T13:23:35Z
+  issues: 1184
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -331,25 +331,25 @@
   category: editors
   language: TypeScript
   link: http://www.apicur.io/
-  github: https://github.com/Apicurio/apicurio-studio
+  github: https://github.com/ApicurioArchive/apicurio-studio
   demo: https://studio.apicur.io/
   description: Open Source API Design
   v2: true
   v3: true
   archived: true
-  stars: 1064
+  stars: 1062
   watch: 36
   forks: 515
-  updated: 2026-04-07T17:45:16Z
+  updated: 2026-04-08T19:04:51Z
   issues: 368
   license: Apache-2.0
-  owner: Apicurio
-  logo: https://avatars.githubusercontent.com/u/28107283?v=4
+  owner: ApicurioArchive
+  logo: https://avatars.githubusercontent.com/u/274595463?v=4
   downloads: 0
   uuid: d9e178fc-c043-4fb2-bd58-b407e7f47593
 - name: oai-ts-core
   category: parsers
-  github: https://github.com/Apicurio/oai-ts-core
+  github: https://github.com/ApicurioArchive/oai-ts-core
   description: Core typescript library to read and manipulate OpenAPI
     specification definitions.
   language: TypeScript
@@ -358,11 +358,11 @@
   stars: 53
   watch: 3
   forks: 9
-  updated: 2026-03-15T06:08:31Z
+  updated: 2026-04-08T18:55:48Z
   issues: 0
   license: Apache-2.0
-  owner: Apicurio
-  logo: https://avatars.githubusercontent.com/u/28107283?v=4
+  owner: ApicurioArchive
+  logo: https://avatars.githubusercontent.com/u/274595463?v=4
   downloads: 9829
   downloadStr: 9.83K
   uuid: 85313bdb-1ee4-4dd2-87ab-5c958964a2c4
@@ -374,10 +374,10 @@
   language: TypeSpec
   category: "?"
   archived: false
-  stars: 4801
+  stars: 4799
   watch: 962
-  updated: 2026-04-03T20:34:02Z
-  issues: 46
+  updated: 2026-04-08T16:39:42Z
+  issues: 47
   forks: 737
   license: MIT
   owner: Azure
