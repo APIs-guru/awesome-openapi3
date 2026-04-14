@@ -228,7 +228,7 @@
   archived: true
   stars: 517
   watch: 11
-  forks: 68
+  forks: 67
   updated: 2026-04-08T19:05:46Z
   issues: 51
   license: MIT
@@ -262,9 +262,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1194
+  stars: 1195
   watch: 19
-  updated: 2026-04-10T14:29:36Z
+  updated: 2026-04-13T10:59:10Z
   issues: 61
   forks: 167
   license: MIT
@@ -283,9 +283,9 @@
   archived: false
   stars: 696
   watch: 31
-  forks: 65
-  updated: 2026-04-10T00:07:49Z
-  issues: 18
+  forks: 66
+  updated: 2026-04-11T00:06:05Z
+  issues: 16
   license: BSD-3-Clause
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4417
+  stars: 4420
   watch: 107
-  forks: 682
-  updated: 2026-04-09T18:29:28Z
-  issues: 1205
+  forks: 683
+  updated: 2026-04-13T13:33:41Z
+  issues: 1208
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -376,7 +376,7 @@
   archived: false
   stars: 4799
   watch: 962
-  updated: 2026-04-10T20:04:49Z
+  updated: 2026-04-13T22:36:29Z
   issues: 46
   forks: 737
   license: MIT
@@ -464,10 +464,10 @@
   description: A model-based test case generator
   language: Java
   archived: false
-  stars: 237
+  stars: 238
   watch: 16
   forks: 56
-  updated: 2026-03-10T15:56:31Z
+  updated: 2026-04-11T13:02:39Z
   issues: 5
   owner: Cornutum
   logo: https://avatars.githubusercontent.com/u/11477145?v=4
@@ -534,9 +534,9 @@
   archived: false
   stars: 128
   watch: 4
-  forks: 66
+  forks: 65
   updated: 2026-01-01T17:57:57Z
-  issues: 37
+  issues: 36
   owner: ErikWittern
   logo: https://avatars.githubusercontent.com/u/1745998?v=4
   license: MIT
@@ -640,10 +640,10 @@
   language: PHP
   category: "?"
   archived: false
-  stars: 1374
+  stars: 1375
   watch: 82
-  updated: 2026-03-19T16:31:18Z
-  issues: 35
+  updated: 2026-04-11T19:21:04Z
+  issues: 36
   forks: 310
   owner: Luracast
   logo: https://avatars.githubusercontent.com/u/236217?v=4
@@ -677,10 +677,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 743
+  stars: 745
   watch: 13
   forks: 119
-  updated: 2026-03-25T19:27:32Z
+  updated: 2026-04-12T13:30:29Z
   issues: 45
   license: BSD-3-Clause
   owner: Mermade
@@ -4523,6 +4523,11 @@
   license: MIT
   downloads: 0
   uuid: 424842a1-7976-42e4-96b3-a70b296020d9
+- github: https://github.com/pb33f/openapi-changes
+  v3: true
+  category: unclassified
+  uuid: 0555fcfe-771c-4bd0-b87d-df8bfd94f433
+  downloads: 0
 - name: openapi-mock
   description: Start a mock server from an OpenAPI/Swagger spec file
   github: https://github.com/penx/openapi-mock
