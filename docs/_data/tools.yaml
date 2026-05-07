@@ -7120,3 +7120,11 @@
   category: unclassified
   uuid: 004d1abb-9aa2-4b66-ba9d-a7d5e9e095d0
   downloads: 0
+- name: openapi-to-rust
+  description: Generate strongly-typed Rust structs, async HTTP clients, and SSE streaming clients from OpenAPI 3.1 specs. Supports discriminated unions, anyOf/oneOf, allOf composition, circular $refs, and reconnecting SSE — built for LLM APIs (OpenAI, Anthropic) and similar.
+  github: https://github.com/gpu-cli/openapi-to-rust
+  v3: true
+  language: Rust
+  category: sdk
+  uuid: 2bf0f104-2acd-41ef-9fd4-4fa32e35eb50
+  downloads: 0
