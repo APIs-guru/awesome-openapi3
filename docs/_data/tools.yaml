@@ -7120,3 +7120,12 @@
   category: unclassified
   uuid: 004d1abb-9aa2-4b66-ba9d-a7d5e9e095d0
   downloads: 0
+- name: YAML Validator
+  description: Online YAML validator and Chrome extension with JSON Schema support for OpenAPI 3.0, Swagger 2.0, Kubernetes, Docker Compose, and other formats
+  github: https://yamlvalidator.dev
+  v3: true
+  v2: true
+  language: TypeScript
+  category: parsers
+  uuid: 57b94e97-5ee4-4e45-9886-b59a0ffaa3ae
+  downloads: 0
