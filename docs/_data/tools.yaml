@@ -284,7 +284,7 @@
   stars: 698
   watch: 31
   forks: 72
-  updated: 2026-06-03T06:57:01Z
+  updated: 2026-06-04T00:29:36Z
   issues: 18
   license: BSD-3-Clause
   owner: APIs-guru
@@ -318,9 +318,9 @@
   archived: false
   stars: 4476
   watch: 107
-  forks: 718
+  forks: 717
   updated: 2026-06-03T15:54:44Z
-  issues: 1362
+  issues: 1365
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -1409,10 +1409,10 @@
   category: "?"
   archived: false
   stars: 607
-  watch: 23
+  watch: 22
   updated: 2026-04-07T13:53:42Z
-  issues: 85
-  forks: 116
+  issues: 86
+  forks: 117
   license: ""
   owner: Yelp
   logo: https://avatars.githubusercontent.com/u/49071?v=4
@@ -1463,7 +1463,7 @@
   watch: 14
   updated: 2026-01-25T10:40:50Z
   issues: 53
-  forks: 99
+  forks: 98
   license: Apache-2.0
   owner: abelsilva
   logo: https://avatars.githubusercontent.com/u/1167088?v=4
@@ -2539,9 +2539,9 @@
   language: Python
   category: "?"
   archived: false
-  stars: 9
-  watch: 3
-  updated: 2021-08-05T06:49:19Z
+  stars: 10
+  watch: 2
+  updated: 2023-11-13T17:33:38Z
   issues: 0
   forks: 4
   license: ""
@@ -2556,11 +2556,11 @@
   language: Go
   category: "?"
   archived: false
-  stars: 5084
-  watch: 149
-  updated: 2025-05-22T01:46:27Z
-  issues: 4
-  forks: 687
+  stars: 5112
+  watch: 142
+  updated: 2026-05-27T06:32:39Z
+  issues: 2
+  forks: 682
   license: MIT
   owner: emicklei
   logo: https://avatars.githubusercontent.com/u/686220?v=4
@@ -2596,11 +2596,11 @@
   description: Convert class-validator-decorated classes into JSON schema
   language: TypeScript
   archived: false
-  stars: 188
-  watch: 6
-  forks: 31
-  updated: 2023-03-29T08:28:37Z
-  issues: 27
+  stars: 241
+  watch: 5
+  forks: 37
+  updated: 2026-04-14T09:31:00Z
+  issues: 32
   license: MIT
   owner: epiphone
   logo: https://avatars.githubusercontent.com/u/1923531?v=4
@@ -2982,11 +2982,11 @@
   language: Scala
   category: "?"
   archived: true
-  stars: 141
-  watch: 45
-  updated: 2023-01-28T15:44:18Z
-  issues: 22
-  forks: 56
+  stars: 139
+  watch: 4
+  updated: 2026-02-15T14:12:01Z
+  issues: 21
+  forks: 48
   license: Apache-2.0
   owner: gettyimages
   logo: https://avatars.githubusercontent.com/u/1730239?v=4
@@ -3241,10 +3241,10 @@
   description: Python 3.6 OpenAPI 3 Object Model - built with attrs
   language: Python
   archived: false
-  stars: 2
-  watch: 2
+  stars: 3
+  watch: 1
   forks: 2
-  updated: 2022-02-10T16:00:51Z
+  updated: 2024-05-21T10:16:12Z
   issues: 1
   license: BSD-2-Clause
   owner: joar
@@ -3277,9 +3277,9 @@
   language: Scala
   category: "?"
   archived: false
-  stars: 85
-  watch: 3
-  updated: 2023-01-23T08:51:32Z
+  stars: 87
+  watch: 4
+  updated: 2026-06-04T02:09:22Z
   issues: 5
   forks: 17
   owner: josephpconley
@@ -3412,7 +3412,7 @@
   language: TypeScript
   archived: true
   stars: 7
-  watch: 2
+  watch: 1
   forks: 3
   updated: 2023-01-28T14:51:04Z
   issues: 4
@@ -3595,11 +3595,11 @@
   description: Generates OpenAPI document from OData CSDL
   language: C#
   archived: false
-  stars: 175
-  watch: 30
-  forks: 51
-  updated: 2023-04-14T18:30:20Z
-  issues: 27
+  stars: 238
+  watch: 26
+  forks: 67
+  updated: 2026-06-03T09:40:14Z
+  issues: 35
   license: MIT
   owner: microsoft
   logo: https://avatars.githubusercontent.com/u/6154722?v=4
@@ -3613,10 +3613,10 @@
     oas-tools and express.
   language: JavaScript
   archived: true
-  stars: 41
-  watch: 8
+  stars: 42
+  watch: 2
   forks: 4
-  updated: 2023-01-27T22:17:58Z
+  updated: 2025-08-27T12:16:51Z
   issues: 0
   license: Apache-2.0
   owner: oas-tools
@@ -4389,10 +4389,10 @@
   category: "?"
   archived: false
   stars: 51
-  watch: 52
+  watch: 50
   updated: 2025-02-11T04:59:20Z
-  issues: 32
-  forks: 14
+  issues: 33
+  forks: 13
   license: MIT
   owner: notonthehighstreet
   logo: https://avatars.githubusercontent.com/u/6568?v=4
@@ -4528,6 +4528,20 @@
   category: unclassified
   uuid: 0555fcfe-771c-4bd0-b87d-df8bfd94f433
   downloads: 0
+  name: openapi-changes
+  description: The world's most powerful OpenAPI breaking changes detector.
+    Discover what changed between two OpenAPI specs, or a single spec over time.
+    Supports OpenAPI 3.2, 3.1 and 3.0
+  language: JavaScript
+  archived: false
+  stars: 350
+  watch: 2
+  forks: 29
+  updated: 2026-06-03T11:36:38Z
+  issues: 10
+  owner: pb33f
+  logo: https://avatars.githubusercontent.com/u/104016643?v=4
+  license: Apache-2.0
 - name: openapi-mock
   description: Start a mock server from an OpenAPI/Swagger spec file
   github: https://github.com/penx/openapi-mock
@@ -4830,19 +4844,19 @@
   logo: https://avatars.githubusercontent.com/u/1422665?v=4
   downloads: 0
   uuid: 554b74b4-512c-402e-9f00-392a96b57237
-- github: https://github.com/riddhi89/simple-flask-project
+- github: https://github.com/jshahriddhi/simple-flask-project
   v3: true
   category: parsers
   name: simple-flask-project
   description: Generate OpenAPI spec from Flask routes
   language: Python
   archived: false
-  stars: 0
-  watch: 1
+  stars: 2
+  watch: 0
   forks: 0
-  updated: 2018-08-06T01:50:06Z
+  updated: 2025-10-06T09:24:51Z
   issues: 0
-  owner: riddhi89
+  owner: jshahriddhi
   logo: https://avatars.githubusercontent.com/u/4574087?v=4
   unsure: true
   downloads: 0
@@ -5242,6 +5256,19 @@
   category: unclassified
   uuid: 6efac359-0392-42d7-9116-9c81f80ea751
   downloads: 0
+  name: sourcey
+  description: Precision documentation from OpenAPI, MCP, Doxygen, and Markdown
+    guides. Static HTML you own.
+  language: TypeScript
+  archived: false
+  stars: 1301
+  watch: 14
+  forks: 325
+  updated: 2026-06-04T16:37:38Z
+  issues: 5
+  owner: sourcey
+  logo: https://avatars.githubusercontent.com/u/7104704?v=4
+  license: AGPL-3.0
 - name: spectacle
   category: documentation
   language: HTML
@@ -5265,6 +5292,19 @@
   category: unclassified
   uuid: f7603565-0003-449c-9818-74853fa60f59
   downloads: 0
+  name: openapi
+  description: A set of packages and tools for working with OpenAPI, Swagger,
+    Arazzo and Overlay Specification documents.
+  language: Go
+  archived: false
+  stars: 264
+  watch: 6
+  forks: 13
+  updated: 2026-06-02T14:19:55Z
+  issues: 5
+  owner: speakeasy-api
+  logo: https://avatars.githubusercontent.com/u/91446104?v=4
+  license: MIT
 - name: connexion
   description: Swagger/OpenAPI First framework for Python on top of Flask with
     automatic endpoint validation & OAuth2 support
@@ -5324,9 +5364,9 @@
   language: Groovy
   category: "?"
   archived: false
-  stars: 5
-  watch: 2
-  updated: 2019-07-01T23:19:04Z
+  stars: 6
+  watch: 1
+  updated: 2023-12-14T19:44:36Z
   issues: 8
   forks: 4
   owner: springfox
@@ -5340,11 +5380,11 @@
   language: Groovy
   category: "?"
   archived: false
-  stars: 17
-  watch: 3
-  updated: 2023-02-23T14:19:03Z
+  stars: 19
+  watch: 2
+  updated: 2023-12-14T19:44:38Z
   issues: 30
-  forks: 13
+  forks: 12
   license: Apache-2.0
   owner: springfox
   logo: https://avatars.githubusercontent.com/u/11529357?v=4
@@ -5916,15 +5956,14 @@
   category: unclassified
   name: uvicorn-gunicorn-fastapi-docker
   description: Docker image with Uvicorn managed by Gunicorn for high-performance
-    FastAPI web applications in Python with performance auto-tuning. Optionally
-    with Alpine Linux.
+    FastAPI web applications in Python with performance auto-tuning.
   language: Python
   archived: false
-  stars: 2181
-  watch: 24
-  forks: 299
-  updated: 2023-04-15T00:52:40Z
-  issues: 35
+  stars: 2910
+  watch: 21
+  forks: 342
+  updated: 2026-05-30T03:38:33Z
+  issues: 4
   owner: tiangolo
   logo: https://avatars.githubusercontent.com/u/1326112?v=4
   license: MIT
@@ -5955,10 +5994,10 @@
     HTML pages via Shins/Widdershins.
   language: JavaScript
   archived: false
-  stars: 104
-  watch: 5
-  forks: 24
-  updated: 2022-12-14T22:50:13Z
+  stars: 119
+  watch: 3
+  forks: 25
+  updated: 2026-06-04T18:14:09Z
   issues: 7
   license: MIT
   owner: tobilg
@@ -6721,11 +6760,11 @@
   description: OpenAPI starter repository
   language: C#
   archived: false
-  stars: 86
-  watch: 18
-  forks: 75
-  updated: 2023-04-07T09:27:25Z
-  issues: 7
+  stars: 217
+  watch: 15
+  forks: 133
+  updated: 2026-06-04T08:57:30Z
+  issues: 9
   owner: Redocly
   logo: https://avatars.githubusercontent.com/u/32099856?v=4
   license: MIT
@@ -6817,14 +6856,14 @@
     it to CI using newman.  "
   language: JavaScript
   archived: false
-  stars: 9
+  stars: 21
   watch: 7
-  forks: 4
-  updated: 2023-02-23T10:42:11Z
-  issues: 1
+  forks: 7
+  updated: 2026-05-27T16:21:57Z
+  issues: 5
   owner: apiaddicts
   logo: https://avatars.githubusercontent.com/u/31730093?v=4
-  license: LGPL-3.0
+  license: ""
   downloads: 0
 - github: https://github.com/apiaddicts/openapi2soapui
   v3: true
@@ -6908,7 +6947,7 @@
   category: unclassified
   uuid: 2b16cdd6-4a1c-4a2a-a315-8c4698de9791
   downloads: 0
-- github: https://github.com/drwpow/openapi-typescript
+- github: https://github.com/openapi-ts/openapi-typescript
   v3: true
   category: unclassified
   uuid: 114db7b7-7bd6-44c5-a557-36d39459ab0a
@@ -6916,13 +6955,13 @@
   description: Generate TypeScript types from OpenAPI 3 specs
   language: TypeScript
   archived: false
-  stars: 2850
-  watch: 25
-  forks: 219
-  updated: 2023-04-16T07:55:51Z
-  issues: 40
-  owner: drwpow
-  logo: https://avatars.githubusercontent.com/u/1369770?v=4
+  stars: 8156
+  watch: 21
+  forks: 646
+  updated: 2026-06-04T18:10:17Z
+  issues: 259
+  owner: openapi-ts
+  logo: https://avatars.githubusercontent.com/u/172838200?v=4
   license: MIT
   downloads: 4466969
   downloadStr: 4.47M
@@ -6941,6 +6980,19 @@
   category: unclassified
   uuid: 272d90de-18de-49d3-a645-eaae537904c5
   downloads: 0
+  name: utoipa
+  description: Simple, Fast, Code first and Compile time generated OpenAPI
+    documentation for Rust
+  language: Rust
+  archived: false
+  stars: 3874
+  watch: 10
+  forks: 347
+  updated: 2026-06-04T21:11:05Z
+  issues: 250
+  owner: juhaku
+  logo: https://avatars.githubusercontent.com/u/26358664?v=4
+  license: Apache-2.0
 - github: https://github.com/microcks/microcks
   v3: true
   category: unclassified
@@ -6982,11 +7034,6 @@
   v3: true
   category: unclassified
   uuid: 52b05f17-3804-46cf-bb46-43ee45eb9c0c
-  downloads: 0
-- github: https://github.com/openapi-ts/openapi-typescript
-  v3: true
-  category: unclassified
-  uuid: e892db53-41b0-47bf-88ea-9ce1648fc70d
   downloads: 0
 - github: https://github.com/opticdev/optic
   v3: true
