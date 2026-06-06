@@ -284,7 +284,7 @@
   stars: 698
   watch: 31
   forks: 72
-  updated: 2026-06-04T00:29:36Z
+  updated: 2026-06-05T00:21:58Z
   issues: 18
   license: BSD-3-Clause
   owner: APIs-guru
@@ -318,9 +318,9 @@
   archived: false
   stars: 4476
   watch: 107
-  forks: 717
+  forks: 718
   updated: 2026-06-03T15:54:44Z
-  issues: 1365
+  issues: 1383
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -3286,6 +3286,23 @@
   logo: https://avatars.githubusercontent.com/u/1165287?v=4
   downloads: 0
   uuid: d971d991-3d65-41bb-9128-9e81285e59c2
+- github: https://github.com/jshahriddhi/simple-flask-project
+  v3: true
+  category: parsers
+  name: simple-flask-project
+  description: Generate OpenAPI spec from Flask routes
+  language: Python
+  archived: false
+  stars: 2
+  watch: 0
+  forks: 0
+  updated: 2025-10-06T09:24:51Z
+  issues: 0
+  owner: jshahriddhi
+  logo: https://avatars.githubusercontent.com/u/4574087?v=4
+  unsure: true
+  downloads: 0
+  uuid: 05f1a526-af34-44ec-b7b3-f4b275be7458
 - name: node-swagger-mongodb
   description: lightweight swagger-ui crud-api backed by mongodb
   github: https://github.com/kaizhu256/node-swagger-mongodb
@@ -3680,6 +3697,41 @@
   logo: https://avatars.githubusercontent.com/u/88526205?v=4
   downloads: 0
   uuid: 3ca5521e-d347-441e-8c9f-43b5159b4ac4
+- github: https://github.com/rinold/Steamer
+  v3: true
+  category: parsers
+  name: Steamer
+  description: Vapor simple CRUD-server generator
+  language: Swift
+  archived: false
+  stars: 7
+  watch: 2
+  forks: 0
+  updated: 2022-03-22T06:55:36Z
+  issues: 0
+  license: MIT
+  owner: rinold
+  logo: https://avatars.githubusercontent.com/u/2253795?v=4
+  unsure: true
+  downloads: 0
+  uuid: 2f539ef7-de02-4e3f-9fc6-997a154b01f3
+- github: https://github.com/rithvikvibhu/GHLocalApi
+  v3: true
+  category: unclassified
+  uuid: 609e6ef9-1f10-4ca9-b86d-d9e499600770
+  name: GHLocalApi
+  description: (Unofficial) Google Home local API documentation.
+  language: Handlebars
+  archived: false
+  stars: 419
+  watch: 30
+  forks: 41
+  updated: 2023-04-15T07:45:31Z
+  issues: 6
+  owner: rithvikvibhu
+  logo: https://avatars.githubusercontent.com/u/5113343?v=4
+  license: MIT
+  downloads: 0
 - name: rswag
   description: Seamlessly adds a Swagger to Rails-based API's
   github: https://github.com/rswag/rswag
@@ -4844,58 +4896,6 @@
   logo: https://avatars.githubusercontent.com/u/1422665?v=4
   downloads: 0
   uuid: 554b74b4-512c-402e-9f00-392a96b57237
-- github: https://github.com/jshahriddhi/simple-flask-project
-  v3: true
-  category: parsers
-  name: simple-flask-project
-  description: Generate OpenAPI spec from Flask routes
-  language: Python
-  archived: false
-  stars: 2
-  watch: 0
-  forks: 0
-  updated: 2025-10-06T09:24:51Z
-  issues: 0
-  owner: jshahriddhi
-  logo: https://avatars.githubusercontent.com/u/4574087?v=4
-  unsure: true
-  downloads: 0
-  uuid: 05f1a526-af34-44ec-b7b3-f4b275be7458
-- github: https://github.com/rinold/Steamer
-  v3: true
-  category: parsers
-  name: Steamer
-  description: Vapor simple CRUD-server generator
-  language: Swift
-  archived: false
-  stars: 7
-  watch: 2
-  forks: 0
-  updated: 2022-03-22T06:55:36Z
-  issues: 0
-  license: MIT
-  owner: rinold
-  logo: https://avatars.githubusercontent.com/u/2253795?v=4
-  unsure: true
-  downloads: 0
-  uuid: 2f539ef7-de02-4e3f-9fc6-997a154b01f3
-- github: https://github.com/rithvikvibhu/GHLocalApi
-  v3: true
-  category: unclassified
-  uuid: 609e6ef9-1f10-4ca9-b86d-d9e499600770
-  name: GHLocalApi
-  description: (Unofficial) Google Home local API documentation.
-  language: Handlebars
-  archived: false
-  stars: 419
-  watch: 30
-  forks: 41
-  updated: 2023-04-15T07:45:31Z
-  issues: 6
-  owner: rithvikvibhu
-  logo: https://avatars.githubusercontent.com/u/5113343?v=4
-  license: MIT
-  downloads: 0
 - name: grape-swagger
   description: Add OAPI/swagger v2.0 compliant documentation to your grape API
   github: https://github.com/ruby-grape/grape-swagger
@@ -6947,24 +6947,6 @@
   category: unclassified
   uuid: 2b16cdd6-4a1c-4a2a-a315-8c4698de9791
   downloads: 0
-- github: https://github.com/openapi-ts/openapi-typescript
-  v3: true
-  category: unclassified
-  uuid: 114db7b7-7bd6-44c5-a557-36d39459ab0a
-  name: openapi-typescript
-  description: Generate TypeScript types from OpenAPI 3 specs
-  language: TypeScript
-  archived: false
-  stars: 8156
-  watch: 21
-  forks: 646
-  updated: 2026-06-04T18:10:17Z
-  issues: 259
-  owner: openapi-ts
-  logo: https://avatars.githubusercontent.com/u/172838200?v=4
-  license: MIT
-  downloads: 4466969
-  downloadStr: 4.47M
 - github: https://github.com/fastapi/fastapi
   v3: true
   category: unclassified
@@ -7020,6 +7002,11 @@
   category: unclassified
   uuid: 53b00ac2-102a-49a8-9848-8897d526aa0c
   downloads: 0
+- github: https://github.com/msgspec/msgspec
+  v3: true
+  category: unclassified
+  uuid: 68dbd37d-6e72-4de2-83ac-4b0bfab13a7a
+  downloads: 0
 - github: https://github.com/oapi-codegen/oapi-codegen
   v3: true
   category: unclassified
@@ -7035,6 +7022,24 @@
   category: unclassified
   uuid: 52b05f17-3804-46cf-bb46-43ee45eb9c0c
   downloads: 0
+- github: https://github.com/openapi-ts/openapi-typescript
+  v3: true
+  category: unclassified
+  uuid: 114db7b7-7bd6-44c5-a557-36d39459ab0a
+  name: openapi-typescript
+  description: Generate TypeScript types from OpenAPI 3 specs
+  language: TypeScript
+  archived: false
+  stars: 8156
+  watch: 21
+  forks: 646
+  updated: 2026-06-04T18:10:17Z
+  issues: 259
+  owner: openapi-ts
+  logo: https://avatars.githubusercontent.com/u/172838200?v=4
+  license: MIT
+  downloads: 4466969
+  downloadStr: 4.47M
 - github: https://github.com/opticdev/optic
   v3: true
   category: unclassified
