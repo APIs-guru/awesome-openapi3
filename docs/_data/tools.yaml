@@ -262,9 +262,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1200
+  stars: 1201
   watch: 19
-  updated: 2026-06-10T08:52:58Z
+  updated: 2026-06-18T02:06:48Z
   issues: 62
   forks: 169
   license: MIT
@@ -284,7 +284,7 @@
   stars: 700
   watch: 31
   forks: 73
-  updated: 2026-06-17T00:27:11Z
+  updated: 2026-06-18T00:25:29Z
   issues: 19
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4491
+  stars: 4493
   watch: 106
-  forks: 722
-  updated: 2026-06-17T23:50:14Z
-  issues: 1447
+  forks: 723
+  updated: 2026-06-18T14:48:43Z
+  issues: 1452
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -3116,6 +3116,11 @@
   downloads: 4582691
   downloadStr: 4.58M
   uuid: c643212e-c45f-43de-9fd9-8b6aabcb9c71
+- github: https://github.com/hey-api/hey-api
+  v3: true
+  category: unclassified
+  uuid: a0bcaa40-8656-4d80-b545-1d7bd8a745b4
+  downloads: 0
 - github: https://github.com/hey-api/openapi-ts
   v3: true
   category: unclassified
