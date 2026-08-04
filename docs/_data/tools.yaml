@@ -226,10 +226,10 @@
   description: Swagger 2.0 and OpenAPI 3.0 command-line tool
   v2: true
   archived: true
-  stars: 517
+  stars: 516
   watch: 0
   forks: 68
-  updated: 2026-07-21T05:10:50Z
+  updated: 2026-08-01T13:33:20Z
   issues: 51
   license: MIT
   owner: APIDevTools
@@ -244,9 +244,9 @@
   language: JavaScript
   category: "?"
   archived: true
-  stars: 577
+  stars: 576
   watch: 0
-  updated: 2025-11-07T08:14:30Z
+  updated: 2026-08-01T20:33:53Z
   issues: 1
   forks: 190
   license: MIT
@@ -255,22 +255,22 @@
   downloads: 499199
   downloadStr: 499.2K
   uuid: 864726b8-4a83-45ec-8c7e-430d07e7b8ad
-- name: swagger-parser
+- name: swagger_parser
   description: Swagger 2.0 and OpenAPI 3.0 parser/validator
-  github: https://github.com/APIDevTools/swagger-parser
+  github: https://github.com/APIDevTools/swagger_parser
   v2: true
   language: JavaScript
   category: "?"
   archived: false
   stars: 1206
   watch: 19
-  updated: 2026-07-28T08:33:02Z
+  updated: 2026-08-03T16:51:36Z
   issues: 64
   forks: 172
   license: MIT
   owner: APIDevTools
   logo: https://avatars.githubusercontent.com/u/43750074?v=4
-  downloads: 31540864
+  downloads: 0
   downloadStr: 31.54M
   uuid: 8b6626c3-80e1-42f0-bc12-6cdb15b6750a
 - github: https://github.com/APIs-guru/awesome-openapi3
@@ -281,11 +281,11 @@
     the community
   language: JavaScript
   archived: false
-  stars: 702
+  stars: 703
   watch: 31
-  forks: 74
-  updated: 2026-07-31T00:18:45Z
-  issues: 20
+  forks: 75
+  updated: 2026-08-02T07:48:16Z
+  issues: 21
   license: BSD-3-Clause
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4519
+  stars: 4520
   watch: 105
-  forks: 736
-  updated: 2026-07-31T17:56:45Z
-  issues: 1677
+  forks: 737
+  updated: 2026-08-01T15:14:24Z
+  issues: 1695
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -376,7 +376,7 @@
   archived: false
   stars: 4799
   watch: 960
-  updated: 2026-07-29T00:16:25Z
+  updated: 2026-08-03T18:30:12Z
   issues: 45
   forks: 737
   license: MIT
@@ -467,7 +467,7 @@
   stars: 239
   watch: 16
   forks: 56
-  updated: 2026-06-23T18:31:30Z
+  updated: 2026-08-03T17:38:45Z
   issues: 5
   owner: Cornutum
   logo: https://avatars.githubusercontent.com/u/11477145?v=4
@@ -644,7 +644,7 @@
   watch: 82
   updated: 2026-07-13T12:23:10Z
   issues: 32
-  forks: 313
+  forks: 314
   owner: Luracast
   logo: https://avatars.githubusercontent.com/u/236217?v=4
   downloads: 0
