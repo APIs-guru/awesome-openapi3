@@ -211,7 +211,7 @@
   archived: false
   stars: 375
   watch: 10
-  forks: 45
+  forks: 44
   updated: 2026-07-29T15:58:11Z
   issues: 55
   owner: 42Crunch
@@ -255,22 +255,22 @@
   downloads: 499199
   downloadStr: 499.2K
   uuid: 864726b8-4a83-45ec-8c7e-430d07e7b8ad
-- name: swagger_parser
+- name: swagger-parser
   description: Swagger 2.0 and OpenAPI 3.0 parser/validator
-  github: https://github.com/APIDevTools/swagger_parser
+  github: https://github.com/APIDevTools/swagger-parser
   v2: true
   language: JavaScript
   category: "?"
   archived: false
   stars: 1206
   watch: 19
-  updated: 2026-08-03T16:51:36Z
+  updated: 2026-08-04T10:22:25Z
   issues: 64
   forks: 172
   license: MIT
   owner: APIDevTools
   logo: https://avatars.githubusercontent.com/u/43750074?v=4
-  downloads: 0
+  downloads: 31540864
   downloadStr: 31.54M
   uuid: 8b6626c3-80e1-42f0-bc12-6cdb15b6750a
 - github: https://github.com/APIs-guru/awesome-openapi3
@@ -284,7 +284,7 @@
   stars: 703
   watch: 31
   forks: 75
-  updated: 2026-08-02T07:48:16Z
+  updated: 2026-08-04T00:20:29Z
   issues: 21
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4520
+  stars: 4522
   watch: 105
   forks: 737
-  updated: 2026-08-01T15:14:24Z
-  issues: 1695
+  updated: 2026-08-04T15:31:45Z
+  issues: 1699
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -374,9 +374,9 @@
   language: TypeSpec
   category: "?"
   archived: false
-  stars: 4799
+  stars: 4798
   watch: 960
-  updated: 2026-08-03T18:30:12Z
+  updated: 2026-08-04T16:55:46Z
   issues: 45
   forks: 737
   license: MIT
@@ -450,7 +450,7 @@
   watch: 10
   updated: 2025-08-30T23:19:34Z
   issues: 10
-  forks: 24
+  forks: 23
   license: ISC
   owner: CacheControl
   logo: https://avatars.githubusercontent.com/u/242797?v=4
