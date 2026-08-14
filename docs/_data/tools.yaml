@@ -209,10 +209,10 @@
   v3: true
   github: https://github.com/42Crunch/vscode-openapi
   archived: false
-  stars: 375
+  stars: 376
   watch: 10
   forks: 44
-  updated: 2026-07-29T15:58:11Z
+  updated: 2026-08-13T21:12:53Z
   issues: 55
   owner: 42Crunch
   logo: https://avatars.githubusercontent.com/u/25365245?v=4
@@ -284,7 +284,7 @@
   stars: 703
   watch: 31
   forks: 77
-  updated: 2026-08-12T00:11:26Z
+  updated: 2026-08-13T00:11:44Z
   issues: 23
   license: BSD-3-Clause
   owner: APIs-guru
@@ -320,7 +320,7 @@
   watch: 105
   forks: 740
   updated: 2026-08-12T09:55:07Z
-  issues: 1747
+  issues: 1752
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -640,9 +640,9 @@
   language: PHP
   category: "?"
   archived: false
-  stars: 1383
+  stars: 1382
   watch: 82
-  updated: 2026-07-13T12:23:10Z
+  updated: 2026-08-13T07:19:34Z
   issues: 32
   forks: 314
   owner: Luracast
@@ -753,10 +753,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 1487
-  watch: 40
-  forks: 169
-  updated: 2026-04-08T18:32:51Z
+  stars: 1492
+  watch: 41
+  forks: 170
+  updated: 2026-08-09T13:50:05Z
   issues: 17
   license: MIT
   owner: Mermade
@@ -1249,9 +1249,9 @@
   language: Java
   category: "?"
   archived: true
-  stars: 27
-  watch: 39
-  updated: 2025-02-09T03:21:51Z
+  stars: 28
+  watch: 1
+  updated: 2025-06-23T15:10:44Z
   issues: 8
   forks: 13
   license: Apache-2.0
@@ -1610,6 +1610,11 @@
   license: MIT
   downloads: 0
   uuid: 3ffa6e13-7753-4665-aed4-8f093e30b70c
+- github: https://github.com/apache/apisix
+  v3: true
+  category: unclassified
+  uuid: 7d509072-2c22-46a5-a18f-4bb3b135de9e
+  downloads: 0
 - name: dredd
   category: testing
   description: Language-agnostic HTTP API Testing Tool
@@ -1974,11 +1979,11 @@
     using Typescript
   language: TypeScript
   archived: false
-  stars: 347
-  watch: 9
-  forks: 41
-  updated: 2023-04-13T11:34:30Z
-  issues: 6
+  stars: 359
+  watch: 7
+  forks: 39
+  updated: 2026-06-08T08:32:50Z
+  issues: 7
   owner: cdimascio
   logo: https://avatars.githubusercontent.com/u/4706618?v=4
   license: MIT
@@ -2486,11 +2491,11 @@
   language: C#
   category: "?"
   archived: false
-  stars: 3051
-  watch: 173
-  updated: 2023-04-12T07:32:35Z
+  stars: 3069
+  watch: 163
+  updated: 2026-08-13T19:47:45Z
   issues: 355
-  forks: 689
+  forks: 664
   license: BSD-3-Clause
   owner: domaindrivendev
   logo: https://avatars.githubusercontent.com/u/1434343?v=4
@@ -2573,10 +2578,10 @@
   description: Generate Markdown documentation from OpenAPI 3 Components Schemas
   language: Python
   archived: false
-  stars: 11
-  watch: 14
-  forks: 0
-  updated: 2023-02-02T12:55:33Z
+  stars: 13
+  watch: 13
+  forks: 1
+  updated: 2026-06-30T15:46:02Z
   issues: 2
   license: MIT
   owner: entrepreneur-interet-general
@@ -4469,11 +4474,11 @@
   v2: true
   v3: true
   archived: false
-  stars: 212
-  watch: 19
-  forks: 85
-  updated: 2025-09-06T18:16:26Z
-  issues: 18
+  stars: 221
+  watch: 18
+  forks: 91
+  updated: 2026-08-10T06:30:58Z
+  issues: 22
   license: ""
   owner: oasis-tcs
   logo: https://avatars.githubusercontent.com/u/20116735?v=4
@@ -7093,7 +7098,24 @@
   v3: true
   category: unclassified
   uuid: 3334a046-7aa9-452b-bf12-1d4d6748c612
-  downloads: 0
+  downloads: 1142
+  name: scalar
+  description: Scalar is an open-source API
+    platform:　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　🌐 Modern REST API
+    Client　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　📖 Beautiful API
+    References　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　✨ 1st-Class
+    OpenAPI/Swagger Support
+  language: TypeScript
+  archived: false
+  stars: 15908
+  watch: 33
+  forks: 917
+  updated: 2026-08-13T23:09:07Z
+  issues: 76
+  owner: scalar
+  logo: https://avatars.githubusercontent.com/u/301879?v=4
+  license: MIT
+  downloadStr: 1.14K
 - github: https://github.com/stoplightio/spectral-owasp-ruleset
   v3: true
   category: unclassified
