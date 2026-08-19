@@ -212,7 +212,7 @@
   stars: 375
   watch: 10
   forks: 44
-  updated: 2026-08-16T08:32:47Z
+  updated: 2026-08-18T14:23:05Z
   issues: 55
   owner: 42Crunch
   logo: https://avatars.githubusercontent.com/u/25365245?v=4
@@ -284,7 +284,7 @@
   stars: 704
   watch: 31
   forks: 79
-  updated: 2026-08-15T06:38:54Z
+  updated: 2026-08-18T00:05:28Z
   issues: 24
   license: BSD-3-Clause
   owner: APIs-guru
@@ -318,9 +318,9 @@
   archived: false
   stars: 4534
   watch: 105
-  forks: 739
+  forks: 740
   updated: 2026-08-16T21:49:38Z
-  issues: 1775
+  issues: 1780
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -375,8 +375,8 @@
   category: "?"
   archived: false
   stars: 4799
-  watch: 960
-  updated: 2026-08-14T22:51:57Z
+  watch: 959
+  updated: 2026-08-18T04:16:41Z
   issues: 22
   forks: 739
   license: MIT
@@ -467,7 +467,7 @@
   stars: 240
   watch: 16
   forks: 56
-  updated: 2026-08-11T14:22:25Z
+  updated: 2026-08-18T18:29:45Z
   issues: 5
   owner: Cornutum
   logo: https://avatars.githubusercontent.com/u/11477145?v=4
@@ -642,7 +642,7 @@
   archived: false
   stars: 1382
   watch: 82
-  updated: 2026-08-13T07:19:34Z
+  updated: 2026-08-18T14:57:45Z
   issues: 32
   forks: 314
   owner: Luracast
@@ -5568,6 +5568,11 @@
   license: MIT
   downloads: 0
   uuid: 2a3d05c1-2eba-4086-8b46-32cadb579aa6
+- github: https://github.com/swagger-api/swagger-client
+  v3: true
+  category: unclassified
+  uuid: aac44fab-3f68-4093-b6e4-558c1b125ab2
+  downloads: 0
 - name: swagger-codegen
   category: sdk
   language: Mustache
