@@ -7209,3 +7209,13 @@
   category: unclassified
   uuid: 004d1abb-9aa2-4b66-ba9d-a7d5e9e095d0
   downloads: 0
+- github: https://github.com/studio-design/gesso
+  name: Gesso
+  description: >-
+    Gesso — OpenAPI 3.0/3.1/3.2 contract testing for PHP. Framework-independent
+    core with Laravel, Symfony, Pest, and PSR-7 adapters. PHPUnit
+    endpoint-coverage tracking, request/response validation, schema-driven
+    fuzzing, and drift detection.
+  v3: true
+  language: PHP
+  category: validator
