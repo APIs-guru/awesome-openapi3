@@ -3769,6 +3769,14 @@
   v2: true
   v3: true
   uuid: 7f31ed5d-bbc1-434b-918e-9f2b37253da1
+- name: Sourced
+  category: documentation
+  language: SaaS
+  description: Generate hosted API docs, TypeScript and Python SDKs, llms.txt,
+    and MCP servers from an OpenAPI spec.
+  link: https://sourced.sh
+  v3: true
+  uuid: 6f1a3e2d-9c4b-4e7a-8f5d-2b6c7a9e0d1f
 - link: https://bitbucket.org/atlassian/openapi-diff/src/master/
   v3: true
   category: miscellaneous
