@@ -5235,8 +5235,8 @@
 - name: Sourcey
   category: documentation
   language: TypeScript
-  description: Precision documentation from OpenAPI, MCP, Doxygen, and Markdown. Static HTML you own.
-  link: https://sourcey.com
+  description: Static documentation generator for OpenAPI, MCP, Doxygen, godoc, rustdoc, and Markdown
+  link: https://sourcey.com/oss
   github: https://github.com/sourcey/sourcey
   v2: true
   v3: true
