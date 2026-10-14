@@ -11,7 +11,8 @@ Why not make your project discoverable by using the topic [openapi3](https://git
 ## Tools
 
 * Please see [APIs.guru Awesome-OpenAPI3](https://apis.guru/awesome-openapi3/)
-
+* [TypeMorph](https://typemorph.dev) - Paste OpenAPI YAML/JSON and get TypeScript interfaces, Zod validators, Prisma schemas, and 160+ other formats instantly. 100% browser-local.
+  
 ## Contributing
 
 The best way to get your project added to the list is to tag it with the github topic `openapi3`. 
