@@ -7209,3 +7209,11 @@
   category: unclassified
   uuid: 004d1abb-9aa2-4b66-ba9d-a7d5e9e095d0
   downloads: 0
+- name: OpenAPI Repair
+  category: parsers
+  description: Free, browser-local deterministic diagnostics for selected OpenAPI
+    3.0 import issues in AWS API Gateway REST APIs, with opt-in copying of inherited
+    security to operations.
+  link: https://openapi-repair.pages.dev/
+  v3: true
+  uuid: f607f295-56b8-4a69-92f1-d1ce0f9a3c86
