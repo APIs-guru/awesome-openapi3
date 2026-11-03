@@ -5267,13 +5267,15 @@
   downloads: 0
   uuid: 98b98dd5-be69-42c4-906b-4037f8b1d7a3
 - github: https://github.com/sourcey/sourcey
+  v2: true
   v3: true
-  category: unclassified
+  category: documentation
   uuid: 6efac359-0392-42d7-9116-9c81f80ea751
   downloads: 0
   name: sourcey
-  description: Precision documentation from OpenAPI, MCP, Doxygen, and Markdown
-    guides. Static HTML you own.
+  description: Static documentation generator for OpenAPI, MCP, Doxygen, godoc,
+    rustdoc, and Markdown
+  link: https://sourcey.com/docs
   language: TypeScript
   archived: false
   stars: 1301
@@ -5283,25 +5285,7 @@
   issues: 5
   owner: sourcey
   logo: https://avatars.githubusercontent.com/u/7104704?v=4
-  license: AGPL-3.0
-- name: spectacle
-  category: documentation
-  language: HTML
-  description: Beautiful static documentation generator for OpenAPI/Swagger 2.0
-  demo: https://sourcey.com/spectacle/
-  github: https://github.com/sourcey/spectacle
-  v2: true
-  archived: false
-  stars: 1258
-  watch: 19
-  forks: 334
-  updated: 2023-04-04T06:57:28Z
-  issues: 38
-  license: ""
-  owner: sourcey
-  logo: https://avatars.githubusercontent.com/u/7104704?v=4
-  downloads: 0
-  uuid: d6936a55-9ca9-4a06-b86d-087ac2fac978
+  license: AGPL-3.0-only
 - github: https://github.com/speakeasy-api/openapi
   v3: true
   category: unclassified
