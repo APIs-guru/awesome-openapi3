@@ -1,3 +1,12 @@
+
+- name: OpenAPI Breaking Change Checker
+  category: testing
+  link: https://martingruner.com/tools/openapi-breaking-change-checker
+  description: Free browser tool that compares Swagger 2.0 and OpenAPI 3.0/3.1 JSON or YAML descriptions locally for likely breaking, review-needed, and compatible changes.
+  v2: true
+  v3: true
+  language: TypeScript
+  uuid: 3c622f80-03cd-4de8-88e1-cfba9532f154
 - name: a127
   description: a127
   github: http://a127.io/
