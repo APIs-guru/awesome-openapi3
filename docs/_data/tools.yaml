@@ -226,10 +226,10 @@
   description: Swagger 2.0 and OpenAPI 3.0 command-line tool
   v2: true
   archived: true
-  stars: 513
+  stars: 514
   watch: 0
   forks: 66
-  updated: 2026-10-23T18:13:45Z
+  updated: 2026-11-09T21:18:44Z
   issues: 51
   license: MIT
   owner: APIDevTools
@@ -262,9 +262,9 @@
   language: JavaScript
   category: "?"
   archived: false
-  stars: 1209
+  stars: 1210
   watch: 19
-  updated: 2026-11-05T01:13:53Z
+  updated: 2026-11-09T21:13:29Z
   issues: 64
   forks: 170
   license: MIT
@@ -284,7 +284,7 @@
   stars: 708
   watch: 31
   forks: 81
-  updated: 2026-11-06T00:04:04Z
+  updated: 2026-11-07T00:02:58Z
   issues: 27
   license: BSD-3-Clause
   owner: APIs-guru
@@ -316,11 +316,11 @@
     OpenAPI 2.0/3.x format
   language: Unknown
   archived: false
-  stars: 4597
-  watch: 104
-  forks: 758
-  updated: 2026-11-06T20:51:30Z
-  issues: 2833
+  stars: 4599
+  watch: 103
+  forks: 759
+  updated: 2026-11-08T23:20:47Z
+  issues: 2873
   owner: APIs-guru
   logo: https://avatars.githubusercontent.com/u/10975548?v=4
   license: CC0-1.0
@@ -375,10 +375,10 @@
   category: "?"
   archived: false
   stars: 4790
-  watch: 951
-  updated: 2026-11-06T09:46:17Z
+  watch: 950
+  updated: 2026-11-09T21:24:00Z
   issues: 21
-  forks: 735
+  forks: 734
   license: MIT
   owner: Azure
   logo: https://avatars.githubusercontent.com/u/6844498?v=4
@@ -625,7 +625,7 @@
   watch: 22
   updated: 2026-10-29T18:45:57Z
   issues: 106
-  forks: 192
+  forks: 193
   license: MIT
   owner: LucyBot-Inc
   logo: https://avatars.githubusercontent.com/u/26313641?v=4
@@ -640,9 +640,9 @@
   language: PHP
   category: "?"
   archived: false
-  stars: 1386
+  stars: 1387
   watch: 80
-  updated: 2026-11-04T13:07:38Z
+  updated: 2026-11-09T21:13:19Z
   issues: 33
   forks: 313
   owner: Luracast
@@ -677,10 +677,10 @@
   v2: true
   v3: true
   archived: false
-  stars: 747
+  stars: 748
   watch: 13
-  forks: 119
-  updated: 2026-10-28T09:42:02Z
+  forks: 120
+  updated: 2026-11-09T21:16:40Z
   issues: 44
   license: BSD-3-Clause
   owner: Mermade
@@ -4087,6 +4087,11 @@
   unsure: true
   downloads: 0
   uuid: 155d8b71-2941-4b29-be5d-42083e24a4dc
+- github: https://github.com/middleapi/orpc
+  v3: true
+  category: unclassified
+  uuid: 7ac3ee99-ce01-4279-8918-7f7744527eb3
+  downloads: 0
 - name: rapido-web
   category: editors
   language: JavaScript
